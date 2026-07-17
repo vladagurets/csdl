@@ -15,6 +15,22 @@ Use built-in Codex image generation for normal Pilot 01 card work.
 
 Official reference: [Image generation in Codex](https://learn.chatgpt.com/docs/image-generation).
 
+## Approved shared reference
+
+Use this file as the primary visual reference for Pilot 01 Tasks 5–11:
+
+```text
+pilots/01-agentic-discipline/references/style-anchor-light.png
+```
+
+Its deterministic construction method, exact hashes, metadata, and manual review are recorded in:
+
+```text
+pilots/01-agentic-discipline/references/style-anchor-light.provenance.md
+```
+
+Validate the file before attempting generation. Do not replace it silently or use a superseded exploratory image as the card-specific reference.
+
 ## Optional routes
 
 ### External ChatGPT Images
@@ -51,14 +67,18 @@ The visible copy must match `manifest.yaml` character-for-character.
 ```bash
 python -m pytest -q
 python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
+python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
 Expected:
 
 ```text
-9 passed
+14 passed
 manifest valid
+style anchor valid
 ```
+
+If the style-anchor command fails, stop before image generation and repair or restore the shared reference. Do not substitute another file without explicit approval and updated provenance.
 
 ### 3. Generate three independent candidates
 
@@ -134,16 +154,16 @@ Copy only the human-approved draft to:
 pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png
 ```
 
-Then update `STATUS.md` and `CHANGELOG.md`, run baseline validation again, and open a pull request.
+Then update `STATUS.md` and `CHANGELOG.md`, run all three baseline validations again, and open a pull request.
 
 ## Corrected Codex task prompt
 
 ```text
 Implement only Task 5 of the Pilot 01 plan on a new branch named codex/pilot-01-card-01.
 
-Read AGENTS.md, STATUS.md, DECISIONS.md, the Foundation v0.1 spec, pilots/01-agentic-discipline/manifest.yaml, Task 5 in the implementation plan, and docs/handoff/CODEX_IMAGE_GENERATION.md.
+Read AGENTS.md, STATUS.md, DECISIONS.md, the Foundation v0.1 spec, pilots/01-agentic-discipline/manifest.yaml, Task 5 in the implementation plan, pilots/01-agentic-discipline/references/style-anchor-light.provenance.md, and docs/handoff/CODEX_IMAGE_GENERATION.md.
 
-Preserve manifest copy exactly. Create prompts/01-hook.yaml first and run the baseline tests and manifest validation.
+Preserve manifest copy exactly. Create prompts/01-hook.yaml first and run the tests, manifest validation, and dedicated style-anchor validation. Expected baseline: 14 tests pass, the manifest is valid, and the style anchor is valid.
 
 Then explicitly invoke $imagegen three times, using pilots/01-agentic-discipline/references/style-anchor-light.png as the primary visual reference. Built-in Codex image generation uses gpt-image-2 and does not require OPENAI_API_KEY. Do not inspect API credentials, install an API SDK, or create an API helper in this task.
 
