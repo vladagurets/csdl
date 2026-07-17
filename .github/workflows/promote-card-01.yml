@@ -31,7 +31,7 @@ jobs:
         run: |
           set -euo pipefail
           staging='pilots/01-agentic-discipline/staging'
-          if [[ ! -f "$staging/01-hook-v1.b64.part1" ]]; then
+          if [[ ! -f "$staging/01-hook-v1.b64.p01" ]]; then
             echo 'staging already removed; nothing to promote'
             exit 0
           fi
@@ -39,7 +39,7 @@ jobs:
           output='pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png'
           mkdir -p "$(dirname "$output")"
           cat \
-            "$staging/01-hook-v1.b64.part1" \
+            "$staging/01-hook-v1.b64.p01" \
             "$staging/01-hook-v1.b64.part2" \
             "$staging/01-hook-v1.b64.part3" \
             "$staging/01-hook-v1.b64.part4" \
