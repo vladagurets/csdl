@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Restore Pilot 01 Task 4 with the missing canonical style-anchor raster, persistent provenance, an independent validation gate, CI enforcement, and truthful status evidence.
+**Goal:** Restore Pilot 01 Task 4 with the missing canonical style-anchor raster, persistent provenance, an independent validation gate, CI enforcement, and truthful operational documentation.
 
-**Architecture:** Keep the repair isolated from unfinished card assets. A dedicated validator checks the shared style-anchor file, while manual visual and copy review is persisted in a sidecar next to the raster. The raster is a deterministic Pillow reconstruction from the locked Task 4 contract, explicitly documented as a repair exception rather than an original GPT Image 2 candidate.
+**Architecture:** Keep the repair isolated from unfinished card assets. A dedicated validator checks the shared style-anchor file, while manual visual and copy review is persisted in a sidecar next to the raster. The raster is a deterministic Pillow reconstruction using a custom 5×7 modular glyph alphabet and is explicitly documented as a repair exception rather than an original GPT Image 2 candidate.
 
 **Tech Stack:** Python 3.11+, Pillow, pytest, Markdown, GitHub Actions, PNG.
 
@@ -18,6 +18,7 @@
 - Palette: paper `#F7F5F0`, ink `#1B1B19`, coral `#C96157`.
 - No logo, footer, frame, grid, coordinates, icons, gradients, shadows, or extra labels.
 - No font binaries or placeholder images may be committed.
+- The committed Git blob SHA must equal the local `git hash-object` result.
 
 ---
 
@@ -186,70 +187,102 @@ git commit -m "test: validate the shared style anchor"
 
 - [ ] **Step 1: Render the deterministic repair raster**
 
-Run this one-off command from the repository root:
+Run this exact one-off builder from the repository root:
 
 ```bash
 python - <<'PY'
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
+
+PAPER = "#F7F5F0"
+INK = "#1B1B19"
+CORAL = "#C96157"
+GLYPHS = {
+    ".": ("00000", "00000", "00000", "00000", "00000", "00110", "00110"),
+    "A": ("01110", "10001", "10001", "11111", "10001", "10001", "10001"),
+    "D": ("11110", "10001", "10001", "10001", "10001", "10001", "11110"),
+    "E": ("11111", "10000", "10000", "11110", "10000", "10000", "11111"),
+    "G": ("01110", "10001", "10000", "10111", "10001", "10001", "01110"),
+    "I": ("11111", "00100", "00100", "00100", "00100", "00100", "11111"),
+    "L": ("10000", "10000", "10000", "10000", "10000", "10000", "11111"),
+    "M": ("10001", "11011", "10101", "10101", "10001", "10001", "10001"),
+    "N": ("10001", "11001", "10101", "10011", "10001", "10001", "10001"),
+    "O": ("01110", "10001", "10001", "10001", "10001", "10001", "01110"),
+    "Q": ("01110", "10001", "10001", "10001", "10101", "10010", "01101"),
+    "R": ("11110", "10001", "10001", "11110", "10100", "10010", "10010"),
+    "S": ("01111", "10000", "10000", "01110", "00001", "00001", "11110"),
+    "T": ("11111", "00100", "00100", "00100", "00100", "00100", "00100"),
+    "U": ("10001", "10001", "10001", "10001", "10001", "10001", "01110"),
+}
+
+
+def draw_text(
+    draw: ImageDraw.ImageDraw,
+    position: tuple[int, int],
+    text: str,
+    *,
+    scale: int,
+    tracking: int,
+) -> None:
+    x, y = position
+    for character in text:
+        if character == " ":
+            x += 5 * scale + tracking
+            continue
+        glyph = GLYPHS[character]
+        for row, bits in enumerate(glyph):
+            for column, bit in enumerate(bits):
+                if bit == "1":
+                    left = x + column * scale
+                    top = y + row * scale
+                    draw.rectangle(
+                        (left, top, left + scale - 1, top + scale - 1),
+                        fill=INK,
+                    )
+        x += 5 * scale + tracking
+
 
 output = Path(
     "pilots/01-agentic-discipline/references/style-anchor-light.png"
 )
 output.parent.mkdir(parents=True, exist_ok=True)
-
-paper = "#F7F5F0"
-ink = "#1B1B19"
-coral = "#C96157"
-image = Image.new("RGB", (1080, 1350), paper)
+image = Image.new("RGB", (1080, 1350), PAPER)
 draw = ImageDraw.Draw(image)
 
-headline_font = ImageFont.truetype(
-    "/usr/share/fonts/opentype/inter/InterDisplay-Bold.otf", 104
-)
-support_font = ImageFont.truetype(
-    "/usr/share/fonts/opentype/inter/InterDisplay-Medium.otf", 42
-)
-
-
-def tracked_text(
-    position: tuple[int, int],
-    text: str,
-    font: ImageFont.FreeTypeFont,
-    tracking: int,
-) -> None:
-    x, y = position
-    for character in text:
-        draw.text((x, y), character, font=font, fill=ink)
-        x += int(draw.textlength(character, font=font)) + tracking
-
-
-tracked_text((72, 88), "QUIET", headline_font, 3)
-tracked_text((72, 190), "MODULAR", headline_font, 3)
-tracked_text((72, 350), "ONE IDEA.", support_font, 2)
-tracked_text((72, 410), "ONE SIGNAL.", support_font, 2)
-
-draw.line((372, 462, 688, 900), fill=ink, width=2)
-draw.rectangle((688, 900, 1008, 1220), fill=coral)
-
+draw_text(draw, (72, 88), "QUIET", scale=14, tracking=14)
+draw_text(draw, (72, 208), "MODULAR", scale=14, tracking=14)
+draw_text(draw, (72, 370), "ONE IDEA.", scale=7, tracking=8)
+draw_text(draw, (72, 438), "ONE SIGNAL.", scale=7, tracking=8)
+draw.line((388, 510, 688, 900), fill=INK, width=3)
+draw.rectangle((688, 900, 1007, 1219), fill=CORAL)
 image.save(output, format="PNG", optimize=True)
 print(output)
 PY
 ```
 
-Expected: the command prints the canonical path and creates an RGB PNG with one coral square occupying approximately 7.0% of the canvas.
+Expected: the command prints the canonical path and creates an 8031-byte RGB PNG with one 320×320 coral square.
 
-- [ ] **Step 2: Run deterministic metadata validation**
+- [ ] **Step 2: Verify exact file identity and raster metadata**
 
 Run:
 
 ```bash
+sha256sum pilots/01-agentic-discipline/references/style-anchor-light.png
+git hash-object pilots/01-agentic-discipline/references/style-anchor-light.png
 python tools/validate_style_anchor.py \
   pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-Expected: `style anchor valid`.
+Expected:
+
+```text
+7ba4a191e97a777285b676b17484d8dbc64eed5216b1e1129634f5da81bd49d6
+7d9ce5b37525cab14cde8bd8df61881fcd97003a
+style anchor valid
+```
+
+When uploading through the Git data API, require the returned blob SHA to equal `7d9ce5b37525cab14cde8bd8df61881fcd97003a` before advancing the branch ref.
 
 - [ ] **Step 3: Complete the manual visual and copy review**
 
@@ -268,65 +301,18 @@ Inspect the raster at full size and at phone width. Confirm all items before wri
 
 - [ ] **Step 4: Create the provenance sidecar**
 
-Create `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md`:
+Create `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md` with:
 
-```markdown
-# Style Anchor Light — Provenance and Review
-
-**Artifact:** `style-anchor-light.png`  
-**Status:** Approved canonical reference for Pilot 01 Tasks 5–11  
-**Repair date:** 2026-07-17
-
-## Why this file exists
-
-Task 4 was previously marked complete although its required canonical raster was absent. This sidecar records the repaired artifact and prevents the raster from being treated as unexplained binary state.
-
-## Source inputs
-
-- `pilots/01-agentic-discipline/prompts/00-style-anchor.yaml`
-- `docs/superpowers/plans/2026-07-17-csdl-pilot-01.md`, Task 4
-- `specs/2026-07-17-csdl-v0.1-design.md`
-- `references/quiet-modular-density-calibration.png` as the broader approved density direction
-
-## Construction method
-
-This is a deterministic Pillow reconstruction made for the targeted Task 4 repair. It uses system-provided Inter Display fonts; no font binary is committed. It is not represented as an original GPT Image 2 candidate. The full three-candidate generative rerun was intentionally outside the selected repair scope.
-
-## Visible copy review
-
-Expected and observed visible words:
-
-```text
-QUIET MODULAR
-ONE IDEA.
-ONE SIGNAL.
-```
-
-Result: **pass — exact words only; no additional labels or copy.**
-
-## Raster metadata
-
-- format: PNG
-- dimensions: 1080×1350
-- color mode: RGB
-- paper: `#F7F5F0`
-- graphite: `#1B1B19`
-- coral signal: `#C96157`
-
-## Manual visual review
-
-- [x] one upper-left modular technical headline field
-- [x] one muted coral square in the lower-right third
-- [x] one thin graphite vector connects the headline field and signal
-- [x] at least 65% perceived negative space
-- [x] technical but non-sci-fi typography
-- [x] readable at phone width
-- [x] no logo, footer, frame, grid, coordinates, icons, gradients, shadows, or extra labels
-
-## Approval rationale
-
-The artifact is intentionally sparse, preserves the locked Muted Signal palette, demonstrates the Quiet Modular Level A density, and provides a stable visual reference without adding semantic or decorative noise. It is approved as the shared light-mode anchor consumed by Pilot 01 Tasks 5–11.
-```
+- the artifact status and repair date;
+- SHA-256 `7ba4a191e97a777285b676b17484d8dbc64eed5216b1e1129634f5da81bd49d6`;
+- Git blob SHA `7d9ce5b37525cab14cde8bd8df61881fcd97003a`;
+- all four source inputs;
+- the custom 5×7 Pillow construction method;
+- exact-copy review;
+- PNG, dimensions, RGB mode, file size, palette, unique-color count, coral bounds, and area;
+- the complete checked visual-review list;
+- approval rationale;
+- an explicit statement that the raster is a targeted deterministic repair, not an original GPT Image 2 candidate.
 
 - [ ] **Step 5: Commit the raster and evidence**
 
@@ -339,16 +325,19 @@ git commit -m "feat: restore the Quiet Modular style anchor"
 
 ---
 
-### Task 3: Enforce the repair in CI and correct project status
+### Task 3: Enforce the repair and synchronize operational documentation
 
 **Files:**
 - Modify: `.github/workflows/validate.yml`
 - Modify: `STATUS.md`
 - Modify: `CHANGELOG.md`
+- Modify: `README.md`
+- Modify: `AGENTS.md`
+- Modify: `docs/handoff/CODEX_IMAGE_GENERATION.md`
 
 **Interfaces:**
 - Consumes: `tools/validate_style_anchor.py` and the canonical PNG.
-- Produces: a required CI check and truthful repository-level completion evidence.
+- Produces: a required CI check and one consistent Task 5 baseline across all entry points.
 
 - [ ] **Step 1: Add the style-anchor command to CI**
 
@@ -363,29 +352,43 @@ Append after manifest validation in `.github/workflows/validate.yml`:
 
 - [ ] **Step 2: Correct Task 4 evidence in `STATUS.md`**
 
-Replace the Task 4 evidence cell with:
+Use this Task 4 evidence cell:
 
 ```markdown
-`style-anchor-light.png`, provenance sidecar, and dedicated CI validator
+Complete (repaired) | `style-anchor-light.png`, provenance sidecar, dedicated tests, and CI validator
 ```
 
-Add this sentence to the Summary after the style-anchor statement:
-
-```markdown
-The previously missing Task 4 raster has been restored with provenance and an independent validation gate.
-```
-
-Do not change the active next task: it remains Task 5.
+Add the style-anchor validator to the current validation block and retain Task 5 as the active next task.
 
 - [ ] **Step 3: Record the repair in `CHANGELOG.md`**
 
 Add under `## Unreleased`:
 
 ```markdown
-- Repaired Pilot 01 Task 4 by restoring `style-anchor-light.png`, documenting its provenance and manual review, and adding dedicated unit and CI validation.
+- Repaired Pilot 01 Task 4 by restoring `style-anchor-light.png`, documenting its provenance and manual review, verifying its Git blob byte-for-byte, and adding dedicated unit and CI validation.
 ```
 
-- [ ] **Step 4: Run the complete verification suite**
+- [ ] **Step 4: Synchronize the Task 5 baseline**
+
+Update `README.md`, `AGENTS.md`, and `docs/handoff/CODEX_IMAGE_GENERATION.md` so each requires:
+
+```bash
+python -m pytest -q
+python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
+python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
+```
+
+Record the expected results as:
+
+```text
+14 passed
+manifest valid
+style anchor valid
+```
+
+Also link or name `style-anchor-light.provenance.md` wherever the shared reference is introduced.
+
+- [ ] **Step 5: Run the complete verification suite**
 
 Run:
 
@@ -407,24 +410,31 @@ style anchor valid
 
 `git diff --check` must produce no output.
 
-- [ ] **Step 5: Confirm Task 5 remains untouched**
+- [ ] **Step 6: Confirm Task 5 remains untouched**
 
 Run:
 
 ```bash
-git diff --name-only main...HEAD | grep -E 'prompts/01-hook|canonical/light/4x5/01-hook' && exit 1 || true
+git diff --name-only main...HEAD | \
+  grep -E 'prompts/01-hook|canonical/light/4x5/01-hook' && exit 1 || true
 ```
 
 Expected: no output and exit code `0`.
 
-- [ ] **Step 6: Commit the enforcement and status correction**
+- [ ] **Step 7: Commit the enforcement and status correction**
 
 ```bash
-git add .github/workflows/validate.yml STATUS.md CHANGELOG.md
+git add \
+  .github/workflows/validate.yml \
+  STATUS.md \
+  CHANGELOG.md \
+  README.md \
+  AGENTS.md \
+  docs/handoff/CODEX_IMAGE_GENERATION.md
 git commit -m "ci: enforce the Pilot 01 style anchor"
 ```
 
-- [ ] **Step 7: Open a pull request**
+- [ ] **Step 8: Open a pull request and verify CI**
 
 Push branch `codex/repair-task-4-style-anchor` and open a draft pull request into `main` titled:
 
@@ -432,4 +442,4 @@ Push branch `codex/repair-task-4-style-anchor` and open a draft pull request int
 fix: complete Pilot 01 Task 4 style anchor
 ```
 
-The PR body must list the root cause, restored artifacts, validation results, and explicit confirmation that Task 5 was not started.
+The PR body must list the root cause, restored artifacts, exact hashes, validation results, and explicit confirmation that Task 5 was not started. Wait for the GitHub Actions `Validate CSDL` workflow and inspect the job steps before marking the repair complete.
