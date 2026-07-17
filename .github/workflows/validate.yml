@@ -23,3 +23,17 @@ jobs:
         run: >-
           python tools/validate_style_anchor.py
           pilots/01-agentic-discipline/references/style-anchor-light.png
+      - name: Validate existing Pilot 01 canonical assets
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tools.validate_assets import validate_assets
+
+          errors = validate_assets(
+              Path('pilots/01-agentic-discipline'),
+              require_complete=False,
+          )
+          if errors:
+              raise SystemExit('\n'.join(f'ERROR: {error}' for error in errors))
+          print('existing assets valid')
+          PY
