@@ -16,7 +16,8 @@ Before changing anything, read:
 4. `pilots/01-agentic-discipline/manifest.yaml`
 5. the relevant task in `docs/superpowers/plans/2026-07-17-csdl-pilot-01.md`
 6. `pilots/01-agentic-discipline/prompts/00-style-anchor.yaml`
-7. `docs/handoff/CODEX_IMAGE_GENERATION.md` for raster tasks
+7. `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md`
+8. `docs/handoff/CODEX_IMAGE_GENERATION.md` for raster tasks
 
 Do not rely on memory or infer a new direction when these files are explicit.
 
@@ -38,7 +39,7 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Resume Pilot 01 from Task 5 in the implementation plan. Tasks 1–4 are complete. Do not restart or rewrite them unless a failing test or explicit user request requires it.
+Resume Pilot 01 from Task 5 in the implementation plan. Tasks 1–4 are complete; Task 4 includes the repaired canonical style anchor, provenance sidecar, and dedicated validator. Do not restart or rewrite them unless a failing test or explicit user request requires it.
 
 ## Work protocol
 
@@ -95,6 +96,7 @@ For generated images:
 - text must be publication-ready and match the manifest exactly;
 - no gradients, shadows, 3D, glossy surfaces, decorative coordinate systems, or random dot fields;
 - the approved card-specific reference is `pilots/01-agentic-discipline/references/style-anchor-light.png`;
+- the reference's construction, hashes, and review evidence are recorded in `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md`;
 - the broader calibration references are `references/quiet-modular-density-calibration.png` and current canonical references.
 
 ## Validation commands
@@ -104,6 +106,7 @@ Run before every commit:
 ```bash
 python -m pytest -q
 python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
+python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
 After all seven canonical 4:5 cards and three 16:9 adaptations exist, also run:
@@ -113,7 +116,7 @@ python tools/validate_assets.py pilots/01-agentic-discipline
 python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.csv
 ```
 
-Expected baseline before asset completion: nine tests pass and the manifest reports `manifest valid`.
+Expected baseline before card-asset completion: fourteen tests pass, the manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
 
 `validate_scores.py` is a series-level gate. It is expected to fail while unfinished Cards 02–07 still contain placeholder zero scores; validate the current card manually against the rubric and record only evidence that was actually reviewed.
 
@@ -131,7 +134,7 @@ A card task is complete only when:
 - the average score is at least 4.4;
 - the accepted score is recorded in `evaluation/scores.csv`;
 - review notes explain why the selected candidate is canonical;
-- tests and manifest validation pass;
+- tests, manifest validation, and style-anchor validation pass;
 - `STATUS.md` and `CHANGELOG.md` are updated.
 
 ## Source and copyright policy
