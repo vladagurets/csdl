@@ -1,0 +1,30 @@
+language: CSDL
+version: 0.1
+reference: ../references/style-anchor-light.png
+canvas: 1080x1350
+recipe: Hero
+level: A
+density: low
+motion: low
+copy:
+  headline: "СИЛЬНИЙ АГЕНТ ≠ СТІЙКИЙ РЕЗУЛЬТАТ"
+  supporting: "Стабільність з’являється, коли робота має процес, перевірки й пам’ять."
+components:
+  Anchor: 1
+  Signal: 1
+composition:
+  headline_columns: "1–7"
+  signal_position: "lower-right third"
+  visual_mechanism: "one large unstable word block opposed by one small stable coral block"
+  negative_space: "70%"
+  reading_path: "top-left to lower-right"
+palette:
+  background: paper.base
+  ink: ink.primary
+  signal: signal.primary
+constraints:
+  - "display headline is the only large typographic object"
+  - "supporting copy uses two lines maximum"
+  - "one small functional Vector allowed"
+  - "no icons, footer, logo, frame, grid, or extra text"
+  - "all Ukrainian text must be exact"
