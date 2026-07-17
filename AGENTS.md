@@ -39,7 +39,7 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Resume Pilot 01 from Task 6 in the implementation plan. Tasks 1–5 are complete. Task 4 was explicitly reopened: its active reference is now the user-selected GPT Image 2 Ukrainian/Inter anchor with three-candidate review, provenance sidecar, and dedicated validator. Do not restore or reuse the superseded pixel raster; it remains only in Git history.
+Resume Pilot 01 from Task 7 in the implementation plan. Tasks 1–6 are complete. Task 4 was explicitly reopened: its active reference is now the user-selected GPT Image 2 Ukrainian/Inter anchor with three-candidate review, provenance sidecar, and dedicated validator. Do not restore or reuse the superseded pixel raster; it remains only in Git history.
 
 ## Work protocol
 
@@ -98,7 +98,7 @@ For generated images:
 - the approved card-specific reference is `pilots/01-agentic-discipline/references/style-anchor-light.png`;
 - preserve its smooth Ukrainian-capable Inter display/body relationship; do not introduce pixel, bitmap, dot-matrix, segmented, or retro-computer lettering;
 - the reference's GPT generation, candidate selection, hashes, and review evidence are recorded in `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md`;
-- the broader calibration references are `references/quiet-modular-density-calibration.png` and current canonical references.
+- the broader calibration references are under `references/canonical/`, including `quiet-modular-a-b-c-calibration.png`.
 
 ## Validation commands
 
@@ -119,7 +119,7 @@ python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.c
 
 Expected baseline before card-asset completion: seventeen tests pass, the manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
 
-`validate_scores.py` is a series-level gate. It is expected to fail while unfinished Cards 02–07 still contain placeholder zero scores; validate the current card manually against the rubric and record only evidence that was actually reviewed.
+`validate_scores.py` is a series-level gate. It is expected to fail while unfinished Cards 03–07 still contain placeholder zero scores; validate the current card manually against the rubric and record only evidence that was actually reviewed.
 
 ## Definition of done for one card
 

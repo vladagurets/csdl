@@ -38,10 +38,9 @@ STATUS.md                         completed, active, blocked, and next work
 ROADMAP.md                        milestones after Pilot 01
 specs/                            approved design specifications
 docs/superpowers/plans/           task-by-task implementation plans
-docs/handoff/                     Codex handoff, image workflow, and resume prompts
+docs/handoff/                     current Codex raster workflow
 pilots/01-agentic-discipline/     canonical copy, prompts, evaluation, assets
 references/canonical/             approved visual anchors
-references/archive/               superseded explorations; never use as canon
 research/                         source analysis without redistributing source PDFs
 tools/ and tests/                 validation and assembly tooling
 ```
@@ -75,4 +74,4 @@ The repository separates **design governance** from **raster generation**:
 
 Pilot 01 explains how disciplined workflows and retained learning make agentic development more reliable over time. Its source of truth is [`pilots/01-agentic-discipline/manifest.yaml`](pilots/01-agentic-discipline/manifest.yaml).
 
-The first unfinished implementation item is **Task 5: generate and approve Card 01 — Hook / Level A**.
+The first unfinished implementation item is **Task 7: generate and approve Card 03 — Four-layer model / Level B**.

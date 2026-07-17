@@ -1,37 +1,36 @@
 # Codex Image Generation Workflow
 
-This document defines the approved raster-production route for CSDL tasks.
+This document defines the reusable raster-production route for CSDL card tasks. The active card and exact output contract always come from `STATUS.md`, the relevant implementation-plan task, and `manifest.yaml`.
 
 ## Default route: built-in `$imagegen`
 
 Use built-in Codex image generation for normal Pilot 01 card work.
 
 - Invoke the capability explicitly with `$imagegen`.
-- Built-in generation uses `gpt-image-2`.
-- It counts toward the user's general Codex usage limits.
+- Built-in generation uses `gpt-image-2` and counts toward the user's Codex usage limits.
 - It does not require `OPENAI_API_KEY`.
-- Attach the approved style reference with `-i` or `--image` when the active Codex surface supports that syntax.
+- Attach the approved style reference when the active Codex surface supports image inputs.
 - Do not inspect API environment variables or install the OpenAI SDK before attempting the built-in route.
 
 Official reference: [Image generation in Codex](https://learn.chatgpt.com/docs/image-generation).
 
 ## Approved shared reference
 
-Use this file as the primary visual reference for Pilot 01 Tasks 5–11:
+Use this file as the primary visual reference for Pilot 01 card generation:
 
 ```text
 pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-Its GPT generation route, exact hashes, candidate selection, metadata, and manual review are recorded in:
+Its generation route, exact hashes, candidate selection, metadata, and manual review are recorded in:
 
 ```text
 pilots/01-agentic-discipline/references/style-anchor-light.provenance.md
 ```
 
-The active reference is the exact user-selected GPT Image 2 composition, mechanically normalized to `1080×1350`. Its typography follows the Ukrainian-capable Inter Display / Inter relationship already approved on Card 01. The earlier custom 5×7 pixel raster is superseded and exists only in Git history. Do not use pixel, bitmap, dot-matrix, segmented, or retro-computer lettering for later cards.
+The active reference is the exact user-selected GPT Image 2 composition, mechanically normalized to `1080×1350`. Its typography follows the Ukrainian-capable Inter Display / Inter relationship approved on Card 01. The earlier custom 5×7 pixel raster is superseded and exists only in Git history.
 
-Validate the file before attempting generation. The dedicated validator checks format, dimensions, color mode, and complete PNG data; it rejects both truncated files with readable headers and files with corrupt PNG chunk checksums. Do not replace the reference silently or use a superseded exploratory image as the card-specific reference.
+Validate the reference before generation. The dedicated validator checks format, dimensions, color mode, complete PNG data, and the approved SHA-256. Do not replace it silently or use a superseded exploration as a card-specific reference.
 
 ## Optional routes
 
@@ -41,30 +40,27 @@ A human may generate or edit candidates in ChatGPT Images when Codex's built-in 
 
 ### Programmatic API
 
-Use the Image Generation API only for an explicitly scoped reproducible or larger-batch workflow.
+Use the Image Generation API only for an explicitly scoped reproducible or larger-batch workflow. This route requires `OPENAI_API_KEY`, separately configured API billing/access, network access, and an approved helper implementation with tests. Do not add an API helper incidentally while implementing one card.
 
-This route requires:
+## Per-card execution contract
 
-- `OPENAI_API_KEY`;
-- separately configured API billing/access;
-- network access;
-- an approved helper implementation and tests.
+### 1. Resolve the active task
 
-A ChatGPT or Codex subscription does not automatically fund API calls. Do not add an API helper incidentally while implementing one card.
+Read:
 
-## Task 5 execution contract
+- `STATUS.md` for the current task;
+- the matching task in `docs/superpowers/plans/2026-07-17-csdl-pilot-01.md`;
+- the matching card entry in `pilots/01-agentic-discipline/manifest.yaml`;
+- `pilots/01-agentic-discipline/prompts/00-style-anchor.yaml`;
+- the approved style-anchor provenance sidecar.
 
-### 1. Prepare the prompt package
+Treat manifest copy as immutable unless the user explicitly approves a copy change.
 
-Create:
+### 2. Prepare the prompt package
 
-```text
-pilots/01-agentic-discipline/prompts/01-hook.yaml
-```
+Create the per-card YAML file at the path specified by the implementation plan. It must declare the recipe, expression level, semantic components, visual mechanism, palette roles, negative-space target, exact visible copy, and hard exclusions.
 
-The visible copy must match `manifest.yaml` character-for-character.
-
-### 2. Run deterministic baseline checks
+### 3. Run deterministic baseline checks
 
 ```bash
 python -m pytest -q
@@ -72,7 +68,7 @@ python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-Expected:
+Expected baseline before card-asset completion:
 
 ```text
 17 passed
@@ -80,98 +76,58 @@ manifest valid
 style anchor valid
 ```
 
-If the style-anchor command fails, stop before image generation and repair or restore the shared reference. Do not substitute another file without explicit approval and updated provenance.
+If the style-anchor command fails, stop before image generation. Do not substitute another reference without explicit approval and updated provenance.
 
-### 3. Generate three independent candidates
+### 4. Generate three independent candidates
 
-Use the same prompt and the same primary reference each time:
+Use the same card prompt and primary reference for all three candidates. Save them under the task-specific ignored draft directory and use the filenames defined by the implementation plan.
 
-```text
-pilots/01-agentic-discipline/references/style-anchor-light.png
-```
+Do not silently promote the first candidate. Reject any candidate with incorrect text, unrelated UI chrome, extra labels, non-semantic decoration, an incorrect expression level, or unreadable phone-size copy.
 
-Explicitly invoke `$imagegen` for each candidate and request 4:5 portrait output at 1080×1350.
+### 5. Stop for human selection
 
-Save drafts as:
+Present all three candidates with enough visual evidence to compare full-resolution composition and phone-width readability. A candidate becomes canonical only after explicit human approval.
 
-```text
-pilots/01-agentic-discipline/drafts/light/4x5/01-hook/01-hook-v1.png
-pilots/01-agentic-discipline/drafts/light/4x5/01-hook/01-hook-v2.png
-pilots/01-agentic-discipline/drafts/light/4x5/01-hook/01-hook-v3.png
-```
+### 6. Persist review evidence
 
-Drafts are ignored by Git.
+Record in `pilots/01-agentic-discipline/evaluation/review.md`:
 
-### 4. Stop for human visual selection
-
-Do not silently promote the first candidate. Present all three candidates for review.
-
-Reject a candidate when it has any of the following:
-
-- incorrect Ukrainian text;
-- more than one coral object;
-- less than approximately 60% perceived negative space;
-- extra labels, grid marks, logos, footer, frame, or UI chrome;
-- a Level C poster character instead of Level A Quiet;
-- unreadable body text at phone size.
-
-### 5. Persist selection evidence
-
-Record in:
-
-```text
-pilots/01-agentic-discipline/evaluation/review.md
-```
-
-Required evidence:
-
-- all three candidate filenames;
+- all candidate filenames;
 - rejection reason for every rejected candidate;
 - selected candidate filename;
 - exact-copy review result;
 - dimensions and color-mode result;
-- explanation of why the selected image is canonical.
+- full-resolution and phone-width review results;
+- why the selected image is canonical.
 
-Update Card 01 in:
-
-```text
-pilots/01-agentic-discipline/evaluation/scores.csv
-```
-
-Thresholds:
+Update the card row in `pilots/01-agentic-discipline/evaluation/scores.csv`. Required thresholds are:
 
 - clarity = 5;
-- mobile_readability = 5;
-- text_fidelity = 5;
-- all other criteria >= 4;
+- mobile readability = 5;
+- text fidelity = 5;
+- every other criterion >= 4;
 - average >= 4.4.
 
-`validate_scores.py` remains a series-level gate and is expected to fail until all seven rows are complete.
+`validate_scores.py` remains a series-level gate and is expected to fail until all seven card rows are complete.
 
-### 6. Promote the approved candidate
+### 7. Promote and validate
 
-Copy only the human-approved draft to:
+Copy only the human-approved candidate to the canonical path specified by the implementation plan. Then update `STATUS.md` and `CHANGELOG.md` and rerun the baseline validations.
 
-```text
-pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png
+After all seven 4:5 cards and three 16:9 adaptations exist, also run:
+
+```bash
+python tools/validate_assets.py pilots/01-agentic-discipline
+python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.csv
 ```
 
-Then update `STATUS.md` and `CHANGELOG.md`, run all three baseline validations again, and open a pull request.
+## Capability blocker
 
-## Corrected Codex task prompt
+If built-in image generation is unavailable or disabled by workspace settings:
 
-```text
-Implement only Task 5 of the Pilot 01 plan on a new branch named codex/pilot-01-card-01.
+1. finish the complete YAML prompt package;
+2. report `built-in Codex image generation unavailable` and the last passing validation;
+3. state the expected draft filenames, canonical path, and dimensions;
+4. stop at the human generation/review gate.
 
-Read AGENTS.md, STATUS.md, DECISIONS.md, the Foundation v0.1 spec, pilots/01-agentic-discipline/manifest.yaml, Task 5 in the implementation plan, pilots/01-agentic-discipline/references/style-anchor-light.provenance.md, and docs/handoff/CODEX_IMAGE_GENERATION.md.
-
-Preserve manifest copy exactly. Create prompts/01-hook.yaml first and run the tests, manifest validation, and dedicated style-anchor validation. Expected baseline: 17 tests pass, the manifest is valid, and the style anchor is valid.
-
-Then explicitly invoke $imagegen three times, using pilots/01-agentic-discipline/references/style-anchor-light.png as the primary visual reference. Built-in Codex image generation uses gpt-image-2 and does not require OPENAI_API_KEY. Do not inspect API credentials, install an API SDK, or create an API helper in this task.
-
-Save three candidates under drafts/light/4x5/01-hook/ using the required filenames. Present all three for human selection and do not promote a candidate until approval is explicit.
-
-After approval, persist candidate and selection evidence in evaluation/review.md, record the accepted Card 01 score in scores.csv, copy the selected candidate to canonical/light/4x5/01-hook.png, update STATUS.md and CHANGELOG.md, rerun validation, commit, push, and open a pull request.
-
-If the $imagegen capability itself is unavailable on this Codex surface or disabled by workspace settings, stop at the visual review gate. Report the exact capability blocker and the last passing validation command. Do not treat an unset OPENAI_API_KEY as a blocker for the built-in route, and do not create a placeholder PNG.
-```
+Do not treat an unset `OPENAI_API_KEY` as a blocker for the built-in route, silently switch generation routes, or create placeholder raster assets.

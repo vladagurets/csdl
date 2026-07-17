@@ -18,6 +18,7 @@
 - Completed Pilot 01 Task 5 with the approved Card 01 Hook / Level A raster, exact-copy and mobile review evidence, accepted rubric scores, and transparent deterministic fallback provenance after unusable built-in image outputs.
 - Closed the final Task 5 promotion gap by replacing the approximate runner re-render with the byte-for-byte user-selected V1 and adding permanent SHA-256 and Git-blob identity enforcement.
 - Completed Pilot 01 Task 6 with three built-in GPT Image 2 candidates, explicit user selection of Card 02 V1, exact-copy and phone-width review, persisted rejection evidence, and an accepted `4.71` rubric score.
+- Removed superseded reference boards, completed-import and stale Task 5 handoffs, the rejected bitmap-repair plan/spec, and a byte-identical duplicate calibration image from the active tree; retained historical recoverability through Git and refreshed current Task 7 guidance.
 
 ## 2026-07-17 — GitHub target confirmed
 

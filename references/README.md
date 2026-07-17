@@ -4,9 +4,9 @@
 
 `canonical/` contains approved visual anchors that may guide future generation. They still contain AI-rendered specimen text and are not publication assets unless explicitly promoted under a pilot release.
 
-## Archive
+## Superseded references
 
-`archive/` preserves earlier explorations, rejected density levels, typography comparisons, and superseded directions. These files explain how decisions were reached but **must not** be used as the primary style reference by Codex or GPT Image 2.
+Rejected explorations are not kept in the active tree. Their decision history is summarized in `DECISIONS.md`, the Foundation specification, and relevant provenance sidecars; original files remain recoverable from Git history.
 
 ## Rules
 
