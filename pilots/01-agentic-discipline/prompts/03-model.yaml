@@ -1,0 +1,41 @@
+language: CSDL
+version: 0.1
+reference: ../references/style-anchor-light.png
+canvas: 1080x1350
+recipe: Framework
+level: B
+density: medium
+motion: low
+copy:
+  headline: "4 ШАРИ AGENTIC DISCIPLINE"
+  nodes:
+    - title: "СТАНДАРТИ"
+      body: "Задають спосіб роботи."
+    - title: "ПЕРЕВІРКИ"
+      body: "Ловлять помилки."
+    - title: "МЕЖІ"
+      body: "Зменшують хаос."
+    - title: "ПАМ’ЯТЬ"
+      body: "Зберігає навчання."
+components:
+  Anchor: 1
+  Cluster: 1
+  Node: 4
+  Vector: 1
+composition:
+  visual_mechanism: "four aligned modules forming one ascending controlled system"
+  node_layout: "vertical stagger or restrained 2×2; never four colored app tiles"
+  active_node: "СТАНДАРТИ in muted coral"
+  secondary_relation: "one thin blue-gray Vector connecting the system"
+  negative_space: "50–55%"
+palette:
+  background: paper.base
+  ink: ink.primary
+  signal: signal.primary
+  service: signal.data
+constraints:
+  - "coral appears on only the active node"
+  - "service blue may appear only on the Vector, not as a second dominant block"
+  - "icons are optional; if used, monochrome line icons only"
+  - "no large background wedge, footer, logo, coordinate marks, or decorative container cards"
+  - "all eight text strings must be exact"
