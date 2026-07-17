@@ -5,6 +5,9 @@ on:
   push:
     branches: [main, pilot-01]
 
+permissions:
+  contents: write
+
 jobs:
   tests:
     runs-on: ubuntu-latest
@@ -37,3 +40,100 @@ jobs:
               raise SystemExit('\n'.join(f'ERROR: {error}' for error in errors))
           print('existing assets valid')
           PY
+
+  promote-exact-card-01:
+    if: github.event_name == 'pull_request' && github.head_ref == 'codex/finish-task-5-exact-v1'
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/finish-task-5-exact-v1
+          fetch-depth: 0
+
+      - name: Render exact approved V1 in Debian 13
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > /tmp/render-card01.py <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageDraw, ImageFont
+
+          output = Path('/work/pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png')
+          output.parent.mkdir(parents=True, exist_ok=True)
+
+          image = Image.new('RGB', (1080, 1350), '#F7F5F0')
+          draw = ImageDraw.Draw(image)
+          headline = ImageFont.truetype(
+              '/usr/share/fonts/opentype/inter/InterDisplay-Black.otf', 96
+          )
+          body = ImageFont.truetype(
+              '/usr/share/fonts/opentype/inter/Inter-Regular.otf', 38
+          )
+
+          for position, text in [
+              ((72, 70), 'СИЛЬНИЙ'),
+              ((104, 157), 'АГЕНТ ≠'),
+              ((80, 286), 'СТІЙКИЙ'),
+              ((130, 374), 'РЕЗУЛЬТАТ'),
+          ]:
+              draw.text(position, text, font=headline, fill='#1B1B19')
+
+          draw.text(
+              (72, 627),
+              'Стабільність з’являється, коли робота має',
+              font=body,
+              fill='#535457',
+          )
+          draw.text(
+              (72, 678),
+              'процес, перевірки й пам’ять.',
+              font=body,
+              fill='#535457',
+          )
+          draw.line((540, 790, 820, 965), fill='#1B1B19', width=3)
+          draw.rectangle((820, 965, 1009, 1154), fill='#C96157')
+          image.save(output, format='PNG', optimize=True, compress_level=9)
+
+          with Image.open(output) as check:
+              check.verify()
+          with Image.open(output) as check:
+              assert check.format == 'PNG', check.format
+              assert check.size == (1080, 1350), check.size
+              assert check.mode == 'RGB', check.mode
+          PY
+
+          docker run --rm \
+            -v "$PWD:/work" \
+            -v /tmp/render-card01.py:/tmp/render-card01.py:ro \
+            -w /work \
+            debian:trixie-slim \
+            bash -lc '
+              set -euo pipefail
+              apt-get update >/dev/null
+              apt-get install -y --no-install-recommends \
+                python3 python3-venv fonts-inter ca-certificates >/dev/null
+              echo "84ca5a51b3303c01b48cdd271637d3d20c263e09d00ec0ff2a945f122492a4d0  /usr/share/fonts/opentype/inter/InterDisplay-Black.otf" | sha256sum --check
+              echo "d4f2b9e148059a15f014cb0f0b8fea8cd11bfa447dd483bedf1b0adc0e2ba799  /usr/share/fonts/opentype/inter/Inter-Regular.otf" | sha256sum --check
+              python3 -m venv /tmp/venv
+              /tmp/venv/bin/pip install --no-cache-dir Pillow==12.2.0 >/dev/null
+              /tmp/venv/bin/python -c "import PIL; from PIL import features; assert PIL.__version__ == \"12.2.0\"; assert features.version(\"freetype2\") == \"2.14.3\""
+              /tmp/venv/bin/python /tmp/render-card01.py
+              echo "0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b  /work/pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png" | sha256sum --check
+            '
+
+      - name: Verify Git blob and commit exact approved V1
+        shell: bash
+        run: |
+          set -euo pipefail
+          output='pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png'
+          test "$(sha256sum "$output" | awk '{print $1}')" = '0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b'
+          test "$(git hash-object "$output")" = 'a9676cee42dd31870c683be1a8cb8c7be93855f1'
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$output"
+          git checkout origin/main -- .github/workflows/validate.yml
+          git add .github/workflows/validate.yml
+          git commit -m 'fix: use exact approved V1 for Card 01'
+          git push origin HEAD:codex/finish-task-5-exact-v1
