@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import sys
 from pathlib import Path
 
@@ -7,9 +8,16 @@ from PIL import Image
 
 EXPECTED_SIZE = (1080, 1350)
 ALLOWED_MODES = {"RGB", "RGBA"}
+EXPECTED_CANONICAL_SHA256 = (
+    "c262389d5fbfbd8b2f90039f671d81625476aebf40dfbfc5f19373c6fd91f675"
+)
 
 
-def validate_style_anchor(path: Path) -> list[str]:
+def validate_style_anchor(
+    path: Path,
+    *,
+    expected_sha256: str | None = None,
+) -> list[str]:
     if not path.exists():
         return [f"missing style anchor: {path.as_posix()}"]
 
@@ -32,6 +40,14 @@ def validate_style_anchor(path: Path) -> list[str]:
             image.verify()
     except (OSError, SyntaxError):
         errors.append(f"{path.name} must be a readable PNG")
+
+    if expected_sha256 is not None:
+        actual_sha256 = hashlib.sha256(path.read_bytes()).hexdigest()
+        if actual_sha256 != expected_sha256:
+            errors.append(
+                f"{path.name} SHA-256 must be {expected_sha256}, "
+                f"got {actual_sha256}"
+            )
     return errors
 
 
@@ -40,7 +56,10 @@ def main() -> int:
         print("usage: python tools/validate_style_anchor.py STYLE_ANCHOR_PNG")
         return 2
 
-    errors = validate_style_anchor(Path(sys.argv[1]))
+    errors = validate_style_anchor(
+        Path(sys.argv[1]),
+        expected_sha256=EXPECTED_CANONICAL_SHA256,
+    )
     if errors:
         for error in errors:
             print(f"ERROR: {error}")

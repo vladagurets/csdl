@@ -1,5 +1,7 @@
 # Task 4 Style Anchor Repair Implementation Plan
 
+> **Historical plan:** this plan produced the first deterministic bitmap repair. The user later rejected that raster as an active reference. The current GPT Image 2 / Inter-based replacement and selection evidence live in `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md`; the pixel raster remains only in Git history.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task.
 
 **Goal:** Restore Pilot 01 Task 4 with the missing canonical style-anchor raster, persistent provenance, an independent validation gate, CI enforcement, and truthful operational documentation.

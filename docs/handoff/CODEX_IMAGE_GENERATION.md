@@ -23,11 +23,13 @@ Use this file as the primary visual reference for Pilot 01 Tasks 5–11:
 pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-Its deterministic construction method, exact hashes, metadata, and manual review are recorded in:
+Its GPT generation route, exact hashes, candidate selection, metadata, and manual review are recorded in:
 
 ```text
 pilots/01-agentic-discipline/references/style-anchor-light.provenance.md
 ```
+
+The active reference is the exact user-selected GPT Image 2 composition, mechanically normalized to `1080×1350`. Its typography follows the Ukrainian-capable Inter Display / Inter relationship already approved on Card 01. The earlier custom 5×7 pixel raster is superseded and exists only in Git history. Do not use pixel, bitmap, dot-matrix, segmented, or retro-computer lettering for later cards.
 
 Validate the file before attempting generation. The dedicated validator checks format, dimensions, color mode, and complete PNG data; it rejects both truncated files with readable headers and files with corrupt PNG chunk checksums. Do not replace the reference silently or use a superseded exploratory image as the card-specific reference.
 
@@ -73,7 +75,7 @@ python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/st
 Expected:
 
 ```text
-16 passed
+17 passed
 manifest valid
 style anchor valid
 ```
@@ -163,7 +165,7 @@ Implement only Task 5 of the Pilot 01 plan on a new branch named codex/pilot-01-
 
 Read AGENTS.md, STATUS.md, DECISIONS.md, the Foundation v0.1 spec, pilots/01-agentic-discipline/manifest.yaml, Task 5 in the implementation plan, pilots/01-agentic-discipline/references/style-anchor-light.provenance.md, and docs/handoff/CODEX_IMAGE_GENERATION.md.
 
-Preserve manifest copy exactly. Create prompts/01-hook.yaml first and run the tests, manifest validation, and dedicated style-anchor validation. Expected baseline: 16 tests pass, the manifest is valid, and the style anchor is valid.
+Preserve manifest copy exactly. Create prompts/01-hook.yaml first and run the tests, manifest validation, and dedicated style-anchor validation. Expected baseline: 17 tests pass, the manifest is valid, and the style anchor is valid.
 
 Then explicitly invoke $imagegen three times, using pilots/01-agentic-discipline/references/style-anchor-light.png as the primary visual reference. Built-in Codex image generation uses gpt-image-2 and does not require OPENAI_API_KEY. Do not inspect API credentials, install an API SDK, or create an API helper in this task.
 

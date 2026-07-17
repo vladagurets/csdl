@@ -32,6 +32,7 @@
 | D-023 | Pilot 01 topic is **Agentic Discipline: Superpowers × Compound Engineering**. | It tests comparison, process, framework, checklist, and share-card recipes in one real series. |
 | D-024 | Pilot 01 canonical copy lives in `manifest.yaml`. | Raster text must not become the source of truth. |
 | D-025 | Only approved references and final assets are committed; drafts are ignored. | Keeps the repository useful to Codex without turning Git history into an uncontrolled image dump. |
+| D-026 | Pilot 01 uses the user-selected GPT Image 2 Ukrainian/Inter style anchor; the pixel-font repair is superseded. | Aligns the shared reference with approved Card 01 typography and verified Ukrainian rendering without prematurely locking the final licensed font family. |
 
 ## Deferred decisions
 
