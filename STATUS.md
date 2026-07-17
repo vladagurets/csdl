@@ -7,7 +7,7 @@
 
 ## Summary
 
-Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical content, validation tooling, a scoring rubric, and a shared Quiet Modular style anchor. Task 4 was reopened after the user rejected the temporary pixel-font repair: the active anchor is now the explicitly selected GPT Image 2 output, uses exact Ukrainian copy and Card 01's Inter-based typography direction, and has three-candidate review plus byte-level provenance. Card 01 — Hook / Level A is approved in the canonical asset tree with exact-copy review, mobile review, score evidence, deterministic fallback provenance, and byte-for-byte identity with the user-selected V1. The repository has been imported to `vladagurets/csdl`, Codex can read it, and GitHub write access has been verified.
+Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical content, validation tooling, a scoring rubric, and a shared Quiet Modular style anchor. Task 4 was reopened after the user rejected the temporary pixel-font repair: the active anchor is now the explicitly selected GPT Image 2 output, uses exact Ukrainian copy and Card 01's Inter-based typography direction, and has three-candidate review plus byte-level provenance. Cards 01 and 02 are approved in the canonical asset tree with exact-copy, full-resolution, phone-width, selection, and score evidence. The repository has been imported to `vladagurets/csdl`, Codex can read it, and GitHub write access has been verified.
 
 ## Completed
 
@@ -18,6 +18,7 @@ Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical 
 | Task 3 — raster-asset and rubric validation | Complete | commit `15efea1` |
 | Task 4 — shared light-mode style anchor and generation boilerplate | Complete (reopened and corrected) | user-selected GPT Image 2 `style-anchor-light.png`, Ukrainian/Inter provenance, three-candidate review, dedicated tests, and CI validator |
 | Task 5 — Card 01 Hook / Level A | Complete | exact selected `01-hook-v1.png` bytes at the canonical path, provenance, review evidence, score row, and permanent checksum gate |
+| Task 6 — Card 02 Problem / Level A | Complete | user-selected built-in GPT Image 2 `02-problem-v1.png`, three-candidate review, exact-copy and phone-width evidence, and accepted score row |
 
 Additional completed foundation work:
 
@@ -35,22 +36,22 @@ Additional completed foundation work:
 
 ## Active next task
 
-### Task 6 — Generate and approve Card 02: Problem / Level A
+### Task 7 — Generate and approve Card 03: Four-layer model / Level B
 
 Canonical content:
 
-- headline: `AD-HOC РОБОТА РОЗПАДАЄТЬСЯ МІЖ СЕСІЯМИ`
-- supporting copy: `Рішення губляться. Перевірки повторюються. Помилки повертаються.`
-- mechanism: one broken Loop with three detached Nodes
-- components: Loop, Node, Signal
-- expression: Level A / Quiet
-- output: `pilots/01-agentic-discipline/canonical/light/4x5/02-problem.png`
+- headline: `4 ШАРИ AGENTIC DISCIPLINE`
+- supporting copy: `Стандарти задають спосіб роботи. Перевірки ловлять помилки. Межі зменшують хаос. Пам’ять зберігає навчання.`
+- mechanism: four aligned Nodes forming one controlled Cluster
+- components: Anchor, Cluster, Node, Vector
+- expression: Level B / Constructive
+- output: `pilots/01-agentic-discipline/canonical/light/4x5/03-model.png`
 
-Follow the exact Task 6 steps in `docs/superpowers/plans/2026-07-17-csdl-pilot-01.md` and the execution rules in `docs/handoff/CODEX_IMAGE_GENERATION.md`.
+Follow the exact Task 7 steps in `docs/superpowers/plans/2026-07-17-csdl-pilot-01.md` and the execution rules in `docs/handoff/CODEX_IMAGE_GENERATION.md`.
 
 ## Image-generation execution route
 
-The default Task 6 route remains built-in Codex image generation:
+The default Task 7 route remains built-in Codex image generation:
 
 - invoke `$imagegen` explicitly;
 - use `gpt-image-2` through the user's Codex plan/usage limits;
@@ -66,7 +67,7 @@ If `$imagegen` is unavailable or produces unusable output on the active surface,
 ## Remaining Pilot 01 work
 
 - [x] Task 5 — Card 01 Hook / Level A
-- [ ] Task 6 — Card 02 Problem / Level A
+- [x] Task 6 — Card 02 Problem / Level A
 - [ ] Task 7 — Card 03 Four-layer model / Level B
 - [ ] Task 8 — Card 04 Complementary comparison / Level A
 - [ ] Task 9 — Card 05 Synthesis loop / Level B
@@ -108,9 +109,19 @@ Card 01 raster validation:
 - byte-for-byte identity with user-selected `01-hook-v1.png` confirmed;
 - accepted score average `4.71`, with clarity, mobile readability, and text fidelity at `5/5`.
 
-Full asset validation remains incomplete until Cards 02–07 and the three 16:9 adaptations exist. The series-level score validator is expected to fail while unfinished rows `02`–`07` retain zero placeholders.
+Card 02 raster validation:
 
-## Open constraints, not Task 6 blockers
+- PNG, `1080×1350`, RGB;
+- exact canonical copy manually verified;
+- full-resolution and `216×270` phone-width review passed;
+- SHA-256 `3b1693ed05ee6c61753fbd37e1b6f128333f3012da98f0ca91ca2a263c1c0525`;
+- Git blob SHA `ddc8cf538f6e65c8f7c6dab8b3da14f4b566c3d0`;
+- byte-for-byte identity with user-selected `02-problem-v1.png` confirmed;
+- accepted score average `4.71`, with clarity, mobile readability, and text fidelity at `5/5`.
+
+Full asset validation remains incomplete until Cards 03–07 and the three 16:9 adaptations exist. The series-level score validator is expected to fail while unfinished rows `03`–`07` retain zero placeholders.
+
+## Open constraints, not Task 7 blockers
 
 1. Final font families remain deferred; prompts use role descriptions rather than licensed font binaries.
 2. The repository has no public license yet. Do not assume reuse rights for generated assets or documentation until a license decision is recorded.
@@ -119,11 +130,11 @@ Full asset validation remains incomplete until Cards 02–07 and the three 16:9 
 ## Resume prompt
 
 ```text
-Read AGENTS.md, STATUS.md, DECISIONS.md, the Foundation v0.1 spec, Pilot 01 manifest, Task 6 of the implementation plan, the approved style-anchor provenance, and docs/handoff/CODEX_IMAGE_GENERATION.md.
+Read AGENTS.md, STATUS.md, DECISIONS.md, the Foundation v0.1 spec, Pilot 01 manifest, Task 7 of the implementation plan, the approved style-anchor provenance, and docs/handoff/CODEX_IMAGE_GENERATION.md.
 
-Continue only Task 6 on a new branch named codex/pilot-01-card-02. Preserve canonical copy exactly. Create prompts/02-problem.yaml first, run the tests, manifest validation, style-anchor validation, and validation of existing canonical assets, then explicitly invoke $imagegen three times using the approved style-anchor image as visual guidance. Do not inspect or require OPENAI_API_KEY for built-in image generation, and do not create an API helper in this task.
+Continue only Task 7 on a new branch named codex/pilot-01-card-03. Preserve canonical copy exactly. Create prompts/03-model.yaml first, run the tests, manifest validation, style-anchor validation, and validation of existing canonical assets, then explicitly invoke $imagegen three times using the approved style-anchor image as visual guidance. Do not inspect or require OPENAI_API_KEY for built-in image generation, and do not create an API helper in this task.
 
-Save and review three candidates, persist selection and rejection evidence in evaluation/review.md, record the accepted Card 02 score in scores.csv, promote only the human-approved candidate to canonical/light/4x5/02-problem.png, update STATUS.md and CHANGELOG.md, rerun validation, and open a pull request.
+Save and review three candidates, persist selection and rejection evidence in evaluation/review.md, record the accepted Card 03 score in scores.csv, promote only the human-approved candidate to canonical/light/4x5/03-model.png, update STATUS.md and CHANGELOG.md, rerun validation, and open a pull request.
 
 If built-in image generation is unavailable or returns unusable non-CSDL output, stop at the visual review gate and report that exact failure. Do not create a placeholder PNG or silently switch generation routes.
 ```

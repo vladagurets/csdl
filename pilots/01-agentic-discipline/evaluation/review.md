@@ -124,6 +124,75 @@ Average: **4.71 / 5**.
 
 The detailed fallback, renderer requirements, and exact raster provenance are persisted in `canonical/light/4x5/01-hook.provenance.md`.
 
+## Card 02 — Problem / Level A
+
+**Canonical output:** `canonical/light/4x5/02-problem.png`
+
+**Selected draft name:** `02-problem-v1.png`
+
+**Selection:** explicitly approved by the user on 2026-07-17
+
+**Promotion identity:** byte-for-byte exact selected normalized candidate
+
+### Generation route
+
+- Built-in GPT Image 2 generation was invoked three independent times with `prompts/02-problem.yaml` and the approved `references/style-anchor-light.png` reference.
+- Each source output was mechanically normalized from `1122×1402` to `1080×1350` with `sips`; there was no crop, redraw, recolor, regeneration, or compositional edit.
+- All three normalized candidates were reviewed together at full resolution and at `216×270` phone width.
+- The user explicitly selected V1 after the side-by-side review.
+
+### Candidate review
+
+- `02-problem-v1.png` — **selected**. The incomplete Loop reads immediately, the separate coral dash has one unambiguous break-point role, the left-weighted composition preserves controlled asymmetry, and the headline, diagram, and consequences form the clearest single reading path at phone width.
+- `02-problem-v2.png` — rejected. The larger centered Loop occupies too much of the field, weakens the intended Quiet asymmetry, and makes the reading path bend back toward the lower-left copy.
+- `02-problem-v3.png` — rejected. The coral signal is rendered as a square Node rather than a distinct break point, creating the appearance of four Nodes and violating the specified component roles.
+
+### Exact-copy review
+
+Expected and observed copy:
+
+```text
+AD-HOC РОБОТА РОЗПАДАЄТЬСЯ МІЖ СЕСІЯМИ
+Рішення губляться.
+Перевірки повторюються.
+Помилки повертаються.
+```
+
+Result: **pass — every visible character matches manifest card `02`; all text is horizontal and no additional labels are present.**
+
+### Raster, identity, and mobile review
+
+- selected built-in source: PNG, `1122×1402`, RGB, SHA-256 `be5fef28b1ebe7ffa5202c03fd4d9b86c6313fda1bedd86a33bc4574c19805da`;
+- canonical output: PNG, `1080×1350`, RGB, `1,095,616` bytes;
+- canonical SHA-256: `3b1693ed05ee6c61753fbd37e1b6f128333f3012da98f0ca91ca2a263c1c0525`;
+- canonical Git blob SHA: `ddc8cf538f6e65c8f7c6dab8b3da14f4b566c3d0`;
+- byte-for-byte identity with selected normalized `02-problem-v1.png` — pass;
+- full-resolution review — pass;
+- `216×270` phone-width review — pass;
+- smooth Ukrainian-capable non-pixel typography — pass;
+- exactly one incomplete Loop, three graphite square Nodes, and one coral break point — pass;
+- logo, footer, frame, grid, coordinates, icons, UI chrome, extra labels, tangled fragments, explosion, shadow, glossy surface, or 3D treatment — absent.
+
+### Visual mechanism
+
+One thin graphite Loop fails at one coral break point while three square Nodes remain separated around the cycle; the three consequences below name what that discontinuity causes between sessions.
+
+No displayed element can be removed without weakening the problem statement, the incomplete-cycle mechanism, or one of its three explicit consequences.
+
+### Accepted rubric score
+
+| Criterion | Score | Evidence |
+|---|---:|---|
+| clarity | 5 | The broken-cycle problem reads in one headline-to-Loop scan. |
+| mobile_readability | 5 | Headline and all three consequences remain readable at phone width. |
+| memorability | 4 | The single broken Loop is distinct without inflating the card to Level C. |
+| csdl_identity | 4 | Quiet Modular typography, asymmetry, semantic geometry, and one coral Signal are recognizable. |
+| restraint | 5 | The card contains only the required copy and one diagram. |
+| text_fidelity | 5 | Exact canonical Ukrainian copy with no extra text. |
+| semantic_integrity | 5 | Loop, Nodes, and coral break point each carry one explicit role. |
+
+Average: **4.71 / 5**.
+
 ## Series-level checks
 
 - Sequence follows `A → A → B → A → B → A → C`.
