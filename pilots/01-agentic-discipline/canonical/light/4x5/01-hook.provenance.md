@@ -4,8 +4,8 @@
 **Status:** Approved canonical Card 01 / Level A  
 **Selected candidate:** `01-hook-v1.png`  
 **Approval date:** 2026-07-17  
-**SHA-256:** `cf97312ae89b7f03bf6c2f5c5e028b29c518b1d4146a0a24871cedf633ff2d9d`  
-**Git blob SHA:** `eedd3701ccb72b983bfd14e148509ea0871d9514`
+**SHA-256:** `0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b`  
+**Git blob SHA:** `a9676cee42dd31870c683be1a8cb8c7be93855f1`
 
 ## Source contract
 
@@ -22,9 +22,25 @@
 3. The first fallback candidate set was rejected after the user identified broken typography. Its renderer drew glyphs independently and damaged kerning, Ukrainian diacritics, and the `≠` sign.
 4. The corrected renderer drew complete Unicode lines with antialiasing, using Inter Display Black for the headline and Inter Regular for supporting copy. Three corrected candidates were reviewed.
 5. The user explicitly selected `01-hook-v1.png`.
-6. The canonical PNG was reconstructed in GitHub Actions from the reviewed V1 coordinates, copy, palette, and geometry. The runner raster was compared with the locally reviewed V1 before promotion. Geometry, copy, colors, vector, and signal bounds matched. `4,854` pixels—approximately `0.333%` of the canvas—differed only because of font-rasterization and antialiasing differences between environments; no semantic or layout difference was introduced.
+6. The initially promoted canonical file was a semantically identical re-render, not a byte-for-byte copy. That did not satisfy the literal promotion contract and was subsequently replaced.
+7. The final canonical PNG is the exact approved V1 byte stream. SHA-256 and Git blob identity were both verified before promotion, and CI now rejects any future byte drift.
 
-This artifact is therefore a transparent deterministic fallback, not a GPT Image 2 output.
+This artifact is a transparent deterministic fallback, not a GPT Image 2 output.
+
+## Exact reproduction environment
+
+The approved candidate was reproduced and promoted only after matching all of the following:
+
+- Debian 13 / trixie;
+- Python `3.13.5`;
+- Pillow `12.2.0`;
+- RAQM `0.10.3` with FriBiDi `1.0.16`;
+- FreeType `2.14.3`;
+- zlib `1.3.1`;
+- `InterDisplay-Black.otf` SHA-256 `84ca5a51b3303c01b48cdd271637d3d20c263e09d00ec0ff2a945f122492a4d0`;
+- `Inter-Regular.otf` SHA-256 `d4f2b9e148059a15f014cb0f0b8fea8cd11bfa447dd483bedf1b0adc0e2ba799`.
+
+RAQM is required. Rendering the same strings with Pillow's BASIC layout produces different glyph placement and is not canonical.
 
 ## Exact visible copy
 
@@ -45,12 +61,12 @@ Result: **pass — canonical Ukrainian copy only, in the intended reading order.
 - format: PNG
 - dimensions: `1080×1350`
 - color mode: RGB
-- file size: `43,665` bytes
+- file size: `43,522` bytes
 - exact paper color: `#F7F5F0`
 - exact primary ink: `#1B1B19`
 - exact secondary ink: `#535457`
 - exact coral signal: `#C96157`
-- unique raster colors: `479`, including antialiasing shades
+- unique raster colors: `480`, including antialiasing shades
 - exact paper-colored pixels: approximately `90.67%` of the canvas
 - coral square: one `190×190` block in the lower-right third
 - vector: one thin graphite line terminating at the coral signal
@@ -74,6 +90,7 @@ Result: **pass — canonical Ukrainian copy only, in the intended reading order.
 - [x] technical but non-sci-fi typography
 - [x] full-resolution review passed
 - [x] phone-width review at `216×270` passed
+- [x] canonical PNG is byte-for-byte identical to the selected V1
 
 ## Accepted score
 
