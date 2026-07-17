@@ -57,6 +57,7 @@ The selected composition uses a broad upper-left headline field rather than the 
 **Canonical output:** `canonical/light/4x5/01-hook.png`  
 **Selected draft name:** `01-hook-v1.png`  
 **Selection:** explicitly approved by the user on 2026-07-17
+**Promotion identity:** byte-for-byte exact selected candidate
 
 ### Generation route
 
@@ -66,6 +67,7 @@ The selected composition uses a broad upper-left headline field rather than the 
 - The first Pillow candidate set was rejected after the user identified broken typography caused by independent glyph rendering.
 - The renderer was corrected to draw complete Unicode lines with antialiasing, Inter Display Black for the headline, and Inter Regular for supporting copy.
 - Three corrected candidates were then reviewed.
+- The user selected V1, and the final canonical PNG is the exact V1 byte stream rather than a subsequent approximation or re-render.
 
 ### Candidate review
 
@@ -85,12 +87,15 @@ Expected and observed copy:
 
 Result: **pass — every visible word matches manifest card `01`; line wrapping preserves the exact words and reading order.**
 
-### Raster and mobile review
+### Raster, identity, and mobile review
 
 - format: PNG — pass
 - dimensions: `1080×1350` — pass
 - color mode: RGB — pass
-- SHA-256: `cf97312ae89b7f03bf6c2f5c5e028b29c518b1d4146a0a24871cedf633ff2d9d`
+- file size: `43,522` bytes — pass
+- SHA-256: `0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b` — pass
+- Git blob SHA: `a9676cee42dd31870c683be1a8cb8c7be93855f1` — pass
+- byte-for-byte identity with selected `01-hook-v1.png` — pass
 - one coral object only — pass
 - exact paper-colored area: approximately `90.67%` — pass
 - full-resolution review — pass
@@ -117,7 +122,7 @@ No displayed element can be removed without weakening either the proposition, th
 
 Average: **4.71 / 5**.
 
-The detailed fallback and raster provenance is persisted in `canonical/light/4x5/01-hook.provenance.md`.
+The detailed fallback, renderer requirements, and exact raster provenance are persisted in `canonical/light/4x5/01-hook.provenance.md`.
 
 ## Series-level checks
 

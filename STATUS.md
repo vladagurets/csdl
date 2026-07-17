@@ -7,7 +7,7 @@
 
 ## Summary
 
-Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical content, validation tooling, a scoring rubric, and a shared Quiet Modular style anchor. Task 4 was reopened after the user rejected the temporary pixel-font repair: the active anchor is now the explicitly selected GPT Image 2 output, uses exact Ukrainian copy and Card 01's Inter-based typography direction, and has three-candidate review plus byte-level provenance. Card 01 — Hook / Level A is approved in the canonical asset tree with exact-copy review, mobile review, score evidence, and deterministic fallback provenance. The repository has been imported to `vladagurets/csdl`, Codex can read it, and GitHub write access has been verified.
+Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical content, validation tooling, a scoring rubric, and a shared Quiet Modular style anchor. Task 4 was reopened after the user rejected the temporary pixel-font repair: the active anchor is now the explicitly selected GPT Image 2 output, uses exact Ukrainian copy and Card 01's Inter-based typography direction, and has three-candidate review plus byte-level provenance. Card 01 — Hook / Level A is approved in the canonical asset tree with exact-copy review, mobile review, score evidence, deterministic fallback provenance, and byte-for-byte identity with the user-selected V1. The repository has been imported to `vladagurets/csdl`, Codex can read it, and GitHub write access has been verified.
 
 ## Completed
 
@@ -17,7 +17,7 @@ Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical 
 | Task 2 — manifest validation with tests | Complete | commit `875994a` |
 | Task 3 — raster-asset and rubric validation | Complete | commit `15efea1` |
 | Task 4 — shared light-mode style anchor and generation boilerplate | Complete (reopened and corrected) | user-selected GPT Image 2 `style-anchor-light.png`, Ukrainian/Inter provenance, three-candidate review, dedicated tests, and CI validator |
-| Task 5 — Card 01 Hook / Level A | Complete | `01-hook.png`, `01-hook.provenance.md`, `evaluation/review.md`, and Card 01 score row |
+| Task 5 — Card 01 Hook / Level A | Complete | exact selected `01-hook-v1.png` bytes at the canonical path, provenance, review evidence, score row, and permanent checksum gate |
 
 Additional completed foundation work:
 
@@ -59,7 +59,7 @@ The default Task 6 route remains built-in Codex image generation:
 - generate three independent candidates;
 - no `OPENAI_API_KEY` or Python API helper is required for this route.
 
-Task 5 used an explicitly approved deterministic Pillow fallback only after three built-in generations returned unrelated interface screenshots. That exception and its typography correction are recorded in `canonical/light/4x5/01-hook.provenance.md`; it does not silently change the default route for later cards.
+Task 5 used an explicitly approved deterministic Pillow fallback only after three built-in generations returned unrelated interface screenshots. That exception, its typography correction, its RAQM reproduction contract, and its exact byte identity are recorded in `canonical/light/4x5/01-hook.provenance.md`; it does not silently change the default route for later cards.
 
 If `$imagegen` is unavailable or produces unusable output on the active surface, stop at the visual review gate, report the exact failure, and request approval before changing generation route. Do not substitute a placeholder raster.
 
@@ -103,7 +103,9 @@ Card 01 raster validation:
 - PNG, `1080×1350`, RGB;
 - exact canonical copy manually verified;
 - full-resolution and `216×270` phone-width review passed;
-- SHA-256 `cf97312ae89b7f03bf6c2f5c5e028b29c518b1d4146a0a24871cedf633ff2d9d`;
+- SHA-256 `0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b`;
+- Git blob SHA `a9676cee42dd31870c683be1a8cb8c7be93855f1`;
+- byte-for-byte identity with user-selected `01-hook-v1.png` confirmed;
 - accepted score average `4.71`, with clarity, mobile readability, and text fidelity at `5/5`.
 
 Full asset validation remains incomplete until Cards 02–07 and the three 16:9 adaptations exist. The series-level score validator is expected to fail while unfinished rows `02`–`07` retain zero placeholders.
