@@ -25,10 +25,10 @@ Restore Task 4 to a truthful, independently verifiable complete state by adding 
 1. Create `pilots/01-agentic-discipline/references/style-anchor-light.png` as a real `1080×1350` RGB PNG.
 2. Create `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md` with source inputs, construction method, visible-copy review, visual checklist, image metadata, content hashes, and approval rationale.
 3. Create `tools/validate_style_anchor.py` with a focused `validate_style_anchor(path: Path) -> list[str]` interface.
-4. Create `tests/test_validate_style_anchor.py` covering a valid anchor, a missing anchor, non-PNG content, truncated PNG data, wrong dimensions, and unsupported color mode.
+4. Create `tests/test_validate_style_anchor.py` covering a valid anchor, a missing anchor, non-PNG content, truncated PNG data, corrupt PNG checksums, wrong dimensions, and unsupported color mode.
 5. Add the dedicated validator to `.github/workflows/validate.yml` so the missing or damaged artifact cannot regress silently.
 6. Update `STATUS.md` and `CHANGELOG.md` to record that Task 4 was repaired and to name the new evidence.
-7. Update `README.md`, `AGENTS.md`, and `docs/handoff/CODEX_IMAGE_GENERATION.md` so the Task 5 baseline reflects fifteen tests and includes explicit style-anchor validation.
+7. Update `README.md`, `AGENTS.md`, and `docs/handoff/CODEX_IMAGE_GENERATION.md` so the Task 5 baseline reflects sixteen tests and includes explicit style-anchor validation.
 
 ## Out of Scope
 
@@ -74,20 +74,21 @@ The validator reports errors for:
 - missing file;
 - non-PNG format;
 - unreadable or truncated PNG data;
+- corrupt PNG chunk checksums;
 - dimensions other than `1080×1350`;
 - color mode other than `RGB` or `RGBA`.
 
-The validator must call Pillow's `image.verify()` after reading metadata; `Image.open()` alone can accept a truncated PNG whose header remains intact. Visible-copy fidelity and visual restraint remain manual-review responsibilities and are persisted in the provenance sidecar. The committed binary must also be checked byte-for-byte by comparing its Git blob SHA with the locally calculated `git hash-object` result before branch promotion.
+The validator must call Pillow's `image.verify()` after reading metadata; `Image.open()` alone can accept a truncated PNG whose header remains intact. Pillow reports truncated data as `OSError` and bad PNG checksums as `SyntaxError`, so the validator catches those two specific exception families and converts them into one readable validation error. Visible-copy fidelity and visual restraint remain manual-review responsibilities and are persisted in the provenance sidecar. The committed binary must also be checked byte-for-byte by comparing its Git blob SHA with the locally calculated `git hash-object` result before branch promotion.
 
 ## Acceptance Criteria
 
 Task 4 repair is complete when:
 
 1. the PNG exists at the canonical path and passes the dedicated validator;
-2. truncated PNG data is rejected by a regression test;
+2. truncated PNG data and corrupt checksums are rejected by regression tests;
 3. the committed Git blob SHA matches the locally calculated blob SHA;
 4. the provenance sidecar records all source inputs, exact copy, metadata, checklist results, content hashes, and approval rationale;
-5. all fifteen unit tests pass;
+5. all sixteen unit tests pass;
 6. manifest validation still passes;
 7. CI includes and passes the style-anchor command;
 8. `STATUS.md` no longer relies only on the original incomplete commit as Task 4 evidence;
