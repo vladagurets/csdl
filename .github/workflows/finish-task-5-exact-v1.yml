@@ -84,12 +84,7 @@ jobs:
               echo "d4f2b9e148059a15f014cb0f0b8fea8cd11bfa447dd483bedf1b0adc0e2ba799  /usr/share/fonts/opentype/inter/Inter-Regular.otf" | sha256sum --check
               python3 -m venv /tmp/venv
               /tmp/venv/bin/pip install --no-cache-dir Pillow==12.2.0 >/dev/null
-              /tmp/venv/bin/python - <<"PY"
-          from PIL import PILLOW_VERSION if False else features
-          import PIL
-          assert PIL.__version__ == "12.2.0", PIL.__version__
-          assert features.version("freetype2") == "2.14.3", features.version("freetype2")
-          PY
+              /tmp/venv/bin/python -c "import PIL; from PIL import features; assert PIL.__version__ == \"12.2.0\"; assert features.version(\"freetype2\") == \"2.14.3\""
               /tmp/venv/bin/python /tmp/render-card01.py
               echo "0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b  /work/pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png" | sha256sum --check
             '
