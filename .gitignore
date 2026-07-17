@@ -10,3 +10,4 @@ pilots/**/drafts/**/*.png
 pilots/**/candidates/
 pilots/**/previews/tmp/
 exports/
+.scratch

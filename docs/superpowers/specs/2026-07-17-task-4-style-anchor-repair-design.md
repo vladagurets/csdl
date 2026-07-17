@@ -1,8 +1,10 @@
 # Task 4 Style Anchor Repair Design
 
-**Status:** Approved direction  
+**Status:** Superseded historical repair
 **Date:** 2026-07-17  
 **Scope:** Repair the incomplete completion of Pilot 01 Task 4 without starting Task 5.
+
+> This document describes the first deterministic bitmap repair. The user later rejected that raster as an active typographic reference. The current GPT Image 2 replacement, Ukrainian copy, Inter-based direction, candidate review, and explicit selection are recorded in `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md`. The bitmap artifact remains only in Git history.
 
 ## Context
 

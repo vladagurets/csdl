@@ -15,19 +15,31 @@ visual_direction:
   asymmetry: "controlled and grid-aware"
   texture: "very subtle paper grain only; no distressed print"
 typography:
-  display: "modular technical grotesk, square engineering proportions, Ukrainian and English capable"
-  body: "neutral highly legible sans-serif"
+  display: "Ukrainian-capable Inter Display family, using weight and scale to create a quiet modular technical hierarchy"
+  body: "Inter-style neutral highly legible sans-serif"
   code: "clean technical monospace"
   rules:
+    - "render complete Unicode words, never construct letters from separate bitmap glyphs"
+    - "preserve Ukrainian letters and diacritics exactly"
     - "body copy remains horizontal"
     - "no more than one typographic trick"
     - "do not imitate Soviet or 1920s lettering"
 composition:
   grid: "12 columns, 72 px outer margins, 24 px gutters"
+  headline_span: "user-approved broad upper-left display field; the selected anchor supersedes the original 5-column calibration constraint"
   reading_path: "one obvious path, normally top-left to bottom-right"
   footer: none
   repeated_logo: false
+calibration_copy:
+  headline: "ТИХА МОДУЛЬНІСТЬ"
+  supporting:
+    - "ОДНА ІДЕЯ."
+    - "ОДИН СИГНАЛ."
 hard_exclusions:
+  - "no pixel font"
+  - "no bitmap font"
+  - "no dot-matrix lettering"
+  - "no segmented glyph construction"
   - "no UI mockup chrome"
   - "no decorative coordinate systems"
   - "no random dotted grids"

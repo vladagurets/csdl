@@ -7,7 +7,7 @@
 
 ## Summary
 
-Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical content, validation tooling, a scoring rubric, and a shared Quiet Modular style anchor. The previously missing Task 4 raster has been restored with provenance, byte-level identity evidence, and an independent validation gate. Card 01 — Hook / Level A is approved in the canonical asset tree with exact-copy review, mobile review, score evidence, deterministic fallback provenance, and byte-for-byte identity with the user-selected V1. The repository has been imported to `vladagurets/csdl`, Codex can read it, and GitHub write access has been verified.
+Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical content, validation tooling, a scoring rubric, and a shared Quiet Modular style anchor. Task 4 was reopened after the user rejected the temporary pixel-font repair: the active anchor is now the explicitly selected GPT Image 2 output, uses exact Ukrainian copy and Card 01's Inter-based typography direction, and has three-candidate review plus byte-level provenance. Card 01 — Hook / Level A is approved in the canonical asset tree with exact-copy review, mobile review, score evidence, deterministic fallback provenance, and byte-for-byte identity with the user-selected V1. The repository has been imported to `vladagurets/csdl`, Codex can read it, and GitHub write access has been verified.
 
 ## Completed
 
@@ -16,7 +16,7 @@ Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical 
 | Task 1 — repository and canonical content manifest | Complete | commit `c046d2c` |
 | Task 2 — manifest validation with tests | Complete | commit `875994a` |
 | Task 3 — raster-asset and rubric validation | Complete | commit `15efea1` |
-| Task 4 — shared light-mode style anchor and generation boilerplate | Complete (repaired) | `style-anchor-light.png`, provenance sidecar, dedicated tests, and CI validator |
+| Task 4 — shared light-mode style anchor and generation boilerplate | Complete (reopened and corrected) | user-selected GPT Image 2 `style-anchor-light.png`, Ukrainian/Inter provenance, three-candidate review, dedicated tests, and CI validator |
 | Task 5 — Card 01 Hook / Level A | Complete | exact selected `01-hook-v1.png` bytes at the canonical path, provenance, review evidence, score row, and permanent checksum gate |
 
 Additional completed foundation work:
@@ -55,6 +55,7 @@ The default Task 6 route remains built-in Codex image generation:
 - invoke `$imagegen` explicitly;
 - use `gpt-image-2` through the user's Codex plan/usage limits;
 - attach `pilots/01-agentic-discipline/references/style-anchor-light.png` as the primary visual reference;
+- preserve its smooth Ukrainian-capable Inter display/body relationship; do not reintroduce pixel, bitmap, dot-matrix, segmented, or retro-computer lettering;
 - generate three independent candidates;
 - no `OPENAI_API_KEY` or Python API helper is required for this route.
 
@@ -80,7 +81,7 @@ If `$imagegen` is unavailable or produces unusable output on the active surface,
 
 ```text
 python -m pytest -q
-................ [100%]
+................. [100%]
 
 python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
@@ -88,6 +89,14 @@ manifest valid
 python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 style anchor valid
 ```
+
+Active style-anchor validation:
+
+- user-selected GPT Image 2 source, mechanically normalized to PNG `1080×1350`, RGB;
+- exact Ukrainian calibration copy and Card 01 Inter-based hierarchy manually verified;
+- full-resolution and `216×270` phone-width review passed;
+- canonical SHA-256 `c262389d5fbfbd8b2f90039f671d81625476aebf40dfbfc5f19373c6fd91f675`, pinned by the CLI validator;
+- superseded pixel raster is absent from the active tree and retained only in Git history.
 
 Card 01 raster validation:
 

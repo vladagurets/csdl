@@ -11,11 +11,52 @@ For each card:
 5. Identify any element that can be removed without reducing meaning.
 6. Score all seven rubric criteria.
 
+## Shared style anchor — Task 4 reopened typography correction
+
+**Canonical output:** `references/style-anchor-light.png`
+
+**Selected source:** `style-anchor-light-inter-v1-selected-source.png`
+
+**Selection:** explicitly approved by the user on 2026-07-17
+
+### Candidate review
+
+- `style-anchor-light-inter-v1-selected-source.png` — **selected**. Exact file supplied back by the user as `Generated image 5.png`; strongest continuity with Card 01's Inter Display Black / Inter Regular hierarchy and the user's preferred balance of display weight, supporting copy, vector, signal, and negative space.
+- `style-anchor-light-inter-v2-raw.png` — rejected. The quieter scale weakened the display presence and did not match the explicitly preferred candidate.
+- `style-anchor-light-inter-v3-raw.png` — rejected. Mixed headline weights made `ТИХА` too dominant and reduced the balanced Quiet Modular hierarchy.
+
+Three earlier exploratory candidates generated from the broad density-calibration sheet were rejected before the final candidate set because they did not match the already approved Card 01 typography closely enough.
+
+### Exact-copy review
+
+Expected and observed:
+
+```text
+ТИХА
+МОДУЛЬНІСТЬ
+ОДНА ІДЕЯ.
+ОДИН СИГНАЛ.
+```
+
+Result: **pass — exact Ukrainian copy, including `І` and `Ь`, with no additional text.**
+
+### Raster and mobile review
+
+- selected GPT source: PNG, `1122×1402`, RGB, SHA-256 `58b6bbb2fdff56b9b87fbb602f341952ed9ff636977111efd6808ecbb2a767fc`;
+- canonical output: PNG, `1080×1350`, RGB, SHA-256 `c262389d5fbfbd8b2f90039f671d81625476aebf40dfbfc5f19373c6fd91f675`;
+- normalization: Pillow LANCZOS resize only; no crop, redraw, recolor, regeneration, or composition change;
+- full-resolution review — pass;
+- `216×270` phone-width review — pass;
+- pixel/bitmap/dot-matrix typography — absent;
+- logo, footer, frame, grid, coordinates, icons, UI chrome, or extra labels — absent.
+
+The selected composition uses a broad upper-left headline field rather than the original literal five-column span. The user's explicit selection of this exact image is the recorded approval for that override.
+
 ## Card 01 — Hook / Level A
 
 **Canonical output:** `canonical/light/4x5/01-hook.png`  
 **Selected draft name:** `01-hook-v1.png`  
-**Selection:** explicitly approved by the user on 2026-07-17  
+**Selection:** explicitly approved by the user on 2026-07-17
 **Promotion identity:** byte-for-byte exact selected candidate
 
 ### Generation route
