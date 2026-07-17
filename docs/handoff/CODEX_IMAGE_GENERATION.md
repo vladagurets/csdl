@@ -29,7 +29,7 @@ Its deterministic construction method, exact hashes, metadata, and manual review
 pilots/01-agentic-discipline/references/style-anchor-light.provenance.md
 ```
 
-Validate the file before attempting generation. Do not replace it silently or use a superseded exploratory image as the card-specific reference.
+Validate the file before attempting generation. The dedicated validator checks format, dimensions, color mode, and complete PNG data; it rejects truncated files that still have a readable header. Do not replace the reference silently or use a superseded exploratory image as the card-specific reference.
 
 ## Optional routes
 
@@ -73,7 +73,7 @@ python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/st
 Expected:
 
 ```text
-14 passed
+15 passed
 manifest valid
 style anchor valid
 ```
@@ -163,7 +163,7 @@ Implement only Task 5 of the Pilot 01 plan on a new branch named codex/pilot-01-
 
 Read AGENTS.md, STATUS.md, DECISIONS.md, the Foundation v0.1 spec, pilots/01-agentic-discipline/manifest.yaml, Task 5 in the implementation plan, pilots/01-agentic-discipline/references/style-anchor-light.provenance.md, and docs/handoff/CODEX_IMAGE_GENERATION.md.
 
-Preserve manifest copy exactly. Create prompts/01-hook.yaml first and run the tests, manifest validation, and dedicated style-anchor validation. Expected baseline: 14 tests pass, the manifest is valid, and the style anchor is valid.
+Preserve manifest copy exactly. Create prompts/01-hook.yaml first and run the tests, manifest validation, and dedicated style-anchor validation. Expected baseline: 15 tests pass, the manifest is valid, and the style anchor is valid.
 
 Then explicitly invoke $imagegen three times, using pilots/01-agentic-discipline/references/style-anchor-light.png as the primary visual reference. Built-in Codex image generation uses gpt-image-2 and does not require OPENAI_API_KEY. Do not inspect API credentials, install an API SDK, or create an API helper in this task.
 
