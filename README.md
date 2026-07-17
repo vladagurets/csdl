@@ -57,7 +57,7 @@ python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-The baseline currently contains fifteen passing tests. The manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
+The baseline currently contains sixteen passing tests. The manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
 
 ## Image workflow
 
