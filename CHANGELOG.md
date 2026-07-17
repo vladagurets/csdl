@@ -17,6 +17,7 @@
 - Pinned the approved style-anchor SHA-256 in the dedicated validator so CI rejects any silent replacement or restoration of the superseded pixel raster.
 - Completed Pilot 01 Task 5 with the approved Card 01 Hook / Level A raster, exact-copy and mobile review evidence, accepted rubric scores, and transparent deterministic fallback provenance after unusable built-in image outputs.
 - Closed the final Task 5 promotion gap by replacing the approximate runner re-render with the byte-for-byte user-selected V1 and adding permanent SHA-256 and Git-blob identity enforcement.
+- Completed Pilot 01 Task 6 with three built-in GPT Image 2 candidates, explicit user selection of Card 02 V1, exact-copy and phone-width review, persisted rejection evidence, and an accepted `4.71` rubric score.
 
 ## 2026-07-17 — GitHub target confirmed
 
