@@ -1,20 +1,22 @@
 # GitHub Initial Import — `vladagurets/csdl`
 
-## Verified target
+## Status: completed
+
+The repository import is complete.
 
 - Repository: `https://github.com/vladagurets/csdl`
 - Owner: `vladagurets`
 - Default branch: `main`
-- Visibility at handoff: public
-- Repository state at handoff: empty
-- Intended working branch: `pilot-01`
-- Local source of truth: the full-history Git bundle delivered with the handoff package
+- Visibility: public
+- Imported history head: `21992631862fd84fcca26e07983f4efc0ed16c26`
+- Codex repository reading: verified
+- GitHub write/branch access: verified
 
 No public license has been selected. Publishing the working repository does not grant reuse rights beyond the defaults of applicable copyright law.
 
-## Preferred import: preserve the existing Git history
+The commands below are retained only for disaster recovery or a fresh mirror. They are no longer an active project blocker.
 
-Download `csdl-initial-import.bundle`, then run:
+## Historical import: preserve the existing Git history
 
 ```bash
 git clone -b main csdl-initial-import.bundle csdl
@@ -43,9 +45,9 @@ Expected baseline:
 manifest valid
 ```
 
-## Alternative import: source archive
+## Historical alternative: source archive
 
-Use `csdl-source-export.zip` only when preserving local commit history is not important:
+Use `csdl-source-export.zip` only when preserving commit history is not important:
 
 ```bash
 git clone https://github.com/vladagurets/csdl.git
@@ -57,26 +59,16 @@ git commit -m "chore: import CSDL foundation and Codex handoff"
 git push -u origin main
 ```
 
-## GitHub setup after the first push
+## Active repository policy
 
 1. Keep `main` as the default branch.
-2. Push `pilot-01` as the current milestone branch.
-3. Enable branch protection on `main` after the import.
-4. Require `.github/workflows/validate.yml` before merging.
-5. Prefer squash merge for one-task pull requests.
-6. Connect `vladagurets/csdl` to Codex.
-7. Do not add font binaries, the uploaded *Two Squares* PDF, API keys, or unreviewed raster drafts.
+2. Protect `main` and merge through pull requests.
+3. Require `.github/workflows/validate.yml` before merging.
+4. Prefer squash merge for one-task pull requests.
+5. Do not add font binaries, the uploaded *Two Squares* PDF, API keys, or unreviewed raster drafts.
+6. Use built-in Codex `$imagegen` for normal card work; no `OPENAI_API_KEY` is required.
+7. Reserve API-backed image generation for a separately scoped batch-automation task.
 
-## First Codex session
+## Next Codex session
 
-Start in Ask mode:
-
-```text
-Read AGENTS.md, STATUS.md, DECISIONS.md, specs/2026-07-17-csdl-v0.1-design.md, pilots/01-agentic-discipline/manifest.yaml, and Task 5 in docs/superpowers/plans/2026-07-17-csdl-pilot-01.md. Summarize the locked constraints, the exact output contract for Card 01, and any environment requirement for GPT Image 2. Do not edit files.
-```
-
-Then create a Code-mode task:
-
-```text
-Implement only Task 5 of the Pilot 01 plan on branch codex/pilot-01-card-01. Preserve manifest copy exactly. Create the Card 01 prompt package and the minimal generation helper required by the plan. Run pytest and manifest validation. If GPT Image 2 generation is unavailable, stop at the visual review gate and report the exact command and environment requirements. Update STATUS.md only for work actually completed.
-```
+Use the current prompt from `docs/handoff/CODEX_IMAGE_GENERATION.md` rather than the superseded API-helper prompt from the original handoff package.

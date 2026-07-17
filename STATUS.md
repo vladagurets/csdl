@@ -7,7 +7,7 @@
 
 ## Summary
 
-Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical content, validation tooling, a scoring rubric, and a shared Quiet Modular style anchor. Raster production of the seven-card series has not yet begun in the canonical asset tree.
+Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical content, validation tooling, a scoring rubric, and a shared Quiet Modular style anchor. The repository has been imported to `vladagurets/csdl`, Codex can read it, and GitHub write access has been verified. Raster production of the seven-card series has not yet begun in the canonical asset tree.
 
 ## Completed
 
@@ -27,7 +27,10 @@ Additional completed foundation work:
 - Level A/B/C system calibrated;
 - 4:5 master format approved;
 - Foundation spec and full implementation plan approved;
-- initial and superseded references archived with status labels.
+- initial and superseded references archived with status labels;
+- full Git history imported to `https://github.com/vladagurets/csdl`;
+- Codex Ask-mode repository reading verified;
+- GitHub branch/write permissions verified.
 
 ## Active next task
 
@@ -42,7 +45,21 @@ Canonical content:
 - expression: Level A / Quiet
 - output: `pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png`
 
-Follow the exact Task 5 steps in `docs/superpowers/plans/2026-07-17-csdl-pilot-01.md`.
+Follow the exact Task 5 steps in `docs/superpowers/plans/2026-07-17-csdl-pilot-01.md` and the execution rules in `docs/handoff/CODEX_IMAGE_GENERATION.md`.
+
+## Image-generation execution route
+
+The default Task 5 route is built-in Codex image generation:
+
+- invoke `$imagegen` explicitly;
+- use `gpt-image-2` through the user's Codex plan/usage limits;
+- attach `pilots/01-agentic-discipline/references/style-anchor-light.png` as the primary visual reference;
+- generate three independent candidates;
+- no `OPENAI_API_KEY` or Python API helper is required for this route.
+
+An API-backed helper is optional future work for larger or programmatic batches. It is not part of Task 5 unless explicitly requested.
+
+If `$imagegen` is unavailable on the active Codex surface or disabled by workspace settings, stop at the visual review gate and report that capability blocker. Do not treat an unset `OPENAI_API_KEY` as a blocker for built-in image generation.
 
 ## Remaining Pilot 01 work
 
@@ -70,17 +87,20 @@ manifest valid
 
 Full asset and score validation is expected to fail until Tasks 5–14 create the required files and completed scores.
 
-## Known blockers before Codex raster execution
+## Open constraints, not Task 5 blockers
 
-1. The target repository is confirmed as `vladagurets/csdl` and is currently public. The initial import still needs to be pushed, then the repository must be connected to a Codex environment.
-2. Image generation needs either:
-   - an external ChatGPT image-generation/review loop; or
-   - an API-backed script with `OPENAI_API_KEY`, GPT Image 2 access, and network enabled in the Codex environment.
-3. Final font families remain deferred; prompts use role descriptions rather than licensed font binaries.
-4. The repository has no public license yet. Do not assume reuse rights for generated assets or documentation until a license decision is recorded.
+1. Final font families remain deferred; prompts use role descriptions rather than licensed font binaries.
+2. The repository has no public license yet. Do not assume reuse rights for generated assets or documentation until a license decision is recorded.
+3. API-backed batch generation would require separately configured API access and billing, but built-in Codex `$imagegen` does not.
 
 ## Resume prompt
 
 ```text
-Read AGENTS.md, STATUS.md, DECISIONS.md, the Foundation v0.1 spec, Pilot 01 manifest, and Task 5 of the implementation plan. Continue only Task 5. Preserve canonical copy exactly. Produce the prompt package first, run the existing tests and manifest validation, and stop at the visual review gate if GPT Image 2 generation is not configured.
+Read AGENTS.md, STATUS.md, DECISIONS.md, the Foundation v0.1 spec, Pilot 01 manifest, Task 5 of the implementation plan, and docs/handoff/CODEX_IMAGE_GENERATION.md.
+
+Continue only Task 5 on a new branch named codex/pilot-01-card-01. Preserve canonical copy exactly. Create prompts/01-hook.yaml first, run the baseline validations, then explicitly invoke $imagegen three times using the approved style-anchor image as visual guidance. Do not inspect or require OPENAI_API_KEY for built-in image generation, and do not create an API helper in this task.
+
+Save and review three candidates, persist selection evidence in evaluation/review.md, record the accepted score in scores.csv, promote only the human-approved candidate to the canonical path, update STATUS.md and CHANGELOG.md, rerun validation, and open a pull request.
+
+If the $imagegen capability itself is unavailable on this Codex surface, stop at the visual review gate and report that exact capability blocker. Do not create a placeholder PNG.
 ```

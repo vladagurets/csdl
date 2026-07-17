@@ -16,6 +16,7 @@ Before changing anything, read:
 4. `pilots/01-agentic-discipline/manifest.yaml`
 5. the relevant task in `docs/superpowers/plans/2026-07-17-csdl-pilot-01.md`
 6. `pilots/01-agentic-discipline/prompts/00-style-anchor.yaml`
+7. `docs/handoff/CODEX_IMAGE_GENERATION.md` for raster tasks
 
 Do not rely on memory or infer a new direction when these files are explicit.
 
@@ -48,20 +49,44 @@ Resume Pilot 01 from Task 5 in the implementation plan. Tasks 1–4 are complete
 5. Keep drafts under `pilots/01-agentic-discipline/drafts/`; they are intentionally ignored by Git.
 6. Commit approved card files only under `pilots/01-agentic-discipline/canonical/`.
 7. Update `STATUS.md` and `CHANGELOG.md` whenever a task is completed or a decision changes.
-8. Record visual-review evidence in `pilots/01-agentic-discipline/evaluation/review.md` and scores in `scores.csv`.
-9. Do not add decorative geometry that has no semantic role.
-10. Do not add generated labels, interface chrome, logos, footers, or text that is absent from the prompt and manifest.
+8. Record all candidate filenames, rejection reasons, the selected filename, exact-copy review, dimensions/color-mode review, and selection rationale in `pilots/01-agentic-discipline/evaluation/review.md`. Draft-local `approved.txt` is only a convenience marker and is not persistent project evidence.
+9. Record the accepted card score in `pilots/01-agentic-discipline/evaluation/scores.csv`.
+10. Do not add decorative geometry that has no semantic role.
+11. Do not add generated labels, interface chrome, logos, footers, or text that is absent from the prompt and manifest.
 
-## Image-generation boundary
+## Image-generation routes
 
-Codex may create and run an image-generation script only when an OpenAI API key and network access are explicitly configured. Use model `gpt-image-2` and the repository Prompt DSL. Never print or commit secrets.
+### Default: built-in Codex image generation
 
-When image generation is unavailable:
+For interactive Codex raster work, explicitly invoke `$imagegen` and attach the approved reference image with `-i` or `--image` when supported by the current surface.
+
+- Built-in generation uses `gpt-image-2`.
+- It counts toward the user's general Codex usage limits.
+- It does **not** require `OPENAI_API_KEY`.
+- Do not gate built-in generation on checking the `OPENAI_API_KEY` environment variable or the Python `openai` package.
+- For Tasks 5–11, this is the preferred generation route.
+
+### Optional: programmatic API generation
+
+Use an API-backed helper only when the user explicitly requests a reproducible programmatic or larger-batch workflow.
+
+- This route requires `OPENAI_API_KEY`, API billing/access, the appropriate SDK, and network access.
+- ChatGPT/Codex subscription access and API billing are separate.
+- Never print, log, or commit secrets.
+- Do not create an API helper as incidental scope inside a single-card task.
+
+### Fallbacks and blockers
+
+If built-in `$imagegen` is unavailable on the current Codex surface or disabled by workspace settings:
 
 - produce the complete YAML prompt package;
-- state the exact expected output path and dimensions;
+- report the exact capability blocker as `built-in Codex image generation unavailable`;
+- state the expected output paths and dimensions;
 - stop at the human generation/review gate;
+- do not misreport a missing API key as the blocker for the built-in route;
 - do not substitute placeholder raster assets and claim completion.
+
+An external ChatGPT Images session is an acceptable human-operated fallback when it uses the same Prompt DSL, style reference, output contract, and review gate.
 
 For generated images:
 
@@ -69,7 +94,8 @@ For generated images:
 - canonical card size is 1080×1350;
 - text must be publication-ready and match the manifest exactly;
 - no gradients, shadows, 3D, glossy surfaces, decorative coordinate systems, or random dot fields;
-- the approved style anchor is `references/quiet-modular-density-calibration.png` plus the current canonical references.
+- the approved card-specific reference is `pilots/01-agentic-discipline/references/style-anchor-light.png`;
+- the broader calibration references are `references/quiet-modular-density-calibration.png` and current canonical references.
 
 ## Validation commands
 
@@ -89,20 +115,24 @@ python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.c
 
 Expected baseline before asset completion: nine tests pass and the manifest reports `manifest valid`.
 
+`validate_scores.py` is a series-level gate. It is expected to fail while unfinished Cards 02–07 still contain placeholder zero scores; validate the current card manually against the rubric and record only evidence that was actually reviewed.
+
 ## Definition of done for one card
 
 A card task is complete only when:
 
-- three candidates were generated or explicitly reviewed;
+- three candidates were generated and reviewed;
 - one candidate is selected and copied to the canonical path;
+- candidate selection and rejection evidence is persisted in `evaluation/review.md`;
 - dimensions and color mode validate;
 - the card matches canonical copy exactly;
 - clarity, mobile readability, and text fidelity score 5/5;
 - every other rubric criterion is at least 4/5;
 - the average score is at least 4.4;
+- the accepted score is recorded in `evaluation/scores.csv`;
 - review notes explain why the selected candidate is canonical;
 - tests and manifest validation pass;
-- `STATUS.md` is updated.
+- `STATUS.md` and `CHANGELOG.md` are updated.
 
 ## Source and copyright policy
 

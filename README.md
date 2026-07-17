@@ -14,6 +14,7 @@ A geometric visual language for explaining complex ideas clearly, memorably, and
 4. Follow the staged work in [`ROADMAP.md`](ROADMAP.md).
 5. Treat [`specs/2026-07-17-csdl-v0.1-design.md`](specs/2026-07-17-csdl-v0.1-design.md) as the design source of truth.
 6. Execute Pilot 01 from [`docs/superpowers/plans/2026-07-17-csdl-pilot-01.md`](docs/superpowers/plans/2026-07-17-csdl-pilot-01.md).
+7. Use [`docs/handoff/CODEX_IMAGE_GENERATION.md`](docs/handoff/CODEX_IMAGE_GENERATION.md) for the approved Codex raster workflow.
 
 ## Current foundation
 
@@ -36,7 +37,7 @@ STATUS.md                         completed, active, blocked, and next work
 ROADMAP.md                        milestones after Pilot 01
 specs/                            approved design specifications
 docs/superpowers/plans/           task-by-task implementation plans
-docs/handoff/                     Codex handoff and resume prompts
+docs/handoff/                     Codex handoff, image workflow, and resume prompts
 pilots/01-agentic-discipline/     canonical copy, prompts, evaluation, assets
 references/canonical/             approved visual anchors
 references/archive/               superseded explorations; never use as canon
@@ -58,10 +59,12 @@ The baseline currently contains nine passing tests.
 
 ## Image workflow
 
-The repository separates **design reasoning** from **raster generation**:
+The repository separates **design governance** from **raster generation**:
 
-- Codex owns specifications, Prompt DSL, scripts, validation, versioning, issue/PR workflow, and release packaging.
-- GPT Image 2 produces or edits raster candidates through an API-backed script or an external ChatGPT image session.
+- Codex owns specifications, Prompt DSL, validation, versioning, issue/PR workflow, and release packaging.
+- For normal card work, Codex explicitly invokes built-in `$imagegen`, which uses `gpt-image-2` and counts toward Codex usage limits. This route does not require `OPENAI_API_KEY`.
+- An external ChatGPT Images session may be used as a human-operated fallback with the same prompt and review contract.
+- An API-backed script is optional for larger or programmatic batches and requires separately billed API access; it is not implicit scope for a card task.
 - Only approved references and canonical exports belong in Git. Intermediate candidates live under `pilots/**/drafts/` and are ignored.
 - AI-rendered copy must match `manifest.yaml` exactly before publication.
 
