@@ -29,6 +29,7 @@ def validate_style_anchor(path: Path) -> list[str]:
                 errors.append(
                     f"{path.name} must use RGB or RGBA mode, got {image.mode}"
                 )
+            image.verify()
     except OSError:
         errors.append(f"{path.name} must be a readable PNG")
     return errors
