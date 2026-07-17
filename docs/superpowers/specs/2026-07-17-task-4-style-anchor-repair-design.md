@@ -6,28 +6,29 @@
 
 ## Context
 
-Pilot 01 Task 4 was marked complete, but its required canonical raster artifact is absent:
+Pilot 01 Task 4 was marked complete, but its required canonical raster artifact was absent:
 
 ```text
 pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-The Task 4 commit added the shared YAML prompt contract and the broader density-calibration reference, but not the card-specific style anchor. Project status and handoff documents nevertheless treat the missing file as the primary reference consumed by Tasks 5–11.
+The original Task 4 commit added the shared YAML prompt contract and the broader density-calibration reference, but not the card-specific style anchor. Project status and handoff documents nevertheless treated the missing file as the primary reference consumed by Tasks 5–11.
 
-The root cause is a missing artifact-specific completion gate: the existing asset validator checks canonical cards and adaptations, not shared reference images. A documentation-only completion signal was therefore able to drift from repository state.
+The root cause was a missing artifact-specific completion gate: the existing asset validator checked canonical cards and adaptations, not shared reference images. A documentation-only completion signal could therefore drift from repository state.
 
 ## Goal
 
-Restore Task 4 to a truthful, independently verifiable complete state by adding the canonical style anchor, persistent provenance and review evidence, a dedicated validator with tests, CI enforcement, and corrected project status.
+Restore Task 4 to a truthful, independently verifiable complete state by adding the canonical style anchor, persistent provenance and review evidence, a dedicated validator with tests, CI enforcement, and corrected operational documentation.
 
 ## In Scope
 
 1. Create `pilots/01-agentic-discipline/references/style-anchor-light.png` as a real `1080×1350` RGB PNG.
-2. Create `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md` with source inputs, construction method, visible-copy review, visual checklist, image metadata, and approval rationale.
+2. Create `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md` with source inputs, construction method, visible-copy review, visual checklist, image metadata, content hashes, and approval rationale.
 3. Create `tools/validate_style_anchor.py` with a focused `validate_style_anchor(path: Path) -> list[str]` interface.
 4. Create `tests/test_validate_style_anchor.py` covering a valid anchor, a missing anchor, non-PNG content, wrong dimensions, and unsupported color mode.
 5. Add the dedicated validator to `.github/workflows/validate.yml` so the missing artifact cannot regress silently.
 6. Update `STATUS.md` and `CHANGELOG.md` to record that Task 4 was repaired and to name the new evidence.
+7. Update `README.md`, `AGENTS.md`, and `docs/handoff/CODEX_IMAGE_GENERATION.md` so the Task 5 baseline reflects fourteen tests and includes explicit style-anchor validation.
 
 ## Out of Scope
 
@@ -39,7 +40,7 @@ Restore Task 4 to a truthful, independently verifiable complete state by adding 
 
 ## Canonical Raster Contract
 
-The repair creates one calibration poster from the locked Task 4 prompt contract. Because this is the targeted repair path rather than a full generative rerun, the raster is constructed deterministically with Pillow and system-provided Inter fonts; no font binary is committed.
+The repair creates one calibration poster from the locked Task 4 prompt contract. Because this is the targeted repair path rather than a full generative rerun, the raster is constructed deterministically with Pillow using a custom 5×7 modular glyph alphabet drawn from rectangles. It has no external or system-font dependency, and no font binary is committed.
 
 Required visible copy, and no other text:
 
@@ -75,17 +76,19 @@ The validator reports errors for:
 - dimensions other than `1080×1350`;
 - color mode other than `RGB` or `RGBA`.
 
-Visible-copy fidelity and visual restraint remain manual-review responsibilities and are persisted in the provenance sidecar.
+Visible-copy fidelity and visual restraint remain manual-review responsibilities and are persisted in the provenance sidecar. The committed binary must also be checked byte-for-byte by comparing its Git blob SHA with the locally calculated `git hash-object` result before branch promotion.
 
 ## Acceptance Criteria
 
 Task 4 repair is complete when:
 
 1. the PNG exists at the canonical path and passes the dedicated validator;
-2. the provenance sidecar records all source inputs, exact copy, metadata, checklist results, and approval rationale;
-3. all unit tests pass;
-4. manifest validation still passes;
-5. CI includes the style-anchor command;
-6. `STATUS.md` no longer relies only on the original incomplete commit as Task 4 evidence;
-7. `CHANGELOG.md` records the repair;
-8. Task 5 remains untouched.
+2. the committed Git blob SHA matches the locally calculated blob SHA;
+3. the provenance sidecar records all source inputs, exact copy, metadata, checklist results, content hashes, and approval rationale;
+4. all fourteen unit tests pass;
+5. manifest validation still passes;
+6. CI includes and passes the style-anchor command;
+7. `STATUS.md` no longer relies only on the original incomplete commit as Task 4 evidence;
+8. `README.md`, `AGENTS.md`, and the image-generation handoff expose the current baseline;
+9. `CHANGELOG.md` records the repair;
+10. Task 5 remains untouched.
