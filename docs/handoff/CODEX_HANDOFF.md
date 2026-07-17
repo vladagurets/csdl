@@ -1,34 +1,60 @@
 # Codex Handoff — 2026-07-17
 
-## Why this repository is a good Codex project
+## Current state
 
-CSDL combines structured Markdown, YAML manifests, Python validators, visual references, and staged review gates. Codex is well suited to maintaining these artifacts, executing deterministic checks, creating small branches/PRs, and preserving a traceable decision history.
+CSDL combines structured Markdown, YAML manifests, Python validators, visual references, and staged review gates. Codex is well suited to maintaining these artifacts, executing deterministic checks, generating raster candidates through its built-in image capability, creating small branches/PRs, and preserving a traceable decision history.
 
-Raster generation is intentionally separated from design governance. Codex should orchestrate prompts, scripts, validation, packaging, and review evidence. GPT Image 2 should generate the raster candidates when configured.
+The repository is imported at `vladagurets/csdl`. Codex repository reading has been verified, and GitHub write access has been verified. Task 5 is the next unfinished implementation item.
 
-## Recommended repository setup
+## Repository setup
 
 - Repository: `vladagurets/csdl`
 - Current visibility: public working repository; no public license selected yet
 - Default branch: `main`
-- Working branch for the current milestone: `pilot-01`
-- Protect `main` after the initial import; merge through pull requests
+- Protect `main`; merge through pull requests
 - Require the validation workflow before merge
-- Follow `docs/handoff/GITHUB_IMPORT.md` for the initial push
-- Connect the repository to a Codex environment after import
+- Prefer one reviewable task per branch and PR
 
-## First Codex task
+The initial-import procedure is retained only as historical recovery documentation in `docs/handoff/GITHUB_IMPORT.md`.
 
-Use this exact task in Ask mode first:
+## Image generation
+
+The default card-production route is built-in Codex image generation:
+
+- explicitly invoke `$imagegen`;
+- use the approved reference image;
+- built-in generation uses `gpt-image-2` and consumes Codex usage limits;
+- no `OPENAI_API_KEY` is required;
+- do not create an API helper inside Task 5.
+
+An API-backed helper is optional future work for programmatic or larger batches and requires separate API access and billing. See `docs/handoff/CODEX_IMAGE_GENERATION.md`.
+
+## Verified Ask-mode task
+
+The repository-context read was completed successfully with:
 
 ```text
 Read AGENTS.md, STATUS.md, DECISIONS.md, specs/2026-07-17-csdl-v0.1-design.md, pilots/01-agentic-discipline/manifest.yaml, and Task 5 in docs/superpowers/plans/2026-07-17-csdl-pilot-01.md. Summarize the locked constraints, the exact output contract for Card 01, and any environment requirement for GPT Image 2. Do not edit files.
 ```
 
-After reviewing the answer, use this Code-mode task:
+## Next Code-mode task
+
+Use this corrected prompt:
 
 ```text
-Implement only Task 5 of the Pilot 01 plan on a new branch named codex/pilot-01-card-01. Preserve manifest copy exactly. Create the final Card 01 YAML prompt package and any minimal generation helper required by the task. Run pytest and manifest validation. If GPT Image 2 generation is unavailable, stop at the visual review gate and report the exact command and required environment variables rather than claiming the PNG exists. Update STATUS.md only for work actually completed.
+Implement only Task 5 of the Pilot 01 plan on a new branch named codex/pilot-01-card-01.
+
+Read AGENTS.md, STATUS.md, DECISIONS.md, the Foundation v0.1 spec, pilots/01-agentic-discipline/manifest.yaml, Task 5 in the implementation plan, and docs/handoff/CODEX_IMAGE_GENERATION.md.
+
+Preserve manifest copy exactly. Create prompts/01-hook.yaml first and run the baseline tests and manifest validation.
+
+Then explicitly invoke $imagegen three times, using pilots/01-agentic-discipline/references/style-anchor-light.png as the primary visual reference. Built-in Codex image generation uses gpt-image-2 and does not require OPENAI_API_KEY. Do not inspect API credentials, install an API SDK, or create an API helper in this task.
+
+Save three candidates under drafts/light/4x5/01-hook/ using the required filenames. Present all three for human selection and do not promote a candidate until approval is explicit.
+
+After approval, persist candidate and selection evidence in evaluation/review.md, record the accepted Card 01 score in scores.csv, copy the selected candidate to canonical/light/4x5/01-hook.png, update STATUS.md and CHANGELOG.md, rerun validation, commit, push, and open a pull request.
+
+If the $imagegen capability itself is unavailable on this Codex surface or disabled by workspace settings, stop at the visual review gate. Report the exact capability blocker and the last passing validation command. Do not treat an unset OPENAI_API_KEY as a blocker for the built-in route, and do not create a placeholder PNG.
 ```
 
 ## PR sequence
