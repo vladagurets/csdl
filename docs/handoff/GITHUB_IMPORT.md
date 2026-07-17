@@ -19,6 +19,8 @@ Download `csdl-initial-import.bundle`, then run:
 ```bash
 git clone -b main csdl-initial-import.bundle csdl
 cd csdl
+# The bundle exposes pilot-01 as a remote-tracking ref; materialize it locally before replacing origin.
+git branch pilot-01 refs/remotes/origin/pilot-01
 git remote set-url origin https://github.com/vladagurets/csdl.git
 git push -u origin main
 git push -u origin pilot-01
