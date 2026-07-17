@@ -1,42 +1,35 @@
 # Task 4 Style Anchor Repair Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task.
 
 **Goal:** Restore Pilot 01 Task 4 with the missing canonical style-anchor raster, persistent provenance, an independent validation gate, CI enforcement, and truthful operational documentation.
 
-**Architecture:** Keep the repair isolated from unfinished card assets. A dedicated validator checks the shared style-anchor file, while manual visual and copy review is persisted in a sidecar next to the raster. The raster is a deterministic Pillow reconstruction using a custom 5×7 modular glyph alphabet and is explicitly documented as a repair exception rather than an original GPT Image 2 candidate.
+**Architecture:** Keep the repair isolated from unfinished card assets. A dedicated validator checks the shared reference independently of the series-level card validator. Manual copy and visual review live beside the raster in a provenance sidecar. The raster is a deterministic Pillow reconstruction using a custom 5×7 modular glyph alphabet and is explicitly documented as a repair exception rather than an original GPT Image 2 candidate.
 
 **Tech Stack:** Python 3.11+, Pillow, pytest, Markdown, GitHub Actions, PNG.
 
 ## Global Constraints
 
-- Do not start or modify Task 5.
+- Do not create or modify Task 5 files.
 - Preserve `pilots/01-agentic-discipline/prompts/00-style-anchor.yaml` unchanged.
 - Canonical anchor path: `pilots/01-agentic-discipline/references/style-anchor-light.png`.
-- Exact raster contract: PNG, `1080×1350`, `RGB`.
-- Exact visible words only: `QUIET MODULAR`, `ONE IDEA.`, `ONE SIGNAL.`
-- Palette: paper `#F7F5F0`, ink `#1B1B19`, coral `#C96157`.
-- No logo, footer, frame, grid, coordinates, icons, gradients, shadows, or extra labels.
-- No font binaries or placeholder images may be committed.
-- The committed Git blob SHA must equal the local `git hash-object` result.
+- Exact contract: PNG, `1080×1350`, RGB, visible copy limited to `QUIET MODULAR`, `ONE IDEA.`, `ONE SIGNAL.`
+- Locked colors: paper `#F7F5F0`, ink `#1B1B19`, coral `#C96157`.
+- No font binaries, placeholders, logo, footer, frame, grid, coordinates, icons, gradients, shadows, or extra labels.
+- The GitHub blob SHA must equal the local `git hash-object` result before the branch ref advances.
 
 ---
 
-### Task 1: Add an independent style-anchor validation gate
+### Task 1: Add the independent validation gate
 
 **Files:**
 - Create: `tests/test_validate_style_anchor.py`
 - Create: `tools/validate_style_anchor.py`
 
-**Interfaces:**
-- Consumes: a candidate style-anchor `Path`.
-- Produces: `validate_style_anchor(path: Path) -> list[str]` and a CLI with exit code `0` on success, `1` on validation errors, and `2` on incorrect usage.
-
-- [ ] **Step 1: Write the failing validator tests**
-
-Create `tests/test_validate_style_anchor.py`:
+- [ ] **Step 1: Write the failing tests**
 
 ```python
+# tests/test_validate_style_anchor.py
 from pathlib import Path
 
 from PIL import Image
@@ -74,6 +67,13 @@ def test_rejects_non_png_content(tmp_path: Path) -> None:
     assert "style-anchor-light.png must be PNG, got JPEG" in validate_style_anchor(path)
 
 
+def test_rejects_truncated_png(tmp_path: Path) -> None:
+    path = tmp_path / "style-anchor-light.png"
+    create_image(path)
+    path.write_bytes(path.read_bytes()[:-12])
+    assert "style-anchor-light.png must be a readable PNG" in validate_style_anchor(path)
+
+
 def test_rejects_wrong_dimensions(tmp_path: Path) -> None:
     path = tmp_path / "style-anchor-light.png"
     create_image(path, size=(1080, 1080))
@@ -86,21 +86,22 @@ def test_rejects_unsupported_color_mode(tmp_path: Path) -> None:
     assert "style-anchor-light.png must use RGB or RGBA mode, got L" in validate_style_anchor(path)
 ```
 
-- [ ] **Step 2: Run the focused tests to verify failure**
+- [ ] **Step 2: Verify the red phase**
 
-Run:
+Run before implementing the module:
 
 ```bash
 python -m pytest tests/test_validate_style_anchor.py -q
 ```
 
-Expected: collection fails with `ModuleNotFoundError: No module named 'tools.validate_style_anchor'`.
+Expected: import failure because `tools.validate_style_anchor` does not exist.
+
+After the first implementation that only calls `Image.open()`, add the truncated-PNG test and run it again. Expected: one failure because a PNG with an intact header but truncated tail is incorrectly accepted.
 
 - [ ] **Step 3: Implement the minimal validator**
 
-Create `tools/validate_style_anchor.py`:
-
 ```python
+# tools/validate_style_anchor.py
 from __future__ import annotations
 
 import sys
@@ -132,6 +133,7 @@ def validate_style_anchor(path: Path) -> list[str]:
                 errors.append(
                     f"{path.name} must use RGB or RGBA mode, got {image.mode}"
                 )
+            image.verify()
     except OSError:
         errors.append(f"{path.name} must be a readable PNG")
     return errors
@@ -156,17 +158,15 @@ if __name__ == "__main__":
     raise SystemExit(main())
 ```
 
-- [ ] **Step 4: Run the focused tests to verify success**
-
-Run:
+- [ ] **Step 4: Verify the green phase**
 
 ```bash
 python -m pytest tests/test_validate_style_anchor.py -q
 ```
 
-Expected: `5 passed`.
+Expected: `6 passed`.
 
-- [ ] **Step 5: Commit the validation gate**
+- [ ] **Step 5: Commit**
 
 ```bash
 git add tests/test_validate_style_anchor.py tools/validate_style_anchor.py
@@ -175,24 +175,19 @@ git commit -m "test: validate the shared style anchor"
 
 ---
 
-### Task 2: Create the canonical raster and persistent review evidence
+### Task 2: Create the canonical raster and provenance
 
 **Files:**
 - Create: `pilots/01-agentic-discipline/references/style-anchor-light.png`
 - Create: `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md`
 
-**Interfaces:**
-- Consumes: `pilots/01-agentic-discipline/prompts/00-style-anchor.yaml` and the locked Task 4 composition contract.
-- Produces: the primary visual reference consumed by Tasks 5–11 plus human-readable evidence of its construction and approval.
+- [ ] **Step 1: Render the exact deterministic raster**
 
-- [ ] **Step 1: Render the deterministic repair raster**
-
-Run this exact one-off builder from the repository root:
+Run from the repository root:
 
 ```bash
 python - <<'PY'
 from pathlib import Path
-
 from PIL import Image, ImageDraw
 
 PAPER = "#F7F5F0"
@@ -217,21 +212,13 @@ GLYPHS = {
 }
 
 
-def draw_text(
-    draw: ImageDraw.ImageDraw,
-    position: tuple[int, int],
-    text: str,
-    *,
-    scale: int,
-    tracking: int,
-) -> None:
+def draw_text(draw, position, text, *, scale, tracking):
     x, y = position
     for character in text:
         if character == " ":
             x += 5 * scale + tracking
             continue
-        glyph = GLYPHS[character]
-        for row, bits in enumerate(glyph):
+        for row, bits in enumerate(GLYPHS[character]):
             for column, bit in enumerate(bits):
                 if bit == "1":
                     left = x + column * scale
@@ -243,13 +230,10 @@ def draw_text(
         x += 5 * scale + tracking
 
 
-output = Path(
-    "pilots/01-agentic-discipline/references/style-anchor-light.png"
-)
+output = Path("pilots/01-agentic-discipline/references/style-anchor-light.png")
 output.parent.mkdir(parents=True, exist_ok=True)
 image = Image.new("RGB", (1080, 1350), PAPER)
 draw = ImageDraw.Draw(image)
-
 draw_text(draw, (72, 88), "QUIET", scale=14, tracking=14)
 draw_text(draw, (72, 208), "MODULAR", scale=14, tracking=14)
 draw_text(draw, (72, 370), "ONE IDEA.", scale=7, tracking=8)
@@ -261,17 +245,12 @@ print(output)
 PY
 ```
 
-Expected: the command prints the canonical path and creates an 8031-byte RGB PNG with one 320×320 coral square.
-
-- [ ] **Step 2: Verify exact file identity and raster metadata**
-
-Run:
+- [ ] **Step 2: Verify raster identity**
 
 ```bash
 sha256sum pilots/01-agentic-discipline/references/style-anchor-light.png
 git hash-object pilots/01-agentic-discipline/references/style-anchor-light.png
-python tools/validate_style_anchor.py \
-  pilots/01-agentic-discipline/references/style-anchor-light.png
+python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
 Expected:
@@ -282,50 +261,37 @@ Expected:
 style anchor valid
 ```
 
-When uploading through the Git data API, require the returned blob SHA to equal `7d9ce5b37525cab14cde8bd8df61881fcd97003a` before advancing the branch ref.
+When using the Git data API, compare its returned blob SHA with the expected Git blob SHA before advancing the branch.
 
-- [ ] **Step 3: Complete the manual visual and copy review**
+- [ ] **Step 3: Complete manual review**
 
-Inspect the raster at full size and at phone width. Confirm all items before writing the sidecar:
+Confirm at full size and phone width:
 
 ```text
-[pass] visible words are exactly QUIET MODULAR / ONE IDEA. / ONE SIGNAL.
-[pass] no additional visible text
-[pass] one muted coral square only
-[pass] one thin graphite vector only
+[pass] exact visible words only
+[pass] one muted coral square
+[pass] one thin graphite vector
 [pass] at least 65% perceived negative space
 [pass] technical but non-sci-fi typography
-[pass] no logo, footer, frame, grid, coordinates, icons, gradients, or shadows
-[pass] composition remains legible at phone width
+[pass] no logo, footer, frame, grid, coordinates, icons, gradients, shadows, or extra labels
+[pass] readable at phone width
 ```
 
 - [ ] **Step 4: Create the provenance sidecar**
 
-Create `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md` with:
+Record source inputs, deterministic construction, exact copy, full metadata, SHA-256, Git blob SHA, manual checklist, and approval rationale. State explicitly that the raster is a targeted deterministic repair, not an original GPT Image 2 candidate.
 
-- the artifact status and repair date;
-- SHA-256 `7ba4a191e97a777285b676b17484d8dbc64eed5216b1e1129634f5da81bd49d6`;
-- Git blob SHA `7d9ce5b37525cab14cde8bd8df61881fcd97003a`;
-- all four source inputs;
-- the custom 5×7 Pillow construction method;
-- exact-copy review;
-- PNG, dimensions, RGB mode, file size, palette, unique-color count, coral bounds, and area;
-- the complete checked visual-review list;
-- approval rationale;
-- an explicit statement that the raster is a targeted deterministic repair, not an original GPT Image 2 candidate.
-
-- [ ] **Step 5: Commit the raster and evidence**
+- [ ] **Step 5: Commit**
 
 ```bash
-git add \
-  pilots/01-agentic-discipline/references/style-anchor-light.png \
+git add pilots/01-agentic-discipline/references/style-anchor-light.png \
   pilots/01-agentic-discipline/references/style-anchor-light.provenance.md
 git commit -m "feat: restore the Quiet Modular style anchor"
 ```
 
 ---
 
-### Task 3: Enforce the repair and synchronize operational documentation
+### Task 3: Enforce the repair and synchronize handoff state
 
 **Files:**
 - Modify: `.github/workflows/validate.yml`
@@ -335,13 +301,7 @@ git commit -m "feat: restore the Quiet Modular style anchor"
 - Modify: `AGENTS.md`
 - Modify: `docs/handoff/CODEX_IMAGE_GENERATION.md`
 
-**Interfaces:**
-- Consumes: `tools/validate_style_anchor.py` and the canonical PNG.
-- Produces: a required CI check and one consistent Task 5 baseline across all entry points.
-
-- [ ] **Step 1: Add the style-anchor command to CI**
-
-Append after manifest validation in `.github/workflows/validate.yml`:
+- [ ] **Step 1: Add the CI gate**
 
 ```yaml
       - name: Validate Pilot 01 style anchor
@@ -350,27 +310,11 @@ Append after manifest validation in `.github/workflows/validate.yml`:
           pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-- [ ] **Step 2: Correct Task 4 evidence in `STATUS.md`**
+- [ ] **Step 2: Synchronize repository state**
 
-Use this Task 4 evidence cell:
+Record Task 4 as `Complete (repaired)` in `STATUS.md`, add the repair entry to `CHANGELOG.md`, and expose both the PNG and provenance sidecar in the README and agent handoff.
 
-```markdown
-Complete (repaired) | `style-anchor-light.png`, provenance sidecar, dedicated tests, and CI validator
-```
-
-Add the style-anchor validator to the current validation block and retain Task 5 as the active next task.
-
-- [ ] **Step 3: Record the repair in `CHANGELOG.md`**
-
-Add under `## Unreleased`:
-
-```markdown
-- Repaired Pilot 01 Task 4 by restoring `style-anchor-light.png`, documenting its provenance and manual review, verifying its Git blob byte-for-byte, and adding dedicated unit and CI validation.
-```
-
-- [ ] **Step 4: Synchronize the Task 5 baseline**
-
-Update `README.md`, `AGENTS.md`, and `docs/handoff/CODEX_IMAGE_GENERATION.md` so each requires:
+All Task 5 entry points must require:
 
 ```bash
 python -m pytest -q
@@ -378,41 +322,26 @@ python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-Record the expected results as:
+Expected:
 
 ```text
-14 passed
+15 passed
 manifest valid
 style anchor valid
 ```
 
-Also link or name `style-anchor-light.provenance.md` wherever the shared reference is introduced.
-
-- [ ] **Step 5: Run the complete verification suite**
-
-Run:
+- [ ] **Step 3: Run complete verification**
 
 ```bash
 python -m pytest -q
 python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
-python tools/validate_style_anchor.py \
-  pilots/01-agentic-discipline/references/style-anchor-light.png
+python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 git diff --check
 ```
 
-Expected:
+Expected: fifteen tests pass, both validators pass, and `git diff --check` has no output.
 
-```text
-14 passed
-manifest valid
-style anchor valid
-```
-
-`git diff --check` must produce no output.
-
-- [ ] **Step 6: Confirm Task 5 remains untouched**
-
-Run:
+- [ ] **Step 4: Confirm Task 5 is untouched**
 
 ```bash
 git diff --name-only main...HEAD | \
@@ -421,25 +350,12 @@ git diff --name-only main...HEAD | \
 
 Expected: no output and exit code `0`.
 
-- [ ] **Step 7: Commit the enforcement and status correction**
+- [ ] **Step 5: Open the PR and inspect GitHub Actions**
 
-```bash
-git add \
-  .github/workflows/validate.yml \
-  STATUS.md \
-  CHANGELOG.md \
-  README.md \
-  AGENTS.md \
-  docs/handoff/CODEX_IMAGE_GENERATION.md
-git commit -m "ci: enforce the Pilot 01 style anchor"
-```
-
-- [ ] **Step 8: Open a pull request and verify CI**
-
-Push branch `codex/repair-task-4-style-anchor` and open a draft pull request into `main` titled:
+Open a draft PR from `codex/repair-task-4-style-anchor` into `main` titled:
 
 ```text
 fix: complete Pilot 01 Task 4 style anchor
 ```
 
-The PR body must list the root cause, restored artifacts, exact hashes, validation results, and explicit confirmation that Task 5 was not started. Wait for the GitHub Actions `Validate CSDL` workflow and inspect the job steps before marking the repair complete.
+The PR body must state the root cause, restored artifacts, exact hashes, test/validator results, and the Task 5 scope boundary. Inspect every `Validate CSDL` job step before marking the repair complete.
