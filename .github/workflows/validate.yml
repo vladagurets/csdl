@@ -19,3 +19,7 @@ jobs:
         run: python -m pytest -q
       - name: Validate Pilot 01 manifest
         run: python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
+      - name: Validate Pilot 01 style anchor
+        run: >-
+          python tools/validate_style_anchor.py
+          pilots/01-agentic-discipline/references/style-anchor-light.png
