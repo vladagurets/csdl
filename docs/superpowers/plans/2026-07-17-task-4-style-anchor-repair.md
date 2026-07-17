@@ -74,6 +74,16 @@ def test_rejects_truncated_png(tmp_path: Path) -> None:
     assert "style-anchor-light.png must be a readable PNG" in validate_style_anchor(path)
 
 
+def test_rejects_corrupt_png_checksum(tmp_path: Path) -> None:
+    path = tmp_path / "style-anchor-light.png"
+    create_image(path)
+    data = bytearray(path.read_bytes())
+    idat = data.index(b"IDAT")
+    data[idat + 8] ^= 0x01
+    path.write_bytes(data)
+    assert "style-anchor-light.png must be a readable PNG" in validate_style_anchor(path)
+
+
 def test_rejects_wrong_dimensions(tmp_path: Path) -> None:
     path = tmp_path / "style-anchor-light.png"
     create_image(path, size=(1080, 1080))
@@ -86,7 +96,7 @@ def test_rejects_unsupported_color_mode(tmp_path: Path) -> None:
     assert "style-anchor-light.png must use RGB or RGBA mode, got L" in validate_style_anchor(path)
 ```
 
-- [ ] **Step 2: Verify the red phase**
+- [ ] **Step 2: Verify the red phases**
 
 Run before implementing the module:
 
@@ -96,7 +106,9 @@ python -m pytest tests/test_validate_style_anchor.py -q
 
 Expected: import failure because `tools.validate_style_anchor` does not exist.
 
-After the first implementation that only calls `Image.open()`, add the truncated-PNG test and run it again. Expected: one failure because a PNG with an intact header but truncated tail is incorrectly accepted.
+After the first implementation that only calls `Image.open()`, add the truncated-PNG test. Expected: `1 failed, 5 passed` because a PNG with an intact header but truncated tail is incorrectly accepted.
+
+After adding `image.verify()` but catching only `OSError`, add the checksum test. Expected: `1 failed, 6 passed` because Pillow raises `SyntaxError` for a corrupt PNG chunk checksum.
 
 - [ ] **Step 3: Implement the minimal validator**
 
@@ -134,7 +146,7 @@ def validate_style_anchor(path: Path) -> list[str]:
                     f"{path.name} must use RGB or RGBA mode, got {image.mode}"
                 )
             image.verify()
-    except OSError:
+    except (OSError, SyntaxError):
         errors.append(f"{path.name} must be a readable PNG")
     return errors
 
@@ -158,13 +170,13 @@ if __name__ == "__main__":
     raise SystemExit(main())
 ```
 
-- [ ] **Step 4: Verify the green phase**
+- [ ] **Step 4: Verify the final green phase**
 
 ```bash
 python -m pytest tests/test_validate_style_anchor.py -q
 ```
 
-Expected: `6 passed`.
+Expected: `7 passed`.
 
 - [ ] **Step 5: Commit**
 
@@ -325,7 +337,7 @@ python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/st
 Expected:
 
 ```text
-15 passed
+16 passed
 manifest valid
 style anchor valid
 ```
@@ -339,7 +351,7 @@ python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/st
 git diff --check
 ```
 
-Expected: fifteen tests pass, both validators pass, and `git diff --check` has no output.
+Expected: sixteen tests pass, both validators pass, and `git diff --check` has no output.
 
 - [ ] **Step 4: Confirm Task 5 is untouched**
 
@@ -358,4 +370,4 @@ Open a draft PR from `codex/repair-task-4-style-anchor` into `main` titled:
 fix: complete Pilot 01 Task 4 style anchor
 ```
 
-The PR body must state the root cause, restored artifacts, exact hashes, test/validator results, and the Task 5 scope boundary. Inspect every `Validate CSDL` job step before marking the repair complete.
+The PR body must state the root cause, restored artifacts, exact hashes, all red→green regression evidence, test/validator results, and the Task 5 scope boundary. Inspect every `Validate CSDL` job step before marking the repair complete.
