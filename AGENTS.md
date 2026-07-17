@@ -116,7 +116,7 @@ python tools/validate_assets.py pilots/01-agentic-discipline
 python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.csv
 ```
 
-Expected baseline before card-asset completion: fourteen tests pass, the manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
+Expected baseline before card-asset completion: fifteen tests pass, the manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
 
 `validate_scores.py` is a series-level gate. It is expected to fail while unfinished Cards 02–07 still contain placeholder zero scores; validate the current card manually against the rubric and record only evidence that was actually reviewed.
 
