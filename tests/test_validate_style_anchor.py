@@ -35,6 +35,13 @@ def test_rejects_non_png_content(tmp_path: Path) -> None:
     assert "style-anchor-light.png must be PNG, got JPEG" in validate_style_anchor(path)
 
 
+def test_rejects_truncated_png(tmp_path: Path) -> None:
+    path = tmp_path / "style-anchor-light.png"
+    create_image(path)
+    path.write_bytes(path.read_bytes()[:-12])
+    assert "style-anchor-light.png must be a readable PNG" in validate_style_anchor(path)
+
+
 def test_rejects_wrong_dimensions(tmp_path: Path) -> None:
     path = tmp_path / "style-anchor-light.png"
     create_image(path, size=(1080, 1080))
