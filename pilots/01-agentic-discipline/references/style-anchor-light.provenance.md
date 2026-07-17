@@ -3,7 +3,8 @@
 **Artifact:** `style-anchor-light.png`  
 **Status:** Approved canonical reference for Pilot 01 Tasks 5–11  
 **Repair date:** 2026-07-17  
-**SHA-256:** `0746cdf4936083a08a24bf637c37098f0afff9c176e55c6d0b8e82b3ced2ff08`
+**SHA-256:** `7ba4a191e97a777285b676b17484d8dbc64eed5216b1e1129634f5da81bd49d6`  
+**Git blob SHA:** `7d9ce5b37525cab14cde8bd8df61881fcd97003a`
 
 ## Why this file exists
 
@@ -18,7 +19,9 @@ Task 4 was previously marked complete although its required canonical raster was
 
 ## Construction method
 
-This is a deterministic Pillow reconstruction made for the targeted Task 4 repair. It uses system-provided Inter Display fonts; no font binary is committed. The rendered raster was snapped to the three exact locked palette colors with dithering disabled, then saved as an RGB PNG. It is not represented as an original GPT Image 2 candidate. The full three-candidate generative rerun was intentionally outside the selected repair scope.
+This is a deterministic Pillow reconstruction made for the targeted Task 4 repair. All visible letters are built from a custom 5×7 modular glyph alphabet drawn as graphite rectangles; no external or system font is required and no font binary is committed. The raster contains exactly the three locked palette colors and is saved directly as an RGB PNG. It is not represented as an original GPT Image 2 candidate. The full three-candidate generative rerun was intentionally outside the selected repair scope.
+
+Before the branch was advanced, the SHA returned by GitHub for the uploaded blob was compared with the local `git hash-object` result. Both were exactly `7d9ce5b37525cab14cde8bd8df61881fcd97003a`.
 
 ## Visible copy review
 
@@ -39,11 +42,13 @@ The headline is visually broken across two rows (`QUIET` / `MODULAR`) while pres
 - format: PNG
 - dimensions: 1080×1350
 - color mode: RGB
+- file size: 8031 bytes
 - paper: `#F7F5F0`
 - graphite: `#1B1B19`
 - coral signal: `#C96157`
-- coral square bounds: `(688, 900)` to `(1008, 1220)`
-- coral square area: approximately 7.0% of the canvas
+- unique colors: 3
+- coral square pixel bounds: `(688, 900)` through `(1007, 1219)`
+- coral square area: 102,400 pixels, approximately 7.02% of the canvas
 
 ## Manual visual review
 
