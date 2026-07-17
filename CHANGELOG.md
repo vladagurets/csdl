@@ -12,6 +12,7 @@
 - Added persistent candidate-selection, review-evidence, and per-card scoring requirements to the Codex operating instructions.
 - Replaced superseded API-helper handoff prompts with the corrected Task 5 `$imagegen` workflow.
 - Fixed editable installation in clean CI environments by disabling accidental setuptools discovery of non-package content directories.
+- Repaired Pilot 01 Task 4 by restoring `style-anchor-light.png`, documenting its provenance and manual review, verifying its Git blob byte-for-byte, and adding dedicated unit and CI validation.
 
 ## 2026-07-17 — GitHub target confirmed
 

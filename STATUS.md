@@ -7,7 +7,7 @@
 
 ## Summary
 
-Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical content, validation tooling, a scoring rubric, and a shared Quiet Modular style anchor. The repository has been imported to `vladagurets/csdl`, Codex can read it, and GitHub write access has been verified. Raster production of the seven-card series has not yet begun in the canonical asset tree.
+Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical content, validation tooling, a scoring rubric, and a shared Quiet Modular style anchor. The previously missing Task 4 raster has been restored with provenance, byte-level identity evidence, and an independent validation gate. The repository has been imported to `vladagurets/csdl`, Codex can read it, and GitHub write access has been verified. Raster production of the seven-card series has not yet begun in the canonical asset tree.
 
 ## Completed
 
@@ -16,7 +16,7 @@ Foundation choices are approved and encoded in Markdown. Pilot 01 has canonical 
 | Task 1 — repository and canonical content manifest | Complete | commit `c046d2c` |
 | Task 2 — manifest validation with tests | Complete | commit `875994a` |
 | Task 3 — raster-asset and rubric validation | Complete | commit `15efea1` |
-| Task 4 — shared light-mode style anchor and generation boilerplate | Complete | commit `81b4b91` |
+| Task 4 — shared light-mode style anchor and generation boilerplate | Complete (repaired) | `style-anchor-light.png`, provenance sidecar, dedicated tests, and CI validator |
 
 Additional completed foundation work:
 
@@ -79,10 +79,13 @@ If `$imagegen` is unavailable on the active Codex surface or disabled by workspa
 
 ```text
 python -m pytest -q
-......... [100%]
+................ [100%]
 
 python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
+
+python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
+style anchor valid
 ```
 
 Full asset and score validation is expected to fail until Tasks 5–14 create the required files and completed scores.
@@ -98,7 +101,7 @@ Full asset and score validation is expected to fail until Tasks 5–14 create th
 ```text
 Read AGENTS.md, STATUS.md, DECISIONS.md, the Foundation v0.1 spec, Pilot 01 manifest, Task 5 of the implementation plan, and docs/handoff/CODEX_IMAGE_GENERATION.md.
 
-Continue only Task 5 on a new branch named codex/pilot-01-card-01. Preserve canonical copy exactly. Create prompts/01-hook.yaml first, run the baseline validations, then explicitly invoke $imagegen three times using the approved style-anchor image as visual guidance. Do not inspect or require OPENAI_API_KEY for built-in image generation, and do not create an API helper in this task.
+Continue only Task 5 on a new branch named codex/pilot-01-card-01. Preserve canonical copy exactly. Create prompts/01-hook.yaml first, run the tests, manifest validation, and dedicated style-anchor validation, then explicitly invoke $imagegen three times using the approved style-anchor image as visual guidance. Do not inspect or require OPENAI_API_KEY for built-in image generation, and do not create an API helper in this task.
 
 Save and review three candidates, persist selection evidence in evaluation/review.md, record the accepted score in scores.csv, promote only the human-approved candidate to the canonical path, update STATUS.md and CHANGELOG.md, rerun validation, and open a pull request.
 
