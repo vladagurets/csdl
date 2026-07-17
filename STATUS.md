@@ -79,7 +79,7 @@ If `$imagegen` is unavailable on the active Codex surface or disabled by workspa
 
 ```text
 python -m pytest -q
-.............. [100%]
+............... [100%]
 
 python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
