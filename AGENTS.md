@@ -39,7 +39,7 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Resume Pilot 01 from Task 5 in the implementation plan. Tasks 1–4 are complete; Task 4 includes the repaired canonical style anchor, provenance sidecar, and dedicated validator. Do not restart or rewrite them unless a failing test or explicit user request requires it.
+Resume Pilot 01 from Task 6 in the implementation plan. Tasks 1–5 are complete. Task 4 was explicitly reopened: its active reference is now the user-selected GPT Image 2 Ukrainian/Inter anchor with three-candidate review, provenance sidecar, and dedicated validator. Do not restore or reuse the superseded pixel raster; it remains only in Git history.
 
 ## Work protocol
 
@@ -96,7 +96,8 @@ For generated images:
 - text must be publication-ready and match the manifest exactly;
 - no gradients, shadows, 3D, glossy surfaces, decorative coordinate systems, or random dot fields;
 - the approved card-specific reference is `pilots/01-agentic-discipline/references/style-anchor-light.png`;
-- the reference's construction, hashes, and review evidence are recorded in `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md`;
+- preserve its smooth Ukrainian-capable Inter display/body relationship; do not introduce pixel, bitmap, dot-matrix, segmented, or retro-computer lettering;
+- the reference's GPT generation, candidate selection, hashes, and review evidence are recorded in `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md`;
 - the broader calibration references are `references/quiet-modular-density-calibration.png` and current canonical references.
 
 ## Validation commands
@@ -116,7 +117,7 @@ python tools/validate_assets.py pilots/01-agentic-discipline
 python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.csv
 ```
 
-Expected baseline before card-asset completion: sixteen tests pass, the manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
+Expected baseline before card-asset completion: seventeen tests pass, the manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
 
 `validate_scores.py` is a series-level gate. It is expected to fail while unfinished Cards 02–07 still contain placeholder zero scores; validate the current card manually against the rubric and record only evidence that was actually reviewed.
 

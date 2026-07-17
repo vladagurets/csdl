@@ -1,3 +1,4 @@
+import hashlib
 from pathlib import Path
 
 from PIL import Image
@@ -20,6 +21,17 @@ def test_accepts_valid_style_anchor(tmp_path: Path) -> None:
     path = tmp_path / "style-anchor-light.png"
     create_image(path)
     assert validate_style_anchor(path) == []
+
+
+def test_rejects_unapproved_style_anchor_hash(tmp_path: Path) -> None:
+    path = tmp_path / "style-anchor-light.png"
+    create_image(path)
+    expected = "0" * 64
+    actual = hashlib.sha256(path.read_bytes()).hexdigest()
+
+    assert validate_style_anchor(path, expected_sha256=expected) == [
+        f"style-anchor-light.png SHA-256 must be {expected}, got {actual}"
+    ]
 
 
 def test_rejects_missing_style_anchor(tmp_path: Path) -> None:

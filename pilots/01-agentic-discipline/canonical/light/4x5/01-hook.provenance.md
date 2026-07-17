@@ -4,7 +4,7 @@
 **Status:** Approved canonical Card 01 / Level A  
 **Selected candidate:** `01-hook-v1.png`  
 **Approval date:** 2026-07-17  
-**SHA-256:** `0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b`  
+**SHA-256:** `0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b`
 **Git blob SHA:** `a9676cee42dd31870c683be1a8cb8c7be93855f1`
 
 ## Source contract

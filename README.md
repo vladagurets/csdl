@@ -57,7 +57,7 @@ python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-The baseline currently contains sixteen passing tests. The manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
+The baseline currently contains seventeen passing tests. The manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
 
 ## Image workflow
 
@@ -68,6 +68,7 @@ The repository separates **design governance** from **raster generation**:
 - An external ChatGPT Images session may be used as a human-operated fallback with the same prompt and review contract.
 - An API-backed script is optional for larger or programmatic batches and requires separately billed API access; it is not implicit scope for a card task.
 - Only approved references and canonical exports belong in Git. Intermediate candidates live under `pilots/**/drafts/` and are ignored.
+- The active Pilot 01 style anchor is the user-selected GPT Image 2 Ukrainian/Inter composition; the superseded pixel-font repair exists only in Git history and must not be reused.
 - AI-rendered copy must match `manifest.yaml` exactly before publication.
 
 ## Pilot 01
