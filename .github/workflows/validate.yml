@@ -5,6 +5,9 @@ on:
   push:
     branches: [main, pilot-01]
 
+permissions:
+  contents: write
+
 jobs:
   tests:
     runs-on: ubuntu-latest
@@ -23,3 +26,65 @@ jobs:
         run: >-
           python tools/validate_style_anchor.py
           pilots/01-agentic-discipline/references/style-anchor-light.png
+
+  promote-card-01:
+    if: github.event_name == 'pull_request' && github.head_ref == 'codex/pilot-01-card-01'
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/pilot-01-card-01
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Pillow
+        run: python -m pip install 'Pillow>=11.0,<12.0'
+      - name: Decode and verify approved V1
+        shell: bash
+        run: |
+          set -euo pipefail
+          staging='pilots/01-agentic-discipline/staging'
+          if [[ ! -f "$staging/01-hook-v1.b64.part1" ]]; then
+            echo 'staging already removed; nothing to promote'
+            exit 0
+          fi
+          output='pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png'
+          mkdir -p "$(dirname "$output")"
+          cat \
+            "$staging/01-hook-v1.b64.part1" \
+            "$staging/01-hook-v1.b64.part2" \
+            "$staging/01-hook-v1.b64.part3" \
+            "$staging/01-hook-v1.b64.part4" \
+            "$staging/01-hook-v1.b64.part5" \
+            "$staging/01-hook-v1.b64.part6" \
+            | base64 --decode > "$output"
+          echo '0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b  '"$output" | sha256sum --check
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          path = Path('pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png')
+          with Image.open(path) as image:
+              image.verify()
+          with Image.open(path) as image:
+              assert image.format == 'PNG', image.format
+              assert image.size == (1080, 1350), image.size
+              assert image.mode == 'RGB', image.mode
+          print('approved Card 01 raster valid')
+          PY
+      - name: Commit canonical raster and remove staging
+        shell: bash
+        run: |
+          set -euo pipefail
+          staging='pilots/01-agentic-discipline/staging'
+          if [[ ! -d "$staging" ]]; then
+            echo 'staging already removed; nothing to commit'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm -r "$staging"
+          git add pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png
+          git commit -m 'feat: promote approved Card 01 hook raster'
+          git push origin HEAD:codex/pilot-01-card-01
