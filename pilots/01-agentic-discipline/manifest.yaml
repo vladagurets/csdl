@@ -1,0 +1,115 @@
+pilot:
+  id: pilot-01
+  slug: agentic-discipline
+  title_uk: "Agentic Discipline: Superpowers × Compound Engineering"
+  topic: "How disciplined workflows and retained learning make agentic development more reliable over time"
+  language: uk
+  terminology_language: en
+  mode: light
+  canonical_canvas: "1080x1350"
+  adaptation_canvas: "1920x1080"
+  rhythm: [A, A, B, A, B, A, C]
+  card_count: 7
+
+cards:
+  - id: "01"
+    slug: hook
+    recipe: Hero
+    level: A
+    headline: "СИЛЬНИЙ АГЕНТ ≠ СТІЙКИЙ РЕЗУЛЬТАТ"
+    supporting_copy: "Стабільність з’являється, коли робота має процес, перевірки й пам’ять."
+    visual_mechanism: "One large Anchor opposed by one small stable Signal block"
+    components: [Anchor, Signal]
+    signal: coral
+    max_supporting_elements: 2
+
+  - id: "02"
+    slug: problem
+    recipe: Breakdown
+    level: A
+    headline: "AD-HOC РОБОТА РОЗПАДАЄТЬСЯ МІЖ СЕСІЯМИ"
+    supporting_copy: "Рішення губляться. Перевірки повторюються. Помилки повертаються."
+    visual_mechanism: "One broken Loop with three detached Nodes"
+    components: [Loop, Node, Signal]
+    signal: coral
+    max_supporting_elements: 3
+
+  - id: "03"
+    slug: model
+    recipe: Framework
+    level: B
+    headline: "4 ШАРИ AGENTIC DISCIPLINE"
+    supporting_copy: "Стандарти задають спосіб роботи. Перевірки ловлять помилки. Межі зменшують хаос. Пам’ять зберігає навчання."
+    visual_mechanism: "Four aligned Nodes forming one controlled Cluster"
+    components: [Anchor, Cluster, Node, Vector]
+    signal: coral
+    service_color: data_blue
+    max_supporting_elements: 4
+
+  - id: "04"
+    slug: comparison
+    recipe: Comparison
+    level: A
+    headline: "ДВА МЕХАНІЗМИ ДИСЦИПЛІНИ"
+    supporting_copy: "Superpowers дисциплінує поточну роботу. Compound Engineering робить наступний цикл легшим."
+    left_title: "SUPERPOWERS"
+    left_points:
+      - "Skills за контекстом"
+      - "Gated workflow"
+      - "TDD + review"
+    right_title: "COMPOUND ENGINEERING"
+    right_points:
+      - "Plan + work + review"
+      - "Capture learnings"
+      - "Easier next cycle"
+    visual_mechanism: "Two open Fields separated by one thin Divider"
+    components: [Anchor, Field, Divider, Signal]
+    signal: coral
+    max_supporting_elements: 3
+
+  - id: "05"
+    slug: synthesis
+    recipe: Loop
+    level: B
+    headline: "AUTO-DISCIPLINE LOOP"
+    supporting_copy: "Кожен цикл залишає кращий контекст для наступної задачі."
+    stages:
+      - "UNDERSTAND"
+      - "PLAN"
+      - "EXECUTE + TEST"
+      - "REVIEW"
+      - "COMPOUND"
+    visual_mechanism: "One five-stage Loop with one active Node and one center statement"
+    components: [Loop, Node, Signal]
+    signal: coral
+    service_color: data_blue
+    max_supporting_elements: 2
+
+  - id: "06"
+    slug: takeaway
+    recipe: Checklist
+    level: A
+    headline: "4 ПИТАННЯ ПЕРЕД СТАРТОМ"
+    supporting_copy: "Якщо відповіді нечіткі, агент ще не готовий працювати автономно."
+    questions:
+      - "ЯКИЙ ПРОЦЕС?"
+      - "ДЕ ПЕРЕВІРКИ?"
+      - "ЯКІ МЕЖІ?"
+      - "ЩО ЗБЕРЕЖЕТЬСЯ?"
+    visual_mechanism: "One quiet 2×2 Cluster with a single selected Node"
+    components: [Anchor, Cluster, Node, Signal]
+    signal: coral
+    max_supporting_elements: 2
+
+  - id: "07"
+    slug: share-card
+    recipe: Formula
+    level: C
+    headline: "ПРОЦЕС × ПЕРЕВІРКА × ПАМ’ЯТЬ"
+    supporting_copy: "= ЯКІСТЬ, ЩО НАКОПИЧУЄТЬСЯ"
+    visual_mechanism: "One large Signal plane intersecting one dark Anchor block"
+    components: [Anchor, Signal, Collision]
+    signal: coral
+    max_supporting_elements: 1
+
+adaptations_16x9: ["01", "04", "07"]

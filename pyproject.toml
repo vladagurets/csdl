@@ -1,0 +1,19 @@
+[project]
+name = "csdl-tools"
+version = "0.1.0"
+description = "Validation and assembly tools for Constructive Signal Design Language"
+requires-python = ">=3.11"
+dependencies = [
+  "Pillow>=11.0,<12.0",
+  "PyYAML>=6.0,<7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0,<9.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
