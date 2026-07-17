@@ -48,16 +48,11 @@ jobs:
           mkdir -p /tmp/inter-fonts
           unzip -q /tmp/Inter-4.0.zip -d /tmp/inter-fonts
           find /tmp/inter-fonts -type f \( -name 'InterDisplay-Black.otf' -o -name 'Inter-Regular.otf' \) -print
-      - name: Render and verify approved V1
+      - name: Render approved V1 candidate
         shell: bash
         run: |
           set -euo pipefail
           output='pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png'
-          staging='pilots/01-agentic-discipline/staging'
-          if [[ -f "$output" && ! -d "$staging" ]]; then
-            echo 'approved Card 01 raster already promoted'
-            exit 0
-          fi
           headline_font="$(find /tmp/inter-fonts -type f -name 'InterDisplay-Black.otf' -print -quit)"
           body_font="$(find /tmp/inter-fonts -type f -name 'Inter-Regular.otf' -print -quit)"
           test -n "$headline_font"
@@ -69,13 +64,8 @@ jobs:
           from pathlib import Path
           from PIL import Image, ImageDraw, ImageFont
 
-          paper = '#F7F5F0'
-          ink = '#1B1B19'
-          secondary = '#535457'
-          coral = '#C96157'
           output = Path(os.environ['OUTPUT'])
-
-          image = Image.new('RGB', (1080, 1350), paper)
+          image = Image.new('RGB', (1080, 1350), '#F7F5F0')
           draw = ImageDraw.Draw(image)
           headline = ImageFont.truetype(os.environ['HEADLINE_FONT'], 96)
           body = ImageFont.truetype(os.environ['BODY_FONT'], 38)
@@ -86,25 +76,25 @@ jobs:
               ((80, 286), 'СТІЙКИЙ'),
               ((130, 374), 'РЕЗУЛЬТАТ'),
           ]:
-              draw.text(position, text, font=headline, fill=ink)
+              draw.text(position, text, font=headline, fill='#1B1B19')
 
           draw.text(
               (72, 627),
               'Стабільність з’являється, коли робота має',
               font=body,
-              fill=secondary,
+              fill='#535457',
           )
           draw.text(
               (72, 678),
               'процес, перевірки й пам’ять.',
               font=body,
-              fill=secondary,
+              fill='#535457',
           )
-          draw.line((540, 790, 820, 965), fill=ink, width=3)
-          draw.rectangle((820, 965, 1009, 1154), fill=coral)
+          draw.line((540, 790, 820, 965), fill='#1B1B19', width=3)
+          draw.rectangle((820, 965, 1009, 1154), fill='#C96157')
           image.save(output, format='PNG', optimize=True, compress_level=9)
           PY
-          echo '0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b  '"$output" | sha256sum --check
+          sha256sum "$output"
           python - <<'PY'
           from pathlib import Path
           from PIL import Image
@@ -115,21 +105,29 @@ jobs:
               assert image.format == 'PNG', image.format
               assert image.size == (1080, 1350), image.size
               assert image.mode == 'RGB', image.mode
-          print('approved Card 01 raster valid')
+          print('runner Card 01 raster metadata valid')
           PY
+      - name: Upload runner V1 for comparison
+        uses: actions/upload-artifact@v4
+        with:
+          name: card-01-v1-runner
+          path: pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png
+          if-no-files-found: error
+      - name: Verify exact approved V1 identity
+        shell: bash
+        run: |
+          echo '0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b  pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png' | sha256sum --check
       - name: Commit canonical raster and remove staging
         shell: bash
         run: |
           set -euo pipefail
           output='pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png'
           staging='pilots/01-agentic-discipline/staging'
-          if [[ ! -d "$staging" ]]; then
-            echo 'staging already removed; nothing to commit'
-            exit 0
-          fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git rm -r "$staging"
+          if [[ -d "$staging" ]]; then
+            git rm -r "$staging"
+          fi
           git add "$output"
           git commit -m 'feat: promote approved Card 01 hook raster'
           git push origin HEAD:codex/pilot-01-card-01
