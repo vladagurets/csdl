@@ -1,0 +1,13 @@
+scale: [1, 2, 3, 4, 5]
+criteria:
+  clarity: "Main idea is understood in 2–3 seconds"
+  mobile_readability: "Readable at phone-preview size without zoom"
+  memorability: "One strong visual image remains after viewing"
+  csdl_identity: "Recognizable as Constructive Signal without logo"
+  restraint: "No removable decorative element remains"
+  text_fidelity: "Every visible word matches manifest.yaml exactly"
+  semantic_integrity: "Every form and color has an explicit role"
+thresholds:
+  minimum_each: 4
+  minimum_average: 4.4
+  required_five: [clarity, mobile_readability, text_fidelity]
