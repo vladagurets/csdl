@@ -14,6 +14,7 @@
 - Fixed editable installation in clean CI environments by disabling accidental setuptools discovery of non-package content directories.
 - Repaired Pilot 01 Task 4 by restoring `style-anchor-light.png`, documenting its provenance and manual review, verifying its Git blob byte-for-byte, and adding dedicated unit and CI validation.
 - Completed Pilot 01 Task 5 with the approved Card 01 Hook / Level A raster, exact-copy and mobile review evidence, accepted rubric scores, and transparent deterministic fallback provenance after unusable built-in image outputs.
+- Closed the final Task 5 promotion gap by replacing the approximate runner re-render with the byte-for-byte user-selected V1 and adding permanent SHA-256 and Git-blob identity enforcement.
 
 ## 2026-07-17 — GitHub target confirmed
 
