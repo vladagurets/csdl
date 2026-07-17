@@ -143,8 +143,8 @@ Validate the dark palette, contrast, projector behavior, phone readability, colo
 
 Generate a compact bilingual 25–40 page guide from the canonical Markdown sources. Include philosophy, tokens, typography, grammar, components, recipes, prompts, references, why/do/don’t examples, and publishing checklist.
 
-## Milestone 8 — Public release decision
+## Milestone 8 — Public release and licensing decision
 
-**State:** undecided
+**State:** working repository is public; release policy remains undecided
 
-Choose repository visibility, license, attribution, font licensing policy, asset-distribution strategy, and versioning model only after Pilot 01 and Visual DNA Sprint 1 are stable.
+The selected working repository is `vladagurets/csdl`. Before calling CSDL a public release, choose a license, attribution policy, font licensing policy, asset-distribution strategy, and stable versioning model after Pilot 01 and Visual DNA Sprint 1 are validated.

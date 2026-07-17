@@ -4,6 +4,8 @@ A geometric visual language for explaining complex ideas clearly, memorably, and
 
 **Status:** Foundation v0.1 approved; Pilot 01 — Agentic Discipline is in progress.
 
+**GitHub:** `vladagurets/csdl` is the selected public working repository. A public license has not yet been selected.
+
 ## Start here
 
 1. Read [`AGENTS.md`](AGENTS.md) before assigning work to Codex.

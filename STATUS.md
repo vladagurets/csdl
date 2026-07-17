@@ -72,11 +72,12 @@ Full asset and score validation is expected to fail until Tasks 5–14 create th
 
 ## Known blockers before Codex raster execution
 
-1. A dedicated GitHub repository must be created and connected to Codex.
+1. The target repository is confirmed as `vladagurets/csdl` and is currently public. The initial import still needs to be pushed, then the repository must be connected to a Codex environment.
 2. Image generation needs either:
    - an external ChatGPT image-generation/review loop; or
    - an API-backed script with `OPENAI_API_KEY`, GPT Image 2 access, and network enabled in the Codex environment.
 3. Final font families remain deferred; prompts use role descriptions rather than licensed font binaries.
+4. The repository has no public license yet. Do not assume reuse rights for generated assets or documentation until a license decision is recorded.
 
 ## Resume prompt
 

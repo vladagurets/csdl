@@ -1,6 +1,6 @@
 # AGENTS.md — CSDL operating instructions
 
-These instructions apply to the entire repository.
+These instructions apply to the entire repository. The canonical GitHub target is `vladagurets/csdl`.
 
 ## Mission
 

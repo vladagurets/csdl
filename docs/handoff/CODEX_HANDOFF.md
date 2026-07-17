@@ -8,12 +8,13 @@ Raster generation is intentionally separated from design governance. Codex shoul
 
 ## Recommended repository setup
 
-- Repository: `vladagurets/constructive-signal-design-language`
-- Initial visibility: private
+- Repository: `vladagurets/csdl`
+- Current visibility: public working repository; no public license selected yet
 - Default branch: `main`
 - Working branch for the current milestone: `pilot-01`
 - Protect `main` after the initial import; merge through pull requests
 - Require the validation workflow before merge
+- Follow `docs/handoff/GITHUB_IMPORT.md` for the initial push
 - Connect the repository to a Codex environment after import
 
 ## First Codex task
