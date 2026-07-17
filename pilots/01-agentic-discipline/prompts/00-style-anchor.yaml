@@ -1,0 +1,45 @@
+language: CSDL
+version: 0.1
+mode:
+  name: Quiet Modular
+  palette: Muted Signal Light
+  canvas: 1080x1350
+  expression_default: A
+visual_direction:
+  background: "warm paper, #F7F5F0"
+  primary_ink: "warm graphite, #1B1B19"
+  secondary_ink: "soft graphite, #535457"
+  primary_signal: "muted mineral coral, #C96157"
+  geometry: "flat, precise, semantic, no decorative 3D"
+  negative_space: "50–75 percent depending on level"
+  asymmetry: "controlled and grid-aware"
+  texture: "very subtle paper grain only; no distressed print"
+typography:
+  display: "modular technical grotesk, square engineering proportions, Ukrainian and English capable"
+  body: "neutral highly legible sans-serif"
+  code: "clean technical monospace"
+  rules:
+    - "body copy remains horizontal"
+    - "no more than one typographic trick"
+    - "do not imitate Soviet or 1920s lettering"
+composition:
+  grid: "12 columns, 72 px outer margins, 24 px gutters"
+  reading_path: "one obvious path, normally top-left to bottom-right"
+  footer: none
+  repeated_logo: false
+hard_exclusions:
+  - "no UI mockup chrome"
+  - "no decorative coordinate systems"
+  - "no random dotted grids"
+  - "no gradients"
+  - "no shadows"
+  - "no glossy surfaces"
+  - "no 3D"
+  - "no Soviet symbols"
+  - "no revolutionary poster styling"
+  - "no accidental extra labels"
+  - "no text not supplied by the card prompt"
+output:
+  format: PNG
+  exact_size: 1080x1350
+  text_accuracy: publish-ready
