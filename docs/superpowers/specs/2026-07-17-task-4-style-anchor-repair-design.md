@@ -25,7 +25,7 @@ Restore Task 4 to a truthful, independently verifiable complete state by adding 
 1. Create `pilots/01-agentic-discipline/references/style-anchor-light.png` as a real `1080×1350` RGB PNG.
 2. Create `pilots/01-agentic-discipline/references/style-anchor-light.provenance.md` with source inputs, construction method, visible-copy review, visual checklist, image metadata, and approval rationale.
 3. Create `tools/validate_style_anchor.py` with a focused `validate_style_anchor(path: Path) -> list[str]` interface.
-4. Create `tests/test_validate_style_anchor.py` covering a valid anchor, a missing anchor, wrong dimensions, and unsupported color mode.
+4. Create `tests/test_validate_style_anchor.py` covering a valid anchor, a missing anchor, non-PNG content, wrong dimensions, and unsupported color mode.
 5. Add the dedicated validator to `.github/workflows/validate.yml` so the missing artifact cannot regress silently.
 6. Update `STATUS.md` and `CHANGELOG.md` to record that Task 4 was repaired and to name the new evidence.
 
