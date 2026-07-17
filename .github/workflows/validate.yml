@@ -5,9 +5,6 @@ on:
   push:
     branches: [main, pilot-01]
 
-permissions:
-  contents: write
-
 jobs:
   tests:
     runs-on: ubuntu-latest
@@ -26,108 +23,17 @@ jobs:
         run: >-
           python tools/validate_style_anchor.py
           pilots/01-agentic-discipline/references/style-anchor-light.png
-
-  promote-card-01:
-    if: github.event_name == 'pull_request' && github.head_ref == 'codex/pilot-01-card-01'
-    needs: tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: codex/pilot-01-card-01
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install exact renderer
+      - name: Validate existing Pilot 01 canonical assets
         run: |
-          python -m pip install 'Pillow==12.2.0'
-          curl --fail --location --retry 3 \
-            --output /tmp/Inter-4.0.zip \
-            https://github.com/rsms/inter/releases/download/v4.0/Inter-4.0.zip
-          mkdir -p /tmp/inter-fonts
-          unzip -q /tmp/Inter-4.0.zip -d /tmp/inter-fonts
-          find /tmp/inter-fonts -type f \( -name 'InterDisplay-Black.otf' -o -name 'Inter-Regular.otf' \) -print
-      - name: Render approved V1 candidate
-        shell: bash
-        run: |
-          set -euo pipefail
-          output='pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png'
-          headline_font="$(find /tmp/inter-fonts -type f -name 'InterDisplay-Black.otf' -print -quit)"
-          body_font="$(find /tmp/inter-fonts -type f -name 'Inter-Regular.otf' -print -quit)"
-          test -n "$headline_font"
-          test -n "$body_font"
-          export HEADLINE_FONT="$headline_font" BODY_FONT="$body_font" OUTPUT="$output"
-          mkdir -p "$(dirname "$output")"
-          python - <<'PY'
-          import os
-          from pathlib import Path
-          from PIL import Image, ImageDraw, ImageFont
-
-          output = Path(os.environ['OUTPUT'])
-          image = Image.new('RGB', (1080, 1350), '#F7F5F0')
-          draw = ImageDraw.Draw(image)
-          headline = ImageFont.truetype(os.environ['HEADLINE_FONT'], 96)
-          body = ImageFont.truetype(os.environ['BODY_FONT'], 38)
-
-          for position, text in [
-              ((72, 70), 'СИЛЬНИЙ'),
-              ((104, 157), 'АГЕНТ ≠'),
-              ((80, 286), 'СТІЙКИЙ'),
-              ((130, 374), 'РЕЗУЛЬТАТ'),
-          ]:
-              draw.text(position, text, font=headline, fill='#1B1B19')
-
-          draw.text(
-              (72, 627),
-              'Стабільність з’являється, коли робота має',
-              font=body,
-              fill='#535457',
-          )
-          draw.text(
-              (72, 678),
-              'процес, перевірки й пам’ять.',
-              font=body,
-              fill='#535457',
-          )
-          draw.line((540, 790, 820, 965), fill='#1B1B19', width=3)
-          draw.rectangle((820, 965, 1009, 1154), fill='#C96157')
-          image.save(output, format='PNG', optimize=True, compress_level=9)
-          PY
-          sha256sum "$output"
           python - <<'PY'
           from pathlib import Path
-          from PIL import Image
-          path = Path('pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png')
-          with Image.open(path) as image:
-              image.verify()
-          with Image.open(path) as image:
-              assert image.format == 'PNG', image.format
-              assert image.size == (1080, 1350), image.size
-              assert image.mode == 'RGB', image.mode
-          print('runner Card 01 raster metadata valid')
+          from tools.validate_assets import validate_assets
+
+          errors = validate_assets(
+              Path('pilots/01-agentic-discipline'),
+              require_complete=False,
+          )
+          if errors:
+              raise SystemExit('\n'.join(f'ERROR: {error}' for error in errors))
+          print('existing assets valid')
           PY
-      - name: Upload runner V1 for comparison
-        uses: actions/upload-artifact@v4
-        with:
-          name: card-01-v1-runner
-          path: pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png
-          if-no-files-found: error
-      - name: Verify reviewed runner V1 identity
-        shell: bash
-        run: |
-          echo 'cf97312ae89b7f03bf6c2f5c5e028b29c518b1d4146a0a24871cedf633ff2d9d  pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png' | sha256sum --check
-      - name: Commit canonical raster and remove staging
-        shell: bash
-        run: |
-          set -euo pipefail
-          output='pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png'
-          staging='pilots/01-agentic-discipline/staging'
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          if [[ -d "$staging" ]]; then
-            git rm -r "$staging"
-          fi
-          git add "$output"
-          git commit -m 'feat: promote approved Card 01 hook raster'
-          git push origin HEAD:codex/pilot-01-card-01
