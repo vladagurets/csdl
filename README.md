@@ -27,6 +27,7 @@ A geometric visual language for explaining complex ideas clearly, memorably, and
 - Density rhythm: **A → A → B → A → B → A → C**
 - Core rule: **one idea + one visual mechanism + one signal per screen**
 - Canonical documentation: Markdown; images calibrate the written system
+- Shared Pilot 01 reference: [`style-anchor-light.png`](pilots/01-agentic-discipline/references/style-anchor-light.png), with adjacent provenance and review evidence
 
 ## Repository map
 
@@ -53,9 +54,10 @@ source .venv/bin/activate
 python -m pip install -e '.[dev]'
 python -m pytest -q
 python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
+python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-The baseline currently contains nine passing tests.
+The baseline currently contains fourteen passing tests. The manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
 
 ## Image workflow
 
