@@ -4,3 +4,9 @@ __pycache__/
 .venv/
 .DS_Store
 pilots/**/drafts/**/*.png
+.env
+.env.*
+!.env.example
+pilots/**/candidates/
+pilots/**/previews/tmp/
+exports/
