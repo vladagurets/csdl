@@ -29,7 +29,7 @@ Additional completed foundation work:
 - Level A/B/C system calibrated;
 - 4:5 master format approved;
 - Foundation spec and full implementation plan approved;
-- initial and superseded references archived with status labels;
+- superseded reference boards removed from the active tree after their decisions were captured; Git history remains the archive;
 - full Git history imported to `https://github.com/vladagurets/csdl`;
 - Codex Ask-mode repository reading verified;
 - GitHub branch/write permissions verified.

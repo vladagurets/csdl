@@ -24,7 +24,7 @@ The replacement completes the original reference-first intent with GPT Image 2, 
 
 - `pilots/01-agentic-discipline/prompts/00-style-anchor.yaml`
 - `pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png` as the primary typography and visual reference
-- `references/quiet-modular-density-calibration.png` as the broader Quiet Modular calibration reference used during initial exploration
+- `references/canonical/quiet-modular-a-b-c-calibration.png` as the broader Quiet Modular calibration reference used during initial exploration
 - Foundation v0.1 and Task 4 of `docs/superpowers/plans/2026-07-17-csdl-pilot-01.md`
 
 ## Generation and selection history
