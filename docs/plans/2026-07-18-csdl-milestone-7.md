@@ -1,5 +1,7 @@
 # Milestone 7 — Cookbook and Design Book v1.0 Implementation Contract
 
+**Status:** complete through green integration PR #69 and merge commit `4c20829f4923c164b48985d06a49247ff372ed4f`.
+
 **Objective:** build a coherent bilingual 25–40 page publication from canonical Milestone 1–6 sources while preserving every closed contract and accepted raster.
 
 ## Primary signal

@@ -162,15 +162,16 @@ def test_compatibility_source_preserves_closed_dependencies() -> None:
     assert contract["analytical_mode"]["quantitative_invariants_preserved"] is True
 
 
-def test_architecture_docs_record_d032_and_milestone_7_integration_gate() -> None:
+def test_architecture_docs_record_d032_and_milestone_7_completion() -> None:
     assert "D-032" in (ROOT / "DECISIONS.md").read_text(encoding="utf-8")
     assert "D-033" in (ROOT / "DECISIONS.md").read_text(encoding="utf-8")
     roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
     milestone_6 = roadmap.split("## Milestone 6", 1)[1].split("## Milestone 7", 1)[0]
     milestone_7 = roadmap.split("## Milestone 7", 1)[1].split("## Milestone 8", 1)[0]
     assert "**State:** complete" in milestone_6
-    assert "**State:** integration pending" in milestone_7
-    assert "pass CI" in milestone_7 and "merge commit" in milestone_7
+    assert "**State:** complete" in milestone_7
+    assert "PR #69" in milestone_7
+    assert "4c20829f4923c164b48985d06a49247ff372ed4f" in milestone_7
 
 
 def test_completion_docs_and_ci_cover_milestone_6() -> None:

@@ -2,7 +2,7 @@
 
 A geometric visual language for explaining complex ideas clearly, memorably, and consistently with humans and generative models.
 
-**Status:** Foundation v0.1 through Night Mode and Accessibility v0.1 are complete. Cookbook and Design Book v1.0 is a validated Milestone 7 integration candidate.
+**Status:** Foundation v0.1 through Night Mode and Accessibility v0.1 are complete. Cookbook and Design Book v1.0 is also complete.
 
 **GitHub:** `vladagurets/csdl` is the selected public working repository. A public license has not yet been selected.
 
@@ -13,7 +13,7 @@ A geometric visual language for explaining complex ideas clearly, memorably, and
 3. Check current progress and the exact next task in [`STATUS.md`](STATUS.md).
 4. Follow the staged work in [`ROADMAP.md`](ROADMAP.md).
 5. Treat [`specs/2026-07-17-csdl-v0.1-design.md`](specs/2026-07-17-csdl-v0.1-design.md) as the design source of truth.
-6. Review the Milestone 7 integration candidate in [`cookbook/design-book-v1.0/`](cookbook/design-book-v1.0/) and D-033.
+6. Review the completed Milestone 7 publication in [`cookbook/design-book-v1.0/`](cookbook/design-book-v1.0/) and D-033.
 7. Review the completed Night Mode and Accessibility v0.1 contract in [`accessibility/night-mode-v0.1/`](accessibility/night-mode-v0.1/) and its evidence audit/implementation plan.
 8. Review the completed Analytical Mode v0.1 contract in [`analytics/analytical-mode-v0.1/`](analytics/analytical-mode-v0.1/) and its evidence audit/implementation plan.
 9. Review the completed Milestone 4 contract in [`recipes/recipe-library-v0.5/`](recipes/recipe-library-v0.5/).
@@ -125,4 +125,4 @@ Ten end-to-end proofs and seventeen exact-error negative fixtures validate seman
 
 ## Cookbook and Design Book v1.0
 
-Milestone 7 is a validated integration candidate under D-033. The additive [`cookbook/design-book-v1.0/`](cookbook/design-book-v1.0/) contract contains 32 canonical one-page Markdown sources, a protected English terminology registry, page-level provenance, deterministic assembled Markdown/index outputs, twelve negative publication fixtures, and Pillow/PyYAML-only tooling that builds an A4 landscape PDF with a Unicode text layer, color/grayscale review pages, and a contact sheet. The guide covers the complete Milestone 1–6 language without changing Prompt DSL v0.5, the fifteen public components, the 23 recipes, Analytical Mode, Accessibility v0.1, or any of the sixty accepted raster hashes. It is not a public release and does not resolve licensing or final font-family decisions.
+Milestone 7 is complete under D-033 through green integration PR #69 and merge commit `4c20829f4923c164b48985d06a49247ff372ed4f`. The additive [`cookbook/design-book-v1.0/`](cookbook/design-book-v1.0/) contract contains 32 canonical one-page Markdown sources, a protected English terminology registry, page-level provenance, deterministic assembled Markdown/index outputs, twelve negative publication fixtures, and Pillow/PyYAML-only tooling that builds an A4 landscape PDF with a Unicode text layer, color/grayscale review pages, and a contact sheet. The guide covers the complete Milestone 1–6 language without changing Prompt DSL v0.5, the fifteen public components, the 23 recipes, Analytical Mode, Accessibility v0.1, or any of the sixty accepted raster hashes. It is not a public release and does not resolve licensing or final font-family decisions.
