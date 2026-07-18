@@ -221,7 +221,10 @@ families:
   - A
   evidence_mode: generated
   canonical_example: canonical/light/16x9/17-kpi.png
-  status: awaiting_generation
+  sha256: 921db7c444732a132c88fbb00a40ce315f5913ee1bf11573580bccbe3a701cc2
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: '18'
   slug: table
   name: Table

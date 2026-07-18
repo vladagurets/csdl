@@ -23,6 +23,7 @@
 - Regenerated Pipeline under D-028 from three new candidates, selected the exact-copy Level B stepped carrier-through-gates composition with one solid VALIDATE gate, and persisted primary-authority and series evidence.
 - Added Decision Tree from three candidates, selecting the exact-copy Level A open-question split with two labeled terminal routes and ochre reserved for HUMAN REVIEW, with full primary-authority and series evidence.
 - Added Framework from three candidates, selecting the exact-copy Level B open four-node Cluster with equal concept weight and coral reserved for the LEARNING component, with full primary-authority and series evidence.
+- Added KPI from an initial three-candidate pass plus two bounded signal-area corrections, selecting the exact W4 fixed-data Level A Pulse with a measured `3.45%` dusty-blue footprint and full primary-authority and series evidence.
 
 ## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
 
