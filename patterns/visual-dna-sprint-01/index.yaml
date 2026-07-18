@@ -91,7 +91,10 @@ families:
   - B
   evidence_mode: generated
   canonical_example: canonical/light/16x9/07-before-after.png
-  status: awaiting_generation
+  sha256: 00d86beda692414715d328100fde67d241d1045ca89ec7dde93793b138e0cd90
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: 08
   slug: timeline
   name: Timeline
