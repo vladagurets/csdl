@@ -183,7 +183,10 @@ families:
   - B
   evidence_mode: generated
   canonical_example: canonical/light/16x9/14-pipeline.png
-  status: awaiting_generation
+  sha256: bb697c9ae8679507412e9e4ad32f856323c4ac03d38bc67f64b0d828aa90b968
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: '15'
   slug: decision-tree
   name: Decision Tree

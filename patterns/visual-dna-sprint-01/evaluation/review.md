@@ -209,3 +209,19 @@ Exact-copy review: pass for `РОБОЧИЙ ПОТІК З ДОКАЗАМИ`, `UN
 - `05-synthesis-v3.png` — rejected because pills plus circular markers duplicated the Node role.
 
 Audit result: headline, supporting sentence, and all five English stages match the manifest exactly and remain in the declared cyclic order. The Loop is closed, connector direction is unambiguous, and only one Node is active. Full-resolution and existing `1280×720` evidence remain readable. Canonical Level B is justified because the five-stage cyclic relationship is itself the teaching object. No regeneration is warranted. Accepted catalog score: `5.00`.
+
+### 14 Pipeline — generated example accepted
+
+- **Canonical:** `canonical/light/16x9/14-pipeline.png`
+- **Prompt:** `prompts/14-pipeline.yaml`
+- **Selected:** `14-pipeline-v1.png` from three independent built-in GPT Image 2 candidates
+- **Source SHA-256:** `27ade38bd4023b21d0550eca221e80827ebf7bb23456d81a59fc44253fec8fee`
+- **Canonical SHA-256:** `bb697c9ae8679507412e9e4ad32f856323c4ac03d38bc67f64b0d828aa90b968`
+- **Source raster:** `1672×941`, RGB PNG
+- **Canonical raster:** `1920×1080`, RGB PNG
+
+- `14-pipeline-v1.png` — selected: exact copy and order, one continuous blue carrier passes through five evenly spaced gates, VALIDATE alone is active, and the output arrow remains on the same flow.
+- `14-pipeline-v2.png` — rejected: exact copy and open processing Containers pass, but gaps around the stage labels interrupt the carrier instead of visibly passing the artifact through every stage.
+- `14-pipeline-v3.png` — rejected: exact copy and order pass, but the filled tonal VALIDATE module introduces a gradient-like container and excessive visual weight.
+
+Exact-copy review: pass for `КОНТЕКСТ СТАЄ РЕЗУЛЬТАТОМ`, `INPUT`, `PARSE`, `TRANSFORM`, `VALIDATE`, and `OUTPUT`; no extra stage, status, or caption. Visual mechanism: one continuous dusty-blue Vector carries the artifact through five vertical stage gates, with VALIDATE emphasized immediately before OUTPUT. Strongest decision: the carrier-through-gates mechanic makes transformation distinct from Workflow's separate action-to-action arrows and Timeline's chronological points. Removable-element check: headline, five gates, five labels, carrier, and terminal arrow all support the pipeline contract. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the abstract gates are technical rather than illustrative, which is intentional and avoids literal pipe imagery. Accepted catalog score: `4.86`.
