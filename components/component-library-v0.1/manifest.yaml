@@ -283,6 +283,256 @@ components:
     specification: specs/04-frame.md
     evidence_level: bounded
 
+  - id: "05"
+    slug: cluster
+    name: Cluster
+    category: structural
+    purpose: "Group related concepts, evidence, or measures without automatically implying order."
+    semantic_meaning: "A set whose members share one role, model, or review context."
+    spatial_contract:
+      count: {min: 0, max: 1}
+      member_count: {min: 2, max: 6}
+      grouping_cues: [proximity, alignment, repetition]
+      enclosure_required: false
+      sequence_implied: false
+    dimensions:
+      unit: px
+      width: {min: 244, max: 1472}
+      height: {min: 64, max: 720}
+      area_percent: {min: 2, max: 40}
+    relations:
+      allowed:
+        - {type: groups, target: Node, direction: outbound, cardinality: one_or_many}
+        - {type: groups, target: Label, direction: outbound, cardinality: one_or_many}
+        - {type: groups, target: Pulse, direction: outbound, cardinality: zero_or_many}
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: inside, target: Frame, direction: outbound, cardinality: zero_or_one}
+        - {type: highlights, target: Signal, direction: inbound, cardinality: zero_or_one}
+      forbidden:
+        - {type: orders, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: directs, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: repeats, target: Loop, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [framework, dashboard]
+    expression_limits:
+      A: {status: allowed, max_count: 1, max_members: 4}
+      B: {status: allowed, max_count: 1, max_members: 6}
+      C: {status: forbidden, max_count: 0, reason: "Multiple peer members conflict with the short single-peak Signal contract."}
+    typography:
+      role: label
+      constraints: [equal_member_roles, direct_labels, no_card_titles]
+    semantic_color:
+      default: ink.primary
+      signal_target_allowed: true
+      constraints: [members_neutral_by_default, at_most_one_member_carries_signal]
+    examples:
+      do:
+        - {description: "Use four equal open Nodes as one non-sequential Framework Cluster.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+        - {description: "Use an aligned three-measure Cluster subordinate to one Dashboard Pulse.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not turn equal members into cards, steps, or a decorative network.", evidence: patterns/visual-dna-sprint-01/specs/16-framework.md}
+    prompt_dsl:
+      syntax: "Cluster(id=<id>, members=<instance-ids>, role=<group-role>)"
+      required_fields: [id, members, role]
+      optional_fields: [alignment, equality, signal_member]
+    validation_invariants:
+      - "A Cluster contains two to six semantically related members."
+      - "Member order is not interpreted as chronology unless an Axis is separately declared."
+      - "Only one member may carry the dominant Signal."
+      - "Alignment and proximity replace decorative enclosure."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "10.1 Nouns / Cluster", supports: "Group of related concepts or evidence."}
+      - {path: patterns/visual-dna-sprint-01/specs/16-framework.md, locator: "Semantic components", supports: "Equal concept Nodes form one non-sequential Cluster."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "16 Framework and 20 Dashboard", supports: "Accepted peer-concept and supporting-metric grouping."}
+    specification: specs/05-cluster.md
+    evidence_level: strong
+
+  - id: "07"
+    slug: divider
+    name: Divider
+    category: structural
+    purpose: "Separate peer states, positions, or scopes without establishing scale, direction, or moral priority."
+    semantic_meaning: "A subordinate distinction boundary between comparable regions."
+    spatial_contract:
+      count: {min: 0, max: 1}
+      subjects_required: 2
+      thickness_px: {min: 1, max: 4}
+      dominance: subordinate
+    dimensions:
+      unit: px
+      width: {min: 1, max: 1728}
+      height: {min: 1, max: 936}
+      area_percent: {min: 0.01, max: 2}
+    relations:
+      allowed:
+        - {type: separates, target: Field, direction: outbound, cardinality: one_or_many}
+        - {type: separates, target: Anchor, direction: outbound, cardinality: one_or_many}
+        - {type: separates, target: Frame, direction: outbound, cardinality: one_or_many}
+      forbidden:
+        - {type: orders, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: directs, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: connected_to, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [comparison, before-after]
+    expression_limits:
+      A: {status: allowed, max_count: 1, max_area_percent: 2}
+      B: {status: allowed, max_count: 1, max_area_percent: 2}
+      C: {status: conditional, max_count: 1, condition: "Only when peer distinction remains essential and readable inside the single Signal peak."}
+    typography:
+      role: none
+      constraints: [Labels_belong_to_separated_subjects, no_text_on_Divider]
+    semantic_color:
+      default: neutral.line
+      signal_target_allowed: false
+      constraints: [subordinate_tone, no_decorative_split_plane]
+    examples:
+      do:
+        - {description: "Use one thin Divider between two equal Comparison Fields.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not use a Divider as an Axis, Vector, decorative split screen, or unequal moral boundary.", evidence: patterns/visual-dna-sprint-01/specs/05-comparison.md}
+    prompt_dsl:
+      syntax: "Divider(id=<id>, subjects=<instance-ids>)"
+      required_fields: [id, subjects]
+      optional_fields: [orientation, tone, gap]
+    validation_invariants:
+      - "A Divider separates exactly two peer scopes or states."
+      - "A Divider never establishes order, direction, or quantitative scale."
+      - "Thickness remains subordinate and area stays below two percent."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "10.4 Structural components / Divider", supports: "Divider separates areas or positions."}
+      - {path: patterns/visual-dna-sprint-01/specs/05-comparison.md, locator: "Semantic components", supports: "One Divider preserves peer distinction."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "05 Comparison and 07 Before / After", supports: "Accepted thin subordinate separation."}
+    specification: specs/07-divider.md
+    evidence_level: strong
+
+  - id: "08"
+    slug: node
+    name: Node
+    category: structural
+    purpose: "Represent one stage, actor, option, concept, gate, or data point."
+    semantic_meaning: "One discrete semantic unit participating in a larger relation or set."
+    spatial_contract:
+      count: {min: 0, max: 7}
+      identity_required: true
+      renderings: [bare, open, solid, bounded]
+      repeated_semantics_comparable: true
+    dimensions:
+      unit: px
+      width: {min: 8, max: 488}
+      height: {min: 8, max: 240}
+      area_percent: {min: 0.02, max: 12}
+    relations:
+      allowed:
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: inside, target: Frame, direction: outbound, cardinality: zero_or_one}
+        - {type: groups, target: Cluster, direction: inbound, cardinality: zero_or_one}
+        - {type: connected_to, target: Bridge, direction: inbound, cardinality: zero_or_many}
+        - {type: directs, target: Vector, direction: inbound, cardinality: zero_or_many}
+        - {type: orders, target: Axis, direction: inbound, cardinality: zero_or_one}
+        - {type: repeats, target: Loop, direction: inbound, cardinality: zero_or_one}
+        - {type: attached_to, target: Label, direction: inbound, cardinality: zero_or_one}
+        - {type: highlights, target: Signal, direction: inbound, cardinality: zero_or_one}
+        - {type: maps_to, target: Legend, direction: inbound, cardinality: zero_or_one, condition: "Only for a validated multi-category analytical mapping."}
+      forbidden:
+        - {type: contains, target: Field, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: separates, target: Divider, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: bounds, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [timeline, matrix, hierarchy, architecture, workflow, loop, pipeline, decision-tree, framework, chart]
+    expression_limits:
+      A: {status: allowed, max_count: 7}
+      B: {status: allowed, max_count: 6}
+      C: {status: conditional, max_count: 4, condition: "Only a short culmination with directly readable Nodes and one Signal."}
+    typography:
+      role: label
+      constraints: [direct_identity, comparable_repeated_roles, no_UI_pills]
+    semantic_color:
+      default: ink.primary
+      signal_target_allowed: true
+      constraints: [neutral_by_default, one_selected_Node_maximum]
+    examples:
+      do:
+        - {description: "Use five bare ordered Nodes on one Timeline Axis and select VERIFY once.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+        - {description: "Use four square directly labeled Matrix Nodes at deliberate relative positions.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not turn Nodes into UI pills, repeated cards, icons, or unlabeled decorative points.", evidence: patterns/visual-dna-sprint-01/specs/13-loop.md}
+    prompt_dsl:
+      syntax: "Node(id=<id>, role=<stage|actor|option|concept|gate|data-point>)"
+      required_fields: [id, role]
+      optional_fields: [content, state, value, unit, period]
+    validation_invariants:
+      - "Every Node has one identifiable semantic role."
+      - "Repeated Nodes represent comparable units."
+      - "At most one Node carries the dominant Signal unless a later analytical contract explicitly proves multiple categories."
+      - "A Node does not become a card shell or interface control."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "10.1 Nouns / Node", supports: "Node represents a stage, actor, or data point."}
+      - {path: patterns/visual-dna-sprint-01/specs/08-timeline.md, locator: "Semantic components", supports: "Ordered directly labeled stages."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "08 Timeline through 20 Dashboard", supports: "Accepted bare/open/solid/data Node behavior and UI rejections."}
+    specification: specs/08-node.md
+    evidence_level: strong
+
+  - id: "12"
+    slug: axis
+    name: Axis
+    category: structural
+    purpose: "Establish ordered progression, continuous comparison, lookup alignment, support alignment, or quantitative domain."
+    semantic_meaning: "An open reference structure that makes order, dimension, lookup, or scale explicit."
+    spatial_contract:
+      count: {min: 0, max: 2}
+      modes: [sequence, coordinate, lookup, support, quantitative]
+      direction_required: true
+      quantitative_domain_required_for: quantitative
+      closure: open
+    dimensions:
+      unit: px
+      width: {min: 122, max: 1728}
+      height: {min: 1, max: 864}
+      area_percent: {min: 0.05, max: 15}
+    relations:
+      allowed:
+        - {type: orders, target: Node, direction: outbound, cardinality: one_or_many}
+        - {type: orders, target: Label, direction: outbound, cardinality: one_or_many}
+        - {type: orders, target: Pulse, direction: outbound, cardinality: zero_or_many}
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: inside, target: Frame, direction: outbound, cardinality: zero_or_one}
+        - {type: attached_to, target: Label, direction: inbound, cardinality: one_or_many}
+        - {type: highlights, target: Signal, direction: inbound, cardinality: zero_or_one}
+      forbidden:
+        - {type: repeats, target: Loop, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: produces, target: Collision, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: separates, target: Divider, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [timeline, matrix, kpi, table, chart, dashboard]
+    expression_limits:
+      A: {status: allowed, max_count: 2}
+      B: {status: allowed, max_count: 2}
+      C: {status: forbidden, max_count: 0, reason: "Axis lookup and scale need stable repeated structure rather than a short Signal peak."}
+    typography:
+      role: label
+      constraints: [direct_labels, horizontal_by_default, short_axis_label_rotation_only, tabular_figures_when_quantitative]
+    semantic_color:
+      default: neutral.line
+      signal_target_allowed: true
+      constraints: [neutral_reference_structure, one_semantic_series_or_transition_may_carry_signal]
+    examples:
+      do:
+        - {description: "Use one open Timeline Axis for five ordered Nodes.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+        - {description: "Use two honest Chart Axes with a declared 0–100 percent domain.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not add pseudo-precise ticks, reverse order, close the route, or distort quantitative positions.", evidence: patterns/visual-dna-sprint-01/specs/19-chart.md}
+    prompt_dsl:
+      syntax: "Axis(id=<id>, mode=<sequence|coordinate|lookup|support|quantitative>, direction=<semantic-direction>)"
+      required_fields: [id, mode, direction]
+      optional_fields: [domain, order, scale, unit]
+    validation_invariants:
+      - "Every Axis declares one semantic mode and direction."
+      - "Quantitative mode declares an honest domain and exact ordered values."
+      - "Coordinate mode uses independent named dimensions."
+      - "An Axis remains open and cannot substitute for Loop recurrence."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "10.4 Structural components / Axis and 7 Analytical Mode", supports: "Progression/comparison meaning and quantitative integrity."}
+      - {path: patterns/visual-dna-sprint-01/specs/08-timeline.md, locator: "Semantic components", supports: "Ordered chronological Axis."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "09 Matrix, 17 KPI, 18 Table, 19 Chart, and 20 Dashboard", supports: "Coordinate, support, lookup, and quantitative modes."}
+    specification: specs/12-axis.md
+    evidence_level: strong
+
   - id: "14"
     slug: label
     name: Label

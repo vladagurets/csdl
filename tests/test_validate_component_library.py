@@ -100,12 +100,28 @@ def test_infrastructure_manifest_is_valid_in_incomplete_mode() -> None:
 
 def test_foundation_packet_contains_complete_expected_components() -> None:
     data = yaml.safe_load((LIBRARY / "manifest.yaml").read_text(encoding="utf-8"))
+    foundation_slugs = ["anchor", "signal", "field", "frame", "label"]
+
+    assert [
+        component["slug"]
+        for component in data["components"]
+        if component["slug"] in foundation_slugs
+    ] == foundation_slugs
+    assert validate_component_library(LIBRARY / "manifest.yaml", require_complete=False) == []
+
+
+def test_units_packet_contains_complete_expected_components() -> None:
+    data = yaml.safe_load((LIBRARY / "manifest.yaml").read_text(encoding="utf-8"))
 
     assert [component["slug"] for component in data["components"]] == [
         "anchor",
         "signal",
         "field",
         "frame",
+        "cluster",
+        "divider",
+        "node",
+        "axis",
         "label",
     ]
     assert validate_component_library(LIBRARY / "manifest.yaml", require_complete=False) == []

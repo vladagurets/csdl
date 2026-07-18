@@ -103,3 +103,47 @@ pass
 ```
 
 Remaining risk: Frame's Hierarchy compatibility is a lossless vocabulary mapping from accepted open-bracket evidence rather than a new raster. The strict proof gate will independently exercise Frame relations in a later packet; no current raster semantics changed.
+
+## Structural unit component packet
+
+- Branch: `codex/m3-components-units`
+- Accepted records: `05 Cluster`, `07 Divider`, `08 Node`, `12 Axis`
+- Canonical specs: `specs/05-cluster.md`, `07-divider.md`, `08-node.md`, `12-axis.md`
+- Evidence levels: all strong
+- Raster generation: none
+- Canonical raster mutation: none
+
+### Owning distinctions
+
+- Cluster owns non-sequential grouping through proximity, alignment, and repetition.
+- Divider owns one subordinate distinction between two peer scopes and cannot establish order or direction.
+- Node owns one discrete stage, actor, option, concept, gate, or data point; repeated Nodes remain comparable.
+- Axis owns open sequence, coordinate, lookup, support, or quantitative reference structure; every mode declares direction, and quantitative mode requires a domain.
+
+These contracts preserve the accepted differences between Framework, Comparison, Timeline, Matrix, Table, and Chart rather than collapsing them into generic rows or boxes.
+
+### TDD and validation evidence
+
+The packet began with the expected failure that the canonical nine-record subsequence still contained only the five foundation records.
+
+```text
+focused component infrastructure tests
+16 passed
+
+programmatic incomplete-mode library validation
+component units packet valid
+
+.venv/bin/python -m pytest -q
+65 passed
+
+Pilot manifest/style-anchor/assets/scores validators
+pass
+
+Milestone 2 catalog/data/assets/scores/review/index validators
+pass
+
+git diff --check
+pass
+```
+
+Remaining risk: Axis intentionally unifies five evidenced modes. Mode-specific proof validation currently enforces the fixed quantitative contract only for analytical proofs; the structural and analytical proof packet will exercise both open topology and honest scale before milestone completion.
