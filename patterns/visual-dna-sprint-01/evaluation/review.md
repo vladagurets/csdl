@@ -61,21 +61,21 @@ The former `02-cover-v1.png`, `02-cover-v2.png`, and `02-cover-v3.png` record re
 
 The former `03-quote-v1.png`, `03-quote-v2.png`, and `03-quote-v3.png` record remains superseded by D-028; none was reconsidered as active evidence. Exact-copy review: pass for the full Ukrainian quotation, curly opening/closing quotation marks, final period, and `AGENTIC DISCIPLINE`; no additional speaker or source metadata. Visual mechanism: the quotation is one typographic Anchor, the attribution is one subordinate source relation, and the coral square marks the opening hinge without becoming decoration. Strongest decision: the tall technical cadence is distinctive at presentation scale while the untouched right Field preserves the intended Level A pause. Removable-element check: exact quotation, attribution, and one Signal are all functional. Primary-authority comparison: pass against all three `references/canonical/` boards for Modular Technical display direction, square component vocabulary, asymmetry, and mineral restraint. Series contact-sheet review: pass beside active Hero, Cover, Comparison, and Loop evidence; Quote reads as the quiet editorial pause and does not borrow Cover's plane or the Pilot mechanisms. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the quote's memorability is intentionally typographic rather than geometric, which is appropriate for this family. Accepted catalog score: `5.00`.
 
-### 04 Big Number — first generated pass superseded
+### 04 Big Number — regenerated example accepted
 
 - **Canonical:** `canonical/light/16x9/04-big-number.png`
 - **Prompt:** `prompts/04-big-number.yaml`
-- **Selected:** `04-big-number-v2.png` from three independent built-in GPT Image 2 candidates
-- **Source SHA-256:** `6350282add68dbb41cbd95a2b655cffcf2d3c7fcb982dfdc514a6163862c47e5`
-- **Canonical SHA-256:** `2d44a55c90e189fd02cbcef72a50e9e4f846c78f12ebfbdb43fd2fe14a9fe425`
+- **Selected:** `04-big-number-r2-v1.png` from three independent built-in GPT Image 2 rebaseline candidates
+- **Source SHA-256:** `269f2c6c899ed99eccb881120f98ea5f1a842c1712a8f4071fa5467b8c7d6a21`
+- **Canonical SHA-256:** `450bf0c7327347ddf28a22d96cfdddacd8e6d1c5165e13a992db5ebff13fb628`
 - **Source raster:** `1672×941`, RGB PNG
 - **Canonical raster:** `1920×1080`, RGB PNG
 
-- `04-big-number-v1.png` — rejected: copy is exact, but both centered separators become coral dots in addition to the coral square, creating multiple competing signals.
-- `04-big-number-v2.png` — selected: the numeral reads first, the label remains attached, centered separators stay neutral, and one coral marker sits with the value rather than the label.
-- `04-big-number-v3.png` — rejected: exact copy and hierarchy pass, but the coral square reads like trailing punctuation after the label instead of a value marker.
+- `04-big-number-r2-v1.png` — selected: exact copy, strongest Pulse → Anchor → context route, both centered dots remain neutral, and the single coral marker attaches to the value baseline.
+- `04-big-number-r2-v2.png` — rejected: copy and hierarchy pass, but the Ukrainian label introduces broken stencil-like strokes that violate the Modular Technical exclusion.
+- `04-big-number-r2-v3.png` — rejected: exact copy and restrained signal pass, but the narrower rounded numeral and wider label create a less specific technical identity and a looser marker relation.
 
-Exact-copy review: pass for `3`, `РІВНІ ВИРАЗНОСТІ`, and `QUIET · CONSTRUCTIVE · SIGNAL`, including both centered dots; no percent sign or added statistic. Visual mechanism: one dominant numeric Pulse leads to one attached label and one subordinate level list; the coral square marks the value. Strongest decision: the open horizontal composition makes the count memorable without introducing chart semantics. Removable-element check: numeral, label, level names, and one marker are all functional. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: none material. Accepted catalog score: `5.00`.
+The former `04-big-number-v1.png`, `04-big-number-v2.png`, and `04-big-number-v3.png` record remains superseded by D-028; none was reconsidered as active evidence. Exact-copy review: pass for `3`, `РІВНІ ВИРАЗНОСТІ`, and `QUIET · CONSTRUCTIVE · SIGNAL`, including both centered dots; no percent sign or added statistic. Visual mechanism: one dominant numeric Pulse leads to one attached label and one subordinate level list; the sole coral square marks the value and occupies approximately `0.11%` of the canvas. Strongest decision: the large engineered numeral echoes the primary boards' numeric emphasis while the open horizontal field avoids dashboard or chart semantics. Removable-element check: exact numeral, label, level names, and one value marker are all functional. Primary-authority comparison: pass against all three `references/canonical/` boards for numeric hierarchy, asymmetric component grouping, single-signal geometry, and Level A field. Series contact-sheet review: pass beside active Hero, Cover, Quote, Comparison, and Loop evidence; Big Number reads as the only numeric Pulse and does not collapse into a centered statistic card. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: none material. Accepted catalog score: `5.00`.
 
 ### 05 Comparison — Pilot reference accepted
 
