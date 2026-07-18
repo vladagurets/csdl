@@ -1,0 +1,3 @@
+id: inverted-uncertainty
+base_package: proofs/packages/02-line-forecast.yaml
+mutation: {path: [specification, records, 4, lower], value: 94}

@@ -1,0 +1,252 @@
+language: CSDL
+version: '0.1'
+kind: analytical-package
+id: proof-08-network
+dataset:
+  id: network-dependency-v1
+  version: 1.0.0
+  path: datasets/08-network.yaml
+  source: CSDL Milestone 5 synthetic fixture
+analytical_intent:
+  question: Which declared directed dependencies connect the agent system?
+  claim: Node and edge identity, direction, and weight are explicit while layout distance
+    is non-semantic.
+recipe:
+  id: '020'
+  slug: dashboard
+  version: 0.5.0
+encoding:
+  marks:
+  - type: network-node
+    role: entity
+  - type: network-edge
+    role: directed-dependency
+  - type: text
+    role: identity-label
+  bindings:
+    status: record_kind
+    node_id: entity_id
+    label: label
+    edge_source: source_id
+    edge_target: target_id
+    weight: weight
+  order:
+  - agent
+  - tools
+  - memory
+  - agent-tools
+  - agent-memory
+  - memory-agent
+  domains:
+    weight:
+    - 0
+    - 100
+  scales:
+    weight: linear
+  directed: true
+  missing_edge_semantics: absent_edge_means_no_declared_dependency
+  layout_semantic: false
+  distance_encoding: none
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings:
+  - node_label
+  - arrow_direction
+  - weight_label
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+- id: nodes
+  component: Node
+  role: network-node
+- id: edges
+  component: Bridge
+  role: directed-edge
+- id: labels
+  component: Label
+  role: direct-label
+- id: signal
+  component: Signal
+  role: strongest-edge
+relations:
+- subject: edges
+  type: connected_to
+  object: nodes
+- subject: labels
+  type: attached_to
+  object: nodes
+- subject: signal
+  type: highlights
+  object: edges
+specification:
+  family: network
+  fields:
+  - id: record_kind
+    label: Record kind
+    type: categorical
+    role: dimension
+    nullable: false
+    categories:
+    - node
+    - edge
+  - id: entity_id
+    label: Entity ID
+    type: identifier
+    role: identifier
+    nullable: false
+    network_role: node_or_edge_id
+  - id: label
+    label: Label
+    type: categorical
+    role: dimension
+    nullable: true
+  - id: source_id
+    label: Source node
+    type: identifier
+    role: identifier
+    nullable: true
+    network_role: edge_source
+  - id: target_id
+    label: Target node
+    type: identifier
+    role: identifier
+    nullable: true
+    network_role: edge_target
+  - id: weight
+    label: Dependency calls
+    type: quantitative
+    role: measure
+    nullable: true
+    unit: count
+    display_format: '0'
+    domain:
+    - 0
+    - 100
+    aggregation: sum
+  records:
+  - id: n1
+    record_kind: node
+    entity_id: agent
+    label: Agent
+    source_id: null
+    target_id: null
+    weight: null
+  - id: n2
+    record_kind: node
+    entity_id: tools
+    label: Tools
+    source_id: null
+    target_id: null
+    weight: null
+  - id: n3
+    record_kind: node
+    entity_id: memory
+    label: Memory
+    source_id: null
+    target_id: null
+    weight: null
+  - id: e1
+    record_kind: edge
+    entity_id: agent-tools
+    label: null
+    source_id: agent
+    target_id: tools
+    weight: 80
+  - id: e2
+    record_kind: edge
+    entity_id: agent-memory
+    label: null
+    source_id: agent
+    target_id: memory
+    weight: 55
+  - id: e3
+    record_kind: edge
+    entity_id: memory-agent
+    label: null
+    source_id: memory
+    target_id: agent
+    weight: 30
+  ordering:
+    nodes:
+    - agent
+    - tools
+    - memory
+    edges:
+    - agent-tools
+    - agent-memory
+    - memory-agent
+  missing_values:
+  - record_id: n1
+    field: source_id
+    status: not_applicable
+  - record_id: n1
+    field: target_id
+    status: not_applicable
+  - record_id: n1
+    field: weight
+    status: not_applicable
+  - record_id: n2
+    field: source_id
+    status: not_applicable
+  - record_id: n2
+    field: target_id
+    status: not_applicable
+  - record_id: n2
+    field: weight
+    status: not_applicable
+  - record_id: n3
+    field: source_id
+    status: not_applicable
+  - record_id: n3
+    field: target_id
+    status: not_applicable
+  - record_id: n3
+    field: weight
+    status: not_applicable
+  - record_id: e1
+    field: label
+    status: not_applicable
+  - record_id: e2
+    field: label
+    status: not_applicable
+  - record_id: e3
+    field: label
+    status: not_applicable
+  transformations: []
+  derived: {}
+  traceability:
+    status:
+      field: record_kind
+      type: categorical
+      unit: null
+    node_id:
+      field: entity_id
+      type: identifier
+      unit: null
+    label:
+      field: label
+      type: categorical
+      unit: null
+    edge_source:
+      field: source_id
+      type: identifier
+      unit: null
+    edge_target:
+      field: target_id
+      type: identifier
+      unit: null
+    weight:
+      field: weight
+      type: quantitative
+      unit: count
+provenance:
+  dataset_source:
+    source: CSDL Milestone 5 synthetic fixture
+    source_type: synthetic
+    source_date: 2026-07-18
+    retrieval_period: fixed dependency snapshot
+    method: fixed directed weighted nodes and edges
+  proof_source: proofs/sources/08-network.yaml
+  evidence: synthetic_fixed_data
+  builder: tools/build_analytical_mode.py
+  deterministic: true

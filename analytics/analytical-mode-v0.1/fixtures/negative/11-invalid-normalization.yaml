@@ -1,0 +1,3 @@
+id: invalid-normalized-total
+base_package: proofs/packages/01-bar-positive-negative.yaml
+mutation: {path: [encoding, bar_semantics], value: normalized}

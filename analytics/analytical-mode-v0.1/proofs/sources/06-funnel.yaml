@@ -1,0 +1,31 @@
+id: proof-06-funnel
+family: funnel
+dataset: datasets/06-funnel.yaml
+analytical_intent: {question: "How many entities remain and convert at each stage?", claim: "Absolute values and previous-stage conversion rates remain explicit."}
+recipe: {id: "019", slug: chart, version: 0.5.0}
+encoding:
+  marks: [{type: funnel-stage, role: ordered-stage}, {type: text, role: value-and-rate-label}]
+  bindings: {order: stage, value: count, label: stage}
+  order: [Evaluated, Trialed, Activated, Retained]
+  domains: {value: [0, 1000], conversion_rate: [0, 100]}
+  scales: {value: linear, order: ordinal}
+  denominator_semantics: previous_stage
+  conversion_transformation: previous_stage_conversion
+  non_monotonic_policy: show_without_reordering
+  width_semantics: proportional_length
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings: [absolute_value_label, conversion_rate_label]
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+  - {id: stage-axis, component: Axis, role: sequence}
+  - {id: value-axis, component: Axis, role: quantitative}
+  - {id: stages, component: Node, role: funnel-stage}
+  - {id: labels, component: Label, role: direct-label}
+  - {id: signal, component: Signal, role: retained-stage}
+relations:
+  - {subject: stage-axis, type: orders, object: stages}
+  - {subject: value-axis, type: orders, object: stages}
+  - {subject: labels, type: attached_to, object: stages}
+  - {subject: signal, type: highlights, object: stages}

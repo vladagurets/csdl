@@ -1,0 +1,29 @@
+id: proof-08-network
+family: network
+dataset: datasets/08-network.yaml
+analytical_intent: {question: "Which declared directed dependencies connect the agent system?", claim: "Node and edge identity, direction, and weight are explicit while layout distance is non-semantic."}
+recipe: {id: "020", slug: dashboard, version: 0.5.0}
+encoding:
+  marks: [{type: network-node, role: entity}, {type: network-edge, role: directed-dependency}, {type: text, role: identity-label}]
+  bindings: {status: record_kind, node_id: entity_id, label: label, edge_source: source_id, edge_target: target_id, weight: weight}
+  order: [agent, tools, memory, agent-tools, agent-memory, memory-agent]
+  domains: {weight: [0, 100]}
+  scales: {weight: linear}
+  directed: true
+  missing_edge_semantics: absent_edge_means_no_declared_dependency
+  layout_semantic: false
+  distance_encoding: none
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings: [node_label, arrow_direction, weight_label]
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+  - {id: nodes, component: Node, role: network-node}
+  - {id: edges, component: Bridge, role: directed-edge}
+  - {id: labels, component: Label, role: direct-label}
+  - {id: signal, component: Signal, role: strongest-edge}
+relations:
+  - {subject: edges, type: connected_to, object: nodes}
+  - {subject: labels, type: attached_to, object: nodes}
+  - {subject: signal, type: highlights, object: edges}

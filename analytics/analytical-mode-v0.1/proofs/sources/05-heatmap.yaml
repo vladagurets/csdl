@@ -1,0 +1,33 @@
+id: proof-05-heatmap
+family: heatmap
+dataset: datasets/05-heatmap.yaml
+analytical_intent: {question: "What is the success rate for each fixed team-week cell?", claim: "Matrix order is stable and the unavailable cell is distinct from zero."}
+recipe: {id: "019", slug: chart, version: 0.5.0}
+encoding:
+  marks: [{type: cell, role: matrix-value}, {type: text, role: value-and-missing-label}]
+  bindings: {row: team, column: week, value: success_rate, label: success_rate}
+  row_order: [Alpha, Beta]
+  column_order: [W1, W2, W3]
+  domains: {value: [0, 100]}
+  scales: {value: continuous-color, row: categorical, column: ordinal}
+  matrix_identity: team_by_week_success_rate
+  missing_rendering: labeled-cell
+  missing_label: N/A
+  non_color_fallback: direct_numeric_or_NA_label
+  scale_key: direct_endpoints_0_and_100_percent
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings: [numeric_label, missing_text_token]
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+  - {id: lookup-frame, component: Frame, role: matrix-lookup}
+  - {id: row-axis, component: Axis, role: lookup}
+  - {id: column-axis, component: Axis, role: lookup}
+  - {id: labels, component: Label, role: direct-label}
+  - {id: signal, component: Signal, role: selected-cell}
+relations:
+  - {subject: lookup-frame, type: contains, object: row-axis}
+  - {subject: lookup-frame, type: contains, object: column-axis}
+  - {subject: labels, type: attached_to, object: lookup-frame}
+  - {subject: signal, type: highlights, object: lookup-frame}

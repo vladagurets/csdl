@@ -1,0 +1,180 @@
+language: CSDL
+version: '0.1'
+kind: analytical-package
+id: proof-05-heatmap
+dataset:
+  id: heatmap-reliability-v1
+  version: 1.0.0
+  path: datasets/05-heatmap.yaml
+  source: CSDL Milestone 5 synthetic fixture
+analytical_intent:
+  question: What is the success rate for each fixed team-week cell?
+  claim: Matrix order is stable and the unavailable cell is distinct from zero.
+recipe:
+  id: 019
+  slug: chart
+  version: 0.5.0
+encoding:
+  marks:
+  - type: cell
+    role: matrix-value
+  - type: text
+    role: value-and-missing-label
+  bindings:
+    row: team
+    column: week
+    value: success_rate
+    label: success_rate
+  row_order:
+  - Alpha
+  - Beta
+  column_order:
+  - W1
+  - W2
+  - W3
+  domains:
+    value:
+    - 0
+    - 100
+  scales:
+    value: continuous-color
+    row: categorical
+    column: ordinal
+  matrix_identity: team_by_week_success_rate
+  missing_rendering: labeled-cell
+  missing_label: N/A
+  non_color_fallback: direct_numeric_or_NA_label
+  scale_key: direct_endpoints_0_and_100_percent
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings:
+  - numeric_label
+  - missing_text_token
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+- id: lookup-frame
+  component: Frame
+  role: matrix-lookup
+- id: row-axis
+  component: Axis
+  role: lookup
+- id: column-axis
+  component: Axis
+  role: lookup
+- id: labels
+  component: Label
+  role: direct-label
+- id: signal
+  component: Signal
+  role: selected-cell
+relations:
+- subject: lookup-frame
+  type: contains
+  object: row-axis
+- subject: lookup-frame
+  type: contains
+  object: column-axis
+- subject: labels
+  type: attached_to
+  object: lookup-frame
+- subject: signal
+  type: highlights
+  object: lookup-frame
+specification:
+  family: heatmap
+  fields:
+  - id: team
+    label: Team
+    type: categorical
+    role: dimension
+    nullable: false
+    ordering: declared
+  - id: week
+    label: Week
+    type: ordinal
+    role: dimension
+    nullable: false
+    ordering: declared
+  - id: success_rate
+    label: Success rate
+    type: quantitative
+    role: measure
+    nullable: true
+    unit: percent
+    display_format: 0%
+    domain:
+    - 0
+    - 100
+    aggregation: mean
+  records:
+  - id: h1
+    team: Alpha
+    week: W1
+    success_rate: 72
+  - id: h2
+    team: Alpha
+    week: W2
+    success_rate: 78
+  - id: h3
+    team: Alpha
+    week: W3
+    success_rate: 84
+  - id: h4
+    team: Beta
+    week: W1
+    success_rate: 68
+  - id: h5
+    team: Beta
+    week: W2
+    success_rate: null
+  - id: h6
+    team: Beta
+    week: W3
+    success_rate: 81
+  ordering:
+    rows:
+      field: team
+      values:
+      - Alpha
+      - Beta
+    columns:
+      field: week
+      values:
+      - W1
+      - W2
+      - W3
+  missing_values:
+  - record_id: h5
+    field: success_rate
+    status: unavailable
+  transformations: []
+  derived: {}
+  traceability:
+    row:
+      field: team
+      type: categorical
+      unit: null
+    column:
+      field: week
+      type: ordinal
+      unit: null
+    value:
+      field: success_rate
+      type: quantitative
+      unit: percent
+    label:
+      field: success_rate
+      type: quantitative
+      unit: percent
+provenance:
+  dataset_source:
+    source: CSDL Milestone 5 synthetic fixture
+    source_type: synthetic
+    source_date: 2026-07-18
+    retrieval_period: W1 to W3
+    method: fixed matrix with one unavailable cell
+  proof_source: proofs/sources/05-heatmap.yaml
+  evidence: synthetic_fixed_data
+  builder: tools/build_analytical_mode.py
+  deterministic: true

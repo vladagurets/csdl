@@ -1,0 +1,140 @@
+language: CSDL
+version: '0.1'
+kind: analytical-package
+id: proof-01-bar-positive-negative
+dataset:
+  id: bar-variance-v1
+  version: 1.0.0
+  path: datasets/01-bar-positive-negative.yaml
+  source: CSDL Milestone 5 synthetic fixture
+analytical_intent:
+  question: Which categories changed positively or negatively?
+  claim: Signed variance crosses the same zero baseline.
+recipe:
+  id: 019
+  slug: chart
+  version: 0.5.0
+encoding:
+  marks:
+  - type: bar
+    orientation: vertical
+  - type: text
+    role: direct-label
+  bindings:
+    category: category
+    value: variance
+    label: variance
+  order:
+  - Reliability
+  - Review time
+  - Coverage
+  - Escaped defects
+  domains:
+    value:
+    - -10
+    - 15
+  scales:
+    value: linear
+    category: categorical
+  bar_semantics: grouped
+  zero_baseline: true
+  negative_values: signed_from_zero
+  units:
+    value: percentage_points
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings:
+  - signed_label
+  - direction_from_zero
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+- id: category-axis
+  component: Axis
+  role: sequence
+- id: value-axis
+  component: Axis
+  role: quantitative
+- id: labels
+  component: Label
+  role: direct-label
+- id: signal
+  component: Signal
+  role: positive-focus
+relations:
+- subject: category-axis
+  type: orders
+  object: labels
+- subject: labels
+  type: attached_to
+  object: value-axis
+- subject: signal
+  type: highlights
+  object: value-axis
+specification:
+  family: bar
+  fields:
+  - id: category
+    label: Category
+    type: categorical
+    role: dimension
+    nullable: false
+    ordering: declared
+  - id: variance
+    label: Variance
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: percentage_points
+    display_format: +0;-0;0
+    domain:
+    - -10
+    - 15
+    aggregation: sum
+  records:
+  - id: b1
+    category: Reliability
+    variance: 12
+  - id: b2
+    category: Review time
+    variance: -5
+  - id: b3
+    category: Coverage
+    variance: 8
+  - id: b4
+    category: Escaped defects
+    variance: -3
+  ordering:
+    field: category
+    values:
+    - Reliability
+    - Review time
+    - Coverage
+    - Escaped defects
+  missing_values: []
+  transformations: []
+  derived: {}
+  traceability:
+    category:
+      field: category
+      type: categorical
+      unit: null
+    value:
+      field: variance
+      type: quantitative
+      unit: percentage_points
+    label:
+      field: variance
+      type: quantitative
+      unit: percentage_points
+provenance:
+  dataset_source:
+    source: CSDL Milestone 5 synthetic fixture
+    source_type: synthetic
+    source_date: 2026-07-18
+    retrieval_period: not_applicable
+    method: fixed values for signed bar validation
+  proof_source: proofs/sources/01-bar-positive-negative.yaml
+  evidence: synthetic_fixed_data
+  builder: tools/build_analytical_mode.py
+  deterministic: true

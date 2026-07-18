@@ -1,0 +1,3 @@
+id: truncated-bar-baseline
+base_package: proofs/packages/01-bar-positive-negative.yaml
+mutation: {path: [encoding, zero_baseline], value: false}

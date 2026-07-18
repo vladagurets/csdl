@@ -1,0 +1,3 @@
+id: undeclared-layout-term
+base_package: proofs/packages/01-bar-positive-negative.yaml
+mutation: {path: [encoding, layout], value: {columns: 4}}

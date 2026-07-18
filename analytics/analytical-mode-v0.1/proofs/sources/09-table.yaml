@@ -1,0 +1,34 @@
+id: proof-09-table
+family: table
+dataset: datasets/09-table.yaml
+analytical_intent: {question: "What are the exact quarterly values for each product?", claim: "Fixed row and column order supports exact lookup, including one suppressed value."}
+recipe: {id: "018", slug: table, version: 0.5.0}
+encoding:
+  marks: [{type: cell, role: exact-value}, {type: text, role: value-unit-and-missing-label}]
+  bindings: {row: product, column: quarter, value: [revenue, margin], label: [revenue, margin]}
+  row_order: [Alpha, Beta]
+  column_order: [Q1, Q2]
+  measure_order: [revenue, margin]
+  domains: {revenue: [0, 500], margin: [0, 100]}
+  scales: {row: categorical, column: ordinal}
+  alignment: {text: left, quantitative: decimal_or_tabular}
+  units: {revenue: EUR_thousands, margin: percent}
+  totals: none
+  missing_rendering: text-token
+  missing_labels: {suppressed: SUPPRESSED}
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings: [exact_text, unit_header, missing_text_token]
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+  - {id: lookup-frame, component: Frame, role: exact-lookup}
+  - {id: row-axis, component: Axis, role: lookup}
+  - {id: column-axis, component: Axis, role: lookup}
+  - {id: labels, component: Label, role: direct-label}
+  - {id: signal, component: Signal, role: current-quarter}
+relations:
+  - {subject: lookup-frame, type: contains, object: row-axis}
+  - {subject: lookup-frame, type: contains, object: column-axis}
+  - {subject: labels, type: attached_to, object: lookup-frame}
+  - {subject: signal, type: highlights, object: column-axis}

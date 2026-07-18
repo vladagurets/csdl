@@ -1,0 +1,196 @@
+language: CSDL
+version: '0.1'
+kind: analytical-package
+id: proof-09-table
+dataset:
+  id: table-quarterly-v1
+  version: 1.0.0
+  path: datasets/09-table.yaml
+  source: CSDL Milestone 5 synthetic fixture
+analytical_intent:
+  question: What are the exact quarterly values for each product?
+  claim: Fixed row and column order supports exact lookup, including one suppressed
+    value.
+recipe:
+  id: 018
+  slug: table
+  version: 0.5.0
+encoding:
+  marks:
+  - type: cell
+    role: exact-value
+  - type: text
+    role: value-unit-and-missing-label
+  bindings:
+    row: product
+    column: quarter
+    value:
+    - revenue
+    - margin
+    label:
+    - revenue
+    - margin
+  row_order:
+  - Alpha
+  - Beta
+  column_order:
+  - Q1
+  - Q2
+  measure_order:
+  - revenue
+  - margin
+  domains:
+    revenue:
+    - 0
+    - 500
+    margin:
+    - 0
+    - 100
+  scales:
+    row: categorical
+    column: ordinal
+  alignment:
+    text: left
+    quantitative: decimal_or_tabular
+  units:
+    revenue: EUR_thousands
+    margin: percent
+  totals: none
+  missing_rendering: text-token
+  missing_labels:
+    suppressed: SUPPRESSED
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings:
+  - exact_text
+  - unit_header
+  - missing_text_token
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+- id: lookup-frame
+  component: Frame
+  role: exact-lookup
+- id: row-axis
+  component: Axis
+  role: lookup
+- id: column-axis
+  component: Axis
+  role: lookup
+- id: labels
+  component: Label
+  role: direct-label
+- id: signal
+  component: Signal
+  role: current-quarter
+relations:
+- subject: lookup-frame
+  type: contains
+  object: row-axis
+- subject: lookup-frame
+  type: contains
+  object: column-axis
+- subject: labels
+  type: attached_to
+  object: lookup-frame
+- subject: signal
+  type: highlights
+  object: column-axis
+specification:
+  family: table
+  fields:
+  - id: product
+    label: Product
+    type: categorical
+    role: dimension
+    nullable: false
+    ordering: declared
+  - id: quarter
+    label: Quarter
+    type: ordinal
+    role: dimension
+    nullable: false
+    ordering: declared
+  - id: revenue
+    label: Revenue
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: EUR_thousands
+    display_format: €0k
+    domain:
+    - 0
+    - 500
+    aggregation: sum
+  - id: margin
+    label: Margin
+    type: quantitative
+    role: measure
+    nullable: true
+    unit: percent
+    display_format: 0.0%
+    domain:
+    - 0
+    - 100
+    aggregation: mean
+  records:
+  - id: t1
+    product: Alpha
+    quarter: Q1
+    revenue: 120
+    margin: 32.5
+  - id: t2
+    product: Alpha
+    quarter: Q2
+    revenue: 145
+    margin: 35.0
+  - id: t3
+    product: Beta
+    quarter: Q1
+    revenue: 95
+    margin: 28.0
+  - id: t4
+    product: Beta
+    quarter: Q2
+    revenue: 110
+    margin: null
+  ordering:
+    rows:
+      field: product
+      values:
+      - Alpha
+      - Beta
+    columns:
+      field: quarter
+      values:
+      - Q1
+      - Q2
+    measures:
+    - revenue
+    - margin
+  missing_values:
+  - record_id: t4
+    field: margin
+    status: suppressed
+  transformations: []
+  derived: {}
+  traceability:
+    row:
+      field: product
+      type: categorical
+      unit: null
+    column:
+      field: quarter
+      type: ordinal
+      unit: null
+provenance:
+  dataset_source:
+    source: CSDL Milestone 5 synthetic fixture
+    source_type: synthetic
+    source_date: 2026-07-18
+    retrieval_period: Q1 to Q2
+    method: fixed exact-lookup values with one suppressed cell
+  proof_source: proofs/sources/09-table.yaml
+  evidence: synthetic_fixed_data
+  builder: tools/build_analytical_mode.py
+  deterministic: true
