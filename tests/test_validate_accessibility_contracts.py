@@ -167,15 +167,15 @@ def test_architecture_docs_record_d032_and_keep_milestone_7_deferred() -> None:
     roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
     milestone_6 = roadmap.split("## Milestone 6", 1)[1].split("## Milestone 7", 1)[0]
     milestone_7 = roadmap.split("## Milestone 7", 1)[1].split("## Milestone 8", 1)[0]
-    assert "**State:** active" in milestone_6
+    assert "**State:** complete" in milestone_6
     assert "**State:** deferred" in milestone_7
 
 
-def test_release_candidate_docs_and_ci_cover_milestone_6() -> None:
+def test_completion_docs_and_ci_cover_milestone_6() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     status = (ROOT / "STATUS.md").read_text(encoding="utf-8")
     workflow = (ROOT / ".github/workflows/validate.yml").read_text(encoding="utf-8")
     assert "## Night Mode and Accessibility v0.1" in readme
-    assert "Milestone 6 integration pending" in status
+    assert "Milestone 6 is complete" in status
     assert "tools/build_accessibility_mode.py" in workflow
     assert "tools/validate_accessibility_mode.py" in workflow
