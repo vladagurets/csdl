@@ -39,7 +39,7 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Milestone 2 — Visual DNA Sprint 1 is in progress. Formalize and validate the first 20 pattern families under `patterns/visual-dna-sprint-01/`. Reuse approved Pilot 01 evidence for Hero, Comparison, and Loop; do not regenerate them without a demonstrated contract failure. Previous 4:5 Pilot 01 artifacts remain superseded and must not be restored or reused as active evidence.
+Milestone 3 — Component Library is in progress. Formalize and validate Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and Legend under `components/component-library-v0.1/` using accepted Milestone 2 evidence. Do not generate new rasters without a demonstrated contract gap and explicit user approval. Milestone 4 recipes, full Analytical Mode, dark mode, and public release remain out of scope.
 
 ## Work protocol
 

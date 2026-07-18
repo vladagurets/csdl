@@ -7,7 +7,7 @@ visual_authority: patterns/visual-dna-sprint-01/visual-authority.yaml
 content: {headline: "КОНТЕКСТ СТАЄ РЕЗУЛЬТАТОМ", stages: [INPUT, PARSE, TRANSFORM, VALIDATE, OUTPUT]}
 composition:
   mechanism: "Five technical stage Nodes carry one continuous left-to-right data-blue Vector; VALIDATE is the single active gate"
-  components: [Node, Vector, Container, Signal]
+  components: [Node, Vector, Signal]
   reading_path: left_to_right
 typography: {display: "Ukrainian-capable Modular Technical display with squared engineering proportions and tight rhythm", labels: "neutral high-legibility technical sans", all_text_horizontal: true}
 palette: {background: "#F7F5F0", ink: "#1B1B19", neutral_line: "#B8B5AE", primary_signal: "#4C6A8A"}

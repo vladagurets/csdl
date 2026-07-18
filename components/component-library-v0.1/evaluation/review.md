@@ -55,3 +55,51 @@ pass
 ```
 
 Remaining risk: relation permission is structurally validated, but proof-level relation compatibility cannot receive positive real-library coverage until component records exist. The component packets add that coverage before strict proof validation can pass.
+
+## Foundation component packet
+
+- Branch: `codex/m3-components-foundation`
+- Accepted records: `01 Anchor`, `02 Signal`, `03 Field`, `04 Frame`, `14 Label`
+- Canonical specs: `specs/01-anchor.md`, `02-signal.md`, `03-field.md`, `04-frame.md`, `14-label.md`
+- Evidence levels: Anchor strong, Signal strong, Field strong, Frame bounded, Label strong
+- Raster generation: none
+- Canonical raster mutation: none
+
+### Vocabulary decision and migration
+
+D-029 records the user-approved fifteen-name public vocabulary. The earlier Container alias is retired without visual change:
+
+- Hierarchy: nested ownership scope is `Frame`;
+- Architecture: system context is `Field`; actors remain `Node`s;
+- Pipeline: stages are `Node`s on one `Vector`; no wrapper is present in the accepted evidence.
+
+The Foundation component table, three Milestone 2 family component arrays, three Prompt DSL arrays, and three canonical family specs now agree. The component validator's active-vocabulary gate reports no undeclared name.
+
+### TDD and validation evidence
+
+The packet began with two expected failing assertions: the five component slugs were absent and the active-vocabulary gate had no accepted records to exercise.
+
+```text
+focused component infrastructure tests
+15 passed
+
+programmatic incomplete-mode library validation
+component foundation packet valid
+
+strict library validation
+expected stop: exactly 15 components and canonical full order are not complete
+
+.venv/bin/python -m pytest -q
+64 passed
+
+Pilot manifest/style-anchor/assets/scores validators
+pass
+
+Milestone 2 catalog/data/assets/scores/review/index validators
+pass
+
+git diff --check
+pass
+```
+
+Remaining risk: Frame's Hierarchy compatibility is a lossless vocabulary mapping from accepted open-bracket evidence rather than a new raster. The strict proof gate will independently exercise Frame relations in a later packet; no current raster semantics changed.

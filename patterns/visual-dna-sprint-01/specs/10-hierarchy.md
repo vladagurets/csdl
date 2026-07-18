@@ -10,7 +10,7 @@ Goal decomposition, taxonomy, authority, or nested scope with three–five level
 
 ## Semantic components
 
-The root `Anchor` owns child `Node`s; `Container` or `Bridge` relations express depth.
+The root `Anchor` owns child `Node`s; nested open `Frame`s or `Bridge` relations express depth.
 
 ## Assembly order
 

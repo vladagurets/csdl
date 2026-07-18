@@ -88,7 +88,7 @@ Exit criterion status: **met for Visual DNA Sprint 1**. The complete evidence an
 
 ## Milestone 3 — Component Library
 
-**State:** planned
+**State:** in progress
 
 Formalize the first component set:
 
