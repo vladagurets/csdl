@@ -99,14 +99,15 @@ The canonical set targets the locked distribution exactly: 13 Level A examples, 
 
 For every generated example:
 
-1. invoke built-in `$imagegen` three independent times with the same Prompt DSL and approved Pilot 01 style anchor;
+1. invoke built-in `$imagegen` three independent times with the same Prompt DSL and the complete `visual-authority.yaml` package: all three primary canonical boards plus the secondary Pilot 01 execution anchor, with each role stated explicitly;
 2. retain candidates under ignored `drafts/` and record filenames plus SHA-256 hashes;
 3. compare all three at source resolution and normalized `1920×1080`;
 4. build and inspect a `1280×720` preview;
 5. verify exact copy or every dataset value;
 6. reject extra text, logos, footers, UI chrome, decorative geometry, incorrect level, weak hierarchy, or distorted quantities;
-7. select one passing candidate and record the selection rationale, rejection reasons, raster mode/dimensions, normalization, hashes, removable-element check, and remaining risk;
-8. score the seven Pilot 01 rubric dimensions, interpreting `text_fidelity` as `content_fidelity` for analytical data.
+7. compare candidates individually and as a family/series contact sheet against the three primary canonical boards; reject generic infographic treatment even when copy and semantics pass;
+8. select one passing candidate and record the selection rationale, rejection reasons, raster mode/dimensions, normalization, hashes, removable-element check, primary-authority comparison, and remaining risk;
+9. score the seven Pilot 01 rubric dimensions, interpreting `text_fidelity` as `content_fidelity` for analytical data.
 
 Pilot references must pass the same catalog checks from their persisted Pilot 01 review and score evidence; they are not regenerated.
 
@@ -116,6 +117,7 @@ Pilot references must pass the same catalog checks from their persisted Pilot 01
 - `validate_pattern_assets.py`: required generated PNGs, exact `1920×1080`, RGB/RGBA, and Pilot reference resolution;
 - `validate_pattern_scores.py`: exactly 20 accepted evidence rows and rubric thresholds with no zeros/blanks;
 - `validate_pattern_data.py`: fixed analytical dataset schema and exact values referenced by KPI, Table, Chart, and Dashboard;
+- `validate_pattern_review.py`: prevents superseded records from carrying scores and requires explicit primary-authority plus full-series contact-sheet evidence for every accepted generated family;
 - catalog builders: `1280×720` previews, wave contact sheets, all-family contact sheet, and generated `index.yaml`;
 - tests: positive fixtures plus one focused failure case for each validation rule.
 

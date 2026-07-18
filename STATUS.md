@@ -30,27 +30,7 @@ Milestone 2 has started from a synchronized clean `main`. Its infrastructure pac
 
 Pilot-backed catalog evidence is audited and accepted for Hero, Comparison, and Loop. Their actual canonical bytes, RGB `1920×1080` metadata, exact Prompt DSL content, three-candidate selection records, hashes, `1280×720` readability evidence, and Pilot rubric rows all pass the Milestone 2 contract. No regeneration is justified.
 
-Cover is the first newly generated family. Three built-in GPT Image 2 candidates were reviewed; Candidate 3 was promoted because it preserves exact copy, removes the undeclared arrow present in Candidates 1–2, and uses one diagonal coral Signal plane as the catalog’s single canonical Level C peak.
-
-Quote is also complete. Candidate 2 was selected from three exact-copy outputs because it preserves the strongest Level A spacing, keeps attribution subordinate, and uses only one small semantic coral hinge.
-
-Big Number is complete. Candidate 2 was selected because the numeral reads first, the label remains attached, both centered separators stay neutral, and one coral marker remains semantically tied to the value.
-
-Collision is complete. Candidate 3 was selected because `НАДІЙНІСТЬ` sits inside the single coral overlap, both inputs retain equal weight, and no connector apparatus or impact decoration remains.
-
-Before / After completes Wave A. Two dense node-network candidates were rejected; the selected third candidate uses one broken graphite trace becoming one continuous mineral-green trace, with equal state hierarchy and exact copy. The Prompt DSL was tightened to prevent the rejected pseudo-system interpretation.
-
-Wave B has started with Timeline. Candidate 3 was selected because the five stages remain in exact order, the Axis and labels stay neutral, and only the VERIFY node/incoming segment carries coral emphasis.
-
-Matrix is complete. Candidate 2 was selected because all seven text blocks are exact and horizontal, the two Axes remain semantically correct and open, and only the high-impact/low-effort `АВТОМАТИЗУВАТИ` Node carries coral emphasis.
-
-Hierarchy is complete. Candidate 3 was selected because four nested open Brackets encode ownership depth without arrowheads or chronological reading, while CHECK remains the only coral leaf.
-
-Architecture is complete. Candidate 2 was selected because USER remains outside one open dusty-blue system Field, AGENT/TOOLS/MEMORY stay inside, and exactly the three declared relations preserve their directions without crossings or UI cards.
-
-Workflow is complete. Candidate 2 was selected because four bare action labels and three forward Vectors make the operational route immediate without reusing Timeline markers, adding Pipeline containers, or implying a Loop.
-
-Pipeline is complete. Candidate 1 was selected because one continuous dusty-blue carrier passes through five visible stage gates, with VALIDATE as the only active gate and no Workflow-like segmented route or literal pipe illustration.
+The user-approved D-028 rebaseline makes all three boards in `references/canonical/` primary Visual DNA authority and keeps the Pilot landscape anchor as secondary execution evidence. A series-level contact-sheet audit found that the first generated passes for Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline satisfy copy and semantic checks but collapse toward generic centered infographics. Those approvals are superseded, their active rasters/scores/index evidence are removed, and all 11 families require new three-candidate passes with the complete four-image reference package. The historical evidence remains in review notes, ignored drafts, and Git history.
 
 ## Canonical outputs
 
@@ -70,7 +50,7 @@ pilots/01-agentic-discipline/contact-sheets/pilot-01-light.png
 
 ```text
 .venv/bin/python -m pytest -q
-41 passed
+46 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
@@ -87,12 +67,12 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 14/20 families have accepted canonical evidence. Six new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
+Partially validated: 3/20 families have accepted canonical evidence through audited Pilot references. Seventeen generated families, complete contact sheets, and strict series validation remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
-Met for the infrastructure packet: tests, catalog/schema validation, fixed-data validation, and incomplete-milestone Pilot reference/score gates pass. Strict asset and score commands intentionally remain final milestone gates.
+In correction: the semantic catalog and fixed-data contracts remain valid, while D-028 adds primary-authority, Prompt DSL, and series-contact-sheet gates before generated evidence can be accepted again.
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Decision Tree.
+Infrastructure review is open from `codex/m2-infrastructure`; the first generated family stack through Pipeline is superseded by the D-028 corrective packet. After that packet passes, regeneration restarts with Cover.

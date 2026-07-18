@@ -5,7 +5,7 @@ expression: B
 generation: {required: false, evidence_mode: pilot_reference}
 source_prompt: pilots/01-agentic-discipline/prompts/05-synthesis.yaml
 canvas: {size: 1920x1080, orientation: landscape, safe_margin_horizontal: 96, safe_margin_vertical: 72}
-reference: pilots/01-agentic-discipline/references/style-anchor-light.png
+visual_authority: patterns/visual-dna-sprint-01/visual-authority.yaml
 content:
   headline: "AUTO-DISCIPLINE LOOP"
   supporting_copy: "Кожен цикл залишає кращий контекст для наступної задачі."

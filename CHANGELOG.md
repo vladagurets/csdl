@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Rebaselined Milestone 2 after explicit user approval: the three `references/canonical/` boards are now primary Visual DNA authority, the Pilot landscape anchor is secondary execution evidence, and the first 11 generated approvals are superseded pending new three-candidate passes.
 - Started Milestone 2 — Visual DNA Sprint 1 with a detailed implementation and stacked-PR plan.
 - Added the machine-readable 20-family manifest/schema, complete family specifications, exact editorial/structural copy, and Prompt DSL packages.
 - Added one fixed demo dataset and fidelity contracts for bounded KPI, Table, Chart, and Dashboard Visual DNA prototypes without expanding full Analytical Mode.

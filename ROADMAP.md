@@ -77,7 +77,7 @@ Each family receives Level A, B, and C examples where semantically valid. Not ev
 
 Exit criterion: patterns are recognizably CSDL without depending on a logo.
 
-Current execution contract: [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md). The 20-family manifest/schema, specification format, exact content, fixed analytical prototype dataset, Prompt DSL packages, and validation tooling are defined on the infrastructure packet. Raster evidence proceeds family by family; Hero, Comparison, and Loop reuse audited Pilot 01 evidence.
+Current execution contract: [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md). The 20-family manifest/schema, specification format, exact content, fixed analytical prototype dataset, Prompt DSL packages, and validation tooling are defined on the infrastructure packet. D-028 makes all three `references/canonical/` boards primary Visual DNA authority and the Pilot landscape anchor secondary execution evidence. Raster evidence proceeds family by family after the reference-authority rebaseline; Hero, Comparison, and Loop reuse audited Pilot 01 evidence.
 
 ## Milestone 3 — Component Library
 

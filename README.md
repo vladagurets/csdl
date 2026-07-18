@@ -81,4 +81,4 @@ Pilot 01 is released as the first CSDL Visual DNA set. See [`RELEASE.md`](pilots
 
 ## Visual DNA Sprint 1
 
-The Milestone 2 catalog formalizes Hero, Cover, Quote, Big Number, Comparison, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, Loop, Pipeline, Decision Tree, Framework, KPI, Table, Chart, and Dashboard. Its source of truth is [`patterns/visual-dna-sprint-01/manifest.yaml`](patterns/visual-dna-sprint-01/manifest.yaml); KPI/Table/Chart/Dashboard use fixed demo data and remain bounded prototypes rather than a premature full Analytical Mode.
+The Milestone 2 catalog formalizes Hero, Cover, Quote, Big Number, Comparison, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, Loop, Pipeline, Decision Tree, Framework, KPI, Table, Chart, and Dashboard. Its source of truth is [`patterns/visual-dna-sprint-01/manifest.yaml`](patterns/visual-dna-sprint-01/manifest.yaml), with the mandatory reference hierarchy in [`visual-authority.yaml`](patterns/visual-dna-sprint-01/visual-authority.yaml). KPI/Table/Chart/Dashboard use fixed demo data and remain bounded prototypes rather than a premature full Analytical Mode.

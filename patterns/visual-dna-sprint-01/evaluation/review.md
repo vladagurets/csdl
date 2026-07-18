@@ -2,7 +2,11 @@
 
 ## Review protocol
 
-Generated families require three independent candidates, full-resolution and `1280×720` inspection, exact-copy or exact-data verification, one selected candidate, two explicit rejection reasons, raster metadata, hashes, rubric scores, and a removable-element check. Pilot references require an evidence audit against the persisted Pilot 01 prompt, review, scores, and canonical raster.
+Generated families require three independent candidates, full-resolution and `1280×720` inspection, exact-copy or exact-data verification, one selected candidate, two explicit rejection reasons, raster metadata, hashes, rubric scores, a removable-element check, `Primary-authority comparison: pass`, and `Series contact-sheet review: pass`. Pilot references require an evidence audit against the persisted Pilot 01 prompt, review, scores, and canonical raster.
+
+## Reference authority rebaseline — 2026-07-18
+
+After a full-series contact-sheet review, the user approved D-028: the three boards in `references/canonical/` are primary Visual DNA authority and the Pilot landscape anchor is secondary execution evidence. The first generated passes for families 02–12 and 14 are superseded because their series-level treatment collapses toward generic centered infographics despite passing copy and semantic checks. Their historical candidate records and former provisional scores remain below for auditability, but they are not active approvals and are removed from `evaluation/scores.csv`, `canonical/`, previews, and `index.yaml`. Every affected family requires three new independent candidates under `visual-authority.yaml`.
 
 ## Evidence records
 
@@ -22,7 +26,7 @@ Evidence is appended family by family in canonical manifest order. This file int
 
 Audit result: exact headline and supporting sentence confirmed visually against the manifest, including `≠`, apostrophes, and Ukrainian characters. The single graphite Vector terminates at one coral Signal block; no extra label, logo, footer, UI chrome, or decorative geometry is present. Full-resolution and existing `1280×720` evidence remain readable. Canonical Level A is semantically justified by one proposition, one mechanism, and approximately 68% negative space. No regeneration is warranted. Accepted catalog score: `4.86`.
 
-### 02 Cover — generated example accepted
+### 02 Cover — first generated pass superseded
 
 - **Canonical:** `canonical/light/16x9/02-cover.png`
 - **Prompt:** `prompts/02-cover.yaml`
@@ -38,7 +42,7 @@ Audit result: exact headline and supporting sentence confirmed visually against 
 
 Exact-copy review: pass for `СИСТЕМИ, ЩО ВЧАТЬСЯ` and `VISUAL DNA SPRINT 1`, including comma, Ukrainian apostrophe, and numeral; no additional text. Visual mechanism: one title Anchor establishes the series while one diagonal Signal plane enters from the right and defines the cover’s scope. Strongest decision: the large plane creates the catalog’s single canonical Level C peak without touching the title. Removable-element check: only the title, technical subtitle, and semantic plane remain. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: none material. Accepted catalog score: `5.00`.
 
-### 03 Quote — generated example accepted
+### 03 Quote — first generated pass superseded
 
 - **Canonical:** `canonical/light/16x9/03-quote.png`
 - **Prompt:** `prompts/03-quote.yaml`
@@ -54,7 +58,7 @@ Exact-copy review: pass for `СИСТЕМИ, ЩО ВЧАТЬСЯ` and `VISUAL DN
 
 Exact-copy review: pass for the full Ukrainian quotation, curly opening/closing quotation marks, final period, and `AGENTIC DISCIPLINE`; no additional speaker or source metadata. Visual mechanism: the quotation is one typographic Anchor, the attribution is one subordinate source relation, and the coral square marks the hinge without becoming decoration. Strongest decision: Candidate 2 preserves a decisive quote while retaining the quiet field needed for a Level A pause. Removable-element check: nothing remains beyond exact content and the single Signal. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability comes from typographic cadence rather than a large geometric event, which is appropriate for this family. Accepted catalog score: `4.86`.
 
-### 04 Big Number — generated example accepted
+### 04 Big Number — first generated pass superseded
 
 - **Canonical:** `canonical/light/16x9/04-big-number.png`
 - **Prompt:** `prompts/04-big-number.yaml`
@@ -84,7 +88,7 @@ Exact-copy review: pass for `3`, `РІВНІ ВИРАЗНОСТІ`, and `QUIET �
 
 Audit result: headline, two titles, six criteria, and supporting sentence match the manifest exactly. Both systems retain equal hierarchy; the slide does not read as a `VS` battle. The Divider and aligned criteria carry comparison semantics without decorative containers. Full-resolution and existing `1280×720` evidence remain readable. Canonical Level A is justified because structure, not collision, explains the distinction. No regeneration is warranted. Accepted catalog score: `4.86`.
 
-### 06 Collision — generated example accepted
+### 06 Collision — first generated pass superseded
 
 - **Canonical:** `canonical/light/16x9/06-collision.png`
 - **Prompt:** `prompts/06-collision.yaml`
@@ -100,7 +104,7 @@ Audit result: headline, two titles, six criteria, and supporting sentence match 
 
 Exact-copy review: pass for `ШВИДКІСТЬ`, `КОНТРОЛЬ`, and `НАДІЙНІСТЬ`; no extra text. Visual mechanism: two equal graphite Fields overlap once, and the coral intersection itself is the named synthesis. Strongest decision: placing the result inside the geometry makes the meaning immediate without an explanatory arrow. Removable-element check: the two boundaries, three labels, and one overlap all carry meaning. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the Venn-like primitive is familiar, but semantic color, scale, active space, and strict restraint keep it within CSDL. Accepted catalog score: `5.00`.
 
-### 07 Before / After — generated example accepted
+### 07 Before / After — first generated pass superseded
 
 - **Canonical:** `canonical/light/16x9/07-before-after.png`
 - **Prompt:** `prompts/07-before-after.yaml`
@@ -116,7 +120,7 @@ Exact-copy review: pass for `ШВИДКІСТЬ`, `КОНТРОЛЬ`, and `НА�
 
 Exact-copy review: pass for the headline, both English state labels, and both Ukrainian state descriptions; no extra text. Visual mechanism: discontinuity represents lost decisions, continuity represents retained context, and one horizontal Vector expresses transformation. Strongest decision: the changed property is encoded by line continuity rather than by check/cross symbolism or cosmetic styling. Removable-element check: the two state labels/descriptions, two semantic traces, headline, and one Vector are all functional. Prompt adjustment: the initial DSL allowed overly dense node interpretations, so `prompts/07-before-after.yaml` now pins the accepted trace mechanism and explicitly excludes node fields, networks, and process maps. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is intentionally quieter than Collision and Cover. Accepted catalog score: `4.86`.
 
-### 08 Timeline — generated example accepted
+### 08 Timeline — first generated pass superseded
 
 - **Canonical:** `canonical/light/16x9/08-timeline.png`
 - **Prompt:** `prompts/08-timeline.yaml`
@@ -132,7 +136,7 @@ Exact-copy review: pass for the headline, both English state labels, and both Uk
 
 Exact-copy review: pass for `ВІД BRIEF ДО SHIP` and `BRIEF → PLAN → BUILD → VERIFY → SHIP`; no dates or extra text. Visual mechanism: one horizontal Axis carries five ordered bare Nodes, with VERIFY selected as the consequential transition. Strongest decision: keeping the label neutral lets the node and short incoming segment carry signal semantics without turning the stage into a badge. Removable-element check: headline, Axis, Nodes, and labels are all required for chronology. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is deliberately subordinate to ordered lookup. Accepted catalog score: `4.86`.
 
-### 09 Matrix — generated example accepted
+### 09 Matrix — first generated pass superseded
 
 - **Canonical:** `canonical/light/16x9/09-matrix.png`
 - **Prompt:** `prompts/09-matrix.yaml`
@@ -148,7 +152,7 @@ Exact-copy review: pass for `ВІД BRIEF ДО SHIP` and `BRIEF → PLAN → BUI
 
 Exact-copy review: pass for `КУДИ СПРЯМУВАТИ ЗУСИЛЛЯ`, `ВПЛИВ`, `ЗУСИЛЛЯ`, `АВТОМАТИЗУВАТИ`, `ДЕЛЕГУВАТИ`, `ПЛАНУВАТИ`, and `ВІДКЛАСТИ`; no quadrant names, numbers, scores, or extra text. Visual mechanism: two thin Axes define four open relative regions, and four directly labeled Nodes encode effort and impact without fake precision. Strongest decision: the selected high-impact/low-effort option is immediately identifiable through one coral Node/label pair while the other three choices remain neutral. Removable-element check: headline, Axes, axis labels, four Nodes, and their labels are all semantic. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the generated circular markers contain slight tonal texture, but it does not read as a shadow, gradient field, or 3D object and does not impair the one-signal hierarchy. Accepted catalog score: `4.71`.
 
-### 10 Hierarchy — generated example accepted
+### 10 Hierarchy — first generated pass superseded
 
 - **Canonical:** `canonical/light/16x9/10-hierarchy.png`
 - **Prompt:** `prompts/10-hierarchy.yaml`
@@ -164,7 +168,7 @@ Exact-copy review: pass for `КУДИ СПРЯМУВАТИ ЗУСИЛЛЯ`, `В�
 
 Exact-copy review: pass for `ВІД ЦІЛІ ДО ПЕРЕВІРКИ`, `OBJECTIVE`, `MILESTONE`, `TASK`, and `CHECK`; no numbers, siblings, extra levels, or explanatory text. Visual mechanism: four nested open Brackets encode progressively deeper ownership scope while restrained type scale reinforces decomposition. Strongest decision: containment remains immediate without turning the single-child hierarchy into a workflow arrow chain. Removable-element check: headline, four labels, four depth cues, and the CHECK signal all carry semantic weight. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is intentionally carried by the nested depth rhythm rather than a large signal event. Accepted catalog score: `4.86`.
 
-### 11 Architecture — generated example accepted
+### 11 Architecture — first generated pass superseded
 
 - **Canonical:** `canonical/light/16x9/11-architecture.png`
 - **Prompt:** `prompts/11-architecture.yaml`
@@ -180,7 +184,7 @@ Exact-copy review: pass for `ВІД ЦІЛІ ДО ПЕРЕВІРКИ`, `OBJECTIV
 
 Exact-copy review: pass for `КОНТЕКСТНА АРХІТЕКТУРА АГЕНТА`, `USER`, `AGENT`, `TOOLS`, and `MEMORY`; no relation captions, services, or extra text. Direction review: pass for `USER → AGENT`, `AGENT ↔ TOOLS`, and `AGENT ↔ MEMORY`; no fourth relation. Visual mechanism: one open Field establishes system scope, while a boundary gap admits the one external actor relation and two internal Bridges remain distinct. Strongest decision: dusty blue identifies the technical boundary and tool relation without coloring the memory relation or turning nodes into cards. Removable-element check: headline, boundary, four labels, and three Bridges are all required. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the system diagram is intentionally conventional, with CSDL identity carried by open scope, restrained signal, and active space. Accepted catalog score: `4.86`.
 
-### 12 Workflow — generated example accepted
+### 12 Workflow — first generated pass superseded
 
 - **Canonical:** `canonical/light/16x9/12-workflow.png`
 - **Prompt:** `prompts/12-workflow.yaml`
@@ -210,7 +214,7 @@ Exact-copy review: pass for `РОБОЧИЙ ПОТІК З ДОКАЗАМИ`, `UN
 
 Audit result: headline, supporting sentence, and all five English stages match the manifest exactly and remain in the declared cyclic order. The Loop is closed, connector direction is unambiguous, and only one Node is active. Full-resolution and existing `1280×720` evidence remain readable. Canonical Level B is justified because the five-stage cyclic relationship is itself the teaching object. No regeneration is warranted. Accepted catalog score: `5.00`.
 
-### 14 Pipeline — generated example accepted
+### 14 Pipeline — first generated pass superseded
 
 - **Canonical:** `canonical/light/16x9/14-pipeline.png`
 - **Prompt:** `prompts/14-pipeline.yaml`

@@ -5,6 +5,7 @@ catalog:
   canvas: 1920x1080
   orientation: landscape
   style_anchor: pilots/01-agentic-discipline/references/style-anchor-light.png
+  visual_authority: visual-authority.yaml
   family_count: 20
   canonical_distribution: {A: 13, B: 6, C: 1}
   language: uk
