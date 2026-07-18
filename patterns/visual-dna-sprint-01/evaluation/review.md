@@ -100,6 +100,22 @@ Audit result: headline, two titles, six criteria, and supporting sentence match 
 
 Exact-copy review: pass for `ШВИДКІСТЬ`, `КОНТРОЛЬ`, and `НАДІЙНІСТЬ`; no extra text. Visual mechanism: two equal graphite Fields overlap once, and the coral intersection itself is the named synthesis. Strongest decision: placing the result inside the geometry makes the meaning immediate without an explanatory arrow. Removable-element check: the two boundaries, three labels, and one overlap all carry meaning. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the Venn-like primitive is familiar, but semantic color, scale, active space, and strict restraint keep it within CSDL. Accepted catalog score: `5.00`.
 
+### 07 Before / After — generated example accepted
+
+- **Canonical:** `canonical/light/16x9/07-before-after.png`
+- **Prompt:** `prompts/07-before-after.yaml`
+- **Selected:** `07-before-after-v3.png` from three independent built-in GPT Image 2 candidates
+- **Source SHA-256:** `4f7c2cc9e7601b573e1c59241f73727a7f33bc25ef5e07ccb9a978a823dfd205`
+- **Canonical SHA-256:** `00d86beda692414715d328100fde67d241d1045ca89ec7dde93793b138e0cd90`
+- **Source raster:** `1672×941`, RGB PNG
+- **Canonical raster:** `1920×1080`, RGB PNG
+
+- `07-before-after-v1.png` — rejected: exact copy passes, but dense scattered/connected shape fields invent many Nodes and multiple routes, violating Level A density and the single-mechanism contract.
+- `07-before-after-v2.png` — rejected: exact copy passes, but the after state becomes a pseudo-system architecture with a decorative container, status glyph, and dense node network.
+- `07-before-after-v3.png` — selected after targeted simplification: one broken graphite trace becomes one continuous mineral-green trace through one Vector; both typographic Fields retain equal hierarchy and no node diagram remains.
+
+Exact-copy review: pass for the headline, both English state labels, and both Ukrainian state descriptions; no extra text. Visual mechanism: discontinuity represents lost decisions, continuity represents retained context, and one horizontal Vector expresses transformation. Strongest decision: the changed property is encoded by line continuity rather than by check/cross symbolism or cosmetic styling. Removable-element check: the two state labels/descriptions, two semantic traces, headline, and one Vector are all functional. Prompt adjustment: the initial DSL allowed overly dense node interpretations, so `prompts/07-before-after.yaml` now pins the accepted trace mechanism and explicitly excludes node fields, networks, and process maps. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is intentionally quieter than Collision and Cover. Accepted catalog score: `4.86`.
+
 ### 13 Loop — Pilot reference accepted
 
 - **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png`

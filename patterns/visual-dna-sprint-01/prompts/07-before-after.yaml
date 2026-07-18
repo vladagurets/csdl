@@ -9,11 +9,11 @@ content:
   before: [AD HOC, "РІШЕННЯ ГУБЛЯТЬСЯ"]
   after: [SYSTEM, "КОНТЕКСТ ЗАЛИШАЄТЬСЯ"]
 composition:
-  mechanism: "Two equal open Fields connected by one left-to-right Vector; the retained context in the after Field is the only mineral-green Signal"
+  mechanism: "Two equal open Fields connected by one left-to-right Vector; one broken graphite trace becomes one continuous mineral-green trace"
   components: [Field, Divider, Vector, Signal]
   reading_path: left_to_right
-  negative_space: "at least 60%"
+  negative_space: "at least 65%"
 typography: {display: "smooth Ukrainian-capable Inter Display", body: "Inter-style neutral sans", all_text_horizontal: true}
 palette: {background: "#F7F5F0", ink: "#1B1B19", primary_signal: "#6E8A7A"}
-hard_exclusions: [extra text, makeover imagery, check or cross icons, decorative split screen, UI chrome, logo, footer, gradients, shadows, 3D]
+hard_exclusions: [extra text, node field, network, process map, circles, squares, triangles, makeover imagery, check or cross icons, decorative split screen, UI chrome, logo, footer, gradients, shadows, 3D]
 output: {format: PNG, exact_size: 1920x1080, text_accuracy: publish-ready}

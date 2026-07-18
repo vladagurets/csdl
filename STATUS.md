@@ -38,6 +38,8 @@ Big Number is complete. Candidate 2 was selected because the numeral reads first
 
 Collision is complete. Candidate 3 was selected because `НАДІЙНІСТЬ` sits inside the single coral overlap, both inputs retain equal weight, and no connector apparatus or impact decoration remains.
 
+Before / After completes Wave A. Two dense node-network candidates were rejected; the selected third candidate uses one broken graphite trace becoming one continuous mineral-green trace, with equal state hierarchy and exact copy. The Prompt DSL was tightened to prevent the rejected pseudo-system interpretation.
+
 ## Canonical outputs
 
 ```text
@@ -73,7 +75,7 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 7/20 families have accepted canonical evidence. Thirteen new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
+Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 8/20 families have accepted canonical evidence. Twelve new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
@@ -81,4 +83,4 @@ Met for the infrastructure packet: tests, catalog/schema validation, fixed-data 
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Before / After from three built-in GPT Image 2 candidates.
+Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. Wave A is complete; the next family packet starts Wave B with Timeline.
