@@ -233,7 +233,10 @@ families:
   - A
   evidence_mode: generated
   canonical_example: canonical/light/16x9/18-table.png
-  status: awaiting_generation
+  sha256: 54dee7722d3bad72d166c280c16497b9fa3dd9920673d21f6e1335c83af24dd7
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: '19'
   slug: chart
   name: Chart
