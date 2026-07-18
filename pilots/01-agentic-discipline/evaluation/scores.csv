@@ -1,8 +1,8 @@
-card,clarity,mobile_readability,memorability,csdl_identity,restraint,text_fidelity,semantic_integrity
-01,5,5,4,4,5,5,5
-02,5,5,4,4,5,5,5
-03,0,0,0,0,0,0,0
-04,0,0,0,0,0,0,0
-05,0,0,0,0,0,0,0
-06,0,0,0,0,0,0,0
-07,0,0,0,0,0,0,0
+card,clarity,presentation_readability,memorability,csdl_identity,restraint,text_fidelity,semantic_integrity
+01,5,5,4,5,5,5,5
+02,5,5,4,5,5,5,5
+03,5,5,4,5,5,5,5
+04,5,5,4,5,5,5,5
+05,5,5,5,5,5,5,5
+06,5,5,4,5,5,5,5
+07,5,5,5,5,5,5,5

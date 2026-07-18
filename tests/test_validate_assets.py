@@ -20,13 +20,11 @@ def test_accepts_complete_asset_set(tmp_path: Path) -> None:
         "06-takeaway",
         "07-share-card",
     ]:
-        create_png(tmp_path / "canonical/light/4x5" / f"{slug}.png", (1080, 1350))
-    for slug in ["01-hook", "04-comparison", "07-share-card"]:
         create_png(tmp_path / "canonical/light/16x9" / f"{slug}.png", (1920, 1080))
     assert validate_assets(tmp_path) == []
 
 
 def test_rejects_wrong_dimensions(tmp_path: Path) -> None:
-    create_png(tmp_path / "canonical/light/4x5/01-hook.png", (1080, 1080))
+    create_png(tmp_path / "canonical/light/16x9/01-hook.png", (1080, 1080))
     errors = validate_assets(tmp_path, require_complete=False)
-    assert "01-hook.png must be 1080x1350, got 1080x1080" in errors
+    assert "01-hook.png must be 1920x1080, got 1080x1080" in errors

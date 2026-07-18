@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
+
+- Replaced the portrait-first foundation with a canonical `1920×1080` 16:9 landscape format after explicit user approval.
+- Removed Pilot 01 portrait/mobile deliverables, reset the pilot to Task 1, and marked all previous 4:5 raster selections and scores non-canonical.
+- Rebuilt the manifest, Prompt DSL package, validators, tests, rubric terminology, implementation plan, and raster handoff for seven direct 16:9 slides.
+- Released one selected 16:9 shared style anchor, seven selected 16:9 slides, seven landscape previews, one contact sheet, complete review evidence, and passing scores.
+- Historical entries below describe superseded work retained in Git history; they are not active Pilot 01 evidence.
 - Locked Constructive Signal / Quiet Modular direction.
 - Locked 4:5 canonical canvas and Level A/B/C rhythm.
 - Approved Pilot 01 topic, seven-card narrative, and canonical copy.

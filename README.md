@@ -2,7 +2,7 @@
 
 A geometric visual language for explaining complex ideas clearly, memorably, and consistently with humans and generative models.
 
-**Status:** Foundation v0.1 approved; Pilot 01 — Agentic Discipline is in progress.
+**Status:** Foundation v0.1 revised for 16:9; Pilot 01 — Agentic Discipline v0.1.0 is complete.
 
 **GitHub:** `vladagurets/csdl` is the selected public working repository. A public license has not yet been selected.
 
@@ -22,8 +22,8 @@ A geometric visual language for explaining complex ideas clearly, memorably, and
 - Default mode: **Quiet Modular**
 - Display voice: **Modular Technical**, with rare condensed editorial emphasis
 - Palette: **Muted Signal** on warm paper; full night mode deferred
-- Canonical canvas: **4:5, 1080 × 1350 px**
-- Secondary canvas: **16:9, 1920 × 1080 px**, rebuilt rather than cropped
+- Canonical canvas: **16:9, 1920 × 1080 px, landscape**
+- Portrait masters and mobile-preview deliverables: **not required**
 - Density rhythm: **A → A → B → A → B → A → C**
 - Core rule: **one idea + one visual mechanism + one signal per screen**
 - Canonical documentation: Markdown; images calibrate the written system
@@ -56,7 +56,7 @@ python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-The baseline currently contains seventeen passing tests. The manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
+The baseline test suite, manifest validator, and shared-reference validator must pass before raster promotion.
 
 ## Image workflow
 
@@ -67,11 +67,11 @@ The repository separates **design governance** from **raster generation**:
 - An external ChatGPT Images session may be used as a human-operated fallback with the same prompt and review contract.
 - An API-backed script is optional for larger or programmatic batches and requires separately billed API access; it is not implicit scope for a card task.
 - Only approved references and canonical exports belong in Git. Intermediate candidates live under `pilots/**/drafts/` and are ignored.
-- The active Pilot 01 style anchor is the user-selected GPT Image 2 Ukrainian/Inter composition; the superseded pixel-font repair exists only in Git history and must not be reused.
+- Pilot 01 uses a newly selected 16:9 Ukrainian/Inter style anchor; all superseded portrait and pixel-font references remain only in Git history.
 - AI-rendered copy must match `manifest.yaml` exactly before publication.
 
 ## Pilot 01
 
 Pilot 01 explains how disciplined workflows and retained learning make agentic development more reliable over time. Its source of truth is [`pilots/01-agentic-discipline/manifest.yaml`](pilots/01-agentic-discipline/manifest.yaml).
 
-The first unfinished implementation item is **Task 7: generate and approve Card 03 — Four-layer model / Level B**.
+Pilot 01 is released as the first CSDL Visual DNA set. See [`RELEASE.md`](pilots/01-agentic-discipline/RELEASE.md).

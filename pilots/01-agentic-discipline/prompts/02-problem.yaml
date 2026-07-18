@@ -1,32 +1,28 @@
 language: CSDL
 version: 0.1
 reference: ../references/style-anchor-light.png
-canvas: 1080x1350
+canvas: 1920x1080
+orientation: landscape
 recipe: Breakdown
 level: A
 density: low
-motion: low
 copy:
   headline: "AD-HOC РОБОТА РОЗПАДАЄТЬСЯ МІЖ СЕСІЯМИ"
   supporting_lines:
     - "Рішення губляться."
     - "Перевірки повторюються."
     - "Помилки повертаються."
-components:
-  Loop: 1
-  Node: 3
-  Signal: 1
+components: {Loop: 1, Node: 3, Signal: 1}
 composition:
-  headline_columns: "1–8"
-  visual_mechanism: "one thin incomplete loop with three detached graphite nodes; one coral break point"
-  negative_space: "65%"
-  reading_path: "headline to broken loop to three short consequences"
-palette:
-  background: paper.base
-  ink: ink.primary
-  signal: signal.primary
+  copy_zone: "left 7 columns"
+  diagram_zone: "right 4 columns"
+  visual_mechanism: "one thin incomplete Loop with three detached graphite Nodes and one coral break point"
+  negative_space: "62%"
+  reading_path: "headline to consequences to broken loop"
+palette: {background: paper.base, ink: ink.primary, signal: signal.primary}
 constraints:
+  - "compose directly for 16:9"
   - "the broken loop is the only diagram"
-  - "nodes remain simple squares without icons"
-  - "no tangled scribbles, explosion, fragments, footer, logo, or grid"
-  - "all text remains horizontal and exact"
+  - "nodes are simple squares without icons"
+  - "no fragments, explosion, footer, logo, grid, or extra text"
+  - "all text horizontal and exact"

@@ -23,25 +23,7 @@ jobs:
         run: >-
           python tools/validate_style_anchor.py
           pilots/01-agentic-discipline/references/style-anchor-light.png
-      - name: Validate existing Pilot 01 canonical assets
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          from tools.validate_assets import validate_assets
-
-          errors = validate_assets(
-              Path('pilots/01-agentic-discipline'),
-              require_complete=False,
-          )
-          if errors:
-              raise SystemExit('\n'.join(f'ERROR: {error}' for error in errors))
-          print('existing assets valid')
-          PY
-      - name: Verify approved Card 01 exact identity
-        shell: bash
-        run: |
-          set -euo pipefail
-          path='pilots/01-agentic-discipline/canonical/light/4x5/01-hook.png'
-          echo '0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b  '"$path" | sha256sum --check
-          test "$(git hash-object "$path")" = 'a9676cee42dd31870c683be1a8cb8c7be93855f1'
-          echo 'approved Card 01 identity valid'
+      - name: Validate Pilot 01 canonical slides
+        run: python tools/validate_assets.py pilots/01-agentic-discipline
+      - name: Validate Pilot 01 scores
+        run: python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.csv

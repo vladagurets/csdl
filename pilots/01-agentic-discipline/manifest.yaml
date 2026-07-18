@@ -6,8 +6,8 @@ pilot:
   language: uk
   terminology_language: en
   mode: light
-  canonical_canvas: "1080x1350"
-  adaptation_canvas: "1920x1080"
+  canonical_canvas: "1920x1080"
+  orientation: landscape
   rhythm: [A, A, B, A, B, A, C]
   card_count: 7
 
@@ -111,5 +111,3 @@ cards:
     components: [Anchor, Signal, Collision]
     signal: coral
     max_supporting_elements: 1
-
-adaptations_16x9: ["01", "04", "07"]

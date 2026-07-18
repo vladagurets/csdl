@@ -15,9 +15,6 @@ CARD_SLUGS = [
     "06-takeaway",
     "07-share-card",
 ]
-ADAPTATION_SLUGS = ["01-hook", "04-comparison", "07-share-card"]
-
-
 def _check_image(path: Path, expected_size: tuple[int, int], errors: list[str]) -> None:
     if not path.exists():
         errors.append(f"missing asset: {path.as_posix()}")
@@ -35,17 +32,12 @@ def _check_image(path: Path, expected_size: tuple[int, int], errors: list[str]) 
 def validate_assets(root: Path, require_complete: bool = True) -> list[str]:
     errors: list[str] = []
     card_slugs = CARD_SLUGS if require_complete else []
-    adaptation_slugs = ADAPTATION_SLUGS if require_complete else []
 
     if not require_complete:
-        card_dir = root / "canonical/light/4x5"
-        adaptation_dir = root / "canonical/light/16x9"
+        card_dir = root / "canonical/light/16x9"
         card_slugs = [path.stem for path in card_dir.glob("*.png")] if card_dir.exists() else []
-        adaptation_slugs = [path.stem for path in adaptation_dir.glob("*.png")] if adaptation_dir.exists() else []
 
     for slug in card_slugs:
-        _check_image(root / "canonical/light/4x5" / f"{slug}.png", (1080, 1350), errors)
-    for slug in adaptation_slugs:
         _check_image(root / "canonical/light/16x9" / f"{slug}.png", (1920, 1080), errors)
     return errors
 

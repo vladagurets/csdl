@@ -1,9 +1,11 @@
 language: CSDL
 version: 0.1
+use_case: infographic-diagram
 mode:
   name: Quiet Modular
   palette: Muted Signal Light
-  canvas: 1080x1350
+  canvas: 1920x1080
+  orientation: landscape
   expression_default: A
 visual_direction:
   background: "warm paper, #F7F5F0"
@@ -11,23 +13,23 @@ visual_direction:
   secondary_ink: "soft graphite, #535457"
   primary_signal: "muted mineral coral, #C96157"
   geometry: "flat, precise, semantic, no decorative 3D"
-  negative_space: "50–75 percent depending on level"
+  negative_space: "60–75 percent depending on level"
   asymmetry: "controlled and grid-aware"
   texture: "very subtle paper grain only; no distressed print"
 typography:
-  display: "Ukrainian-capable Inter Display family, using weight and scale to create a quiet modular technical hierarchy"
+  display: "Ukrainian-capable Inter Display family, heavy but restrained"
   body: "Inter-style neutral highly legible sans-serif"
   code: "clean technical monospace"
   rules:
-    - "render complete Unicode words, never construct letters from separate bitmap glyphs"
+    - "render complete Unicode words"
     - "preserve Ukrainian letters and diacritics exactly"
-    - "body copy remains horizontal"
+    - "all text remains horizontal"
     - "no more than one typographic trick"
-    - "do not imitate Soviet or 1920s lettering"
 composition:
-  grid: "12 columns, 72 px outer margins, 24 px gutters"
-  headline_span: "user-approved broad upper-left display field; the selected anchor supersedes the original 5-column calibration constraint"
-  reading_path: "one obvious path, normally top-left to bottom-right"
+  grid: "12 columns, 96 px outer margins, 24 px gutters"
+  headline_span: "left 6 columns"
+  mechanism_zone: "right 4 columns"
+  reading_path: "left to right"
   footer: none
   repeated_logo: false
 calibration_copy:
@@ -36,22 +38,14 @@ calibration_copy:
     - "ОДНА ІДЕЯ."
     - "ОДИН СИГНАЛ."
 hard_exclusions:
-  - "no pixel font"
-  - "no bitmap font"
-  - "no dot-matrix lettering"
-  - "no segmented glyph construction"
+  - "no portrait layout"
+  - "no pixel, bitmap, dot-matrix, or segmented font"
   - "no UI mockup chrome"
-  - "no decorative coordinate systems"
-  - "no random dotted grids"
-  - "no gradients"
-  - "no shadows"
-  - "no glossy surfaces"
-  - "no 3D"
-  - "no Soviet symbols"
-  - "no revolutionary poster styling"
-  - "no accidental extra labels"
-  - "no text not supplied by the card prompt"
+  - "no decorative coordinates or random dotted grids"
+  - "no gradients, shadows, glossy surfaces, or 3D"
+  - "no Soviet symbols or revolutionary poster styling"
+  - "no accidental labels, logos, footers, or extra text"
 output:
   format: PNG
-  exact_size: 1080x1350
+  exact_size: 1920x1080
   text_accuracy: publish-ready

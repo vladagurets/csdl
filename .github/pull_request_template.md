@@ -23,7 +23,7 @@ Describe one independently reviewable CSDL change.
 ## Visual review
 
 - [ ] canonical copy matches the manifest exactly
-- [ ] mobile readability reviewed
+- [ ] landscape presentation readability reviewed
 - [ ] one idea, one mechanism, one signal
 - [ ] geometry is semantic, not decorative
 - [ ] review notes and scores updated
