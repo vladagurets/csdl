@@ -10,7 +10,7 @@ content:
   relations: ["USER → AGENT", "AGENT ↔ TOOLS", "AGENT ↔ MEMORY"]
 composition:
   mechanism: "One open system Field contains AGENT, TOOLS, and MEMORY while USER remains outside; only the three declared Bridges appear"
-  components: [Container, Node, Bridge, Field]
+  components: [Field, Node, Bridge]
   reading_path: left_to_center_then_right_and_down
 typography: {display: "Ukrainian-capable Modular Technical display with squared engineering proportions and tight rhythm", labels: "neutral high-legibility sans", all_text_horizontal: true}
 palette: {background: "#F7F5F0", ink: "#1B1B19", neutral_line: "#B8B5AE", primary_signal: "#4C6A8A"}

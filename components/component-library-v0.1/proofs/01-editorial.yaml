@@ -1,0 +1,39 @@
+id: "01"
+mode: editorial
+family: big-number
+expression: A
+evidence: patterns/visual-dna-sprint-01/canonical/light/16x9/04-big-number.png
+content:
+  value: "3"
+  headline: "РІВНІ ВИРАЗНОСТІ"
+  supporting_copy: "QUIET · CONSTRUCTIVE · SIGNAL"
+instances:
+  - id: levels-anchor
+    component: anchor
+    attributes:
+      role: primary
+      content: headline
+  - id: level-count
+    component: pulse
+    attributes:
+      value: value
+      label: levels-anchor
+  - id: level-context
+    component: label
+    attributes:
+      text: supporting_copy
+      target: level-count
+      role: context
+  - id: value-signal
+    component: signal
+    attributes:
+      target: level-count
+      role: dominant-value
+      rendering: attached_marker
+relations:
+  - subject: level-context
+    type: attached_to
+    object: level-count
+  - subject: value-signal
+    type: highlights
+    object: level-count
