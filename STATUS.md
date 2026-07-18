@@ -36,6 +36,8 @@ Quote is also complete. Candidate 2 was selected from three exact-copy outputs b
 
 Big Number is complete. Candidate 2 was selected because the numeral reads first, the label remains attached, both centered separators stay neutral, and one coral marker remains semantically tied to the value.
 
+Collision is complete. Candidate 3 was selected because `НАДІЙНІСТЬ` sits inside the single coral overlap, both inputs retain equal weight, and no connector apparatus or impact decoration remains.
+
 ## Canonical outputs
 
 ```text
@@ -71,7 +73,7 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 6/20 families have accepted canonical evidence. Fourteen new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
+Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 7/20 families have accepted canonical evidence. Thirteen new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
@@ -79,4 +81,4 @@ Met for the infrastructure packet: tests, catalog/schema validation, fixed-data 
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Collision from three built-in GPT Image 2 candidates.
+Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Before / After from three built-in GPT Image 2 candidates.

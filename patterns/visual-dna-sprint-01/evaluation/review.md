@@ -84,6 +84,22 @@ Exact-copy review: pass for `3`, `РІВНІ ВИРАЗНОСТІ`, and `QUIET �
 
 Audit result: headline, two titles, six criteria, and supporting sentence match the manifest exactly. Both systems retain equal hierarchy; the slide does not read as a `VS` battle. The Divider and aligned criteria carry comparison semantics without decorative containers. Full-resolution and existing `1280×720` evidence remain readable. Canonical Level A is justified because structure, not collision, explains the distinction. No regeneration is warranted. Accepted catalog score: `4.86`.
 
+### 06 Collision — generated example accepted
+
+- **Canonical:** `canonical/light/16x9/06-collision.png`
+- **Prompt:** `prompts/06-collision.yaml`
+- **Selected:** `06-collision-v3.png` from three independent built-in GPT Image 2 candidates
+- **Source SHA-256:** `cdd6f1615f8c6b852e8b66624a01837854d0b779e1bc4f79e528a826942314d6`
+- **Canonical SHA-256:** `a939accffe69864ff6535089332ab467417fea446a88162cfee133d2d7f0fa9c`
+- **Source raster:** `1672×941`, RGB PNG
+- **Canonical raster:** `1920×1080`, RGB PNG
+
+- `06-collision-v1.png` — rejected: exact copy and equal inputs pass, but the result is moved below the overlap and connected by an added coral line and dot, so synthesis is not intrinsic to the collision.
+- `06-collision-v2.png` — rejected: the same below-overlap result and connector apparatus weaken the stated mechanism and add removable geometry.
+- `06-collision-v3.png` — selected: all three labels are exact, the result sits inside the only coral overlap, both inputs keep equal weight, and no connector, debris, `VS`, or impact decoration is present.
+
+Exact-copy review: pass for `ШВИДКІСТЬ`, `КОНТРОЛЬ`, and `НАДІЙНІСТЬ`; no extra text. Visual mechanism: two equal graphite Fields overlap once, and the coral intersection itself is the named synthesis. Strongest decision: placing the result inside the geometry makes the meaning immediate without an explanatory arrow. Removable-element check: the two boundaries, three labels, and one overlap all carry meaning. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the Venn-like primitive is familiar, but semantic color, scale, active space, and strict restraint keep it within CSDL. Accepted catalog score: `5.00`.
+
 ### 13 Loop — Pilot reference accepted
 
 - **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png`

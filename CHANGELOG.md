@@ -11,6 +11,7 @@
 - Generated three Cover candidates with built-in GPT Image 2, selected the exact-copy arrow-free Level C composition, and persisted its canonical raster, preview, evidence, score, and index metadata.
 - Generated three Quote candidates, selected the exact-copy restrained Level A composition, and persisted its canonical raster, preview, evidence, score, and index metadata.
 - Generated three Big Number candidates, selected the exact-copy single-signal Level A composition, and persisted its canonical raster, preview, evidence, score, and index metadata.
+- Generated three Collision candidates, selected the exact-copy intrinsic-overlap Level B composition, and persisted its canonical raster, preview, evidence, score, and index metadata.
 
 ## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
 
