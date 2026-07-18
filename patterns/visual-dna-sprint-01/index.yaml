@@ -37,7 +37,10 @@ families:
   - B
   evidence_mode: generated
   canonical_example: canonical/light/16x9/03-quote.png
-  status: awaiting_generation
+  sha256: 03ba2cc2df21f2e0c2fb89349529434ed9d80fc1eaccd0c0b547e16cb4d00b4d
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: '04'
   slug: big-number
   name: Big Number

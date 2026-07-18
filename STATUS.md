@@ -32,6 +32,8 @@ Pilot-backed catalog evidence is audited and accepted for Hero, Comparison, and 
 
 Cover is the first newly generated family. Three built-in GPT Image 2 candidates were reviewed; Candidate 3 was promoted because it preserves exact copy, removes the undeclared arrow present in Candidates 1–2, and uses one diagonal coral Signal plane as the catalog’s single canonical Level C peak.
 
+Quote is also complete. Candidate 2 was selected from three exact-copy outputs because it preserves the strongest Level A spacing, keeps attribution subordinate, and uses only one small semantic coral hinge.
+
 ## Canonical outputs
 
 ```text
@@ -67,7 +69,7 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 4/20 families have accepted canonical evidence. Sixteen new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
+Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 5/20 families have accepted canonical evidence. Fifteen new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
@@ -75,4 +77,4 @@ Met for the infrastructure packet: tests, catalog/schema validation, fixed-data 
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; Pilot evidence and Cover are stacked in subsequent branches. The next family packet generates and reviews Quote from three built-in GPT Image 2 candidates.
+Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Big Number from three built-in GPT Image 2 candidates.
