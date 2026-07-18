@@ -4,10 +4,12 @@ __pycache__/
 .venv/
 .DS_Store
 pilots/**/drafts/**/*.png
+patterns/**/drafts/**/*.png
 .env
 .env.*
 !.env.example
 pilots/**/candidates/
 pilots/**/previews/tmp/
+patterns/**/previews/tmp/
 exports/
 .scratch

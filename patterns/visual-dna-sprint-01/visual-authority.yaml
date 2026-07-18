@@ -1,0 +1,44 @@
+language: CSDL
+version: 0.1
+decision: D-028
+purpose: "Mandatory reference hierarchy for Visual DNA Sprint 1 generation and review"
+
+primary_visual_authority:
+  - path: references/canonical/foundation-patterns-v0.1.png
+    role: "Modular Technical typography, semantic component vocabulary, geometric contrast, and Anchor/Signal construction"
+  - path: references/canonical/pilot-01-quiet-visual-plan-v0.1.png
+    role: "Quiet Modular series rhythm, active-space asymmetry, Anchor/Plane/Cluster relationships, and presentation hierarchy"
+  - path: references/canonical/quiet-modular-a-b-c-calibration.png
+    role: "Level A/B/C density, signal scale, palette rhythm, and family continuity"
+
+secondary_execution_reference:
+  - path: pilots/01-agentic-discipline/references/style-anchor-light.png
+    role: "Direct 16:9 framing, Ukrainian text fidelity, warm paper field, and restrained Quiet spacing"
+
+precedence:
+  primary_wins_for: [display typography, component grammar, semantic geometry, active-space asymmetry, expression-level identity]
+  secondary_wins_for: [landscape framing, Ukrainian glyph fidelity, warm paper execution]
+  locked_output: {format: PNG, size: 1920x1080, orientation: landscape}
+  historical_guard: "Primary boards are visual-language evidence only; never restore superseded 4:5 Pilot rasters as active artifacts"
+
+generation_contract:
+  attachment_order:
+    - references/canonical/foundation-patterns-v0.1.png
+    - references/canonical/pilot-01-quiet-visual-plan-v0.1.png
+    - references/canonical/quiet-modular-a-b-c-calibration.png
+    - pilots/01-agentic-discipline/references/style-anchor-light.png
+  candidate_count: 3
+  independent_calls: true
+  required_prompt_roles: [primary_visual_authority, secondary_execution_reference]
+
+review_contract:
+  required_gates:
+    - full_series_contact_sheet
+    - primary_authority_comparison
+    - modular_technical_display
+    - csdl_identity_without_logo
+  reject_when:
+    - "generic infographic treatment replaces the declared CSDL visual mechanism"
+    - "wide neutral sans erases Modular Technical display character"
+    - "all families collapse to the same centered thin-line composition"
+    - "semantic correctness passes but the family is not recognizable as CSDL without a logo"

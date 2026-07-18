@@ -1,0 +1,16 @@
+language: CSDL
+version: 0.1
+recipe: Timeline
+expression: A
+canvas: {size: 1920x1080, orientation: landscape, safe_margin_horizontal: 96, safe_margin_vertical: 72}
+visual_authority: patterns/visual-dna-sprint-01/visual-authority.yaml
+content: {headline: "ВІД BRIEF ДО SHIP", stages: [BRIEF, PLAN, BUILD, VERIFY, SHIP]}
+composition:
+  mechanism: "One thin horizontal Axis with five bare ordered Nodes; VERIFY or its incoming transition is the only coral Signal"
+  components: [Axis, Node, Signal]
+  reading_path: left_to_right
+  negative_space: "at least 60%"
+typography: {display: "Ukrainian-capable Modular Technical display with squared engineering proportions and tight rhythm", labels: "neutral high-legibility sans", all_text_horizontal: true}
+palette: {background: "#F7F5F0", ink: "#1B1B19", neutral_line: "#B8B5AE", primary_signal: "#C96157"}
+hard_exclusions: [extra text, invented dates, reversed order, alternating cards, icons, roadmap UI, multiple active stages, gradients, shadows, 3D]
+output: {format: PNG, exact_size: 1920x1080, text_accuracy: publish-ready}

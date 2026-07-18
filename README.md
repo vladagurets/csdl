@@ -2,7 +2,7 @@
 
 A geometric visual language for explaining complex ideas clearly, memorably, and consistently with humans and generative models.
 
-**Status:** Foundation v0.1 revised for 16:9; Pilot 01 — Agentic Discipline v0.1.0 is complete.
+**Status:** Foundation v0.1 and Pilot 01 v0.1.0 are complete; Milestone 2 — Visual DNA Sprint 1 is in progress.
 
 **GitHub:** `vladagurets/csdl` is the selected public working repository. A public license has not yet been selected.
 
@@ -13,7 +13,7 @@ A geometric visual language for explaining complex ideas clearly, memorably, and
 3. Check current progress and the exact next task in [`STATUS.md`](STATUS.md).
 4. Follow the staged work in [`ROADMAP.md`](ROADMAP.md).
 5. Treat [`specs/2026-07-17-csdl-v0.1-design.md`](specs/2026-07-17-csdl-v0.1-design.md) as the design source of truth.
-6. Execute Pilot 01 from [`docs/superpowers/plans/2026-07-17-csdl-pilot-01.md`](docs/superpowers/plans/2026-07-17-csdl-pilot-01.md).
+6. Execute Milestone 2 from [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md).
 7. Use [`docs/handoff/CODEX_IMAGE_GENERATION.md`](docs/handoff/CODEX_IMAGE_GENERATION.md) for the approved Codex raster workflow.
 
 ## Current foundation
@@ -40,6 +40,7 @@ specs/                            approved design specifications
 docs/superpowers/plans/           task-by-task implementation plans
 docs/handoff/                     current Codex raster workflow
 pilots/01-agentic-discipline/     canonical copy, prompts, evaluation, assets
+patterns/visual-dna-sprint-01/    20-family contracts, prompts, evidence, assets
 references/canonical/             approved visual anchors
 research/                         source analysis without redistributing source PDFs
 tools/ and tests/                 validation and assembly tooling
@@ -54,6 +55,8 @@ python -m pip install -e '.[dev]'
 python -m pytest -q
 python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
+python tools/validate_pattern_catalog.py patterns/visual-dna-sprint-01/manifest.yaml
+python tools/validate_pattern_data.py patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
 ```
 
 The baseline test suite, manifest validator, and shared-reference validator must pass before raster promotion.
@@ -75,3 +78,7 @@ The repository separates **design governance** from **raster generation**:
 Pilot 01 explains how disciplined workflows and retained learning make agentic development more reliable over time. Its source of truth is [`pilots/01-agentic-discipline/manifest.yaml`](pilots/01-agentic-discipline/manifest.yaml).
 
 Pilot 01 is released as the first CSDL Visual DNA set. See [`RELEASE.md`](pilots/01-agentic-discipline/RELEASE.md).
+
+## Visual DNA Sprint 1
+
+The Milestone 2 catalog formalizes Hero, Cover, Quote, Big Number, Comparison, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, Loop, Pipeline, Decision Tree, Framework, KPI, Table, Chart, and Dashboard. Its source of truth is [`patterns/visual-dna-sprint-01/manifest.yaml`](patterns/visual-dna-sprint-01/manifest.yaml), with the mandatory reference hierarchy in [`visual-authority.yaml`](patterns/visual-dna-sprint-01/visual-authority.yaml). KPI/Table/Chart/Dashboard use fixed demo data and remain bounded prototypes rather than a premature full Analytical Mode.

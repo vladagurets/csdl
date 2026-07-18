@@ -1,0 +1,18 @@
+scale: [1, 2, 3, 4, 5]
+criteria:
+  clarity: "Main idea is understood in 2–3 seconds"
+  presentation_readability: "Readable in a 1280x720 landscape preview without zoom"
+  memorability: "One strong visual image remains after viewing"
+  csdl_identity: "Recognizable as Constructive Signal without logo when compared with all three primary canonical boards; generic infographic styling cannot score 4 or 5"
+  restraint: "No removable decorative element remains"
+  content_fidelity: "Every visible word and data value matches the manifest or fixed dataset"
+  semantic_integrity: "Every form, relation, and color has an explicit role"
+thresholds:
+  minimum_each: 4
+  minimum_average: 4.4
+  required_five: [clarity, presentation_readability, content_fidelity]
+series_gates:
+  - full_series_contact_sheet
+  - primary_authority_comparison
+  - modular_technical_display
+  - csdl_identity_without_logo

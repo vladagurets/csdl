@@ -1,0 +1,545 @@
+catalog:
+  id: visual-dna-sprint-01
+  title: "CSDL Visual DNA Sprint 1"
+  version: 0.1.0
+  canvas: 1920x1080
+  orientation: landscape
+  style_anchor: pilots/01-agentic-discipline/references/style-anchor-light.png
+  visual_authority: visual-authority.yaml
+  family_count: 20
+  canonical_distribution: {A: 13, B: 6, C: 1}
+  language: uk
+  terminology_language: en
+  analytical_scope: "Visual DNA prototypes only; full quantitative rules remain deferred to Milestone 5"
+
+defaults:
+  typography: &typography
+    display: modular_technical
+    body: neutral_sans
+    code: technical_mono
+    all_text_horizontal: true
+    max_typographic_tricks: 1
+  spacing: &spacing
+    outer_margin_horizontal: 96
+    outer_margin_vertical: 72
+    baseline_unit: 8
+    major_gap_tokens: [space.6, space.7, space.8]
+  hard_exclusions: &hard_exclusions
+    - extra text
+    - logos or repeated footers
+    - UI chrome or decorative card shells
+    - decorative coordinates or random dot fields
+    - gradients, shadows, glossy surfaces, or 3D
+    - political, Soviet, or revolutionary-poster styling
+    - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+  acceptance: &acceptance
+    exact_content: true
+    clarity: 5
+    presentation_readability: 5
+    semantic_integrity: 4
+    candidate_count: 3
+    minimum_each_score: 4
+    minimum_average: 4.4
+
+families:
+  - id: "01"
+    slug: hero
+    name: Hero
+    wave: pilot
+    problem: "Make one proposition immediately understandable and memorable."
+    scenarios: [opening thesis, section thesis, key takeaway]
+    components: [Anchor, Signal]
+    assembly_order: [place Anchor, isolate supporting copy, add one semantic Signal]
+    allowed_levels: [A, B, C]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: stable counterweight, max_area_percent: 8}
+    density: low
+    content:
+      headline: "СИЛЬНИЙ АГЕНТ ≠ СТІЙКИЙ РЕЗУЛЬТАТ"
+      supporting_copy: "Стабільність з’являється, коли робота має процес, перевірки й пам’ять."
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/01-hero.yaml
+    specification: specs/01-hero.md
+    evidence:
+      mode: pilot_reference
+      candidate_generation_required: false
+      canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/01-hook.png
+      source_prompt: pilots/01-agentic-discipline/prompts/01-hook.yaml
+      source_review: pilots/01-agentic-discipline/evaluation/review.md
+      source_scores: pilots/01-agentic-discipline/evaluation/scores.csv
+      sha256: 39de00d730e534c942fbb96e6fe5cf932e7e14c0a89926877406ba3cade62d8c
+    acceptance: *acceptance
+
+  - id: "02"
+    slug: cover
+    name: Cover
+    wave: editorial
+    problem: "Name a series or section and establish its single visual premise."
+    scenarios: [series opening, chapter divider]
+    components: [Anchor, Signal, Field]
+    assembly_order: [place short title Anchor, establish one open Field, add one Signal plane]
+    allowed_levels: [A, C]
+    canonical_level: C
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: opening plane, max_area_percent: 22}
+    density: low
+    content:
+      headline: "СИСТЕМИ, ЩО ВЧАТЬСЯ"
+      supporting_copy: "VISUAL DNA SPRINT 1"
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/02-cover.yaml
+    specification: specs/02-cover.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/02-cover.png}
+    acceptance: *acceptance
+
+  - id: "03"
+    slug: quote
+    name: Quote
+    wave: editorial
+    problem: "Give one exact statement enough space and hierarchy to be read as an idea, not decoration."
+    scenarios: [principle, testimony, chapter pause]
+    components: [Anchor, Signal]
+    assembly_order: [set quote as Anchor, isolate attribution, add one small Signal]
+    allowed_levels: [A, B]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: quotation hinge, max_area_percent: 6}
+    density: low
+    content:
+      quote: "“ХОРОШИЙ ПРОЦЕС ЗАЛИШАЄ ПІСЛЯ СЕБЕ КРАЩИЙ КОНТЕКСТ.”"
+      attribution: "AGENTIC DISCIPLINE"
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/03-quote.yaml
+    specification: specs/03-quote.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/03-quote.png}
+    acceptance: *acceptance
+
+  - id: "04"
+    slug: big-number
+    name: Big Number
+    wave: editorial
+    problem: "Make one exact quantity the dominant explanatory object."
+    scenarios: [count, percentage, ratio, milestone]
+    components: [Pulse, Anchor, Signal]
+    assembly_order: [place Pulse, attach concise label, add one supporting line and one Signal]
+    allowed_levels: [A, B, C]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: value marker, max_area_percent: 8}
+    density: low
+    content:
+      value: "3"
+      label: "РІВНІ ВИРАЗНОСТІ"
+      supporting_copy: "QUIET · CONSTRUCTIVE · SIGNAL"
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/04-big-number.yaml
+    specification: specs/04-big-number.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/04-big-number.png}
+    acceptance: *acceptance
+
+  - id: "05"
+    slug: comparison
+    name: Comparison
+    wave: pilot
+    problem: "Compare two systems without implying conflict unless conflict is the content."
+    scenarios: [approach comparison, complementary roles, trade-off]
+    components: [Anchor, Field, Divider, Signal]
+    assembly_order: [create two open Fields, align criteria, separate with Divider, add one Signal]
+    allowed_levels: [A, B, C]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: shared comparison marker, max_area_percent: 5}
+    density: medium
+    content:
+      headline: "ДВА МЕХАНІЗМИ ДИСЦИПЛІНИ"
+      left: [SUPERPOWERS, "Skills за контекстом", "Gated workflow", "TDD + review"]
+      right: [COMPOUND ENGINEERING, "Plan + work + review", "Capture learnings", "Easier next cycle"]
+      supporting_copy: "Superpowers дисциплінує поточну роботу. Compound Engineering робить наступний цикл легшим."
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/05-comparison.yaml
+    specification: specs/05-comparison.md
+    evidence:
+      mode: pilot_reference
+      candidate_generation_required: false
+      canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png
+      source_prompt: pilots/01-agentic-discipline/prompts/04-comparison.yaml
+      source_review: pilots/01-agentic-discipline/evaluation/review.md
+      source_scores: pilots/01-agentic-discipline/evaluation/scores.csv
+      sha256: c97326715a6345fe099d08a197dc4422411a6a529082934d8f40c63de3049aff
+    acceptance: *acceptance
+
+  - id: "06"
+    slug: collision
+    name: Collision
+    wave: editorial
+    problem: "Show two forces producing one consequential intersection or synthesis."
+    scenarios: [constraint, synthesis, tension, trade-off]
+    components: [Anchor, Collision, Signal]
+    assembly_order: [place two opposing Anchors, create one functional overlap, label the result]
+    allowed_levels: [B, C]
+    canonical_level: B
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: intersection result, max_area_percent: 12}
+    density: low
+    content:
+      left: "ШВИДКІСТЬ"
+      right: "КОНТРОЛЬ"
+      result: "НАДІЙНІСТЬ"
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/06-collision.yaml
+    specification: specs/06-collision.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/06-collision.png}
+    acceptance: *acceptance
+
+  - id: "07"
+    slug: before-after
+    name: Before / After
+    wave: editorial
+    problem: "Make a state change legible without reducing it to cosmetic restyling."
+    scenarios: [transformation, migration, improvement]
+    components: [Field, Divider, Vector, Signal]
+    assembly_order: [define before Field, define after Field, connect with one Vector, signal changed property]
+    allowed_levels: [A, B]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: mineral_green, role: retained context after change, max_area_percent: 8}
+    density: low
+    content:
+      headline: "ВІД ПОВТОРЕННЯ ДО НАКОПИЧЕННЯ"
+      before: [AD HOC, "РІШЕННЯ ГУБЛЯТЬСЯ"]
+      after: [SYSTEM, "КОНТЕКСТ ЗАЛИШАЄТЬСЯ"]
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/07-before-after.yaml
+    specification: specs/07-before-after.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/07-before-after.png}
+    acceptance: *acceptance
+
+  - id: "08"
+    slug: timeline
+    name: Timeline
+    wave: structural
+    problem: "Show ordered change over time with one unambiguous reading direction."
+    scenarios: [history, delivery sequence, staged rollout]
+    components: [Axis, Node, Signal]
+    assembly_order: [draw one Axis, place ordered Nodes, emphasize one transition]
+    allowed_levels: [A, B]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: verification transition, max_area_percent: 6}
+    density: low
+    content:
+      headline: "ВІД BRIEF ДО SHIP"
+      stages: [BRIEF, PLAN, BUILD, VERIFY, SHIP]
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/08-timeline.yaml
+    specification: specs/08-timeline.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/08-timeline.png}
+    acceptance: *acceptance
+
+  - id: "09"
+    slug: matrix
+    name: Matrix
+    wave: structural
+    problem: "Position a small set of options across two independent dimensions."
+    scenarios: [prioritization, portfolio view, risk map]
+    components: [Axis, Field, Node, Signal]
+    assembly_order: [define two labeled Axes, create four open regions, place four Nodes, select one Node]
+    allowed_levels: [A, B]
+    canonical_level: B
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: selected high-impact option, max_area_percent: 6}
+    density: medium
+    content:
+      headline: "КУДИ СПРЯМУВАТИ ЗУСИЛЛЯ"
+      axes: [ВПЛИВ, ЗУСИЛЛЯ]
+      nodes: [АВТОМАТИЗУВАТИ, ДЕЛЕГУВАТИ, ПЛАНУВАТИ, ВІДКЛАСТИ]
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/09-matrix.yaml
+    specification: specs/09-matrix.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/09-matrix.png}
+    acceptance: *acceptance
+
+  - id: "10"
+    slug: hierarchy
+    name: Hierarchy
+    wave: structural
+    problem: "Show levels of ownership or decomposition without implying sequence."
+    scenarios: [goal decomposition, taxonomy, authority]
+    components: [Anchor, Node, Container, Bridge]
+    assembly_order: [place root Anchor, nest or branch child Nodes, preserve one top-to-bottom depth cue]
+    allowed_levels: [A, B]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: leaf verification node, max_area_percent: 6}
+    density: low
+    content:
+      headline: "ВІД ЦІЛІ ДО ПЕРЕВІРКИ"
+      levels: [OBJECTIVE, MILESTONE, TASK, CHECK]
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/10-hierarchy.yaml
+    specification: specs/10-hierarchy.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/10-hierarchy.png}
+    acceptance: *acceptance
+
+  - id: "11"
+    slug: architecture
+    name: Architecture
+    wave: structural
+    problem: "Explain stable system boundaries and permitted interactions."
+    scenarios: [software context, agent system, service boundary]
+    components: [Container, Node, Bridge, Field]
+    assembly_order: [define system Field, place bounded Nodes, connect only permitted relations, emphasize one boundary]
+    allowed_levels: [A, B]
+    canonical_level: B
+    typography: *typography
+    spacing: *spacing
+    signal: {color: data_blue, role: system boundary and tool relation, max_area_percent: 10}
+    density: medium
+    content:
+      headline: "КОНТЕКСТНА АРХІТЕКТУРА АГЕНТА"
+      nodes: [USER, AGENT, TOOLS, MEMORY]
+      relations: ["USER → AGENT", "AGENT ↔ TOOLS", "AGENT ↔ MEMORY"]
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/11-architecture.yaml
+    specification: specs/11-architecture.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/11-architecture.png}
+    acceptance: *acceptance
+
+  - id: "12"
+    slug: workflow
+    name: Workflow
+    wave: structural
+    problem: "Show who or what acts next in a bounded operational sequence."
+    scenarios: [work procedure, handoff, review flow]
+    components: [Node, Vector, Signal]
+    assembly_order: [place action Nodes, connect in execution order, select the evidence-producing step]
+    allowed_levels: [A, B]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: verification action, max_area_percent: 7}
+    density: low
+    content:
+      headline: "РОБОЧИЙ ПОТІК З ДОКАЗАМИ"
+      stages: [UNDERSTAND, PLAN, EXECUTE, VERIFY]
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/12-workflow.yaml
+    specification: specs/12-workflow.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/12-workflow.png}
+    acceptance: *acceptance
+
+  - id: "13"
+    slug: loop
+    name: Loop
+    wave: pilot
+    problem: "Show a repeating process whose output changes the next cycle."
+    scenarios: [feedback cycle, learning loop, recurring operation]
+    components: [Loop, Node, Signal]
+    assembly_order: [place ordered Nodes, connect as one closed Loop, select the compounding Node]
+    allowed_levels: [A, B, C]
+    canonical_level: B
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: compounding stage, max_area_percent: 8}
+    density: medium
+    content:
+      headline: "AUTO-DISCIPLINE LOOP"
+      stages: [UNDERSTAND, PLAN, "EXECUTE + TEST", REVIEW, COMPOUND]
+      supporting_copy: "Кожен цикл залишає кращий контекст для наступної задачі."
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/13-loop.yaml
+    specification: specs/13-loop.md
+    evidence:
+      mode: pilot_reference
+      candidate_generation_required: false
+      canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png
+      source_prompt: pilots/01-agentic-discipline/prompts/05-synthesis.yaml
+      source_review: pilots/01-agentic-discipline/evaluation/review.md
+      source_scores: pilots/01-agentic-discipline/evaluation/scores.csv
+      sha256: 1b7a4045fdbf616f8787dbfaf81161158b06d9efda67d7361102653d810497c8
+    acceptance: *acceptance
+
+  - id: "14"
+    slug: pipeline
+    name: Pipeline
+    wave: structural
+    problem: "Show material or data transformed through fixed stages."
+    scenarios: [data processing, content production, build system]
+    components: [Node, Vector, Container, Signal]
+    assembly_order: [place input, order transform stages, show output, signal validation gate]
+    allowed_levels: [A, B]
+    canonical_level: B
+    typography: *typography
+    spacing: *spacing
+    signal: {color: data_blue, role: validated flow, max_area_percent: 10}
+    density: medium
+    content:
+      headline: "КОНТЕКСТ СТАЄ РЕЗУЛЬТАТОМ"
+      stages: [INPUT, PARSE, TRANSFORM, VALIDATE, OUTPUT]
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/14-pipeline.yaml
+    specification: specs/14-pipeline.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/14-pipeline.png}
+    acceptance: *acceptance
+
+  - id: "15"
+    slug: decision-tree
+    name: Decision Tree
+    wave: structural
+    problem: "Make a small branching rule and its consequences explicit."
+    scenarios: [routing rule, escalation, eligibility]
+    components: [Node, Bridge, Signal]
+    assembly_order: [place one question Node, branch on labeled answers, terminate in two actions]
+    allowed_levels: [A, B]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: ochre, role: high-risk escalation path, max_area_percent: 7}
+    density: low
+    content:
+      headline: "КОЛИ ПОТРІБЕН HUMAN REVIEW"
+      question: "РИЗИК ВИСОКИЙ?"
+      branches: ["ТАК → HUMAN REVIEW", "НІ → AUTOMATE"]
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/15-decision-tree.yaml
+    specification: specs/15-decision-tree.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/15-decision-tree.png}
+    acceptance: *acceptance
+
+  - id: "16"
+    slug: framework
+    name: Framework
+    wave: structural
+    problem: "Organize a small set of mutually necessary concepts into one mental model."
+    scenarios: [operating model, assessment lens, teaching framework]
+    components: [Anchor, Cluster, Node, Signal]
+    assembly_order: [name the framework, place equal concept Nodes, connect them as one Cluster, select the learning Node]
+    allowed_levels: [A, B]
+    canonical_level: B
+    typography: *typography
+    spacing: *spacing
+    signal: {color: coral, role: retained learning node, max_area_percent: 8}
+    density: medium
+    content:
+      headline: "4 ОПОРИ НАДІЙНОЇ РОБОТИ"
+      pillars: [CONTEXT, ACTION, EVIDENCE, LEARNING]
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/16-framework.yaml
+    specification: specs/16-framework.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/16-framework.png}
+    acceptance: *acceptance
+
+  - id: "17"
+    slug: kpi
+    name: KPI
+    wave: analytical
+    problem: "Expose one primary operational measure with only the context needed to interpret it."
+    scenarios: [status measure, target tracking, weekly snapshot]
+    components: [Pulse, Axis, Signal]
+    assembly_order: [place primary Pulse, attach period and label, show restrained supporting measures]
+    allowed_levels: [A]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: data_blue, role: primary measured value, max_area_percent: 6}
+    density: analytical
+    content:
+      dataset: data/agent-reliability-demo.yaml
+      headline: "НАДІЙНІСТЬ АГЕНТА · W4"
+      primary: "90% УСПІШНІСТЬ"
+      supporting: ["55 ЗАПУСКІВ", "10 ХВ МЕДІАНА РЕВ’Ю", "2 ПРОПУЩЕНІ ДЕФЕКТИ"]
+      source_label: "DEMO DATA"
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/17-kpi.yaml
+    specification: specs/17-kpi.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/17-kpi.png}
+    acceptance: *acceptance
+
+  - id: "18"
+    slug: table
+    name: Table
+    wave: analytical
+    problem: "Support exact lookup and comparison across a small fixed dataset."
+    scenarios: [compact report, value audit, weekly comparison]
+    components: [Frame, Axis, Signal]
+    assembly_order: [place title, align headers and values, use rules only for lookup, signal one column]
+    allowed_levels: [A]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: data_blue, role: W4 column emphasis, max_area_percent: 5}
+    density: analytical
+    content:
+      dataset: data/agent-reliability-demo.yaml
+      headline: "4 ТИЖНІ НАДІЙНОСТІ"
+      columns: [METRIC, W1, W2, W3, W4]
+      rows: [ЗАПУСКИ, УСПІШНІСТЬ, "МЕДІАНА РЕВ’Ю", "ПРОПУЩЕНІ ДЕФЕКТИ"]
+      source_label: "DEMO DATA"
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/18-table.yaml
+    specification: specs/18-table.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/18-table.png}
+    acceptance: *acceptance
+
+  - id: "19"
+    slug: chart
+    name: Chart
+    wave: analytical
+    problem: "Reveal one quantitative trend without distorting its scale or adding decorative geometry."
+    scenarios: [trend, comparison over time, progress]
+    components: [Axis, Node, Signal]
+    assembly_order: [define honest Axes, plot ordered values, label directly, signal final point]
+    allowed_levels: [A]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: data_blue, role: success-rate series, max_area_percent: 6}
+    density: analytical
+    content:
+      dataset: data/agent-reliability-demo.yaml
+      headline: "УСПІШНІСТЬ ЗРОСТАЄ ЩОТИЖНЯ"
+      series: success_rate
+      points: ["W1 · 72%", "W2 · 78%", "W3 · 84%", "W4 · 90%"]
+      source_label: "DEMO DATA"
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/19-chart.yaml
+    specification: specs/19-chart.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/19-chart.png}
+    acceptance: *acceptance
+
+  - id: "20"
+    slug: dashboard
+    name: Dashboard
+    wave: analytical
+    problem: "Summarize a small operational state while preserving one clear primary signal."
+    scenarios: [weekly status, operating review, compact monitoring]
+    components: [Pulse, Cluster, Axis, Signal]
+    assembly_order: [place primary Pulse, group three supporting measures, add one restrained trend, preserve direct labels]
+    allowed_levels: [A]
+    canonical_level: A
+    typography: *typography
+    spacing: *spacing
+    signal: {color: data_blue, role: W4 success-rate signal, max_area_percent: 7}
+    density: analytical
+    content:
+      dataset: data/agent-reliability-demo.yaml
+      headline: "AGENT RELIABILITY · W4"
+      metrics: ["90% УСПІШНІСТЬ", "55 ЗАПУСКІВ", "10 ХВ МЕДІАНА РЕВ’Ю", "2 ПРОПУЩЕНІ ДЕФЕКТИ"]
+      trend: [72%, 78%, 84%, 90%]
+      source_label: "DEMO DATA"
+    hard_exclusions: *hard_exclusions
+    prompt: prompts/20-dashboard.yaml
+    specification: specs/20-dashboard.md
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/20-dashboard.png}
+    acceptance: *acceptance

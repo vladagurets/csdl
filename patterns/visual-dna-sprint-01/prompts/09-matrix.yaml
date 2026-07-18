@@ -1,0 +1,21 @@
+language: CSDL
+version: 0.1
+recipe: Matrix
+expression: B
+canvas: {size: 1920x1080, orientation: landscape, safe_margin_horizontal: 96, safe_margin_vertical: 72}
+visual_authority: patterns/visual-dna-sprint-01/visual-authority.yaml
+content:
+  headline: "КУДИ СПРЯМУВАТИ ЗУСИЛЛЯ"
+  axes: {vertical: "ВПЛИВ", horizontal: "ЗУСИЛЛЯ"}
+  nodes:
+    - {label: "АВТОМАТИЗУВАТИ", position: high_impact_low_effort, selected: true}
+    - {label: "ДЕЛЕГУВАТИ", position: high_impact_high_effort}
+    - {label: "ПЛАНУВАТИ", position: low_impact_low_effort}
+    - {label: "ВІДКЛАСТИ", position: low_impact_high_effort}
+composition:
+  mechanism: "Two thin labeled Axes create four open regions; four directly labeled Nodes use relative position only"
+  components: [Axis, Field, Node, Signal]
+typography: {display: "Ukrainian-capable Modular Technical display with squared engineering proportions and tight rhythm", labels: "neutral high-legibility sans", all_text_horizontal: true}
+palette: {background: "#F7F5F0", ink: "#1B1B19", neutral_line: "#B8B5AE", primary_signal: "#C96157"}
+hard_exclusions: [extra text, numeric ticks, fake scores, quadrant cards, decorative grid, overlapping labels, UI chrome, gradients, shadows, 3D]
+output: {format: PNG, exact_size: 1920x1080, text_accuracy: publish-ready}

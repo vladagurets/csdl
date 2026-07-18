@@ -1,0 +1,16 @@
+language: CSDL
+version: 0.1
+recipe: Hierarchy
+expression: A
+canvas: {size: 1920x1080, orientation: landscape, safe_margin_horizontal: 96, safe_margin_vertical: 72}
+visual_authority: patterns/visual-dna-sprint-01/visual-authority.yaml
+content: {headline: "ВІД ЦІЛІ ДО ПЕРЕВІРКИ", levels: [OBJECTIVE, MILESTONE, TASK, CHECK]}
+composition:
+  mechanism: "Four levels descend through indentation or branching as ownership depth, not a workflow; CHECK is the only coral leaf"
+  components: [Anchor, Node, Container, Bridge]
+  reading_path: top_to_bottom
+  negative_space: "at least 60%"
+typography: {display: "Ukrainian-capable Modular Technical display with squared engineering proportions and tight rhythm", labels: "neutral high-legibility sans with restrained scale by depth", all_text_horizontal: true}
+palette: {background: "#F7F5F0", ink: "#1B1B19", neutral_line: "#B8B5AE", primary_signal: "#C96157"}
+hard_exclusions: [extra text, workflow arrow chain, avatars, duplicate parents, decorative boxes, org-chart UI, gradients, shadows, 3D]
+output: {format: PNG, exact_size: 1920x1080, text_accuracy: publish-ready}

@@ -1,0 +1,36 @@
+dataset:
+  id: agent-reliability-demo
+  status: fixed_demo_data
+  purpose: "Controlled values for Milestone 2 Visual DNA prototypes; not an external empirical claim"
+  unit_of_analysis: "weekly batch of agent runs"
+  weeks: [W1, W2, W3, W4]
+  series:
+    runs:
+      label_uk: "ЗАПУСКИ"
+      unit: count
+      values: [40, 45, 50, 55]
+    success_rate:
+      label_uk: "УСПІШНІСТЬ"
+      unit: percent
+      values: [72, 78, 84, 90]
+    median_review_minutes:
+      label_uk: "МЕДІАНА РЕВ’Ю"
+      unit: minutes
+      values: [18, 16, 13, 10]
+    escaped_defects:
+      label_uk: "ПРОПУЩЕНІ ДЕФЕКТИ"
+      unit: count
+      values: [8, 6, 4, 2]
+  canonical_snapshot:
+    week: W4
+    runs: 55
+    success_rate: 90
+    median_review_minutes: 10
+    escaped_defects: 2
+constraints:
+  preserve_order: true
+  zero_baseline_for_counts: true
+  percent_domain: [0, 100]
+  interpolation: false
+  invented_values: false
+  source_label_required: "DEMO DATA"

@@ -2,6 +2,33 @@
 
 ## Unreleased
 
+- Rebaselined Milestone 2 after explicit user approval: the three `references/canonical/` boards are now primary Visual DNA authority, the Pilot landscape anchor is secondary execution evidence, and the first 11 generated approvals are superseded pending new three-candidate passes.
+- Replaced residual smooth-Inter overrides in all 17 generated-family Prompt DSL files with explicit Modular Technical typography roles and added a validator regression gate.
+- Started Milestone 2 — Visual DNA Sprint 1 with a detailed implementation and stacked-PR plan.
+- Added the machine-readable 20-family manifest/schema, complete family specifications, exact editorial/structural copy, and Prompt DSL packages.
+- Added one fixed demo dataset and fidelity contracts for bounded KPI, Table, Chart, and Dashboard Visual DNA prototypes without expanding full Analytical Mode.
+- Added catalog, dataset, raster, score, preview, contact-sheet, and index tooling with focused tests.
+- Reused Pilot 01 as the declared evidence source for Hero, Comparison, and Loop; no raster regeneration was performed.
+- Audited and accepted Pilot-backed Hero, Comparison, and Loop as Milestone 2 pattern families with pinned hashes, exact-copy checks, raster metadata, candidate decisions, catalog scores, and machine-index entries.
+- Regenerated Cover under D-028 with the full three-board primary authority package; rejected an initial non-compliant trio, selected the strongest flat-signal Modular Technical Level C composition from a six-candidate pass, and persisted its canonical raster, preview, evidence, score, and index metadata.
+- Regenerated Quote under D-028 from three new candidates, selected the exact-copy Modular Technical Level A composition with one square hinge, and persisted its canonical raster, preview, evidence, score, and index metadata.
+- Regenerated Big Number under D-028 from three new candidates, selected the exact-copy single-signal numeric Pulse composition, and persisted its canonical raster, preview, evidence, score, and index metadata.
+- Regenerated Collision under D-028 from three new candidates, selected the exact-copy active-plane Level B synthesis with one intrinsic overlap, and persisted its canonical raster, preview, evidence, score, and index metadata.
+- Regenerated Before / After under D-028 from three new candidates, selected the exact-copy Level A discontinuous-to-continuous trace mechanism, and persisted canonical evidence without cards or node fields.
+- Regenerated Timeline under D-028 from three new candidates, selected the exact-order Level A Axis with neutral labels and one solid coral VERIFY node, and persisted its canonical raster, preview, full-resolution, primary-authority, series-contact-sheet, score, and index evidence.
+- Regenerated Matrix under D-028 from three new candidates, selected the exact-copy Level B open Field with correctly labeled independent Axes, four square relative Nodes, and one coral high-impact/low-effort selection, and persisted primary-authority and series evidence.
+- Regenerated Hierarchy under D-028 from three new candidates, selected the exact-copy Level A nested open-Bracket composition that communicates ownership depth without workflow semantics, and persisted primary-authority and series evidence.
+- Regenerated Architecture under D-028 from three new candidates, selected the exact-copy Level B context map with one open dusty-blue system Field and exactly three directional relations, and persisted primary-authority and series evidence.
+- Regenerated Workflow under D-028 from three new candidates, selected the exact-copy Level A open-corner action route with three separate Vectors and one solid VERIFY signal, and persisted primary-authority and series evidence.
+- Regenerated Pipeline under D-028 from three new candidates, selected the exact-copy Level B stepped carrier-through-gates composition with one solid VALIDATE gate, and persisted primary-authority and series evidence.
+- Added Decision Tree from three candidates, selecting the exact-copy Level A open-question split with two labeled terminal routes and ochre reserved for HUMAN REVIEW, with full primary-authority and series evidence.
+- Added Framework from three candidates, selecting the exact-copy Level B open four-node Cluster with equal concept weight and coral reserved for the LEARNING component, with full primary-authority and series evidence.
+- Added KPI from an initial three-candidate pass plus two bounded signal-area corrections, selecting the exact W4 fixed-data Level A Pulse with a measured `3.45%` dusty-blue footprint and full primary-authority and series evidence.
+- Added Table from three candidates, selecting the cell-exact W1–W4 Level A open lookup Frame with only the W4 header in dusty blue, plus full-resolution, primary-authority, and series evidence.
+- Added Chart from an initial three-candidate pass plus one bounded geometry correction, selecting the exact-label 0–100% Level A success-rate series after raster-auditing scale error, total rise, and blue footprint.
+- Added Dashboard from three candidates, selecting the exact W4 Level A open composite with one primary Pulse, three supporting measures, a consistent four-week trend, and no widget chrome.
+- Completed Visual DNA Sprint 1 with 20 standardized landscape previews, full/editorial/structural/analytical contact sheets, strict complete-mode asset/score/review/index validation, and a regression test for the documented index-validator CLI entrypoint.
+
 ## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
 
 - Replaced the portrait-first foundation with a canonical `1920×1080` 16:9 landscape format after explicit user approval.
