@@ -30,7 +30,7 @@ Milestone 2 has started from a synchronized clean `main`. Its infrastructure pac
 
 Pilot-backed catalog evidence is audited and accepted for Hero, Comparison, and Loop. Their actual canonical bytes, RGB `1920×1080` metadata, exact Prompt DSL content, three-candidate selection records, hashes, `1280×720` readability evidence, and Pilot rubric rows all pass the Milestone 2 contract. No regeneration is justified.
 
-The user-approved D-028 rebaseline makes all three boards in `references/canonical/` primary Visual DNA authority and keeps the Pilot landscape anchor as secondary execution evidence. A series-level contact-sheet audit found that the first generated passes for Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline satisfy copy and semantic checks but collapse toward generic centered infographics. Those approvals are superseded, their active rasters/scores/index evidence are removed, and all affected families require new candidate passes with the complete four-image reference package. Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline now pass that regeneration gate and restore the primary boards' expression contrast, Modular Technical cadence, numeric Pulse, active-plane synthesis, semantic trace language, quiet chronological Axis, square relative-position grammar, nested ownership-depth grammar, open system-boundary topology, finite operational route grammar, and continuous carrier-through-gates transformation; historical first passes remain in review notes, ignored drafts, and Git history.
+The user-approved D-028 rebaseline makes all three boards in `references/canonical/` primary Visual DNA authority and keeps the Pilot landscape anchor as secondary execution evidence. A series-level contact-sheet audit found that the first generated passes for Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline satisfy copy and semantic checks but collapse toward generic centered infographics. Those approvals are superseded, their active rasters/scores/index evidence are removed, and all affected families require new candidate passes with the complete four-image reference package. Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline now pass that regeneration gate and restore the primary boards' expression contrast, Modular Technical cadence, numeric Pulse, active-plane synthesis, semantic trace language, quiet chronological Axis, square relative-position grammar, nested ownership-depth grammar, open system-boundary topology, finite operational route grammar, and continuous carrier-through-gates transformation; Decision Tree adds the first accepted post-correction binary branch mechanism. Historical first passes remain in review notes, ignored drafts, and Git history.
 
 ## Canonical outputs
 
@@ -50,7 +50,7 @@ pilots/01-agentic-discipline/contact-sheets/pilot-01-light.png
 
 ```text
 .venv/bin/python -m pytest -q
-47 passed
+48 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
@@ -67,12 +67,12 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: 14/20 families have accepted canonical evidence — three audited Pilot references plus D-028-regenerated Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline. Six generated families, complete contact sheets, and strict series validation remain. Pilot 01 remains fully met.
+Partially validated: 15/20 families have accepted canonical evidence — three audited Pilot references, the complete D-028 corrective sequence through Pipeline, and newly generated Decision Tree. Five generated families, complete contact sheets, and strict series validation remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
-In correction: the semantic catalog and fixed-data contracts remain valid. The complete D-028 corrective sequence from Cover through Pipeline now passes the primary-authority, Prompt DSL, exact-copy, raster, flat-signal, and series-contact-sheet gates; the six remaining generated families still await equivalent evidence.
+In progress: the semantic catalog and fixed-data contracts remain valid. The complete D-028 corrective sequence from Cover through Pipeline and new Decision Tree now pass the primary-authority, Prompt DSL, exact-copy, raster, flat-signal, and series-contact-sheet gates; five generated families still await equivalent evidence.
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; the superseded first generated family stack through Pipeline has now been fully replaced by the D-028 corrective packet. Generation proceeds next to Decision Tree.
+Infrastructure review is open from `codex/m2-infrastructure`; the superseded first generated family stack through Pipeline has been fully replaced by the D-028 corrective packet, Decision Tree is complete, and generation proceeds next to Framework.
