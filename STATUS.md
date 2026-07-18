@@ -32,7 +32,7 @@ Pilot-backed catalog evidence is audited and accepted for Hero, Comparison, and 
 
 The user-approved D-028 rebaseline makes all three boards in `references/canonical/` primary Visual DNA authority and keeps the Pilot landscape anchor as secondary execution evidence. A series-level contact-sheet audit found that the first generated passes for Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline satisfy copy and semantic checks but collapse toward generic centered infographics. Those approvals are superseded, their active rasters/scores/index evidence are removed, and all affected families require new candidate passes with the complete four-image reference package. Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline now pass that regeneration gate and restore the primary boards' expression contrast, Modular Technical cadence, numeric Pulse, active-plane synthesis, semantic trace language, quiet chronological Axis, square relative-position grammar, nested ownership-depth grammar, open system-boundary topology, finite operational route grammar, and continuous carrier-through-gates transformation; Decision Tree adds a binary branch mechanism, Framework adds an equal-concept open Cluster, and the bounded analytical set is complete with a fixed-data KPI Pulse, exact-lookup Table, audited 0–100% Chart, and open composite Dashboard. Historical first passes remain in review notes, ignored drafts, and Git history.
 
-Milestone 3 is now in progress. The accepted evidence audit and implementation plan define a seven-packet stacked delivery. Component infrastructure is complete, and the first three component packets formalize Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, and Label. D-029 locks the required fifteen-name public vocabulary and retires the earlier Container alias without changing any accepted raster: Hierarchy uses Frame for ownership scope, Architecture uses Field for system scope, and Pipeline needs no wrapper component.
+Milestone 3 is now in progress. The accepted evidence audit and implementation plan define a seven-packet stacked delivery. Component infrastructure and all four component packets are complete: Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend now have canonical Markdown and machine-readable contracts. D-029 locks this fifteen-name public vocabulary and retires the earlier Container alias without changing any accepted raster: Hierarchy uses Frame for ownership scope, Architecture uses Field for system scope, and Pipeline needs no wrapper component. Strict component-library validation passes; the three composition proofs and generated indexes remain.
 
 ## Canonical outputs
 
@@ -58,7 +58,7 @@ patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-analytical.png
 
 ```text
 .venv/bin/python -m pytest -q
-66 passed
+67 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
@@ -93,8 +93,8 @@ pattern catalog built: 20 previews, 4 contact sheets
 .venv/bin/python tools/validate_pattern_index.py patterns/visual-dna-sprint-01
 pattern index valid
 
-programmatic incomplete-mode Component Library validation
-component relations packet valid
+.venv/bin/python tools/validate_component_library.py components/component-library-v0.1/manifest.yaml
+component library valid
 ```
 
 ## Milestone 2 primary signal status
@@ -107,10 +107,10 @@ Met: all twenty families pass their individual primary-authority, Prompt DSL, ex
 
 ## Milestone 3 signal status
 
-**Primary signal:** partially validated. Thirteen of fifteen components have complete Markdown and machine-readable contracts, and active Foundation/Milestone 2 vocabulary now resolves to the required component set. The three vocabulary-only composition proofs do not exist yet.
+**Primary signal:** partially validated. All fifteen components have complete Markdown and machine-readable contracts, and active Foundation/Milestone 2 vocabulary resolves to the required set. The three vocabulary-only composition proofs do not exist yet.
 
-**Secondary signal:** partially validated. Schema, relation, expression, evidence, Prompt DSL, builder, index, and proof infrastructure pass focused tests in incomplete mode. Strict mode correctly remains red until all fifteen components and three proofs exist.
+**Secondary signal:** partially validated. Schema, relation, expression, evidence, Prompt DSL, builder, index, and proof infrastructure pass focused tests. Strict component-library validation is green; strict proof and index gates correctly remain red until the three proof documents and generated outputs exist.
 
 ## Repository state
 
-Milestone 2 remains integrated as one validated catalog release. Milestone 3 plan, infrastructure, foundation, structural-unit, and relation packets form the active review stack. No raster generation, Milestone 4 recipe work, tag, or release has started.
+Milestone 2 remains integrated as one validated catalog release. Milestone 3 plan, infrastructure, foundation, structural-unit, relation, and analytical/annotation packets form the active review stack. No raster generation, Milestone 4 recipe work, tag, or release has started.

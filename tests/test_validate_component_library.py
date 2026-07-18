@@ -134,8 +134,7 @@ def test_units_packet_contains_complete_expected_components() -> None:
 
 def test_relation_packet_contains_complete_expected_components() -> None:
     data = yaml.safe_load((LIBRARY / "manifest.yaml").read_text(encoding="utf-8"))
-
-    assert [component["slug"] for component in data["components"]] == [
+    relation_slugs = [
         "anchor",
         "signal",
         "field",
@@ -150,7 +149,40 @@ def test_relation_packet_contains_complete_expected_components() -> None:
         "axis",
         "label",
     ]
+
+    assert [
+        component["slug"]
+        for component in data["components"]
+        if component["slug"] in relation_slugs
+    ] == relation_slugs
     assert validate_component_library(LIBRARY / "manifest.yaml", require_complete=False) == []
+
+
+def test_analytical_packet_completes_strict_component_set() -> None:
+    data = yaml.safe_load((LIBRARY / "manifest.yaml").read_text(encoding="utf-8"))
+
+    assert [component["slug"] for component in data["components"]] == [
+        "anchor",
+        "signal",
+        "field",
+        "frame",
+        "cluster",
+        "vector",
+        "divider",
+        "node",
+        "loop",
+        "collision",
+        "bridge",
+        "axis",
+        "pulse",
+        "label",
+        "legend",
+    ]
+    assert validate_component_library(LIBRARY / "manifest.yaml") == []
+
+    legend = data["components"][-1]
+    assert legend["evidence_level"] == "constrained"
+    assert legend["compatible_families"] == ["chart", "dashboard"]
 
 
 def test_active_visual_dna_contract_uses_only_declared_component_names() -> None:
@@ -162,10 +194,16 @@ def test_active_visual_dna_contract_uses_only_declared_component_names() -> None
     )
 
 
-def test_strict_mode_requires_exact_component_set() -> None:
-    assert "components must contain exactly 15 entries" in validate_component_library(
-        LIBRARY / "manifest.yaml"
+def test_strict_mode_rejects_incomplete_component_set(tmp_path: Path) -> None:
+    manifest = copy_library_contract(tmp_path)
+    data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
+    data["components"].pop()
+    manifest.write_text(
+        yaml.safe_dump(data, allow_unicode=True, sort_keys=False),
+        encoding="utf-8",
     )
+
+    assert "components must contain exactly 15 entries" in validate_component_library(manifest)
 
 
 def test_incomplete_mode_rejects_partial_component_record(tmp_path: Path) -> None:

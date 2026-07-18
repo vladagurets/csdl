@@ -27,6 +27,9 @@ def copy_library_with_evidence(tmp_path: Path) -> Path:
             ROOT / f"patterns/visual-dna-sprint-01/{directory}",
             pattern_target / directory,
         )
+    authority = tmp_path / "references/canonical/foundation-patterns-v0.1.png"
+    authority.parent.mkdir(parents=True)
+    shutil.copy2(ROOT / "references/canonical/foundation-patterns-v0.1.png", authority)
     return target
 
 

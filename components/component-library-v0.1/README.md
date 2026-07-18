@@ -2,9 +2,9 @@
 
 Milestone 3 formalizes fifteen reusable CSDL components from accepted Foundation, Pilot 01, and Visual DNA Sprint 1 evidence. Markdown specifications are canonical; `manifest.yaml` exposes the same contracts to validators and later composition tooling.
 
-## Infrastructure state
+## Component contract state
 
-The infrastructure packet intentionally begins with an empty accepted component set. This is not a component stub: incomplete-mode validation accepts only complete records and their complete Markdown specs. Later stacked packets add the fifteen records in dependency-aware groups. Strict validation remains red until all fifteen exist.
+All fifteen component records and canonical Markdown specifications are complete. Strict component-library validation passes. The remaining Milestone 3 gate is the three composition proofs plus deterministic `index.yaml` and `compatibility.yaml` outputs; incomplete mode remains available only for review of earlier packets in the open stack.
 
 ## Evidence convention
 
@@ -18,7 +18,7 @@ No new raster is generated for this library. Existing Milestone 2 assets remain 
 
 ## Validation
 
-Infrastructure and intermediate packets use programmatic incomplete mode from tests:
+Earlier infrastructure and intermediate packets use programmatic incomplete mode from tests:
 
 ```python
 validate_component_library(path, require_complete=False)
