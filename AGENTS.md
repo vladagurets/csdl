@@ -39,7 +39,7 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Milestone 6 — Night Mode and Accessibility v0.1 is active under the explicit 2026-07-18 objective. Preserve Prompt DSL v0.5, exactly fifteen public components, exactly 23 recipes, Analytical Mode v0.1 quantitative invariants, and all accepted Milestone 1–5 rasters. Implement the independent additive contract under `accessibility/night-mode-v0.1/` using the evidence audit and plan in `docs/audits/2026-07-18-csdl-milestone-6-accessibility-evidence.md` and `docs/plans/2026-07-18-csdl-milestone-6.md`. Do not generate rasters without a separate explicit approval. Cookbook, public release, licensing, tags, and GitHub Releases remain out of scope.
+Milestone 6 — Night Mode and Accessibility v0.1 is complete. Preserve its independent additive contract under `accessibility/night-mode-v0.1/`, Prompt DSL v0.5, exactly fifteen public components, exactly 23 recipes, Analytical Mode v0.1 quantitative invariants, and all accepted Milestone 1–5 rasters. Milestone 7 must not begin without a new explicit objective. Do not generate rasters without separate explicit approval. Cookbook, public release, licensing, tags, and GitHub Releases remain out of scope.
 
 ## Work protocol
 
@@ -167,7 +167,7 @@ python tools/build_accessibility_mode.py accessibility/night-mode-v0.1
 python tools/validate_accessibility_mode.py accessibility/night-mode-v0.1
 ```
 
-Pilot 01 and Milestones 2–5 are complete, and Milestone 6 is in final integration, so all strict validators through Milestone 6 are expected to pass. Use tested `require_complete=False` modes only when reviewing historical intermediate branches, and record only evidence actually reviewed.
+Pilot 01 and Milestones 2–6 are complete, so all strict validators through Milestone 6 are expected to pass. Use tested `require_complete=False` modes only when reviewing historical intermediate branches, and record only evidence actually reviewed.
 
 ## Definition of done for one card
 

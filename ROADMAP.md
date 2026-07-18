@@ -174,13 +174,13 @@ Exit criterion: every family has precise machine-readable rules and a determinis
 
 ## Milestone 6 — Night Mode and Accessibility
 
-**State:** active
+**State:** complete
 
 Validate the dark palette, contrast, projector behavior, landscape readability, color-vision robustness, and monochrome fallback.
 
 Implementation contract: [`docs/plans/2026-07-18-csdl-milestone-6.md`](docs/plans/2026-07-18-csdl-milestone-6.md). D-032 keeps Prompt DSL v0.5 and all Milestone 1–5 contracts/rasters unchanged while versioning accessibility and output profiles as an independent additive extension.
 
-Locally delivered:
+Delivered:
 
 - canonical specification, manifest, versioned token/proof schemas, and light/night/monochrome/projector profiles;
 - exact sRGB contrast, critical-stroke, focus, raised-surface, prohibited-pair, CVD, fallback, Legend, and analytical contracts;
@@ -189,7 +189,7 @@ Locally delivered:
 - deterministic package/index/contrast/compatibility/raster-hash builders and strict/incomplete validators;
 - migration, rollback, evidence review, accepted-raster SHA-256 inventory, and CI drift checks.
 
-Exit criterion: all local Milestone 1–6 gates are met; final green merge-commit integration and post-merge strict validation remain before the milestone state changes to complete.
+Exit criterion: all Milestone 1–6 gates pass, accepted raster hashes remain unchanged, and green merge-commit integration is recorded. **Met for Night Mode and Accessibility v0.1.**
 
 ## Milestone 7 — Cookbook and Design Book v1.0
 
