@@ -48,7 +48,7 @@ Exit criterion status: **met for Pilot 01 v0.1.0**.
 
 ## Milestone 2 — Visual DNA Sprint 1
 
-**State:** queued after Pilot 01
+**State:** in progress
 
 Create and validate the first 20 pattern families:
 
@@ -76,6 +76,8 @@ Create and validate the first 20 pattern families:
 Each family receives Level A, B, and C examples where semantically valid. Not every recipe requires all three levels.
 
 Exit criterion: patterns are recognizably CSDL without depending on a logo.
+
+Current execution contract: [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md). The 20-family manifest/schema, specification format, exact content, fixed analytical prototype dataset, Prompt DSL packages, and validation tooling are defined on the infrastructure packet. Raster evidence proceeds family by family; Hero, Comparison, and Loop reuse audited Pilot 01 evidence.
 
 ## Milestone 3 — Component Library
 

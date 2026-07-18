@@ -1,0 +1,21 @@
+language: CSDL
+version: 0.1
+recipe: Chart
+expression: A
+density: analytical
+scope: "Milestone 2 Visual DNA prototype; not a full Analytical Mode contract"
+canvas: {size: 1920x1080, orientation: landscape, safe_margin_horizontal: 96, safe_margin_vertical: 72}
+reference: pilots/01-agentic-discipline/references/style-anchor-light.png
+dataset: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+content:
+  headline: "УСПІШНІСТЬ ЗРОСТАЄ ЩОТИЖНЯ"
+  points: ["W1 · 72%", "W2 · 78%", "W3 · 84%", "W4 · 90%"]
+  source_label: "DEMO DATA"
+composition:
+  mechanism: "One data-blue direct-labeled series on honest neutral axes with percent domain 0–100; W4 is heavier but not displaced"
+  components: [Axis, Node, Signal]
+  quantitative_contract: {x_order: [W1, W2, W3, W4], y_domain: [0, 100], values: [72, 78, 84, 90], interpolation: false}
+typography: {display: "smooth Ukrainian-capable Inter Display", labels: "Inter-style neutral sans with tabular figures", all_text_horizontal: true}
+palette: {background: "#F7F5F0", ink: "#1B1B19", neutral_line: "#B8B5AE", primary_signal: "#4C6A8A"}
+hard_exclusions: [extra text, truncated unlabeled axis, smoothed curve, missing point label, extra series, decorative grid, gradients, shadows, 3D]
+output: {format: PNG, exact_size: 1920x1080, content_accuracy: exact_data_and_copy}

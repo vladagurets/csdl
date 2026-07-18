@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Started Milestone 2 — Visual DNA Sprint 1 with a detailed implementation and stacked-PR plan.
+- Added the machine-readable 20-family manifest/schema, complete family specifications, exact editorial/structural copy, and Prompt DSL packages.
+- Added one fixed demo dataset and fidelity contracts for bounded KPI, Table, Chart, and Dashboard Visual DNA prototypes without expanding full Analytical Mode.
+- Added catalog, dataset, raster, score, preview, contact-sheet, and index tooling with focused tests.
+- Reused Pilot 01 as the declared evidence source for Hero, Comparison, and Loop; no raster regeneration was performed.
+
 ## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
 
 - Replaced the portrait-first foundation with a canonical `1920×1080` 16:9 landscape format after explicit user approval.

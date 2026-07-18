@@ -39,7 +39,7 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Pilot 01 v0.1.0 is complete under the 16:9-first contract. Previous 4:5 Pilot 01 rasters, prompts, scores, and review decisions are superseded and must not be restored or reused as active artifacts; Git history remains the archive.
+Milestone 2 — Visual DNA Sprint 1 is in progress. Formalize and validate the first 20 pattern families under `patterns/visual-dna-sprint-01/`. Reuse approved Pilot 01 evidence for Hero, Comparison, and Loop; do not regenerate them without a demonstrated contract failure. Previous 4:5 Pilot 01 artifacts remain superseded and must not be restored or reused as active evidence.
 
 ## Work protocol
 
@@ -54,6 +54,7 @@ Pilot 01 v0.1.0 is complete under the 16:9-first contract. Previous 4:5 Pilot 01
 9. Record the accepted card score in `pilots/01-agentic-discipline/evaluation/scores.csv`.
 10. Do not add decorative geometry that has no semantic role.
 11. Do not add generated labels, interface chrome, logos, footers, or text that is absent from the prompt and manifest.
+12. For Milestone 2 generated families, keep candidates under `patterns/visual-dna-sprint-01/drafts/`, promote only selected assets under `canonical/`, and persist evidence in the catalog evaluation files.
 
 ## Image-generation routes
 
@@ -117,9 +118,22 @@ python tools/validate_assets.py pilots/01-agentic-discipline
 python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.csv
 ```
 
-Expected baseline before slide-asset completion: the test suite passes, the manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
+For Milestone 2 infrastructure and analytical data, also run:
 
-`validate_scores.py` is a series-level gate. It is expected to fail while unfinished Cards 03–07 still contain placeholder zero scores; validate the current card manually against the rubric and record only evidence that was actually reviewed.
+```bash
+python tools/validate_pattern_catalog.py patterns/visual-dna-sprint-01/manifest.yaml
+python tools/validate_pattern_data.py patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+```
+
+At Milestone 2 completion, also run:
+
+```bash
+python tools/validate_pattern_assets.py patterns/visual-dna-sprint-01
+python tools/validate_pattern_scores.py patterns/visual-dna-sprint-01/evaluation/scores.csv
+python tools/build_pattern_catalog.py patterns/visual-dna-sprint-01
+```
+
+Pilot 01 is complete, so all Pilot validators are expected to pass. Milestone 2 asset and score validators are strict milestone-level gates; use their tested `require_complete=False` programmatic mode only on intermediate family branches and record only evidence actually reviewed.
 
 ## Definition of done for one card
 

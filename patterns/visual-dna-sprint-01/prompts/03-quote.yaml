@@ -1,0 +1,18 @@
+language: CSDL
+version: 0.1
+recipe: Quote
+expression: A
+canvas: {size: 1920x1080, orientation: landscape, safe_margin_horizontal: 96, safe_margin_vertical: 72}
+reference: pilots/01-agentic-discipline/references/style-anchor-light.png
+content:
+  quote: "“ХОРОШИЙ ПРОЦЕС ЗАЛИШАЄ ПІСЛЯ СЕБЕ КРАЩИЙ КОНТЕКСТ.”"
+  attribution: "AGENTIC DISCIPLINE"
+composition:
+  mechanism: "One readable quotation Anchor, one subordinate attribution, and one small coral quotation hinge"
+  components: [Anchor, Signal]
+  reading_path: top_left_to_bottom_right
+  negative_space: "at least 65%"
+typography: {display: "smooth Ukrainian-capable Inter Display", body: "Inter-style neutral sans", all_text_horizontal: true}
+palette: {background: "#F7F5F0", ink: "#1B1B19", primary_signal: "#C96157"}
+hard_exclusions: [extra text, invented speaker, portrait, giant decorative quote marks, rotated copy, UI chrome, logo, footer, gradients, shadows, 3D]
+output: {format: PNG, exact_size: 1920x1080, text_accuracy: publish-ready}

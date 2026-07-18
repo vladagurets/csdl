@@ -1,0 +1,16 @@
+language: CSDL
+version: 0.1
+recipe: Workflow
+expression: A
+canvas: {size: 1920x1080, orientation: landscape, safe_margin_horizontal: 96, safe_margin_vertical: 72}
+reference: pilots/01-agentic-discipline/references/style-anchor-light.png
+content: {headline: "РОБОЧИЙ ПОТІК З ДОКАЗАМИ", stages: [UNDERSTAND, PLAN, EXECUTE, VERIFY]}
+composition:
+  mechanism: "Four bare action Nodes connected by one left-to-right Vector; VERIFY is the only coral action"
+  components: [Node, Vector, Signal]
+  reading_path: left_to_right
+  negative_space: "at least 60%"
+typography: {display: "smooth Ukrainian-capable Inter Display", labels: "Inter-style neutral sans", all_text_horizontal: true}
+palette: {background: "#F7F5F0", ink: "#1B1B19", neutral_line: "#B8B5AE", primary_signal: "#C96157"}
+hard_exclusions: [extra text, swimlanes, status pills, icons, branching, return arrow, completion state, UI chrome, gradients, shadows, 3D]
+output: {format: PNG, exact_size: 1920x1080, text_accuracy: publish-ready}
