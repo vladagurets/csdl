@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from PIL import Image
+import yaml
 
 from tools.validate_pattern_assets import validate_image, validate_pattern_assets
 
@@ -13,10 +14,16 @@ def test_incomplete_catalog_accepts_valid_pilot_references() -> None:
     assert validate_pattern_assets(CATALOG, require_complete=False) == []
 
 
-def test_strict_catalog_reports_missing_generated_assets() -> None:
+def test_strict_catalog_reports_current_missing_generated_assets() -> None:
     errors = validate_pattern_assets(CATALOG)
-    assert "missing asset: canonical/light/16x9/02-cover.png" in errors
-    assert len([error for error in errors if error.startswith("missing asset:")]) == 17
+    manifest = yaml.safe_load((CATALOG / "manifest.yaml").read_text(encoding="utf-8"))
+    expected = {
+        f"missing asset: {family['evidence']['canonical_example']}"
+        for family in manifest["families"]
+        if family["evidence"]["mode"] == "generated"
+        and not (CATALOG / family["evidence"]["canonical_example"]).exists()
+    }
+    assert set(errors) == expected
 
 
 def test_rejects_wrong_pattern_raster_size(tmp_path: Path) -> None:

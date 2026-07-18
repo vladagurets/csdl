@@ -8,6 +8,7 @@
 - Added catalog, dataset, raster, score, preview, contact-sheet, and index tooling with focused tests.
 - Reused Pilot 01 as the declared evidence source for Hero, Comparison, and Loop; no raster regeneration was performed.
 - Audited and accepted Pilot-backed Hero, Comparison, and Loop as Milestone 2 pattern families with pinned hashes, exact-copy checks, raster metadata, candidate decisions, catalog scores, and machine-index entries.
+- Generated three Cover candidates with built-in GPT Image 2, selected the exact-copy arrow-free Level C composition, and persisted its canonical raster, preview, evidence, score, and index metadata.
 
 ## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
 
