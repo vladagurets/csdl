@@ -44,6 +44,8 @@ Wave B has started with Timeline. Candidate 3 was selected because the five stag
 
 Matrix is complete. Candidate 2 was selected because all seven text blocks are exact and horizontal, the two Axes remain semantically correct and open, and only the high-impact/low-effort `АВТОМАТИЗУВАТИ` Node carries coral emphasis.
 
+Hierarchy is complete. Candidate 3 was selected because four nested open Brackets encode ownership depth without arrowheads or chronological reading, while CHECK remains the only coral leaf.
+
 ## Canonical outputs
 
 ```text
@@ -62,7 +64,7 @@ pilots/01-agentic-discipline/contact-sheets/pilot-01-light.png
 
 ```text
 .venv/bin/python -m pytest -q
-21 passed
+41 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
@@ -79,7 +81,7 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 10/20 families have accepted canonical evidence. Ten new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
+Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 11/20 families have accepted canonical evidence. Nine new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
@@ -87,4 +89,4 @@ Met for the infrastructure packet: tests, catalog/schema validation, fixed-data 
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Hierarchy.
+Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Architecture.

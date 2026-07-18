@@ -148,6 +148,22 @@ Exact-copy review: pass for `ВІД BRIEF ДО SHIP` and `BRIEF → PLAN → BUI
 
 Exact-copy review: pass for `КУДИ СПРЯМУВАТИ ЗУСИЛЛЯ`, `ВПЛИВ`, `ЗУСИЛЛЯ`, `АВТОМАТИЗУВАТИ`, `ДЕЛЕГУВАТИ`, `ПЛАНУВАТИ`, and `ВІДКЛАСТИ`; no quadrant names, numbers, scores, or extra text. Visual mechanism: two thin Axes define four open relative regions, and four directly labeled Nodes encode effort and impact without fake precision. Strongest decision: the selected high-impact/low-effort option is immediately identifiable through one coral Node/label pair while the other three choices remain neutral. Removable-element check: headline, Axes, axis labels, four Nodes, and their labels are all semantic. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the generated circular markers contain slight tonal texture, but it does not read as a shadow, gradient field, or 3D object and does not impair the one-signal hierarchy. Accepted catalog score: `4.71`.
 
+### 10 Hierarchy — generated example accepted
+
+- **Canonical:** `canonical/light/16x9/10-hierarchy.png`
+- **Prompt:** `prompts/10-hierarchy.yaml`
+- **Selected:** `10-hierarchy-v3.png` from three independent built-in GPT Image 2 candidates
+- **Source SHA-256:** `218fc0c1890874fb5285fc604c2741ef2afb71ea0ccb1f2c94ba330e787def4a`
+- **Canonical SHA-256:** `729c103a97c59cab12e2837ffc34bf9081a3b5f6508127130cb9a5fe0e47a751`
+- **Source raster:** `1672×941`, RGB PNG
+- **Canonical raster:** `1920×1080`, RGB PNG
+
+- `10-hierarchy-v1.png` — rejected: exact copy and depth pass, but the extra coral square duplicates the CHECK signal and the disconnected stair-step elbows can be read as a process path.
+- `10-hierarchy-v2.png` — rejected: exact copy and restraint pass, but the continuous staircase connector still implies sequential movement more strongly than containment.
+- `10-hierarchy-v3.png` — selected: exact five-block copy, four progressively indented levels, open bracket-like containment cues, no arrowheads or time axis, and CHECK as the only coral leaf.
+
+Exact-copy review: pass for `ВІД ЦІЛІ ДО ПЕРЕВІРКИ`, `OBJECTIVE`, `MILESTONE`, `TASK`, and `CHECK`; no numbers, siblings, extra levels, or explanatory text. Visual mechanism: four nested open Brackets encode progressively deeper ownership scope while restrained type scale reinforces decomposition. Strongest decision: containment remains immediate without turning the single-child hierarchy into a workflow arrow chain. Removable-element check: headline, four labels, four depth cues, and the CHECK signal all carry semantic weight. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is intentionally carried by the nested depth rhythm rather than a large signal event. Accepted catalog score: `4.86`.
+
 ### 13 Loop — Pilot reference accepted
 
 - **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png`
