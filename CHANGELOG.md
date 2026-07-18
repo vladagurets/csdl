@@ -14,7 +14,7 @@
 - Regenerated Quote under D-028 from three new candidates, selected the exact-copy Modular Technical Level A composition with one square hinge, and persisted its canonical raster, preview, evidence, score, and index metadata.
 - Regenerated Big Number under D-028 from three new candidates, selected the exact-copy single-signal numeric Pulse composition, and persisted its canonical raster, preview, evidence, score, and index metadata.
 - Regenerated Collision under D-028 from three new candidates, selected the exact-copy active-plane Level B synthesis with one intrinsic overlap, and persisted its canonical raster, preview, evidence, score, and index metadata.
-- Completed Wave A with three Before / After candidates, selected the exact-copy trace-based Level A composition, tightened the Prompt DSL after rejecting dense node-network interpretations, and persisted canonical evidence.
+- Regenerated Before / After under D-028 from three new candidates, selected the exact-copy Level A discontinuous-to-continuous trace mechanism, and persisted canonical evidence without cards or node fields.
 - Started Wave B with three Timeline candidates and selected the exact-order, single-signal Level A composition with neutral labels and one active VERIFY node.
 - Added Matrix from three candidates, selecting the exact-copy Level B composition with correctly labeled open Axes, four relative Nodes, and one coral high-impact/low-effort selection.
 - Added Hierarchy from three candidates, selecting the exact-copy Level A composition whose nested open Brackets communicate ownership depth without workflow semantics.

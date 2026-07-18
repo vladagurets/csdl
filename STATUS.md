@@ -30,7 +30,7 @@ Milestone 2 has started from a synchronized clean `main`. Its infrastructure pac
 
 Pilot-backed catalog evidence is audited and accepted for Hero, Comparison, and Loop. Their actual canonical bytes, RGB `1920×1080` metadata, exact Prompt DSL content, three-candidate selection records, hashes, `1280×720` readability evidence, and Pilot rubric rows all pass the Milestone 2 contract. No regeneration is justified.
 
-The user-approved D-028 rebaseline makes all three boards in `references/canonical/` primary Visual DNA authority and keeps the Pilot landscape anchor as secondary execution evidence. A series-level contact-sheet audit found that the first generated passes for Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline satisfy copy and semantic checks but collapse toward generic centered infographics. Those approvals are superseded, their active rasters/scores/index evidence are removed, and all affected families require new candidate passes with the complete four-image reference package. Cover, Quote, Big Number, and Collision now pass that regeneration gate and restore the primary boards' Level C/A/B contrast, Modular Technical cadence, numeric Pulse, and active-plane synthesis; historical first passes remain in review notes, ignored drafts, and Git history.
+The user-approved D-028 rebaseline makes all three boards in `references/canonical/` primary Visual DNA authority and keeps the Pilot landscape anchor as secondary execution evidence. A series-level contact-sheet audit found that the first generated passes for Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline satisfy copy and semantic checks but collapse toward generic centered infographics. Those approvals are superseded, their active rasters/scores/index evidence are removed, and all affected families require new candidate passes with the complete four-image reference package. Cover, Quote, Big Number, Collision, and Before / After now pass that regeneration gate and restore the primary boards' expression contrast, Modular Technical cadence, numeric Pulse, active-plane synthesis, and semantic trace language; historical first passes remain in review notes, ignored drafts, and Git history.
 
 ## Canonical outputs
 
@@ -67,12 +67,12 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: 7/20 families have accepted canonical evidence — three audited Pilot references plus D-028-regenerated Cover, Quote, Big Number, and Collision. Thirteen generated families, complete contact sheets, and strict series validation remain. Pilot 01 remains fully met.
+Partially validated: 8/20 families have accepted canonical evidence — three audited Pilot references plus D-028-regenerated Cover, Quote, Big Number, Collision, and Before / After. Twelve generated families, complete contact sheets, and strict series validation remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
-In correction: the semantic catalog and fixed-data contracts remain valid. Cover, Quote, Big Number, and Collision pass the new D-028 primary-authority, Prompt DSL, exact-copy, raster, flat-signal, and series-contact-sheet gates; the remaining generated families still await equivalent evidence.
+In correction: the semantic catalog and fixed-data contracts remain valid. Cover, Quote, Big Number, Collision, and Before / After pass the new D-028 primary-authority, Prompt DSL, exact-copy, raster, flat-signal, and series-contact-sheet gates; the remaining generated families still await equivalent evidence.
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; the first generated family stack through Pipeline is superseded by the D-028 corrective packet. Rebaselined Cover, Quote, Big Number, and Collision packets are complete, and regeneration proceeds next to Before / After.
+Infrastructure review is open from `codex/m2-infrastructure`; the first generated family stack through Pipeline is superseded by the D-028 corrective packet. Rebaselined Cover, Quote, Big Number, Collision, and Before / After packets are complete, and regeneration proceeds next to Timeline.
