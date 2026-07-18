@@ -26,21 +26,24 @@ Evidence is appended family by family in canonical manifest order. This file int
 
 Audit result: exact headline and supporting sentence confirmed visually against the manifest, including `≠`, apostrophes, and Ukrainian characters. The single graphite Vector terminates at one coral Signal block; no extra label, logo, footer, UI chrome, or decorative geometry is present. Full-resolution and existing `1280×720` evidence remain readable. Canonical Level A is semantically justified by one proposition, one mechanism, and approximately 68% negative space. No regeneration is warranted. Accepted catalog score: `4.86`.
 
-### 02 Cover — first generated pass superseded
+### 02 Cover — regenerated example accepted
 
 - **Canonical:** `canonical/light/16x9/02-cover.png`
 - **Prompt:** `prompts/02-cover.yaml`
-- **Selected:** `02-cover-v3.png` from three independent built-in GPT Image 2 candidates
-- **Source SHA-256:** `dba515c9528ce3d01476a0a691baae48839f87f14dc58831fabc61986bc8890f`
-- **Canonical SHA-256:** `561635b24bda594365d99902902df57255df92d1460d87670afe7574fc143859`
+- **Selected:** `02-cover-r2-v6.png` from six independent built-in GPT Image 2 rebaseline candidates
+- **Source SHA-256:** `aabf270396e4404494ba719da9d65198b487d8d4825e530639d16088144237a3`
+- **Canonical SHA-256:** `09d64c9020a30d798378d4add4dccbff71e66fcabbb7695ec4dd75118c40c9d0`
 - **Source raster:** `1672×941`, RGB PNG
 - **Canonical raster:** `1920×1080`, RGB PNG
 
-- `02-cover-v1.png` — rejected: exact copy and readable hierarchy pass, but a long graphite arrow imports an undeclared `Vector` from the style reference and turns the cover into a Hero-like mechanism.
-- `02-cover-v2.png` — rejected: exact copy passes, but it repeats the undeclared long `Vector`; the off-edge rectangular plane also feels more like an enlarged anchor sample than a distinct Cover family.
-- `02-cover-v3.png` — selected: exact two-block copy, no imported arrow, one clear diagonal coral Signal plane, one open Field, and the strongest Level C entry moment without additional geometry.
+- `02-cover-r2-v1.png` — rejected: exact copy and strong condensed hierarchy pass, but the Signal plane covers approximately `25.5%` of the frame and the added coral underline becomes a second signal.
+- `02-cover-r2-v2.png` — rejected: exact copy and the `19.1%` plane pass, but chamfered letter corners read as stencil/retro display rather than Modular Technical.
+- `02-cover-r2-v3.png` — rejected: the two-block copy is exact, but the plane expands to approximately `30.1%` and an undeclared coral underline competes with it.
+- `02-cover-r2-v4.png` — rejected after the corrective pass: exact copy, one flat `18.2%` plane, and compliant typography pass, but the smaller title produces less Level C entry pressure than the remaining finalists.
+- `02-cover-r2-v5.png` — rejected after the corrective pass: exact copy, one flat `14.1%` plane, and clean typography pass, but the calmer title/plane balance is less decisive at presentation scale.
+- `02-cover-r2-v6.png` — selected: exact copy, the strongest presentation-scale Modular Technical title, one uniform `14.3%` diagonal Signal plane, one open Field, and no secondary geometry.
 
-Exact-copy review: pass for `СИСТЕМИ, ЩО ВЧАТЬСЯ` and `VISUAL DNA SPRINT 1`, including comma, Ukrainian apostrophe, and numeral; no additional text. Visual mechanism: one title Anchor establishes the series while one diagonal Signal plane enters from the right and defines the cover’s scope. Strongest decision: the large plane creates the catalog’s single canonical Level C peak without touching the title. Removable-element check: only the title, technical subtitle, and semantic plane remain. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: none material. Accepted catalog score: `5.00`.
+The former `02-cover-v1.png`, `02-cover-v2.png`, and `02-cover-v3.png` record remains superseded by D-028; none was reconsidered as active evidence. Exact-copy review: pass for `СИСТЕМИ, ЩО ВЧАТЬСЯ` and `VISUAL DNA SPRINT 1`, including comma, Ukrainian apostrophe, and numeral; no additional text. Visual mechanism: one title Anchor establishes the series while one diagonal Signal plane enters from the lower-right and creates the catalog's single canonical Level C peak. Strongest decision: the title adopts the primary boards' tall Modular Technical display direction while the plane stays inside the declared `12–22%` area. A pixel-distribution diagnostic confirmed a uniform plane interior with approximately one RGB level of variation plus edge anti-aliasing; no gradient is visible at full resolution. Removable-element check: only exact title, technical subtitle, Signal plane, and Field remain. Primary-authority comparison: pass against all three `references/canonical/` boards for display direction, asymmetry, plane/field tension, mineral palette, and Level C identity. Series contact-sheet review: pass beside active Hero, Comparison, and Loop evidence; Cover reads as the intended expressive peak without importing their mechanisms. Normalization: all six direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: Pilot-backed families retain their historically smoother typography, but D-028 explicitly gives the primary boards authority for new generated examples. Accepted catalog score: `5.00`.
 
 ### 03 Quote — first generated pass superseded
 

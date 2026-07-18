@@ -61,10 +61,27 @@ def validate_pattern_review(root: Path, require_complete: bool = True) -> list[s
             if requirement not in section:
                 errors.append(f"family {family_id} generated review missing: {requirement}")
         slug = family["slug"]
-        for candidate in range(1, 4):
-            filename = f"{family_id}-{slug}-v{candidate}.png"
-            if filename not in section:
-                errors.append(f"family {family_id} generated review missing candidate: {filename}")
+        selected_match = re.search(r"\*\*Selected:\*\* `(?P<filename>[^`]+\.png)`", section)
+        if selected_match is None:
+            continue
+        selected = selected_match.group("filename")
+        selected_pattern = re.fullmatch(
+            rf"{re.escape(family_id)}-{re.escape(slug)}(?P<batch>-r\d+)?-v\d+\.png",
+            selected,
+        )
+        if selected_pattern is None:
+            errors.append(f"family {family_id} selected candidate filename is invalid: {selected}")
+            continue
+        batch = selected_pattern.group("batch") or ""
+        candidate_pattern = re.compile(
+            rf"`({re.escape(family_id)}-{re.escape(slug)}{re.escape(batch)}-v\d+\.png)`"
+        )
+        candidates = {match.group(1) for match in candidate_pattern.finditer(section)}
+        if len(candidates) < 3:
+            errors.append(
+                f"family {family_id} generated review needs at least three candidates "
+                f"in selected batch {batch or 'initial'}"
+            )
     return errors
 
 
