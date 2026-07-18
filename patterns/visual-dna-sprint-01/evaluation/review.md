@@ -116,6 +116,22 @@ Exact-copy review: pass for `ШВИДКІСТЬ`, `КОНТРОЛЬ`, and `НА�
 
 Exact-copy review: pass for the headline, both English state labels, and both Ukrainian state descriptions; no extra text. Visual mechanism: discontinuity represents lost decisions, continuity represents retained context, and one horizontal Vector expresses transformation. Strongest decision: the changed property is encoded by line continuity rather than by check/cross symbolism or cosmetic styling. Removable-element check: the two state labels/descriptions, two semantic traces, headline, and one Vector are all functional. Prompt adjustment: the initial DSL allowed overly dense node interpretations, so `prompts/07-before-after.yaml` now pins the accepted trace mechanism and explicitly excludes node fields, networks, and process maps. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is intentionally quieter than Collision and Cover. Accepted catalog score: `4.86`.
 
+### 08 Timeline — generated example accepted
+
+- **Canonical:** `canonical/light/16x9/08-timeline.png`
+- **Prompt:** `prompts/08-timeline.yaml`
+- **Selected:** `08-timeline-v3.png` from three independent built-in GPT Image 2 candidates
+- **Source SHA-256:** `c626561173d87d8c4278975bc371c2a41b060b5c38e82e709bf156e95fe6d03d`
+- **Canonical SHA-256:** `9e3a22799fd9fbbe5f3a51f9da47be6643db66bc65c5ce950349f599a4fdc48c`
+- **Source raster:** `1672×941`, RGB PNG
+- **Canonical raster:** `1920×1080`, RGB PNG
+
+- `08-timeline-v1.png` — rejected: exact order passes, but both the VERIFY node and label are coral, making the signal heavier than necessary.
+- `08-timeline-v2.png` — rejected for the same expanded VERIFY treatment; darker inactive nodes also make the repeated structure visually heavier.
+- `08-timeline-v3.png` — selected: exact six text blocks, one thin Axis, even five-node rhythm, neutral direct labels, and only the VERIFY node/incoming segment as the coral Signal.
+
+Exact-copy review: pass for `ВІД BRIEF ДО SHIP` and `BRIEF → PLAN → BUILD → VERIFY → SHIP`; no dates or extra text. Visual mechanism: one horizontal Axis carries five ordered bare Nodes, with VERIFY selected as the consequential transition. Strongest decision: keeping the label neutral lets the node and short incoming segment carry signal semantics without turning the stage into a badge. Removable-element check: headline, Axis, Nodes, and labels are all required for chronology. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is deliberately subordinate to ordered lookup. Accepted catalog score: `4.86`.
+
 ### 13 Loop — Pilot reference accepted
 
 - **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png`
