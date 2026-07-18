@@ -1,0 +1,263 @@
+catalog: visual-dna-sprint-01
+version: 0.1.0
+families:
+- id: '01'
+  slug: hero
+  name: Hero
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  - C
+  evidence_mode: pilot_reference
+  canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/01-hook.png
+  sha256: 39de00d730e534c942fbb96e6fe5cf932e7e14c0a89926877406ba3cade62d8c
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '02'
+  slug: cover
+  name: Cover
+  canonical_level: C
+  allowed_levels:
+  - A
+  - C
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/02-cover.png
+  sha256: 09d64c9020a30d798378d4add4dccbff71e66fcabbb7695ec4dd75118c40c9d0
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 5.0
+- id: '03'
+  slug: quote
+  name: Quote
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/03-quote.png
+  sha256: 098781cb801c428c33ab2bac9bf03ad4823a71365151b675dc24b95f165ccbe3
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 5.0
+- id: '04'
+  slug: big-number
+  name: Big Number
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  - C
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/04-big-number.png
+  sha256: 450bf0c7327347ddf28a22d96cfdddacd8e6d1c5165e13a992db5ebff13fb628
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 5.0
+- id: '05'
+  slug: comparison
+  name: Comparison
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  - C
+  evidence_mode: pilot_reference
+  canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png
+  sha256: c97326715a6345fe099d08a197dc4422411a6a529082934d8f40c63de3049aff
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '06'
+  slug: collision
+  name: Collision
+  canonical_level: B
+  allowed_levels:
+  - B
+  - C
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/06-collision.png
+  sha256: 86fcb233414b3d403d87766d8541d1c848558a9d86308ec8010a1eb359ec43c1
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 5.0
+- id: '07'
+  slug: before-after
+  name: Before / After
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/07-before-after.png
+  sha256: 16c1071f107cc2f80dbe203783e7d98f27b7ec5d1920d85d0f84071d3e80aac2
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: 08
+  slug: timeline
+  name: Timeline
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/08-timeline.png
+  sha256: 4b03797c3aef07ae53d2aaaa0ef51527bc96ff32733ef837e11dc917ceafcb7a
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: 09
+  slug: matrix
+  name: Matrix
+  canonical_level: B
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/09-matrix.png
+  sha256: 80670a2eac5080cf1bfe3b7046b04d9e31bfa0d44df15ad0e5c5ff248e557704
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '10'
+  slug: hierarchy
+  name: Hierarchy
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/10-hierarchy.png
+  sha256: cf32ac58ac02e8d2aec79da7c1aba2ed6be3401ad4850ed93d122334adc5e199
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '11'
+  slug: architecture
+  name: Architecture
+  canonical_level: B
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/11-architecture.png
+  sha256: 733117738a0273dd340ed94255a21ed515df42a1168b6ff6161541e8e139fc48
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '12'
+  slug: workflow
+  name: Workflow
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/12-workflow.png
+  sha256: 63a25118f0221a868b254db9d97a887e9682bdad96d4dd5130dc01eb1a03c7cd
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '13'
+  slug: loop
+  name: Loop
+  canonical_level: B
+  allowed_levels:
+  - A
+  - B
+  - C
+  evidence_mode: pilot_reference
+  canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png
+  sha256: 1b7a4045fdbf616f8787dbfaf81161158b06d9efda67d7361102653d810497c8
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 5.0
+- id: '14'
+  slug: pipeline
+  name: Pipeline
+  canonical_level: B
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/14-pipeline.png
+  sha256: d0bf0f1d61e9b1f7007aa4e352fc411f49a7a0f7d4ecd259cf34d7fc2b3fdea2
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '15'
+  slug: decision-tree
+  name: Decision Tree
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/15-decision-tree.png
+  sha256: d66ea7a0837cd0dc38ffeaf6ff168758d6be20bfc5ee385f19fbff6a57cfa1bd
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '16'
+  slug: framework
+  name: Framework
+  canonical_level: B
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/16-framework.png
+  sha256: d64e39604076b81a68bf183cbed4d8e7a667d496c6095812bc2602403a4612fd
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '17'
+  slug: kpi
+  name: KPI
+  canonical_level: A
+  allowed_levels:
+  - A
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/17-kpi.png
+  sha256: 921db7c444732a132c88fbb00a40ce315f5913ee1bf11573580bccbe3a701cc2
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '18'
+  slug: table
+  name: Table
+  canonical_level: A
+  allowed_levels:
+  - A
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/18-table.png
+  sha256: 54dee7722d3bad72d166c280c16497b9fa3dd9920673d21f6e1335c83af24dd7
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '19'
+  slug: chart
+  name: Chart
+  canonical_level: A
+  allowed_levels:
+  - A
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/19-chart.png
+  sha256: 960de9940e24adf915c8c69a4037cfba2b7325d8be14e8dddee7fc13bd8ce8cb
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '20'
+  slug: dashboard
+  name: Dashboard
+  canonical_level: A
+  allowed_levels:
+  - A
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/20-dashboard.png
+  sha256: 9c9cb5060861b0d49530c19d47ed182877c84f721452d5f5628866433f10dfad
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
