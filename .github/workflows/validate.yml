@@ -37,8 +37,6 @@ jobs:
         run: python tools/validate_pattern_scores.py patterns/visual-dna-sprint-01/evaluation/scores.csv
       - name: Validate Visual DNA review evidence
         run: python tools/validate_pattern_review.py patterns/visual-dna-sprint-01
-      - name: Rebuild Visual DNA catalog
-        run: python tools/build_pattern_catalog.py patterns/visual-dna-sprint-01
       - name: Validate Visual DNA index
         run: python tools/validate_pattern_index.py patterns/visual-dna-sprint-01
       - name: Validate component library
