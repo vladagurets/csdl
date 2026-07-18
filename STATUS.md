@@ -46,6 +46,8 @@ Matrix is complete. Candidate 2 was selected because all seven text blocks are e
 
 Hierarchy is complete. Candidate 3 was selected because four nested open Brackets encode ownership depth without arrowheads or chronological reading, while CHECK remains the only coral leaf.
 
+Architecture is complete. Candidate 2 was selected because USER remains outside one open dusty-blue system Field, AGENT/TOOLS/MEMORY stay inside, and exactly the three declared relations preserve their directions without crossings or UI cards.
+
 ## Canonical outputs
 
 ```text
@@ -81,7 +83,7 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 11/20 families have accepted canonical evidence. Nine new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
+Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 12/20 families have accepted canonical evidence. Eight new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
@@ -89,4 +91,4 @@ Met for the infrastructure packet: tests, catalog/schema validation, fixed-data 
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Architecture.
+Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Workflow.

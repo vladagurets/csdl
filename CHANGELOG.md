@@ -16,6 +16,7 @@
 - Started Wave B with three Timeline candidates and selected the exact-order, single-signal Level A composition with neutral labels and one active VERIFY node.
 - Added Matrix from three candidates, selecting the exact-copy Level B composition with correctly labeled open Axes, four relative Nodes, and one coral high-impact/low-effort selection.
 - Added Hierarchy from three candidates, selecting the exact-copy Level A composition whose nested open Brackets communicate ownership depth without workflow semantics.
+- Added Architecture from three candidates, selecting the exact-copy Level B context map with one open system Field and exactly three directional relations.
 
 ## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
 
