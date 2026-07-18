@@ -39,7 +39,7 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Milestone 4 — Recipe Library and Prompt DSL v0.5 is complete. Preserve the evidence-backed 23-recipe set, exactly fifteen public components, canonical Markdown specifications, layout-free outline and Prompt DSL schemas, deterministic selection/package/migration builders, three end-to-end proofs, one Pilot migration proof, negative fixtures, indexes, and accepted Milestone 1–3 evidence under `recipes/recipe-library-v0.5/`. Milestone 5 Analytical Mode must not begin without a new explicit objective. Dark mode and public release remain out of scope.
+Milestone 5 — Analytical Mode is active under an explicit user objective. Implement the independent additive Analytical Mode v0.1 contract under `analytics/analytical-mode-v0.1/` per D-031 and `docs/plans/2026-07-18-csdl-milestone-5.md`. Preserve Prompt DSL v0.5, the evidence-backed 23-recipe set, exactly fifteen public components, and all accepted Milestone 1–4 rasters. Use deterministic synthetic fixed-data proofs for unproven analytical families. Milestone 6 Night Mode, Cookbook, public release, licensing, tags, and GitHub Releases remain out of scope.
 
 ## Work protocol
 
