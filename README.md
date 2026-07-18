@@ -2,7 +2,7 @@
 
 A geometric visual language for explaining complex ideas clearly, memorably, and consistently with humans and generative models.
 
-**Status:** Foundation v0.1 and Pilot 01 v0.1.0 are complete; Milestone 2 — Visual DNA Sprint 1 is in progress.
+**Status:** Foundation v0.1, Pilot 01 v0.1.0, and Milestone 2 — Visual DNA Sprint 1 are complete; Milestone 3 — Component Library is in progress.
 
 **GitHub:** `vladagurets/csdl` is the selected public working repository. A public license has not yet been selected.
 
@@ -13,8 +13,9 @@ A geometric visual language for explaining complex ideas clearly, memorably, and
 3. Check current progress and the exact next task in [`STATUS.md`](STATUS.md).
 4. Follow the staged work in [`ROADMAP.md`](ROADMAP.md).
 5. Treat [`specs/2026-07-17-csdl-v0.1-design.md`](specs/2026-07-17-csdl-v0.1-design.md) as the design source of truth.
-6. Execute Milestone 2 from [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md).
-7. Use [`docs/handoff/CODEX_IMAGE_GENERATION.md`](docs/handoff/CODEX_IMAGE_GENERATION.md) for the approved Codex raster workflow.
+6. Execute Milestone 3 from [`docs/plans/2026-07-18-csdl-milestone-3.md`](docs/plans/2026-07-18-csdl-milestone-3.md) and its evidence audit.
+7. Use [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md) for the completed Visual DNA contract.
+8. Use [`docs/handoff/CODEX_IMAGE_GENERATION.md`](docs/handoff/CODEX_IMAGE_GENERATION.md) for the approved Codex raster workflow.
 
 ## Current foundation
 
@@ -41,6 +42,7 @@ docs/superpowers/plans/           task-by-task implementation plans
 docs/handoff/                     current Codex raster workflow
 pilots/01-agentic-discipline/     canonical copy, prompts, evaluation, assets
 patterns/visual-dna-sprint-01/    20-family contracts, prompts, evidence, assets
+components/component-library-v0.1/ 15-component contracts, proofs, indexes
 references/canonical/             approved visual anchors
 research/                         source analysis without redistributing source PDFs
 tools/ and tests/                 validation and assembly tooling
@@ -82,3 +84,7 @@ Pilot 01 is released as the first CSDL Visual DNA set. See [`RELEASE.md`](pilots
 ## Visual DNA Sprint 1
 
 The Milestone 2 catalog formalizes Hero, Cover, Quote, Big Number, Comparison, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, Loop, Pipeline, Decision Tree, Framework, KPI, Table, Chart, and Dashboard. Its source of truth is [`patterns/visual-dna-sprint-01/manifest.yaml`](patterns/visual-dna-sprint-01/manifest.yaml), with the mandatory reference hierarchy in [`visual-authority.yaml`](patterns/visual-dna-sprint-01/visual-authority.yaml). KPI/Table/Chart/Dashboard use fixed demo data and remain bounded prototypes rather than a premature full Analytical Mode.
+
+## Component Library
+
+Milestone 3 formalizes Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and Legend from accepted Visual DNA evidence. Markdown specifications remain canonical; the library manifest, schema, validators, and deterministic builders provide the machine-readable contract. No new raster generation is part of the component library.

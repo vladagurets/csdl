@@ -1,8 +1,8 @@
 # Project Status
 
 **Project:** Constructive Signal Design Language
-**Version:** Visual DNA Sprint 1 catalog
-**Current milestone:** Milestone 2 — complete
+**Version:** Component Library v0.1 in progress
+**Current milestone:** Milestone 3 — in progress
 **Last updated:** 2026-07-18
 
 ## Outcome
@@ -32,6 +32,8 @@ Pilot-backed catalog evidence is audited and accepted for Hero, Comparison, and 
 
 The user-approved D-028 rebaseline makes all three boards in `references/canonical/` primary Visual DNA authority and keeps the Pilot landscape anchor as secondary execution evidence. A series-level contact-sheet audit found that the first generated passes for Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline satisfy copy and semantic checks but collapse toward generic centered infographics. Those approvals are superseded, their active rasters/scores/index evidence are removed, and all affected families require new candidate passes with the complete four-image reference package. Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline now pass that regeneration gate and restore the primary boards' expression contrast, Modular Technical cadence, numeric Pulse, active-plane synthesis, semantic trace language, quiet chronological Axis, square relative-position grammar, nested ownership-depth grammar, open system-boundary topology, finite operational route grammar, and continuous carrier-through-gates transformation; Decision Tree adds a binary branch mechanism, Framework adds an equal-concept open Cluster, and the bounded analytical set is complete with a fixed-data KPI Pulse, exact-lookup Table, audited 0–100% Chart, and open composite Dashboard. Historical first passes remain in review notes, ignored drafts, and Git history.
 
+Milestone 3 is now in progress. The accepted evidence audit and implementation plan define a seven-packet stacked delivery. Component infrastructure is complete, and the first component packet formalizes Anchor, Signal, Field, Frame, and Label. D-029 locks the required fifteen-name public vocabulary and retires the earlier Container alias without changing any accepted raster: Hierarchy uses Frame for ownership scope, Architecture uses Field for system scope, and Pipeline needs no wrapper component.
+
 ## Canonical outputs
 
 ```text
@@ -56,7 +58,7 @@ patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-analytical.png
 
 ```text
 .venv/bin/python -m pytest -q
-49 passed
+64 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
@@ -90,16 +92,25 @@ pattern catalog built: 20 previews, 4 contact sheets
 
 .venv/bin/python tools/validate_pattern_index.py patterns/visual-dna-sprint-01
 pattern index valid
+
+programmatic incomplete-mode Component Library validation
+component foundation packet valid
 ```
 
-## Primary signal status
+## Milestone 2 primary signal status
 
 Met: all 20 families have accepted canonical evidence — three audited Pilot references, the complete D-028 corrective sequence through Pipeline, and newly generated Decision Tree, Framework, KPI, Table, Chart, and Dashboard. The full, editorial, structural, and analytical contact sheets pass visual review, and all strict milestone validators pass. Pilot 01 remains fully met.
 
-## Secondary signal status
+## Milestone 2 secondary signal status
 
 Met: all twenty families pass their individual primary-authority, Prompt DSL, exact-copy/data, raster, flat-signal, and series-contact-sheet gates. Complete-mode asset, score, review, machine-index, preview, and contact-sheet gates pass for the built catalog.
 
+## Milestone 3 signal status
+
+**Primary signal:** partially validated. Five of fifteen components have complete Markdown and machine-readable contracts, and active Foundation/Milestone 2 vocabulary now resolves to the required component set. The three vocabulary-only composition proofs do not exist yet.
+
+**Secondary signal:** partially validated. Schema, relation, expression, evidence, Prompt DSL, builder, index, and proof infrastructure pass focused tests in incomplete mode. Strict mode correctly remains red until all fifteen components and three proofs exist.
+
 ## Repository state
 
-Milestone 2 is integrated as one validated catalog release while its infrastructure, family, corrective, and completion packets remain traceable through the historical PR stack. All twenty family evidence packets are complete through Dashboard. Milestone 3 remains planned and has not started.
+Milestone 2 remains integrated as one validated catalog release. Milestone 3 plan and infrastructure packets are open as a review stack, with the five-component foundation packet in progress. No raster generation, Milestone 4 recipe work, tag, or release has started.

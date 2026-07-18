@@ -47,6 +47,298 @@ vocabulary:
     - bounds
     - repeats
 
-# This is the honest infrastructure state. Component packets append only
-# complete records; incomplete validation never accepts partial records.
-components: []
+components:
+  - id: "01"
+    slug: anchor
+    name: Anchor
+    category: semantic
+    purpose: "Carry the composition's dominant proposition or central concept."
+    semantic_meaning: "The first semantic read and ownership root for subordinate content."
+    spatial_contract:
+      count: {min: 1, max: 2}
+      default_count: 1
+      ownership: "One Anchor owns the primary idea; two are permitted only for evidenced peer comparison or collision."
+      negative_space_percent: {min: 45, max: 75}
+    dimensions:
+      unit: px
+      width: {min: 122, max: 1274}
+      height: {min: 44, max: 936}
+      area_percent: {min: 1, max: 35}
+    relations:
+      allowed:
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: attached_to, target: Label, direction: inbound, cardinality: zero_or_many}
+        - {type: highlights, target: Signal, direction: inbound, cardinality: zero_or_one}
+        - {type: overlaps, target: Collision, direction: outbound, cardinality: zero_or_one, condition: "Only when the intersection is the declared visual mechanism."}
+      forbidden:
+        - {type: maps_to, target: Legend, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: repeats, target: Loop, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [hero, cover, quote, big-number, comparison, collision, hierarchy, framework]
+    expression_limits:
+      A: {status: allowed, max_count: 2, max_area_percent: 18}
+      B: {status: allowed, max_count: 2, max_area_percent: 28}
+      C: {status: conditional, max_count: 2, max_area_percent: 35, condition: "Copy stays short and the Anchor remains one proposition or one peer-force pair."}
+    typography:
+      role: display
+      constraints: [modular_technical, all_text_horizontal, max_one_typographic_trick]
+    semantic_color:
+      default: ink.primary
+      signal_target_allowed: true
+      constraints: ["Color cannot create a second semantic owner."]
+    examples:
+      do:
+        - {description: "Use one proposition as the first read and terminate its route at one Signal.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not treat a large decorative plane or a second unsupported headline as an Anchor.", evidence: patterns/visual-dna-sprint-01/specs/01-hero.md}
+    prompt_dsl:
+      syntax: "Anchor(id=<id>, role=<primary|peer>, content=<copy-ref>)"
+      required_fields: [id, role]
+      optional_fields: [content, weight, span]
+    validation_invariants:
+      - "At least one Anchor owns the main idea in every compatible editorial composition."
+      - "Two Anchors require peer comparison or collision semantics."
+      - "Visual scale alone never establishes Anchor status."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "10.1 Nouns / Anchor", supports: "Foundation semantic meaning and one-idea ownership."}
+      - {path: patterns/visual-dna-sprint-01/specs/01-hero.md, locator: "Semantic components", supports: "One Anchor carries the proposition."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "01 Hero — Pilot reference accepted", supports: "Accepted Anchor to Signal reading route."}
+    specification: specs/01-anchor.md
+    evidence_level: strong
+
+  - id: "02"
+    slug: signal
+    name: Signal
+    category: semantic
+    purpose: "Identify the one state, result, transition, value, path, or boundary needing immediate attention."
+    semantic_meaning: "A dominant emphasis role attached to another component; never free decoration or a color synonym."
+    spatial_contract:
+      count: {min: 0, max: 1}
+      target_required: true
+      rendering: [intrinsic_component_state, attached_marker, semantic_plane]
+      one_dominant_signal: true
+    dimensions:
+      unit: percent
+      width: {min: 0.1, max: 100}
+      height: {min: 0.1, max: 100}
+      area_percent: {min: 0.04, max: 25}
+    relations:
+      allowed:
+        - {type: highlights, target: any, direction: outbound, cardinality: one}
+        - {type: attached_to, target: any, direction: outbound, cardinality: one}
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: produces, target: Collision, direction: inbound, cardinality: zero_or_one}
+        - {type: maps_to, target: Legend, direction: inbound, cardinality: zero_or_one, condition: "Only for a validated multi-category analytical mapping."}
+      forbidden:
+        - {type: groups, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: orders, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [hero, cover, quote, big-number, comparison, collision, before-after, timeline, matrix, workflow, loop, pipeline, decision-tree, framework, kpi, table, chart, dashboard]
+    expression_limits:
+      A: {status: allowed, max_count: 1, max_area_percent: 8}
+      B: {status: allowed, max_count: 1, max_area_percent: 12}
+      C: {status: allowed, max_count: 1, max_area_percent: 25}
+    typography:
+      role: annotation_or_target_state
+      constraints: [neutral_label_unless_label_is_signal, all_text_horizontal, no_duplicate_color_emphasis]
+    semantic_color:
+      default: signal.primary
+      signal_target_allowed: true
+      constraints: [semantic_palette_only, one_dominant_color, form_or_label_also_carries_meaning]
+    examples:
+      do:
+        - {description: "Highlight VERIFY through one solid Node while keeping its Label neutral.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not color both a Node and its Label as separate competing signals.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+    prompt_dsl:
+      syntax: "Signal(id=<id>, target=<instance-id>, role=<semantic-role>)"
+      required_fields: [id, target, role]
+      optional_fields: [color, area_percent, rendering]
+    validation_invariants:
+      - "A Signal has exactly one semantic target."
+      - "A composition has at most one dominant Signal role."
+      - "Area percentage stays inside the expression-level ceiling."
+      - "Color is never the only carrier of meaning."
+    evidence:
+      - {path: DECISIONS.md, locator: "D-010 and D-013", supports: "One dominant semantic signal per normal screen."}
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "9.3 Color rules", supports: "Expression-specific signal-area limits and semantic color."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "08 Timeline — regenerated example accepted", supports: "One solid active Node and neutral Label; duplicate emphasis rejected."}
+    specification: specs/02-signal.md
+    evidence_level: strong
+
+  - id: "03"
+    slug: field
+    name: Field
+    category: spatial
+    purpose: "Establish context, environment, or state scope without defaulting to a closed panel."
+    semantic_meaning: "The space in which components share context or state."
+    spatial_contract:
+      count: {min: 0, max: 2}
+      openness: [implicit, open_boundary, restrained_plane]
+      context_required: true
+      decorative_panel: false
+    dimensions:
+      unit: px
+      width: {min: 244, max: 1728}
+      height: {min: 144, max: 936}
+      area_percent: {min: 12, max: 90}
+    relations:
+      allowed:
+        - {type: contains, target: Anchor, direction: outbound, cardinality: zero_or_many}
+        - {type: contains, target: Node, direction: outbound, cardinality: zero_or_many}
+        - {type: contains, target: Cluster, direction: outbound, cardinality: zero_or_many}
+        - {type: contains, target: Frame, direction: outbound, cardinality: zero_or_many}
+        - {type: separates, target: Divider, direction: inbound, cardinality: zero_or_one}
+        - {type: bounds, target: Node, direction: outbound, cardinality: zero_or_many}
+      forbidden:
+        - {type: directs, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: maps_to, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [cover, comparison, before-after, matrix, architecture]
+    expression_limits:
+      A: {status: allowed, max_count: 2, min_negative_space_percent: 60}
+      B: {status: allowed, max_count: 2, min_negative_space_percent: 45}
+      C: {status: conditional, max_count: 1, condition: "Only one large scope field supports a short culmination or cover."}
+    typography:
+      role: none
+      constraints: [Labels_name_scope, body_copy_does_not_define_boundary]
+    semantic_color:
+      default: paper.base
+      signal_target_allowed: true
+      constraints: [open_or_low_chroma_by_default, never_generic_card_fill]
+    examples:
+      do:
+        - {description: "Use one open system Field to place USER outside and AGENT, TOOLS, and MEMORY inside.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not turn every content group into a closed background card.", evidence: patterns/visual-dna-sprint-01/specs/11-architecture.md}
+    prompt_dsl:
+      syntax: "Field(id=<id>, role=<context|state|coordinate>)"
+      required_fields: [id, role]
+      optional_fields: [boundary, signal_state, openness]
+    validation_invariants:
+      - "Every Field has a declared context or state role."
+      - "A Field never exists solely to decorate a background."
+      - "Two Fields require peer comparison or before/after state semantics."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "10.1 Nouns / Field", supports: "Field means context or environment."}
+      - {path: patterns/visual-dna-sprint-01/specs/11-architecture.md, locator: "Semantic components", supports: "One Field defines stable system scope."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "09 Matrix and 11 Architecture", supports: "Open coordinate and system Fields in accepted evidence."}
+    specification: specs/03-field.md
+    evidence_level: strong
+
+  - id: "04"
+    slug: frame
+    name: Frame
+    category: structural
+    purpose: "Create a functional boundary for scope, lookup, or nested ownership depth."
+    semantic_meaning: "A visible or implied boundary whose edge improves interpretation."
+    spatial_contract:
+      count: {min: 0, max: 4}
+      openness: [open, sparse_rules, closed_when_semantically_required]
+      nesting_depth: {min: 0, max: 4}
+      decorative_shell: false
+    dimensions:
+      unit: px
+      width: {min: 122, max: 1728}
+      height: {min: 64, max: 936}
+      area_percent: {min: 1, max: 80}
+    relations:
+      allowed:
+        - {type: contains, target: Node, direction: outbound, cardinality: zero_or_many}
+        - {type: contains, target: Axis, direction: outbound, cardinality: zero_or_many}
+        - {type: contains, target: Label, direction: outbound, cardinality: zero_or_many}
+        - {type: contains, target: Frame, direction: outbound, cardinality: zero_or_many, condition: "Only for explicit nested ownership depth."}
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: bounds, target: any, direction: outbound, cardinality: one_or_many}
+      forbidden:
+        - {type: directs, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: repeats, target: Loop, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [hierarchy, table]
+    expression_limits:
+      A: {status: allowed, max_count: 4, max_nesting_depth: 4}
+      B: {status: allowed, max_count: 4, max_nesting_depth: 4}
+      C: {status: forbidden, max_count: 0, reason: "Repeated functional boundaries conflict with the short single-peak Signal contract."}
+    typography:
+      role: none
+      constraints: [Labels_remain_direct, Frame_never_substitutes_for_text_hierarchy]
+    semantic_color:
+      default: neutral.line
+      signal_target_allowed: true
+      constraints: [sparse_rules_by_default, signal_color_marks_scope_only_when_semantic]
+    examples:
+      do:
+        - {description: "Use nested open Frames to express OBJECTIVE to CHECK ownership depth.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+        - {description: "Use sparse rules as one open Table lookup Frame.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not wrap every Node in a decorative card shell.", evidence: patterns/visual-dna-sprint-01/specs/18-table.md}
+    prompt_dsl:
+      syntax: "Frame(id=<id>, scope=<scope-ref>)"
+      required_fields: [id, scope]
+      optional_fields: [openness, nesting_depth, boundary_style, signal_state]
+    validation_invariants:
+      - "Every Frame boundary changes scope, lookup, or ownership interpretation."
+      - "Nested Frames preserve one unambiguous ownership path."
+      - "A Frame cannot be justified by visual grouping alone."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "10.1 Nouns / Frame and D-029 implementation note", supports: "Functional analytical and ownership boundary."}
+      - {path: patterns/visual-dna-sprint-01/specs/10-hierarchy.md, locator: "Semantic components", supports: "Nested open Frames express ownership depth."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "18 Table — generated example accepted", supports: "Sparse open lookup Frame without cell chrome."}
+    specification: specs/04-frame.md
+    evidence_level: bounded
+
+  - id: "14"
+    slug: label
+    name: Label
+    category: annotation
+    purpose: "Name or qualify one component directly so meaning does not depend on position or color alone."
+    semantic_meaning: "A short textual attachment with exactly one semantic target."
+    spatial_contract:
+      count: {min: 0, max: 25}
+      target_required: true
+      attachment: direct
+      ambiguity_allowed: false
+    dimensions:
+      unit: px
+      width: {min: 24, max: 980}
+      height: {min: 20, max: 88}
+      area_percent: {min: 0.02, max: 8}
+    relations:
+      allowed:
+        - {type: attached_to, target: any, direction: outbound, cardinality: one}
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: inside, target: Frame, direction: outbound, cardinality: zero_or_one}
+        - {type: maps_to, target: Legend, direction: inbound, cardinality: zero_or_one, condition: "Only for a validated indirect analytical key."}
+      forbidden:
+        - {type: directs, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: produces, target: any, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: repeats, target: Loop, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [big-number, collision, timeline, matrix, hierarchy, architecture, workflow, loop, pipeline, decision-tree, framework, kpi, table, chart, dashboard]
+    expression_limits:
+      A: {status: allowed, max_count: 25, rotation: short_labels_only}
+      B: {status: allowed, max_count: 12, rotation: short_labels_only}
+      C: {status: conditional, max_count: 4, condition: "Only short essential labels remain; body copy is excluded."}
+    typography:
+      role: label
+      constraints: [size_24_to_30_px_default, line_height_1_10_to_1_25, horizontal_by_default, body_copy_never_rotates]
+    semantic_color:
+      default: ink.primary
+      signal_target_allowed: true
+      constraints: [neutral_by_default, colored_label_counts_as_signal, color_not_only_carrier]
+    examples:
+      do:
+        - {description: "Attach every Matrix option and Axis name directly while keeping the selected Node's Label neutral.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+        - {description: "Directly label every Chart point and retain the source Label.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not float a Label between targets or color it as a duplicate Signal.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+    prompt_dsl:
+      syntax: "Label(id=<id>, text=<content-ref>, target=<instance-id>)"
+      required_fields: [id, text, target]
+      optional_fields: [role, rotation, color, unit, period]
+    validation_invariants:
+      - "A Label has exactly one declared target."
+      - "A Label stays readable at the family's review scale."
+      - "A colored Label is counted as part of the single Signal role."
+      - "Quantitative Labels preserve value, unit, period, and order exactly."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "8.4 Type scale and 8.5 Typography limits", supports: "Label size, line height, and rotation limits."}
+      - {path: patterns/visual-dna-sprint-01/specs/19-chart.md, locator: "Assembly order and Acceptance criteria", supports: "Direct labels are required for quantitative points."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "09 Matrix, 17 KPI, 18 Table, 19 Chart, and 20 Dashboard", supports: "Accepted direct-label behavior and duplicate/missing-label rejections."}
+    specification: specs/14-label.md
+    evidence_level: strong

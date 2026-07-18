@@ -94,7 +94,30 @@ def add_complete_component(manifest: Path, component: dict) -> None:
 
 
 def test_infrastructure_manifest_is_valid_in_incomplete_mode() -> None:
+    errors = validate_component_library(LIBRARY / "manifest.yaml", require_complete=False)
+    assert errors == []
+
+
+def test_foundation_packet_contains_complete_expected_components() -> None:
+    data = yaml.safe_load((LIBRARY / "manifest.yaml").read_text(encoding="utf-8"))
+
+    assert [component["slug"] for component in data["components"]] == [
+        "anchor",
+        "signal",
+        "field",
+        "frame",
+        "label",
+    ]
     assert validate_component_library(LIBRARY / "manifest.yaml", require_complete=False) == []
+
+
+def test_active_visual_dna_contract_uses_only_declared_component_names() -> None:
+    data = yaml.safe_load((LIBRARY / "manifest.yaml").read_text(encoding="utf-8"))
+    assert data["components"]
+    assert not any(
+        "undeclared active component name" in error
+        for error in validate_component_library(LIBRARY / "manifest.yaml", require_complete=False)
+    )
 
 
 def test_strict_mode_requires_exact_component_set() -> None:

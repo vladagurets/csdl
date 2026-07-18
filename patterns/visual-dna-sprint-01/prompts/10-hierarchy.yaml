@@ -7,7 +7,7 @@ visual_authority: patterns/visual-dna-sprint-01/visual-authority.yaml
 content: {headline: "ВІД ЦІЛІ ДО ПЕРЕВІРКИ", levels: [OBJECTIVE, MILESTONE, TASK, CHECK]}
 composition:
   mechanism: "Four levels descend through indentation or branching as ownership depth, not a workflow; CHECK is the only coral leaf"
-  components: [Anchor, Node, Container, Bridge]
+  components: [Anchor, Frame, Node, Bridge]
   reading_path: top_to_bottom
   negative_space: "at least 60%"
 typography: {display: "Ukrainian-capable Modular Technical display with squared engineering proportions and tight rhythm", labels: "neutral high-legibility sans with restrained scale by depth", all_text_horizontal: true}

@@ -11,19 +11,34 @@ ROOT = Path(__file__).parents[1]
 LIBRARY = ROOT / "components/component-library-v0.1"
 
 
-def test_partial_generated_outputs_validate(tmp_path: Path) -> None:
+def copy_library_with_evidence(tmp_path: Path) -> Path:
     target = tmp_path / "components/component-library-v0.1"
     target.parent.mkdir(parents=True)
     shutil.copytree(LIBRARY, target)
+    for relative in ["DECISIONS.md", "specs/2026-07-17-csdl-v0.1-design.md"]:
+        destination = tmp_path / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(ROOT / relative, destination)
+    pattern_target = tmp_path / "patterns/visual-dna-sprint-01"
+    pattern_target.mkdir(parents=True)
+    shutil.copy2(ROOT / "patterns/visual-dna-sprint-01/manifest.yaml", pattern_target / "manifest.yaml")
+    for directory in ["prompts", "specs", "evaluation"]:
+        shutil.copytree(
+            ROOT / f"patterns/visual-dna-sprint-01/{directory}",
+            pattern_target / directory,
+        )
+    return target
+
+
+def test_partial_generated_outputs_validate(tmp_path: Path) -> None:
+    target = copy_library_with_evidence(tmp_path)
     build_component_library(target, require_complete=False)
 
     assert validate_component_index(target, require_complete=False) == []
 
 
 def test_rejects_index_drift(tmp_path: Path) -> None:
-    target = tmp_path / "components/component-library-v0.1"
-    target.parent.mkdir(parents=True)
-    shutil.copytree(LIBRARY, target)
+    target = copy_library_with_evidence(tmp_path)
     index_path, _ = build_component_library(target, require_complete=False)
     data = yaml.safe_load(index_path.read_text(encoding="utf-8"))
     data["version"] = "wrong"
