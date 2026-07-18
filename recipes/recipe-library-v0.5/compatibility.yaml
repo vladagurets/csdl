@@ -1,0 +1,45 @@
+library: recipe-library-v0.5
+version: 0.5.0
+families:
+- hero
+- cover
+- quote
+- big-number
+- comparison
+- collision
+- before-after
+- timeline
+- matrix
+- hierarchy
+- architecture
+- workflow
+- loop
+- pipeline
+- decision-tree
+- framework
+- kpi
+- table
+- chart
+- dashboard
+recipes: []
+by_family:
+- {family: hero, recipes: []}
+- {family: cover, recipes: []}
+- {family: quote, recipes: []}
+- {family: big-number, recipes: []}
+- {family: comparison, recipes: []}
+- {family: collision, recipes: []}
+- {family: before-after, recipes: []}
+- {family: timeline, recipes: []}
+- {family: matrix, recipes: []}
+- {family: hierarchy, recipes: []}
+- {family: architecture, recipes: []}
+- {family: workflow, recipes: []}
+- {family: loop, recipes: []}
+- {family: pipeline, recipes: []}
+- {family: decision-tree, recipes: []}
+- {family: framework, recipes: []}
+- {family: kpi, recipes: []}
+- {family: table, recipes: []}
+- {family: chart, recipes: []}
+- {family: dashboard, recipes: []}
