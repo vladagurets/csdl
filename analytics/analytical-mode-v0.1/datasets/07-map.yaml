@@ -1,0 +1,25 @@
+language: CSDL
+version: "0.1"
+kind: analytical-dataset
+dataset:
+  id: map-incident-rate-v1
+  version: 1.0.0
+  title: Incidents per 100,000 runs by region
+  status: synthetic_fixed_data
+  unit_of_analysis: ISO 3166-2 region
+  fields:
+    - {id: region, label: Region, type: geographic, role: identifier, nullable: false, geographic_role: ISO_3166_2}
+    - {id: runs, label: Runs, type: quantitative, role: measure, nullable: false, unit: count, display_format: "0", domain: [0, 1000000], aggregation: sum}
+    - {id: incidents, label: Incidents, type: quantitative, role: measure, nullable: true, unit: count, display_format: "0", domain: [0, 100], aggregation: sum}
+    - {id: incident_rate, label: Incidents per 100,000 runs, type: quantitative, role: measure, nullable: true, unit: per_100000_runs, display_format: "0.0", domain: [0, 10], denominator: runs, normalization: per_100000}
+  records:
+    - {id: m1, region: PT-11, runs: 500000, incidents: 20, incident_rate: 4.0}
+    - {id: m2, region: PT-17, runs: 200000, incidents: 12, incident_rate: 6.0}
+    - {id: m3, region: PT-15, runs: 120000, incidents: null, incident_rate: null}
+  ordering: {field: region, values: [PT-11, PT-17, PT-15]}
+  missing_values:
+    - {record_id: m3, field: incidents, status: unavailable}
+    - {record_id: m3, field: incident_rate, status: unavailable}
+  transformations:
+    - {id: rate_per_100000, operation: rate, inputs: [incidents, runs], output: incident_rate, parameters: {multiplier: 100000}, formula: "incidents / runs * 100000", reversible: true, auditable: true}
+  provenance: {source: CSDL Milestone 5 synthetic fixture using ISO 3166-2 identifiers, source_type: synthetic, source_date: 2026-07-18, retrieval_period: fixed annual period, method: fixed counts normalized per 100000 runs}

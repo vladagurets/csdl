@@ -1,0 +1,14 @@
+language: CSDL
+version: "0.1"
+kind: analytical-compatibility-source
+families:
+  bar: {recipes: ["019"], components: [Axis, Node, Label, Signal], marks: [bar, text]}
+  line: {recipes: ["019"], components: [Axis, Node, Label, Signal], marks: [line, point, interval-band, text]}
+  scatterplot: {recipes: ["019"], components: [Axis, Node, Label, Signal], marks: [point, line, text]}
+  waterfall: {recipes: ["019"], components: [Axis, Node, Label, Signal], marks: [waterfall-step, line, text]}
+  heatmap: {recipes: ["019"], components: [Axis, Frame, Label, Signal], marks: [cell, text]}
+  funnel: {recipes: ["019"], components: [Axis, Node, Label, Signal], marks: [funnel-stage, text]}
+  map: {recipes: ["019"], components: [Field, Node, Label, Signal], marks: [region, text]}
+  network: {recipes: ["020"], components: [Node, Bridge, Label, Signal], marks: [network-node, network-edge, text]}
+  table: {recipes: ["018"], components: [Frame, Axis, Label, Signal], marks: [cell, text]}
+  dashboard: {recipes: ["020"], components: [Pulse, Cluster, Axis, Node, Label, Signal], marks: [line, point, text]}

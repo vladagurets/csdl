@@ -1,0 +1,79 @@
+language: CSDL
+version: "0.1"
+kind: analytical-global-contract
+
+fidelity:
+  preserve_exactly: [dataset_identity, field_bindings, domain, order, values, units, labels, source]
+  quantitative_relationships_override_style: true
+  every_claim_traceable: true
+
+zero_baseline:
+  bar_like: required
+  line_and_scatter: required_only_when_zero_is_semantically_relevant
+  truncation_must_be_declared: true
+
+log_scale:
+  default: forbidden
+  explicit_declaration_required: true
+  positive_only_validation: true
+
+dual_axis:
+  default: forbidden
+  exception_requires: [rationale, independent_units, non_misleading_review]
+
+encodings:
+  position_must_match_value: true
+  length_must_match_value: true
+  area_must_match_value: true
+  color_domain_must_match_value: true
+  conflicting_encodings_forbidden: true
+
+color:
+  sole_carrier_allowed: false
+  redundant_carrier_required: [label, form]
+  one_signal_series_default: true
+
+direct_labels:
+  precedence: preferred
+  legend_status: conditional
+  legend_requires_recorded_failure: true
+
+decorative_field:
+  default_area_percent: 0
+  max_area_percent: 5
+
+missing_data:
+  statuses: [missing, "null", suppressed, not_applicable, unavailable]
+  explicit_semantics_required: true
+  silent_zero_substitution_forbidden: true
+
+uncertainty:
+  interval_type_required: true
+  level_required_when_applicable: true
+  lower_must_not_exceed_estimate: true
+  estimate_must_not_exceed_upper: true
+  point_estimate_must_not_mask_interval: true
+
+forecast:
+  historical_and_forecast_must_be_separate: true
+  horizon_required: true
+  forecast_must_not_look_observed: true
+
+transformations:
+  explicit: true
+  deterministic: true
+  reversible_or_auditable: true
+  reproducible_from_source: true
+  meaning_change_without_declaration: forbidden
+
+hard_exclusions:
+  - 3D
+  - perspective
+  - gradients
+  - shadows
+  - glossy surfaces
+  - chartjunk
+  - decorative coordinates
+  - random dot fields
+  - UI chrome
+  - undeclared layout vocabulary

@@ -1,0 +1,34 @@
+language: CSDL
+version: "0.1"
+kind: analytical-dataset
+dataset:
+  id: line-forecast-v1
+  version: 1.0.0
+  title: Observed and forecast success rate
+  status: synthetic_fixed_data
+  unit_of_analysis: quarterly agent-run cohort
+  fields:
+    - {id: period, label: Quarter, type: temporal, role: dimension, nullable: false, ordering: declared}
+    - {id: estimate, label: Success rate, type: quantitative, role: measure, nullable: false, unit: percent, display_format: "0%", domain: [0, 100], aggregation: mean}
+    - {id: lower, label: Lower prediction bound, type: quantitative, role: measure, nullable: true, unit: percent, display_format: "0%", domain: [0, 100]}
+    - {id: upper, label: Upper prediction bound, type: quantitative, role: measure, nullable: true, unit: percent, display_format: "0%", domain: [0, 100]}
+    - {id: status, label: Observation status, type: categorical, role: dimension, nullable: false, categories: [observed, forecast]}
+  records:
+    - {id: l1, period: 2026-Q1, estimate: 70, lower: null, upper: null, status: observed}
+    - {id: l2, period: 2026-Q2, estimate: 76, lower: null, upper: null, status: observed}
+    - {id: l3, period: 2026-Q3, estimate: 82, lower: null, upper: null, status: observed}
+    - {id: l4, period: 2026-Q4, estimate: 86, lower: null, upper: null, status: observed}
+    - {id: l5, period: 2027-Q1, estimate: 89, lower: 84, upper: 93, status: forecast}
+    - {id: l6, period: 2027-Q2, estimate: 91, lower: 85, upper: 96, status: forecast}
+  ordering: {field: period, values: [2026-Q1, 2026-Q2, 2026-Q3, 2026-Q4, 2027-Q1, 2027-Q2]}
+  missing_values:
+    - {record_id: l1, field: lower, status: not_applicable}
+    - {record_id: l1, field: upper, status: not_applicable}
+    - {record_id: l2, field: lower, status: not_applicable}
+    - {record_id: l2, field: upper, status: not_applicable}
+    - {record_id: l3, field: lower, status: not_applicable}
+    - {record_id: l3, field: upper, status: not_applicable}
+    - {record_id: l4, field: lower, status: not_applicable}
+    - {record_id: l4, field: upper, status: not_applicable}
+  transformations: []
+  provenance: {source: CSDL Milestone 5 synthetic fixture, source_type: synthetic, source_date: 2026-07-18, retrieval_period: 2026-Q1 to 2027-Q2, method: fixed observed and forecast values with 80 percent prediction interval}

@@ -1,0 +1,88 @@
+language: CSDL
+version: "0.1"
+kind: analytical-family-contracts
+
+families:
+  bar:
+    precise_rules:
+      - preserve declared categorical order
+      - use a visible zero baseline for every length encoding
+      - declare grouped, stacked, or normalized semantics
+      - retain signed positive and negative values
+      - attach units to axes or direct labels
+      - normalized stacks sum to the declared total
+    hard_exclusions: [truncated baseline, 3D, perspective, area distortion, hidden categories]
+  line:
+    precise_rules:
+      - bind x to a temporal or explicitly ordered domain
+      - render missing intervals as declared gaps unless interpolation is explicit
+      - smoothing requires a declared method and never replaces source points
+      - label series directly when readable
+      - separate observed and forecast segments at a declared boundary
+      - expose uncertainty type, level, lower, and upper values
+    hard_exclusions: [hidden reordering, undeclared smoothing, forecast as observed, masked uncertainty]
+  scatterplot:
+    precise_rules:
+      - bind independent quantitative x and y domains
+      - state whether zero is relevant to either domain
+      - declare overplotting handling
+      - directly label selected points and define category encoding
+      - declare size field, domain, and area semantics when size is encoded
+      - trend lines require a named reproducible method
+    hard_exclusions: [decorative placement, implicit trend line, undeclared size area, color-only categories]
+  waterfall:
+    precise_rules:
+      - distinguish start, signed increment, subtotal, and total records
+      - calculate cumulative values deterministically in declared order
+      - retain a zero reference and signed direction
+      - reconcile final total to start plus increments
+    hard_exclusions: [unreconciled total, unsigned decrement, reordered increments, floating decorative steps]
+  heatmap:
+    precise_rules:
+      - declare matrix identity and fixed row and column order
+      - declare continuous or discrete scale and complete domain
+      - provide a non-color fallback for values and missing cells
+      - distinguish missing cells from zero
+      - expose the scale key or direct endpoint labels
+    hard_exclusions: [color-only meaning, reordered matrix, hidden missing cells, undeclared color domain]
+  funnel:
+    precise_rules:
+      - preserve declared stage order
+      - expose absolute values, denominator identity, and conversion rates
+      - define previous-stage or initial-stage denominator semantics
+      - declare how non-monotonic stages are handled
+      - make width proportional to value rather than decorative area
+    hard_exclusions: [hidden denominator, area distortion, forced monotonic sorting, percentage without absolute value]
+  map:
+    precise_rules:
+      - bind every region to a declared geographic identifier
+      - declare projection and geographic provenance
+      - distinguish normalized rates from absolute counts
+      - expose normalization denominator and missing regions
+      - attach uncertainty when the measure contract provides it
+    hard_exclusions: [raw counts labeled comparable rates, missing projection, unlabeled missing regions, area-equals-value distortion]
+  network:
+    precise_rules:
+      - declare unique node and edge identities
+      - declare edge source, target, direction, and weight semantics
+      - distinguish absent edges from missing edge data
+      - treat layout as non-semantic unless an encoding contract explicitly says otherwise
+      - label nodes or provide an accessible lookup
+    hard_exclusions: [semantic spatial distance by default, undeclared direction, duplicate identity, decorative links]
+  table:
+    precise_rules:
+      - preserve exact values and fixed row and column order
+      - align text by role and numbers by decimal or tabular position
+      - keep units attached to headers or values
+      - declare totals and subtotals as derived records
+      - render missing statuses explicitly and retain source
+      - use restrained semantic emphasis only
+    hard_exclusions: [decorative cell tiles, zebra decoration, invented totals, omitted units, silent reordering]
+  dashboard:
+    precise_rules:
+      - require every view to reference one dataset identity and version
+      - give every view its own intent, bindings, domain, and units
+      - reconcile repeated measures across views
+      - retain one primary Signal and neutralize supporting series
+      - keep sources and missing states visible
+    hard_exclusions: [mixed undeclared datasets, inconsistent repeated values, widget chrome, gauges, decorative panels]

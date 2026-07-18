@@ -1,0 +1,28 @@
+language: CSDL
+version: "0.1"
+kind: analytical-dataset
+dataset:
+  id: waterfall-reconciliation-v1
+  version: 1.0.0
+  title: Reliability score reconciliation
+  status: synthetic_fixed_data
+  unit_of_analysis: ordered reconciliation step
+  fields:
+    - {id: step, label: Step, type: ordinal, role: dimension, nullable: false, ordering: declared}
+    - {id: kind, label: Step kind, type: categorical, role: dimension, nullable: false, categories: [start, increment, total]}
+    - {id: delta, label: Signed change, type: quantitative, role: measure, nullable: false, unit: points, display_format: "+0;-0;0", domain: [-20, 30], aggregation: sum}
+    - {id: stated_total, label: Stated total, type: quantitative, role: measure, nullable: true, unit: points, display_format: "0", domain: [0, 200]}
+  records:
+    - {id: w1, step: Starting score, kind: start, delta: 0, stated_total: 100}
+    - {id: w2, step: Test coverage, kind: increment, delta: 25, stated_total: null}
+    - {id: w3, step: Review delay, kind: increment, delta: -10, stated_total: null}
+    - {id: w4, step: Retained learning, kind: increment, delta: 15, stated_total: null}
+    - {id: w5, step: Final score, kind: total, delta: 0, stated_total: 130}
+  ordering: {field: step, values: [Starting score, Test coverage, Review delay, Retained learning, Final score]}
+  missing_values:
+    - {record_id: w2, field: stated_total, status: not_applicable}
+    - {record_id: w3, field: stated_total, status: not_applicable}
+    - {record_id: w4, field: stated_total, status: not_applicable}
+  transformations:
+    - {id: cumulative, operation: cumulative_sum, inputs: [stated_total, delta], output: cumulative_value, parameters: {start_kind: start, total_kind: total}, formula: "start.stated_total + cumulative sum(increment.delta)", reversible: false, auditable: true}
+  provenance: {source: CSDL Milestone 5 synthetic fixture, source_type: synthetic, source_date: 2026-07-18, retrieval_period: not_applicable, method: fixed signed steps for cumulative reconciliation}
