@@ -34,6 +34,8 @@ Cover is the first newly generated family. Three built-in GPT Image 2 candidates
 
 Quote is also complete. Candidate 2 was selected from three exact-copy outputs because it preserves the strongest Level A spacing, keeps attribution subordinate, and uses only one small semantic coral hinge.
 
+Big Number is complete. Candidate 2 was selected because the numeral reads first, the label remains attached, both centered separators stay neutral, and one coral marker remains semantically tied to the value.
+
 ## Canonical outputs
 
 ```text
@@ -69,7 +71,7 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 5/20 families have accepted canonical evidence. Fifteen new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
+Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 6/20 families have accepted canonical evidence. Fourteen new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
@@ -77,4 +79,4 @@ Met for the infrastructure packet: tests, catalog/schema validation, fixed-data 
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Big Number from three built-in GPT Image 2 candidates.
+Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Collision from three built-in GPT Image 2 candidates.

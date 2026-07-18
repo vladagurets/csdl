@@ -54,6 +54,22 @@ Exact-copy review: pass for `СИСТЕМИ, ЩО ВЧАТЬСЯ` and `VISUAL DN
 
 Exact-copy review: pass for the full Ukrainian quotation, curly opening/closing quotation marks, final period, and `AGENTIC DISCIPLINE`; no additional speaker or source metadata. Visual mechanism: the quotation is one typographic Anchor, the attribution is one subordinate source relation, and the coral square marks the hinge without becoming decoration. Strongest decision: Candidate 2 preserves a decisive quote while retaining the quiet field needed for a Level A pause. Removable-element check: nothing remains beyond exact content and the single Signal. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability comes from typographic cadence rather than a large geometric event, which is appropriate for this family. Accepted catalog score: `4.86`.
 
+### 04 Big Number — generated example accepted
+
+- **Canonical:** `canonical/light/16x9/04-big-number.png`
+- **Prompt:** `prompts/04-big-number.yaml`
+- **Selected:** `04-big-number-v2.png` from three independent built-in GPT Image 2 candidates
+- **Source SHA-256:** `6350282add68dbb41cbd95a2b655cffcf2d3c7fcb982dfdc514a6163862c47e5`
+- **Canonical SHA-256:** `2d44a55c90e189fd02cbcef72a50e9e4f846c78f12ebfbdb43fd2fe14a9fe425`
+- **Source raster:** `1672×941`, RGB PNG
+- **Canonical raster:** `1920×1080`, RGB PNG
+
+- `04-big-number-v1.png` — rejected: copy is exact, but both centered separators become coral dots in addition to the coral square, creating multiple competing signals.
+- `04-big-number-v2.png` — selected: the numeral reads first, the label remains attached, centered separators stay neutral, and one coral marker sits with the value rather than the label.
+- `04-big-number-v3.png` — rejected: exact copy and hierarchy pass, but the coral square reads like trailing punctuation after the label instead of a value marker.
+
+Exact-copy review: pass for `3`, `РІВНІ ВИРАЗНОСТІ`, and `QUIET · CONSTRUCTIVE · SIGNAL`, including both centered dots; no percent sign or added statistic. Visual mechanism: one dominant numeric Pulse leads to one attached label and one subordinate level list; the coral square marks the value. Strongest decision: the open horizontal composition makes the count memorable without introducing chart semantics. Removable-element check: numeral, label, level names, and one marker are all functional. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: none material. Accepted catalog score: `5.00`.
+
 ### 05 Comparison — Pilot reference accepted
 
 - **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png`

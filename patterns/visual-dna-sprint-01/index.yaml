@@ -51,7 +51,10 @@ families:
   - C
   evidence_mode: generated
   canonical_example: canonical/light/16x9/04-big-number.png
-  status: awaiting_generation
+  sha256: 2d44a55c90e189fd02cbcef72a50e9e4f846c78f12ebfbdb43fd2fe14a9fe425
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 5.0
 - id: '05'
   slug: comparison
   name: Comparison
