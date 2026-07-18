@@ -1,8 +1,8 @@
 # Project Status
 
 **Project:** Constructive Signal Design Language
-**Version:** Analytical Mode v0.1 complete
-**Current milestone:** Milestone 5 — complete; Milestone 6 deferred
+**Version:** Analytical Mode v0.1 complete; Night Mode and Accessibility v0.1 active
+**Current milestone:** Milestone 6 — active
 **Last updated:** 2026-07-18
 
 ## Outcome
@@ -37,6 +37,8 @@ Milestone 3 is complete. Anchor, Signal, Field, Frame, Cluster, Vector, Divider,
 Milestone 4 is complete. D-030 locks Recipe Library v0.5 to 23 evidence-backed recipes: all twenty accepted Visual DNA families plus Breakdown, Checklist, and Formula from accepted Pilot 01 evidence. Every recipe has a canonical Markdown specification and a machine-readable record. Layout-free outlines deterministically select recipes and build Prompt DSL v0.5 packages that keep semantic intent, exact content, public component instances, relations, generation constraints, and provenance separate. Mechanical migration covers seven Pilot and twenty Visual DNA source prompts without mutating their copy/data or accepted rasters. Editorial Big Number, structural Workflow, bounded analytical Chart, and Pilot Comparison migration proofs rebuild deterministically; six negative fixtures reject layout vocabulary, undeclared components, forbidden relations, unsupported combinations, copy mutation, and analytical distortion. That milestone intentionally stopped at bounded analytical evidence; Milestone 5 now provides the independent full contract.
 
 Milestone 5 is complete. D-031 versions Analytical Mode v0.1 as an independent additive extension under `analytics/analytical-mode-v0.1/`, leaving Prompt DSL v0.5 unchanged and retaining exactly fifteen public components and 23 recipes. Its canonical Markdown and machine-readable contracts cover typed datasets, internal analytical marks, domain/order/value/unit/source/missing/transformation fidelity, bars, lines, scatterplots, waterfall, heatmaps, funnels, maps, networks, tables, dashboards, uncertainty, forecasts, and negative values. Ten fixed datasets drive ten deterministic end-to-end proofs; seventeen indexed negative mutations and focused tests reject every critical requested distortion. No raster was generated or modified.
+
+Milestone 6 is active under D-032 as an independent additive extension planned for `accessibility/night-mode-v0.1/`. The evidence audit confirms accepted support for semantic roles, direct labels, restrained Signal behavior, presentation readability, and exact analytical meaning, while night/projector/CVD/monochrome behavior requires deterministic synthetic proofs. Prompt DSL v0.5, D-029, D-030, D-031, and accepted raster bytes remain immutable dependencies. No raster generation is authorized.
 
 ## Canonical outputs
 
@@ -180,4 +182,4 @@ Met: all twenty families pass their individual primary-authority, Prompt DSL, ex
 
 ## Repository state
 
-Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1. Milestone 4 remains integrated as Recipe Library and Prompt DSL v0.5. Milestone 5 is complete as Analytical Mode v0.1 with its stacked, independently reviewable history retained. No raster was generated or mutated for Milestones 3–5. No tag, GitHub Release, public release-policy change, or Milestone 6 Night Mode work has started.
+Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1. Milestone 4 remains integrated as Recipe Library and Prompt DSL v0.5. Milestone 5 remains complete as Analytical Mode v0.1. Milestone 6 has started with a clean-main gate, evidence audit, D-032, acceptance contract, and dependency-aware implementation plan. No raster was generated or mutated for Milestones 3–6. No tag, GitHub Release, public release-policy change, or Milestone 7 work has started.

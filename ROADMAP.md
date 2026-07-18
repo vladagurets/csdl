@@ -174,9 +174,11 @@ Exit criterion: every family has precise machine-readable rules and a determinis
 
 ## Milestone 6 — Night Mode and Accessibility
 
-**State:** deferred
+**State:** active
 
 Validate the dark palette, contrast, projector behavior, landscape readability, color-vision robustness, and monochrome fallback.
+
+Implementation contract: [`docs/plans/2026-07-18-csdl-milestone-6.md`](docs/plans/2026-07-18-csdl-milestone-6.md). D-032 keeps Prompt DSL v0.5 and all Milestone 1–5 contracts/rasters unchanged while versioning accessibility and output profiles as an independent additive extension.
 
 ## Milestone 7 — Cookbook and Design Book v1.0
 
