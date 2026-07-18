@@ -39,13 +39,12 @@
 
 ## Deferred decisions
 
-These remain intentionally open until Pilot 01 validates the foundation:
+These remain intentionally open for later milestones:
 
 - exact licensed font families;
 - final night-mode token values;
 - Analytical Mode for dense charts and tables;
 - final icon construction grid;
-- full component constraints and compatibility matrix;
 - full 50-recipe cookbook;
 - long-term storage policy for high-resolution exports and rejected candidates;
 - public license and release strategy.

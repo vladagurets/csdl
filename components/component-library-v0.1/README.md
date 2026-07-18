@@ -4,7 +4,7 @@ Milestone 3 formalizes fifteen reusable CSDL components from accepted Foundation
 
 ## Component contract state
 
-All fifteen component records and canonical Markdown specifications are complete. The editorial, structural, and analytical proofs validate using component vocabulary alone, including the fixed Chart quantitative contract. Strict library, proof, and index validation passes, and deterministic `index.yaml` plus `compatibility.yaml` outputs are checked in. Incomplete mode remains available only for review of earlier packets in the open stack.
+All fifteen component records and canonical Markdown specifications are complete. The editorial, structural, and analytical proofs validate using component vocabulary alone, including the fixed Chart quantitative contract. Strict library, proof, and index validation passes, and deterministic `index.yaml` plus `compatibility.yaml` outputs are checked in. Incomplete mode remains available only for historical intermediate-packet review.
 
 ## Evidence convention
 

@@ -39,7 +39,7 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Milestone 3 — Component Library is in progress. Formalize and validate Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and Legend under `components/component-library-v0.1/` using accepted Milestone 2 evidence. Do not generate new rasters without a demonstrated contract gap and explicit user approval. Milestone 4 recipes, full Analytical Mode, dark mode, and public release remain out of scope.
+Milestone 3 — Component Library v0.1 is complete. Preserve the fifteen-component public vocabulary, canonical Markdown specifications, three composition proofs, deterministic indexes, and accepted Milestone 2 evidence under `components/component-library-v0.1/`. Milestone 4 recipes are planned but must not begin without a new explicit objective. Full Analytical Mode, dark mode, and public release remain out of scope.
 
 ## Work protocol
 
@@ -134,7 +134,16 @@ python tools/build_pattern_catalog.py patterns/visual-dna-sprint-01
 python tools/validate_pattern_index.py patterns/visual-dna-sprint-01
 ```
 
-Pilot 01 is complete, so all Pilot validators are expected to pass. Milestone 2 asset and score validators are strict milestone-level gates; use their tested `require_complete=False` programmatic mode only on intermediate family branches and record only evidence actually reviewed.
+For Component Library v0.1, also run:
+
+```bash
+python tools/validate_component_library.py components/component-library-v0.1/manifest.yaml
+python tools/validate_component_proofs.py components/component-library-v0.1
+python tools/build_component_library.py components/component-library-v0.1
+python tools/validate_component_index.py components/component-library-v0.1
+```
+
+Pilot 01, Milestone 2, and Milestone 3 are complete, so all strict validators for those milestones are expected to pass. Use tested `require_complete=False` modes only when reviewing historical intermediate branches, and record only evidence actually reviewed.
 
 ## Definition of done for one card
 
