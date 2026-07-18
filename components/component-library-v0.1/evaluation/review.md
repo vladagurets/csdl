@@ -191,3 +191,44 @@ pass
 ```
 
 Remaining risk: real proof instances do not yet exercise relation-direction permission across two component records. The composition-proof packet must demonstrate at least one allowed Field/Node/Bridge topology and reject one incompatible relation before the primary signal can pass.
+
+## Analytical and annotation component packet
+
+- Branch: `codex/m3-components-analytical`
+- Accepted records: `13 Pulse`, `15 Legend`
+- Canonical specs: `specs/13-pulse.md`, `15-legend.md`
+- Evidence levels: Pulse strong, Legend constrained
+- Raster generation: none
+- Canonical raster mutation: none
+
+### Evidence boundary
+
+Pulse is directly supported by accepted Big Number, KPI, and Dashboard evidence. Its contract permits one exact value, preserves label/unit/period/source context, and rejects invented targets, deltas, trends, gauges, and peer metrics.
+
+Legend is intentionally constrained rather than promoted from vocabulary to unsupported canonical use. Foundation Analytical Mode prefers direct Labels, and the accepted single-series Chart explicitly contains no Legend. Legend is therefore conditional only for Level A Chart or Dashboard compositions with two to four analytical categories, text-and-form keys, and a recorded reason direct Labels collide or remain ambiguous. The Foundation primary-authority palette strip supports construction calibration only; it is not claimed as family-use evidence.
+
+### TDD and validation evidence
+
+The packet began with the expected strict-order failure: Pulse and Legend were absent from the thirteen-record manifest. After both contracts were added, the new strict test passed. The wider focused run then exposed and corrected two obsolete test fixtures: one still expected strict mode to fail at thirteen records, and one omitted the primary-authority PNG from a temporary evidence tree.
+
+```text
+focused component infrastructure tests
+18 passed
+
+.venv/bin/python tools/validate_component_library.py components/component-library-v0.1/manifest.yaml
+component library valid
+
+.venv/bin/python -m pytest -q
+67 passed
+
+Pilot manifest/style-anchor/assets/scores validators
+pass
+
+Milestone 2 catalog/data/assets/scores/review/index validators
+pass
+
+git diff --check
+pass
+```
+
+Remaining risk: the strict component-record gate is complete, but the composition-proof gate remains red until editorial, structural, and analytical proof documents exercise real instances and relations. No accepted raster currently demonstrates Legend use, so its compatibility remains conditional by design.

@@ -7,6 +7,7 @@
 - Added D-029 and formalized Anchor, Signal, Field, Frame, and Label as complete Markdown and machine-readable contracts with family compatibility, A/B/C limits, relations, Prompt DSL syntax, validation invariants, and accepted Milestone 2 provenance.
 - Formalized Cluster, Divider, Node, and Axis, including explicit separation between grouping, peer distinction, discrete semantic units, open order, lookup alignment, and quantitative domain.
 - Formalized Vector, Loop, Collision, and Bridge so action/transformation, closed recurrence, consequential overlap, and topology/ownership/branching remain distinct reviewable relations.
+- Formalized Pulse from accepted Big Number/KPI/Dashboard evidence and constrained Legend to exceptional Level A Chart/Dashboard use only when direct labels demonstrably fail; all fifteen component contracts now pass strict validation without new raster generation.
 - Retired the earlier Container alias from active Foundation and Milestone 2 contracts without raster changes: Hierarchy uses Frame, Architecture uses Field, and Pipeline uses no wrapper component.
 - Rebaselined Milestone 2 after explicit user approval: the three `references/canonical/` boards are now primary Visual DNA authority, the Pilot landscape anchor is secondary execution evidence, and the first 11 generated approvals are superseded pending new three-candidate passes.
 - Replaced residual smooth-Inter overrides in all 17 generated-family Prompt DSL files with explicit Modular Technical typography roles and added a validator regression gate.

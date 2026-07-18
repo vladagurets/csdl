@@ -84,7 +84,7 @@ Delivered:
 
 Exit criterion: patterns are recognizably CSDL without depending on a logo.
 
-Exit criterion status: **met for Visual DNA Sprint 1**. The complete evidence and validation contract remains documented in [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md). Milestone 3 remains planned and has not started.
+Exit criterion status: **met for Visual DNA Sprint 1**. The complete evidence and validation contract remains documented in [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md). Milestone 3 is in progress.
 
 ## Milestone 3 — Component Library
 
@@ -109,6 +109,8 @@ Formalize the first component set:
 - Legend
 
 For each component, define purpose, semantic meaning, dimensions, allowed relations, compatible recipes, expression-level limits, do/don’t examples, and Prompt DSL syntax.
+
+Current status: all fifteen component records and Markdown specifications are complete and pass strict component-library validation. Editorial, structural, and analytical composition proofs plus deterministic index/compatibility outputs remain before the milestone exit criterion can be evaluated.
 
 Exit criterion: a composition can be described and reviewed using component vocabulary alone.
 

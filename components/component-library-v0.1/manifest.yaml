@@ -782,6 +782,72 @@ components:
     specification: specs/12-axis.md
     evidence_level: strong
 
+  - id: "13"
+    slug: pulse
+    name: Pulse
+    category: analytical
+    purpose: "Make one exact number or measure the dominant explanatory object."
+    semantic_meaning: "A bounded value whose attached label, unit, period, and provenance establish what the number means."
+    spatial_contract:
+      count: {min: 0, max: 1}
+      value_required: true
+      label_required: true
+      context_fields: [unit, period, source]
+      unsupported_inference_allowed: false
+    dimensions:
+      unit: px
+      width: {min: 122, max: 980}
+      height: {min: 44, max: 520}
+      area_percent: {min: 1, max: 18}
+    relations:
+      allowed:
+        - {type: attached_to, target: Label, direction: inbound, cardinality: one_or_many}
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: inside, target: Frame, direction: outbound, cardinality: zero_or_one}
+        - {type: orders, target: Axis, direction: inbound, cardinality: zero_or_one}
+        - {type: groups, target: Cluster, direction: inbound, cardinality: zero_or_one}
+        - {type: highlights, target: Signal, direction: inbound, cardinality: zero_or_one}
+      forbidden:
+        - {type: repeats, target: Loop, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: produces, target: Collision, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: directs, target: Vector, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: maps_to, target: Legend, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [big-number, kpi, dashboard]
+    expression_limits:
+      A: {status: allowed, max_count: 1, max_area_percent: 18}
+      B: {status: allowed, max_count: 1, max_area_percent: 18}
+      C: {status: conditional, max_count: 1, max_area_percent: 18, condition: "The value and its essential context remain short enough to preserve one unambiguous Signal peak."}
+    typography:
+      role: numeric_display
+      constraints: [modular_technical, tabular_figures, unit_stays_attached, label_remains_direct]
+    semantic_color:
+      default: ink.primary
+      signal_target_allowed: true
+      constraints: [value_or_baseline_may_carry_signal, no_second_quantity_by_color, color_not_only_carrier]
+    examples:
+      do:
+        - {description: "Use one dominant exact count with its attached label and named level context.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+        - {description: "Use the exact W4 90% value with period, success label, supporting context, and DEMO DATA provenance.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not add a gauge, invented delta, unsupported target, detached unit, or second peer metric.", evidence: patterns/visual-dna-sprint-01/specs/17-kpi.md}
+    prompt_dsl:
+      syntax: "Pulse(id=<id>, value=<value-ref>, label=<label-ref>)"
+      required_fields: [id, value, label]
+      optional_fields: [unit, period, source, signal_state]
+    validation_invariants:
+      - "A composition contains at most one Pulse."
+      - "Value, label, unit, period, and source remain exact when the evidence contract provides them."
+      - "A Pulse never implies a target, trend, delta, or interpretation absent from the content contract."
+      - "Color may reinforce the Pulse but cannot create a second quantitative meaning."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "10.1 Nouns / Pulse", supports: "Foundation meaning as one key number or measure."}
+      - {path: patterns/visual-dna-sprint-01/specs/04-big-number.md, locator: "Semantic components and Acceptance criteria", supports: "One exact value is the explanatory object and retains its label."}
+      - {path: patterns/visual-dna-sprint-01/specs/17-kpi.md, locator: "Semantic components and Canonical content", supports: "One exact operational value with period, units, supporting values, and provenance."}
+      - {path: patterns/visual-dna-sprint-01/specs/20-dashboard.md, locator: "Semantic components and Assembly order", supports: "One primary Pulse owns a bounded analytical summary."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "04 Big Number, 17 KPI, and 20 Dashboard", supports: "Accepted editorial and analytical Pulse behavior."}
+    specification: specs/13-pulse.md
+    evidence_level: strong
+
   - id: "14"
     slug: label
     name: Label
@@ -841,3 +907,68 @@ components:
       - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "09 Matrix, 17 KPI, 18 Table, 19 Chart, and 20 Dashboard", supports: "Accepted direct-label behavior and duplicate/missing-label rejections."}
     specification: specs/14-label.md
     evidence_level: strong
+
+  - id: "15"
+    slug: legend
+    name: Legend
+    category: annotation
+    purpose: "Provide a subordinate indirect key for two to four analytical categories only when direct labels cannot fit without collision or ambiguity."
+    semantic_meaning: "A conditional mapping from repeated text-and-form keys to analytical categories; never a primary signal, mechanism, or decorative palette strip."
+    spatial_contract:
+      count: {min: 0, max: 1}
+      item_count: {min: 2, max: 4}
+      direct_label_precedence: true
+      direct_label_failure_reason_required: true
+      text_and_form_per_item_required: true
+    dimensions:
+      unit: px
+      width: {min: 122, max: 612}
+      height: {min: 44, max: 320}
+      area_percent: {min: 0.5, max: 8}
+    relations:
+      allowed:
+        - {type: maps_to, target: Signal, direction: outbound, cardinality: one_or_many}
+        - {type: maps_to, target: Label, direction: outbound, cardinality: one_or_many}
+        - {type: maps_to, target: Node, direction: outbound, cardinality: one_or_many}
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: inside, target: Frame, direction: outbound, cardinality: zero_or_one}
+      forbidden:
+        - {type: highlights, target: Signal, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: orders, target: Axis, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: directs, target: Vector, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: produces, target: Collision, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: repeats, target: Loop, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [chart, dashboard]
+    expression_limits:
+      A: {status: conditional, max_count: 1, max_items: 4, condition: "Two to four analytical categories cannot be directly labeled without collision or ambiguity, and the proof records that failure."}
+      B: {status: forbidden, max_count: 0, reason: "Milestone 2 contains no accepted Level B analytical evidence for an indirect key."}
+      C: {status: forbidden, max_count: 0, reason: "A multi-item indirect key conflicts with the short single-peak Signal contract."}
+    typography:
+      role: label
+      constraints: [direct_reading_order, text_and_form_per_item, horizontal_labels, subordinate_to_data]
+    semantic_color:
+      default: ink.primary
+      signal_target_allowed: false
+      constraints: [semantic_palette_only, color_never_only_carrier, legend_never_becomes_signal]
+    examples:
+      do:
+        - {description: "Conditionally map two to four analytical categories with repeated text-and-form keys after documenting why direct labels collide.", evidence: references/canonical/foundation-patterns-v0.1.png}
+      dont:
+        - {description: "Do not add a Legend to the accepted single-series Chart; its four points are directly labeled and no indirect key is needed.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+    prompt_dsl:
+      syntax: "Legend(id=<id>, items=<mapping-items>, reason_direct_labels_fail=<reason>)"
+      required_fields: [id, items, reason_direct_labels_fail]
+      optional_fields: [placement, order]
+    validation_invariants:
+      - "A Legend contains two to four category mappings and no free decorative swatches."
+      - "Every item combines readable text with a distinct semantic form; color alone is insufficient."
+      - "The composition records why direct labels would collide or remain ambiguous."
+      - "A Legend remains subordinate and cannot carry the dominant Signal."
+      - "Current accepted single-series Chart and Dashboard evidence does not require a Legend; no canonical use is claimed."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "7 Analytical Mode", supports: "Direct labels are preferred over legends; an indirect key is therefore exceptional."}
+      - {path: patterns/visual-dna-sprint-01/specs/19-chart.md, locator: "Assembly order and Hard exclusions", supports: "Accepted single-series analytical evidence uses direct point labels and no legend."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "19 Chart — generated example accepted", supports: "Canonical Chart explicitly contains no legend or extra series."}
+      - {path: references/canonical/foundation-patterns-v0.1.png, locator: "palette key strip", supports: "Primary-authority construction calibration for text-and-form key appearance only; not family-use evidence."}
+    specification: specs/15-legend.md
+    evidence_level: constrained
