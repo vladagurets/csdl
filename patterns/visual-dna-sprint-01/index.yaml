@@ -196,7 +196,10 @@ families:
   - B
   evidence_mode: generated
   canonical_example: canonical/light/16x9/15-decision-tree.png
-  status: awaiting_generation
+  sha256: d66ea7a0837cd0dc38ffeaf6ff168758d6be20bfc5ee385f19fbff6a57cfa1bd
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: '16'
   slug: framework
   name: Framework
