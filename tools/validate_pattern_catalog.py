@@ -25,6 +25,79 @@ def _contains_token(text: str, token: str) -> bool:
     return re.search(rf"\b{re.escape(token)}\b", text, flags=re.IGNORECASE) is not None
 
 
+def _reference_paths(entries: Any, errors: list[str], label: str) -> list[str]:
+    if not isinstance(entries, list):
+        errors.append(f"{label} must be a list")
+        return []
+    paths: list[str] = []
+    for index, entry in enumerate(entries, start=1):
+        if not isinstance(entry, dict):
+            errors.append(f"{label} entry {index} must be a mapping")
+            continue
+        path = entry.get("path")
+        role = entry.get("role")
+        if not isinstance(path, str) or not path:
+            errors.append(f"{label} entry {index} must define path")
+            continue
+        if not isinstance(role, str) or not role:
+            errors.append(f"{label} entry {index} must define role")
+        paths.append(path)
+    return paths
+
+
+def _validate_visual_authority(
+    root: Path,
+    catalog: dict[str, Any],
+    schema: dict[str, Any],
+    errors: list[str],
+) -> dict[str, Any]:
+    rules = schema.get("reference_authority_rules", {})
+    expected_catalog_path = rules.get("catalog_path")
+    authority_relative = catalog.get("visual_authority")
+    if authority_relative != expected_catalog_path:
+        errors.append(f"catalog.visual_authority must equal {expected_catalog_path}")
+        return {}
+
+    authority_path = root / str(authority_relative)
+    if not authority_path.exists():
+        errors.append(f"missing visual authority package: {authority_relative}")
+        return {}
+    authority = _load_yaml(authority_path, errors, "visual-authority.yaml")
+    if not authority:
+        return {}
+
+    primary = _reference_paths(authority.get("primary_visual_authority"), errors, "primary_visual_authority")
+    secondary = _reference_paths(
+        authority.get("secondary_execution_reference"),
+        errors,
+        "secondary_execution_reference",
+    )
+    expected_primary = rules.get("primary", [])
+    expected_secondary = rules.get("secondary", [])
+    if primary != expected_primary:
+        errors.append("primary visual authority paths must match schema order")
+    if secondary != expected_secondary:
+        errors.append("secondary execution reference paths must match schema order")
+    if catalog.get("style_anchor") not in secondary:
+        errors.append("catalog.style_anchor must be the secondary execution reference")
+
+    repository_root = root.parents[1]
+    for reference in primary + secondary:
+        if not (repository_root / reference).exists():
+            errors.append(f"missing visual authority reference: {reference}")
+
+    generation = authority.get("generation_contract", {})
+    if generation.get("attachment_order") != primary + secondary:
+        errors.append("visual authority attachment_order must equal primary then secondary references")
+    if generation.get("candidate_count") != 3 or generation.get("independent_calls") is not True:
+        errors.append("visual authority generation contract must require three independent calls")
+
+    actual_gates = authority.get("review_contract", {}).get("required_gates")
+    if actual_gates != rules.get("required_review_gates"):
+        errors.append("visual authority review gates must match schema")
+    return authority
+
+
 def validate_pattern_catalog(path: Path) -> list[str]:
     errors: list[str] = []
     root = path.parent
@@ -50,6 +123,7 @@ def validate_pattern_catalog(path: Path) -> list[str]:
         errors.append("catalog.orientation must equal landscape")
     if catalog.get("family_count") != 20:
         errors.append("catalog.family_count must equal 20")
+    _validate_visual_authority(root, catalog, schema, errors)
     if not isinstance(families, list) or len(families) != 20:
         errors.append("families must contain exactly 20 entries")
         return errors
@@ -133,8 +207,11 @@ def validate_pattern_catalog(path: Path) -> list[str]:
             canvas = prompt_data.get("canvas", {})
             if canvas.get("size") != "1920x1080" or canvas.get("orientation") != "landscape":
                 errors.append(f"family {family_id} prompt canvas must be 1920x1080 landscape")
-            if prompt_data.get("reference") != catalog.get("style_anchor"):
-                errors.append(f"family {family_id} prompt must use catalog style anchor")
+            expected_authority = schema.get("reference_authority_rules", {}).get("prompt_path")
+            if prompt_data.get("visual_authority") != expected_authority:
+                errors.append(f"family {family_id} prompt must use the catalog visual authority package")
+            if "reference" in prompt_data:
+                errors.append(f"family {family_id} prompt must not use a single legacy reference")
             for token in forbidden:
                 if _contains_token(prompt_text, str(token)):
                     errors.append(f"family {family_id} prompt contains forbidden placeholder: {token}")

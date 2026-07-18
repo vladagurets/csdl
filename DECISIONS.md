@@ -1,6 +1,6 @@
 # CSDL Decision Register
 
-**Last reviewed:** 2026-07-17  
+**Last reviewed:** 2026-07-18
 **Change rule:** a locked decision changes only after explicit user approval. Update this file, the foundation spec, and the changelog in the same pull request.
 
 ## Locked decisions
@@ -34,6 +34,7 @@
 | D-025 | Only approved references and final assets are committed; drafts are ignored. | Keeps the repository useful to Codex without turning Git history into an uncontrolled image dump. |
 | D-026 | Pilot 01 uses the newly selected 16:9 GPT Image 2 Ukrainian/Inter style anchor; all portrait and pixel-font anchors are superseded. | Aligns the shared reference with the landscape-first contract and verified Ukrainian rendering without prematurely locking the final licensed font family. |
 | D-027 | Pilot 01 restarts from Task 1 under the 16:9-first contract; previous 4:5 rasters and their review evidence are non-canonical. | The canvas change affects composition, validation, review scale, and release scope, so the pilot must be evaluated as a new landscape series. |
+| D-028 | Visual DNA generation uses the three boards in `references/canonical/` as the **primary visual authority**; the Pilot 01 `style-anchor-light.png` is a **secondary execution reference** for 16:9 composition, Ukrainian text fidelity, warm paper, and Quiet spacing. | The user-approved rebaseline restores Modular Technical typography, semantic component grammar, asymmetry, strong Anchor/Plane relationships, and calibrated A/B/C identity that a single quiet slide anchor cannot carry alone. Primary authority governs visual language when the references conflict; the `1920×1080` output contract and the ban on restoring superseded 4:5 Pilot rasters remain locked. |
 
 ## Deferred decisions
 

@@ -7,6 +7,7 @@ required_catalog_fields:
   - canvas
   - orientation
   - style_anchor
+  - visual_authority
   - family_count
   - canonical_distribution
 required_family_fields:
@@ -61,6 +62,20 @@ path_rules:
   specification: "specs/{id}-{slug}.md"
   prompt: "prompts/{id}-{slug}.yaml"
   generated_asset: "canonical/light/16x9/{id}-{slug}.png"
+reference_authority_rules:
+  catalog_path: visual-authority.yaml
+  prompt_path: patterns/visual-dna-sprint-01/visual-authority.yaml
+  primary:
+    - references/canonical/foundation-patterns-v0.1.png
+    - references/canonical/pilot-01-quiet-visual-plan-v0.1.png
+    - references/canonical/quiet-modular-a-b-c-calibration.png
+  secondary:
+    - pilots/01-agentic-discipline/references/style-anchor-light.png
+  required_review_gates:
+    - full_series_contact_sheet
+    - primary_authority_comparison
+    - modular_technical_display
+    - csdl_identity_without_logo
 evidence_rules:
   pilot_reference:
     candidate_generation_required: false
