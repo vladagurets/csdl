@@ -1,0 +1,368 @@
+library: night-mode-v0.1
+version: 0.1.0
+calculation:
+  colorspace: sRGB
+  method: WCAG-2.2-relative-luminance
+  formula: (L1 + 0.05) / (L2 + 0.05)
+  threshold_rounding_allowed: false
+profiles:
+- profile: light
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  pairings:
+  - kind: text
+    foreground: ink.primary
+    background: background.base
+    ratio: 15.831973
+    minimum: 4.5
+    passes: true
+  - kind: text
+    foreground: ink.secondary
+    background: background.base
+    ratio: 6.949226
+    minimum: 4.5
+    passes: true
+  - kind: text
+    foreground: ink.primary
+    background: surface.raised
+    ratio: 16.51605
+    minimum: 4.5
+    passes: true
+  - kind: text
+    foreground: ink.secondary
+    background: surface.raised
+    ratio: 7.249492
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: line.strong
+    background: background.base
+    ratio: 3.439168
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: line.strong
+    background: surface.raised
+    ratio: 3.58777
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.primary
+    background: background.base
+    ratio: 3.615464
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.data
+    background: background.base
+    ratio: 5.159132
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.attention
+    background: background.base
+    ratio: 3.64487
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.positive
+    background: background.base
+    ratio: 3.45449
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.error
+    background: background.base
+    ratio: 4.537794
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: state.focus
+    background: background.base
+    ratio: 5.159132
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: state.selection
+    background: background.base
+    ratio: 3.615464
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: data.missing
+    background: background.base
+    ratio: 3.439168
+    minimum: 3.0
+    passes: true
+- profile: night
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  pairings:
+  - kind: text
+    foreground: ink.primary
+    background: background.base
+    ratio: 14.83038
+    minimum: 4.5
+    passes: true
+  - kind: text
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.616066
+    minimum: 4.5
+    passes: true
+  - kind: text
+    foreground: ink.primary
+    background: surface.raised
+    ratio: 12.986577
+    minimum: 4.5
+    passes: true
+  - kind: text
+    foreground: ink.secondary
+    background: surface.raised
+    ratio: 7.544864
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: line.strong
+    background: background.base
+    ratio: 3.771182
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: line.strong
+    background: surface.raised
+    ratio: 3.302326
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.primary
+    background: background.base
+    ratio: 5.515814
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.data
+    background: background.base
+    ratio: 6.26915
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.attention
+    background: background.base
+    ratio: 8.783324
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.positive
+    background: background.base
+    ratio: 6.364841
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.error
+    background: background.base
+    ratio: 6.330714
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: state.focus
+    background: background.base
+    ratio: 8.783324
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: state.selection
+    background: background.base
+    ratio: 5.515814
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: data.missing
+    background: background.base
+    ratio: 3.771182
+    minimum: 3.0
+    passes: true
+- profile: monochrome
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  pairings:
+  - kind: text
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - kind: text
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.152265
+    minimum: 4.5
+    passes: true
+  - kind: text
+    foreground: ink.primary
+    background: surface.raised
+    ratio: 18.883061
+    minimum: 4.5
+    passes: true
+  - kind: text
+    foreground: ink.secondary
+    background: surface.raised
+    ratio: 8.882284
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: line.strong
+    background: background.base
+    ratio: 4.484049
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: line.strong
+    background: surface.raised
+    ratio: 4.885587
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.primary
+    background: background.base
+    ratio: 11.608426
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.data
+    background: background.base
+    ratio: 8.152265
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.attention
+    background: background.base
+    ratio: 5.378227
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.positive
+    background: background.base
+    ratio: 7.425309
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: signal.error
+    background: background.base
+    ratio: 13.544309
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: state.focus
+    background: background.base
+    ratio: 11.608426
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: state.selection
+    background: background.base
+    ratio: 8.152265
+    minimum: 3.0
+    passes: true
+  - kind: non_text
+    foreground: data.missing
+    background: background.base
+    ratio: 4.484049
+    minimum: 3.0
+    passes: true
+- profile: projector
+  thresholds:
+    minimum_text_contrast: 7.0
+    minimum_non_text_contrast: 4.5
+    critical_stroke_px: 3
+  pairings:
+  - kind: text
+    foreground: ink.primary
+    background: background.base
+    ratio: 18.924145
+    minimum: 7.0
+    passes: true
+  - kind: text
+    foreground: ink.secondary
+    background: background.base
+    ratio: 14.776883
+    minimum: 7.0
+    passes: true
+  - kind: text
+    foreground: ink.primary
+    background: surface.raised
+    ratio: 16.169473
+    minimum: 7.0
+    passes: true
+  - kind: text
+    foreground: ink.secondary
+    background: surface.raised
+    ratio: 12.625902
+    minimum: 7.0
+    passes: true
+  - kind: non_text
+    foreground: line.strong
+    background: background.base
+    ratio: 6.749762
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: line.strong
+    background: surface.raised
+    ratio: 5.76724
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: signal.primary
+    background: background.base
+    ratio: 7.910858
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: signal.data
+    background: background.base
+    ratio: 11.059456
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: signal.attention
+    background: background.base
+    ratio: 12.567716
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: signal.positive
+    background: background.base
+    ratio: 11.399698
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: signal.error
+    background: background.base
+    ratio: 9.261084
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: state.focus
+    background: background.base
+    ratio: 12.567716
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: state.selection
+    background: background.base
+    ratio: 7.910858
+    minimum: 4.5
+    passes: true
+  - kind: non_text
+    foreground: data.missing
+    background: background.base
+    ratio: 6.749762
+    minimum: 4.5
+    passes: true
