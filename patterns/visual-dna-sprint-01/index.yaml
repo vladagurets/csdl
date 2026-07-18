@@ -245,7 +245,10 @@ families:
   - A
   evidence_mode: generated
   canonical_example: canonical/light/16x9/19-chart.png
-  status: awaiting_generation
+  sha256: 960de9940e24adf915c8c69a4037cfba2b7325d8be14e8dddee7fc13bd8ce8cb
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: '20'
   slug: dashboard
   name: Dashboard
