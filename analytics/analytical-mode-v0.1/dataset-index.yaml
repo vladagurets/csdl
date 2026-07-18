@@ -1,0 +1,83 @@
+library: analytical-mode-v0.1
+version: 0.1.0
+datasets:
+- id: bar-variance-v1
+  version: 1.0.0
+  title: Quarterly operating variance
+  status: synthetic_fixed_data
+  path: datasets/01-bar-positive-negative.yaml
+  record_count: 4
+  field_count: 2
+  source: CSDL Milestone 5 synthetic fixture
+- id: line-forecast-v1
+  version: 1.0.0
+  title: Observed and forecast success rate
+  status: synthetic_fixed_data
+  path: datasets/02-line-forecast.yaml
+  record_count: 6
+  field_count: 5
+  source: CSDL Milestone 5 synthetic fixture
+- id: scatter-operations-v1
+  version: 1.0.0
+  title: Review latency and success rate
+  status: synthetic_fixed_data
+  path: datasets/03-scatter.yaml
+  record_count: 4
+  field_count: 5
+  source: CSDL Milestone 5 synthetic fixture
+- id: waterfall-reconciliation-v1
+  version: 1.0.0
+  title: Reliability score reconciliation
+  status: synthetic_fixed_data
+  path: datasets/04-waterfall.yaml
+  record_count: 5
+  field_count: 4
+  source: CSDL Milestone 5 synthetic fixture
+- id: heatmap-reliability-v1
+  version: 1.0.0
+  title: Reliability by team and week
+  status: synthetic_fixed_data
+  path: datasets/05-heatmap.yaml
+  record_count: 6
+  field_count: 3
+  source: CSDL Milestone 5 synthetic fixture
+- id: funnel-conversion-v1
+  version: 1.0.0
+  title: Agent adoption funnel
+  status: synthetic_fixed_data
+  path: datasets/06-funnel.yaml
+  record_count: 4
+  field_count: 2
+  source: CSDL Milestone 5 synthetic fixture
+- id: map-incident-rate-v1
+  version: 1.0.0
+  title: Incidents per 100,000 runs by region
+  status: synthetic_fixed_data
+  path: datasets/07-map.yaml
+  record_count: 3
+  field_count: 4
+  source: CSDL Milestone 5 synthetic fixture using ISO 3166-2 identifiers
+- id: network-dependency-v1
+  version: 1.0.0
+  title: Agent dependency network
+  status: synthetic_fixed_data
+  path: datasets/08-network.yaml
+  record_count: 6
+  field_count: 6
+  source: CSDL Milestone 5 synthetic fixture
+- id: table-quarterly-v1
+  version: 1.0.0
+  title: Quarterly product metrics
+  status: synthetic_fixed_data
+  path: datasets/09-table.yaml
+  record_count: 4
+  field_count: 4
+  source: CSDL Milestone 5 synthetic fixture
+- id: dashboard-agent-reliability-v1
+  version: 1.0.0
+  title: Agent reliability dashboard source
+  status: fixed_demo_data
+  path: datasets/10-dashboard.yaml
+  record_count: 4
+  field_count: 5
+  source: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
