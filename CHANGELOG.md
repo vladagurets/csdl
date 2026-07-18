@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Started Milestone 7 with a repository-grounded publication evidence audit, observable acceptance contract, format evaluation, and D-033 additive A4-landscape architecture; the 16:9 presentation master remains unchanged.
+- Added the bilingual 32-page Cookbook and Design Book v1.0 source package with canonical per-page Markdown, protected English terminology registry, page/source provenance map, complete fifteen-component and 23-recipe coverage, Prompt DSL v0.5 example, Analytical Mode, Accessibility, why/do/don’t guidance, and publishing preflight.
+- Added deterministic assembled Markdown/index and Pillow/PyYAML-only A4 PDF tooling with an extractable Unicode text layer, color/grayscale page renders, a 3840×2160 contact sheet, fixed metadata, font-build provenance, accepted-evidence embedding, and a sixty-raster hash gate without new CSDL raster generation.
+- Added strict publication validation, twelve exact-error negative fixtures, focused two-build tests, CI rebuild/validation/drift checks, and persisted full-page/contact-sheet/text-layer/grayscale review evidence. Milestone 7 remains integration pending until its green merge-commit PR lands.
 - Completed Milestone 6 — Night Mode and Accessibility v0.1 through green integration PR #67 and merge commit `29b265c9d0099980c89d4ccd3926b675fdc8c82d`; all deterministic proofs, strict gates, dependency invariants, and sixty accepted-raster hashes pass, with visual calibration still explicitly deferred.
 - Started Milestone 6 — Night Mode and Accessibility v0.1 with a repository-grounded evidence audit, WCAG 2.2 contrast baseline, acceptance contract, dependency-aware packet plan, and D-032 independent-extension decision; Prompt DSL v0.5, D-029, D-030, D-031, and accepted rasters remain unchanged.
 - Added the Night Mode and Accessibility v0.1 canonical specification, manifest, versioned token/proof schemas, calibrated light/night/monochrome/projector token mappings, contrast/fallback/compatibility contracts, and tested incomplete-mode validation.
