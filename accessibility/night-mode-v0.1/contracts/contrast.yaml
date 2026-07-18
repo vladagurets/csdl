@@ -1,0 +1,35 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-contrast-contract
+calculation:
+  colorspace: sRGB
+  method: WCAG-2.2-relative-luminance
+  formula: "(L1 + 0.05) / (L2 + 0.05)"
+  threshold_rounding_allowed: false
+profiles:
+  light: {minimum_text_contrast: 4.5, minimum_non_text_contrast: 3.0, critical_stroke_px: 2}
+  night: {minimum_text_contrast: 4.5, minimum_non_text_contrast: 3.0, critical_stroke_px: 2}
+  monochrome: {minimum_text_contrast: 4.5, minimum_non_text_contrast: 3.0, critical_stroke_px: 2}
+  projector: {minimum_text_contrast: 7.0, minimum_non_text_contrast: 4.5, critical_stroke_px: 3}
+focus:
+  minimum_change_contrast: 3.0
+  minimum_perimeter_css_px: 2
+  equivalent_area_allowed: true
+raised_surface:
+  fill_contrast_may_be_subthreshold: true
+  meaningful_boundary_requires: [line.strong, boundary]
+signal_text:
+  default_foreground: ink.primary
+  neutral_label_required_unless_pairing_is_declared: true
+  signal_area_does_not_relax_text_contrast: true
+prohibited_pairings:
+  - {foreground: line.subtle, background: background.base, use: meaningful_graphic}
+  - {foreground: neutral.fill, background: background.base, use: meaningful_graphic}
+  - {foreground: signal.primary, background: background.base, use: normal_text}
+  - {foreground: signal.attention, background: background.base, use: normal_text}
+  - {foreground: signal.positive, background: background.base, use: normal_text}
+  - {foreground: surface.raised, background: background.base, use: semantic_boundary_without_line}
+standards:
+  - https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
+  - https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html
+  - https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html

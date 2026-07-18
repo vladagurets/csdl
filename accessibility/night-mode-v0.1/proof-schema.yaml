@@ -1,0 +1,63 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-proof-schema
+source_kind: accessibility-proof-source
+package_kind: accessibility-package
+required_source_fields:
+  - language
+  - version
+  - kind
+  - id
+  - scenario
+  - source_reference
+  - profiles
+  - text_elements
+  - graphical_objects
+  - semantic_encodings
+  - output
+required_package_fields:
+  - language
+  - version
+  - kind
+  - id
+  - scenario
+  - source_reference
+  - semantic_source_digest
+  - profiles
+  - text_elements
+  - graphical_objects
+  - semantic_encodings
+  - output
+  - provenance
+forbidden_keys: [layout, coordinates, x, y, row, column, grid, zone, zones, panel, panels]
+redundant_carriers:
+  - direct_label
+  - shape
+  - line_style
+  - pattern
+  - stroke_weight
+  - arrowhead
+  - boundary
+  - position_from_zero
+  - numeric_label
+  - status_text
+  - interval_boundary
+  - missing_label
+semantic_meanings:
+  - signal
+  - focus
+  - selection
+  - error
+  - positive
+  - attention
+  - data
+  - category
+  - missing
+  - uncertainty
+  - observed
+  - forecast
+  - direction
+  - weight
+text_roles: [display, body, label, metadata, code, axis, unit, source]
+graphical_roles: [surface_boundary, rule, axis, node, interval, region, cell, edge, signal, focus, selection]
+evidence_values: [accepted_light_raster, deterministic_specification]

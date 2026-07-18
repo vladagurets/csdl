@@ -1,0 +1,27 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-token-schema
+profiles: [light, night, monochrome, projector]
+required_profile_fields: [description, colorspace, thresholds, stroke_widths, tokens, allowed_pairings]
+required_token_roles:
+  - background.base
+  - surface.raised
+  - ink.primary
+  - ink.secondary
+  - ink.inverse
+  - neutral.fill
+  - line.subtle
+  - line.strong
+  - signal.primary
+  - signal.data
+  - signal.attention
+  - signal.positive
+  - signal.error
+  - state.focus
+  - state.selection
+  - data.missing
+token_format: "^#[0-9A-F]{6}$"
+text_roles: [display, body, label, metadata, code, axis, unit, source]
+pairing_kinds: [text, non_text]
+colorspace: sRGB
+canvas: 1920x1080
