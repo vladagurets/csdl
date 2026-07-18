@@ -1,0 +1,148 @@
+language: CSDL
+version: '0.5'
+kind: generation-package
+id: migration-comparison
+recipe:
+  id: '005'
+  slug: comparison
+  version: 0.5.0
+semantic_intent:
+  problem: Compare two systems without implying conflict unless conflict is the content.
+  scenario: approach comparison
+  main_idea: ДВА МЕХАНІЗМИ ДИСЦИПЛІНИ
+  mechanism: comparison-mechanism
+content:
+  source: pilots/01-agentic-discipline/prompts/04-comparison.yaml
+  bindings:
+    headline: ДВА МЕХАНІЗМИ ДИСЦИПЛІНИ
+    supporting_copy: Superpowers дисциплінує поточну роботу. Compound Engineering
+      робить наступний цикл легшим.
+    left:
+    - SUPERPOWERS
+    - Skills за контекстом
+    - Gated workflow
+    - TDD + review
+    right:
+    - COMPOUND ENGINEERING
+    - Plan + work + review
+    - Capture learnings
+    - Easier next cycle
+component_instances:
+- id: anchor-1
+  component: Anchor
+  role: primary
+  content:
+    binding: headline
+- id: anchor-2
+  component: Anchor
+  role: peer
+  content:
+    binding: headline
+- id: field-1
+  component: Field
+  role: field
+  content:
+    binding: headline
+- id: field-2
+  component: Field
+  role: field
+  content:
+    binding: headline
+- id: divider
+  component: Divider
+  role: divider
+  content:
+    binding: headline
+  attributes:
+    subjects:
+    - field-1
+    - field-2
+- id: signal
+  component: Signal
+  role: dominant
+  content:
+    binding: headline
+  attributes:
+    target: anchor-2
+relations:
+- subject: field-1
+  type: contains
+  object: anchor-1
+- subject: field-2
+  type: contains
+  object: anchor-2
+- subject: divider
+  type: separates
+  object: field-1
+- subject: divider
+  type: separates
+  object: field-2
+- subject: signal
+  type: highlights
+  object: anchor-2
+generation_constraints:
+  expression: A
+  density: medium
+  canvas:
+    ratio: '16:9'
+    width: 1920
+    height: 1080
+    orientation: landscape
+    safe_margin_horizontal: 96
+    safe_margin_vertical: 72
+  presentation:
+    reading_path: left_to_right
+    one_main_idea: true
+    one_visual_mechanism: true
+    one_dominant_signal: true
+    negative_space_percent:
+      min: 50
+      max: 75
+  typography:
+    display: modular_technical
+    body: neutral_sans
+    code: technical_mono
+    all_text_horizontal: true
+    max_typographic_tricks: 1
+  palette:
+    mode: light
+    background: paper.base
+    ink: ink.primary
+    primary_signal: signal.primary
+  output:
+    format: PNG
+    exact_size: 1920x1080
+    content_accuracy: exact
+  hard_exclusions:
+  - extra text
+  - logos or repeated footers
+  - UI chrome or decorative card shells
+  - decorative coordinates or random dot fields
+  - gradients, shadows, glossy surfaces, or 3D
+  - political, Soviet, or revolutionary-poster styling
+  - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+  - exact_copy
+  - complementary_not_adversarial
+  - repeated_colored_bullets
+  - no_extra_text
+  - Container or ad hoc layout and geometry primitives
+provenance:
+  recipe_evidence: specs/005-comparison.md
+  source_outline: pilots/01-agentic-discipline/prompts/04-comparison.yaml
+  source_prompt: pilots/01-agentic-discipline/prompts/04-comparison.yaml
+  migration:
+    id: prompt-dsl-v0.1-to-v0.5
+    source_version: '0.1'
+    target_version: '0.5'
+    normalized_fields:
+    - recipe
+    - copy_or_content
+    - component_instances
+    - relations
+    - generation_constraints
+    discarded_legacy_fields:
+    - reference
+    - composition
+    - components
+    - palette
+    - constraints

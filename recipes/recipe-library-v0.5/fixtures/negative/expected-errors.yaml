@@ -1,0 +1,13 @@
+fixtures:
+- file: 01-layout.yaml
+  error: 'package contains forbidden composition key: layout'
+- file: 02-unknown-component.yaml
+  error: 'package instance 1 component is not public: Container'
+- file: 03-forbidden-relation.yaml
+  error: package relation 1 is not allowed by component contracts
+- file: 04-unsupported-combination.yaml
+  error: package instance 5 component is unsupported by recipe big-number
+- file: 05-copy-mutation.yaml
+  error: package content must match source outline exactly
+- file: 06-analytical-distortion.yaml
+  error: package quantitative values must match fixed dataset

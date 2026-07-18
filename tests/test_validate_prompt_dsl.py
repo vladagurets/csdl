@@ -27,6 +27,10 @@ def test_incomplete_mode_accepts_empty_proof_directory() -> None:
     assert validate_prompt_package(None, LIBRARY, require_complete=False) == []
 
 
+def test_strict_library_requires_canonical_proof_packages() -> None:
+    assert validate_prompt_package(None, LIBRARY) == []
+
+
 def test_schema_separates_five_required_concerns() -> None:
     schema = yaml.safe_load(
         (LIBRARY / "prompt-dsl-v0.5.schema.yaml").read_text(encoding="utf-8")

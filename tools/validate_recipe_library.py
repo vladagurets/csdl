@@ -368,6 +368,7 @@ def validate_recipe_library(path: Path, require_complete: bool = True) -> list[s
         "markdown_authority": True,
         "recipe_count": 23,
         "schema": "schema.yaml",
+        "outline_schema": "outline-schema.yaml",
         "prompt_dsl_schema": "prompt-dsl-v0.5.schema.yaml",
         "migration": "migration-v0.1-to-v0.5.yaml",
         "index": "index.yaml",

@@ -61,7 +61,7 @@ Reveal one quantitative trend without distorting its scale or adding decorative 
 ## Content contract
 
 - Required bindings: `headline`, `series`, `points`, `source_label`.
-- Optional bindings: none.
+- Optional bindings: `quantitative_contract`.
 - Copy/data is exact, order-preserving, and limited to 140 words or atomic values.
 - Data contract: `patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml`.
 

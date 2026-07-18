@@ -1,0 +1,11 @@
+id: proof-editorial-big-number
+scenario: count
+main_idea: "Three expression levels create one controlled series rhythm."
+expression: A
+density: low
+content_source: patterns/visual-dna-sprint-01/manifest.yaml#family-04
+source_outline: recipes/recipe-library-v0.5/proofs/outlines/01-editorial.yaml
+content:
+  value: "3"
+  label: "РІВНІ ВИРАЗНОСТІ"
+  supporting_copy: "QUIET · CONSTRUCTIVE · SIGNAL"
