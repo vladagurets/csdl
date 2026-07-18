@@ -1,0 +1,88 @@
+publication:
+  id: csdl-cookbook-design-book-v1.0
+  title: CSDL Cookbook and Design Book v1.0
+  version: 1.0.0
+  milestone: 7
+  status: integration-candidate
+  public_release: false
+  markdown_authority: true
+  page_count: 32
+  editorial_language: uk
+  terminology_language: en
+  format:
+    name: ISO A4 landscape
+    width_mm: 297
+    height_mm: 210
+    pdf_width_pt: 841.8898
+    pdf_height_pt: 595.2756
+    render_width_px: 1684
+    render_height_px: 1191
+    color_space: sRGB
+  build:
+    builder: tools/build_design_book.py
+    validator: tools/validate_design_book.py
+    assembled_markdown: generated/csdl-cookbook-design-book-v1.0.md
+    index: generated/index.yaml
+    pdf: output/pdf/csdl-cookbook-design-book-v1.0.pdf
+    contact_sheet: output/contact-sheet.png
+    extracted_text: output/extracted-text.txt
+    report: output/build-report.yaml
+    deterministic: true
+  terminology: terminology.yaml
+  provenance: provenance.yaml
+  accepted_raster_inventory: accessibility/night-mode-v0.1/evaluation/raster-hashes.yaml
+  component_manifest: components/component-library-v0.1/manifest.yaml
+  recipe_manifest: recipes/recipe-library-v0.5/manifest.yaml
+  prompt_dsl_schema: recipes/recipe-library-v0.5/prompt-dsl-v0.5.schema.yaml
+  analytical_manifest: analytics/analytical-mode-v0.1/manifest.yaml
+  accessibility_manifest: accessibility/night-mode-v0.1/manifest.yaml
+required_topics:
+  - philosophy
+  - constructive-signal
+  - quiet-modular
+  - expression-levels
+  - semantic-color
+  - typography
+  - visual-grammar
+  - components
+  - recipes
+  - prompt-dsl-v0.5
+  - analytical-mode-v0.1
+  - accessibility
+  - reference-hierarchy
+  - provenance
+  - why-do-dont
+  - publishing-preflight
+pages:
+  - {id: '01', source: pages/01-cover.md, section: opening, kind: cover, topics: [philosophy]}
+  - {id: '02', source: pages/02-how-to-use.md, section: opening, kind: guide, topics: [provenance]}
+  - {id: '03', source: pages/03-philosophy.md, section: foundations, kind: editorial, topics: [philosophy, constructive-signal]}
+  - {id: '04', source: pages/04-quiet-modular.md, section: foundations, kind: editorial, topics: [quiet-modular]}
+  - {id: '05', source: pages/05-expression-levels.md, section: foundations, kind: comparison, topics: [expression-levels], evidence_image: references/canonical/quiet-modular-a-b-c-calibration.png}
+  - {id: '06', source: pages/06-canvas-rhythm.md, section: foundations, kind: rules, topics: [expression-levels]}
+  - {id: '07', source: pages/07-semantic-color.md, section: foundations, kind: tokens, topics: [semantic-color, accessibility]}
+  - {id: '08', source: pages/08-typography.md, section: foundations, kind: typography, topics: [typography]}
+  - {id: '09', source: pages/09-visual-grammar.md, section: grammar, kind: grammar, topics: [visual-grammar]}
+  - {id: '10', source: pages/10-components-01-03.md, section: components, kind: catalog, topics: [components]}
+  - {id: '11', source: pages/11-components-04-06.md, section: components, kind: catalog, topics: [components]}
+  - {id: '12', source: pages/12-components-07-09.md, section: components, kind: catalog, topics: [components]}
+  - {id: '13', source: pages/13-components-10-12.md, section: components, kind: catalog, topics: [components]}
+  - {id: '14', source: pages/14-components-13-15.md, section: components, kind: catalog, topics: [components, accessibility]}
+  - {id: '15', source: pages/15-relations.md, section: grammar, kind: relations, topics: [visual-grammar, why-do-dont]}
+  - {id: '16', source: pages/16-recipes-001-004.md, section: recipes, kind: catalog, topics: [recipes], evidence_image: patterns/visual-dna-sprint-01/previews/landscape/01-hero.png}
+  - {id: '17', source: pages/17-recipes-005-007.md, section: recipes, kind: catalog, topics: [recipes], evidence_image: patterns/visual-dna-sprint-01/previews/landscape/05-comparison.png}
+  - {id: '18', source: pages/18-recipes-008-011.md, section: recipes, kind: catalog, topics: [recipes]}
+  - {id: '19', source: pages/19-recipes-012-016.md, section: recipes, kind: catalog, topics: [recipes], evidence_image: patterns/visual-dna-sprint-01/previews/landscape/12-workflow.png}
+  - {id: '20', source: pages/20-recipes-017-020.md, section: recipes, kind: catalog, topics: [recipes, analytical-mode-v0.1], evidence_image: patterns/visual-dna-sprint-01/previews/landscape/19-chart.png}
+  - {id: '21', source: pages/21-recipes-021-023.md, section: recipes, kind: catalog, topics: [recipes]}
+  - {id: '22', source: pages/22-recipe-selection.md, section: recipes, kind: workflow, topics: [recipes, why-do-dont]}
+  - {id: '23', source: pages/23-prompt-dsl-anatomy.md, section: prompt-dsl, kind: schema, topics: [prompt-dsl-v0.5]}
+  - {id: '24', source: pages/24-prompt-dsl-example.md, section: prompt-dsl, kind: code, topics: [prompt-dsl-v0.5]}
+  - {id: '25', source: pages/25-analytical-principles.md, section: analytical, kind: rules, topics: [analytical-mode-v0.1]}
+  - {id: '26', source: pages/26-analytical-families.md, section: analytical, kind: catalog, topics: [analytical-mode-v0.1], evidence_image: patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-analytical.png}
+  - {id: '27', source: pages/27-accessibility-profiles.md, section: accessibility, kind: profiles, topics: [accessibility, semantic-color]}
+  - {id: '28', source: pages/28-accessibility-meaning.md, section: accessibility, kind: rules, topics: [accessibility, why-do-dont]}
+  - {id: '29', source: pages/29-reference-provenance.md, section: evidence, kind: provenance, topics: [reference-hierarchy, provenance], evidence_image: references/canonical/foundation-patterns-v0.1.png}
+  - {id: '30', source: pages/30-authoring-workflow.md, section: practice, kind: workflow, topics: [why-do-dont, prompt-dsl-v0.5]}
+  - {id: '31', source: pages/31-why-do-dont.md, section: practice, kind: comparison, topics: [why-do-dont]}
+  - {id: '32', source: pages/32-preflight.md, section: practice, kind: checklist, topics: [publishing-preflight]}

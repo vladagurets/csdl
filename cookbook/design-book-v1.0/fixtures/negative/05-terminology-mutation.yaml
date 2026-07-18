@@ -1,0 +1,4 @@
+mutation:
+  document: terminology
+  path: [registry, canonical_identifiers_are_translated]
+  value: true

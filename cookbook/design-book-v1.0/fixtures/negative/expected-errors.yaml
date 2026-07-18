@@ -1,0 +1,13 @@
+fixtures:
+  01-unknown-component.yaml: "terminology component registry must match D-029 exactly"
+  02-unknown-recipe.yaml: "terminology recipe registry must match D-030 exactly"
+  03-prompt-dsl-drift.yaml: "Prompt DSL package fields must match v0.5 exactly"
+  04-missing-language.yaml: "page 03 must declare Ukrainian editorial language"
+  05-terminology-mutation.yaml: "canonical identifiers must not be translated"
+  06-broken-source.yaml: "provenance source does not exist: missing/canonical-source.md"
+  07-changed-raster-hash.yaml: "accepted raster hash changed"
+  08-page-count.yaml: "publication page_count must be between 25 and 40"
+  09-missing-required-section.yaml: "required topic missing: publishing-preflight"
+  10-inaccessible-contrast.yaml: "publication text contrast must pass"
+  11-clipped-content.yaml: "publication contains clipped or overflowing content"
+  12-nondeterministic-output.yaml: "publication build must be deterministic"

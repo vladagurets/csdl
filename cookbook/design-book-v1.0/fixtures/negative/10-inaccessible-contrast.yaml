@@ -1,0 +1,4 @@
+mutation:
+  document: build_report
+  path: [contrast_checks, text, passes]
+  value: false
