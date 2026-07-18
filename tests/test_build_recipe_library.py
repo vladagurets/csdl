@@ -10,7 +10,7 @@ ROOT = Path(__file__).parents[1]
 LIBRARY = ROOT / "recipes/recipe-library-v0.5"
 
 
-def test_builds_honest_empty_outputs_in_incomplete_mode(tmp_path: Path) -> None:
+def test_builds_complete_outputs_in_incomplete_mode(tmp_path: Path) -> None:
     target = tmp_path / "recipes/recipe-library-v0.5"
     target.parent.mkdir(parents=True)
     shutil.copytree(LIBRARY, target)
@@ -20,7 +20,7 @@ def test_builds_honest_empty_outputs_in_incomplete_mode(tmp_path: Path) -> None:
     compatibility = yaml.safe_load(outputs[1].read_text(encoding="utf-8"))
     selection = yaml.safe_load(outputs[2].read_text(encoding="utf-8"))
 
-    assert index["recipe_count"] == 0
-    assert compatibility["recipes"] == []
+    assert index["recipe_count"] == 23
+    assert len(compatibility["recipes"]) == 23
     assert len(compatibility["families"]) == 20
-    assert selection["scenarios"] == []
+    assert selection["scenarios"]

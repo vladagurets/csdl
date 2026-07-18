@@ -1,4 +1,513 @@
 library: recipe-library-v0.5
 version: 0.5.0
-recipe_count: 0
-recipes: []
+recipe_count: 23
+recipes:
+- id: '001'
+  slug: hero
+  name: Hero
+  version: 0.5.0
+  source_family: hero
+  allowed_scenarios:
+  - opening thesis
+  - section thesis
+  - key takeaway
+  required_components:
+  - Anchor
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  - C
+  compatible_visual_dna_families:
+  - hero
+  specification: specs/001-hero.md
+  record: records/001-hero.yaml
+- id: '002'
+  slug: cover
+  name: Cover
+  version: 0.5.0
+  source_family: cover
+  allowed_scenarios:
+  - series opening
+  - chapter divider
+  required_components:
+  - Anchor
+  - Field
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - C
+  compatible_visual_dna_families:
+  - cover
+  specification: specs/002-cover.md
+  record: records/002-cover.yaml
+- id: '003'
+  slug: quote
+  name: Quote
+  version: 0.5.0
+  source_family: quote
+  allowed_scenarios:
+  - principle
+  - testimony
+  - chapter pause
+  required_components:
+  - Anchor
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - quote
+  specification: specs/003-quote.md
+  record: records/003-quote.yaml
+- id: '004'
+  slug: big-number
+  name: Big Number
+  version: 0.5.0
+  source_family: big-number
+  allowed_scenarios:
+  - count
+  - percentage
+  - ratio
+  - milestone
+  required_components:
+  - Anchor
+  - Pulse
+  - Label
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  - C
+  compatible_visual_dna_families:
+  - big-number
+  specification: specs/004-big-number.md
+  record: records/004-big-number.yaml
+- id: '005'
+  slug: comparison
+  name: Comparison
+  version: 0.5.0
+  source_family: comparison
+  allowed_scenarios:
+  - approach comparison
+  - complementary roles
+  - trade-off
+  required_components:
+  - Anchor
+  - Field
+  - Divider
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  - C
+  compatible_visual_dna_families:
+  - comparison
+  specification: specs/005-comparison.md
+  record: records/005-comparison.yaml
+- id: '006'
+  slug: collision
+  name: Collision
+  version: 0.5.0
+  source_family: collision
+  allowed_scenarios:
+  - constraint
+  - synthesis
+  - tension
+  - trade-off
+  required_components:
+  - Anchor
+  - Collision
+  - Signal
+  optional_components:
+  - Label
+  allowed_levels:
+  - B
+  - C
+  compatible_visual_dna_families:
+  - collision
+  specification: specs/006-collision.md
+  record: records/006-collision.yaml
+- id: '007'
+  slug: before-after
+  name: Before / After
+  version: 0.5.0
+  source_family: before-after
+  allowed_scenarios:
+  - transformation
+  - migration
+  - improvement
+  required_components:
+  - Field
+  - Divider
+  - Vector
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - before-after
+  specification: specs/007-before-after.md
+  record: records/007-before-after.yaml
+- id: 008
+  slug: timeline
+  name: Timeline
+  version: 0.5.0
+  source_family: timeline
+  allowed_scenarios:
+  - history
+  - delivery sequence
+  - staged rollout
+  required_components:
+  - Axis
+  - Node
+  - Label
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - timeline
+  specification: specs/008-timeline.md
+  record: records/008-timeline.yaml
+- id: 009
+  slug: matrix
+  name: Matrix
+  version: 0.5.0
+  source_family: matrix
+  allowed_scenarios:
+  - prioritization
+  - portfolio view
+  - risk map
+  required_components:
+  - Axis
+  - Field
+  - Node
+  - Label
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - matrix
+  specification: specs/009-matrix.md
+  record: records/009-matrix.yaml
+- id: '010'
+  slug: hierarchy
+  name: Hierarchy
+  version: 0.5.0
+  source_family: hierarchy
+  allowed_scenarios:
+  - goal decomposition
+  - taxonomy
+  - authority
+  required_components:
+  - Anchor
+  - Frame
+  - Node
+  - Bridge
+  - Label
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - hierarchy
+  specification: specs/010-hierarchy.md
+  record: records/010-hierarchy.yaml
+- id: '011'
+  slug: architecture
+  name: Architecture
+  version: 0.5.0
+  source_family: architecture
+  allowed_scenarios:
+  - software context
+  - agent system
+  - service boundary
+  required_components:
+  - Field
+  - Node
+  - Bridge
+  - Label
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - architecture
+  specification: specs/011-architecture.md
+  record: records/011-architecture.yaml
+- id: '012'
+  slug: workflow
+  name: Workflow
+  version: 0.5.0
+  source_family: workflow
+  allowed_scenarios:
+  - work procedure
+  - handoff
+  - review flow
+  required_components:
+  - Node
+  - Vector
+  - Label
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - workflow
+  specification: specs/012-workflow.md
+  record: records/012-workflow.yaml
+- id: '013'
+  slug: loop
+  name: Loop
+  version: 0.5.0
+  source_family: loop
+  allowed_scenarios:
+  - feedback cycle
+  - learning loop
+  - recurring operation
+  required_components:
+  - Loop
+  - Node
+  - Label
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  - C
+  compatible_visual_dna_families:
+  - loop
+  specification: specs/013-loop.md
+  record: records/013-loop.yaml
+- id: '014'
+  slug: pipeline
+  name: Pipeline
+  version: 0.5.0
+  source_family: pipeline
+  allowed_scenarios:
+  - data processing
+  - content production
+  - build system
+  required_components:
+  - Node
+  - Vector
+  - Label
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - pipeline
+  specification: specs/014-pipeline.md
+  record: records/014-pipeline.yaml
+- id: '015'
+  slug: decision-tree
+  name: Decision Tree
+  version: 0.5.0
+  source_family: decision-tree
+  allowed_scenarios:
+  - routing rule
+  - escalation
+  - eligibility
+  required_components:
+  - Node
+  - Bridge
+  - Label
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - decision-tree
+  specification: specs/015-decision-tree.md
+  record: records/015-decision-tree.yaml
+- id: '016'
+  slug: framework
+  name: Framework
+  version: 0.5.0
+  source_family: framework
+  allowed_scenarios:
+  - operating model
+  - assessment lens
+  - teaching framework
+  required_components:
+  - Anchor
+  - Cluster
+  - Node
+  - Label
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - framework
+  specification: specs/016-framework.md
+  record: records/016-framework.yaml
+- id: '017'
+  slug: kpi
+  name: KPI
+  version: 0.5.0
+  source_family: kpi
+  allowed_scenarios:
+  - status measure
+  - target tracking
+  - weekly snapshot
+  required_components:
+  - Pulse
+  - Axis
+  - Label
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  compatible_visual_dna_families:
+  - kpi
+  specification: specs/017-kpi.md
+  record: records/017-kpi.yaml
+- id: 018
+  slug: table
+  name: Table
+  version: 0.5.0
+  source_family: table
+  allowed_scenarios:
+  - compact report
+  - value audit
+  - weekly comparison
+  required_components:
+  - Frame
+  - Axis
+  - Label
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  compatible_visual_dna_families:
+  - table
+  specification: specs/018-table.md
+  record: records/018-table.yaml
+- id: 019
+  slug: chart
+  name: Chart
+  version: 0.5.0
+  source_family: chart
+  allowed_scenarios:
+  - trend
+  - comparison over time
+  - progress
+  required_components:
+  - Axis
+  - Node
+  - Label
+  - Signal
+  optional_components:
+  - Legend
+  allowed_levels:
+  - A
+  compatible_visual_dna_families:
+  - chart
+  specification: specs/019-chart.md
+  record: records/019-chart.yaml
+- id: '020'
+  slug: dashboard
+  name: Dashboard
+  version: 0.5.0
+  source_family: dashboard
+  allowed_scenarios:
+  - weekly status
+  - operating review
+  - compact monitoring
+  required_components:
+  - Pulse
+  - Cluster
+  - Axis
+  - Label
+  - Signal
+  optional_components:
+  - Legend
+  allowed_levels:
+  - A
+  compatible_visual_dna_families:
+  - dashboard
+  specification: specs/020-dashboard.md
+  record: records/020-dashboard.yaml
+- id: '021'
+  slug: breakdown
+  name: Breakdown
+  version: 0.5.0
+  source_family: loop
+  allowed_scenarios:
+  - failed recurrence
+  - lost context
+  - broken operating cycle
+  required_components:
+  - Loop
+  - Node
+  - Label
+  - Signal
+  optional_components: []
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - loop
+  specification: specs/021-breakdown.md
+  record: records/021-breakdown.yaml
+- id: '022'
+  slug: checklist
+  name: Checklist
+  version: 0.5.0
+  source_family: framework
+  allowed_scenarios:
+  - readiness review
+  - preflight questions
+  - completion gate
+  required_components:
+  - Anchor
+  - Cluster
+  - Node
+  - Signal
+  optional_components:
+  - Label
+  allowed_levels:
+  - A
+  - B
+  compatible_visual_dna_families:
+  - framework
+  specification: specs/022-checklist.md
+  record: records/022-checklist.yaml
+- id: '023'
+  slug: formula
+  name: Formula
+  version: 0.5.0
+  source_family: collision
+  allowed_scenarios:
+  - summary equation
+  - multiplicative model
+  - culminating formula
+  required_components:
+  - Anchor
+  - Collision
+  - Signal
+  optional_components:
+  - Label
+  allowed_levels:
+  - B
+  - C
+  compatible_visual_dna_families:
+  - collision
+  specification: specs/023-formula.md
+  record: records/023-formula.yaml
