@@ -73,6 +73,7 @@ Organize a small set of mutually necessary concepts into one mental model.
 
 ## Deterministic defaults
 
+- Component cardinality: `Anchor`=1, `Cluster`=1, `Node`=4, `Label`=4, `Signal`=1.
 - Expression: `B`.
 - Density: `medium`.
 - Reading path: `top_left_to_bottom_right`.

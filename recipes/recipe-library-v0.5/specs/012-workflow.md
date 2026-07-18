@@ -71,6 +71,7 @@ Show who or what acts next in a bounded operational sequence.
 
 ## Deterministic defaults
 
+- Component cardinality: `Node`=4, `Vector`=3, `Label`=4, `Signal`=1.
 - Expression: `A`.
 - Density: `low`.
 - Reading path: `left_to_right`.

@@ -68,6 +68,7 @@ Name a series or section and establish its single visual premise.
 
 ## Deterministic defaults
 
+- Component cardinality: `Anchor`=1, `Field`=1, `Signal`=1.
 - Expression: `C`.
 - Density: `low`.
 - Reading path: `top_left_to_bottom_right`.

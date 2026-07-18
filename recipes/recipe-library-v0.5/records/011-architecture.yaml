@@ -13,15 +13,19 @@ ingredients:
   - component: Field
     min: 1
     max: 2
+    default: 1
   - component: Node
     min: 2
     max: 7
+    default: 4
   - component: Bridge
     min: 1
     max: 4
+    default: 3
   - component: Label
     min: 2
     max: 7
+    default: 4
   optional: []
 relations:
   allowed:

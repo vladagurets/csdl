@@ -72,6 +72,7 @@ Compare two systems without implying conflict unless conflict is the content.
 
 ## Deterministic defaults
 
+- Component cardinality: `Anchor`=2, `Field`=2, `Divider`=1, `Signal`=1.
 - Expression: `A`.
 - Density: `medium`.
 - Reading path: `left_to_right`.

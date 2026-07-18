@@ -67,6 +67,7 @@ Give one exact statement enough space and hierarchy to be read as an idea, not d
 
 ## Deterministic defaults
 
+- Component cardinality: `Anchor`=1, `Signal`=1.
 - Expression: `A`.
 - Density: `low`.
 - Reading path: `top_left_to_bottom_right`.

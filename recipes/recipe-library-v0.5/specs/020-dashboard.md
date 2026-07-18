@@ -76,6 +76,7 @@ Summarize a small operational state while preserving one clear primary signal.
 
 ## Deterministic defaults
 
+- Component cardinality: `Pulse`=1, `Cluster`=1, `Axis`=1, `Label`=10, `Signal`=1, `Legend`=0.
 - Expression: `A`.
 - Density: `analytical`.
 - Reading path: `left_to_right`.

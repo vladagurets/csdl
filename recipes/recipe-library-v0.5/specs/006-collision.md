@@ -71,6 +71,7 @@ Show two forces producing one consequential intersection or synthesis.
 
 ## Deterministic defaults
 
+- Component cardinality: `Anchor`=2, `Collision`=1, `Signal`=1, `Label`=0.
 - Expression: `B`.
 - Density: `low`.
 - Reading path: `split_to_result`.

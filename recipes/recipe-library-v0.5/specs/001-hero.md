@@ -67,6 +67,7 @@ Make one proposition immediately understandable and memorable.
 
 ## Deterministic defaults
 
+- Component cardinality: `Anchor`=1, `Signal`=1.
 - Expression: `A`.
 - Density: `low`.
 - Reading path: `left_to_right`.

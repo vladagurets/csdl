@@ -72,6 +72,7 @@ Show a repeating process whose output changes the next cycle.
 
 ## Deterministic defaults
 
+- Component cardinality: `Loop`=1, `Node`=5, `Label`=5, `Signal`=1.
 - Expression: `B`.
 - Density: `medium`.
 - Reading path: `cyclic_clockwise`.

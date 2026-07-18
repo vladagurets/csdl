@@ -90,6 +90,7 @@ def _validate_ingredients(
                 errors.append(f"{entry_label} component is not public: {component}")
             minimum = entry.get("min")
             maximum = entry.get("max")
+            default = entry.get("default")
             if (
                 not isinstance(minimum, int)
                 or isinstance(minimum, bool)
@@ -99,6 +100,13 @@ def _validate_ingredients(
                 or minimum > maximum
             ):
                 errors.append(f"{entry_label} min/max cardinality is invalid")
+            elif (
+                not isinstance(default, int)
+                or isinstance(default, bool)
+                or default < minimum
+                or default > maximum
+            ):
+                errors.append(f"{entry_label} default cardinality is invalid")
             if group == "required" and minimum < 1:
                 errors.append(f"{entry_label} required minimum must be at least one")
             if group == "optional" and minimum != 0:
@@ -284,6 +292,54 @@ def _validate_record(
             errors.append(f"{label} record contains forbidden marker: {token}")
 
 
+def _validate_migration(
+    root: Path,
+    repository_root: Path,
+    manifest: dict[str, Any],
+    schema: dict[str, Any],
+    errors: list[str],
+) -> None:
+    migration_path = root / str(manifest.get("library", {}).get("migration", ""))
+    data = _load_yaml(migration_path, errors, "migration contract")
+    migration = data.get("migration")
+    missing = _missing(migration, schema.get("required_migration_fields", []))
+    if missing:
+        errors.append("migration missing fields: " + ",".join(missing))
+        return
+    if migration.get("source_versions") != [0.1]:
+        errors.append("migration source_versions must equal [0.1]")
+    if str(migration.get("target_version")) != "0.5":
+        errors.append("migration target_version must equal 0.5")
+    source_files = migration.get("source_files")
+    recipe_map = migration.get("recipe_map")
+    if not isinstance(source_files, list) or len(source_files) != 27:
+        errors.append("migration must declare exactly 27 recipe source files")
+        source_files = []
+    if len(source_files) != len(set(source_files)):
+        errors.append("migration source_files must be unique")
+    if not isinstance(recipe_map, dict) or set(recipe_map) != set(source_files):
+        errors.append("migration recipe_map keys must equal source_files")
+        recipe_map = {}
+    declared_ids = {str(entry.get("id")) for entry in manifest.get("recipes", [])}
+    for relative in source_files:
+        path = repository_root / relative
+        if not path.exists():
+            errors.append(f"migration source path does not exist: {relative}")
+        if str(recipe_map.get(relative)) not in declared_ids:
+            errors.append(f"migration source maps to undeclared recipe: {relative}")
+    if migration.get("reference_only") != [
+        "pilots/01-agentic-discipline/prompts/00-style-anchor.yaml"
+    ]:
+        errors.append("migration reference_only must preserve the Pilot style anchor")
+    elif not (
+        repository_root / "pilots/01-agentic-discipline/prompts/00-style-anchor.yaml"
+    ).exists():
+        errors.append("migration reference-only style anchor path does not exist")
+    rules = migration.get("normalization_rules")
+    if not isinstance(rules, list) or len(rules) < 5 or not all(_text(rule) for rule in rules):
+        errors.append("migration normalization_rules must be complete non-empty text")
+
+
 def validate_recipe_library(path: Path, require_complete: bool = True) -> list[str]:
     errors: list[str] = []
     root = path.parent
@@ -393,6 +449,8 @@ def validate_recipe_library(path: Path, require_complete: bool = True) -> list[s
             components_by_name,
             errors,
         )
+    if require_complete:
+        _validate_migration(root, repository_root, manifest, schema, errors)
     return errors
 
 

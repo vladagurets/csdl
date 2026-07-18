@@ -74,6 +74,7 @@ Position a small set of options across two independent dimensions.
 
 ## Deterministic defaults
 
+- Component cardinality: `Axis`=2, `Field`=1, `Node`=4, `Label`=6, `Signal`=1.
 - Expression: `B`.
 - Density: `medium`.
 - Reading path: `outside_to_inside`.

@@ -110,7 +110,14 @@ def validate_prompt_package(
     if unknown:
         errors.append("package contains unknown fields: " + ",".join(unknown))
     forbidden = {str(key).lower() for key in schema.get("forbidden_composition_keys", [])}
-    for key in sorted(_find_forbidden_keys(package, forbidden)):
+    composition_surface = dict(package)
+    if isinstance(package.get("content"), dict):
+        composition_surface["content"] = {
+            key: value
+            for key, value in package["content"].items()
+            if key != "bindings"
+        }
+    for key in sorted(_find_forbidden_keys(composition_surface, forbidden)):
         errors.append(f"package contains forbidden composition key: {key}")
 
     if package.get("language") != "CSDL":
@@ -152,6 +159,31 @@ def validate_prompt_package(
     content = package.get("content")
     if isinstance(content, dict) and not isinstance(content.get("bindings"), dict):
         errors.append("package content.bindings must be a mapping")
+    elif isinstance(content, dict) and recipe is not None:
+        bindings = content.get("bindings", {})
+        required_bindings = set(recipe.get("content_contract", {}).get("required", []))
+        optional_bindings = set(recipe.get("content_contract", {}).get("optional", []))
+        missing_bindings = sorted(required_bindings - set(bindings))
+        unknown_bindings = sorted(set(bindings) - required_bindings - optional_bindings)
+        if missing_bindings:
+            errors.append(
+                "package content bindings missing recipe fields: "
+                + ",".join(missing_bindings)
+            )
+        if unknown_bindings:
+            errors.append(
+                "package content bindings contain unknown recipe fields: "
+                + ",".join(unknown_bindings)
+            )
+
+    semantic_intent = package.get("semantic_intent")
+    if isinstance(semantic_intent, dict) and recipe is not None:
+        if semantic_intent.get("scenario") not in recipe.get("allowed_scenarios", []):
+            errors.append("package scenario is not allowed by recipe")
+        if semantic_intent.get("mechanism") != recipe.get("prompt_dsl", {}).get(
+            "semantic_intent"
+        ):
+            errors.append("package mechanism must match recipe semantic intent")
 
     components_by_name = {
         component["name"]: component for component in component_manifest.get("components", [])
@@ -181,6 +213,32 @@ def validate_prompt_package(
             errors.append(f"{label} component is not public: {instance.get('component')}")
             continue
         instance_contracts[instance_id] = component
+        attributes = instance.get("attributes", {})
+        if not isinstance(attributes, dict):
+            errors.append(f"{label} attributes must be a mapping")
+            attributes = {}
+        component_dsl = component.get("prompt_dsl", {})
+        required_component_fields = set(component_dsl.get("required_fields", []))
+        optional_component_fields = set(component_dsl.get("optional_fields", []))
+        provided_component_fields = {"id", "role"} | set(attributes)
+        missing_component_fields = sorted(
+            required_component_fields - provided_component_fields
+        )
+        unknown_component_attributes = sorted(
+            set(attributes)
+            - required_component_fields
+            - optional_component_fields
+        )
+        if missing_component_fields:
+            errors.append(
+                f"{label} component contract missing fields: "
+                + ",".join(missing_component_fields)
+            )
+        if unknown_component_attributes:
+            errors.append(
+                f"{label} component attributes contain unknown fields: "
+                + ",".join(unknown_component_attributes)
+            )
         if recipe is not None:
             ingredients = recipe.get("ingredients", {})
             recipe_components = {
@@ -244,6 +302,8 @@ def validate_prompt_package(
         level = recipe.get("expression_levels", {}).get(expression, {})
         if level.get("status") == "forbidden":
             errors.append(f"package expression {expression} is forbidden by recipe")
+        if generation.get("hard_exclusions") != recipe.get("hard_exclusions"):
+            errors.append("package hard_exclusions must match the recipe contract")
     canvas = generation.get("canvas")
     expected_canvas = schema.get("defaults", {}).get("canvas")
     if isinstance(canvas, dict) and canvas != expected_canvas:
@@ -253,6 +313,10 @@ def validate_prompt_package(
         reading_path = presentation.get("reading_path")
         if reading_path not in schema.get("enums", {}).get("reading_path", []):
             errors.append("package reading_path is invalid")
+        if recipe is not None and presentation.get(
+            "negative_space_percent"
+        ) != recipe.get("presentation", {}).get("negative_space_percent"):
+            errors.append("package negative-space range must match recipe")
     output = generation.get("output")
     if isinstance(output, dict) and output != schema.get("defaults", {}).get("output"):
         errors.append("package output must equal the canonical DSL default")

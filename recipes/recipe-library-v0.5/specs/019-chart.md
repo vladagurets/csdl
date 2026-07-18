@@ -74,6 +74,7 @@ Reveal one quantitative trend without distorting its scale or adding decorative 
 
 ## Deterministic defaults
 
+- Component cardinality: `Axis`=2, `Node`=4, `Label`=5, `Signal`=1, `Legend`=0.
 - Expression: `A`.
 - Density: `analytical`.
 - Reading path: `left_to_right`.

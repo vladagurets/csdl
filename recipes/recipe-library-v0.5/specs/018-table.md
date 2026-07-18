@@ -73,6 +73,7 @@ Support exact lookup and comparison across a small fixed dataset.
 
 ## Deterministic defaults
 
+- Component cardinality: `Frame`=1, `Axis`=2, `Label`=25, `Signal`=1.
 - Expression: `A`.
 - Density: `analytical`.
 - Reading path: `top_left_to_bottom_right`.
