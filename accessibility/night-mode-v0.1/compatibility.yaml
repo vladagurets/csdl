@@ -1,0 +1,187 @@
+library: night-mode-v0.1
+version: 0.1.0
+profiles:
+- light
+- night
+- monochrome
+- projector
+prompt_dsl:
+  version: '0.5'
+  changed: false
+  integration: additive_external_profile
+public_component_count: 15
+public_recipe_count: 23
+analytical_family_count: 10
+components:
+- name: Anchor
+  accessible_roles:
+  - ink
+  - direct_reading_order
+- name: Signal
+  accessible_roles:
+  - semantic_signal
+  - redundant_carrier
+  - area_ceiling
+- name: Field
+  accessible_roles:
+  - background
+  - nonsemantic_fill
+- name: Frame
+  accessible_roles:
+  - surface_boundary
+  - line_strong
+- name: Cluster
+  accessible_roles:
+  - grouping
+  - direct_labels
+- name: Vector
+  accessible_roles:
+  - direction
+  - arrowhead
+  - line_strong
+- name: Divider
+  accessible_roles:
+  - peer_separation
+  - line_strong
+- name: Node
+  accessible_roles:
+  - shape
+  - direct_label
+  - state
+- name: Loop
+  accessible_roles:
+  - direction
+  - stage_labels
+  - line_strong
+- name: Collision
+  accessible_roles:
+  - overlap_boundary
+  - result_label
+- name: Bridge
+  accessible_roles:
+  - direction
+  - weight
+  - relation_label
+- name: Axis
+  accessible_roles:
+  - scale
+  - order
+  - zero
+  - line_strong
+  - direct_labels
+- name: Pulse
+  accessible_roles:
+  - exact_value
+  - unit
+  - source
+- name: Label
+  accessible_roles:
+  - informative_text
+  - one_target
+- name: Legend
+  accessible_roles:
+  - conditional_text_and_form_mapping
+recipes:
+- id: '001'
+  slug: hero
+- id: '002'
+  slug: cover
+- id: '003'
+  slug: quote
+- id: '004'
+  slug: big-number
+- id: '005'
+  slug: comparison
+- id: '006'
+  slug: collision
+- id: '007'
+  slug: before-after
+- id: 008
+  slug: timeline
+- id: 009
+  slug: matrix
+- id: '010'
+  slug: hierarchy
+- id: '011'
+  slug: architecture
+- id: '012'
+  slug: workflow
+- id: '013'
+  slug: loop
+- id: '014'
+  slug: pipeline
+- id: '015'
+  slug: decision-tree
+- id: '016'
+  slug: framework
+- id: '017'
+  slug: kpi
+- id: 018
+  slug: table
+- id: 019
+  slug: chart
+- id: '020'
+  slug: dashboard
+- id: '021'
+  slug: breakdown
+- id: '022'
+  slug: checklist
+- id: '023'
+  slug: formula
+analytical_mode:
+  version: '0.1'
+  quantitative_invariants_preserved: true
+  families:
+  - name: bar
+    accessibility:
+    - zero
+    - sign
+    - direct_label
+  - name: line
+    accessibility:
+    - observed
+    - forecast
+    - uncertainty
+    - missing
+  - name: scatterplot
+    accessibility:
+    - shape
+    - direct_label
+    - size_label
+  - name: waterfall
+    accessibility:
+    - sign
+    - cumulative_label
+    - zero
+  - name: heatmap
+    accessibility:
+    - numeric_label
+    - pattern
+    - missing
+  - name: funnel
+    accessibility:
+    - absolute_value
+    - denominator
+    - direct_label
+  - name: map
+    accessibility:
+    - identifier
+    - pattern
+    - missing
+    - normalized_rate
+  - name: network
+    accessibility:
+    - arrowhead
+    - direction_label
+    - weight_label
+  - name: table
+    accessibility:
+    - exact_lookup
+    - units
+    - missing
+    - source
+  - name: dashboard
+    accessibility:
+    - shared_dataset
+    - direct_labels
+    - source

@@ -24,6 +24,7 @@ required_package_fields:
   - source_reference
   - semantic_source_digest
   - profiles
+  - profile_results
   - text_elements
   - graphical_objects
   - semantic_encodings
