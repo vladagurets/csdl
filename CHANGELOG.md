@@ -11,7 +11,7 @@
 - Reused Pilot 01 as the declared evidence source for Hero, Comparison, and Loop; no raster regeneration was performed.
 - Audited and accepted Pilot-backed Hero, Comparison, and Loop as Milestone 2 pattern families with pinned hashes, exact-copy checks, raster metadata, candidate decisions, catalog scores, and machine-index entries.
 - Regenerated Cover under D-028 with the full three-board primary authority package; rejected an initial non-compliant trio, selected the strongest flat-signal Modular Technical Level C composition from a six-candidate pass, and persisted its canonical raster, preview, evidence, score, and index metadata.
-- Generated three Quote candidates, selected the exact-copy restrained Level A composition, and persisted its canonical raster, preview, evidence, score, and index metadata.
+- Regenerated Quote under D-028 from three new candidates, selected the exact-copy Modular Technical Level A composition with one square hinge, and persisted its canonical raster, preview, evidence, score, and index metadata.
 - Generated three Big Number candidates, selected the exact-copy single-signal Level A composition, and persisted its canonical raster, preview, evidence, score, and index metadata.
 - Generated three Collision candidates, selected the exact-copy intrinsic-overlap Level B composition, and persisted its canonical raster, preview, evidence, score, and index metadata.
 - Completed Wave A with three Before / After candidates, selected the exact-copy trace-based Level A composition, tightened the Prompt DSL after rejecting dense node-network interpretations, and persisted canonical evidence.
