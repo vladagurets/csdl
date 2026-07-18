@@ -78,7 +78,10 @@ families:
   - C
   evidence_mode: generated
   canonical_example: canonical/light/16x9/06-collision.png
-  status: awaiting_generation
+  sha256: 86fcb233414b3d403d87766d8541d1c848558a9d86308ec8010a1eb359ec43c1
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 5.0
 - id: '07'
   slug: before-after
   name: Before / After
