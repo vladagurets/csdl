@@ -1,0 +1,236 @@
+language: CSDL
+version: '0.1'
+kind: analytical-package
+id: proof-10-dashboard
+dataset:
+  id: dashboard-agent-reliability-v1
+  version: 1.0.0
+  path: datasets/10-dashboard.yaml
+  source: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+analytical_intent:
+  question: What is the W4 reliability state and how did it develop?
+  claim: Snapshot, trend, and exact lookup views reconcile to one typed dataset.
+recipe:
+  id: '020'
+  slug: dashboard
+  version: 0.5.0
+encoding:
+  marks:
+  - type: text
+    role: kpi-value
+  - type: line
+    role: trend
+  - type: point
+    role: source-value
+  bindings:
+    order: week
+    value: success_rate
+    detail:
+    - runs
+    - review_minutes
+    - escaped_defects
+    label: success_rate
+  order:
+  - W1
+  - W2
+  - W3
+  - W4
+  domains:
+    success_rate:
+    - 0
+    - 100
+    runs:
+    - 0
+    - 100
+    review_minutes:
+    - 0
+    - 30
+    escaped_defects:
+    - 0
+    - 20
+  scales:
+    order: ordinal
+    success_rate: linear
+  views:
+  - id: snapshot
+    family: kpi
+    dataset: dashboard-agent-reliability-v1@1.0.0
+    bindings:
+    - success_rate
+    - runs
+    - review_minutes
+    - escaped_defects
+    period: W4
+  - id: trend
+    family: line
+    dataset: dashboard-agent-reliability-v1@1.0.0
+    bindings:
+    - week
+    - success_rate
+    domain:
+    - 0
+    - 100
+  - id: lookup
+    family: table
+    dataset: dashboard-agent-reliability-v1@1.0.0
+    bindings:
+    - week
+    - runs
+    - success_rate
+    - review_minutes
+    - escaped_defects
+  primary_signal_view: snapshot
+  repeated_measure_reconciliation: exact
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings:
+  - value_label
+  - view_title
+  - source_label
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+- id: primary-pulse
+  component: Pulse
+  role: primary-kpi
+- id: support-cluster
+  component: Cluster
+  role: supporting-measures
+- id: trend-axis
+  component: Axis
+  role: quantitative
+- id: trend-points
+  component: Node
+  role: data-point
+- id: labels
+  component: Label
+  role: direct-label
+- id: signal
+  component: Signal
+  role: primary-view
+relations:
+- subject: primary-pulse
+  type: groups
+  object: support-cluster
+- subject: trend-axis
+  type: orders
+  object: trend-points
+- subject: labels
+  type: attached_to
+  object: trend-points
+- subject: signal
+  type: highlights
+  object: primary-pulse
+specification:
+  family: dashboard
+  fields:
+  - id: week
+    label: Week
+    type: ordinal
+    role: dimension
+    nullable: false
+    ordering: declared
+  - id: runs
+    label: Runs
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: count
+    display_format: '0'
+    domain:
+    - 0
+    - 100
+    aggregation: sum
+  - id: success_rate
+    label: Success rate
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: percent
+    display_format: 0%
+    domain:
+    - 0
+    - 100
+    aggregation: mean
+    denominator: runs
+  - id: review_minutes
+    label: Median review time
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: minutes
+    display_format: 0 min
+    domain:
+    - 0
+    - 30
+    aggregation: median
+  - id: escaped_defects
+    label: Escaped defects
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: count
+    display_format: '0'
+    domain:
+    - 0
+    - 20
+    aggregation: sum
+  records:
+  - id: d1
+    week: W1
+    runs: 40
+    success_rate: 72
+    review_minutes: 18
+    escaped_defects: 8
+  - id: d2
+    week: W2
+    runs: 45
+    success_rate: 78
+    review_minutes: 16
+    escaped_defects: 6
+  - id: d3
+    week: W3
+    runs: 50
+    success_rate: 84
+    review_minutes: 13
+    escaped_defects: 4
+  - id: d4
+    week: W4
+    runs: 55
+    success_rate: 90
+    review_minutes: 10
+    escaped_defects: 2
+  ordering:
+    field: week
+    values:
+    - W1
+    - W2
+    - W3
+    - W4
+  missing_values: []
+  transformations: []
+  derived: {}
+  traceability:
+    order:
+      field: week
+      type: ordinal
+      unit: null
+    value:
+      field: success_rate
+      type: quantitative
+      unit: percent
+    label:
+      field: success_rate
+      type: quantitative
+      unit: percent
+provenance:
+  dataset_source:
+    source: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+    source_type: accepted_fixed_demo_data
+    source_date: 2026-07-18
+    retrieval_period: W1 to W4
+    method: typed lossless migration of accepted Milestone 2 fixed values
+  proof_source: proofs/sources/10-dashboard.yaml
+  evidence: synthetic_fixed_data
+  builder: tools/build_analytical_mode.py
+  deterministic: true

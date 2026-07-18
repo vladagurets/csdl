@@ -1,0 +1,11 @@
+fixtures:
+  - {id: 01-bar-positive-negative, package: proofs/packages/01-bar-positive-negative.yaml, family: bar}
+  - {id: 02-line-forecast, package: proofs/packages/02-line-forecast.yaml, family: line}
+  - {id: 03-scatterplot, package: proofs/packages/03-scatterplot.yaml, family: scatterplot}
+  - {id: 04-waterfall, package: proofs/packages/04-waterfall.yaml, family: waterfall}
+  - {id: 05-heatmap, package: proofs/packages/05-heatmap.yaml, family: heatmap}
+  - {id: 06-funnel, package: proofs/packages/06-funnel.yaml, family: funnel}
+  - {id: 07-map, package: proofs/packages/07-map.yaml, family: map}
+  - {id: 08-network, package: proofs/packages/08-network.yaml, family: network}
+  - {id: 09-table, package: proofs/packages/09-table.yaml, family: table}
+  - {id: 10-dashboard, package: proofs/packages/10-dashboard.yaml, family: dashboard}

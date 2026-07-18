@@ -1,0 +1,34 @@
+id: proof-10-dashboard
+family: dashboard
+dataset: datasets/10-dashboard.yaml
+analytical_intent: {question: "What is the W4 reliability state and how did it develop?", claim: "Snapshot, trend, and exact lookup views reconcile to one typed dataset."}
+recipe: {id: "020", slug: dashboard, version: 0.5.0}
+encoding:
+  marks: [{type: text, role: kpi-value}, {type: line, role: trend}, {type: point, role: source-value}]
+  bindings: {order: week, value: success_rate, detail: [runs, review_minutes, escaped_defects], label: success_rate}
+  order: [W1, W2, W3, W4]
+  domains: {success_rate: [0, 100], runs: [0, 100], review_minutes: [0, 30], escaped_defects: [0, 20]}
+  scales: {order: ordinal, success_rate: linear}
+  views:
+    - {id: snapshot, family: kpi, dataset: "dashboard-agent-reliability-v1@1.0.0", bindings: [success_rate, runs, review_minutes, escaped_defects], period: W4}
+    - {id: trend, family: line, dataset: "dashboard-agent-reliability-v1@1.0.0", bindings: [week, success_rate], domain: [0, 100]}
+    - {id: lookup, family: table, dataset: "dashboard-agent-reliability-v1@1.0.0", bindings: [week, runs, success_rate, review_minutes, escaped_defects]}
+  primary_signal_view: snapshot
+  repeated_measure_reconciliation: exact
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings: [value_label, view_title, source_label]
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+  - {id: primary-pulse, component: Pulse, role: primary-kpi}
+  - {id: support-cluster, component: Cluster, role: supporting-measures}
+  - {id: trend-axis, component: Axis, role: quantitative}
+  - {id: trend-points, component: Node, role: data-point}
+  - {id: labels, component: Label, role: direct-label}
+  - {id: signal, component: Signal, role: primary-view}
+relations:
+  - {subject: primary-pulse, type: groups, object: support-cluster}
+  - {subject: trend-axis, type: orders, object: trend-points}
+  - {subject: labels, type: attached_to, object: trend-points}
+  - {subject: signal, type: highlights, object: primary-pulse}

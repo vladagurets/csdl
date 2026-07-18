@@ -1,0 +1,3 @@
+id: unsupported-mark-component-combination
+base_package: proofs/packages/01-bar-positive-negative.yaml
+mutation: {path: [component_instances, 0, component], value: Bridge}

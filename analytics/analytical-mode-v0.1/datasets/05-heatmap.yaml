@@ -1,0 +1,25 @@
+language: CSDL
+version: "0.1"
+kind: analytical-dataset
+dataset:
+  id: heatmap-reliability-v1
+  version: 1.0.0
+  title: Reliability by team and week
+  status: synthetic_fixed_data
+  unit_of_analysis: team-week cell
+  fields:
+    - {id: team, label: Team, type: categorical, role: dimension, nullable: false, ordering: declared}
+    - {id: week, label: Week, type: ordinal, role: dimension, nullable: false, ordering: declared}
+    - {id: success_rate, label: Success rate, type: quantitative, role: measure, nullable: true, unit: percent, display_format: "0%", domain: [0, 100], aggregation: mean}
+  records:
+    - {id: h1, team: Alpha, week: W1, success_rate: 72}
+    - {id: h2, team: Alpha, week: W2, success_rate: 78}
+    - {id: h3, team: Alpha, week: W3, success_rate: 84}
+    - {id: h4, team: Beta, week: W1, success_rate: 68}
+    - {id: h5, team: Beta, week: W2, success_rate: null}
+    - {id: h6, team: Beta, week: W3, success_rate: 81}
+  ordering: {rows: {field: team, values: [Alpha, Beta]}, columns: {field: week, values: [W1, W2, W3]}}
+  missing_values:
+    - {record_id: h5, field: success_rate, status: unavailable}
+  transformations: []
+  provenance: {source: CSDL Milestone 5 synthetic fixture, source_type: synthetic, source_date: 2026-07-18, retrieval_period: W1 to W3, method: fixed matrix with one unavailable cell}

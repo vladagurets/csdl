@@ -1,0 +1,3 @@
+id: undeclared-log-scale
+base_package: proofs/packages/01-bar-positive-negative.yaml
+mutation: {path: [encoding, scales, value], value: log}

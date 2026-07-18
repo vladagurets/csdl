@@ -1,0 +1,33 @@
+id: proof-02-line-forecast
+family: line
+dataset: datasets/02-line-forecast.yaml
+analytical_intent: {question: "What was observed and what is forecast?", claim: "Success rate rises, while forecast values remain uncertain and distinct from observations."}
+recipe: {id: "019", slug: chart, version: 0.5.0}
+encoding:
+  marks: [{type: line, role: estimate}, {type: point, role: source-value}, {type: interval-band, role: uncertainty}, {type: text, role: direct-label}]
+  bindings: {order: period, value: estimate, lower: lower, upper: upper, status: status, label: estimate}
+  order: [2026-Q1, 2026-Q2, 2026-Q3, 2026-Q4, 2027-Q1, 2027-Q2]
+  domains: {value: [0, 100]}
+  scales: {order: temporal, value: linear}
+  interpolation: none
+  smoothing: none
+  missing_intervals: gap
+  forecast: {status_field: status, observed_value: observed, forecast_value: forecast, boundary: 2027-Q1, horizon: 2_quarters, rendering: dash-and-label}
+  uncertainty: {lower: lower, estimate: estimate, upper: upper, type: prediction_interval, level: 80, rendering: band-and-label}
+  zero_relevance: contextual_percent_domain
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings: [status_label, dash_pattern, interval_boundary]
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+  - {id: period-axis, component: Axis, role: temporal}
+  - {id: value-axis, component: Axis, role: quantitative}
+  - {id: points, component: Node, role: data-point}
+  - {id: labels, component: Label, role: direct-label}
+  - {id: signal, component: Signal, role: forecast-boundary}
+relations:
+  - {subject: period-axis, type: orders, object: points}
+  - {subject: value-axis, type: orders, object: points}
+  - {subject: labels, type: attached_to, object: points}
+  - {subject: signal, type: highlights, object: points}

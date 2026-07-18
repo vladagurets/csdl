@@ -1,0 +1,105 @@
+language: CSDL
+version: "0.1"
+kind: analytical-encoding-schema
+mark_scope: internal_data_encoding_only
+
+required_package_fields:
+  - language
+  - version
+  - kind
+  - id
+  - dataset
+  - analytical_intent
+  - recipe
+  - encoding
+  - component_instances
+  - relations
+  - specification
+  - provenance
+allowed_package_fields: &package_fields
+  - language
+  - version
+  - kind
+  - id
+  - dataset
+  - analytical_intent
+  - recipe
+  - encoding
+  - component_instances
+  - relations
+  - specification
+  - provenance
+
+internal_marks:
+  - bar
+  - line
+  - point
+  - cell
+  - waterfall-step
+  - funnel-stage
+  - region
+  - network-node
+  - network-edge
+  - interval-band
+  - text
+
+field_channels:
+  - category
+  - order
+  - x
+  - y
+  - value
+  - size
+  - color
+  - detail
+  - row
+  - column
+  - lower
+  - upper
+  - status
+  - geographic_id
+  - node_id
+  - edge_source
+  - edge_target
+  - weight
+  - label
+
+scale_types: [linear, log, ordinal, temporal, categorical, continuous-color, discrete-color]
+missing_renderings: [gap, explicit-marker, labeled-cell, hatched-region, text-token]
+forecast_renderings: [dash-and-label, boundary-and-label]
+uncertainty_types: [confidence_interval, credible_interval, prediction_interval, range]
+
+forbidden_keys:
+  - layout
+  - geometry
+  - coordinates
+  - pixel_position
+  - x_position
+  - y_position
+  - card
+  - panel
+  - container
+  - decorative_grid
+
+defaults:
+  scale: linear
+  dual_axis: false
+  interpolation: none
+  smoothing: none
+  direct_labels: true
+  color_only_meaning: false
+  decorative_field_area_percent: 0
+  three_dimensional: false
+  perspective: false
+  gradients: false
+  shadows: false
+  glossy_surfaces: false
+
+rules:
+  package_fields_closed: *package_fields
+  public_components_only: true
+  public_relations_only: true
+  internal_marks_are_not_components: true
+  every_claim_traceable: true
+  values_derived_from_dataset: true
+  deterministic_output: true

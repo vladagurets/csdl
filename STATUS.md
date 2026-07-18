@@ -1,8 +1,8 @@
 # Project Status
 
 **Project:** Constructive Signal Design Language
-**Version:** Recipe Library and Prompt DSL v0.5 complete
-**Current milestone:** Milestone 4 — complete; Milestone 5 deferred
+**Version:** Analytical Mode v0.1 complete
+**Current milestone:** Milestone 5 — complete; Milestone 6 deferred
 **Last updated:** 2026-07-18
 
 ## Outcome
@@ -34,7 +34,9 @@ The user-approved D-028 rebaseline makes all three boards in `references/canonic
 
 Milestone 3 is complete. Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend have canonical Markdown and machine-readable contracts. D-029 locks this fifteen-name public vocabulary and retires the earlier Container alias without changing any accepted raster: Hierarchy uses Frame for ownership scope, Architecture uses Field for system scope, and Pipeline needs no wrapper component. Editorial Big Number, structural Architecture, and analytical Chart proofs validate using component vocabulary alone; deterministic index and 15×20 compatibility outputs match the manifest; all completion validators pass.
 
-Milestone 4 is complete. D-030 locks Recipe Library v0.5 to 23 evidence-backed recipes: all twenty accepted Visual DNA families plus Breakdown, Checklist, and Formula from accepted Pilot 01 evidence. Every recipe has a canonical Markdown specification and a machine-readable record. Layout-free outlines deterministically select recipes and build Prompt DSL v0.5 packages that keep semantic intent, exact content, public component instances, relations, generation constraints, and provenance separate. Mechanical migration covers seven Pilot and twenty Visual DNA source prompts without mutating their copy/data or accepted rasters. Editorial Big Number, structural Workflow, bounded analytical Chart, and Pilot Comparison migration proofs rebuild deterministically; six negative fixtures reject layout vocabulary, undeclared components, forbidden relations, unsupported combinations, copy mutation, and analytical distortion. Full Analytical Mode remains deferred to Milestone 5.
+Milestone 4 is complete. D-030 locks Recipe Library v0.5 to 23 evidence-backed recipes: all twenty accepted Visual DNA families plus Breakdown, Checklist, and Formula from accepted Pilot 01 evidence. Every recipe has a canonical Markdown specification and a machine-readable record. Layout-free outlines deterministically select recipes and build Prompt DSL v0.5 packages that keep semantic intent, exact content, public component instances, relations, generation constraints, and provenance separate. Mechanical migration covers seven Pilot and twenty Visual DNA source prompts without mutating their copy/data or accepted rasters. Editorial Big Number, structural Workflow, bounded analytical Chart, and Pilot Comparison migration proofs rebuild deterministically; six negative fixtures reject layout vocabulary, undeclared components, forbidden relations, unsupported combinations, copy mutation, and analytical distortion. That milestone intentionally stopped at bounded analytical evidence; Milestone 5 now provides the independent full contract.
+
+Milestone 5 is complete. D-031 versions Analytical Mode v0.1 as an independent additive extension under `analytics/analytical-mode-v0.1/`, leaving Prompt DSL v0.5 unchanged and retaining exactly fifteen public components and 23 recipes. Its canonical Markdown and machine-readable contracts cover typed datasets, internal analytical marks, domain/order/value/unit/source/missing/transformation fidelity, bars, lines, scatterplots, waterfall, heatmaps, funnels, maps, networks, tables, dashboards, uncertainty, forecasts, and negative values. Ten fixed datasets drive ten deterministic end-to-end proofs; seventeen indexed negative mutations and focused tests reject every critical requested distortion. No raster was generated or modified.
 
 ## Canonical outputs
 
@@ -66,13 +68,22 @@ recipes/recipe-library-v0.5/proofs/migration/01-pilot-comparison.yaml
 recipes/recipe-library-v0.5/index.yaml
 recipes/recipe-library-v0.5/compatibility.yaml
 recipes/recipe-library-v0.5/selection-index.yaml
+analytics/analytical-mode-v0.1/manifest.yaml
+analytics/analytical-mode-v0.1/SPEC.md
+analytics/analytical-mode-v0.1/dataset-schema.yaml
+analytics/analytical-mode-v0.1/encoding-schema.yaml
+analytics/analytical-mode-v0.1/datasets/01-bar-positive-negative.yaml through 10-dashboard.yaml
+analytics/analytical-mode-v0.1/proofs/packages/01-bar-positive-negative.yaml through 10-dashboard.yaml
+analytics/analytical-mode-v0.1/index.yaml
+analytics/analytical-mode-v0.1/dataset-index.yaml
+analytics/analytical-mode-v0.1/compatibility.yaml
 ```
 
 ## Validation state
 
 ```text
 .venv/bin/python -m pytest -q
-98 passed
+125 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
@@ -133,6 +144,12 @@ recipe library built: index.yaml, compatibility.yaml, selection-index.yaml
 
 .venv/bin/python tools/validate_recipe_index.py recipes/recipe-library-v0.5
 recipe index valid
+
+.venv/bin/python tools/build_analytical_mode.py analytics/analytical-mode-v0.1
+analytical mode built: 10 proof packages, index.yaml, dataset-index.yaml, compatibility.yaml
+
+.venv/bin/python tools/validate_analytical_mode.py analytics/analytical-mode-v0.1
+analytical mode valid
 ```
 
 ## Milestone 2 primary signal status
@@ -155,6 +172,12 @@ Met: all twenty families pass their individual primary-authority, Prompt DSL, ex
 
 **Secondary signal:** met. All 23 recipes have complete canonical Markdown and YAML contracts; all twenty Visual DNA families remain covered; all 27 legacy recipe prompts migrate to strict-valid v0.5 packages; proof, compatibility, selection, migration, negative-fixture, deterministic rebuild, documentation, and complete Milestone 1–4 regression gates pass.
 
+## Milestone 5 signal status
+
+**Primary signal:** met. All ten required proof paths rebuild deterministically from typed canonical datasets and pass strict validation. Quantitative values, domains, order, units, labels, sources, transformations, zero/missing/uncertainty/forecast behavior, component compatibility, and layout-free encodings are independently checked.
+
+**Secondary signal:** met. Canonical specification, schemas, family/global contracts, migration/rollback docs, dataset/index/compatibility outputs, tested incomplete mode, seventeen exact-error negative fixtures, focused mutation tests, complete Milestone 1–5 regressions, and clean deterministic rebuild gates pass. Prompt DSL v0.5, D-029, D-030, and accepted raster bytes remain unchanged.
+
 ## Repository state
 
-Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1 with its seven-packet history retained. Milestone 4 is integrated as Recipe Library and Prompt DSL v0.5 with its stacked, independently reviewable history retained. No raster was generated or mutated for Milestones 3 or 4. No tag, GitHub Release, public release-policy change, or Milestone 5 Analytical Mode work has started.
+Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1. Milestone 4 remains integrated as Recipe Library and Prompt DSL v0.5. Milestone 5 is complete as Analytical Mode v0.1 with its stacked, independently reviewable history retained. No raster was generated or mutated for Milestones 3–5. No tag, GitHub Release, public release-policy change, or Milestone 6 Night Mode work has started.

@@ -1,0 +1,3 @@
+id: nondeterministic-output
+base_package: proofs/packages/01-bar-positive-negative.yaml
+mutation: {path: [provenance, deterministic], value: false}

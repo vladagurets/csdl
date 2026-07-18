@@ -1,0 +1,3 @@
+id: missing-source
+base_package: proofs/packages/01-bar-positive-negative.yaml
+mutation: {operation: delete, path: [dataset, source]}
