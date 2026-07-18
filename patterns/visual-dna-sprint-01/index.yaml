@@ -156,7 +156,10 @@ families:
   - B
   evidence_mode: generated
   canonical_example: canonical/light/16x9/12-workflow.png
-  status: awaiting_generation
+  sha256: d245761a52103580a2fa92e79406fc33cd1d48b6a256602d407e18bc0c30288a
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: '13'
   slug: loop
   name: Loop

@@ -180,6 +180,22 @@ Exact-copy review: pass for `ВІД ЦІЛІ ДО ПЕРЕВІРКИ`, `OBJECTIV
 
 Exact-copy review: pass for `КОНТЕКСТНА АРХІТЕКТУРА АГЕНТА`, `USER`, `AGENT`, `TOOLS`, and `MEMORY`; no relation captions, services, or extra text. Direction review: pass for `USER → AGENT`, `AGENT ↔ TOOLS`, and `AGENT ↔ MEMORY`; no fourth relation. Visual mechanism: one open Field establishes system scope, while a boundary gap admits the one external actor relation and two internal Bridges remain distinct. Strongest decision: dusty blue identifies the technical boundary and tool relation without coloring the memory relation or turning nodes into cards. Removable-element check: headline, boundary, four labels, and three Bridges are all required. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the system diagram is intentionally conventional, with CSDL identity carried by open scope, restrained signal, and active space. Accepted catalog score: `4.86`.
 
+### 12 Workflow — generated example accepted
+
+- **Canonical:** `canonical/light/16x9/12-workflow.png`
+- **Prompt:** `prompts/12-workflow.yaml`
+- **Selected:** `12-workflow-v2.png` from three independent built-in GPT Image 2 candidates
+- **Source SHA-256:** `465329619d6ad1d172dd00893bc9da537e3ad999787f901bbe41d4e5ed767219`
+- **Canonical SHA-256:** `d245761a52103580a2fa92e79406fc33cd1d48b6a256602d407e18bc0c30288a`
+- **Source raster:** `1672×941`, RGB PNG
+- **Canonical raster:** `1920×1080`, RGB PNG
+
+- `12-workflow-v1.png` — rejected: exact copy and direction pass, but hollow markers on a shared horizontal route repeat the canonical Timeline mechanism too closely.
+- `12-workflow-v2.png` — selected: exact copy, four bare action labels as Nodes, three minimal forward Vectors, no time-axis markers or containers, and VERIFY as the only coral action.
+- `12-workflow-v3.png` — rejected: exact copy and restraint pass, but repeated filled markers on a horizontal route again read as a timeline rather than a distinct operational procedure.
+
+Exact-copy review: pass for `РОБОЧИЙ ПОТІК З ДОКАЗАМИ`, `UNDERSTAND`, `PLAN`, `EXECUTE`, and `VERIFY`; no numbering, dates, status text, or extra completion state. Visual mechanism: four typographic action Nodes form one unbranched left-to-right route through three neutral forward Vectors. Strongest decision: removing repeated point markers distinguishes the procedure from Timeline while leaving the action sequence immediate. Removable-element check: headline, four actions, and three direction cues are all functional. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is intentionally subordinate to operational lookup. Accepted catalog score: `4.86`.
+
 ### 13 Loop — Pilot reference accepted
 
 - **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png`

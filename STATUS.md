@@ -48,6 +48,8 @@ Hierarchy is complete. Candidate 3 was selected because four nested open Bracket
 
 Architecture is complete. Candidate 2 was selected because USER remains outside one open dusty-blue system Field, AGENT/TOOLS/MEMORY stay inside, and exactly the three declared relations preserve their directions without crossings or UI cards.
 
+Workflow is complete. Candidate 2 was selected because four bare action labels and three forward Vectors make the operational route immediate without reusing Timeline markers, adding Pipeline containers, or implying a Loop.
+
 ## Canonical outputs
 
 ```text
@@ -83,7 +85,7 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 12/20 families have accepted canonical evidence. Eight new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
+Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 13/20 families have accepted canonical evidence. Seven new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
@@ -91,4 +93,4 @@ Met for the infrastructure packet: tests, catalog/schema validation, fixed-data 
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Workflow.
+Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Pipeline; Loop already has accepted Pilot evidence.
