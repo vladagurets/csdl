@@ -13,10 +13,15 @@ def test_incomplete_index_accepts_three_pilot_evidence_entries() -> None:
     assert validate_pattern_index(CATALOG, require_complete=False) == []
 
 
-def test_strict_index_reports_seventeen_awaiting_families() -> None:
+def test_strict_index_reports_current_awaiting_families() -> None:
     errors = validate_pattern_index(CATALOG)
-    assert "family 02 index evidence is incomplete" in errors
-    assert len([error for error in errors if error.endswith("index evidence is incomplete")]) == 17
+    index = yaml.safe_load((CATALOG / "index.yaml").read_text(encoding="utf-8"))
+    expected = {
+        f"family {str(family['id']).zfill(2)} index evidence is incomplete"
+        for family in index["families"]
+        if family.get("status") == "awaiting_generation"
+    }
+    assert set(errors) == expected
 
 
 def test_rejects_hash_drift(tmp_path: Path) -> None:

@@ -22,6 +22,22 @@ Evidence is appended family by family in canonical manifest order. This file int
 
 Audit result: exact headline and supporting sentence confirmed visually against the manifest, including `≠`, apostrophes, and Ukrainian characters. The single graphite Vector terminates at one coral Signal block; no extra label, logo, footer, UI chrome, or decorative geometry is present. Full-resolution and existing `1280×720` evidence remain readable. Canonical Level A is semantically justified by one proposition, one mechanism, and approximately 68% negative space. No regeneration is warranted. Accepted catalog score: `4.86`.
 
+### 02 Cover — generated example accepted
+
+- **Canonical:** `canonical/light/16x9/02-cover.png`
+- **Prompt:** `prompts/02-cover.yaml`
+- **Selected:** `02-cover-v3.png` from three independent built-in GPT Image 2 candidates
+- **Source SHA-256:** `dba515c9528ce3d01476a0a691baae48839f87f14dc58831fabc61986bc8890f`
+- **Canonical SHA-256:** `561635b24bda594365d99902902df57255df92d1460d87670afe7574fc143859`
+- **Source raster:** `1672×941`, RGB PNG
+- **Canonical raster:** `1920×1080`, RGB PNG
+
+- `02-cover-v1.png` — rejected: exact copy and readable hierarchy pass, but a long graphite arrow imports an undeclared `Vector` from the style reference and turns the cover into a Hero-like mechanism.
+- `02-cover-v2.png` — rejected: exact copy passes, but it repeats the undeclared long `Vector`; the off-edge rectangular plane also feels more like an enlarged anchor sample than a distinct Cover family.
+- `02-cover-v3.png` — selected: exact two-block copy, no imported arrow, one clear diagonal coral Signal plane, one open Field, and the strongest Level C entry moment without additional geometry.
+
+Exact-copy review: pass for `СИСТЕМИ, ЩО ВЧАТЬСЯ` and `VISUAL DNA SPRINT 1`, including comma, Ukrainian apostrophe, and numeral; no additional text. Visual mechanism: one title Anchor establishes the series while one diagonal Signal plane enters from the right and defines the cover’s scope. Strongest decision: the large plane creates the catalog’s single canonical Level C peak without touching the title. Removable-element check: only the title, technical subtitle, and semantic plane remain. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: none material. Accepted catalog score: `5.00`.
+
 ### 05 Comparison — Pilot reference accepted
 
 - **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png`

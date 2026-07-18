@@ -24,7 +24,10 @@ families:
   - C
   evidence_mode: generated
   canonical_example: canonical/light/16x9/02-cover.png
-  status: awaiting_generation
+  sha256: 561635b24bda594365d99902902df57255df92d1460d87670afe7574fc143859
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 5.0
 - id: '03'
   slug: quote
   name: Quote

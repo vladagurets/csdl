@@ -30,6 +30,8 @@ Milestone 2 has started from a synchronized clean `main`. Its infrastructure pac
 
 Pilot-backed catalog evidence is audited and accepted for Hero, Comparison, and Loop. Their actual canonical bytes, RGB `1920×1080` metadata, exact Prompt DSL content, three-candidate selection records, hashes, `1280×720` readability evidence, and Pilot rubric rows all pass the Milestone 2 contract. No regeneration is justified.
 
+Cover is the first newly generated family. Three built-in GPT Image 2 candidates were reviewed; Candidate 3 was promoted because it preserves exact copy, removes the undeclared arrow present in Candidates 1–2, and uses one diagonal coral Signal plane as the catalog’s single canonical Level C peak.
+
 ## Canonical outputs
 
 ```text
@@ -65,7 +67,7 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 3/20 families have accepted canonical evidence. The 17 new family rasters and completed contact sheets are not generated yet. Pilot 01 remains fully met.
+Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 4/20 families have accepted canonical evidence. Sixteen new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
@@ -73,4 +75,4 @@ Met for the infrastructure packet: tests, catalog/schema validation, fixed-data 
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; Pilot evidence is stacked on `codex/m2-pilot-evidence`. The next family packet generates and reviews Cover from three built-in GPT Image 2 candidates.
+Infrastructure review is open from `codex/m2-infrastructure`; Pilot evidence and Cover are stacked in subsequent branches. The next family packet generates and reviews Quote from three built-in GPT Image 2 candidates.
