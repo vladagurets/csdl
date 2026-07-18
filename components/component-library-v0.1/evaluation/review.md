@@ -147,3 +147,47 @@ pass
 ```
 
 Remaining risk: Axis intentionally unifies five evidenced modes. Mode-specific proof validation currently enforces the fixed quantitative contract only for analytical proofs; the structural and analytical proof packet will exercise both open topology and honest scale before milestone completion.
+
+## Relation component packet
+
+- Branch: `codex/m3-components-relations`
+- Accepted records: `06 Vector`, `09 Loop`, `10 Collision`, `11 Bridge`
+- Canonical specs: `specs/06-vector.md`, `09-loop.md`, `10-collision.md`, `11-bridge.md`
+- Evidence levels: all strong
+- Raster generation: none
+- Canonical raster mutation: none
+
+### Owning distinctions
+
+- Vector owns a source-to-target action, state change, or continuous transformation carrier.
+- Loop owns one closed recurrence over three to five ordered Nodes.
+- Collision owns exactly two inputs producing one named intrinsic overlap/result.
+- Bridge owns topology, ownership, or explicit branching between two endpoints, not continuous progress.
+
+The contracts explicitly reject substitution across Vector/Axis, Vector/Bridge, Loop/Axis, Collision/Cluster, and Bridge/Workflow semantics.
+
+### TDD and validation evidence
+
+The packet began with the expected failure that the canonical thirteen-record sequence still contained only nine accepted records.
+
+```text
+focused component infrastructure tests
+17 passed
+
+programmatic incomplete-mode library validation
+component relations packet valid
+
+.venv/bin/python -m pytest -q
+66 passed
+
+Pilot manifest/style-anchor/assets/scores validators
+pass
+
+Milestone 2 catalog/data/assets/scores/review/index validators
+pass
+
+git diff --check
+pass
+```
+
+Remaining risk: real proof instances do not yet exercise relation-direction permission across two component records. The composition-proof packet must demonstrate at least one allowed Field/Node/Bridge topology and reject one incompatible relation before the primary signal can pass.

@@ -112,8 +112,7 @@ def test_foundation_packet_contains_complete_expected_components() -> None:
 
 def test_units_packet_contains_complete_expected_components() -> None:
     data = yaml.safe_load((LIBRARY / "manifest.yaml").read_text(encoding="utf-8"))
-
-    assert [component["slug"] for component in data["components"]] == [
+    unit_slugs = [
         "anchor",
         "signal",
         "field",
@@ -121,6 +120,33 @@ def test_units_packet_contains_complete_expected_components() -> None:
         "cluster",
         "divider",
         "node",
+        "axis",
+        "label",
+    ]
+
+    assert [
+        component["slug"]
+        for component in data["components"]
+        if component["slug"] in unit_slugs
+    ] == unit_slugs
+    assert validate_component_library(LIBRARY / "manifest.yaml", require_complete=False) == []
+
+
+def test_relation_packet_contains_complete_expected_components() -> None:
+    data = yaml.safe_load((LIBRARY / "manifest.yaml").read_text(encoding="utf-8"))
+
+    assert [component["slug"] for component in data["components"]] == [
+        "anchor",
+        "signal",
+        "field",
+        "frame",
+        "cluster",
+        "vector",
+        "divider",
+        "node",
+        "loop",
+        "collision",
+        "bridge",
         "axis",
         "label",
     ]

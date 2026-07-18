@@ -346,6 +346,69 @@ components:
     specification: specs/05-cluster.md
     evidence_level: strong
 
+  - id: "06"
+    slug: vector
+    name: Vector
+    category: relational
+    purpose: "Communicate direction, action, or transformation between declared semantic sources and targets."
+    semantic_meaning: "An active route whose direction changes how connected components are read."
+    spatial_contract:
+      count: {min: 0, max: 5}
+      source_required: true
+      target_required: true
+      continuity: [single_segment, separate_segments, continuous_carrier]
+      arrowheads_per_instance: {min: 0, max: 1}
+    dimensions:
+      unit: px
+      width: {min: 24, max: 1536}
+      height: {min: 1, max: 720}
+      area_percent: {min: 0.02, max: 8}
+    relations:
+      allowed:
+        - {type: directs, target: Node, direction: outbound, cardinality: one_or_many}
+        - {type: directs, target: Anchor, direction: outbound, cardinality: zero_or_many}
+        - {type: directs, target: Field, direction: outbound, cardinality: zero_or_many}
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: attached_to, target: Label, direction: inbound, cardinality: zero_or_one}
+        - {type: highlights, target: Signal, direction: inbound, cardinality: zero_or_one}
+      forbidden:
+        - {type: repeats, target: Loop, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: orders, target: Axis, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: connected_to, target: Bridge, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [before-after, workflow, pipeline]
+    expression_limits:
+      A: {status: allowed, max_count: 3}
+      B: {status: allowed, max_count: 2}
+      C: {status: conditional, max_count: 1, condition: "One decisive direction supports a short culmination without creating a second route."}
+    typography:
+      role: none
+      constraints: [Labels_attach_to_route_or_endpoints, no_text_inside_thin_Vector]
+    semantic_color:
+      default: neutral.line
+      signal_target_allowed: true
+      constraints: [neutral_by_default, semantic_carrier_may_use_one_signal_color]
+    examples:
+      do:
+        - {description: "Use three separate neutral Vectors between four Workflow actions.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+        - {description: "Use one continuous data-blue carrier through five Pipeline gates.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not use a Vector as an unlabeled Axis, a closed Loop, or a decorative arrow.", evidence: patterns/visual-dna-sprint-01/specs/12-workflow.md}
+    prompt_dsl:
+      syntax: "Vector(id=<id>, source=<instance-id>, target=<instance-id>, role=<action|transformation|carrier>)"
+      required_fields: [id, source, target, role]
+      optional_fields: [continuity, direction, signal_state]
+    validation_invariants:
+      - "Every Vector has one declared source, target, and semantic role."
+      - "Arrow direction matches the declared reading or transformation direction."
+      - "Separate workflow Vectors do not become a shared Axis."
+      - "A continuous Pipeline carrier stays unbroken through every declared gate."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "10.4 Structural components / Vector", supports: "Direction, action, or transformation meaning."}
+      - {path: patterns/visual-dna-sprint-01/specs/12-workflow.md, locator: "Semantic components", supports: "Separate action Vectors in execution order."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "07 Before / After, 12 Workflow, and 14 Pipeline", supports: "State change, segmented route, and continuous carrier behavior."}
+    specification: specs/06-vector.md
+    evidence_level: strong
+
   - id: "07"
     slug: divider
     name: Divider
@@ -467,6 +530,192 @@ components:
       - {path: patterns/visual-dna-sprint-01/specs/08-timeline.md, locator: "Semantic components", supports: "Ordered directly labeled stages."}
       - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "08 Timeline through 20 Dashboard", supports: "Accepted bare/open/solid/data Node behavior and UI rejections."}
     specification: specs/08-node.md
+    evidence_level: strong
+
+  - id: "09"
+    slug: loop
+    name: Loop
+    category: relational
+    purpose: "Represent a closed recurring process whose output changes or feeds the next cycle."
+    semantic_meaning: "One directed recurrence over three to five ordered stages."
+    spatial_contract:
+      count: {min: 0, max: 1}
+      node_count: {min: 3, max: 5}
+      closure_count: 1
+      direction_required: true
+      center_space: open_by_default
+    dimensions:
+      unit: px
+      width: {min: 360, max: 980}
+      height: {min: 360, max: 760}
+      area_percent: {min: 10, max: 45}
+    relations:
+      allowed:
+        - {type: repeats, target: Node, direction: outbound, cardinality: one_or_many}
+        - {type: orders, target: Node, direction: outbound, cardinality: one_or_many}
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: attached_to, target: Label, direction: inbound, cardinality: zero_or_many}
+        - {type: highlights, target: Signal, direction: inbound, cardinality: zero_or_one}
+      forbidden:
+        - {type: connected_to, target: Bridge, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: separates, target: Divider, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: produces, target: Collision, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [loop]
+    expression_limits:
+      A: {status: allowed, max_count: 1, max_nodes: 5, center_copy: false}
+      B: {status: allowed, max_count: 1, max_nodes: 5, center_copy: short}
+      C: {status: conditional, max_count: 1, condition: "Three to four directly labeled stages and very short center copy support a culmination."}
+    typography:
+      role: label
+      constraints: [direct_stage_labels, open_center_at_A, short_center_copy_at_B_or_C]
+    semantic_color:
+      default: neutral.line
+      signal_target_allowed: true
+      constraints: [one_active_Node, no_decorative_orbit]
+    examples:
+      do:
+        - {description: "Use one five-stage closed Loop with COMPOUND as the only active Node.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not break closure, duplicate markers, use UI pills, or add decorative orbit lines.", evidence: patterns/visual-dna-sprint-01/specs/13-loop.md}
+    prompt_dsl:
+      syntax: "Loop(id=<id>, members=<node-ids>, direction=<clockwise|counterclockwise>, closed=true)"
+      required_fields: [id, members, direction, closed]
+      optional_fields: [active_node, center_label]
+    validation_invariants:
+      - "A Loop contains three to five Nodes in exact cyclic order."
+      - "The route closes exactly once and exposes one direction."
+      - "At most one Node carries the dominant Signal."
+      - "An open return arrow or repeated orbit does not satisfy Loop closure."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "11.3 Recipe 013 Loop", supports: "Three-to-five-stage closed process and expression behavior."}
+      - {path: patterns/visual-dna-sprint-01/specs/13-loop.md, locator: "Semantic components and Assembly order", supports: "One closed ordered Loop with one active Node."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "13 Loop — Pilot reference accepted", supports: "Accepted five-stage closure and rejected UI/duplicate-marker variants."}
+    specification: specs/09-loop.md
+    evidence_level: strong
+
+  - id: "10"
+    slug: collision
+    name: Collision
+    category: relational
+    purpose: "Show two forces or Anchors producing one consequential intersection, constraint, or synthesis."
+    semantic_meaning: "A named result created by one functional overlap between two inputs."
+    spatial_contract:
+      count: {min: 0, max: 1}
+      input_count: 2
+      overlap_count: 1
+      result_required: true
+      negative_space_percent: {min: 50, max: 75}
+    dimensions:
+      unit: px
+      width: {min: 244, max: 1472}
+      height: {min: 144, max: 720}
+      area_percent: {min: 2, max: 55}
+    relations:
+      allowed:
+        - {type: overlaps, target: Anchor, direction: outbound, cardinality: one_or_many}
+        - {type: produces, target: Signal, direction: outbound, cardinality: one}
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: attached_to, target: Label, direction: inbound, cardinality: one_or_many}
+      forbidden:
+        - {type: groups, target: Cluster, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: orders, target: Axis, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: directs, target: Vector, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: repeats, target: Loop, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [collision]
+    expression_limits:
+      A: {status: forbidden, max_count: 0, reason: "The interaction itself requires constructive pressure beyond Quiet expression."}
+      B: {status: allowed, max_count: 1, max_area_percent: 55}
+      C: {status: conditional, max_count: 1, condition: "Inputs and named result remain very short and preserve one reading route."}
+    typography:
+      role: display_and_label
+      constraints: [two_equal_input_roles, direct_result_label, all_text_horizontal]
+    semantic_color:
+      default: ink.primary
+      signal_target_allowed: true
+      constraints: [overlap_may_be_signal, no_explosion_effect]
+    examples:
+      do:
+        - {description: "Use two equal graphite planes crossing once with the named coral overlap as synthesis.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not use adjacency, Venn decoration, debris, sparks, shards, or an unlabeled overlap.", evidence: patterns/visual-dna-sprint-01/specs/06-collision.md}
+    prompt_dsl:
+      syntax: "Collision(id=<id>, inputs=<anchor-ids>, result=<content-ref>)"
+      required_fields: [id, inputs, result]
+      optional_fields: [overlap_role, signal_state]
+    validation_invariants:
+      - "Exactly two inputs produce exactly one named result."
+      - "The inputs overlap intrinsically rather than stopping beside a connector."
+      - "The overlap is functional and never an explosion effect."
+      - "Level B preserves at least fifty percent negative space."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "10.4 Structural components / Collision", supports: "Conflict, comparison, or synthesis point."}
+      - {path: patterns/visual-dna-sprint-01/specs/06-collision.md, locator: "Semantic components", supports: "Two Anchors and one named Signal overlap."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "06 Collision — regenerated example accepted", supports: "Intrinsic overlap, 75.9 percent open Field, and rejected adjacent/overdense variants."}
+    specification: specs/10-collision.md
+    evidence_level: strong
+
+  - id: "11"
+    slug: bridge
+    name: Bridge
+    category: relational
+    purpose: "Connect semantically distant components for topology, ownership, or explicit branching without implying continuous progress."
+    semantic_meaning: "A declared relation between separate Nodes, Fields, Frames, or Clusters."
+    spatial_contract:
+      count: {min: 0, max: 4}
+      endpoints_required: 2
+      direction_modes: [undirected, directed, bidirectional]
+      crossing_allowed: false
+    dimensions:
+      unit: px
+      width: {min: 24, max: 1536}
+      height: {min: 1, max: 720}
+      area_percent: {min: 0.02, max: 8}
+    relations:
+      allowed:
+        - {type: connected_to, target: Node, direction: outbound, cardinality: one_or_many}
+        - {type: connected_to, target: Field, direction: outbound, cardinality: zero_or_many}
+        - {type: connected_to, target: Frame, direction: outbound, cardinality: zero_or_many}
+        - {type: connected_to, target: Cluster, direction: outbound, cardinality: zero_or_many}
+        - {type: directs, target: Node, direction: outbound, cardinality: zero_or_many, condition: "Only for an explicit directed or branching relation."}
+        - {type: inside, target: Field, direction: outbound, cardinality: zero_or_one}
+        - {type: attached_to, target: Label, direction: inbound, cardinality: zero_or_one}
+      forbidden:
+        - {type: orders, target: Axis, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: repeats, target: Loop, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: produces, target: Collision, direction: outbound, cardinality: zero_or_many, condition: always}
+        - {type: separates, target: Divider, direction: outbound, cardinality: zero_or_many, condition: always}
+    compatible_families: [hierarchy, architecture, decision-tree]
+    expression_limits:
+      A: {status: allowed, max_count: 4}
+      B: {status: allowed, max_count: 4}
+      C: {status: forbidden, max_count: 0, reason: "Multiple explicit topology relations conflict with a short single-peak composition."}
+    typography:
+      role: label
+      constraints: [direct_relation_or_branch_label_when_needed, no_floating_caption]
+    semantic_color:
+      default: neutral.line
+      signal_target_allowed: true
+      constraints: [neutral_by_default, one_risk_or_tool_relation_may_carry_signal]
+    examples:
+      do:
+        - {description: "Use exactly three directed or bidirectional Bridges in Architecture.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+        - {description: "Use two attached labeled Bridges for mutually exclusive Decision Tree branches.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
+      dont:
+        - {description: "Do not use unlabeled crossings, a continuous workflow route, or decorative network links.", evidence: patterns/visual-dna-sprint-01/specs/11-architecture.md}
+    prompt_dsl:
+      syntax: "Bridge(id=<id>, source=<instance-id>, target=<instance-id>, role=<topology|ownership|branch>)"
+      required_fields: [id, source, target, role]
+      optional_fields: [direction, label, branch_value, signal_state]
+    validation_invariants:
+      - "Every Bridge has exactly two declared endpoints and one relation role."
+      - "Direction and branch Labels match the content contract."
+      - "Bridges do not cross unrelated relations."
+      - "A continuous operational route uses Vector rather than Bridge."
+    evidence:
+      - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "10.4 Structural components / Bridge", supports: "Connection between distant concepts."}
+      - {path: patterns/visual-dna-sprint-01/specs/11-architecture.md, locator: "Semantic components", supports: "Permitted stable topology relations."}
+      - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "10 Hierarchy, 11 Architecture, and 15 Decision Tree", supports: "Ownership, topology, and branching behavior."}
+    specification: specs/11-bridge.md
     evidence_level: strong
 
   - id: "12"
