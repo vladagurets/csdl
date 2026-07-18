@@ -15,7 +15,7 @@ content:
 composition:
   mechanism: "Two thin labeled Axes create four open regions; four directly labeled Nodes use relative position only"
   components: [Axis, Field, Node, Signal]
-typography: {display: "smooth Ukrainian-capable Inter Display", labels: "Inter-style neutral sans", all_text_horizontal: true}
+typography: {display: "Ukrainian-capable Modular Technical display with squared engineering proportions and tight rhythm", labels: "neutral high-legibility sans", all_text_horizontal: true}
 palette: {background: "#F7F5F0", ink: "#1B1B19", neutral_line: "#B8B5AE", primary_signal: "#C96157"}
 hard_exclusions: [extra text, numeric ticks, fake scores, quadrant cards, decorative grid, overlapping labels, UI chrome, gradients, shadows, 3D]
 output: {format: PNG, exact_size: 1920x1080, text_accuracy: publish-ready}

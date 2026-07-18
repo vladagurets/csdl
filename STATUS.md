@@ -50,7 +50,7 @@ pilots/01-agentic-discipline/contact-sheets/pilot-01-light.png
 
 ```text
 .venv/bin/python -m pytest -q
-46 passed
+47 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid

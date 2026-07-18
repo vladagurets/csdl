@@ -212,6 +212,12 @@ def validate_pattern_catalog(path: Path) -> list[str]:
                 errors.append(f"family {family_id} prompt must use the catalog visual authority package")
             if "reference" in prompt_data:
                 errors.append(f"family {family_id} prompt must not use a single legacy reference")
+            typography_text = yaml.safe_dump(
+                prompt_data.get("typography", {}),
+                allow_unicode=True,
+            ).lower()
+            if family.get("evidence", {}).get("mode") == "generated" and "modular technical" not in typography_text:
+                errors.append(f"family {family_id} generated prompt must declare Modular Technical typography")
             for token in forbidden:
                 if _contains_token(prompt_text, str(token)):
                     errors.append(f"family {family_id} prompt contains forbidden placeholder: {token}")

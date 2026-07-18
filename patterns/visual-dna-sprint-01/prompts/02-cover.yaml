@@ -12,7 +12,7 @@ composition:
   components: [Anchor, Field, Signal]
   reading_path: top_left_to_bottom_right
   negative_space: "at least 55%"
-typography: {display: "smooth Ukrainian-capable Inter Display, heavy and restrained", body: "Inter-style neutral sans", all_text_horizontal: true}
+typography: {display: "Ukrainian-capable Modular Technical display with squared engineering proportions and rare condensed editorial emphasis", body: "neutral high-legibility sans", all_text_horizontal: true}
 palette: {background: "#F7F5F0", ink: "#1B1B19", primary_signal: "#C96157"}
 hard_exclusions: [extra text, logo, footer, agenda, UI chrome, decorative geometry, gradients, shadows, 3D, retro or political styling]
 output: {format: PNG, exact_size: 1920x1080, text_accuracy: publish-ready}
