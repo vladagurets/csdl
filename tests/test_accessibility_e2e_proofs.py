@@ -77,6 +77,26 @@ def test_negative_fixtures_fail_for_exact_declared_reason() -> None:
         assert fixture["error"] in errors, (fixture["file"], errors)
 
 
+def test_raster_inventory_pins_every_tracked_accepted_png() -> None:
+    inventory = yaml.safe_load(
+        (LIBRARY / "evaluation/raster-hashes.yaml").read_text(encoding="utf-8")
+    )
+    assert inventory["file_count"] == 60
+    assert len(inventory["files"]) == 60
+    assert all("/drafts/" not in entry["path"] for entry in inventory["files"])
+    assert all(len(entry["sha256"]) == 64 for entry in inventory["files"])
+    assert {entry["path"] for entry in inventory["files"]} == {
+        path.relative_to(ROOT).as_posix()
+        for path in ROOT.rglob("*.png")
+        if path.is_file()
+        and "/drafts/" not in path.as_posix()
+        and any(
+            path.as_posix().startswith((ROOT / prefix).as_posix())
+            for prefix in ("pilots", "patterns", "references/canonical")
+        )
+    }
+
+
 def test_strict_library_rejects_drifted_package_and_index(tmp_path: Path) -> None:
     target = tmp_path / "accessibility/night-mode-v0.1"
     shutil.copytree(LIBRARY, target)

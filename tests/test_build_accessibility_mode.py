@@ -121,7 +121,12 @@ def test_partial_builder_outputs_are_byte_deterministic(tmp_path: Path) -> None:
     outputs = build_accessibility_mode(target, require_complete=False)
     second = {path.name: path.read_bytes() for path in outputs}
     assert first == second
-    assert {"index.yaml", "contrast-matrix.yaml", "compatibility.yaml"} <= set(first)
+    assert {
+        "index.yaml",
+        "contrast-matrix.yaml",
+        "compatibility.yaml",
+        "raster-hashes.yaml",
+    } <= set(first)
 
 
 def test_package_validator_rejects_global_accessibility_mutations() -> None:

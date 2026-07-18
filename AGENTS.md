@@ -160,7 +160,14 @@ python tools/build_analytical_mode.py analytics/analytical-mode-v0.1
 python tools/validate_analytical_mode.py analytics/analytical-mode-v0.1
 ```
 
-Pilot 01 and Milestones 2–5 are complete, so all strict validators for those milestones are expected to pass. Use tested `require_complete=False` modes only when reviewing historical intermediate branches, and record only evidence actually reviewed.
+For Night Mode and Accessibility v0.1, also run:
+
+```bash
+python tools/build_accessibility_mode.py accessibility/night-mode-v0.1
+python tools/validate_accessibility_mode.py accessibility/night-mode-v0.1
+```
+
+Pilot 01 and Milestones 2–5 are complete, and Milestone 6 is in final integration, so all strict validators through Milestone 6 are expected to pass. Use tested `require_complete=False` modes only when reviewing historical intermediate branches, and record only evidence actually reviewed.
 
 ## Definition of done for one card
 
