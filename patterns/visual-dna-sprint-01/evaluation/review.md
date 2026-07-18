@@ -38,6 +38,22 @@ Audit result: exact headline and supporting sentence confirmed visually against 
 
 Exact-copy review: pass for `СИСТЕМИ, ЩО ВЧАТЬСЯ` and `VISUAL DNA SPRINT 1`, including comma, Ukrainian apostrophe, and numeral; no additional text. Visual mechanism: one title Anchor establishes the series while one diagonal Signal plane enters from the right and defines the cover’s scope. Strongest decision: the large plane creates the catalog’s single canonical Level C peak without touching the title. Removable-element check: only the title, technical subtitle, and semantic plane remain. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: none material. Accepted catalog score: `5.00`.
 
+### 03 Quote — generated example accepted
+
+- **Canonical:** `canonical/light/16x9/03-quote.png`
+- **Prompt:** `prompts/03-quote.yaml`
+- **Selected:** `03-quote-v2.png` from three independent built-in GPT Image 2 candidates
+- **Source SHA-256:** `f4bfe1d7010e46389e633cc87dbfb0150805a24cbae091ac866a75fa293ae53d`
+- **Canonical SHA-256:** `03ba2cc2df21f2e0c2fb89349529434ed9d80fc1eaccd0c0b547e16cb4d00b4d`
+- **Source raster:** `1672×941`, RGB PNG
+- **Canonical raster:** `1920×1080`, RGB PNG
+
+- `03-quote-v1.png` — rejected: exact copy passes, but the wider three-line block creates more visual pressure and leaves less separation between the quote and its attribution.
+- `03-quote-v2.png` — selected: exact quotation and attribution, strongest Level A spacing, clearest subordinate source relationship, and one small coral hinge with no other geometry.
+- `03-quote-v3.png` — rejected: exact copy passes, but the larger display scale pushes a principle slide toward poster expression and makes the Signal feel detached.
+
+Exact-copy review: pass for the full Ukrainian quotation, curly opening/closing quotation marks, final period, and `AGENTIC DISCIPLINE`; no additional speaker or source metadata. Visual mechanism: the quotation is one typographic Anchor, the attribution is one subordinate source relation, and the coral square marks the hinge without becoming decoration. Strongest decision: Candidate 2 preserves a decisive quote while retaining the quiet field needed for a Level A pause. Removable-element check: nothing remains beyond exact content and the single Signal. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability comes from typographic cadence rather than a large geometric event, which is appropriate for this family. Accepted catalog score: `4.86`.
+
 ### 05 Comparison — Pilot reference accepted
 
 - **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png`
