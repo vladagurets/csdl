@@ -14,6 +14,7 @@ The catalog is not a fixed template library. `manifest.yaml` provides machine-re
 .venv/bin/python tools/validate_pattern_data.py patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
 .venv/bin/python tools/validate_pattern_assets.py patterns/visual-dna-sprint-01
 .venv/bin/python tools/validate_pattern_scores.py patterns/visual-dna-sprint-01/evaluation/scores.csv
+.venv/bin/python tools/validate_pattern_index.py patterns/visual-dna-sprint-01
 ```
 
 Asset and score validation are milestone-level completion gates. During infrastructure and family-by-family branches, use their programmatic `require_complete=False` mode through tests; command-line validation remains strict.

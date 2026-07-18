@@ -131,6 +131,7 @@ At Milestone 2 completion, also run:
 python tools/validate_pattern_assets.py patterns/visual-dna-sprint-01
 python tools/validate_pattern_scores.py patterns/visual-dna-sprint-01/evaluation/scores.csv
 python tools/build_pattern_catalog.py patterns/visual-dna-sprint-01
+python tools/validate_pattern_index.py patterns/visual-dna-sprint-01
 ```
 
 Pilot 01 is complete, so all Pilot validators are expected to pass. Milestone 2 asset and score validators are strict milestone-level gates; use their tested `require_complete=False` programmatic mode only on intermediate family branches and record only evidence actually reviewed.
