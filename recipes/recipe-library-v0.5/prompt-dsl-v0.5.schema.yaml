@@ -54,7 +54,7 @@ defaults:
   expression: A
   density: low
   canvas:
-    ratio: 16:9
+    ratio: '16:9'
     width: 1920
     height: 1080
     orientation: landscape

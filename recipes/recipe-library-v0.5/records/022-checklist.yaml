@@ -1,0 +1,151 @@
+id: '022'
+slug: checklist
+name: Checklist
+version: 0.5.0
+source_family: framework
+problem: Evaluate readiness through a bounded set of required questions with one selected
+  gate.
+allowed_scenarios:
+- readiness review
+- preflight questions
+- completion gate
+ingredients:
+  required:
+  - component: Anchor
+    min: 1
+    max: 1
+  - component: Cluster
+    min: 1
+    max: 1
+  - component: Node
+    min: 3
+    max: 6
+  - component: Signal
+    min: 1
+    max: 1
+  optional:
+  - component: Label
+    min: 0
+    max: 6
+relations:
+  allowed:
+  - subject: Cluster
+    type: groups
+    object: Node
+  - subject: Signal
+    type: highlights
+    object: Node
+  - subject: Label
+    type: attached_to
+    object: Node
+  forbidden:
+  - subject: Cluster
+    type: orders
+    object: Node
+assembly_order:
+- state the readiness question as one Anchor
+- group three to six interrogative Nodes without sequence
+- select one gate or unresolved question once
+expression_levels:
+  A:
+    status: allowed
+  B:
+    status: conditional
+    condition: Up to six questions remain peer gates without chronology.
+  C:
+    status: forbidden
+    reason: A checklist needs multiple readable questions.
+compatible_visual_dna_families:
+- framework
+presentation:
+  canvas: 1920x1080
+  orientation: landscape
+  safe_margin_horizontal: 96
+  safe_margin_vertical: 72
+  negative_space_percent:
+    min: 50
+    max: 75
+  reading_paths:
+  - top_left_to_bottom_right
+  presentation_readability: 1280x720 without zoom
+typography:
+  display: modular_technical
+  body: neutral_sans
+  code: technical_mono
+  constraints:
+  - all text horizontal by default
+  - maximum one typographic trick
+  - Ukrainian and English copy exact
+semantic_color:
+  dominant_signal: coral
+  allowed:
+  - coral
+  constraints:
+  - one dominant signal
+  - color is not the only carrier of meaning
+content_contract:
+  required:
+  - headline
+  - questions
+  - supporting
+  optional: []
+  exact: true
+  max_words: 60
+  data_contract: none
+prompt_dsl:
+  semantic_intent: peer-question-readiness-gate
+  required_fields:
+  - semantic_intent
+  - content
+  - component_instances
+  - relations
+  - generation_constraints
+  - provenance
+  optional_fields:
+  - component_instances[].attributes
+  - provenance.source_prompt
+  deterministic_defaults:
+    expression: A
+    density: low
+    reading_path: top_left_to_bottom_right
+hard_exclusions:
+- extra text
+- logos or repeated footers
+- UI chrome or decorative card shells
+- decorative coordinates or random dot fields
+- gradients, shadows, glossy surfaces, or 3D
+- political, Soviet, or revolutionary-poster styling
+- pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+- questions are typographic modules, not colored cards
+- one coral marker only; no repeated checkmarks
+- no footer, logo, frame, large background shape, or extra text
+- all visible copy exact
+- Container or ad hoc layout and geometry primitives
+validation_invariants:
+- Every required content binding is present and exact.
+- Ingredient counts remain inside declared cardinality.
+- Every instance and relation is permitted by Component Library v0.1.
+- No undeclared layout or geometry terminology is present.
+- One main idea, one visual mechanism, and one dominant Signal remain observable.
+canonical_examples:
+- path: pilots/01-agentic-discipline/canonical/light/16x9/06-takeaway.png
+  role: accepted Pilot 01 evidence
+evidence:
+- path: pilots/01-agentic-discipline/prompts/06-takeaway.yaml
+  locator: accepted legacy Prompt DSL package
+  supports: Canonical content and legacy mechanism.
+- path: pilots/01-agentic-discipline/evaluation/review.md
+  locator: Slide 06 — Operational takeaway / Level A
+  supports: Three-candidate selection, exact-copy, readability, and score evidence.
+- path: pilots/01-agentic-discipline/canonical/light/16x9/06-takeaway.png
+  locator: canonical raster
+  supports: Accepted presentation-scale example.
+compatibility:
+  legacy_names:
+  - Checklist
+  migration: Legacy 2x2 zone language is discarded; Cluster membership and direct
+    Node content preserve the checklist semantics.
+  rollback: Revert the additive recipe record and derived outputs; accepted Pilot
+    prompt and raster bytes remain unchanged.
+specification: specs/022-checklist.md
+record: records/022-checklist.yaml

@@ -21,6 +21,14 @@ def copy_library(tmp_path: Path) -> Path:
         ROOT / "components/component-library-v0.1/manifest.yaml",
         component_target / "manifest.yaml",
     )
+    manifest = yaml.safe_load((target / "manifest.yaml").read_text(encoding="utf-8"))
+    for entry in manifest["recipes"]:
+        record = yaml.safe_load((target / entry["record"]).read_text(encoding="utf-8"))
+        for evidence in record["evidence"]:
+            source = ROOT / evidence["path"]
+            destination = tmp_path / evidence["path"]
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, destination)
     return target
 
 

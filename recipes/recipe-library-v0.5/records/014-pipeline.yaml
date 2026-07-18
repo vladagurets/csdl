@@ -1,0 +1,153 @@
+id: '014'
+slug: pipeline
+name: Pipeline
+version: 0.5.0
+source_family: pipeline
+problem: Show material or data transformed through fixed stages.
+allowed_scenarios:
+- data processing
+- content production
+- build system
+ingredients:
+  required:
+  - component: Node
+    min: 3
+    max: 7
+  - component: Vector
+    min: 1
+    max: 5
+  - component: Label
+    min: 3
+    max: 7
+  - component: Signal
+    min: 1
+    max: 1
+  optional: []
+relations:
+  allowed:
+  - subject: Vector
+    type: directs
+    object: Node
+  - subject: Label
+    type: attached_to
+    object: Node
+  - subject: Signal
+    type: highlights
+    object: Vector
+  forbidden:
+  - subject: Vector
+    type: repeats
+    object: Node
+assembly_order:
+- place input
+- order transform stages
+- show output
+- signal validation gate
+expression_levels:
+  A:
+    status: allowed
+  B:
+    status: allowed
+  C:
+    status: forbidden
+    reason: No accepted evidence supports this recipe at the expression level.
+compatible_visual_dna_families:
+- pipeline
+presentation:
+  canvas: 1920x1080
+  orientation: landscape
+  safe_margin_horizontal: 96
+  safe_margin_vertical: 72
+  negative_space_percent:
+    min: 50
+    max: 75
+  reading_paths:
+  - left_to_right
+  presentation_readability: 1280x720 without zoom
+typography:
+  display: modular_technical
+  body: neutral_sans
+  code: technical_mono
+  constraints:
+  - all text horizontal by default
+  - maximum one typographic trick
+  - Ukrainian and English copy exact
+semantic_color:
+  dominant_signal: data_blue
+  allowed:
+  - data_blue
+  constraints:
+  - one dominant signal
+  - signal area at most 10 percent
+  - color is not the only carrier of meaning
+content_contract:
+  required:
+  - headline
+  - stages
+  optional: []
+  exact: true
+  max_words: 60
+  data_contract: none
+prompt_dsl:
+  semantic_intent: pipeline-mechanism
+  required_fields:
+  - semantic_intent
+  - content
+  - component_instances
+  - relations
+  - generation_constraints
+  - provenance
+  optional_fields:
+  - component_instances[].attributes
+  - provenance.source_prompt
+  - provenance.dataset
+  deterministic_defaults:
+    expression: B
+    density: medium
+    reading_path: left_to_right
+hard_exclusions:
+- extra text
+- logos or repeated footers
+- UI chrome or decorative card shells
+- decorative coordinates or random dot fields
+- gradients, shadows, glossy surfaces, or 3D
+- political, Soviet, or revolutionary-poster styling
+- pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+- branching
+- feedback arrow
+- pipe illustration
+- database icons
+- code UI
+- hidden validation
+- gradients
+- shadows
+- 3D
+- Container or ad hoc layout and geometry primitives
+validation_invariants:
+- Every required content binding is present and exact.
+- Ingredient counts remain inside declared cardinality.
+- Every instance and relation is permitted by Component Library v0.1.
+- No undeclared layout or geometry terminology is present.
+- One main idea, one visual mechanism, and one dominant Signal remain observable.
+canonical_examples:
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/14-pipeline.png
+  role: accepted visual calibration
+evidence:
+- path: patterns/visual-dna-sprint-01/manifest.yaml
+  locator: family 14 Pipeline
+  supports: Problem, scenarios, components, assembly, levels, content, and exclusions.
+- path: patterns/visual-dna-sprint-01/specs/14-pipeline.md
+  locator: complete family contract
+  supports: Canonical Markdown semantic and Prompt DSL evidence.
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/14-pipeline.png
+  locator: canonical raster
+  supports: Accepted presentation-scale example.
+compatibility:
+  legacy_names:
+  - Pipeline
+  migration: Legacy Prompt DSL v0.1 content is rebound mechanically to explicit v0.5
+    instances, relations, and deterministic constraints; source files remain unchanged.
+  rollback: Revert the additive recipe record and derived outputs; accepted source
+    prompts and raster bytes remain unchanged.
+specification: specs/014-pipeline.md
+record: records/014-pipeline.yaml

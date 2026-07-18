@@ -34,13 +34,34 @@ def _contains_token(text: str, token: str) -> bool:
     return re.search(rf"\b{re.escape(token)}\b", text, flags=re.IGNORECASE) is not None
 
 
-def _component_contract(repository_root: Path) -> tuple[list[str], list[str]]:
-    data = yaml.safe_load(
+def _component_contract(repository_root: Path) -> dict[str, Any]:
+    return yaml.safe_load(
         (repository_root / "components/component-library-v0.1/manifest.yaml").read_text(
             encoding="utf-8"
         )
     )
-    return data["vocabulary"]["components"], data["vocabulary"]["relations"]
+
+
+def _relation_is_allowed(
+    subject: dict[str, Any], target: dict[str, Any], relation_type: str
+) -> bool:
+    subject_name = subject.get("name")
+    target_name = target.get("name")
+    for entry in subject.get("relations", {}).get("allowed", []):
+        if (
+            entry.get("type") == relation_type
+            and entry.get("direction") in {"outbound", "either"}
+            and entry.get("target") in {target_name, "any"}
+        ):
+            return True
+    for entry in target.get("relations", {}).get("allowed", []):
+        if (
+            entry.get("type") == relation_type
+            and entry.get("direction") in {"inbound", "either"}
+            and entry.get("target") in {subject_name, "any"}
+        ):
+            return True
+    return False
 
 
 def _validate_ingredients(
@@ -118,6 +139,7 @@ def _validate_record(
     root: Path,
     repository_root: Path,
     schema: dict[str, Any],
+    components_by_name: dict[str, dict[str, Any]],
     errors: list[str],
 ) -> None:
     recipe_id = str(recipe.get("id", "???"))
@@ -145,6 +167,30 @@ def _validate_record(
 
     _validate_ingredients(recipe, schema, errors, label)
     _validate_relations(recipe, schema, errors, label)
+
+    families_for_contract = set(recipe.get("compatible_visual_dna_families", []))
+    for group in ("required", "optional"):
+        for ingredient in recipe.get("ingredients", {}).get(group, []):
+            component = components_by_name.get(ingredient.get("component"))
+            if component is None:
+                continue
+            compatible = set(component.get("compatible_families", []))
+            if families_for_contract and not families_for_contract <= compatible:
+                errors.append(
+                    f"{label} ingredient {component['name']} is incompatible with "
+                    "a declared Visual DNA family"
+                )
+    for index, relation in enumerate(
+        recipe.get("relations", {}).get("allowed", []), start=1
+    ):
+        subject = components_by_name.get(relation.get("subject"))
+        target = components_by_name.get(relation.get("object"))
+        if subject is None or target is None:
+            continue
+        if not _relation_is_allowed(subject, target, relation.get("type")):
+            errors.append(
+                f"{label} allowed relation {index} is not allowed by component contracts"
+            )
 
     levels = recipe.get("expression_levels")
     required_levels = schema.get("required_expression_levels", [])
@@ -281,10 +327,15 @@ def validate_recipe_library(path: Path, require_complete: bool = True) -> list[s
             errors.append(f"library.{field} must equal {expected}")
 
     try:
-        component_names, relation_names = _component_contract(repository_root)
+        component_contract = _component_contract(repository_root)
     except (OSError, KeyError, yaml.YAMLError) as error:
         errors.append(f"Component Library v0.1 must be readable: {error}")
         return errors
+    component_names = component_contract["vocabulary"]["components"]
+    relation_names = component_contract["vocabulary"]["relations"]
+    components_by_name = {
+        component["name"]: component for component in component_contract["components"]
+    }
     if schema.get("public_components") != component_names:
         errors.append("schema public_components must match Component Library v0.1")
     if schema.get("public_relations") != relation_names:
@@ -333,7 +384,15 @@ def validate_recipe_library(path: Path, require_complete: bool = True) -> list[s
             errors.append(f"recipe {expected['id']} missing record: {expected_record}")
             continue
         recipe = _load_yaml(record_path, errors, expected_record)
-        _validate_record(recipe, entry, root, repository_root, schema, errors)
+        _validate_record(
+            recipe,
+            entry,
+            root,
+            repository_root,
+            schema,
+            components_by_name,
+            errors,
+        )
     return errors
 
 

@@ -1,0 +1,162 @@
+id: 019
+slug: chart
+name: Chart
+version: 0.5.0
+source_family: chart
+problem: Reveal one quantitative trend without distorting its scale or adding decorative
+  geometry.
+allowed_scenarios:
+- trend
+- comparison over time
+- progress
+ingredients:
+  required:
+  - component: Axis
+    min: 2
+    max: 2
+  - component: Node
+    min: 2
+    max: 7
+  - component: Label
+    min: 3
+    max: 12
+  - component: Signal
+    min: 1
+    max: 1
+  optional:
+  - component: Legend
+    min: 0
+    max: 1
+relations:
+  allowed:
+  - subject: Axis
+    type: orders
+    object: Node
+  - subject: Label
+    type: attached_to
+    object: Node
+  - subject: Signal
+    type: highlights
+    object: Node
+  - subject: Legend
+    type: maps_to
+    object: Node
+  forbidden:
+  - subject: Axis
+    type: repeats
+    object: Node
+assembly_order:
+- define honest Axes
+- plot ordered values
+- label directly
+- signal final point
+expression_levels:
+  A:
+    status: allowed
+  B:
+    status: forbidden
+    reason: No accepted evidence supports this recipe at the expression level.
+  C:
+    status: forbidden
+    reason: No accepted evidence supports this recipe at the expression level.
+compatible_visual_dna_families:
+- chart
+presentation:
+  canvas: 1920x1080
+  orientation: landscape
+  safe_margin_horizontal: 96
+  safe_margin_vertical: 72
+  negative_space_percent:
+    min: 50
+    max: 75
+  reading_paths:
+  - left_to_right
+  presentation_readability: 1280x720 without zoom
+typography:
+  display: modular_technical
+  body: neutral_sans
+  code: technical_mono
+  constraints:
+  - all text horizontal by default
+  - maximum one typographic trick
+  - Ukrainian and English copy exact
+semantic_color:
+  dominant_signal: data_blue
+  allowed:
+  - data_blue
+  constraints:
+  - one dominant signal
+  - signal area at most 6 percent
+  - color is not the only carrier of meaning
+content_contract:
+  required:
+  - headline
+  - series
+  - points
+  - source_label
+  optional: []
+  exact: true
+  max_words: 140
+  data_contract: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+prompt_dsl:
+  semantic_intent: chart-mechanism
+  required_fields:
+  - semantic_intent
+  - content
+  - component_instances
+  - relations
+  - generation_constraints
+  - provenance
+  optional_fields:
+  - component_instances[].attributes
+  - provenance.source_prompt
+  - provenance.dataset
+  deterministic_defaults:
+    expression: A
+    density: analytical
+    reading_path: left_to_right
+hard_exclusions:
+- extra text
+- logos or repeated footers
+- UI chrome or decorative card shells
+- decorative coordinates or random dot fields
+- gradients, shadows, glossy surfaces, or 3D
+- political, Soviet, or revolutionary-poster styling
+- pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+- truncated unlabeled axis
+- smoothed curve
+- missing point label
+- extra series
+- decorative grid
+- gradients
+- shadows
+- 3D
+- Container or ad hoc layout and geometry primitives
+validation_invariants:
+- Every required content binding is present and exact.
+- Ingredient counts remain inside declared cardinality.
+- Every instance and relation is permitted by Component Library v0.1.
+- No undeclared layout or geometry terminology is present.
+- One main idea, one visual mechanism, and one dominant Signal remain observable.
+canonical_examples:
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/19-chart.png
+  role: accepted visual calibration
+evidence:
+- path: patterns/visual-dna-sprint-01/manifest.yaml
+  locator: family 19 Chart
+  supports: Problem, scenarios, components, assembly, levels, content, and exclusions.
+- path: patterns/visual-dna-sprint-01/specs/19-chart.md
+  locator: complete family contract
+  supports: Canonical Markdown semantic and Prompt DSL evidence.
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/19-chart.png
+  locator: canonical raster
+  supports: Accepted presentation-scale example.
+compatibility:
+  legacy_names:
+  - Chart
+  migration: Legacy Prompt DSL v0.1 content is rebound mechanically to explicit v0.5
+    instances, relations, and deterministic constraints; source files remain unchanged.
+  rollback: Revert the additive recipe record and derived outputs; accepted source
+    prompts and raster bytes remain unchanged.
+specification: specs/019-chart.md
+record: records/019-chart.yaml

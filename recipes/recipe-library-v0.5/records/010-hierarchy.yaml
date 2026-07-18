@@ -1,0 +1,154 @@
+id: '010'
+slug: hierarchy
+name: Hierarchy
+version: 0.5.0
+source_family: hierarchy
+problem: Show levels of ownership or decomposition without implying sequence.
+allowed_scenarios:
+- goal decomposition
+- taxonomy
+- authority
+ingredients:
+  required:
+  - component: Anchor
+    min: 1
+    max: 1
+  - component: Frame
+    min: 1
+    max: 4
+  - component: Node
+    min: 2
+    max: 7
+  - component: Bridge
+    min: 1
+    max: 4
+  - component: Label
+    min: 2
+    max: 7
+  optional: []
+relations:
+  allowed:
+  - subject: Frame
+    type: contains
+    object: Node
+  - subject: Bridge
+    type: connected_to
+    object: Node
+  - subject: Label
+    type: attached_to
+    object: Node
+  forbidden:
+  - subject: Frame
+    type: directs
+    object: Node
+assembly_order:
+- place root Anchor
+- nest or branch child Nodes
+- preserve one top-to-bottom depth cue
+expression_levels:
+  A:
+    status: allowed
+  B:
+    status: allowed
+  C:
+    status: forbidden
+    reason: No accepted evidence supports this recipe at the expression level.
+compatible_visual_dna_families:
+- hierarchy
+presentation:
+  canvas: 1920x1080
+  orientation: landscape
+  safe_margin_horizontal: 96
+  safe_margin_vertical: 72
+  negative_space_percent:
+    min: 50
+    max: 75
+  reading_paths:
+  - top_to_bottom
+  presentation_readability: 1280x720 without zoom
+typography:
+  display: modular_technical
+  body: neutral_sans
+  code: technical_mono
+  constraints:
+  - all text horizontal by default
+  - maximum one typographic trick
+  - Ukrainian and English copy exact
+semantic_color:
+  dominant_signal: coral
+  allowed:
+  - coral
+  constraints:
+  - one dominant signal
+  - signal area at most 6 percent
+  - color is not the only carrier of meaning
+content_contract:
+  required:
+  - headline
+  - levels
+  optional: []
+  exact: true
+  max_words: 60
+  data_contract: none
+prompt_dsl:
+  semantic_intent: hierarchy-mechanism
+  required_fields:
+  - semantic_intent
+  - content
+  - component_instances
+  - relations
+  - generation_constraints
+  - provenance
+  optional_fields:
+  - component_instances[].attributes
+  - provenance.source_prompt
+  - provenance.dataset
+  deterministic_defaults:
+    expression: A
+    density: low
+    reading_path: top_to_bottom
+hard_exclusions:
+- extra text
+- logos or repeated footers
+- UI chrome or decorative card shells
+- decorative coordinates or random dot fields
+- gradients, shadows, glossy surfaces, or 3D
+- political, Soviet, or revolutionary-poster styling
+- pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+- workflow arrow chain
+- avatars
+- duplicate parents
+- decorative boxes
+- org-chart UI
+- gradients
+- shadows
+- 3D
+- Container or ad hoc layout and geometry primitives
+validation_invariants:
+- Every required content binding is present and exact.
+- Ingredient counts remain inside declared cardinality.
+- Every instance and relation is permitted by Component Library v0.1.
+- No undeclared layout or geometry terminology is present.
+- One main idea, one visual mechanism, and one dominant Signal remain observable.
+canonical_examples:
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/10-hierarchy.png
+  role: accepted visual calibration
+evidence:
+- path: patterns/visual-dna-sprint-01/manifest.yaml
+  locator: family 10 Hierarchy
+  supports: Problem, scenarios, components, assembly, levels, content, and exclusions.
+- path: patterns/visual-dna-sprint-01/specs/10-hierarchy.md
+  locator: complete family contract
+  supports: Canonical Markdown semantic and Prompt DSL evidence.
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/10-hierarchy.png
+  locator: canonical raster
+  supports: Accepted presentation-scale example.
+compatibility:
+  legacy_names:
+  - Hierarchy
+  migration: Legacy Prompt DSL v0.1 content is rebound mechanically to explicit v0.5
+    instances, relations, and deterministic constraints; source files remain unchanged.
+  rollback: Revert the additive recipe record and derived outputs; accepted source
+    prompts and raster bytes remain unchanged.
+specification: specs/010-hierarchy.md
+record: records/010-hierarchy.yaml

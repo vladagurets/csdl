@@ -1,0 +1,147 @@
+id: '023'
+slug: formula
+name: Formula
+version: 0.5.0
+source_family: collision
+problem: State an exact ordered symbolic relationship and its exact result as one
+  culmination.
+allowed_scenarios:
+- summary equation
+- multiplicative model
+- culminating formula
+ingredients:
+  required:
+  - component: Anchor
+    min: 2
+    max: 2
+  - component: Collision
+    min: 1
+    max: 1
+  - component: Signal
+    min: 1
+    max: 1
+  optional:
+  - component: Label
+    min: 0
+    max: 2
+relations:
+  allowed:
+  - subject: Collision
+    type: overlaps
+    object: Anchor
+  - subject: Collision
+    type: produces
+    object: Signal
+  - subject: Label
+    type: attached_to
+    object: Anchor
+  forbidden:
+  - subject: Collision
+    type: groups
+    object: Anchor
+assembly_order:
+- bind operands and operators in exact order
+- bind the exact result as the second Anchor
+- use one Collision and one Signal to connect formula and result
+expression_levels:
+  A:
+    status: forbidden
+    reason: Accepted evidence is a culmination with a strong symbolic relationship.
+  B:
+    status: conditional
+    condition: The equation and result stay short and the signal remains restrained.
+  C:
+    status: allowed
+compatible_visual_dna_families:
+- collision
+presentation:
+  canvas: 1920x1080
+  orientation: landscape
+  safe_margin_horizontal: 96
+  safe_margin_vertical: 72
+  negative_space_percent:
+    min: 50
+    max: 75
+  reading_paths:
+  - left_to_right
+  - split_to_result
+  presentation_readability: 1280x720 without zoom
+typography:
+  display: modular_technical
+  body: neutral_sans
+  code: technical_mono
+  constraints:
+  - all text horizontal by default
+  - maximum one typographic trick
+  - Ukrainian and English copy exact
+semantic_color:
+  dominant_signal: coral
+  allowed:
+  - coral
+  constraints:
+  - one dominant signal
+  - color is not the only carrier of meaning
+content_contract:
+  required:
+  - formula
+  - result
+  optional: []
+  exact: true
+  max_words: 60
+  data_contract: none
+prompt_dsl:
+  semantic_intent: ordered-symbolic-formula-to-result
+  required_fields:
+  - semantic_intent
+  - content
+  - component_instances
+  - relations
+  - generation_constraints
+  - provenance
+  optional_fields:
+  - component_instances[].attributes
+  - provenance.source_prompt
+  deterministic_defaults:
+    expression: C
+    density: low
+    reading_path: left_to_right
+hard_exclusions:
+- extra text
+- logos or repeated footers
+- UI chrome or decorative card shells
+- decorative coordinates or random dot fields
+- gradients, shadows, glossy surfaces, or 3D
+- political, Soviet, or revolutionary-poster styling
+- pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+- this is the only Level C slide
+- text is short, large, horizontal, and exact
+- no extra slogan, footer, logo, icons, shards, or propaganda cues
+- Container or ad hoc layout and geometry primitives
+validation_invariants:
+- Every required content binding is present and exact.
+- Ingredient counts remain inside declared cardinality.
+- Every instance and relation is permitted by Component Library v0.1.
+- No undeclared layout or geometry terminology is present.
+- One main idea, one visual mechanism, and one dominant Signal remain observable.
+canonical_examples:
+- path: pilots/01-agentic-discipline/canonical/light/16x9/07-share-card.png
+  role: accepted Pilot 01 evidence
+evidence:
+- path: pilots/01-agentic-discipline/prompts/07-share-card.yaml
+  locator: accepted legacy Prompt DSL package
+  supports: Canonical content and legacy mechanism.
+- path: pilots/01-agentic-discipline/evaluation/review.md
+  locator: Slide 07 — Share formula / Level C
+  supports: Three-candidate selection, exact-copy, readability, and score evidence.
+- path: pilots/01-agentic-discipline/canonical/light/16x9/07-share-card.png
+  locator: canonical raster
+  supports: Accepted presentation-scale example.
+compatibility:
+  legacy_names:
+  - Formula
+  migration: Legacy zone and Signal-plane hints are discarded; exact operand/operator
+    order and Collision relations carry the formula.
+  rollback: Revert the additive recipe record and derived outputs; accepted Pilot
+    prompt and raster bytes remain unchanged.
+specification: specs/023-formula.md
+record: records/023-formula.yaml

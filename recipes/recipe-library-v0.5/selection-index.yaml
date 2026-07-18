@@ -1,3 +1,213 @@
 library: recipe-library-v0.5
 version: 0.5.0
-scenarios: []
+scenarios:
+- scenario: opening thesis
+  recipe_id: '001'
+  recipe_slug: hero
+- scenario: section thesis
+  recipe_id: '001'
+  recipe_slug: hero
+- scenario: key takeaway
+  recipe_id: '001'
+  recipe_slug: hero
+- scenario: series opening
+  recipe_id: '002'
+  recipe_slug: cover
+- scenario: chapter divider
+  recipe_id: '002'
+  recipe_slug: cover
+- scenario: principle
+  recipe_id: '003'
+  recipe_slug: quote
+- scenario: testimony
+  recipe_id: '003'
+  recipe_slug: quote
+- scenario: chapter pause
+  recipe_id: '003'
+  recipe_slug: quote
+- scenario: count
+  recipe_id: '004'
+  recipe_slug: big-number
+- scenario: percentage
+  recipe_id: '004'
+  recipe_slug: big-number
+- scenario: ratio
+  recipe_id: '004'
+  recipe_slug: big-number
+- scenario: milestone
+  recipe_id: '004'
+  recipe_slug: big-number
+- scenario: approach comparison
+  recipe_id: '005'
+  recipe_slug: comparison
+- scenario: complementary roles
+  recipe_id: '005'
+  recipe_slug: comparison
+- scenario: trade-off
+  recipe_id: '005'
+  recipe_slug: comparison
+- scenario: constraint
+  recipe_id: '006'
+  recipe_slug: collision
+- scenario: synthesis
+  recipe_id: '006'
+  recipe_slug: collision
+- scenario: tension
+  recipe_id: '006'
+  recipe_slug: collision
+- scenario: trade-off
+  recipe_id: '006'
+  recipe_slug: collision
+- scenario: transformation
+  recipe_id: '007'
+  recipe_slug: before-after
+- scenario: migration
+  recipe_id: '007'
+  recipe_slug: before-after
+- scenario: improvement
+  recipe_id: '007'
+  recipe_slug: before-after
+- scenario: history
+  recipe_id: 008
+  recipe_slug: timeline
+- scenario: delivery sequence
+  recipe_id: 008
+  recipe_slug: timeline
+- scenario: staged rollout
+  recipe_id: 008
+  recipe_slug: timeline
+- scenario: prioritization
+  recipe_id: 009
+  recipe_slug: matrix
+- scenario: portfolio view
+  recipe_id: 009
+  recipe_slug: matrix
+- scenario: risk map
+  recipe_id: 009
+  recipe_slug: matrix
+- scenario: goal decomposition
+  recipe_id: '010'
+  recipe_slug: hierarchy
+- scenario: taxonomy
+  recipe_id: '010'
+  recipe_slug: hierarchy
+- scenario: authority
+  recipe_id: '010'
+  recipe_slug: hierarchy
+- scenario: software context
+  recipe_id: '011'
+  recipe_slug: architecture
+- scenario: agent system
+  recipe_id: '011'
+  recipe_slug: architecture
+- scenario: service boundary
+  recipe_id: '011'
+  recipe_slug: architecture
+- scenario: work procedure
+  recipe_id: '012'
+  recipe_slug: workflow
+- scenario: handoff
+  recipe_id: '012'
+  recipe_slug: workflow
+- scenario: review flow
+  recipe_id: '012'
+  recipe_slug: workflow
+- scenario: feedback cycle
+  recipe_id: '013'
+  recipe_slug: loop
+- scenario: learning loop
+  recipe_id: '013'
+  recipe_slug: loop
+- scenario: recurring operation
+  recipe_id: '013'
+  recipe_slug: loop
+- scenario: data processing
+  recipe_id: '014'
+  recipe_slug: pipeline
+- scenario: content production
+  recipe_id: '014'
+  recipe_slug: pipeline
+- scenario: build system
+  recipe_id: '014'
+  recipe_slug: pipeline
+- scenario: routing rule
+  recipe_id: '015'
+  recipe_slug: decision-tree
+- scenario: escalation
+  recipe_id: '015'
+  recipe_slug: decision-tree
+- scenario: eligibility
+  recipe_id: '015'
+  recipe_slug: decision-tree
+- scenario: operating model
+  recipe_id: '016'
+  recipe_slug: framework
+- scenario: assessment lens
+  recipe_id: '016'
+  recipe_slug: framework
+- scenario: teaching framework
+  recipe_id: '016'
+  recipe_slug: framework
+- scenario: status measure
+  recipe_id: '017'
+  recipe_slug: kpi
+- scenario: target tracking
+  recipe_id: '017'
+  recipe_slug: kpi
+- scenario: weekly snapshot
+  recipe_id: '017'
+  recipe_slug: kpi
+- scenario: compact report
+  recipe_id: 018
+  recipe_slug: table
+- scenario: value audit
+  recipe_id: 018
+  recipe_slug: table
+- scenario: weekly comparison
+  recipe_id: 018
+  recipe_slug: table
+- scenario: trend
+  recipe_id: 019
+  recipe_slug: chart
+- scenario: comparison over time
+  recipe_id: 019
+  recipe_slug: chart
+- scenario: progress
+  recipe_id: 019
+  recipe_slug: chart
+- scenario: weekly status
+  recipe_id: '020'
+  recipe_slug: dashboard
+- scenario: operating review
+  recipe_id: '020'
+  recipe_slug: dashboard
+- scenario: compact monitoring
+  recipe_id: '020'
+  recipe_slug: dashboard
+- scenario: failed recurrence
+  recipe_id: '021'
+  recipe_slug: breakdown
+- scenario: lost context
+  recipe_id: '021'
+  recipe_slug: breakdown
+- scenario: broken operating cycle
+  recipe_id: '021'
+  recipe_slug: breakdown
+- scenario: readiness review
+  recipe_id: '022'
+  recipe_slug: checklist
+- scenario: preflight questions
+  recipe_id: '022'
+  recipe_slug: checklist
+- scenario: completion gate
+  recipe_id: '022'
+  recipe_slug: checklist
+- scenario: summary equation
+  recipe_id: '023'
+  recipe_slug: formula
+- scenario: multiplicative model
+  recipe_id: '023'
+  recipe_slug: formula
+- scenario: culminating formula
+  recipe_id: '023'
+  recipe_slug: formula
