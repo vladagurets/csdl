@@ -130,7 +130,10 @@ families:
   - B
   evidence_mode: generated
   canonical_example: canonical/light/16x9/10-hierarchy.png
-  status: awaiting_generation
+  sha256: cf32ac58ac02e8d2aec79da7c1aba2ed6be3401ad4850ed93d122334adc5e199
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: '11'
   slug: architecture
   name: Architecture
