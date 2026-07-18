@@ -1,0 +1,2 @@
+base_package: proofs/packages/03-exact-table.yaml
+mutation: {path: [text_elements, 4, foreground], value: line.subtle}

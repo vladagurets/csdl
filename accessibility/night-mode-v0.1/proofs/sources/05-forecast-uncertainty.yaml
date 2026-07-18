@@ -1,0 +1,32 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-proof-source
+id: proof-05-forecast-uncertainty
+scenario: forecast-uncertainty
+source_reference:
+  kind: analytical-package
+  path: analytics/analytical-mode-v0.1/proofs/packages/02-line-forecast.yaml
+profiles: [light, night, monochrome]
+text_elements:
+  - {id: title, role: display, foreground: ink.primary, background: background.base}
+  - {id: values, role: label, foreground: ink.primary, background: background.base}
+  - {id: axis, role: axis, foreground: ink.primary, background: background.base}
+  - {id: units, role: unit, foreground: ink.secondary, background: background.base}
+  - {id: source, role: source, foreground: ink.secondary, background: background.base}
+graphical_objects:
+  - {id: axes, role: axis, component: Axis, foreground: line.strong, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: observed-line, role: edge, component: Bridge, foreground: signal.data, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: forecast-line, role: edge, component: Bridge, foreground: signal.data, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: interval-boundaries, role: interval, component: Field, foreground: line.strong, background: background.base, stroke_px: 2, meaningful: true}
+semantic_encodings:
+  - {meaning: observed, color_token: signal.data, redundant_carriers: [line_style, direct_label], line_style: solid, status_text: OBSERVED, target: observed-values}
+  - {meaning: forecast, color_token: signal.data, redundant_carriers: [line_style, direct_label], line_style: dashed, status_text: FORECAST, boundary: 2027-Q1, target: forecast-values}
+  - meaning: uncertainty
+    color_token: signal.attention
+    redundant_carriers: [interval_boundary, direct_label]
+    visible: true
+    interval_type: prediction_interval
+    level: 80
+    lower_upper_visible: true
+    target: forecast-interval
+output: {canvas: 1920x1080, orientation: landscape, colorspace: sRGB, format: deterministic-specification}

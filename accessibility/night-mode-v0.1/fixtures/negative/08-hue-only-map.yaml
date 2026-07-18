@@ -1,0 +1,2 @@
+base_package: proofs/packages/07-normalized-map.yaml
+mutation: {path: [semantic_encodings, 0, redundant_carriers], value: [direct_label]}

@@ -1,0 +1,566 @@
+language: CSDL
+version: '0.1'
+kind: accessibility-package
+id: proof-05-forecast-uncertainty
+scenario: forecast-uncertainty
+source_reference:
+  kind: analytical-package
+  path: analytics/analytical-mode-v0.1/proofs/packages/02-line-forecast.yaml
+semantic_source_digest: sha256:6eff18096c1c6f2ea30eff615dc4162db578870826a3f1db3af27a98147e58b0
+source_semantics:
+  kind: analytical-package
+  id: proof-02-line-forecast
+  dataset:
+    id: line-forecast-v1
+    version: 1.0.0
+    path: datasets/02-line-forecast.yaml
+    source: CSDL Milestone 5 synthetic fixture
+  analytical_intent:
+    question: What was observed and what is forecast?
+    claim: Success rate rises, while forecast values remain uncertain and distinct
+      from observations.
+  recipe:
+    id: 019
+    slug: chart
+    version: 0.5.0
+  family: line
+  records:
+  - id: l1
+    period: 2026-Q1
+    estimate: 70
+    lower: null
+    upper: null
+    status: observed
+  - id: l2
+    period: 2026-Q2
+    estimate: 76
+    lower: null
+    upper: null
+    status: observed
+  - id: l3
+    period: 2026-Q3
+    estimate: 82
+    lower: null
+    upper: null
+    status: observed
+  - id: l4
+    period: 2026-Q4
+    estimate: 86
+    lower: null
+    upper: null
+    status: observed
+  - id: l5
+    period: 2027-Q1
+    estimate: 89
+    lower: 84
+    upper: 93
+    status: forecast
+  - id: l6
+    period: 2027-Q2
+    estimate: 91
+    lower: 85
+    upper: 96
+    status: forecast
+  ordering:
+    field: period
+    values:
+    - 2026-Q1
+    - 2026-Q2
+    - 2026-Q3
+    - 2026-Q4
+    - 2027-Q1
+    - 2027-Q2
+  missing_values:
+  - record_id: l1
+    field: lower
+    status: not_applicable
+  - record_id: l1
+    field: upper
+    status: not_applicable
+  - record_id: l2
+    field: lower
+    status: not_applicable
+  - record_id: l2
+    field: upper
+    status: not_applicable
+  - record_id: l3
+    field: lower
+    status: not_applicable
+  - record_id: l3
+    field: upper
+    status: not_applicable
+  - record_id: l4
+    field: lower
+    status: not_applicable
+  - record_id: l4
+    field: upper
+    status: not_applicable
+  encoding:
+    marks:
+    - type: line
+      role: estimate
+    - type: point
+      role: source-value
+    - type: interval-band
+      role: uncertainty
+    - type: text
+      role: direct-label
+    bindings:
+      order: period
+      value: estimate
+      lower: lower
+      upper: upper
+      status: status
+      label: estimate
+    order:
+    - 2026-Q1
+    - 2026-Q2
+    - 2026-Q3
+    - 2026-Q4
+    - 2027-Q1
+    - 2027-Q2
+    domains:
+      value:
+      - 0
+      - 100
+    scales:
+      order: temporal
+      value: linear
+    interpolation: none
+    smoothing: none
+    missing_intervals: gap
+    forecast:
+      status_field: status
+      observed_value: observed
+      forecast_value: forecast
+      boundary: 2027-Q1
+      horizon: 2_quarters
+      rendering: dash-and-label
+    uncertainty:
+      lower: lower
+      estimate: estimate
+      upper: upper
+      type: prediction_interval
+      level: 80
+      rendering: band-and-label
+    zero_relevance: contextual_percent_domain
+    direct_labels: true
+    color_only_meaning: false
+    redundant_encodings:
+    - status_label
+    - dash_pattern
+    - interval_boundary
+    dual_axis: false
+    decorative_field_area_percent: 0
+profiles: &id002
+- light
+- night
+- monochrome
+profile_results:
+- profile: light
+  semantic_signature: sha256:1020cde6e8d39bbecabfbf2fdd99889b45a6911b2132b8a2f73beaa758f8e1dd
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#F7F5F0'
+    surface.raised: '#FBFAF6'
+    ink.primary: '#1B1B19'
+    ink.secondary: '#535457'
+    ink.inverse: '#FBFAF6'
+    neutral.fill: '#D9D6CF'
+    line.subtle: '#B8B5AE'
+    line.strong: '#85847F'
+    signal.primary: '#C96157'
+    signal.data: '#4C6A8A'
+    signal.attention: '#9B7B3A'
+    signal.positive: '#6E8A7A'
+    signal.error: '#B84F47'
+    state.focus: '#4C6A8A'
+    state.selection: '#C96157'
+    data.missing: '#85847F'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 15.831973
+    minimum: 4.5
+    passes: true
+  - id: values
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 15.831973
+    minimum: 4.5
+    passes: true
+  - id: axis
+    role: axis
+    foreground: ink.primary
+    background: background.base
+    ratio: 15.831973
+    minimum: 4.5
+    passes: true
+  - id: units
+    role: unit
+    foreground: ink.secondary
+    background: background.base
+    ratio: 6.949226
+    minimum: 4.5
+    passes: true
+  - id: source
+    role: source
+    foreground: ink.secondary
+    background: background.base
+    ratio: 6.949226
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: axes
+    role: axis
+    component: Axis
+    foreground: line.strong
+    background: background.base
+    ratio: 3.439168
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: observed-line
+    role: edge
+    component: Bridge
+    foreground: signal.data
+    background: background.base
+    ratio: 5.159132
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: forecast-line
+    role: edge
+    component: Bridge
+    foreground: signal.data
+    background: background.base
+    ratio: 5.159132
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: interval-boundaries
+    role: interval
+    component: Field
+    foreground: line.strong
+    background: background.base
+    ratio: 3.439168
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: &id001
+  - protanopia
+  - deuteranopia
+  - tritanopia
+  - achromatopsia
+- profile: night
+  semantic_signature: sha256:1020cde6e8d39bbecabfbf2fdd99889b45a6911b2132b8a2f73beaa758f8e1dd
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#171817'
+    surface.raised: '#232422'
+    ink.primary: '#EEEAE1'
+    ink.secondary: '#B8B4AC'
+    ink.inverse: '#171817'
+    neutral.fill: '#343532'
+    line.subtle: '#555650'
+    line.strong: '#73746D'
+    signal.primary: '#D2756D'
+    signal.data: '#879BB6'
+    signal.attention: '#D0B36F'
+    signal.positive: '#89A092'
+    signal.error: '#E07F76'
+    state.focus: '#D0B36F'
+    state.selection: '#D2756D'
+    data.missing: '#73746D'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 14.83038
+    minimum: 4.5
+    passes: true
+  - id: values
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 14.83038
+    minimum: 4.5
+    passes: true
+  - id: axis
+    role: axis
+    foreground: ink.primary
+    background: background.base
+    ratio: 14.83038
+    minimum: 4.5
+    passes: true
+  - id: units
+    role: unit
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.616066
+    minimum: 4.5
+    passes: true
+  - id: source
+    role: source
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.616066
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: axes
+    role: axis
+    component: Axis
+    foreground: line.strong
+    background: background.base
+    ratio: 3.771182
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: observed-line
+    role: edge
+    component: Bridge
+    foreground: signal.data
+    background: background.base
+    ratio: 6.26915
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: forecast-line
+    role: edge
+    component: Bridge
+    foreground: signal.data
+    background: background.base
+    ratio: 6.26915
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: interval-boundaries
+    role: interval
+    component: Field
+    foreground: line.strong
+    background: background.base
+    ratio: 3.771182
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: *id001
+- profile: monochrome
+  semantic_signature: sha256:1020cde6e8d39bbecabfbf2fdd99889b45a6911b2132b8a2f73beaa758f8e1dd
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#F7F5F0'
+    surface.raised: '#FFFFFF'
+    ink.primary: '#111111'
+    ink.secondary: '#4A4A48'
+    ink.inverse: '#FFFFFF'
+    neutral.fill: '#D3D2CE'
+    line.subtle: '#B1B0AC'
+    line.strong: '#72716D'
+    signal.primary: '#333332'
+    signal.data: '#4A4A48'
+    signal.attention: '#656560'
+    signal.positive: '#50504D'
+    signal.error: '#282827'
+    state.focus: '#333332'
+    state.selection: '#4A4A48'
+    data.missing: '#72716D'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: values
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: axis
+    role: axis
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: units
+    role: unit
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.152265
+    minimum: 4.5
+    passes: true
+  - id: source
+    role: source
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.152265
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: axes
+    role: axis
+    component: Axis
+    foreground: line.strong
+    background: background.base
+    ratio: 4.484049
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: observed-line
+    role: edge
+    component: Bridge
+    foreground: signal.data
+    background: background.base
+    ratio: 8.152265
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: forecast-line
+    role: edge
+    component: Bridge
+    foreground: signal.data
+    background: background.base
+    ratio: 8.152265
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: interval-boundaries
+    role: interval
+    component: Field
+    foreground: line.strong
+    background: background.base
+    ratio: 4.484049
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: *id001
+text_elements:
+- id: title
+  role: display
+  foreground: ink.primary
+  background: background.base
+- id: values
+  role: label
+  foreground: ink.primary
+  background: background.base
+- id: axis
+  role: axis
+  foreground: ink.primary
+  background: background.base
+- id: units
+  role: unit
+  foreground: ink.secondary
+  background: background.base
+- id: source
+  role: source
+  foreground: ink.secondary
+  background: background.base
+graphical_objects:
+- id: axes
+  role: axis
+  component: Axis
+  foreground: line.strong
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: observed-line
+  role: edge
+  component: Bridge
+  foreground: signal.data
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: forecast-line
+  role: edge
+  component: Bridge
+  foreground: signal.data
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: interval-boundaries
+  role: interval
+  component: Field
+  foreground: line.strong
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+semantic_encodings:
+- meaning: observed
+  color_token: signal.data
+  redundant_carriers:
+  - line_style
+  - direct_label
+  line_style: solid
+  status_text: OBSERVED
+  target: observed-values
+- meaning: forecast
+  color_token: signal.data
+  redundant_carriers:
+  - line_style
+  - direct_label
+  line_style: dashed
+  status_text: FORECAST
+  boundary: 2027-Q1
+  target: forecast-values
+- meaning: uncertainty
+  color_token: signal.attention
+  redundant_carriers:
+  - interval_boundary
+  - direct_label
+  visible: true
+  interval_type: prediction_interval
+  level: 80
+  lower_upper_visible: true
+  target: forecast-interval
+output:
+  canvas: 1920x1080
+  orientation: landscape
+  colorspace: sRGB
+  format: deterministic-specification
+  profiles: *id002
+provenance:
+  proof_source: proofs/sources/05-forecast-uncertainty.yaml
+  semantic_source: analytics/analytical-mode-v0.1/proofs/packages/02-line-forecast.yaml
+  accessibility_contract: night-mode-v0.1@0.1.0
+  builder: tools/build_accessibility_mode.py
+  evidence: deterministic_specification
+  deterministic: true

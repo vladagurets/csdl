@@ -1,0 +1,25 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-proof-source
+id: proof-01-editorial-equivalence
+scenario: editorial-equivalence
+source_reference:
+  kind: generation-package
+  path: recipes/recipe-library-v0.5/proofs/packages/01-editorial.yaml
+profiles: [light, night]
+text_elements:
+  - {id: title, role: display, foreground: ink.primary, background: background.base}
+  - {id: label, role: label, foreground: ink.primary, background: background.base}
+  - {id: metadata, role: metadata, foreground: ink.secondary, background: background.base}
+graphical_objects:
+  - {id: signal, role: signal, component: Signal, foreground: signal.primary, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: pulse-boundary, role: node, component: Node, foreground: line.strong, background: background.base, stroke_px: 2, meaningful: true}
+semantic_encodings:
+  - meaning: signal
+    color_token: signal.primary
+    redundant_carriers: [shape, direct_label, stroke_weight]
+    target: pulse
+    area_percent: 4
+    max_area_percent: 8
+    semantic_role: dominant-emphasis
+output: {canvas: 1920x1080, orientation: landscape, colorspace: sRGB, format: deterministic-specification}

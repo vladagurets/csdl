@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Started Milestone 6 — Night Mode and Accessibility v0.1 with a repository-grounded evidence audit, WCAG 2.2 contrast baseline, acceptance contract, dependency-aware packet plan, and D-032 independent-extension decision; Prompt DSL v0.5, D-029, D-030, D-031, and accepted rasters remain unchanged.
+- Added the Night Mode and Accessibility v0.1 canonical specification, manifest, versioned token/proof schemas, calibrated light/night/monochrome/projector token mappings, contrast/fallback/compatibility contracts, and tested incomplete-mode validation.
+- Added deterministic accessibility package/contrast/index/compatibility builders, independent semantic-source digest and contrast validation, light/night equivalence checks, mutation handling, and focused rejection of color-only meaning, incompatible tokens, thin rules, signal-area overflow, layout vocabulary, and nondeterminism.
+- Added ten deterministic end-to-end accessibility proofs, seventeen exact-error negative fixtures, positive proof indexing, additive migration/rollback documentation, and evaluation evidence for editorial, structural, table, bar, forecast, heatmap, map, network, monochrome, and projector behavior without raster generation.
+- Added Milestone 6 CI rebuild/validation/drift gates, a deterministic SHA-256 inventory for all sixty tracked accepted PNGs, library documentation, and release-candidate alignment across README, STATUS, ROADMAP, AGENTS, and the changelog; final merge integration remains pending.
 - Completed Milestone 5 — Analytical Mode v0.1 with typed dataset/encoding contracts, ten quantitative families, ten deterministic proof packages, seventeen exact-error negative fixtures, strict/incomplete validators, deterministic builders/indexes, complete regression/CI gates, and no raster generation or mutation.
 - Started Milestone 5 — Analytical Mode with a repository-grounded evidence audit, acceptance contract, dependency-aware packet plan, and D-031 independent-extension versioning decision; Prompt DSL v0.5, D-029, D-030, and all accepted rasters remain unchanged.
 - Added the Analytical Mode v0.1 canonical specification, closed typed-dataset and encoding schemas, global and ten-family contracts, D-029/D-030 compatibility source, ten canonical fixed datasets, and tested incomplete-mode contract validation.

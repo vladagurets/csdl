@@ -1,0 +1,11 @@
+fixtures:
+  - {id: 01-editorial-equivalence, package: proofs/packages/01-editorial-equivalence.yaml, scenario: editorial-equivalence}
+  - {id: 02-structural-signal, package: proofs/packages/02-structural-signal.yaml, scenario: structural-signal}
+  - {id: 03-exact-table, package: proofs/packages/03-exact-table.yaml, scenario: exact-table}
+  - {id: 04-positive-negative-bar, package: proofs/packages/04-positive-negative-bar.yaml, scenario: positive-negative-bar}
+  - {id: 05-forecast-uncertainty, package: proofs/packages/05-forecast-uncertainty.yaml, scenario: forecast-uncertainty}
+  - {id: 06-heatmap-fallback, package: proofs/packages/06-heatmap-fallback.yaml, scenario: heatmap-fallback}
+  - {id: 07-normalized-map, package: proofs/packages/07-normalized-map.yaml, scenario: normalized-map}
+  - {id: 08-directed-network, package: proofs/packages/08-directed-network.yaml, scenario: directed-network}
+  - {id: 09-monochrome-export, package: proofs/packages/09-monochrome-export.yaml, scenario: monochrome-export}
+  - {id: 10-projector-fallback, package: proofs/packages/10-projector-fallback.yaml, scenario: projector-fallback}
