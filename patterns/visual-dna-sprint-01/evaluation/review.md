@@ -123,21 +123,21 @@ The former `06-collision-v1.png`, `06-collision-v2.png`, and `06-collision-v3.pn
 
 The former `07-before-after-v1.png`, `07-before-after-v2.png`, and `07-before-after-v3.png` record remains superseded by D-028; none was reconsidered as active evidence. Exact-copy review: pass for the headline, both English state labels, and both Ukrainian state descriptions; no extra text. Visual mechanism: discontinuity represents lost decisions, continuity represents retained context, and one horizontal Vector expresses transformation between equal Fields. Strongest decision: the changed property remains encoded only by line continuity, while the rebaseline adds primary-authority Modular Technical hierarchy without cards, nodes, or cosmetic before/after styling. Removable-element check: exact headline/state copy, two traces, Divider, and Vector are all functional. Primary-authority comparison: pass against all three `references/canonical/` boards for technical display, open Field construction, semantic linework, asymmetry, and mineral green restraint. Series contact-sheet review: pass beside seven active families; Before / After is the only state-transition trace mechanism and remains quieter than Collision and Cover. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is intentionally quieter than the Level B/C families. Accepted catalog score: `4.86`.
 
-### 08 Timeline — first generated pass superseded
+### 08 Timeline — regenerated example accepted
 
 - **Canonical:** `canonical/light/16x9/08-timeline.png`
 - **Prompt:** `prompts/08-timeline.yaml`
-- **Selected:** `08-timeline-v3.png` from three independent built-in GPT Image 2 candidates
-- **Source SHA-256:** `c626561173d87d8c4278975bc371c2a41b060b5c38e82e709bf156e95fe6d03d`
-- **Canonical SHA-256:** `9e3a22799fd9fbbe5f3a51f9da47be6643db66bc65c5ce950349f599a4fdc48c`
+- **Selected:** `08-timeline-r2-v1.png` from three independent built-in GPT Image 2 rebaseline candidates
+- **Source SHA-256:** `6a5eeb147cb8a61a3f0a1d6be48e6bde1b3b12048c6fca4d7f5b0e3e3001b284`
+- **Canonical SHA-256:** `4b03797c3aef07ae53d2aaaa0ef51527bc96ff32733ef837e11dc917ceafcb7a`
 - **Source raster:** `1672×941`, RGB PNG
 - **Canonical raster:** `1920×1080`, RGB PNG
 
-- `08-timeline-v1.png` — rejected: exact order passes, but both the VERIFY node and label are coral, making the signal heavier than necessary.
-- `08-timeline-v2.png` — rejected for the same expanded VERIFY treatment; darker inactive nodes also make the repeated structure visually heavier.
-- `08-timeline-v3.png` — selected: exact six text blocks, one thin Axis, even five-node rhythm, neutral direct labels, and only the VERIFY node/incoming segment as the coral Signal.
+- `08-timeline-r2-v1.png` — selected: exact order, strongest Modular Technical headline, five solid bare Nodes, neutral labels, and VERIFY alone as the coral Signal.
+- `08-timeline-r2-v2.png` — rejected: exact order and solid active node pass, but the VERIFY label is also coral and creates a second dominant signal.
+- `08-timeline-r2-v3.png` — rejected: exact order and neutral labels pass, but VERIFY is only a coral outline instead of the declared active solid Node.
 
-Exact-copy review: pass for `ВІД BRIEF ДО SHIP` and `BRIEF → PLAN → BUILD → VERIFY → SHIP`; no dates or extra text. Visual mechanism: one horizontal Axis carries five ordered bare Nodes, with VERIFY selected as the consequential transition. Strongest decision: keeping the label neutral lets the node and short incoming segment carry signal semantics without turning the stage into a badge. Removable-element check: headline, Axis, Nodes, and labels are all required for chronology. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is deliberately subordinate to ordered lookup. Accepted catalog score: `4.86`.
+The former `08-timeline-v1.png`, `08-timeline-v2.png`, and `08-timeline-v3.png` record remains superseded by D-028; none was reconsidered as active evidence. Exact-copy review: pass for `ВІД BRIEF ДО SHIP` and `BRIEF → PLAN → BUILD → VERIFY → SHIP`; no dates, icons, roadmap UI, or extra text. Visual mechanism: one thin horizontal Axis carries five ordered solid Nodes, with the fourth Node alone marking verification as the consequential transition. Strongest decision: the rebaseline restores the primary boards' tall Modular Technical headline while the neutral labels and isolated solid coral Node keep the sequence quiet and unambiguous. Removable-element check: headline, Axis, five Nodes, and five labels are all required for chronology. Primary-authority comparison: pass against all three `references/canonical/` boards for Modular Technical display direction, active-space asymmetry, bare component grammar, single-signal scale, and Level A identity. Series contact-sheet review: pass beside active Hero, Cover, Quote, Big Number, Comparison, Collision, Before / After, and Loop evidence; Timeline is the only chronological Axis mechanism and remains quieter than the Level B/C peaks. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is intentionally subordinate to ordered lookup. Accepted catalog score: `4.86`.
 
 ### 09 Matrix — first generated pass superseded
 

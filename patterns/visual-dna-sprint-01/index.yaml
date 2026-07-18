@@ -104,7 +104,10 @@ families:
   - B
   evidence_mode: generated
   canonical_example: canonical/light/16x9/08-timeline.png
-  status: awaiting_generation
+  sha256: 4b03797c3aef07ae53d2aaaa0ef51527bc96ff32733ef837e11dc917ceafcb7a
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: 09
   slug: matrix
   name: Matrix
