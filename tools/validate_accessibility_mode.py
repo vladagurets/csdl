@@ -739,6 +739,7 @@ def validate_accessibility_library(
             derive_compatibility,
             derive_contrast_matrix,
             derive_index,
+            derive_raster_hashes,
         )
 
         for proof in manifest.get("proofs", []):
@@ -765,23 +766,25 @@ def validate_accessibility_library(
                         "accessibility proof package does not match deterministic rebuild: "
                         + package_path.name
                     )
-        for key in ("index", "contrast_matrix", "compatibility"):
+        for key in ("index", "contrast_matrix", "compatibility", "raster_hashes"):
             path = root / str(library.get(key, ""))
             if not path.is_file():
                 errors.append(f"missing accessibility derived output: {library.get(key)}")
         if all(
             (root / str(library.get(key, ""))).is_file()
-            for key in ("index", "contrast_matrix", "compatibility")
+            for key in ("index", "contrast_matrix", "compatibility", "raster_hashes")
         ):
             expected_outputs = {
                 "index": derive_index(root, manifest),
                 "contrast_matrix": derive_contrast_matrix(tokens, contrast),
                 "compatibility": derive_compatibility(manifest, compatibility),
+                "raster_hashes": derive_raster_hashes(root.parents[1]),
             }
             messages = {
                 "index": "accessibility index does not match deterministic derivation",
                 "contrast_matrix": "accessibility contrast matrix does not match deterministic derivation",
                 "compatibility": "accessibility compatibility does not match deterministic derivation",
+                "raster_hashes": "accepted raster hashes do not match the Milestone 6 baseline",
             }
             for key, expected in expected_outputs.items():
                 actual = _load(

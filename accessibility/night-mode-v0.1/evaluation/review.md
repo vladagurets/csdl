@@ -49,3 +49,17 @@ Accepted evidence supports hierarchy, direct labels, one Signal, expression-leve
 ## Remaining visual risk and deferral
 
 No accepted raster demonstrates the calibrated night tokens, projector degradation, pattern density, CVD simulations, or monochrome hierarchy. A future visual calibration requires explicit approval before generation and three-candidate review for the bounded packet documented in the Milestone 6 evidence audit. Milestone 6 does not substitute placeholders or schema proofs for visual acceptance.
+
+## Local release-candidate validation
+
+The complete pre-integration matrix passed on 2026-07-18:
+
+- `153` pytest cases;
+- Pilot manifest, style anchor, canonical assets, and scores;
+- Visual DNA catalog, fixed data, assets, scores, review, deterministic rebuild, and index;
+- Component Library contract, proofs, deterministic rebuild, and index;
+- Recipe Library, proof rebuild, Prompt DSL v0.5, deterministic library rebuild, and index;
+- Analytical Mode deterministic rebuild and strict validation;
+- Night Mode and Accessibility deterministic rebuild and strict validation.
+
+The accessibility raster inventory contains exactly sixty tracked accepted PNGs and excludes ignored drafts. Every recorded SHA-256 matches the current bytes. Final clean-commit repeated-builder/no-diff validation and GitHub integration remain separate gates before the milestone state changes to complete.

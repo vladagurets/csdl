@@ -23,6 +23,7 @@ library:
   contrast_matrix: contrast-matrix.yaml
   compatibility: compatibility.yaml
   evaluation: evaluation/review.md
+  raster_hashes: evaluation/raster-hashes.yaml
   migration: MIGRATION.md
   rollback: ROLLBACK.md
 

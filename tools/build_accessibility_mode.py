@@ -239,6 +239,34 @@ def derive_compatibility(
     }
 
 
+def derive_raster_hashes(repository_root: Path) -> dict[str, Any]:
+    accepted_roots = [
+        repository_root / "pilots",
+        repository_root / "patterns",
+        repository_root / "references/canonical",
+    ]
+    paths = sorted(
+        path
+        for accepted_root in accepted_roots
+        for path in accepted_root.rglob("*.png")
+        if path.is_file() and "drafts" not in path.parts
+    )
+    files = [
+        {
+            "path": path.relative_to(repository_root).as_posix(),
+            "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        }
+        for path in paths
+    ]
+    return {
+        "library": "night-mode-v0.1",
+        "version": "0.1.0",
+        "purpose": "Pin every tracked accepted raster byte before and after Milestone 6.",
+        "file_count": len(files),
+        "files": files,
+    }
+
+
 def build_accessibility_mode(
     root: Path, require_complete: bool = True
 ) -> list[Path]:
@@ -274,6 +302,10 @@ def build_accessibility_mode(
         (
             root / manifest["library"]["compatibility"],
             derive_compatibility(manifest, compatibility_source),
+        ),
+        (
+            root / manifest["library"]["raster_hashes"],
+            derive_raster_hashes(root.parents[1]),
         ),
     ]
     for path, document in derived:
