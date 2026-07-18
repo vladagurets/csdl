@@ -91,21 +91,21 @@ The former `04-big-number-v1.png`, `04-big-number-v2.png`, and `04-big-number-v3
 
 Audit result: headline, two titles, six criteria, and supporting sentence match the manifest exactly. Both systems retain equal hierarchy; the slide does not read as a `VS` battle. The Divider and aligned criteria carry comparison semantics without decorative containers. Full-resolution and existing `1280×720` evidence remain readable. Canonical Level A is justified because structure, not collision, explains the distinction. No regeneration is warranted. Accepted catalog score: `4.86`.
 
-### 06 Collision — first generated pass superseded
+### 06 Collision — regenerated example accepted
 
 - **Canonical:** `canonical/light/16x9/06-collision.png`
 - **Prompt:** `prompts/06-collision.yaml`
-- **Selected:** `06-collision-v3.png` from three independent built-in GPT Image 2 candidates
-- **Source SHA-256:** `cdd6f1615f8c6b852e8b66624a01837854d0b779e1bc4f79e528a826942314d6`
-- **Canonical SHA-256:** `a939accffe69864ff6535089332ab467417fea446a88162cfee133d2d7f0fa9c`
+- **Selected:** `06-collision-r2-v3.png` from three independent built-in GPT Image 2 rebaseline candidates
+- **Source SHA-256:** `95dcdd9be81ff197608eafdfc043f42ebfbfa49741b54f80404f17aecc04d139`
+- **Canonical SHA-256:** `86fcb233414b3d403d87766d8541d1c848558a9d86308ec8010a1eb359ec43c1`
 - **Source raster:** `1672×941`, RGB PNG
 - **Canonical raster:** `1920×1080`, RGB PNG
 
-- `06-collision-v1.png` — rejected: exact copy and equal inputs pass, but the result is moved below the overlap and connected by an added coral line and dot, so synthesis is not intrinsic to the collision.
-- `06-collision-v2.png` — rejected: the same below-overlap result and connector apparatus weaken the stated mechanism and add removable geometry.
-- `06-collision-v3.png` — selected: all three labels are exact, the result sits inside the only coral overlap, both inputs keep equal weight, and no connector, debris, `VS`, or impact decoration is present.
+- `06-collision-r2-v1.png` — rejected: exact copy, restraint, and equal inputs pass, but the coral connector sits between two terminated planes and reads less clearly as their intrinsic intersection.
+- `06-collision-r2-v2.png` — rejected: exact copy and force are strong, but graphite occupies approximately `51.9%`, leaving only about `44.9%` Field and failing the Level B negative-space minimum.
+- `06-collision-r2-v3.png` — selected: exact labels, two genuinely crossing graphite planes, one named coral overlap, approximately `75.9%` open Field, and no decorative impact language.
 
-Exact-copy review: pass for `ШВИДКІСТЬ`, `КОНТРОЛЬ`, and `НАДІЙНІСТЬ`; no extra text. Visual mechanism: two equal graphite Fields overlap once, and the coral intersection itself is the named synthesis. Strongest decision: placing the result inside the geometry makes the meaning immediate without an explanatory arrow. Removable-element check: the two boundaries, three labels, and one overlap all carry meaning. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the Venn-like primitive is familiar, but semantic color, scale, active space, and strict restraint keep it within CSDL. Accepted catalog score: `5.00`.
+The former `06-collision-v1.png`, `06-collision-v2.png`, and `06-collision-v3.png` record remains superseded by D-028; none was reconsidered as active evidence. Exact-copy review: pass for `ШВИДКІСТЬ`, `КОНТРОЛЬ`, and `НАДІЙНІСТЬ`; no extra text. Visual mechanism: two equal graphite planes cross once, and the sole coral intersection is the named synthesis. Strongest decision: active plane tension replaces the former generic Venn-like primitive while the overlap remains controlled at approximately `2.7%` of canvas. Removable-element check: the two planes, three labels, and one overlap all carry meaning. Primary-authority comparison: pass against all three `references/canonical/` boards for plane geometry, B-level interaction, Modular Technical display, asymmetry, and single-signal color. Series contact-sheet review: pass beside the six previously accepted families; Collision is the only opposing-force mechanism and supplies the intended B-level density peak without becoming a poster. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: none material. Accepted catalog score: `5.00`.
 
 ### 07 Before / After — first generated pass superseded
 
