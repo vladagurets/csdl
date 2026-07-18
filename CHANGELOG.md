@@ -24,6 +24,7 @@
 - Added Decision Tree from three candidates, selecting the exact-copy Level A open-question split with two labeled terminal routes and ochre reserved for HUMAN REVIEW, with full primary-authority and series evidence.
 - Added Framework from three candidates, selecting the exact-copy Level B open four-node Cluster with equal concept weight and coral reserved for the LEARNING component, with full primary-authority and series evidence.
 - Added KPI from an initial three-candidate pass plus two bounded signal-area corrections, selecting the exact W4 fixed-data Level A Pulse with a measured `3.45%` dusty-blue footprint and full primary-authority and series evidence.
+- Added Table from three candidates, selecting the cell-exact W1–W4 Level A open lookup Frame with only the W4 header in dusty blue, plus full-resolution, primary-authority, and series evidence.
 
 ## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
 
