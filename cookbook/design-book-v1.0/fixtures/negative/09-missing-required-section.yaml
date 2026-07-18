@@ -1,0 +1,4 @@
+mutation:
+  document: manifest
+  path: [required_topics]
+  value: [philosophy, constructive-signal, quiet-modular, expression-levels, semantic-color, typography, visual-grammar, components, recipes, prompt-dsl-v0.5, analytical-mode-v0.1, accessibility, reference-hierarchy, provenance, why-do-dont]

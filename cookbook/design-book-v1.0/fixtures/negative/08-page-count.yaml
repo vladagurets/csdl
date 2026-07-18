@@ -1,0 +1,4 @@
+mutation:
+  document: manifest
+  path: [publication, page_count]
+  value: 41

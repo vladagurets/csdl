@@ -1,0 +1,233 @@
+publication: csdl-cookbook-design-book-v1.0
+version: 1.0.0
+page_count: 32
+format: ISO A4 landscape
+editorial_language: uk
+terminology_language: en
+component_count: 15
+recipe_count: 23
+pages:
+- id: '01'
+  source: pages/01-cover.md
+  section: opening
+  kind: cover
+  title_uk: CSDL Cookbook and Design Book v1.0
+  source_sha256: 6e2953de455cc20373eb3a9878d54c4fff92bd0d03609a4bfa212d7b62fd32f3
+  expanded_sha256: 0065d659d710843af1245d7b420f881e13066964f33a889180cc235f23bf9ee8
+- id: '02'
+  source: pages/02-how-to-use.md
+  section: opening
+  kind: guide
+  title_uk: Як читати цю книгу
+  source_sha256: 4820cdbb1f40883a847aee26a6d404be1d899b8fe06ee5602d0d50d450a81eeb
+  expanded_sha256: a7fb82a8f79eb1e5b36c8f334838af4c07f553750743302551b7a4a3e7e65e5e
+- id: '03'
+  source: pages/03-philosophy.md
+  section: foundations
+  kind: editorial
+  title_uk: Constructive Signal
+  source_sha256: 07524cf098803d0038233699c07abe616e78edc5534f3247c47f492930525fec
+  expanded_sha256: 372e705f9904bc063ca6be5641b04dc585702cc47d2f8b304db7c02b3f9331c6
+- id: '04'
+  source: pages/04-quiet-modular.md
+  section: foundations
+  kind: editorial
+  title_uk: Quiet Modular
+  source_sha256: 39b076ca1cc624f41e0021659928caa3811bd31621191aea155ad5ebd816b95b
+  expanded_sha256: 055b546830172d196b0b842ce764c1d568ec3ade2282edf2b0f95142b14695ee
+- id: '05'
+  source: pages/05-expression-levels.md
+  section: foundations
+  kind: comparison
+  title_uk: Рівні A / B / C
+  source_sha256: e73206a49c1e58d5b5c4010b4c12b268d1e948a0422c178f45b20ad6ccbd7c92
+  expanded_sha256: 5b4793eda719641acfc8658f33c28c680ff84fe705631d43e49b48293e7dc5ff
+- id: '06'
+  source: pages/06-canvas-rhythm.md
+  section: foundations
+  kind: rules
+  title_uk: Canvas, density і rhythm
+  source_sha256: 519d7d89564aa2ff04b1cd44658d92c2477c2e2c3b08e4b9a4eeca619882b59c
+  expanded_sha256: 92cf7dcf8de57ea9a0825dea733eb96644a502b584c509db57820c76ee44f2fc
+- id: '07'
+  source: pages/07-semantic-color.md
+  section: foundations
+  kind: tokens
+  title_uk: Semantic color
+  source_sha256: efb624c93aff5d3bf5acbc8f8f02cffc425de7f1c780abd8748c4a58dfc28b5f
+  expanded_sha256: 9ee2d4db10c02f15966aa8f4a9f91a33d3a082a32c076a73c71e9deb5b775965
+- id: 08
+  source: pages/08-typography.md
+  section: foundations
+  kind: typography
+  title_uk: Typography roles
+  source_sha256: 37330e1f55d077dd97009d11ac69aa20e00f178212c716a8555c0c0717b49e36
+  expanded_sha256: 8caf300fed56cef592d5c56ab14f440a3517832a9be748bce7d03c2443ee844f
+- id: 09
+  source: pages/09-visual-grammar.md
+  section: grammar
+  kind: grammar
+  title_uk: Visual grammar
+  source_sha256: c9d4ade7e10c9ef19d8acf5ef8298a080e2162a49cef9a5d3e9c990e9e36069b
+  expanded_sha256: b9c6c70a6a1d9bc4fcdc97ce2cff34096e3ca84435e8c9af03631c4dc3e9cc01
+- id: '10'
+  source: pages/10-components-01-03.md
+  section: components
+  kind: catalog
+  title_uk: Components 01–03
+  source_sha256: 03fd81eab5c6002675cea37600b15108c9e229eeff0b8f638758fe7a06424323
+  expanded_sha256: 43d148ee3b3bd286d0debcb5f8f6bcd9ef30648643342b550b8c7b7a7d2abae2
+- id: '11'
+  source: pages/11-components-04-06.md
+  section: components
+  kind: catalog
+  title_uk: Components 04–06
+  source_sha256: 013f7f74cbce47b2be8177720d1b216f5b739883952b7122b6f3fb4d214fdb4d
+  expanded_sha256: af405123d865e5fb9cc9a278e06c77bcf2daac1c0eebc2975269d8a197c437b4
+- id: '12'
+  source: pages/12-components-07-09.md
+  section: components
+  kind: catalog
+  title_uk: Components 07–09
+  source_sha256: dfe9a6c1ba074dc95afbf2c76d26cdc69ce47469e93ce70c403de2a80fc84ddf
+  expanded_sha256: 558c7372d3d8cc2eab2496b9c4a44487f67dcad40e2cf735877a9dd4d58cd734
+- id: '13'
+  source: pages/13-components-10-12.md
+  section: components
+  kind: catalog
+  title_uk: Components 10–12
+  source_sha256: 28d223a0e05e9e127032c43bcd19acf40a9872f15f92d3fb69494c545b13b75d
+  expanded_sha256: c862da2dbd764674fd899291f72647db6dc182fd95f6b143f41ee354b242f008
+- id: '14'
+  source: pages/14-components-13-15.md
+  section: components
+  kind: catalog
+  title_uk: Components 13–15
+  source_sha256: 63d7e1dd907e31d9f9d74ec0a123d384653c78a0f71b7e250279da5d19e51e93
+  expanded_sha256: 14f464fdb9c660ac09b4ef135b25cb3e579cd439fc21689502a9673737180f18
+- id: '15'
+  source: pages/15-relations.md
+  section: grammar
+  kind: relations
+  title_uk: Relations і semantic geometry
+  source_sha256: d6df2c208f565fc69e7856291ff0acd739be26ce12666e3f72c6c2a44ac97680
+  expanded_sha256: 366bd05c5f6938eea08c24ea983f1de48ce731e45dd61e6be55c28914c30048f
+- id: '16'
+  source: pages/16-recipes-001-004.md
+  section: recipes
+  kind: catalog
+  title_uk: Recipes 001–004
+  source_sha256: 93baf48e615d59fc449ed50821546e8de26d81eea62b0940eba1a26d7f0c16cf
+  expanded_sha256: 003c1782a0785ad2a2b1efb3b657bef12e6ca943748d06735b56fec9967b8b94
+- id: '17'
+  source: pages/17-recipes-005-007.md
+  section: recipes
+  kind: catalog
+  title_uk: Recipes 005–007
+  source_sha256: a305acc1c42358e2c17b51658486ac9a098455be6a5e87cd0870e1f30adab508
+  expanded_sha256: cbd4bcff8f628e84b01e16b97d3f98aaa4c603af27b7897cc176190339cf738e
+- id: '18'
+  source: pages/18-recipes-008-011.md
+  section: recipes
+  kind: catalog
+  title_uk: Recipes 008–011
+  source_sha256: df62c5b18747d49465c1ea81ee6c1ec455c7af819bdd5260875e1ef8457c86b9
+  expanded_sha256: 1e74a18d6b75f1b4a7d6fb19d9072bf7fb7a962f74fbcaac5f1f8d2bef3005a0
+- id: '19'
+  source: pages/19-recipes-012-016.md
+  section: recipes
+  kind: catalog
+  title_uk: Recipes 012–016
+  source_sha256: 064141626640e5401d6ee67f2eb84e95398bf6e7317ce267437d4bd8552e72e3
+  expanded_sha256: 9031accb3125b5552756fc5b5a76b7f2c0ec4dd20b97397ac6edd419672fbbec
+- id: '20'
+  source: pages/20-recipes-017-020.md
+  section: recipes
+  kind: catalog
+  title_uk: Recipes 017–020
+  source_sha256: acad43ab90198b29c52a15445af6a710e2d1d5d025749df03151c4b58b36d384
+  expanded_sha256: 07f361ed6a78cbd5646e25bd90de21e849cb7abbac90abf7a5d52be9733aa50a
+- id: '21'
+  source: pages/21-recipes-021-023.md
+  section: recipes
+  kind: catalog
+  title_uk: Recipes 021–023
+  source_sha256: bd5366275f9f84ff46651f285dbf7cd6786833b6cc496ae828e5868f28d379e8
+  expanded_sha256: f145aa490590e5386595286d10c19f5dfcbd94e25c9e751757962cc9dff18159
+- id: '22'
+  source: pages/22-recipe-selection.md
+  section: recipes
+  kind: workflow
+  title_uk: Як вибирати recipe
+  source_sha256: c7b24bcfaedd4b1c4f4d1c5ac8f6746410e248c9433590b1127541f028ef2c14
+  expanded_sha256: 88d10fa651da616712592a1003c722285438224ec5a25578e7a1395ba4466a2b
+- id: '23'
+  source: pages/23-prompt-dsl-anatomy.md
+  section: prompt-dsl
+  kind: schema
+  title_uk: Prompt DSL v0.5 anatomy
+  source_sha256: 4866660d5c422ed757c23ebe858d13dff039aaf54f4edd2654d1d0606b17ec8a
+  expanded_sha256: 90edce4e9b342c330c28c859196315ea31e06d7bf1ccee3645806033ae891a30
+- id: '24'
+  source: pages/24-prompt-dsl-example.md
+  section: prompt-dsl
+  kind: code
+  title_uk: Complete Prompt DSL example
+  source_sha256: 7fa2ffbf52ae2ae7a527a16296afee8c56d161c764b9ba00459b456fd2badda8
+  expanded_sha256: 5d0bf33172f925ce7bf2425dce99895e84a17b315e37f5213b114e59793f2fc0
+- id: '25'
+  source: pages/25-analytical-principles.md
+  section: analytical
+  kind: rules
+  title_uk: Analytical Mode v0.1
+  source_sha256: e3234fa8c876407bfa54ecf8c37a3f0e179fae8880a922857b1050d5e059c966
+  expanded_sha256: 48416ece5d97408eb9c62be036d851d4a62ca3108dfde894a2c9b0a091794f26
+- id: '26'
+  source: pages/26-analytical-families.md
+  section: analytical
+  kind: catalog
+  title_uk: Analytical families
+  source_sha256: d4a8b0791616febae541d1d0ba5d746720ba6f19f9a2f367a1832581d2e4763f
+  expanded_sha256: e85ea3c6dbf107aef9c42f742a6553d1c527f500105e00c46f867d9bfe36372f
+- id: '27'
+  source: pages/27-accessibility-profiles.md
+  section: accessibility
+  kind: profiles
+  title_uk: Accessibility profiles
+  source_sha256: d1b6569effe37594828d39bc3df48ea1dbc9273899987e55a036c8c73340e8cd
+  expanded_sha256: 6462cb5cdecf021e001c332fe60edbe2edee6b285528f76c746cd191b9fd0548
+- id: '28'
+  source: pages/28-accessibility-meaning.md
+  section: accessibility
+  kind: rules
+  title_uk: Meaning без залежності від color
+  source_sha256: 13a4356695b2fdfa000ae468a905d353b671f9724a3b285afe69cda20a4f41ee
+  expanded_sha256: 7eca52f51794817e323ec92ef499d7aba51da4a04710af56081ee86288c3c1ee
+- id: '29'
+  source: pages/29-reference-provenance.md
+  section: evidence
+  kind: provenance
+  title_uk: Reference hierarchy і provenance
+  source_sha256: 33fd42249f02bb5c1965475dcf656ed87b6129cfa5813f5bfa9953fc60772358
+  expanded_sha256: 743d49530c28e7b30ec09ca64b4793287d9b850436fb219f9b1a5953e06c19b4
+- id: '30'
+  source: pages/30-authoring-workflow.md
+  section: practice
+  kind: workflow
+  title_uk: Authoring workflow
+  source_sha256: adc1e233ce223b3ae1452219ccaabb3563626233b348fc92c8d9b270e52a8096
+  expanded_sha256: cd6dbcdc9fc78120538a64f08f31fc6fea8194d6a72d56c162817d55da51a780
+- id: '31'
+  source: pages/31-why-do-dont.md
+  section: practice
+  kind: comparison
+  title_uk: Why / do / don’t
+  source_sha256: f9173027a244cd570f2858afc5409b07908b1695449f3d93396918ce62b530a9
+  expanded_sha256: 5b45e5dc036e62aacd10e53bfe1d50fd31cbf955be1eadb71a96c153926dc5f4
+- id: '32'
+  source: pages/32-preflight.md
+  section: practice
+  kind: checklist
+  title_uk: Publishing preflight
+  source_sha256: f50629ecab5d65a591da99c2f8eb7543f4f1bb66e6d3ae84fe811381124355d0
+  expanded_sha256: 244bf9b40752c8f09c0d5eb1bcf4001b9f5b120ef7c0832291ee2cf3c57fa8ff

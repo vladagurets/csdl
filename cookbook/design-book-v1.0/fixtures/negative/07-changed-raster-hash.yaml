@@ -1,0 +1,4 @@
+mutation:
+  document: raster_inventory
+  path: [files, 0, sha256]
+  value: 0000000000000000000000000000000000000000000000000000000000000000
