@@ -111,3 +111,42 @@ recipe library valid
 Focused tests also prove deterministic repeated package construction, Workflow cardinality defaults (`4 Node`, `3 Vector`, `4 Label`, `1 Signal`), exact Pilot Comparison copy preservation, a 27-source migration map, rejection of an unsupported scenario, and rejection of ad hoc layout keys.
 
 Remaining risk: strict library-wide Prompt DSL and index validation still require the three persisted end-to-end packages, migration proof, negative fixtures, and bounded analytical fidelity checks.
+
+## Proof, negative-fixture, and index packet
+
+- Branch: `codex/m4-proofs-indexes`
+- End-to-end proofs: editorial Big Number, structural Workflow, bounded analytical Chart
+- Migration proof: accepted Pilot 01 Comparison v0.1 to v0.5
+- Negative fixtures: layout primitive, unknown component, forbidden relation, unsupported recipe/component combination, copy mutation, and analytical distortion
+- Deterministic outputs: package/migration proof builder plus recipe index, 23×20 compatibility matrix, and selection index
+- Raster generation or mutation: none
+
+### Proof review
+
+- Editorial outline scenario `count` selects `004 Big Number`; the package binds exact `3`, `РІВНІ ВИРАЗНОСТІ`, and `QUIET · CONSTRUCTIVE · SIGNAL` content to Anchor/Pulse/Label/Signal instances.
+- Structural outline scenario `work procedure` selects `012 Workflow`; four Nodes, three Vectors, four Labels, and one Signal preserve UNDERSTAND → PLAN → EXECUTE → VERIFY without row/column/zone terminology.
+- Analytical outline scenario `trend` selects `019 Chart`; two Axes, four Nodes, five Labels, and one Signal preserve W1–W4 order, `[72, 78, 84, 90]`, percent unit, `[0, 100]` domain, four direct Labels, and `DEMO DATA` source.
+- Pilot migration proof selects `005 Comparison`, preserves every scalar copy value, records normalized/discarded fields, and contains only Component Library v0.1 instances and relations.
+
+### TDD and validation evidence
+
+The first focused run produced five expected failures: no canonical proof packages, no proof outlines, no migration proof, no analytical contract, and no negative-fixture index. After implementation:
+
+```text
+focused Prompt DSL, end-to-end, negative-fixture, and proof-builder tests
+12 passed
+
+.venv/bin/python tools/build_recipe_proofs.py recipes/recipe-library-v0.5
+recipe proofs built: 01-editorial.yaml, 02-structural.yaml,
+03-analytical.yaml, 01-pilot-comparison.yaml
+
+.venv/bin/python tools/validate_prompt_dsl.py recipes/recipe-library-v0.5
+Prompt DSL v0.5 valid
+
+.venv/bin/python tools/validate_recipe_index.py recipes/recipe-library-v0.5
+recipe index valid
+```
+
+The strict validator rebuilds all four persisted packages and compares the parsed documents. The analytical gate independently checks dataset path, series, order, domain, values, unit, direct labels, source, Node attributes, and Axis attributes. The source-outline gate rejects any content mutation.
+
+Remaining risk: final documentation alignment, complete regression matrix, two-pass clean-tree rebuild, CI, PR integration, and post-merge main audit remain for release completion.

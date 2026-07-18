@@ -99,7 +99,8 @@ content_contract:
   - series
   - points
   - source_label
-  optional: []
+  optional:
+  - quantitative_contract
   exact: true
   max_words: 140
   data_contract: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml

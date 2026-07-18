@@ -15,3 +15,13 @@ Every recipe cites existing Foundation, Pilot 01, Visual DNA, or Component Libra
 ## Generated outputs
 
 `index.yaml`, `compatibility.yaml`, and `selection-index.yaml` are derived from `manifest.yaml` plus per-recipe records. Run the builder and then the index validator; a second build must create no diff.
+
+`outline-schema.yaml` defines the layout-free input contract. `prompt-dsl-v0.5.schema.yaml` defines generation packages. The three proof outlines and packages cover editorial Big Number, structural Workflow, and bounded analytical Chart; the migration proof rebuilds accepted Pilot 01 Comparison.
+
+```bash
+.venv/bin/python tools/validate_recipe_library.py recipes/recipe-library-v0.5/manifest.yaml
+.venv/bin/python tools/build_recipe_proofs.py recipes/recipe-library-v0.5
+.venv/bin/python tools/validate_prompt_dsl.py recipes/recipe-library-v0.5
+.venv/bin/python tools/build_recipe_library.py recipes/recipe-library-v0.5
+.venv/bin/python tools/validate_recipe_index.py recipes/recipe-library-v0.5
+```

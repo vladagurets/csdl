@@ -8,6 +8,9 @@ from typing import Any
 
 import yaml
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 
 def _load_yaml(path: Path, errors: list[str], label: str) -> dict[str, Any]:
     try:
@@ -76,6 +79,71 @@ def _load_records(root: Path, manifest: dict[str, Any]) -> dict[str, dict[str, A
     return records
 
 
+def _validate_quantitative_contract(
+    package: dict[str, Any], repository_root: Path, errors: list[str]
+) -> None:
+    bindings = package.get("content", {}).get("bindings", {})
+    contract = bindings.get("quantitative_contract")
+    if contract is None:
+        return
+    required = {"dataset", "series", "order", "domain", "values", "unit", "labels", "source"}
+    if not isinstance(contract, dict) or not required <= set(contract):
+        errors.append("package quantitative_contract is incomplete")
+        return
+    dataset_path = repository_root / str(contract["dataset"])
+    source = _load_yaml(dataset_path, errors, "package quantitative dataset")
+    if not source:
+        return
+    dataset = source.get("dataset", {})
+    series = dataset.get("series", {}).get(contract.get("series"))
+    if not isinstance(series, dict):
+        errors.append("package quantitative series does not exist")
+        return
+    if contract.get("order") != dataset.get("weeks"):
+        errors.append("package quantitative order must match fixed dataset")
+    if contract.get("values") != series.get("values"):
+        errors.append("package quantitative values must match fixed dataset")
+    if contract.get("unit") != series.get("unit"):
+        errors.append("package quantitative unit must match fixed dataset")
+    if series.get("unit") == "percent" and contract.get("domain") != source.get(
+        "constraints", {}
+    ).get("percent_domain"):
+        errors.append("package quantitative domain must match fixed dataset")
+    if contract.get("labels") != bindings.get("points"):
+        errors.append("package quantitative labels must match direct content labels")
+    expected_source = source.get("constraints", {}).get("source_label_required")
+    if contract.get("source") != expected_source or bindings.get("source_label") != expected_source:
+        errors.append("package quantitative source must match fixed dataset")
+
+    nodes = [
+        instance
+        for instance in package.get("component_instances", [])
+        if instance.get("component") == "Node"
+    ]
+    node_values = [node.get("attributes", {}).get("value") for node in nodes]
+    node_periods = [node.get("attributes", {}).get("period") for node in nodes]
+    node_units = [node.get("attributes", {}).get("unit") for node in nodes]
+    if node_values != contract.get("values"):
+        errors.append("package quantitative Node values must match contract")
+    if node_periods != contract.get("order"):
+        errors.append("package quantitative Node periods must match contract")
+    if node_units != [contract.get("unit")] * len(nodes):
+        errors.append("package quantitative Node units must match contract")
+    axes = [
+        instance.get("attributes", {})
+        for instance in package.get("component_instances", [])
+        if instance.get("component") == "Axis"
+    ]
+    if not any(axis.get("order") == contract.get("order") for axis in axes):
+        errors.append("package sequence Axis must preserve quantitative order")
+    if not any(
+        axis.get("domain") == contract.get("domain")
+        and axis.get("unit") == contract.get("unit")
+        for axis in axes
+    ):
+        errors.append("package quantitative Axis must preserve domain and unit")
+
+
 def validate_prompt_package(
     path: Path | None, root: Path, require_complete: bool = True
 ) -> list[str]:
@@ -94,10 +162,46 @@ def validate_prompt_package(
         if require_complete:
             proof_dir = root / str(manifest.get("library", {}).get("proofs_dir", "proofs")) / "packages"
             paths = sorted(proof_dir.glob("*.yaml")) if proof_dir.exists() else []
-            if len(paths) != 3:
+            expected_names = ["01-editorial.yaml", "02-structural.yaml", "03-analytical.yaml"]
+            if [path.name for path in paths] != expected_names:
                 return ["strict Prompt DSL validation requires exactly three proof packages"]
             for proof_path in paths:
                 errors.extend(validate_prompt_package(proof_path, root, require_complete=False))
+            migration_dir = root / str(manifest.get("library", {}).get("proofs_dir", "proofs")) / "migration"
+            migration_paths = sorted(migration_dir.glob("*.yaml")) if migration_dir.exists() else []
+            if [path.name for path in migration_paths] != ["01-pilot-comparison.yaml"]:
+                errors.append("strict Prompt DSL validation requires one Pilot migration proof")
+            else:
+                errors.extend(
+                    validate_prompt_package(
+                        migration_paths[0], root, require_complete=False
+                    )
+                )
+                migration_provenance = _load_yaml(
+                    migration_paths[0], errors, "migration proof"
+                ).get("provenance", {})
+                if not isinstance(migration_provenance.get("migration"), dict):
+                    errors.append("Pilot migration proof must record migration provenance")
+            if not errors:
+                from tools.build_generation_package import build_generation_package
+                from tools.migrate_prompt_v01_to_v05 import migrate_prompt
+
+                for proof_path in paths:
+                    proof = _load_yaml(proof_path, errors, proof_path.name)
+                    outline_path = repository_root / proof["provenance"]["source_outline"]
+                    outline = _load_yaml(outline_path, errors, outline_path.name)
+                    if proof != build_generation_package(outline, root):
+                        errors.append(f"proof package does not match deterministic rebuild: {proof_path.name}")
+                expected_migration = migrate_prompt(
+                    repository_root
+                    / "pilots/01-agentic-discipline/prompts/04-comparison.yaml",
+                    root,
+                )
+                actual_migration = _load_yaml(
+                    migration_paths[0], errors, migration_paths[0].name
+                )
+                if actual_migration != expected_migration:
+                    errors.append("Pilot migration proof does not match deterministic rebuild")
         return errors
 
     package = _load_yaml(path, errors, path.name)
@@ -325,6 +429,14 @@ def validate_prompt_package(
     for token in schema.get("forbidden_placeholders", []):
         if _contains_token(serialized, str(token)):
             errors.append(f"package contains forbidden marker: {token}")
+    provenance = package.get("provenance", {})
+    if isinstance(provenance, dict) and "migration" not in provenance:
+        source_outline = repository_root / str(provenance.get("source_outline", ""))
+        if source_outline.is_file():
+            outline = _load_yaml(source_outline, errors, "source outline")
+            if package.get("content", {}).get("bindings") != outline.get("content"):
+                errors.append("package content must match source outline exactly")
+    _validate_quantitative_contract(package, repository_root, errors)
     return errors
 
 

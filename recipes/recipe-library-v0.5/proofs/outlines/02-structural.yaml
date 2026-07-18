@@ -1,0 +1,10 @@
+id: proof-structural-workflow
+scenario: work procedure
+main_idea: "Verification turns an operational sequence into evidence."
+expression: A
+density: low
+content_source: patterns/visual-dna-sprint-01/manifest.yaml#family-12
+source_outline: recipes/recipe-library-v0.5/proofs/outlines/02-structural.yaml
+content:
+  headline: "РОБОЧИЙ ПОТІК З ДОКАЗАМИ"
+  stages: [UNDERSTAND, PLAN, EXECUTE, VERIFY]

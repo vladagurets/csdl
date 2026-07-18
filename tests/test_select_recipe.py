@@ -31,7 +31,21 @@ def test_rejects_scenario_without_recipe_evidence() -> None:
                 "id": "unsupported",
                 "scenario": "multiseries uncertainty fan",
                 "main_idea": "Deferred analytical behavior.",
-                "content": {},
+                "content": {"headline": "DEFERRED"},
+            },
+            LIBRARY,
+        )
+
+
+def test_rejects_outline_layout_terminology() -> None:
+    with pytest.raises(ValueError, match="outline contains unknown fields: layout"):
+        select_recipe(
+            {
+                "id": "layout-outline",
+                "scenario": "count",
+                "main_idea": "One value.",
+                "content": {"value": "1"},
+                "layout": {"columns": 12},
             },
             LIBRARY,
         )

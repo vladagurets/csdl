@@ -111,6 +111,7 @@ def _attach_component_attributes(
         "chart": ["sequence", "quantitative"],
         "dashboard": ["support", "sequence"],
     }
+    quantitative = bindings.get("quantitative_contract", {})
     counters: dict[str, int] = defaultdict(int)
     for instance in instances:
         component = instance["component"]
@@ -156,6 +157,20 @@ def _attach_component_attributes(
                     "direction": recipe["prompt_dsl"]["deterministic_defaults"][
                         "reading_path"
                     ],
+                }
+            )
+            if quantitative:
+                if attributes["mode"] == "sequence":
+                    attributes["order"] = quantitative["order"]
+                if attributes["mode"] == "quantitative":
+                    attributes["domain"] = quantitative["domain"]
+                    attributes["unit"] = quantitative["unit"]
+        elif component == "Node" and quantitative:
+            attributes.update(
+                {
+                    "value": quantitative["values"][index],
+                    "unit": quantitative["unit"],
+                    "period": quantitative["order"][index],
                 }
             )
         elif component == "Pulse":

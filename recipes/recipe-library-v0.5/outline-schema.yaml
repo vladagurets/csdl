@@ -1,0 +1,36 @@
+language: CSDL
+version: "0.5"
+kind: recipe-outline
+required_fields: [id, scenario, main_idea, content]
+allowed_fields:
+  - id
+  - recipe
+  - scenario
+  - main_idea
+  - expression
+  - density
+  - content
+  - content_source
+  - source_outline
+enums:
+  expression: [A, B, C]
+  density: [low, medium, analytical]
+forbidden_composition_keys:
+  - layout
+  - geometry
+  - shape
+  - plane
+  - line
+  - box
+  - card
+  - panel
+  - grid
+  - row
+  - column
+  - left
+  - right
+  - top
+  - bottom
+  - position
+  - coordinates
+  - container
