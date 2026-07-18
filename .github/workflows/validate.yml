@@ -57,5 +57,9 @@ jobs:
         run: python tools/build_recipe_library.py recipes/recipe-library-v0.5
       - name: Validate recipe index
         run: python tools/validate_recipe_index.py recipes/recipe-library-v0.5
+      - name: Rebuild Analytical Mode v0.1
+        run: python tools/build_analytical_mode.py analytics/analytical-mode-v0.1
+      - name: Validate Analytical Mode v0.1
+        run: python tools/validate_analytical_mode.py analytics/analytical-mode-v0.1
       - name: Verify deterministic outputs
         run: git diff --exit-code

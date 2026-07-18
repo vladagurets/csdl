@@ -152,13 +152,25 @@ Exit criterion status: **met for Recipe Library and Prompt DSL v0.5**.
 
 ## Milestone 5 — Analytical Mode
 
-**State:** active
+**State:** complete
 
 Add precise rules for bars, lines, scatterplots, waterfall, heatmaps, funnels, maps, networks, tables, uncertainty, forecasts, negative values, sources, and direct labeling.
 
 Constraint: constructive styling must never distort quantitative relationships.
 
 Implementation contract: [`docs/plans/2026-07-18-csdl-milestone-5.md`](docs/plans/2026-07-18-csdl-milestone-5.md). D-031 keeps Prompt DSL v0.5 unchanged and versions Analytical Mode as an independent additive extension.
+
+Delivered:
+
+- canonical Markdown specification, manifest, typed dataset schema, analytical encoding schema, global/family contracts, migration, and rollback documentation;
+- ten canonical fixed datasets covering all required families and semantics;
+- deterministic transformation, package, index, dataset-index, and compatibility builders;
+- strict and tested incomplete-mode validation that reloads datasets independently and recomputes transformations;
+- ten end-to-end proof paths for signed bars, observed/forecast/uncertainty line, scatterplot, waterfall, heatmap, funnel, normalized map, directed network, exact table, and single-dataset dashboard;
+- seventeen exact-error negative fixtures and focused quantitative mutation tests;
+- unchanged Prompt DSL v0.5, fifteen-component D-029 vocabulary, 23-recipe D-030 library, and accepted Milestone 1–4 rasters.
+
+Exit criterion: every family has precise machine-readable rules and a deterministic fixed-data proof; all strict validators and drift checks pass. **Met for Analytical Mode v0.1.**
 
 ## Milestone 6 — Night Mode and Accessibility
 
