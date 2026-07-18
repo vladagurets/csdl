@@ -209,7 +209,10 @@ families:
   - B
   evidence_mode: generated
   canonical_example: canonical/light/16x9/16-framework.png
-  status: awaiting_generation
+  sha256: d64e39604076b81a68bf183cbed4d8e7a667d496c6095812bc2602403a4612fd
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: '17'
   slug: kpi
   name: KPI
