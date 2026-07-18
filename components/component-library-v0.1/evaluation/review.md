@@ -232,3 +232,52 @@ pass
 ```
 
 Remaining risk: the strict component-record gate is complete, but the composition-proof gate remains red until editorial, structural, and analytical proof documents exercise real instances and relations. No accepted raster currently demonstrates Legend use, so its compatibility remains conditional by design.
+
+## Composition proof and index packet
+
+- Branch: `codex/m3-composition-proofs`
+- Proofs: `proofs/01-editorial.yaml`, `02-structural.yaml`, `03-analytical.yaml`
+- Generated outputs: `index.yaml`, `compatibility.yaml`
+- Compatibility coverage: 15 components × 20 families; every family has at least one declared component
+- Raster generation: none
+- Canonical raster mutation: none
+
+### Proof review
+
+- Editorial / Big Number: Anchor owns the proposition, Pulse owns exact `3`, direct Label retains `QUIET · CONSTRUCTIVE · SIGNAL`, and one Signal highlights the value.
+- Structural / Architecture: one open Field contains AGENT, TOOLS, and MEMORY Nodes; USER stays outside; three Bridges encode the exact directed/bidirectional topology without layout primitives.
+- Analytical / Chart: two Axes order four directly labeled Nodes at exact W1–W4 values `[72, 78, 84, 90]` on `[0, 100]`; one Signal highlights W4; `DEMO DATA` remains attached; Legend is absent.
+
+Each proof points to its accepted Milestone 2 raster, declares semantic content separately from instances, and uses only public component and relation vocabulary. The proof validator rejects an injected ad hoc `layout` key, a relation forbidden by the two component contracts, and an altered W4 quantitative value.
+
+### TDD and validation evidence
+
+The first focused run produced the expected six failures: the three proofs and two generated outputs did not exist, strict proof/index validation remained red, and mutation fixtures had no analytical proof to edit. After the proofs and deterministic outputs were added:
+
+```text
+focused proof, builder, and index tests
+10 passed
+
+.venv/bin/python tools/validate_component_proofs.py components/component-library-v0.1
+component proofs valid
+
+.venv/bin/python tools/build_component_library.py components/component-library-v0.1
+component library built: index.yaml, compatibility.yaml
+
+.venv/bin/python tools/validate_component_index.py components/component-library-v0.1
+component index valid
+
+.venv/bin/python -m pytest -q
+71 passed
+
+Pilot manifest/style-anchor/assets/scores validators
+pass
+
+Milestone 2 catalog/data/assets/scores/review/build/index validators
+pass
+
+git diff --check
+pass
+```
+
+Remaining risk: Legend remains a deliberately uninstantiated conditional exception because no accepted raster supports positive use. The proof and generated-output gates are met; final documentation consistency, clean-tree reproducibility, GitHub CI, and integration remain for the release packet.

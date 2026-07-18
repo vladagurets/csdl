@@ -30,7 +30,20 @@ def copy_library_with_evidence(tmp_path: Path) -> Path:
     authority = tmp_path / "references/canonical/foundation-patterns-v0.1.png"
     authority.parent.mkdir(parents=True)
     shutil.copy2(ROOT / "references/canonical/foundation-patterns-v0.1.png", authority)
+    for relative in [
+        "patterns/visual-dna-sprint-01/canonical/light/16x9/04-big-number.png",
+        "patterns/visual-dna-sprint-01/canonical/light/16x9/11-architecture.png",
+        "patterns/visual-dna-sprint-01/canonical/light/16x9/19-chart.png",
+        "patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml",
+    ]:
+        destination = tmp_path / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(ROOT / relative, destination)
     return target
+
+
+def test_complete_index_and_compatibility_validate() -> None:
+    assert validate_component_index(LIBRARY) == []
 
 
 def test_partial_generated_outputs_validate(tmp_path: Path) -> None:
