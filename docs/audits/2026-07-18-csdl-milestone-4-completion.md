@@ -1,9 +1,13 @@
 # Milestone 4 Completion Audit
 
-**Date:** 2026-07-18  
-**Scope:** Recipe Library and Prompt DSL v0.5  
-**Integration branch:** `codex/m4-integration`  
-**Baseline:** `108da1ab69816f2a0a9a201e260a018fb3a9c12d` (`main` after Milestone 3)  
+**Date:** 2026-07-18
+
+**Scope:** Recipe Library and Prompt DSL v0.5
+
+**Integration branch:** `codex/m4-integration`
+
+**Baseline:** `108da1ab69816f2a0a9a201e260a018fb3a9c12d` (`main` after Milestone 3)
+
 **Pre-merge disposition:** ready for final integration PR; GitHub CI, merge commit, and post-merge clean-main validation remain mandatory external gates
 
 ## Acceptance conclusion
