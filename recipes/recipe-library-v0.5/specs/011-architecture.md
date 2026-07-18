@@ -72,6 +72,7 @@ Explain stable system boundaries and permitted interactions.
 
 ## Deterministic defaults
 
+- Component cardinality: `Field`=1, `Node`=4, `Bridge`=3, `Label`=4.
 - Expression: `B`.
 - Density: `medium`.
 - Reading path: `outside_to_inside`.

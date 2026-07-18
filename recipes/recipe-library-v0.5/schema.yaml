@@ -154,7 +154,7 @@ allowed_recipe_fields:
   - record
 
 required_ingredient_groups: [required, optional]
-required_ingredient_fields: [component, min, max]
+required_ingredient_fields: [component, min, max, default]
 required_relation_groups: [allowed, forbidden]
 required_relation_fields: [subject, type, object]
 required_expression_levels: [A, B, C]
@@ -177,6 +177,14 @@ required_prompt_dsl_fields:
   - deterministic_defaults
 required_evidence_fields: [path, locator, supports]
 required_compatibility_fields: [legacy_names, migration, rollback]
+required_migration_fields:
+  - id
+  - source_versions
+  - target_version
+  - source_files
+  - recipe_map
+  - reference_only
+  - normalization_rules
 
 required_spec_sections:
   - "## Problem"

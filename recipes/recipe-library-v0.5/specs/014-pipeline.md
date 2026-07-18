@@ -72,6 +72,7 @@ Show material or data transformed through fixed stages.
 
 ## Deterministic defaults
 
+- Component cardinality: `Node`=5, `Vector`=1, `Label`=5, `Signal`=1.
 - Expression: `B`.
 - Density: `medium`.
 - Reading path: `left_to_right`.

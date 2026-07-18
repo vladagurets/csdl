@@ -71,6 +71,7 @@ Make a small branching rule and its consequences explicit.
 
 ## Deterministic defaults
 
+- Component cardinality: `Node`=3, `Bridge`=2, `Label`=3, `Signal`=1.
 - Expression: `A`.
 - Density: `low`.
 - Reading path: `top_to_bottom`.

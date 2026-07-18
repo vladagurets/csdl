@@ -71,6 +71,7 @@ State an exact ordered symbolic relationship and its exact result as one culmina
 
 ## Deterministic defaults
 
+- Component cardinality: `Anchor`=2, `Collision`=1, `Signal`=1, `Label`=0.
 - Expression: `C`.
 - Density: `low`.
 - Reading path: `left_to_right`.

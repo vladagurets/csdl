@@ -72,6 +72,7 @@ Evaluate readiness through a bounded set of required questions with one selected
 
 ## Deterministic defaults
 
+- Component cardinality: `Anchor`=1, `Cluster`=1, `Node`=4, `Signal`=1, `Label`=0.
 - Expression: `A`.
 - Density: `low`.
 - Reading path: `top_left_to_bottom_right`.

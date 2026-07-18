@@ -72,6 +72,7 @@ Make a state change legible without reducing it to cosmetic restyling.
 
 ## Deterministic defaults
 
+- Component cardinality: `Field`=2, `Divider`=1, `Vector`=1, `Signal`=1.
 - Expression: `A`.
 - Density: `low`.
 - Reading path: `left_to_right`.

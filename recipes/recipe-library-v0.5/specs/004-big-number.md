@@ -71,6 +71,7 @@ Make one exact quantity the dominant explanatory object.
 
 ## Deterministic defaults
 
+- Component cardinality: `Anchor`=1, `Pulse`=1, `Label`=1, `Signal`=1.
 - Expression: `A`.
 - Density: `low`.
 - Reading path: `left_to_right`.

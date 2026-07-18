@@ -72,6 +72,7 @@ Show levels of ownership or decomposition without implying sequence.
 
 ## Deterministic defaults
 
+- Component cardinality: `Anchor`=1, `Frame`=4, `Node`=4, `Bridge`=3, `Label`=4.
 - Expression: `A`.
 - Density: `low`.
 - Reading path: `top_to_bottom`.

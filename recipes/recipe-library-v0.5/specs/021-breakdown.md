@@ -72,6 +72,7 @@ Show that an expected recurring system fails to retain continuity and exposes de
 
 ## Deterministic defaults
 
+- Component cardinality: `Loop`=1, `Node`=3, `Label`=3, `Signal`=1.
 - Expression: `A`.
 - Density: `low`.
 - Reading path: `left_to_right`.

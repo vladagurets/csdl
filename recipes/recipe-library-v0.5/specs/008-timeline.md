@@ -71,6 +71,7 @@ Show ordered change over time with one unambiguous reading direction.
 
 ## Deterministic defaults
 
+- Component cardinality: `Axis`=1, `Node`=5, `Label`=5, `Signal`=1.
 - Expression: `A`.
 - Density: `low`.
 - Reading path: `left_to_right`.
