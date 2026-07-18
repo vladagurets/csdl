@@ -48,7 +48,7 @@ Exit criterion status: **met for Pilot 01 v0.1.0**.
 
 ## Milestone 2 — Visual DNA Sprint 1
 
-**State:** in progress
+**State:** complete
 
 Create and validate the first 20 pattern families:
 
@@ -73,11 +73,18 @@ Create and validate the first 20 pattern families:
 19. Chart
 20. Dashboard
 
-Each family receives Level A, B, and C examples where semantically valid. Not every recipe requires all three levels.
+Delivered:
+
+- one accepted canonical example for each family at its declared expression level, with the series distributed across 13 Level A, 6 Level B, and 1 Level C examples;
+- audited Pilot 01 evidence reused for Hero, Comparison, and Loop without unnecessary regeneration;
+- D-028 corrective evidence generated under the three-board primary Visual DNA authority and secondary Pilot execution reference;
+- machine-readable manifest, schema, family specifications, Prompt DSL packages, fixed analytical prototype data, scores, review records, and index;
+- twenty `1280×720` previews plus full, editorial, structural, and analytical `3840×2160` contact sheets;
+- strict catalog, data, raster, score, review, preview, contact-sheet, and index validation.
 
 Exit criterion: patterns are recognizably CSDL without depending on a logo.
 
-Current execution contract: [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md). The 20-family manifest/schema, specification format, exact content, fixed analytical prototype dataset, Prompt DSL packages, and validation tooling are defined on the infrastructure packet. D-028 makes all three `references/canonical/` boards primary Visual DNA authority and the Pilot landscape anchor secondary execution evidence. Raster evidence proceeds family by family after the reference-authority rebaseline; Hero, Comparison, and Loop reuse audited Pilot 01 evidence.
+Exit criterion status: **met for Visual DNA Sprint 1**. The complete evidence and validation contract remains documented in [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md). Milestone 3 remains planned and has not started.
 
 ## Milestone 3 — Component Library
 
