@@ -1,0 +1,93 @@
+language: CSDL
+catalog_version: 0.1
+required_catalog_fields:
+  - id
+  - title
+  - version
+  - canvas
+  - orientation
+  - style_anchor
+  - family_count
+  - canonical_distribution
+required_family_fields:
+  - id
+  - slug
+  - name
+  - wave
+  - problem
+  - scenarios
+  - components
+  - assembly_order
+  - allowed_levels
+  - canonical_level
+  - typography
+  - spacing
+  - signal
+  - density
+  - content
+  - hard_exclusions
+  - prompt
+  - specification
+  - evidence
+  - acceptance
+family_order:
+  - hero
+  - cover
+  - quote
+  - big-number
+  - comparison
+  - collision
+  - before-after
+  - timeline
+  - matrix
+  - hierarchy
+  - architecture
+  - workflow
+  - loop
+  - pipeline
+  - decision-tree
+  - framework
+  - kpi
+  - table
+  - chart
+  - dashboard
+enums:
+  wave: [pilot, editorial, structural, analytical]
+  level: [A, B, C]
+  density: [low, medium, analytical]
+  evidence_mode: [pilot_reference, generated]
+  signal: [coral, data_blue, ochre, mineral_green]
+path_rules:
+  specification: "specs/{id}-{slug}.md"
+  prompt: "prompts/{id}-{slug}.yaml"
+  generated_asset: "canonical/light/16x9/{id}-{slug}.png"
+evidence_rules:
+  pilot_reference:
+    candidate_generation_required: false
+    required_fields: [mode, canonical_example, source_prompt, source_review, source_scores, sha256]
+  generated:
+    candidate_generation_required: true
+    required_fields: [mode, canonical_example, candidate_generation_required]
+acceptance_rules:
+  required_fields:
+    - exact_content
+    - clarity
+    - presentation_readability
+    - semantic_integrity
+    - candidate_count
+  generated_candidate_count: 3
+  pilot_candidate_count: 3
+required_spec_sections:
+  - "## Problem"
+  - "## Allowed scenarios"
+  - "## Semantic components"
+  - "## Assembly order"
+  - "## Expression levels"
+  - "## Typography and spacing"
+  - "## Signal constraints"
+  - "## Canonical content"
+  - "## Hard exclusions"
+  - "## Prompt DSL contract"
+  - "## Acceptance criteria"
+  - "## Canonical evidence"
+forbidden_placeholders: [TBD, TODO, TBC, FIXME, placeholder]

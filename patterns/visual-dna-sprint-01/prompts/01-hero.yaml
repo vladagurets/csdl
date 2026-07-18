@@ -1,0 +1,17 @@
+language: CSDL
+version: 0.1
+recipe: Hero
+expression: A
+generation: {required: false, evidence_mode: pilot_reference}
+source_prompt: pilots/01-agentic-discipline/prompts/01-hook.yaml
+canvas: {size: 1920x1080, orientation: landscape, safe_margin_horizontal: 96, safe_margin_vertical: 72}
+reference: pilots/01-agentic-discipline/references/style-anchor-light.png
+content:
+  headline: "СИЛЬНИЙ АГЕНТ ≠ СТІЙКИЙ РЕЗУЛЬТАТ"
+  supporting_copy: "Стабільність з’являється, коли робота має процес, перевірки й пам’ять."
+composition:
+  mechanism: "One large typographic Anchor opposed by one small stable coral Signal"
+  components: [Anchor, Signal]
+  reading_path: left_to_right
+  negative_space: "65–75%"
+constraints: {exact_copy: true, one_main_idea: true, one_visual_mechanism: true, no_extra_text: true}

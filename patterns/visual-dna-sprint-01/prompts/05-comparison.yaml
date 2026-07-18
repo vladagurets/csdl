@@ -1,0 +1,17 @@
+language: CSDL
+version: 0.1
+recipe: Comparison
+expression: A
+generation: {required: false, evidence_mode: pilot_reference}
+source_prompt: pilots/01-agentic-discipline/prompts/04-comparison.yaml
+canvas: {size: 1920x1080, orientation: landscape, safe_margin_horizontal: 96, safe_margin_vertical: 72}
+reference: pilots/01-agentic-discipline/references/style-anchor-light.png
+content:
+  headline: "ДВА МЕХАНІЗМИ ДИСЦИПЛІНИ"
+  left: [SUPERPOWERS, "Skills за контекстом", "Gated workflow", "TDD + review"]
+  right: [COMPOUND ENGINEERING, "Plan + work + review", "Capture learnings", "Easier next cycle"]
+  supporting_copy: "Superpowers дисциплінує поточну роботу. Compound Engineering робить наступний цикл легшим."
+composition:
+  mechanism: "Two equal open Fields separated by one thin Divider and one shared coral Signal"
+  components: [Anchor, Field, Divider, Signal]
+constraints: {exact_copy: true, complementary_not_adversarial: true, repeated_colored_bullets: false, no_extra_text: true}

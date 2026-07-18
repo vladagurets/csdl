@@ -1,9 +1,9 @@
 # Project Status
 
 **Project:** Constructive Signal Design Language
-**Version:** Pilot 01 Visual DNA v0.1.0
-**Current milestone:** Milestone 1 — complete
-**Last updated:** 2026-07-17
+**Version:** Visual DNA Sprint 1 infrastructure
+**Current milestone:** Milestone 2 — in progress
+**Last updated:** 2026-07-18
 
 ## Outcome
 
@@ -18,6 +18,15 @@ The completed release contains:
 - one `3840×2160` contact sheet;
 - complete candidate, exact-copy, raster, selection, and rubric evidence;
 - passing automated validation.
+
+Milestone 2 has started from a synchronized clean `main`. Its infrastructure packet defines:
+
+- the exact 20-family catalog order and 13 A / 6 B / 1 C canonical distribution;
+- complete per-family semantic, assembly, expression-level, typography, spacing, signal, content, exclusion, Prompt DSL, and acceptance contracts;
+- Pilot 01 reference evidence routes for Hero, Comparison, and Loop;
+- one fixed demo dataset shared by KPI, Table, Chart, and Dashboard prototypes;
+- strict catalog, analytical-data, raster, score, preview, contact-sheet, and machine-index tooling;
+- a stacked one-packet/one-family pull-request sequence with no automatic merges.
 
 ## Canonical outputs
 
@@ -54,12 +63,12 @@ scores valid
 
 ## Primary signal status
 
-Met: all seven canonical slides are direct landscape compositions, exact-copy reviewed, and readable at `1280×720`.
+Partially validated: the Milestone 2 semantic and machine-readable contracts pass, but the 17 new family rasters and the 20-family contact sheets are not generated yet. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
-Met: tests and all four validators pass. Contact-sheet rhythm and series-level visual gates pass.
+Met for the infrastructure packet: tests, catalog/schema validation, fixed-data validation, and incomplete-milestone Pilot reference/score gates pass. Strict asset and score commands intentionally remain final milestone gates.
 
 ## Repository state
 
-Changes are ready for review on `codex/pilot-01-16x9-restart`. No commit, tag, push, or pull request was created because the user did not request Git publication actions.
+Infrastructure work is on `codex/m2-infrastructure`. The next packet audits and indexes Pilot-backed Hero, Comparison, and Loop evidence before any new raster generation.
