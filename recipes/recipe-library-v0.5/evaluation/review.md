@@ -150,3 +150,36 @@ recipe index valid
 The strict validator rebuilds all four persisted packages and compares the parsed documents. The analytical gate independently checks dataset path, series, order, domain, values, unit, direct labels, source, Node attributes, and Axis attributes. The source-outline gate rejects any content mutation.
 
 Remaining risk: final documentation alignment, complete regression matrix, two-pass clean-tree rebuild, CI, PR integration, and post-merge main audit remain for release completion.
+
+## Release documentation and CI packet
+
+- Branch: `codex/m4-release`
+- Active documentation: `AGENTS.md`, `README.md`, `ROADMAP.md`, `STATUS.md`, `DECISIONS.md`, `CHANGELOG.md`, and the foundation specification aligned to Milestone 4 complete / Milestone 5 deferred
+- CI: complete Pilot 01, Visual DNA, Component Library, Recipe Library, Prompt DSL, deterministic builder, and clean-diff matrix
+- Raster generation or mutation: none
+
+### Completion validation
+
+```text
+.venv/bin/python -m pytest -q
+98 passed
+
+Pilot 01 manifest, style-anchor, asset, and score validators
+all passed
+
+Visual DNA catalog, data, asset, score, review, builder, and index validators
+all passed
+
+Component Library contract, proof, builder, and index validators
+all passed
+
+Recipe Library contract, proof builder, Prompt DSL, library builder, and index validators
+all passed
+
+git diff --check
+passed
+```
+
+The catalog, component, proof-package, migration-proof, compatibility, and index builders produced no unrecorded output drift. The active-document scan found no stale statement that Milestone 4 is planned or unstarted; historical Milestone 3 review and plan records retain their original point-in-time wording.
+
+Remaining risk: GitHub CI, final integration review, merge-commit completion, and post-merge validation on `main` remain external to this packet.

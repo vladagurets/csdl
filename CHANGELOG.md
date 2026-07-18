@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Completed Milestone 4 — Recipe Library and Prompt DSL v0.5 with 23 evidence-backed recipes, layout-free outline selection, declarative generation packages, complete Pilot/Visual DNA migration coverage, three end-to-end proofs, one migration proof, six negative fixtures, deterministic indexes/builders, strict validators, and no raster generation or mutation.
+- Added D-030 to stop Recipe Library v0.5 at the twenty Visual DNA needs plus Breakdown, Checklist, and Formula instead of manufacturing recipes toward fifty; full Analytical Mode remains deferred.
+- Added canonical Markdown and per-recipe YAML contracts for IDs `001`–`023`, including component cardinality/defaults, allowed/forbidden relations, A/B/C support, compatible families, presentation/negative-space/typography/color constraints, exact content, Prompt DSL fields, exclusions, invariants, evidence, migration, and rollback.
+- Added Prompt DSL v0.5 schemas and deterministic tools that separate semantic intent, content, component instances, relations, generation constraints, and provenance while rejecting Container and ad hoc layout/geometry terms.
+- Added mechanical migration for all seven accepted Pilot 01 recipe prompts and all twenty Visual DNA prompt packages; every source copy/data scalar remains present, and the shared style anchor remains immutable reference-only evidence.
+- Added editorial Big Number, structural Workflow, bounded analytical Chart, and Pilot Comparison migration proofs with fixed-data checks for domain, order, values, units, direct labels, and source.
+- Added six negative fixtures for undeclared layout, unknown component, forbidden relation, unsupported recipe/component combination, exact-copy mutation, and bounded analytical distortion.
 - Completed Milestone 3 — Component Library v0.1 with fifteen evidence-backed component contracts, three vocabulary-only composition proofs, a deterministic 15×20 compatibility matrix and index, strict milestone validators, documentation alignment, and no raster generation or mutation.
 - Started Milestone 3 with a repository-grounded component evidence audit, dependency graph, acceptance contract, validation strategy, and seven-packet stacked implementation plan.
 - Added Component Library v0.1 infrastructure: exact fifteen-name vocabulary, schema, Markdown template, evidence conventions, strict/incomplete validators, proof validation, deterministic index/compatibility builders, and focused TDD coverage.
