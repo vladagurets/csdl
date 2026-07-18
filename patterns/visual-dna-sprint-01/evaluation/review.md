@@ -164,6 +164,22 @@ Exact-copy review: pass for `КУДИ СПРЯМУВАТИ ЗУСИЛЛЯ`, `В�
 
 Exact-copy review: pass for `ВІД ЦІЛІ ДО ПЕРЕВІРКИ`, `OBJECTIVE`, `MILESTONE`, `TASK`, and `CHECK`; no numbers, siblings, extra levels, or explanatory text. Visual mechanism: four nested open Brackets encode progressively deeper ownership scope while restrained type scale reinforces decomposition. Strongest decision: containment remains immediate without turning the single-child hierarchy into a workflow arrow chain. Removable-element check: headline, four labels, four depth cues, and the CHECK signal all carry semantic weight. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is intentionally carried by the nested depth rhythm rather than a large signal event. Accepted catalog score: `4.86`.
 
+### 11 Architecture — generated example accepted
+
+- **Canonical:** `canonical/light/16x9/11-architecture.png`
+- **Prompt:** `prompts/11-architecture.yaml`
+- **Selected:** `11-architecture-v2.png` from three independent built-in GPT Image 2 candidates
+- **Source SHA-256:** `fde112bf916121e25d3427557275ce1f9e9869f39d20c66718611cf6f6018424`
+- **Canonical SHA-256:** `bf8e455ce867a02525e2ae95eff9822675a8a388aaca7a769da26bb6a40b7f82`
+- **Source raster:** `1672×941`, RGB PNG
+- **Canonical raster:** `1920×1080`, RGB PNG
+
+- `11-architecture-v1.png` — rejected: exact labels and all three directions pass, but the closed rounded rectangle turns the system boundary into a dashboard-like UI panel.
+- `11-architecture-v2.png` — selected: exact labels, USER clearly outside, AGENT/TOOLS/MEMORY inside one open blue Field, and exactly the three declared directed or bidirectional Bridges with no crossings.
+- `11-architecture-v3.png` — rejected: exact labels, topology, and open boundary pass, but the MEMORY Bridge is also blue, exceeding the DSL rule that reserves dusty data blue for the boundary and tool relation.
+
+Exact-copy review: pass for `КОНТЕКСТНА АРХІТЕКТУРА АГЕНТА`, `USER`, `AGENT`, `TOOLS`, and `MEMORY`; no relation captions, services, or extra text. Direction review: pass for `USER → AGENT`, `AGENT ↔ TOOLS`, and `AGENT ↔ MEMORY`; no fourth relation. Visual mechanism: one open Field establishes system scope, while a boundary gap admits the one external actor relation and two internal Bridges remain distinct. Strongest decision: dusty blue identifies the technical boundary and tool relation without coloring the memory relation or turning nodes into cards. Removable-element check: headline, boundary, four labels, and three Bridges are all required. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the system diagram is intentionally conventional, with CSDL identity carried by open scope, restrained signal, and active space. Accepted catalog score: `4.86`.
+
 ### 13 Loop — Pilot reference accepted
 
 - **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png`
