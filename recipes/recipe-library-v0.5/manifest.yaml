@@ -1,0 +1,197 @@
+library:
+  id: recipe-library-v0.5
+  title: CSDL Recipe Library and Prompt DSL v0.5
+  version: 0.5.0
+  source_milestone: 4
+  canvas: 1920x1080
+  orientation: landscape
+  markdown_authority: true
+  recipe_count: 23
+  schema: schema.yaml
+  outline_schema: outline-schema.yaml
+  prompt_dsl_schema: prompt-dsl-v0.5.schema.yaml
+  migration: migration-v0.1-to-v0.5.yaml
+  index: index.yaml
+  compatibility: compatibility.yaml
+  selection_index: selection-index.yaml
+  proofs_dir: proofs
+  evaluation: evaluation/review.md
+  component_library: components/component-library-v0.1/manifest.yaml
+  visual_dna_manifest: patterns/visual-dna-sprint-01/manifest.yaml
+defaults:
+  expression: A
+  density: low
+  canvas:
+    ratio: '16:9'
+    width: 1920
+    height: 1080
+    orientation: landscape
+    safe_margin_horizontal: 96
+    safe_margin_vertical: 72
+  presentation:
+    reading_path: top_left_to_bottom_right
+    one_main_idea: true
+    one_visual_mechanism: true
+    one_dominant_signal: true
+  typography:
+    display: modular_technical
+    body: neutral_sans
+    code: technical_mono
+    all_text_horizontal: true
+    max_typographic_tricks: 1
+  palette:
+    mode: light
+    background: paper.base
+    ink: ink.primary
+    primary_signal: signal.primary
+  output:
+    format: PNG
+    exact_size: 1920x1080
+    content_accuracy: exact
+  hard_exclusions:
+  - extra text
+  - logos or repeated footers
+  - UI chrome or decorative card shells
+  - decorative coordinates or random dot fields
+  - gradients, shadows, glossy surfaces, or 3D
+  - political, Soviet, or revolutionary-poster styling
+  - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+recipes:
+- id: '001'
+  slug: hero
+  name: Hero
+  source_family: hero
+  record: records/001-hero.yaml
+  specification: specs/001-hero.md
+- id: '002'
+  slug: cover
+  name: Cover
+  source_family: cover
+  record: records/002-cover.yaml
+  specification: specs/002-cover.md
+- id: '003'
+  slug: quote
+  name: Quote
+  source_family: quote
+  record: records/003-quote.yaml
+  specification: specs/003-quote.md
+- id: '004'
+  slug: big-number
+  name: Big Number
+  source_family: big-number
+  record: records/004-big-number.yaml
+  specification: specs/004-big-number.md
+- id: '005'
+  slug: comparison
+  name: Comparison
+  source_family: comparison
+  record: records/005-comparison.yaml
+  specification: specs/005-comparison.md
+- id: '006'
+  slug: collision
+  name: Collision
+  source_family: collision
+  record: records/006-collision.yaml
+  specification: specs/006-collision.md
+- id: '007'
+  slug: before-after
+  name: Before / After
+  source_family: before-after
+  record: records/007-before-after.yaml
+  specification: specs/007-before-after.md
+- id: 008
+  slug: timeline
+  name: Timeline
+  source_family: timeline
+  record: records/008-timeline.yaml
+  specification: specs/008-timeline.md
+- id: 009
+  slug: matrix
+  name: Matrix
+  source_family: matrix
+  record: records/009-matrix.yaml
+  specification: specs/009-matrix.md
+- id: '010'
+  slug: hierarchy
+  name: Hierarchy
+  source_family: hierarchy
+  record: records/010-hierarchy.yaml
+  specification: specs/010-hierarchy.md
+- id: '011'
+  slug: architecture
+  name: Architecture
+  source_family: architecture
+  record: records/011-architecture.yaml
+  specification: specs/011-architecture.md
+- id: '012'
+  slug: workflow
+  name: Workflow
+  source_family: workflow
+  record: records/012-workflow.yaml
+  specification: specs/012-workflow.md
+- id: '013'
+  slug: loop
+  name: Loop
+  source_family: loop
+  record: records/013-loop.yaml
+  specification: specs/013-loop.md
+- id: '014'
+  slug: pipeline
+  name: Pipeline
+  source_family: pipeline
+  record: records/014-pipeline.yaml
+  specification: specs/014-pipeline.md
+- id: '015'
+  slug: decision-tree
+  name: Decision Tree
+  source_family: decision-tree
+  record: records/015-decision-tree.yaml
+  specification: specs/015-decision-tree.md
+- id: '016'
+  slug: framework
+  name: Framework
+  source_family: framework
+  record: records/016-framework.yaml
+  specification: specs/016-framework.md
+- id: '017'
+  slug: kpi
+  name: KPI
+  source_family: kpi
+  record: records/017-kpi.yaml
+  specification: specs/017-kpi.md
+- id: 018
+  slug: table
+  name: Table
+  source_family: table
+  record: records/018-table.yaml
+  specification: specs/018-table.md
+- id: 019
+  slug: chart
+  name: Chart
+  source_family: chart
+  record: records/019-chart.yaml
+  specification: specs/019-chart.md
+- id: '020'
+  slug: dashboard
+  name: Dashboard
+  source_family: dashboard
+  record: records/020-dashboard.yaml
+  specification: specs/020-dashboard.md
+- id: '021'
+  slug: breakdown
+  name: Breakdown
+  source_family: loop
+  record: records/021-breakdown.yaml
+  specification: specs/021-breakdown.md
+- id: '022'
+  slug: checklist
+  name: Checklist
+  source_family: framework
+  record: records/022-checklist.yaml
+  specification: specs/022-checklist.md
+- id: '023'
+  slug: formula
+  name: Formula
+  source_family: collision
+  record: records/023-formula.yaml
+  specification: specs/023-formula.md

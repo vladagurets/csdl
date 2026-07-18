@@ -39,7 +39,7 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Milestone 3 — Component Library v0.1 is complete. Preserve the fifteen-component public vocabulary, canonical Markdown specifications, three composition proofs, deterministic indexes, and accepted Milestone 2 evidence under `components/component-library-v0.1/`. Milestone 4 recipes are planned but must not begin without a new explicit objective. Full Analytical Mode, dark mode, and public release remain out of scope.
+Milestone 4 — Recipe Library and Prompt DSL v0.5 is complete. Preserve the evidence-backed 23-recipe set, exactly fifteen public components, canonical Markdown specifications, layout-free outline and Prompt DSL schemas, deterministic selection/package/migration builders, three end-to-end proofs, one Pilot migration proof, negative fixtures, indexes, and accepted Milestone 1–3 evidence under `recipes/recipe-library-v0.5/`. Milestone 5 Analytical Mode must not begin without a new explicit objective. Dark mode and public release remain out of scope.
 
 ## Work protocol
 
@@ -143,7 +143,17 @@ python tools/build_component_library.py components/component-library-v0.1
 python tools/validate_component_index.py components/component-library-v0.1
 ```
 
-Pilot 01, Milestone 2, and Milestone 3 are complete, so all strict validators for those milestones are expected to pass. Use tested `require_complete=False` modes only when reviewing historical intermediate branches, and record only evidence actually reviewed.
+For Recipe Library and Prompt DSL v0.5, also run:
+
+```bash
+python tools/validate_recipe_library.py recipes/recipe-library-v0.5/manifest.yaml
+python tools/build_recipe_proofs.py recipes/recipe-library-v0.5
+python tools/validate_prompt_dsl.py recipes/recipe-library-v0.5
+python tools/build_recipe_library.py recipes/recipe-library-v0.5
+python tools/validate_recipe_index.py recipes/recipe-library-v0.5
+```
+
+Pilot 01 and Milestones 2–4 are complete, so all strict validators for those milestones are expected to pass. Use tested `require_complete=False` modes only when reviewing historical intermediate branches, and record only evidence actually reviewed.
 
 ## Definition of done for one card
 

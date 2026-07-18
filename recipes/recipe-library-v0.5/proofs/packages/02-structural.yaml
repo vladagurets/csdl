@@ -1,0 +1,194 @@
+language: CSDL
+version: '0.5'
+kind: generation-package
+id: proof-structural-workflow
+recipe:
+  id: '012'
+  slug: workflow
+  version: 0.5.0
+semantic_intent:
+  problem: Show who or what acts next in a bounded operational sequence.
+  scenario: work procedure
+  main_idea: Verification turns an operational sequence into evidence.
+  mechanism: workflow-mechanism
+content:
+  source: patterns/visual-dna-sprint-01/manifest.yaml#family-12
+  bindings:
+    headline: РОБОЧИЙ ПОТІК З ДОКАЗАМИ
+    stages:
+    - UNDERSTAND
+    - PLAN
+    - EXECUTE
+    - VERIFY
+component_instances:
+- id: node-1
+  component: Node
+  role: node
+  content:
+    binding: stages
+    index: 0
+- id: node-2
+  component: Node
+  role: node
+  content:
+    binding: stages
+    index: 1
+- id: node-3
+  component: Node
+  role: node
+  content:
+    binding: stages
+    index: 2
+- id: node-4
+  component: Node
+  role: node
+  content:
+    binding: stages
+    index: 3
+- id: vector-1
+  component: Vector
+  role: vector
+  content:
+    binding: headline
+  attributes:
+    source: node-1
+    target: node-2
+- id: vector-2
+  component: Vector
+  role: vector
+  content:
+    binding: headline
+  attributes:
+    source: node-2
+    target: node-3
+- id: vector-3
+  component: Vector
+  role: vector
+  content:
+    binding: headline
+  attributes:
+    source: node-3
+    target: node-4
+- id: label-1
+  component: Label
+  role: label
+  content: &id001
+    binding: stages
+    index: 0
+  attributes:
+    text: *id001
+    target: node-1
+- id: label-2
+  component: Label
+  role: label
+  content: &id002
+    binding: stages
+    index: 1
+  attributes:
+    text: *id002
+    target: node-2
+- id: label-3
+  component: Label
+  role: label
+  content: &id003
+    binding: stages
+    index: 2
+  attributes:
+    text: *id003
+    target: node-3
+- id: label-4
+  component: Label
+  role: label
+  content: &id004
+    binding: stages
+    index: 3
+  attributes:
+    text: *id004
+    target: node-4
+- id: signal
+  component: Signal
+  role: dominant
+  content:
+    binding: headline
+  attributes:
+    target: node-4
+relations:
+- subject: vector-1
+  type: directs
+  object: node-1
+- subject: vector-2
+  type: directs
+  object: node-2
+- subject: vector-3
+  type: directs
+  object: node-3
+- subject: label-1
+  type: attached_to
+  object: node-1
+- subject: label-2
+  type: attached_to
+  object: node-2
+- subject: label-3
+  type: attached_to
+  object: node-3
+- subject: label-4
+  type: attached_to
+  object: node-4
+- subject: signal
+  type: highlights
+  object: node-4
+generation_constraints:
+  expression: A
+  density: low
+  canvas:
+    ratio: '16:9'
+    width: 1920
+    height: 1080
+    orientation: landscape
+    safe_margin_horizontal: 96
+    safe_margin_vertical: 72
+  presentation:
+    reading_path: left_to_right
+    one_main_idea: true
+    one_visual_mechanism: true
+    one_dominant_signal: true
+    negative_space_percent:
+      min: 50
+      max: 75
+  typography:
+    display: modular_technical
+    body: neutral_sans
+    code: technical_mono
+    all_text_horizontal: true
+    max_typographic_tricks: 1
+  palette:
+    mode: light
+    background: paper.base
+    ink: ink.primary
+    primary_signal: signal.primary
+  output:
+    format: PNG
+    exact_size: 1920x1080
+    content_accuracy: exact
+  hard_exclusions:
+  - extra text
+  - logos or repeated footers
+  - UI chrome or decorative card shells
+  - decorative coordinates or random dot fields
+  - gradients, shadows, glossy surfaces, or 3D
+  - political, Soviet, or revolutionary-poster styling
+  - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+  - swimlanes
+  - status pills
+  - icons
+  - branching
+  - return arrow
+  - completion state
+  - UI chrome
+  - gradients
+  - shadows
+  - 3D
+  - Container or ad hoc layout and geometry primitives
+provenance:
+  recipe_evidence: specs/012-workflow.md
+  source_outline: recipes/recipe-library-v0.5/proofs/outlines/02-structural.yaml

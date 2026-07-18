@@ -1,0 +1,119 @@
+language: CSDL
+version: "0.5"
+kind: generation-package
+
+required_package_fields:
+  - language
+  - version
+  - kind
+  - id
+  - recipe
+  - semantic_intent
+  - content
+  - component_instances
+  - relations
+  - generation_constraints
+  - provenance
+allowed_package_fields:
+  - language
+  - version
+  - kind
+  - id
+  - recipe
+  - semantic_intent
+  - content
+  - component_instances
+  - relations
+  - generation_constraints
+  - provenance
+
+required_recipe_fields: [id, slug, version]
+required_semantic_intent_fields: [problem, scenario, main_idea, mechanism]
+required_content_fields: [source, bindings]
+required_instance_fields: [id, component, role, content]
+allowed_instance_fields: [id, component, role, content, attributes]
+required_relation_fields: [subject, type, object]
+required_generation_constraint_fields:
+  - expression
+  - density
+  - canvas
+  - presentation
+  - typography
+  - palette
+  - output
+  - hard_exclusions
+required_provenance_fields: [recipe_evidence, source_outline]
+allowed_provenance_fields:
+  - recipe_evidence
+  - source_outline
+  - source_prompt
+  - migration
+  - dataset
+
+defaults:
+  expression: A
+  density: low
+  canvas:
+    ratio: '16:9'
+    width: 1920
+    height: 1080
+    orientation: landscape
+    safe_margin_horizontal: 96
+    safe_margin_vertical: 72
+  presentation:
+    reading_path: top_left_to_bottom_right
+    one_main_idea: true
+    one_visual_mechanism: true
+    one_dominant_signal: true
+  typography:
+    display: modular_technical
+    body: neutral_sans
+    code: technical_mono
+    all_text_horizontal: true
+    max_typographic_tricks: 1
+  palette:
+    mode: light
+    background: paper.base
+    ink: ink.primary
+    primary_signal: signal.primary
+  output:
+    format: PNG
+    exact_size: 1920x1080
+    content_accuracy: exact
+
+enums:
+  expression: [A, B, C]
+  density: [low, medium, analytical]
+  reading_path:
+    - top_left_to_bottom_right
+    - left_to_right
+    - top_to_bottom
+    - outside_to_inside
+    - center_out
+    - cyclic_clockwise
+    - cyclic_counterclockwise
+    - split_to_result
+  palette_mode: [light]
+  output_format: [PNG]
+
+forbidden_composition_keys:
+  - layout
+  - geometry
+  - shape
+  - plane
+  - line
+  - box
+  - card
+  - panel
+  - grid
+  - row
+  - column
+  - left
+  - right
+  - top
+  - bottom
+  - position
+  - coordinates
+  - container
+
+forbidden_placeholders: [TBD, TODO, TBC, FIXME, placeholder]

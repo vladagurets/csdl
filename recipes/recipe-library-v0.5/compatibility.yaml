@@ -1,0 +1,640 @@
+library: recipe-library-v0.5
+version: 0.5.0
+families:
+- hero
+- cover
+- quote
+- big-number
+- comparison
+- collision
+- before-after
+- timeline
+- matrix
+- hierarchy
+- architecture
+- workflow
+- loop
+- pipeline
+- decision-tree
+- framework
+- kpi
+- table
+- chart
+- dashboard
+recipes:
+- id: '001'
+  slug: hero
+  families:
+    hero: direct
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '002'
+  slug: cover
+  families:
+    hero: incompatible
+    cover: direct
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '003'
+  slug: quote
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: direct
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '004'
+  slug: big-number
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: direct
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '005'
+  slug: comparison
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: direct
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '006'
+  slug: collision
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: direct
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '007'
+  slug: before-after
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: direct
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: 008
+  slug: timeline
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: direct
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: 009
+  slug: matrix
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: direct
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '010'
+  slug: hierarchy
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: direct
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '011'
+  slug: architecture
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: direct
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '012'
+  slug: workflow
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: direct
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '013'
+  slug: loop
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: direct
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '014'
+  slug: pipeline
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: direct
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '015'
+  slug: decision-tree
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: direct
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '016'
+  slug: framework
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: direct
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '017'
+  slug: kpi
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: direct
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: 018
+  slug: table
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: direct
+    chart: incompatible
+    dashboard: incompatible
+- id: 019
+  slug: chart
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: direct
+    dashboard: incompatible
+- id: '020'
+  slug: dashboard
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: direct
+- id: '021'
+  slug: breakdown
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: direct
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '022'
+  slug: checklist
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: direct
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '023'
+  slug: formula
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: direct
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+by_family:
+- family: hero
+  recipes:
+  - recipe: hero
+    status: direct
+- family: cover
+  recipes:
+  - recipe: cover
+    status: direct
+- family: quote
+  recipes:
+  - recipe: quote
+    status: direct
+- family: big-number
+  recipes:
+  - recipe: big-number
+    status: direct
+- family: comparison
+  recipes:
+  - recipe: comparison
+    status: direct
+- family: collision
+  recipes:
+  - recipe: collision
+    status: direct
+  - recipe: formula
+    status: direct
+- family: before-after
+  recipes:
+  - recipe: before-after
+    status: direct
+- family: timeline
+  recipes:
+  - recipe: timeline
+    status: direct
+- family: matrix
+  recipes:
+  - recipe: matrix
+    status: direct
+- family: hierarchy
+  recipes:
+  - recipe: hierarchy
+    status: direct
+- family: architecture
+  recipes:
+  - recipe: architecture
+    status: direct
+- family: workflow
+  recipes:
+  - recipe: workflow
+    status: direct
+- family: loop
+  recipes:
+  - recipe: loop
+    status: direct
+  - recipe: breakdown
+    status: direct
+- family: pipeline
+  recipes:
+  - recipe: pipeline
+    status: direct
+- family: decision-tree
+  recipes:
+  - recipe: decision-tree
+    status: direct
+- family: framework
+  recipes:
+  - recipe: framework
+    status: direct
+  - recipe: checklist
+    status: direct
+- family: kpi
+  recipes:
+  - recipe: kpi
+    status: direct
+- family: table
+  recipes:
+  - recipe: table
+    status: direct
+- family: chart
+  recipes:
+  - recipe: chart
+    status: direct
+- family: dashboard
+  recipes:
+  - recipe: dashboard
+    status: direct

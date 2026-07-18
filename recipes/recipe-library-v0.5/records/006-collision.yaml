@@ -1,0 +1,157 @@
+id: '006'
+slug: collision
+name: Collision
+version: 0.5.0
+source_family: collision
+problem: Show two forces producing one consequential intersection or synthesis.
+allowed_scenarios:
+- constraint
+- synthesis
+- tension
+- trade-off
+ingredients:
+  required:
+  - component: Anchor
+    min: 2
+    max: 2
+    default: 2
+  - component: Collision
+    min: 1
+    max: 1
+    default: 1
+  - component: Signal
+    min: 1
+    max: 1
+    default: 1
+  optional:
+  - component: Label
+    min: 0
+    max: 3
+    default: 0
+relations:
+  allowed:
+  - subject: Collision
+    type: overlaps
+    object: Anchor
+  - subject: Collision
+    type: produces
+    object: Signal
+  forbidden:
+  - subject: Collision
+    type: groups
+    object: Anchor
+assembly_order:
+- place two opposing Anchors
+- create one functional overlap
+- label the result
+expression_levels:
+  A:
+    status: forbidden
+    reason: No accepted evidence supports this recipe at the expression level.
+  B:
+    status: allowed
+  C:
+    status: allowed
+compatible_visual_dna_families:
+- collision
+presentation:
+  canvas: 1920x1080
+  orientation: landscape
+  safe_margin_horizontal: 96
+  safe_margin_vertical: 72
+  negative_space_percent:
+    min: 50
+    max: 75
+  reading_paths:
+  - split_to_result
+  presentation_readability: 1280x720 without zoom
+typography:
+  display: modular_technical
+  body: neutral_sans
+  code: technical_mono
+  constraints:
+  - all text horizontal by default
+  - maximum one typographic trick
+  - Ukrainian and English copy exact
+semantic_color:
+  dominant_signal: coral
+  allowed:
+  - coral
+  constraints:
+  - one dominant signal
+  - signal area at most 12 percent
+  - color is not the only carrier of meaning
+content_contract:
+  required:
+  - left
+  - right
+  - result
+  optional: []
+  exact: true
+  max_words: 60
+  data_contract: none
+prompt_dsl:
+  semantic_intent: collision-mechanism
+  required_fields:
+  - semantic_intent
+  - content
+  - component_instances
+  - relations
+  - generation_constraints
+  - provenance
+  optional_fields:
+  - component_instances[].attributes
+  - provenance.source_prompt
+  - provenance.dataset
+  deterministic_defaults:
+    expression: B
+    density: low
+    reading_path: split_to_result
+hard_exclusions:
+- extra text
+- logos or repeated footers
+- UI chrome or decorative card shells
+- decorative coordinates or random dot fields
+- gradients, shadows, glossy surfaces, or 3D
+- political, Soviet, or revolutionary-poster styling
+- pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+- VS
+- debris
+- sparks
+- impact rays
+- decorative shards
+- UI chrome
+- logo
+- footer
+- gradients
+- shadows
+- 3D
+- Container or ad hoc layout and geometry primitives
+validation_invariants:
+- Every required content binding is present and exact.
+- Ingredient counts remain inside declared cardinality.
+- Every instance and relation is permitted by Component Library v0.1.
+- No undeclared layout or geometry terminology is present.
+- One main idea, one visual mechanism, and one dominant Signal remain observable.
+canonical_examples:
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/06-collision.png
+  role: accepted visual calibration
+evidence:
+- path: patterns/visual-dna-sprint-01/manifest.yaml
+  locator: family 06 Collision
+  supports: Problem, scenarios, components, assembly, levels, content, and exclusions.
+- path: patterns/visual-dna-sprint-01/specs/06-collision.md
+  locator: complete family contract
+  supports: Canonical Markdown semantic and Prompt DSL evidence.
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/06-collision.png
+  locator: canonical raster
+  supports: Accepted presentation-scale example.
+compatibility:
+  legacy_names:
+  - Collision
+  migration: Legacy Prompt DSL v0.1 content is rebound mechanically to explicit v0.5
+    instances, relations, and deterministic constraints; source files remain unchanged.
+  rollback: Revert the additive recipe record and derived outputs; accepted source
+    prompts and raster bytes remain unchanged.
+specification: specs/006-collision.md
+record: records/006-collision.yaml
