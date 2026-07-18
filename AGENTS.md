@@ -39,7 +39,7 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Milestone 5 — Analytical Mode is active under an explicit user objective. Implement the independent additive Analytical Mode v0.1 contract under `analytics/analytical-mode-v0.1/` per D-031 and `docs/plans/2026-07-18-csdl-milestone-5.md`. Preserve Prompt DSL v0.5, the evidence-backed 23-recipe set, exactly fifteen public components, and all accepted Milestone 1–4 rasters. Use deterministic synthetic fixed-data proofs for unproven analytical families. Milestone 6 Night Mode, Cookbook, public release, licensing, tags, and GitHub Releases remain out of scope.
+Milestone 5 — Analytical Mode v0.1 is complete. Preserve the independent additive contract under `analytics/analytical-mode-v0.1/`, ten typed fixed datasets, ten deterministic proofs, seventeen negative fixtures, strict/incomplete validation, deterministic builders/indexes, Prompt DSL v0.5 compatibility, exactly fifteen public components, exactly 23 recipes, and all accepted Milestone 1–4 rasters. Milestone 6 Night Mode must not begin without a new explicit objective. Cookbook, public release, licensing, tags, and GitHub Releases remain out of scope.
 
 ## Work protocol
 
@@ -153,7 +153,14 @@ python tools/build_recipe_library.py recipes/recipe-library-v0.5
 python tools/validate_recipe_index.py recipes/recipe-library-v0.5
 ```
 
-Pilot 01 and Milestones 2–4 are complete, so all strict validators for those milestones are expected to pass. Use tested `require_complete=False` modes only when reviewing historical intermediate branches, and record only evidence actually reviewed.
+For Analytical Mode v0.1, also run:
+
+```bash
+python tools/build_analytical_mode.py analytics/analytical-mode-v0.1
+python tools/validate_analytical_mode.py analytics/analytical-mode-v0.1
+```
+
+Pilot 01 and Milestones 2–5 are complete, so all strict validators for those milestones are expected to pass. Use tested `require_complete=False` modes only when reviewing historical intermediate branches, and record only evidence actually reviewed.
 
 ## Definition of done for one card
 

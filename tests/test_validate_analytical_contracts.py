@@ -117,3 +117,31 @@ def test_global_contract_records_quantitative_invariants() -> None:
     assert contracts["direct_labels"]["precedence"] == "preferred"
     assert contracts["color"]["sole_carrier_allowed"] is False
 
+
+def test_completion_docs_preserve_dependency_boundaries() -> None:
+    assert "Analytical Mode v0.1 are complete" in (ROOT / "README.md").read_text(
+        encoding="utf-8"
+    )
+    roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
+    milestone = roadmap.split("## Milestone 5 — Analytical Mode", 1)[1].split(
+        "## Milestone 6", 1
+    )[0]
+    assert "**State:** complete" in milestone
+    assert "Milestone 6 deferred" in (ROOT / "STATUS.md").read_text(encoding="utf-8")
+
+    component_manifest = yaml.safe_load(
+        (ROOT / "components/component-library-v0.1/manifest.yaml").read_text(
+            encoding="utf-8"
+        )
+    )
+    recipe_manifest = yaml.safe_load(
+        (ROOT / "recipes/recipe-library-v0.5/manifest.yaml").read_text(encoding="utf-8")
+    )
+    prompt_schema = yaml.safe_load(
+        (ROOT / "recipes/recipe-library-v0.5/prompt-dsl-v0.5.schema.yaml").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert len(component_manifest["components"]) == 15
+    assert len(recipe_manifest["recipes"]) == 23
+    assert prompt_schema["version"] == "0.5"

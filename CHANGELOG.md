@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Completed Milestone 5 — Analytical Mode v0.1 with typed dataset/encoding contracts, ten quantitative families, ten deterministic proof packages, seventeen exact-error negative fixtures, strict/incomplete validators, deterministic builders/indexes, complete regression/CI gates, and no raster generation or mutation.
 - Started Milestone 5 — Analytical Mode with a repository-grounded evidence audit, acceptance contract, dependency-aware packet plan, and D-031 independent-extension versioning decision; Prompt DSL v0.5, D-029, D-030, and all accepted rasters remain unchanged.
 - Added the Analytical Mode v0.1 canonical specification, closed typed-dataset and encoding schemas, global and ten-family contracts, D-029/D-030 compatibility source, ten canonical fixed datasets, and tested incomplete-mode contract validation.
 - Added deterministic analytical transformation/package/index builders, independent dataset/package validation, reproducible rate/conversion/cumulative calculations, and focused mutations for baselines, log/dual axes, color-only meaning, layout vocabulary, data mutation, component compatibility, and nondeterminism.
