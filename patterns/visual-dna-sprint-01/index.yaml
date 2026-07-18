@@ -1,0 +1,212 @@
+catalog: visual-dna-sprint-01
+version: 0.1.0
+families:
+- id: '01'
+  slug: hero
+  name: Hero
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  - C
+  evidence_mode: pilot_reference
+  canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/01-hook.png
+  sha256: 39de00d730e534c942fbb96e6fe5cf932e7e14c0a89926877406ba3cade62d8c
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '02'
+  slug: cover
+  name: Cover
+  canonical_level: C
+  allowed_levels:
+  - A
+  - C
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/02-cover.png
+  status: awaiting_generation
+- id: '03'
+  slug: quote
+  name: Quote
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/03-quote.png
+  status: awaiting_generation
+- id: '04'
+  slug: big-number
+  name: Big Number
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  - C
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/04-big-number.png
+  status: awaiting_generation
+- id: '05'
+  slug: comparison
+  name: Comparison
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  - C
+  evidence_mode: pilot_reference
+  canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png
+  sha256: c97326715a6345fe099d08a197dc4422411a6a529082934d8f40c63de3049aff
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
+- id: '06'
+  slug: collision
+  name: Collision
+  canonical_level: B
+  allowed_levels:
+  - B
+  - C
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/06-collision.png
+  status: awaiting_generation
+- id: '07'
+  slug: before-after
+  name: Before / After
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/07-before-after.png
+  status: awaiting_generation
+- id: 08
+  slug: timeline
+  name: Timeline
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/08-timeline.png
+  status: awaiting_generation
+- id: 09
+  slug: matrix
+  name: Matrix
+  canonical_level: B
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/09-matrix.png
+  status: awaiting_generation
+- id: '10'
+  slug: hierarchy
+  name: Hierarchy
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/10-hierarchy.png
+  status: awaiting_generation
+- id: '11'
+  slug: architecture
+  name: Architecture
+  canonical_level: B
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/11-architecture.png
+  status: awaiting_generation
+- id: '12'
+  slug: workflow
+  name: Workflow
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/12-workflow.png
+  status: awaiting_generation
+- id: '13'
+  slug: loop
+  name: Loop
+  canonical_level: B
+  allowed_levels:
+  - A
+  - B
+  - C
+  evidence_mode: pilot_reference
+  canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png
+  sha256: 1b7a4045fdbf616f8787dbfaf81161158b06d9efda67d7361102653d810497c8
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 5.0
+- id: '14'
+  slug: pipeline
+  name: Pipeline
+  canonical_level: B
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/14-pipeline.png
+  status: awaiting_generation
+- id: '15'
+  slug: decision-tree
+  name: Decision Tree
+  canonical_level: A
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/15-decision-tree.png
+  status: awaiting_generation
+- id: '16'
+  slug: framework
+  name: Framework
+  canonical_level: B
+  allowed_levels:
+  - A
+  - B
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/16-framework.png
+  status: awaiting_generation
+- id: '17'
+  slug: kpi
+  name: KPI
+  canonical_level: A
+  allowed_levels:
+  - A
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/17-kpi.png
+  status: awaiting_generation
+- id: '18'
+  slug: table
+  name: Table
+  canonical_level: A
+  allowed_levels:
+  - A
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/18-table.png
+  status: awaiting_generation
+- id: '19'
+  slug: chart
+  name: Chart
+  canonical_level: A
+  allowed_levels:
+  - A
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/19-chart.png
+  status: awaiting_generation
+- id: '20'
+  slug: dashboard
+  name: Dashboard
+  canonical_level: A
+  allowed_levels:
+  - A
+  evidence_mode: generated
+  canonical_example: canonical/light/16x9/20-dashboard.png
+  status: awaiting_generation

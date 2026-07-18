@@ -28,6 +28,8 @@ Milestone 2 has started from a synchronized clean `main`. Its infrastructure pac
 - strict catalog, analytical-data, raster, score, preview, contact-sheet, and machine-index tooling;
 - a stacked one-packet/one-family pull-request sequence with no automatic merges.
 
+Pilot-backed catalog evidence is audited and accepted for Hero, Comparison, and Loop. Their actual canonical bytes, RGB `1920×1080` metadata, exact Prompt DSL content, three-candidate selection records, hashes, `1280×720` readability evidence, and Pilot rubric rows all pass the Milestone 2 contract. No regeneration is justified.
+
 ## Canonical outputs
 
 ```text
@@ -63,7 +65,7 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: the Milestone 2 semantic and machine-readable contracts pass, but the 17 new family rasters and the 20-family contact sheets are not generated yet. Pilot 01 remains fully met.
+Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 3/20 families have accepted canonical evidence. The 17 new family rasters and completed contact sheets are not generated yet. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
@@ -71,4 +73,4 @@ Met for the infrastructure packet: tests, catalog/schema validation, fixed-data 
 
 ## Repository state
 
-Infrastructure work is on `codex/m2-infrastructure`. The next packet audits and indexes Pilot-backed Hero, Comparison, and Loop evidence before any new raster generation.
+Infrastructure review is open from `codex/m2-infrastructure`; Pilot evidence is stacked on `codex/m2-pilot-evidence`. The next family packet generates and reviews Cover from three built-in GPT Image 2 candidates.
