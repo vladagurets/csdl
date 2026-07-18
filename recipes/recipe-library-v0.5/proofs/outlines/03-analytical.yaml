@@ -1,0 +1,21 @@
+id: proof-bounded-analytical-chart
+scenario: trend
+main_idea: "Agent success rate increases in exact weekly order."
+expression: A
+density: analytical
+content_source: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+source_outline: recipes/recipe-library-v0.5/proofs/outlines/03-analytical.yaml
+content:
+  headline: "УСПІШНІСТЬ ЗРОСТАЄ ЩОТИЖНЯ"
+  series: success_rate
+  points: ["W1 · 72%", "W2 · 78%", "W3 · 84%", "W4 · 90%"]
+  source_label: "DEMO DATA"
+  quantitative_contract:
+    dataset: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+    series: success_rate
+    order: [W1, W2, W3, W4]
+    domain: [0, 100]
+    values: [72, 78, 84, 90]
+    unit: percent
+    labels: ["W1 · 72%", "W2 · 78%", "W3 · 84%", "W4 · 90%"]
+    source: "DEMO DATA"

@@ -1,0 +1,112 @@
+language: CSDL
+version: '0.5'
+kind: generation-package
+id: proof-editorial-big-number
+recipe:
+  id: '004'
+  slug: big-number
+  version: 0.5.0
+semantic_intent:
+  problem: Make one exact quantity the dominant explanatory object.
+  scenario: count
+  main_idea: Three expression levels create one controlled series rhythm.
+  mechanism: big-number-mechanism
+content:
+  source: patterns/visual-dna-sprint-01/manifest.yaml#family-04
+  bindings:
+    value: '3'
+    label: РІВНІ ВИРАЗНОСТІ
+    supporting_copy: QUIET · CONSTRUCTIVE · SIGNAL
+component_instances:
+- id: anchor
+  component: Anchor
+  role: primary
+  content:
+    binding: value
+- id: pulse
+  component: Pulse
+  role: pulse
+  content:
+    binding: value
+  attributes:
+    value: content.value
+    label: label
+- id: label
+  component: Label
+  role: label
+  content: &id001
+    binding: value
+  attributes:
+    text: *id001
+    target: pulse
+- id: signal
+  component: Signal
+  role: dominant
+  content:
+    binding: value
+  attributes:
+    target: pulse
+relations:
+- subject: label
+  type: repeats
+  object: pulse
+- subject: signal
+  type: highlights
+  object: pulse
+generation_constraints:
+  expression: A
+  density: low
+  canvas:
+    ratio: '16:9'
+    width: 1920
+    height: 1080
+    orientation: landscape
+    safe_margin_horizontal: 96
+    safe_margin_vertical: 72
+  presentation:
+    reading_path: left_to_right
+    one_main_idea: true
+    one_visual_mechanism: true
+    one_dominant_signal: true
+    negative_space_percent:
+      min: 50
+      max: 75
+  typography:
+    display: modular_technical
+    body: neutral_sans
+    code: technical_mono
+    all_text_horizontal: true
+    max_typographic_tricks: 1
+  palette:
+    mode: light
+    background: paper.base
+    ink: ink.primary
+    primary_signal: signal.primary
+  output:
+    format: PNG
+    exact_size: 1920x1080
+    content_accuracy: exact
+  hard_exclusions:
+  - extra text
+  - logos or repeated footers
+  - UI chrome or decorative card shells
+  - decorative coordinates or random dot fields
+  - gradients, shadows, glossy surfaces, or 3D
+  - political, Soviet, or revolutionary-poster styling
+  - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+  - extra metric
+  - unsupported statistic
+  - gauge
+  - donut
+  - fake trend
+  - decorative digits
+  - UI chrome
+  - logo
+  - footer
+  - gradients
+  - shadows
+  - 3D
+  - Container or ad hoc layout and geometry primitives
+provenance:
+  recipe_evidence: specs/004-big-number.md
+  source_outline: recipes/recipe-library-v0.5/proofs/outlines/01-editorial.yaml

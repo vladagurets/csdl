@@ -1,0 +1,70 @@
+migration:
+  id: prompt-dsl-v0.1-to-v0.5
+  source_versions: [0.1]
+  target_version: "0.5"
+  source_files:
+    - pilots/01-agentic-discipline/prompts/01-hook.yaml
+    - pilots/01-agentic-discipline/prompts/02-problem.yaml
+    - pilots/01-agentic-discipline/prompts/03-model.yaml
+    - pilots/01-agentic-discipline/prompts/04-comparison.yaml
+    - pilots/01-agentic-discipline/prompts/05-synthesis.yaml
+    - pilots/01-agentic-discipline/prompts/06-takeaway.yaml
+    - pilots/01-agentic-discipline/prompts/07-share-card.yaml
+    - patterns/visual-dna-sprint-01/prompts/01-hero.yaml
+    - patterns/visual-dna-sprint-01/prompts/02-cover.yaml
+    - patterns/visual-dna-sprint-01/prompts/03-quote.yaml
+    - patterns/visual-dna-sprint-01/prompts/04-big-number.yaml
+    - patterns/visual-dna-sprint-01/prompts/05-comparison.yaml
+    - patterns/visual-dna-sprint-01/prompts/06-collision.yaml
+    - patterns/visual-dna-sprint-01/prompts/07-before-after.yaml
+    - patterns/visual-dna-sprint-01/prompts/08-timeline.yaml
+    - patterns/visual-dna-sprint-01/prompts/09-matrix.yaml
+    - patterns/visual-dna-sprint-01/prompts/10-hierarchy.yaml
+    - patterns/visual-dna-sprint-01/prompts/11-architecture.yaml
+    - patterns/visual-dna-sprint-01/prompts/12-workflow.yaml
+    - patterns/visual-dna-sprint-01/prompts/13-loop.yaml
+    - patterns/visual-dna-sprint-01/prompts/14-pipeline.yaml
+    - patterns/visual-dna-sprint-01/prompts/15-decision-tree.yaml
+    - patterns/visual-dna-sprint-01/prompts/16-framework.yaml
+    - patterns/visual-dna-sprint-01/prompts/17-kpi.yaml
+    - patterns/visual-dna-sprint-01/prompts/18-table.yaml
+    - patterns/visual-dna-sprint-01/prompts/19-chart.yaml
+    - patterns/visual-dna-sprint-01/prompts/20-dashboard.yaml
+  recipe_map:
+    pilots/01-agentic-discipline/prompts/01-hook.yaml: "001"
+    pilots/01-agentic-discipline/prompts/02-problem.yaml: "021"
+    pilots/01-agentic-discipline/prompts/03-model.yaml: "016"
+    pilots/01-agentic-discipline/prompts/04-comparison.yaml: "005"
+    pilots/01-agentic-discipline/prompts/05-synthesis.yaml: "013"
+    pilots/01-agentic-discipline/prompts/06-takeaway.yaml: "022"
+    pilots/01-agentic-discipline/prompts/07-share-card.yaml: "023"
+    patterns/visual-dna-sprint-01/prompts/01-hero.yaml: "001"
+    patterns/visual-dna-sprint-01/prompts/02-cover.yaml: "002"
+    patterns/visual-dna-sprint-01/prompts/03-quote.yaml: "003"
+    patterns/visual-dna-sprint-01/prompts/04-big-number.yaml: "004"
+    patterns/visual-dna-sprint-01/prompts/05-comparison.yaml: "005"
+    patterns/visual-dna-sprint-01/prompts/06-collision.yaml: "006"
+    patterns/visual-dna-sprint-01/prompts/07-before-after.yaml: "007"
+    patterns/visual-dna-sprint-01/prompts/08-timeline.yaml: "008"
+    patterns/visual-dna-sprint-01/prompts/09-matrix.yaml: "009"
+    patterns/visual-dna-sprint-01/prompts/10-hierarchy.yaml: "010"
+    patterns/visual-dna-sprint-01/prompts/11-architecture.yaml: "011"
+    patterns/visual-dna-sprint-01/prompts/12-workflow.yaml: "012"
+    patterns/visual-dna-sprint-01/prompts/13-loop.yaml: "013"
+    patterns/visual-dna-sprint-01/prompts/14-pipeline.yaml: "014"
+    patterns/visual-dna-sprint-01/prompts/15-decision-tree.yaml: "015"
+    patterns/visual-dna-sprint-01/prompts/16-framework.yaml: "016"
+    patterns/visual-dna-sprint-01/prompts/17-kpi.yaml: "017"
+    patterns/visual-dna-sprint-01/prompts/18-table.yaml: "018"
+    patterns/visual-dna-sprint-01/prompts/19-chart.yaml: "019"
+    patterns/visual-dna-sprint-01/prompts/20-dashboard.yaml: "020"
+  reference_only:
+    - pilots/01-agentic-discipline/prompts/00-style-anchor.yaml
+  normalization_rules:
+    - "level or expression becomes generation_constraints.expression"
+    - "copy or content becomes content.bindings without changing scalar copy/data"
+    - "component count maps become explicit instances using recipe cardinality defaults"
+    - "legacy composition zones, rows, columns, sides, coordinates, and other layout hints are discarded"
+    - "canvas and output normalize to the canonical Prompt DSL v0.5 defaults"
+    - "legacy visual authority and dataset paths move to provenance"
+    - "recipe and global hard exclusions are unioned deterministically"

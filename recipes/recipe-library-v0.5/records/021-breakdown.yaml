@@ -1,0 +1,156 @@
+id: '021'
+slug: breakdown
+name: Breakdown
+version: 0.5.0
+source_family: loop
+problem: Show that an expected recurring system fails to retain continuity and exposes
+  detached consequences.
+allowed_scenarios:
+- failed recurrence
+- lost context
+- broken operating cycle
+ingredients:
+  required:
+  - component: Loop
+    min: 1
+    max: 1
+    default: 1
+  - component: Node
+    min: 3
+    max: 5
+    default: 3
+  - component: Label
+    min: 1
+    max: 5
+    default: 3
+  - component: Signal
+    min: 1
+    max: 1
+    default: 1
+  optional: []
+relations:
+  allowed:
+  - subject: Loop
+    type: repeats
+    object: Node
+  - subject: Loop
+    type: orders
+    object: Node
+  - subject: Label
+    type: attached_to
+    object: Node
+  - subject: Signal
+    type: highlights
+    object: Node
+  forbidden:
+  - subject: Loop
+    type: connected_to
+    object: Node
+assembly_order:
+- declare the expected closed recurrence
+- place three to five consequence Nodes in exact content order
+- highlight the failed transition or consequence once
+expression_levels:
+  A:
+    status: allowed
+  B:
+    status: conditional
+    condition: The recurrence and consequences remain the only mechanism.
+  C:
+    status: forbidden
+    reason: Failure diagnosis requires readable consequences rather than a short Signal
+      peak.
+compatible_visual_dna_families:
+- loop
+presentation:
+  canvas: 1920x1080
+  orientation: landscape
+  safe_margin_horizontal: 96
+  safe_margin_vertical: 72
+  negative_space_percent:
+    min: 50
+    max: 75
+  reading_paths:
+  - left_to_right
+  presentation_readability: 1280x720 without zoom
+typography:
+  display: modular_technical
+  body: neutral_sans
+  code: technical_mono
+  constraints:
+  - all text horizontal by default
+  - maximum one typographic trick
+  - Ukrainian and English copy exact
+semantic_color:
+  dominant_signal: coral
+  allowed:
+  - coral
+  constraints:
+  - one dominant signal
+  - color is not the only carrier of meaning
+content_contract:
+  required:
+  - headline
+  - supporting_lines
+  optional: []
+  exact: true
+  max_words: 60
+  data_contract: none
+prompt_dsl:
+  semantic_intent: expected-recurrence-with-one-failed-transition
+  required_fields:
+  - semantic_intent
+  - content
+  - component_instances
+  - relations
+  - generation_constraints
+  - provenance
+  optional_fields:
+  - component_instances[].attributes
+  - provenance.source_prompt
+  deterministic_defaults:
+    expression: A
+    density: low
+    reading_path: left_to_right
+hard_exclusions:
+- extra text
+- logos or repeated footers
+- UI chrome or decorative card shells
+- decorative coordinates or random dot fields
+- gradients, shadows, glossy surfaces, or 3D
+- political, Soviet, or revolutionary-poster styling
+- pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+- compose directly for 16:9
+- the broken loop is the only diagram
+- nodes are simple squares without icons
+- no fragments, explosion, footer, logo, grid, or extra text
+- all text horizontal and exact
+- Container or ad hoc layout and geometry primitives
+validation_invariants:
+- Every required content binding is present and exact.
+- Ingredient counts remain inside declared cardinality.
+- Every instance and relation is permitted by Component Library v0.1.
+- No undeclared layout or geometry terminology is present.
+- One main idea, one visual mechanism, and one dominant Signal remain observable.
+canonical_examples:
+- path: pilots/01-agentic-discipline/canonical/light/16x9/02-problem.png
+  role: accepted Pilot 01 evidence
+evidence:
+- path: pilots/01-agentic-discipline/prompts/02-problem.yaml
+  locator: accepted legacy Prompt DSL package
+  supports: Canonical content and legacy mechanism.
+- path: pilots/01-agentic-discipline/evaluation/review.md
+  locator: Slide 02 — Problem / Level A
+  supports: Three-candidate selection, exact-copy, readability, and score evidence.
+- path: pilots/01-agentic-discipline/canonical/light/16x9/02-problem.png
+  locator: canonical raster
+  supports: Accepted presentation-scale example.
+compatibility:
+  legacy_names:
+  - Breakdown
+  migration: Legacy incomplete Loop wording becomes a closed expected Loop with one
+    failed-transition Signal so Milestone 3 Loop invariants remain intact.
+  rollback: Revert the additive recipe record and derived outputs; accepted Pilot
+    prompt and raster bytes remain unchanged.
+specification: specs/021-breakdown.md
+record: records/021-breakdown.yaml

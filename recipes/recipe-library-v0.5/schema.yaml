@@ -1,0 +1,239 @@
+language: CSDL
+library_version: 0.5
+
+required_library_fields:
+  - id
+  - title
+  - version
+  - source_milestone
+  - canvas
+  - orientation
+  - markdown_authority
+  - recipe_count
+  - schema
+  - outline_schema
+  - prompt_dsl_schema
+  - migration
+  - index
+  - compatibility
+  - selection_index
+  - proofs_dir
+  - evaluation
+  - component_library
+  - visual_dna_manifest
+
+recipe_order:
+  - {id: "001", slug: hero, name: Hero, family: hero}
+  - {id: "002", slug: cover, name: Cover, family: cover}
+  - {id: "003", slug: quote, name: Quote, family: quote}
+  - {id: "004", slug: big-number, name: Big Number, family: big-number}
+  - {id: "005", slug: comparison, name: Comparison, family: comparison}
+  - {id: "006", slug: collision, name: Collision, family: collision}
+  - {id: "007", slug: before-after, name: Before / After, family: before-after}
+  - {id: "008", slug: timeline, name: Timeline, family: timeline}
+  - {id: "009", slug: matrix, name: Matrix, family: matrix}
+  - {id: "010", slug: hierarchy, name: Hierarchy, family: hierarchy}
+  - {id: "011", slug: architecture, name: Architecture, family: architecture}
+  - {id: "012", slug: workflow, name: Workflow, family: workflow}
+  - {id: "013", slug: loop, name: Loop, family: loop}
+  - {id: "014", slug: pipeline, name: Pipeline, family: pipeline}
+  - {id: "015", slug: decision-tree, name: Decision Tree, family: decision-tree}
+  - {id: "016", slug: framework, name: Framework, family: framework}
+  - {id: "017", slug: kpi, name: KPI, family: kpi}
+  - {id: "018", slug: table, name: Table, family: table}
+  - {id: "019", slug: chart, name: Chart, family: chart}
+  - {id: "020", slug: dashboard, name: Dashboard, family: dashboard}
+  - {id: "021", slug: breakdown, name: Breakdown, family: loop}
+  - {id: "022", slug: checklist, name: Checklist, family: framework}
+  - {id: "023", slug: formula, name: Formula, family: collision}
+
+family_order:
+  - hero
+  - cover
+  - quote
+  - big-number
+  - comparison
+  - collision
+  - before-after
+  - timeline
+  - matrix
+  - hierarchy
+  - architecture
+  - workflow
+  - loop
+  - pipeline
+  - decision-tree
+  - framework
+  - kpi
+  - table
+  - chart
+  - dashboard
+
+public_components:
+  - Anchor
+  - Signal
+  - Field
+  - Frame
+  - Cluster
+  - Vector
+  - Divider
+  - Node
+  - Loop
+  - Collision
+  - Bridge
+  - Axis
+  - Pulse
+  - Label
+  - Legend
+
+public_relations:
+  - inside
+  - contains
+  - attached_to
+  - connected_to
+  - directs
+  - separates
+  - orders
+  - overlaps
+  - produces
+  - groups
+  - maps_to
+  - highlights
+  - bounds
+  - repeats
+
+required_recipe_fields:
+  - id
+  - slug
+  - name
+  - version
+  - source_family
+  - problem
+  - allowed_scenarios
+  - ingredients
+  - relations
+  - assembly_order
+  - expression_levels
+  - compatible_visual_dna_families
+  - presentation
+  - typography
+  - semantic_color
+  - content_contract
+  - prompt_dsl
+  - hard_exclusions
+  - validation_invariants
+  - canonical_examples
+  - evidence
+  - compatibility
+  - specification
+  - record
+
+allowed_recipe_fields:
+  - id
+  - slug
+  - name
+  - version
+  - source_family
+  - problem
+  - allowed_scenarios
+  - ingredients
+  - relations
+  - assembly_order
+  - expression_levels
+  - compatible_visual_dna_families
+  - presentation
+  - typography
+  - semantic_color
+  - content_contract
+  - prompt_dsl
+  - hard_exclusions
+  - validation_invariants
+  - canonical_examples
+  - evidence
+  - compatibility
+  - specification
+  - record
+
+required_ingredient_groups: [required, optional]
+required_ingredient_fields: [component, min, max, default]
+required_relation_groups: [allowed, forbidden]
+required_relation_fields: [subject, type, object]
+required_expression_levels: [A, B, C]
+required_expression_fields: [status]
+required_presentation_fields:
+  - canvas
+  - orientation
+  - safe_margin_horizontal
+  - safe_margin_vertical
+  - negative_space_percent
+  - reading_paths
+  - presentation_readability
+required_typography_fields: [display, body, code, constraints]
+required_semantic_color_fields: [dominant_signal, allowed, constraints]
+required_content_contract_fields: [required, optional, exact, max_words, data_contract]
+required_prompt_dsl_fields:
+  - semantic_intent
+  - required_fields
+  - optional_fields
+  - deterministic_defaults
+required_evidence_fields: [path, locator, supports]
+required_compatibility_fields: [legacy_names, migration, rollback]
+required_migration_fields:
+  - id
+  - source_versions
+  - target_version
+  - source_files
+  - recipe_map
+  - reference_only
+  - normalization_rules
+
+required_spec_sections:
+  - "## Problem"
+  - "## Allowed scenarios"
+  - "## Ingredients and cardinality"
+  - "## Allowed relations"
+  - "## Forbidden relations"
+  - "## Assembly order"
+  - "## Expression levels"
+  - "## Compatible Visual DNA families"
+  - "## Canvas and presentation constraints"
+  - "## Negative space, typography, and semantic color"
+  - "## Content contract"
+  - "## Prompt DSL v0.5"
+  - "## Deterministic defaults"
+  - "## Hard exclusions"
+  - "## Validation invariants"
+  - "## Canonical examples and evidence"
+  - "## Compatibility and rollback"
+
+enums:
+  expression_status: [allowed, conditional, forbidden]
+  density: [low, medium, analytical]
+  signal: [coral, data_blue, ochre, mineral_green]
+  relation_cardinality: [one, zero_or_one, one_or_many, zero_or_many]
+
+path_rules:
+  specification: "specs/{id}-{slug}.md"
+  record: "records/{id}-{slug}.yaml"
+
+forbidden_composition_keys:
+  - layout
+  - geometry
+  - shape
+  - plane
+  - line
+  - box
+  - card
+  - panel
+  - grid
+  - row
+  - column
+  - left
+  - right
+  - top
+  - bottom
+  - position
+  - coordinates
+  - container
+
+forbidden_placeholders: [TBD, TODO, TBC, FIXME, placeholder]

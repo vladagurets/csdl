@@ -1,0 +1,236 @@
+language: CSDL
+version: '0.5'
+kind: generation-package
+id: proof-bounded-analytical-chart
+recipe:
+  id: 019
+  slug: chart
+  version: 0.5.0
+semantic_intent:
+  problem: Reveal one quantitative trend without distorting its scale or adding decorative
+    geometry.
+  scenario: trend
+  main_idea: Agent success rate increases in exact weekly order.
+  mechanism: chart-mechanism
+content:
+  source: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+  bindings:
+    headline: УСПІШНІСТЬ ЗРОСТАЄ ЩОТИЖНЯ
+    series: success_rate
+    points:
+    - W1 · 72%
+    - W2 · 78%
+    - W3 · 84%
+    - W4 · 90%
+    source_label: DEMO DATA
+    quantitative_contract:
+      dataset: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+      series: success_rate
+      order: &id001
+      - W1
+      - W2
+      - W3
+      - W4
+      domain: &id002
+      - 0
+      - 100
+      values:
+      - 72
+      - 78
+      - 84
+      - 90
+      unit: percent
+      labels:
+      - W1 · 72%
+      - W2 · 78%
+      - W3 · 84%
+      - W4 · 90%
+      source: DEMO DATA
+component_instances:
+- id: axis-1
+  component: Axis
+  role: axis
+  content:
+    binding: headline
+  attributes:
+    mode: sequence
+    direction: left_to_right
+    order: *id001
+- id: axis-2
+  component: Axis
+  role: axis
+  content:
+    binding: headline
+  attributes:
+    mode: quantitative
+    direction: left_to_right
+    domain: *id002
+    unit: percent
+- id: node-1
+  component: Node
+  role: node
+  content:
+    binding: points
+    index: 0
+  attributes:
+    value: 72
+    unit: percent
+    period: W1
+- id: node-2
+  component: Node
+  role: node
+  content:
+    binding: points
+    index: 1
+  attributes:
+    value: 78
+    unit: percent
+    period: W2
+- id: node-3
+  component: Node
+  role: node
+  content:
+    binding: points
+    index: 2
+  attributes:
+    value: 84
+    unit: percent
+    period: W3
+- id: node-4
+  component: Node
+  role: node
+  content:
+    binding: points
+    index: 3
+  attributes:
+    value: 90
+    unit: percent
+    period: W4
+- id: label-1
+  component: Label
+  role: label
+  content: &id003
+    binding: points
+    index: 0
+  attributes:
+    text: *id003
+    target: node-1
+- id: label-2
+  component: Label
+  role: label
+  content: &id004
+    binding: points
+    index: 1
+  attributes:
+    text: *id004
+    target: node-2
+- id: label-3
+  component: Label
+  role: label
+  content: &id005
+    binding: points
+    index: 2
+  attributes:
+    text: *id005
+    target: node-3
+- id: label-4
+  component: Label
+  role: label
+  content: &id006
+    binding: points
+    index: 3
+  attributes:
+    text: *id006
+    target: node-4
+- id: label-5
+  component: Label
+  role: label
+  content: &id007
+    binding: points
+    index: 3
+  attributes:
+    text: *id007
+    target: node-4
+- id: signal
+  component: Signal
+  role: dominant
+  content:
+    binding: headline
+  attributes:
+    target: node-4
+relations:
+- subject: axis-1
+  type: orders
+  object: node-1
+- subject: axis-2
+  type: orders
+  object: node-2
+- subject: label-1
+  type: attached_to
+  object: node-1
+- subject: label-2
+  type: attached_to
+  object: node-2
+- subject: label-3
+  type: attached_to
+  object: node-3
+- subject: label-4
+  type: attached_to
+  object: node-4
+- subject: signal
+  type: highlights
+  object: node-4
+generation_constraints:
+  expression: A
+  density: analytical
+  canvas:
+    ratio: '16:9'
+    width: 1920
+    height: 1080
+    orientation: landscape
+    safe_margin_horizontal: 96
+    safe_margin_vertical: 72
+  presentation:
+    reading_path: left_to_right
+    one_main_idea: true
+    one_visual_mechanism: true
+    one_dominant_signal: true
+    negative_space_percent:
+      min: 50
+      max: 75
+  typography:
+    display: modular_technical
+    body: neutral_sans
+    code: technical_mono
+    all_text_horizontal: true
+    max_typographic_tricks: 1
+  palette:
+    mode: light
+    background: paper.base
+    ink: ink.primary
+    primary_signal: signal.data
+  output:
+    format: PNG
+    exact_size: 1920x1080
+    content_accuracy: exact
+  hard_exclusions:
+  - extra text
+  - logos or repeated footers
+  - UI chrome or decorative card shells
+  - decorative coordinates or random dot fields
+  - gradients, shadows, glossy surfaces, or 3D
+  - political, Soviet, or revolutionary-poster styling
+  - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+  - truncated unlabeled axis
+  - smoothed curve
+  - missing point label
+  - extra series
+  - decorative grid
+  - gradients
+  - shadows
+  - 3D
+  - Container or ad hoc layout and geometry primitives
+provenance:
+  recipe_evidence: specs/019-chart.md
+  source_outline: recipes/recipe-library-v0.5/proofs/outlines/03-analytical.yaml
+  dataset: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml

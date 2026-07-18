@@ -118,7 +118,7 @@ Exit criterion status: **met for Component Library v0.1**.
 
 ## Milestone 4 — Recipe Library and Prompt DSL v0.5
 
-**State:** planned
+**State:** complete
 
 Convert validated patterns into reusable recipes. Each recipe includes:
 
@@ -133,9 +133,22 @@ Convert validated patterns into reusable recipes. Each recipe includes:
 - machine-readable YAML schema;
 - validation rules.
 
-Target: approximately 50 recipes, added only after real usage validates them.
+Delivered:
+
+- 23 evidence-backed recipes: the twenty accepted Visual DNA families plus Breakdown, Checklist, and Formula from accepted Pilot 01 evidence;
+- complete canonical Markdown specifications and per-recipe YAML records with stable IDs, ingredients/cardinality, relations, assembly, A/B/C limits, family compatibility, presentation constraints, content, defaults, exclusions, evidence, migration, and rollback;
+- layout-free outline schema and Prompt DSL v0.5 schema separating semantic intent, content, instances, relations, generation constraints, and provenance;
+- deterministic selection, package, migration, proof, compatibility, index, and selection-index builders;
+- mechanical migration coverage for seven Pilot 01 and twenty Visual DNA recipe prompts, with the shared style anchor retained as reference-only calibration evidence;
+- editorial Big Number, structural Workflow, and bounded analytical Chart end-to-end proofs plus one Pilot Comparison migration proof;
+- six negative fixtures covering layout terms, undeclared components, forbidden relations, unsupported combinations, copy changes, and analytical distortion;
+- strict and incomplete-mode validators plus complete regression coverage without raster generation or mutation.
+
+The evidence does not justify approximately fifty distinct recipes. Future additions require a new semantic need demonstrated by real usage.
 
 Exit criterion: a new topic can be converted from outline to generation package without inventing layout rules ad hoc.
+
+Exit criterion status: **met for Recipe Library and Prompt DSL v0.5**.
 
 ## Milestone 5 — Analytical Mode
 
