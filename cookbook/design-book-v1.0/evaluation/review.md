@@ -1,6 +1,6 @@
 # Cookbook and Design Book v1.0 — Publication Review
 
-**State:** integration candidate  
+**State:** complete through integration PR #69 and merge commit `4c20829f4923c164b48985d06a49247ff372ed4f`
 **Format:** ISO A4 landscape, 32 pages  
 **Canonical sources:** `pages/01-cover.md` through `pages/32-preflight.md`  
 **Generated artifact:** `output/pdf/csdl-cookbook-design-book-v1.0.pdf` (ignored, deterministic)
