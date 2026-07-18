@@ -143,7 +143,10 @@ families:
   - B
   evidence_mode: generated
   canonical_example: canonical/light/16x9/11-architecture.png
-  status: awaiting_generation
+  sha256: 733117738a0273dd340ed94255a21ed515df42a1168b6ff6161541e8e139fc48
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
 - id: '12'
   slug: workflow
   name: Workflow
