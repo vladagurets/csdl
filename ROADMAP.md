@@ -193,9 +193,20 @@ Exit criterion: all Milestone 1–6 gates pass, accepted raster hashes remain un
 
 ## Milestone 7 — Cookbook and Design Book v1.0
 
-**State:** deferred until the language is proven
+**State:** integration pending
 
-Generate a compact bilingual 25–40 page guide from the canonical Markdown sources. Include philosophy, tokens, typography, grammar, components, recipes, prompts, references, why/do/don’t examples, and publishing checklist.
+Build a compact bilingual 25–40 page guide from canonical Markdown sources. D-033 selects an additive `cookbook/design-book-v1.0/` boundary and ISO A4 landscape pages instead of reusing the 16:9 slide canvas.
+
+Integration candidate delivered:
+
+- 32 canonical one-page Markdown sources with Ukrainian editorial explanation and protected English identifiers;
+- complete coverage of philosophy, Quiet Modular/A/B/C, tokens, typography boundaries, grammar, all fifteen components, all 23 recipes, Prompt DSL v0.5, Analytical Mode v0.1, accessibility, provenance, practice, and preflight;
+- machine-readable manifest, terminology registry, page/source map, and accepted-raster inventory dependency;
+- deterministic assembled Markdown/index, A4 PDF with Unicode text layer, full-size color/grayscale renders, contact sheet, and build report;
+- twelve exact-error negative publication fixtures and focused test/validator/CI drift coverage;
+- unchanged Milestone 1–6 contracts and all sixty accepted raster hashes.
+
+Completion gate: the main-targeted integration PR must pass CI and merge with a merge commit. Only the subsequent completion-state alignment may mark Milestone 7 complete.
 
 ## Milestone 8 — Public release and licensing decision
 
