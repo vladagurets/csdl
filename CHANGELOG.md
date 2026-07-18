@@ -18,6 +18,7 @@
 - Added Hierarchy from three candidates, selecting the exact-copy Level A composition whose nested open Brackets communicate ownership depth without workflow semantics.
 - Added Architecture from three candidates, selecting the exact-copy Level B context map with one open system Field and exactly three directional relations.
 - Added Workflow from three candidates, selecting the exact-copy Level A operational route that remains visually distinct from Timeline, Pipeline, and Loop.
+- Added Pipeline from three candidates, selecting the exact-copy Level B transformation flow with one continuous carrier and a single visible VALIDATE gate.
 
 ## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
 

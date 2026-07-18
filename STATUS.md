@@ -50,6 +50,8 @@ Architecture is complete. Candidate 2 was selected because USER remains outside 
 
 Workflow is complete. Candidate 2 was selected because four bare action labels and three forward Vectors make the operational route immediate without reusing Timeline markers, adding Pipeline containers, or implying a Loop.
 
+Pipeline is complete. Candidate 1 was selected because one continuous dusty-blue carrier passes through five visible stage gates, with VALIDATE as the only active gate and no Workflow-like segmented route or literal pipe illustration.
+
 ## Canonical outputs
 
 ```text
@@ -85,7 +87,7 @@ scores valid
 
 ## Primary signal status
 
-Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 13/20 families have accepted canonical evidence. Seven new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
+Partially validated: the Milestone 2 semantic and machine-readable contracts pass, and 14/20 families have accepted canonical evidence. Six new family rasters and the completed contact sheets remain. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
@@ -93,4 +95,4 @@ Met for the infrastructure packet: tests, catalog/schema validation, fixed-data 
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Pipeline; Loop already has accepted Pilot evidence.
+Infrastructure review is open from `codex/m2-infrastructure`; completed family packets are stacked in subsequent branches. The next family packet generates and reviews Decision Tree.
