@@ -1,8 +1,8 @@
 # Project Status
 
 **Project:** Constructive Signal Design Language
-**Version:** Analytical Mode v0.1 complete
-**Current milestone:** Milestone 5 — complete; Milestone 6 deferred
+**Version:** Night Mode and Accessibility v0.1 release candidate
+**Current milestone:** Milestone 6 — integration pending
 **Last updated:** 2026-07-18
 
 ## Outcome
@@ -37,6 +37,10 @@ Milestone 3 is complete. Anchor, Signal, Field, Frame, Cluster, Vector, Divider,
 Milestone 4 is complete. D-030 locks Recipe Library v0.5 to 23 evidence-backed recipes: all twenty accepted Visual DNA families plus Breakdown, Checklist, and Formula from accepted Pilot 01 evidence. Every recipe has a canonical Markdown specification and a machine-readable record. Layout-free outlines deterministically select recipes and build Prompt DSL v0.5 packages that keep semantic intent, exact content, public component instances, relations, generation constraints, and provenance separate. Mechanical migration covers seven Pilot and twenty Visual DNA source prompts without mutating their copy/data or accepted rasters. Editorial Big Number, structural Workflow, bounded analytical Chart, and Pilot Comparison migration proofs rebuild deterministically; six negative fixtures reject layout vocabulary, undeclared components, forbidden relations, unsupported combinations, copy mutation, and analytical distortion. That milestone intentionally stopped at bounded analytical evidence; Milestone 5 now provides the independent full contract.
 
 Milestone 5 is complete. D-031 versions Analytical Mode v0.1 as an independent additive extension under `analytics/analytical-mode-v0.1/`, leaving Prompt DSL v0.5 unchanged and retaining exactly fifteen public components and 23 recipes. Its canonical Markdown and machine-readable contracts cover typed datasets, internal analytical marks, domain/order/value/unit/source/missing/transformation fidelity, bars, lines, scatterplots, waterfall, heatmaps, funnels, maps, networks, tables, dashboards, uncertainty, forecasts, and negative values. Ten fixed datasets drive ten deterministic end-to-end proofs; seventeen indexed negative mutations and focused tests reject every critical requested distortion. No raster was generated or modified.
+
+Milestone 6 is active under D-032 as an independent additive extension planned for `accessibility/night-mode-v0.1/`. The evidence audit confirms accepted support for semantic roles, direct labels, restrained Signal behavior, presentation readability, and exact analytical meaning, while night/projector/CVD/monochrome behavior requires deterministic synthetic proofs. Prompt DSL v0.5, D-029, D-030, D-031, and accepted raster bytes remain immutable dependencies. No raster generation is authorized.
+
+The Milestone 6 implementation candidate is locally complete: canonical Markdown, versioned schemas, four semantic token profiles, contrast/fallback/compatibility contracts, deterministic builders/indexes, ten proof packages, seventeen exact-error negative fixtures, strict/incomplete validation, migration/rollback docs, CI steps, and a sixty-file accepted-raster hash inventory all pass. Per the objective, Milestone 6 remains active until the final integration PR is green and merged through a merge commit. **Milestone 6 integration pending.**
 
 ## Canonical outputs
 
@@ -77,13 +81,26 @@ analytics/analytical-mode-v0.1/proofs/packages/01-bar-positive-negative.yaml thr
 analytics/analytical-mode-v0.1/index.yaml
 analytics/analytical-mode-v0.1/dataset-index.yaml
 analytics/analytical-mode-v0.1/compatibility.yaml
+accessibility/night-mode-v0.1/manifest.yaml
+accessibility/night-mode-v0.1/SPEC.md
+accessibility/night-mode-v0.1/token-schema.yaml
+accessibility/night-mode-v0.1/proof-schema.yaml
+accessibility/night-mode-v0.1/contracts/tokens.yaml
+accessibility/night-mode-v0.1/contracts/contrast.yaml
+accessibility/night-mode-v0.1/contracts/fallbacks.yaml
+accessibility/night-mode-v0.1/contracts/compatibility.yaml
+accessibility/night-mode-v0.1/proofs/packages/01-editorial-equivalence.yaml through 10-projector-fallback.yaml
+accessibility/night-mode-v0.1/index.yaml
+accessibility/night-mode-v0.1/contrast-matrix.yaml
+accessibility/night-mode-v0.1/compatibility.yaml
+accessibility/night-mode-v0.1/evaluation/raster-hashes.yaml
 ```
 
 ## Validation state
 
 ```text
 .venv/bin/python -m pytest -q
-125 passed
+153 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
@@ -150,6 +167,12 @@ analytical mode built: 10 proof packages, index.yaml, dataset-index.yaml, compat
 
 .venv/bin/python tools/validate_analytical_mode.py analytics/analytical-mode-v0.1
 analytical mode valid
+
+.venv/bin/python tools/build_accessibility_mode.py accessibility/night-mode-v0.1
+accessibility mode built: 10 proof packages, index.yaml, contrast-matrix.yaml, compatibility.yaml, raster-hashes.yaml
+
+.venv/bin/python tools/validate_accessibility_mode.py accessibility/night-mode-v0.1
+accessibility mode valid
 ```
 
 ## Milestone 2 primary signal status
@@ -178,6 +201,12 @@ Met: all twenty families pass their individual primary-authority, Prompt DSL, ex
 
 **Secondary signal:** met. Canonical specification, schemas, family/global contracts, migration/rollback docs, dataset/index/compatibility outputs, tested incomplete mode, seventeen exact-error negative fixtures, focused mutation tests, complete Milestone 1–5 regressions, and clean deterministic rebuild gates pass. Prompt DSL v0.5, D-029, D-030, and accepted raster bytes remain unchanged.
 
+## Milestone 6 signal status
+
+**Primary signal:** met locally; integration pending. Ten deterministic proof paths preserve canonical source semantics across accessible light/night, structural states, exact table, signed bar, forecast/uncertainty, heatmap, normalized map, directed/weighted network, monochrome, and projector output. All text/non-text thresholds, source digests, light/night equivalence, CVD declarations, fallback carriers, and provenance validate independently.
+
+**Secondary signal:** met locally; integration pending. Canonical spec, versioned schemas, token/contrast/fallback/compatibility contracts, strict/incomplete validators, deterministic builders/outputs, seventeen exact-error fixtures, focused mutations, migration/rollback/evaluation evidence, CI drift checks, and sixty accepted-raster hashes pass. Prompt DSL v0.5, fifteen components, 23 recipes, Analytical Mode values, and every accepted raster byte remain unchanged.
+
 ## Repository state
 
-Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1. Milestone 4 remains integrated as Recipe Library and Prompt DSL v0.5. Milestone 5 is complete as Analytical Mode v0.1 with its stacked, independently reviewable history retained. No raster was generated or mutated for Milestones 3–5. No tag, GitHub Release, public release-policy change, or Milestone 6 Night Mode work has started.
+Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1. Milestone 4 remains integrated as Recipe Library and Prompt DSL v0.5. Milestone 5 remains complete as Analytical Mode v0.1. Milestone 6 is locally validated and awaiting final integration; it is not yet marked complete. No raster was generated or mutated for Milestones 3–6. No tag, GitHub Release, public release-policy change, or Milestone 7 work has started.

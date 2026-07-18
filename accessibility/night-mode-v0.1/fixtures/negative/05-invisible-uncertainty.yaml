@@ -1,0 +1,2 @@
+base_package: proofs/packages/05-forecast-uncertainty.yaml
+mutation: {path: [semantic_encodings, 2, visible], value: false}

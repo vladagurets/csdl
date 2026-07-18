@@ -1,0 +1,2 @@
+base_package: proofs/packages/06-heatmap-fallback.yaml
+mutation: {path: [semantic_encodings, 0, missing_label], value: "0"}

@@ -1,0 +1,2 @@
+base_package: proofs/packages/01-editorial-equivalence.yaml
+mutation: {path: [layout], value: {columns: 4}}

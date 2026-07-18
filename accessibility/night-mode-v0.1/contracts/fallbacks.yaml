@@ -1,0 +1,48 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-fallback-contract
+color_vision:
+  profiles: [protanopia, deuteranopia, tritanopia, achromatopsia]
+  color_only_meaning_allowed: false
+  every_semantic_role_requires_non_color_carrier: true
+semantic_states:
+  focus: {token: state.focus, carriers: [boundary, stroke_weight], text: FOCUS}
+  selection: {token: state.selection, carriers: [boundary, direct_label], text: SELECTED}
+  error: {token: signal.error, carriers: [pattern, status_text], pattern: diagonal_hatch, text: ERROR}
+  positive: {token: signal.positive, carriers: [pattern, status_text], pattern: horizontal_hatch, text: POSITIVE}
+  attention: {token: signal.attention, carriers: [pattern, status_text], pattern: cross_hatch, text: ATTENTION}
+  data: {token: signal.data, carriers: [direct_label, shape], text: DATA}
+  signal: {token: signal.primary, carriers: [shape, stroke_weight, direct_label], text: SIGNAL}
+  missing: {token: data.missing, carriers: [missing_label, boundary], text: N/A}
+  uncertainty: {token: signal.attention, carriers: [interval_boundary, direct_label], text: INTERVAL}
+  observed: {token: signal.data, carriers: [line_style, direct_label], line_style: solid, text: OBSERVED}
+  forecast: {token: signal.data, carriers: [line_style, direct_label], line_style: dashed, text: FORECAST}
+  category: {token: signal.data, carriers: [shape, direct_label], text: CATEGORY}
+  direction: {token: signal.data, carriers: [arrowhead, direct_label], text: DIRECTION}
+  weight: {token: signal.data, carriers: [stroke_weight, numeric_label], text: WEIGHT}
+patterns:
+  allowed: [none, diagonal_hatch, horizontal_hatch, vertical_hatch, cross_hatch, open_frame, solid_fill]
+  deterministic: true
+  random_dot_fields_forbidden: true
+monochrome:
+  direct_labels_required: true
+  pattern_or_form_required: true
+  grayscale_signal_minimum_contrast: 3.0
+  tone_only_meaning_allowed: false
+legend:
+  direct_labels_precede_legend: true
+  status: conditional
+  minimum_items: 2
+  maximum_items: 4
+  requires_recorded_direct_label_failure: true
+  every_item_requires: [text, form]
+  can_be_signal: false
+analytical:
+  zero: {carriers: [position_from_zero, numeric_label]}
+  missing: {carriers: [missing_label, boundary], never_equal_to: zero}
+  uncertainty: {carriers: [interval_boundary, direct_label]}
+  forecast: {carriers: [line_style, direct_label], must_differ_from: observed}
+  heatmap: {carriers: [numeric_label, pattern], missing: [missing_label, boundary]}
+  map: {carriers: [direct_label, pattern], missing: [missing_label, boundary]}
+  network_direction: {carriers: [arrowhead, direct_label]}
+  network_weight: {carriers: [stroke_weight, numeric_label]}

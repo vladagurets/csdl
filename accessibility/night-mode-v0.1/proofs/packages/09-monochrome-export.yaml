@@ -1,0 +1,442 @@
+language: CSDL
+version: '0.1'
+kind: accessibility-package
+id: proof-09-monochrome-export
+scenario: monochrome-export
+source_reference:
+  kind: generation-package
+  path: recipes/recipe-library-v0.5/proofs/packages/02-structural.yaml
+semantic_source_digest: sha256:aa73ac5fea96766022b9c297baa0fae062bbc731f9df5c36011f7b735bdd1ad1
+source_semantics:
+  kind: generation-package
+  id: proof-structural-workflow
+  recipe:
+    id: '012'
+    slug: workflow
+    version: 0.5.0
+  semantic_intent:
+    problem: Show who or what acts next in a bounded operational sequence.
+    scenario: work procedure
+    main_idea: Verification turns an operational sequence into evidence.
+    mechanism: workflow-mechanism
+  content:
+    source: patterns/visual-dna-sprint-01/manifest.yaml#family-12
+    bindings:
+      headline: РОБОЧИЙ ПОТІК З ДОКАЗАМИ
+      stages:
+      - UNDERSTAND
+      - PLAN
+      - EXECUTE
+      - VERIFY
+  component_instances:
+  - id: node-1
+    component: Node
+    role: node
+    content:
+      binding: stages
+      index: 0
+  - id: node-2
+    component: Node
+    role: node
+    content:
+      binding: stages
+      index: 1
+  - id: node-3
+    component: Node
+    role: node
+    content:
+      binding: stages
+      index: 2
+  - id: node-4
+    component: Node
+    role: node
+    content:
+      binding: stages
+      index: 3
+  - id: vector-1
+    component: Vector
+    role: vector
+    content:
+      binding: headline
+    attributes:
+      source: node-1
+      target: node-2
+  - id: vector-2
+    component: Vector
+    role: vector
+    content:
+      binding: headline
+    attributes:
+      source: node-2
+      target: node-3
+  - id: vector-3
+    component: Vector
+    role: vector
+    content:
+      binding: headline
+    attributes:
+      source: node-3
+      target: node-4
+  - id: label-1
+    component: Label
+    role: label
+    content: &id001
+      binding: stages
+      index: 0
+    attributes:
+      text: *id001
+      target: node-1
+  - id: label-2
+    component: Label
+    role: label
+    content: &id002
+      binding: stages
+      index: 1
+    attributes:
+      text: *id002
+      target: node-2
+  - id: label-3
+    component: Label
+    role: label
+    content: &id003
+      binding: stages
+      index: 2
+    attributes:
+      text: *id003
+      target: node-3
+  - id: label-4
+    component: Label
+    role: label
+    content: &id004
+      binding: stages
+      index: 3
+    attributes:
+      text: *id004
+      target: node-4
+  - id: signal
+    component: Signal
+    role: dominant
+    content:
+      binding: headline
+    attributes:
+      target: node-4
+  relations:
+  - subject: vector-1
+    type: directs
+    object: node-1
+  - subject: vector-2
+    type: directs
+    object: node-2
+  - subject: vector-3
+    type: directs
+    object: node-3
+  - subject: label-1
+    type: attached_to
+    object: node-1
+  - subject: label-2
+    type: attached_to
+    object: node-2
+  - subject: label-3
+    type: attached_to
+    object: node-3
+  - subject: label-4
+    type: attached_to
+    object: node-4
+  - subject: signal
+    type: highlights
+    object: node-4
+profiles: &id005
+- monochrome
+profile_results:
+- profile: monochrome
+  semantic_signature: sha256:15c2e47ff2df96911d0e6f980c4da1bb6dd600f1f9d980e38741e375434d7d47
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#F7F5F0'
+    surface.raised: '#FFFFFF'
+    ink.primary: '#111111'
+    ink.secondary: '#4A4A48'
+    ink.inverse: '#FFFFFF'
+    neutral.fill: '#D3D2CE'
+    line.subtle: '#B1B0AC'
+    line.strong: '#72716D'
+    signal.primary: '#333332'
+    signal.data: '#4A4A48'
+    signal.attention: '#656560'
+    signal.positive: '#50504D'
+    signal.error: '#282827'
+    state.focus: '#333332'
+    state.selection: '#4A4A48'
+    data.missing: '#72716D'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: state-labels
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: source
+    role: source
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.152265
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: signal
+    role: signal
+    component: Node
+    foreground: signal.primary
+    background: background.base
+    ratio: 11.608426
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: focus
+    role: focus
+    component: Node
+    foreground: state.focus
+    background: background.base
+    ratio: 11.608426
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: selection
+    role: selection
+    component: Node
+    foreground: state.selection
+    background: background.base
+    ratio: 8.152265
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: error
+    role: node
+    component: Node
+    foreground: signal.error
+    background: background.base
+    ratio: 13.544309
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: positive
+    role: node
+    component: Node
+    foreground: signal.positive
+    background: background.base
+    ratio: 7.425309
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: attention
+    role: node
+    component: Node
+    foreground: signal.attention
+    background: background.base
+    ratio: 5.378227
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: data
+    role: node
+    component: Node
+    foreground: signal.data
+    background: background.base
+    ratio: 8.152265
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: missing
+    role: node
+    component: Node
+    foreground: data.missing
+    background: background.base
+    ratio: 4.484049
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles:
+  - protanopia
+  - deuteranopia
+  - tritanopia
+  - achromatopsia
+text_elements:
+- id: title
+  role: display
+  foreground: ink.primary
+  background: background.base
+- id: state-labels
+  role: label
+  foreground: ink.primary
+  background: background.base
+- id: source
+  role: source
+  foreground: ink.secondary
+  background: background.base
+graphical_objects:
+- id: signal
+  role: signal
+  component: Node
+  foreground: signal.primary
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: focus
+  role: focus
+  component: Node
+  foreground: state.focus
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: selection
+  role: selection
+  component: Node
+  foreground: state.selection
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: error
+  role: node
+  component: Node
+  foreground: signal.error
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: positive
+  role: node
+  component: Node
+  foreground: signal.positive
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: attention
+  role: node
+  component: Node
+  foreground: signal.attention
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: data
+  role: node
+  component: Node
+  foreground: signal.data
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: missing
+  role: node
+  component: Node
+  foreground: data.missing
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+semantic_encodings:
+- meaning: signal
+  color_token: signal.primary
+  redundant_carriers:
+  - shape
+  - stroke_weight
+  - direct_label
+  grayscale_contrast: 9.0
+  target: signal-state
+- meaning: focus
+  color_token: state.focus
+  redundant_carriers:
+  - boundary
+  - stroke_weight
+  target: focus-state
+- meaning: selection
+  color_token: state.selection
+  redundant_carriers:
+  - boundary
+  - direct_label
+  target: selection-state
+- meaning: error
+  color_token: signal.error
+  redundant_carriers:
+  - pattern
+  - status_text
+  pattern: diagonal_hatch
+  target: error-state
+- meaning: positive
+  color_token: signal.positive
+  redundant_carriers:
+  - pattern
+  - status_text
+  pattern: horizontal_hatch
+  target: positive-state
+- meaning: attention
+  color_token: signal.attention
+  redundant_carriers:
+  - pattern
+  - status_text
+  pattern: cross_hatch
+  target: attention-state
+- meaning: data
+  color_token: signal.data
+  redundant_carriers:
+  - shape
+  - direct_label
+  target: data-state
+- meaning: missing
+  color_token: data.missing
+  redundant_carriers:
+  - missing_label
+  - boundary
+  missing_label: N/A
+  target: missing-state
+- meaning: uncertainty
+  color_token: signal.attention
+  redundant_carriers:
+  - interval_boundary
+  - direct_label
+  target: uncertainty-state
+- meaning: observed
+  color_token: signal.data
+  redundant_carriers:
+  - line_style
+  - direct_label
+  line_style: solid
+  target: observed-state
+- meaning: forecast
+  color_token: signal.data
+  redundant_carriers:
+  - line_style
+  - direct_label
+  line_style: dashed
+  target: forecast-state
+output:
+  canvas: 1920x1080
+  orientation: landscape
+  colorspace: sRGB
+  format: deterministic-specification
+  profiles: *id005
+provenance:
+  proof_source: proofs/sources/09-monochrome-export.yaml
+  semantic_source: recipes/recipe-library-v0.5/proofs/packages/02-structural.yaml
+  accessibility_contract: night-mode-v0.1@0.1.0
+  builder: tools/build_accessibility_mode.py
+  evidence: deterministic_specification
+  deterministic: true

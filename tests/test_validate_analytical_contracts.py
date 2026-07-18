@@ -127,7 +127,9 @@ def test_completion_docs_preserve_dependency_boundaries() -> None:
         "## Milestone 6", 1
     )[0]
     assert "**State:** complete" in milestone
-    assert "Milestone 6 deferred" in (ROOT / "STATUS.md").read_text(encoding="utf-8")
+    status = (ROOT / "STATUS.md").read_text(encoding="utf-8")
+    assert "Milestone 5 is complete" in status
+    assert "Milestone 6 is active" in status
 
     component_manifest = yaml.safe_load(
         (ROOT / "components/component-library-v0.1/manifest.yaml").read_text(

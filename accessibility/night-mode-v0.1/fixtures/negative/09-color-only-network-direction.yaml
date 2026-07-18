@@ -1,0 +1,2 @@
+base_package: proofs/packages/08-directed-network.yaml
+mutation: {path: [semantic_encodings, 0, redundant_carriers], value: [direct_label]}
