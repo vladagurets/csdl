@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Completed Milestone 3 — Component Library v0.1 with fifteen evidence-backed component contracts, three vocabulary-only composition proofs, a deterministic 15×20 compatibility matrix and index, strict milestone validators, documentation alignment, and no raster generation or mutation.
 - Started Milestone 3 with a repository-grounded component evidence audit, dependency graph, acceptance contract, validation strategy, and seven-packet stacked implementation plan.
 - Added Component Library v0.1 infrastructure: exact fifteen-name vocabulary, schema, Markdown template, evidence conventions, strict/incomplete validators, proof validation, deterministic index/compatibility builders, and focused TDD coverage.
 - Added D-029 and formalized Anchor, Signal, Field, Frame, and Label as complete Markdown and machine-readable contracts with family compatibility, A/B/C limits, relations, Prompt DSL syntax, validation invariants, and accepted Milestone 2 provenance.

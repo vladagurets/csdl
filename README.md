@@ -2,7 +2,7 @@
 
 A geometric visual language for explaining complex ideas clearly, memorably, and consistently with humans and generative models.
 
-**Status:** Foundation v0.1, Pilot 01 v0.1.0, and Milestone 2 — Visual DNA Sprint 1 are complete; Milestone 3 — Component Library is in progress.
+**Status:** Foundation v0.1, Pilot 01 v0.1.0, Milestone 2 — Visual DNA Sprint 1, and Milestone 3 — Component Library v0.1 are complete. Milestone 4 is planned and has not started.
 
 **GitHub:** `vladagurets/csdl` is the selected public working repository. A public license has not yet been selected.
 
@@ -13,7 +13,7 @@ A geometric visual language for explaining complex ideas clearly, memorably, and
 3. Check current progress and the exact next task in [`STATUS.md`](STATUS.md).
 4. Follow the staged work in [`ROADMAP.md`](ROADMAP.md).
 5. Treat [`specs/2026-07-17-csdl-v0.1-design.md`](specs/2026-07-17-csdl-v0.1-design.md) as the design source of truth.
-6. Execute Milestone 3 from [`docs/plans/2026-07-18-csdl-milestone-3.md`](docs/plans/2026-07-18-csdl-milestone-3.md) and its evidence audit.
+6. Review the completed Milestone 3 contract in [`components/component-library-v0.1/`](components/component-library-v0.1/) and its implementation plan.
 7. Use [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md) for the completed Visual DNA contract.
 8. Use [`docs/handoff/CODEX_IMAGE_GENERATION.md`](docs/handoff/CODEX_IMAGE_GENERATION.md) for the approved Codex raster workflow.
 
@@ -59,6 +59,9 @@ python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 python tools/validate_pattern_catalog.py patterns/visual-dna-sprint-01/manifest.yaml
 python tools/validate_pattern_data.py patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+python tools/validate_component_library.py components/component-library-v0.1/manifest.yaml
+python tools/validate_component_proofs.py components/component-library-v0.1
+python tools/validate_component_index.py components/component-library-v0.1
 ```
 
 The baseline test suite, manifest validator, and shared-reference validator must pass before raster promotion.
@@ -87,4 +90,4 @@ The Milestone 2 catalog formalizes Hero, Cover, Quote, Big Number, Comparison, C
 
 ## Component Library
 
-Milestone 3 formalizes Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend from accepted Visual DNA evidence. All fifteen component contracts and the editorial/structural/analytical proofs pass strict validation. Markdown specifications remain canonical; deterministic index and 15×20 compatibility outputs are generated from the manifest and checked in. No new raster generation is part of the component library.
+Milestone 3 formalizes Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend from accepted Visual DNA evidence. All fifteen component contracts and the editorial/structural/analytical proofs pass strict validation. Markdown specifications remain canonical; deterministic index and 15×20 compatibility outputs are generated from the manifest and checked in. The milestone required no new raster generation. Milestone 4 recipe work has not started.

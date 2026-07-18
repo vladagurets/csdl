@@ -281,3 +281,55 @@ pass
 ```
 
 Remaining risk: Legend remains a deliberately uninstantiated conditional exception because no accepted raster supports positive use. The proof and generated-output gates are met; final documentation consistency, clean-tree reproducibility, GitHub CI, and integration remain for the release packet.
+
+## Release completion audit
+
+- Branch: `codex/m3-release`
+- Component records: 15/15 in canonical order
+- Family matrix: 15 components × 20 families; no empty family row
+- Proof modes: editorial, structural, analytical in canonical order
+- Generated-output drift after rebuild: none
+- Documentation: `AGENTS.md`, `README.md`, `ROADMAP.md`, `STATUS.md`, `DECISIONS.md`, `CHANGELOG.md`, and the library README aligned to Milestone 3 complete / Milestone 4 planned
+- Raster generation: none
+- Canonical raster mutation: none; all Pilot 01 and Milestone 2 asset validators pass
+
+### Completion signals
+
+Primary signal: met. All three proofs use declared component instances, relation vocabulary, semantic attributes, and content/data references only. The validator rejects an injected `layout` primitive.
+
+Secondary signal: met. The exact component set, complete Markdown/YAML contracts, evidence paths, relation consistency, A/B/C limits, Prompt DSL fields, fixed quantitative order/domain/values/direct Labels, compatibility coverage, deterministic outputs, documentation, and regressions all validate.
+
+### Exact local completion audit
+
+```text
+.venv/bin/python -m pytest -q
+71 passed
+
+Pilot manifest/style-anchor/assets/scores validators
+pass
+
+Milestone 2 catalog/data/assets/scores/review/build/index validators
+pass
+
+.venv/bin/python tools/validate_component_library.py components/component-library-v0.1/manifest.yaml
+component library valid
+
+.venv/bin/python tools/validate_component_proofs.py components/component-library-v0.1
+component proofs valid
+
+.venv/bin/python tools/build_component_library.py components/component-library-v0.1
+component library built: index.yaml, compatibility.yaml
+
+.venv/bin/python tools/validate_component_index.py components/component-library-v0.1
+component index valid
+
+documentation stale-state search
+no Milestone 3 in-progress or deferred component-matrix matches
+
+git diff --check
+pass
+```
+
+Compatibility and rollback: this additive library introduces stable component IDs/slugs and proof syntax while preserving accepted raster bytes. The Container text migration is reversible by normal commit revert, but restoring it would contradict D-029. There are no production dependencies, data migrations, secrets, permissions, deployments, tags, or GitHub Releases.
+
+Remaining risk: Legend is still intentionally constrained and has no positive canonical proof instance. Full multi-series Analytical Mode remains deferred to Milestone 5; Milestone 4 recipe work has not started.

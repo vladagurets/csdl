@@ -1,8 +1,8 @@
 # Project Status
 
 **Project:** Constructive Signal Design Language
-**Version:** Component Library v0.1 in progress
-**Current milestone:** Milestone 3 — in progress
+**Version:** Component Library v0.1 complete
+**Current milestone:** Milestone 3 — complete; Milestone 4 planned
 **Last updated:** 2026-07-18
 
 ## Outcome
@@ -32,7 +32,7 @@ Pilot-backed catalog evidence is audited and accepted for Hero, Comparison, and 
 
 The user-approved D-028 rebaseline makes all three boards in `references/canonical/` primary Visual DNA authority and keeps the Pilot landscape anchor as secondary execution evidence. A series-level contact-sheet audit found that the first generated passes for Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline satisfy copy and semantic checks but collapse toward generic centered infographics. Those approvals are superseded, their active rasters/scores/index evidence are removed, and all affected families require new candidate passes with the complete four-image reference package. Cover, Quote, Big Number, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, and Pipeline now pass that regeneration gate and restore the primary boards' expression contrast, Modular Technical cadence, numeric Pulse, active-plane synthesis, semantic trace language, quiet chronological Axis, square relative-position grammar, nested ownership-depth grammar, open system-boundary topology, finite operational route grammar, and continuous carrier-through-gates transformation; Decision Tree adds a binary branch mechanism, Framework adds an equal-concept open Cluster, and the bounded analytical set is complete with a fixed-data KPI Pulse, exact-lookup Table, audited 0–100% Chart, and open composite Dashboard. Historical first passes remain in review notes, ignored drafts, and Git history.
 
-Milestone 3 is now in progress. The accepted evidence audit and implementation plan define a seven-packet stacked delivery. Component infrastructure and all four component packets are complete: Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend now have canonical Markdown and machine-readable contracts. D-029 locks this fifteen-name public vocabulary and retires the earlier Container alias without changing any accepted raster: Hierarchy uses Frame for ownership scope, Architecture uses Field for system scope, and Pipeline needs no wrapper component. Editorial Big Number, structural Architecture, and analytical Chart proofs now validate using component vocabulary alone; deterministic index and 15×20 compatibility outputs match the manifest. The final release audit and integration remain.
+Milestone 3 is complete. Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend have canonical Markdown and machine-readable contracts. D-029 locks this fifteen-name public vocabulary and retires the earlier Container alias without changing any accepted raster: Hierarchy uses Frame for ownership scope, Architecture uses Field for system scope, and Pipeline needs no wrapper component. Editorial Big Number, structural Architecture, and analytical Chart proofs validate using component vocabulary alone; deterministic index and 15×20 compatibility outputs match the manifest; all completion validators pass. Milestone 4 remains planned and untouched.
 
 ## Canonical outputs
 
@@ -122,8 +122,8 @@ Met: all twenty families pass their individual primary-authority, Prompt DSL, ex
 
 **Primary signal:** met. All fifteen components have complete Markdown and machine-readable contracts, active Foundation/Milestone 2 vocabulary resolves to the required set, and editorial, structural, and analytical compositions validate without undeclared layout or geometry primitives. The validator rejects an injected ad hoc layout key.
 
-**Secondary signal:** met at the packet boundary. Schema, relation, expression, evidence, Prompt DSL, quantitative fidelity, compatibility coverage, deterministic builder, and strict library/proof/index gates pass. Final documentation consistency, clean-tree reproduction, GitHub CI, and main-branch integration remain release gates.
+**Secondary signal:** met. Schema, relation, expression, evidence, Prompt DSL, quantitative fidelity, compatibility coverage, deterministic builder, documentation consistency, and strict library/proof/index gates pass. The complete Pilot, Milestone 2, and Milestone 3 regression audit is green.
 
 ## Repository state
 
-Milestone 2 remains integrated as one validated catalog release. Milestone 3 plan, infrastructure, four component packets, and proof/index packet form the active review stack. No raster generation, Milestone 4 recipe work, tag, or release has started.
+Milestone 2 remains integrated as one validated catalog release. Milestone 3 is integrated as Component Library v0.1 with its seven-packet history retained. No raster was generated or mutated for Milestone 3. No Milestone 4 recipe work, tag, GitHub Release, or public release-policy change has started.
