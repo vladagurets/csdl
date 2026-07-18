@@ -4,7 +4,7 @@ library:
   version: 0.1.0
   language: CSDL
   kind: accessibility-extension
-  status: active
+  status: complete
   canonical_specification: SPEC.md
   prompt_dsl_compatibility: "0.5"
   component_library: components/component-library-v0.1/manifest.yaml

@@ -119,9 +119,9 @@ def test_global_contract_records_quantitative_invariants() -> None:
 
 
 def test_completion_docs_preserve_dependency_boundaries() -> None:
-    assert "Analytical Mode v0.1 are complete" in (ROOT / "README.md").read_text(
-        encoding="utf-8"
-    )
+    assert "Night Mode and Accessibility v0.1 are complete" in (
+        ROOT / "README.md"
+    ).read_text(encoding="utf-8")
     roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
     milestone = roadmap.split("## Milestone 5 — Analytical Mode", 1)[1].split(
         "## Milestone 6", 1
@@ -129,7 +129,7 @@ def test_completion_docs_preserve_dependency_boundaries() -> None:
     assert "**State:** complete" in milestone
     status = (ROOT / "STATUS.md").read_text(encoding="utf-8")
     assert "Milestone 5 is complete" in status
-    assert "Milestone 6 is active" in status
+    assert "Milestone 6 is complete" in status
 
     component_manifest = yaml.safe_load(
         (ROOT / "components/component-library-v0.1/manifest.yaml").read_text(

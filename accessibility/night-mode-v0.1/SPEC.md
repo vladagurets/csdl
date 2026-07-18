@@ -1,6 +1,6 @@
 # CSDL Night Mode and Accessibility v0.1
 
-**Status:** active implementation  
+**Status:** complete
 **Canonical source:** Markdown  
 **Machine contract:** `manifest.yaml`, `token-schema.yaml`, `proof-schema.yaml`, and `contracts/`  
 **Version boundary:** independent additive extension; Prompt DSL v0.5 unchanged

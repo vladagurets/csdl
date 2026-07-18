@@ -2,7 +2,7 @@
 
 A geometric visual language for explaining complex ideas clearly, memorably, and consistently with humans and generative models.
 
-**Status:** Foundation v0.1, Pilot 01 v0.1.0, Visual DNA Sprint 1, Component Library v0.1, Recipe Library and Prompt DSL v0.5, and Analytical Mode v0.1 are complete. Night Mode and Accessibility v0.1 is locally validated with final integration pending.
+**Status:** Foundation v0.1, Pilot 01 v0.1.0, Visual DNA Sprint 1, Component Library v0.1, Recipe Library and Prompt DSL v0.5, Analytical Mode v0.1, and Night Mode and Accessibility v0.1 are complete.
 
 **GitHub:** `vladagurets/csdl` is the selected public working repository. A public license has not yet been selected.
 
@@ -13,7 +13,7 @@ A geometric visual language for explaining complex ideas clearly, memorably, and
 3. Check current progress and the exact next task in [`STATUS.md`](STATUS.md).
 4. Follow the staged work in [`ROADMAP.md`](ROADMAP.md).
 5. Treat [`specs/2026-07-17-csdl-v0.1-design.md`](specs/2026-07-17-csdl-v0.1-design.md) as the design source of truth.
-6. Review the Night Mode and Accessibility v0.1 release candidate in [`accessibility/night-mode-v0.1/`](accessibility/night-mode-v0.1/) and its evidence audit/implementation plan.
+6. Review the completed Night Mode and Accessibility v0.1 contract in [`accessibility/night-mode-v0.1/`](accessibility/night-mode-v0.1/) and its evidence audit/implementation plan.
 7. Review the completed Analytical Mode v0.1 contract in [`analytics/analytical-mode-v0.1/`](analytics/analytical-mode-v0.1/) and its evidence audit/implementation plan.
 8. Review the completed Milestone 4 contract in [`recipes/recipe-library-v0.5/`](recipes/recipe-library-v0.5/).
 9. Review the stable public vocabulary in [`components/component-library-v0.1/`](components/component-library-v0.1/).
