@@ -117,7 +117,10 @@ families:
   - B
   evidence_mode: generated
   canonical_example: canonical/light/16x9/09-matrix.png
-  status: awaiting_generation
+  sha256: 191126d7e85d9e1b9d4d635546b71c4e37a52f5a727a3a0ca6155e1cf7fc6584
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.71
 - id: '10'
   slug: hierarchy
   name: Hierarchy

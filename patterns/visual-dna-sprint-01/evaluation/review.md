@@ -132,6 +132,22 @@ Exact-copy review: pass for the headline, both English state labels, and both Uk
 
 Exact-copy review: pass for `ВІД BRIEF ДО SHIP` and `BRIEF → PLAN → BUILD → VERIFY → SHIP`; no dates or extra text. Visual mechanism: one horizontal Axis carries five ordered bare Nodes, with VERIFY selected as the consequential transition. Strongest decision: keeping the label neutral lets the node and short incoming segment carry signal semantics without turning the stage into a badge. Removable-element check: headline, Axis, Nodes, and labels are all required for chronology. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: memorability is deliberately subordinate to ordered lookup. Accepted catalog score: `4.86`.
 
+### 09 Matrix — generated example accepted
+
+- **Canonical:** `canonical/light/16x9/09-matrix.png`
+- **Prompt:** `prompts/09-matrix.yaml`
+- **Selected:** `09-matrix-v2.png` from three independent built-in GPT Image 2 candidates
+- **Source SHA-256:** `e567aa750a0dd2de966c432839f9f8b85db285d0d20465da81cec388d3f5ec60`
+- **Canonical SHA-256:** `191126d7e85d9e1b9d4d635546b71c4e37a52f5a727a3a0ca6155e1cf7fc6584`
+- **Source raster:** `1672×941`, RGB PNG
+- **Canonical raster:** `1920×1080`, RGB PNG
+
+- `09-matrix-v1.png` — rejected: exact copy, node positions, and open regions pass, but the vertical rotation of `ВПЛИВ` violates the explicit all-horizontal typography contract.
+- `09-matrix-v2.png` — selected: all seven text blocks are exact and horizontal; the two independent Axes remain light; four labeled Nodes occupy the intended relative positions; only `АВТОМАТИЗУВАТИ` carries coral emphasis.
+- `09-matrix-v3.png` — rejected: exact copy and restrained geometry pass, but the axis labels are semantically swapped, placing `ВПЛИВ` on the horizontal direction and `ЗУСИЛЛЯ` beneath the vertical direction.
+
+Exact-copy review: pass for `КУДИ СПРЯМУВАТИ ЗУСИЛЛЯ`, `ВПЛИВ`, `ЗУСИЛЛЯ`, `АВТОМАТИЗУВАТИ`, `ДЕЛЕГУВАТИ`, `ПЛАНУВАТИ`, and `ВІДКЛАСТИ`; no quadrant names, numbers, scores, or extra text. Visual mechanism: two thin Axes define four open relative regions, and four directly labeled Nodes encode effort and impact without fake precision. Strongest decision: the selected high-impact/low-effort option is immediately identifiable through one coral Node/label pair while the other three choices remain neutral. Removable-element check: headline, Axes, axis labels, four Nodes, and their labels are all semantic. Normalization: all three direct-landscape GPT Image 2 sources were resized mechanically from `1672×941` to `1920×1080` with `sips`; no crop, redraw, recolor, text edit, or compositional change. Full-resolution and `1280×720` review: pass. Remaining risk: the generated circular markers contain slight tonal texture, but it does not read as a shadow, gradient field, or 3D object and does not impair the one-signal hierarchy. Accepted catalog score: `4.71`.
+
 ### 13 Loop — Pilot reference accepted
 
 - **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png`
