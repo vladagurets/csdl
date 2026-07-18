@@ -173,8 +173,8 @@ pages:
   section: prompt-dsl
   kind: code
   title_uk: Complete Prompt DSL example
-  source_sha256: 7fa2ffbf52ae2ae7a527a16296afee8c56d161c764b9ba00459b456fd2badda8
-  expanded_sha256: 5d0bf33172f925ce7bf2425dce99895e84a17b315e37f5213b114e59793f2fc0
+  source_sha256: d44bf7480e1c56a03806f5e1e8cd119e4c5d2f5d1eefd52e6d0cb1f59c148460
+  expanded_sha256: 4a068fd84470cd257471d12c775b7ab8e00e2d9f547669a66877b08b21e2cf80
 - id: '25'
   source: pages/25-analytical-principles.md
   section: analytical

@@ -166,7 +166,7 @@ def _layout_blocks(
         "bullet": int(body_size * 1.34),
         "table": int(body_size * 1.25),
         "h2": int((body_size + 7) * 1.28),
-        "code": int(max(14, body_size - 5) * 1.30),
+        "code": int(max(14, body_size - 5) * 1.20),
         "space": max(7, body_size // 3),
     }
     output: list[tuple[str, str, ImageFont.FreeTypeFont, int]] = []

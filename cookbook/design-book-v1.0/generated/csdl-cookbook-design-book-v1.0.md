@@ -565,7 +565,7 @@ Forbidden layout keys, undeclared components, unsupported relations і placehold
 <!-- page 24 · source pages/24-prompt-dsl-example.md -->
 # Complete Prompt DSL example
 
-Нижче — complete deterministic editorial proof package з Recipe Library. Він показує межу між exact content, grammar і generation constraints; це canonical machine example, а не prose approximation.
+Нижче — complete deterministic generation package з Recipe Library: exact content, grammar і generation constraints.
 
 ```yaml
 language: CSDL
@@ -599,7 +599,7 @@ provenance: {recipe_evidence: specs/004-big-number.md, source_outline: recipes/r
 
 ## Review
 
-Перевірте recipe ID, кожний content reference, unique component IDs, allowed relations, one dominant `Signal`, exact `1920×1080` output і source provenance. Генеративний model не має права додавати labels, footer, logo або interface chrome.
+Перевірте recipe ID, content references, unique component IDs, allowed relations, one dominant `Signal`, exact `1920×1080` output і provenance. No added labels, footer, logo or interface chrome.
 
 <!-- page-break -->
 
