@@ -10,7 +10,7 @@ composition:
   components: [Anchor, Node, Container, Bridge]
   reading_path: top_to_bottom
   negative_space: "at least 60%"
-typography: {display: "smooth Ukrainian-capable Inter Display", labels: "Inter-style neutral sans with restrained scale by depth", all_text_horizontal: true}
+typography: {display: "Ukrainian-capable Modular Technical display with squared engineering proportions and tight rhythm", labels: "neutral high-legibility sans with restrained scale by depth", all_text_horizontal: true}
 palette: {background: "#F7F5F0", ink: "#1B1B19", neutral_line: "#B8B5AE", primary_signal: "#C96157"}
 hard_exclusions: [extra text, workflow arrow chain, avatars, duplicate parents, decorative boxes, org-chart UI, gradients, shadows, 3D]
 output: {format: PNG, exact_size: 1920x1080, text_accuracy: publish-ready}

@@ -19,7 +19,7 @@ content:
 composition:
   mechanism: "One open aligned table with sparse neutral rules; W4 receives one restrained data-blue rule or label"
   components: [Frame, Axis, Signal]
-typography: {display: "smooth Ukrainian-capable Inter Display", table: "Inter-style neutral sans with tabular figures", all_text_horizontal: true}
+typography: {display: "Ukrainian-capable Modular Technical display with squared engineering proportions", table: "neutral high-legibility sans with tabular figures", all_text_horizontal: true}
 palette: {background: "#F7F5F0", ink: "#1B1B19", neutral_line: "#B8B5AE", primary_signal: "#4C6A8A"}
 hard_exclusions: [extra text, zebra decoration, rounded cell cards, omitted units, reordered weeks, heatmap color, invented totals, gradients, shadows, 3D]
 output: {format: PNG, exact_size: 1920x1080, content_accuracy: exact_data_and_copy}

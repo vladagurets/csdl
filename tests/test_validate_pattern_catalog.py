@@ -81,3 +81,12 @@ def test_rejects_single_legacy_prompt_reference(tmp_path: Path) -> None:
     errors = validate_pattern_catalog(manifest)
     assert "family 02 prompt must use the catalog visual authority package" in errors
     assert "family 02 prompt must not use a single legacy reference" in errors
+
+
+def test_rejects_generated_prompt_without_modular_technical_typography(tmp_path: Path) -> None:
+    manifest = copy_catalog_contract(tmp_path)
+    prompt = manifest.parent / "prompts/02-cover.yaml"
+    data = yaml.safe_load(prompt.read_text(encoding="utf-8"))
+    data["typography"]["display"] = "smooth Ukrainian-capable Inter Display"
+    prompt.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
+    assert "family 02 generated prompt must declare Modular Technical typography" in validate_pattern_catalog(manifest)

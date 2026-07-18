@@ -15,7 +15,7 @@ content:
 composition:
   mechanism: "One dominant data-blue Pulse, three open supporting measures, and one small direct-labeled trend; alignment replaces widget cards"
   components: [Pulse, Cluster, Axis, Signal]
-typography: {number: "large smooth Inter Display figures", labels: "Inter-style neutral sans with tabular figures", all_text_horizontal: true}
+typography: {number: "large Modular Technical figures with squared construction", labels: "neutral high-legibility sans with tabular figures", all_text_horizontal: true}
 palette: {background: "#F7F5F0", ink: "#1B1B19", neutral_line: "#B8B5AE", primary_signal: "#4C6A8A"}
 hard_exclusions: [extra text, navigation, filters, buttons, status icons, rounded widgets, invented deltas, gauges, extra chart, gradients, shadows, 3D]
 output: {format: PNG, exact_size: 1920x1080, content_accuracy: exact_data_and_copy}
