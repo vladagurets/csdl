@@ -10,7 +10,7 @@ Data processing, content production, build system, or deterministic transformati
 
 ## Semantic components
 
-Stage `Node`s and optional `Container`s receive one continuous `Vector`; one `Signal` identifies the validation gate.
+Stage `Node`s receive one continuous `Vector`; one `Signal` identifies the validation gate.
 
 ## Assembly order
 

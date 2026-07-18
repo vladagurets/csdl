@@ -275,7 +275,7 @@ families:
     wave: structural
     problem: "Show levels of ownership or decomposition without implying sequence."
     scenarios: [goal decomposition, taxonomy, authority]
-    components: [Anchor, Node, Container, Bridge]
+    components: [Anchor, Frame, Node, Bridge]
     assembly_order: [place root Anchor, nest or branch child Nodes, preserve one top-to-bottom depth cue]
     allowed_levels: [A, B]
     canonical_level: A
@@ -298,7 +298,7 @@ families:
     wave: structural
     problem: "Explain stable system boundaries and permitted interactions."
     scenarios: [software context, agent system, service boundary]
-    components: [Container, Node, Bridge, Field]
+    components: [Field, Node, Bridge]
     assembly_order: [define system Field, place bounded Nodes, connect only permitted relations, emphasize one boundary]
     allowed_levels: [A, B]
     canonical_level: B
@@ -376,7 +376,7 @@ families:
     wave: structural
     problem: "Show material or data transformed through fixed stages."
     scenarios: [data processing, content production, build system]
-    components: [Node, Vector, Container, Signal]
+    components: [Node, Vector, Signal]
     assembly_order: [place input, order transform stages, show output, signal validation gate]
     allowed_levels: [A, B]
     canonical_level: B

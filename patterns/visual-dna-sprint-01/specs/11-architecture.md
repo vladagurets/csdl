@@ -10,7 +10,7 @@ Software context, agent system, service boundary, or a small component map.
 
 ## Semantic components
 
-One `Field` defines system scope; `Container`s and `Node`s define actors; `Bridge`s define permitted relations.
+One `Field` defines system scope; `Node`s define actors; `Bridge`s define permitted relations.
 
 ## Assembly order
 
