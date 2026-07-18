@@ -257,4 +257,7 @@ families:
   - A
   evidence_mode: generated
   canonical_example: canonical/light/16x9/20-dashboard.png
-  status: awaiting_generation
+  sha256: 9c9cb5060861b0d49530c19d47ed182877c84f721452d5f5628866433f10dfad
+  dimensions: 1920x1080
+  color_mode: RGB
+  score_average: 4.86
