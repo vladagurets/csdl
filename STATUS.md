@@ -102,4 +102,4 @@ Met: all twenty families pass their individual primary-authority, Prompt DSL, ex
 
 ## Repository state
 
-Infrastructure review and the stacked family sequence remain open without merges. All twenty family evidence packets are complete through Dashboard; the final catalog build and strict validation packet is ready on `codex/m2-catalog-completion` above `codex/m2-dashboard`.
+Milestone 2 is integrated as one validated catalog release while its infrastructure, family, corrective, and completion packets remain traceable through the historical PR stack. All twenty family evidence packets are complete through Dashboard. Milestone 3 remains planned and has not started.
