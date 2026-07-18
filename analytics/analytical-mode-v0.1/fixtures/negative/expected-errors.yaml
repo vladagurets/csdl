@@ -1,0 +1,18 @@
+fixtures:
+  - {file: 01-truncated-bar-baseline.yaml, error: "bar encoding requires a zero baseline"}
+  - {file: 02-undeclared-log-scale.yaml, error: "log scale requires explicit declaration"}
+  - {file: 03-dual-axis.yaml, error: "dual axis requires an explicit exception"}
+  - {file: 04-reordered-time.yaml, error: "line temporal order must match canonical dataset"}
+  - {file: 05-mutated-value.yaml, error: "analytical specification records must match canonical dataset"}
+  - {file: 06-missing-unit.yaml, error: "analytical specification fields must match canonical dataset"}
+  - {file: 07-missing-source.yaml, error: "analytical package source must match canonical dataset"}
+  - {file: 08-misleading-denominator.yaml, error: "funnel denominator semantics must match declared transformation"}
+  - {file: 09-forecast-as-observed.yaml, error: "forecast records must remain semantically distinct from observed records"}
+  - {file: 10-inverted-uncertainty.yaml, error: "uncertainty lower must not exceed estimate or upper"}
+  - {file: 11-invalid-normalization.yaml, error: "normalized chart values must sum to declared total"}
+  - {file: 12-map-raw-count-rate.yaml, error: "map raw counts cannot be labeled as comparable normalized rates"}
+  - {file: 13-network-semantic-distance.yaml, error: "network layout distance is non-semantic without an encoding contract"}
+  - {file: 14-color-only-meaning.yaml, error: "color cannot be the sole carrier of meaning"}
+  - {file: 15-unsupported-component.yaml, error: "component Bridge is incompatible with analytical family bar"}
+  - {file: 16-undeclared-layout.yaml, error: "analytical package contains forbidden key: layout"}
+  - {file: 17-nondeterministic-output.yaml, error: "analytical package must declare deterministic output"}

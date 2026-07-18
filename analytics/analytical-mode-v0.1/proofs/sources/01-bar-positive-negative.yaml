@@ -1,0 +1,29 @@
+id: proof-01-bar-positive-negative
+family: bar
+dataset: datasets/01-bar-positive-negative.yaml
+analytical_intent: {question: "Which categories changed positively or negatively?", claim: "Signed variance crosses the same zero baseline."}
+recipe: {id: "019", slug: chart, version: 0.5.0}
+encoding:
+  marks: [{type: bar, orientation: vertical}, {type: text, role: direct-label}]
+  bindings: {category: category, value: variance, label: variance}
+  order: [Reliability, Review time, Coverage, Escaped defects]
+  domains: {value: [-10, 15]}
+  scales: {value: linear, category: categorical}
+  bar_semantics: grouped
+  zero_baseline: true
+  negative_values: signed_from_zero
+  units: {value: percentage_points}
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings: [signed_label, direction_from_zero]
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+  - {id: category-axis, component: Axis, role: sequence}
+  - {id: value-axis, component: Axis, role: quantitative}
+  - {id: labels, component: Label, role: direct-label}
+  - {id: signal, component: Signal, role: positive-focus}
+relations:
+  - {subject: category-axis, type: orders, object: labels}
+  - {subject: labels, type: attached_to, object: value-axis}
+  - {subject: signal, type: highlights, object: value-axis}

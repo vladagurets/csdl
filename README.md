@@ -2,7 +2,7 @@
 
 A geometric visual language for explaining complex ideas clearly, memorably, and consistently with humans and generative models.
 
-**Status:** Foundation v0.1, Pilot 01 v0.1.0, Milestone 2 — Visual DNA Sprint 1, Milestone 3 — Component Library v0.1, and Milestone 4 — Recipe Library and Prompt DSL v0.5 are complete. Milestone 5 Analytical Mode remains deferred.
+**Status:** Foundation v0.1, Pilot 01 v0.1.0, Visual DNA Sprint 1, Component Library v0.1, Recipe Library and Prompt DSL v0.5, and Analytical Mode v0.1 are complete. Milestone 6 Night Mode remains deferred.
 
 **GitHub:** `vladagurets/csdl` is the selected public working repository. A public license has not yet been selected.
 
@@ -13,10 +13,11 @@ A geometric visual language for explaining complex ideas clearly, memorably, and
 3. Check current progress and the exact next task in [`STATUS.md`](STATUS.md).
 4. Follow the staged work in [`ROADMAP.md`](ROADMAP.md).
 5. Treat [`specs/2026-07-17-csdl-v0.1-design.md`](specs/2026-07-17-csdl-v0.1-design.md) as the design source of truth.
-6. Review the completed Milestone 4 contract in [`recipes/recipe-library-v0.5/`](recipes/recipe-library-v0.5/), its evidence audit, and implementation plan.
-7. Review the stable public vocabulary in [`components/component-library-v0.1/`](components/component-library-v0.1/).
-8. Use [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md) for the completed Visual DNA contract.
-9. Use [`docs/handoff/CODEX_IMAGE_GENERATION.md`](docs/handoff/CODEX_IMAGE_GENERATION.md) for the approved Codex raster workflow.
+6. Review the completed Analytical Mode v0.1 contract in [`analytics/analytical-mode-v0.1/`](analytics/analytical-mode-v0.1/) and its evidence audit/implementation plan.
+7. Review the completed Milestone 4 contract in [`recipes/recipe-library-v0.5/`](recipes/recipe-library-v0.5/).
+8. Review the stable public vocabulary in [`components/component-library-v0.1/`](components/component-library-v0.1/).
+9. Use [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md) for the completed Visual DNA contract.
+10. Use [`docs/handoff/CODEX_IMAGE_GENERATION.md`](docs/handoff/CODEX_IMAGE_GENERATION.md) for the approved Codex raster workflow.
 
 ## Current foundation
 
@@ -45,6 +46,7 @@ pilots/01-agentic-discipline/     canonical copy, prompts, evaluation, assets
 patterns/visual-dna-sprint-01/    20-family contracts, prompts, evidence, assets
 components/component-library-v0.1/ 15-component contracts, proofs, indexes
 recipes/recipe-library-v0.5/       23 recipe contracts, Prompt DSL, proofs, indexes
+analytics/analytical-mode-v0.1/    typed data/encoding contracts, proofs, fixtures, indexes
 references/canonical/             approved visual anchors
 research/                         source analysis without redistributing source PDFs
 tools/ and tests/                 validation and assembly tooling
@@ -67,6 +69,8 @@ python tools/validate_component_index.py components/component-library-v0.1
 python tools/validate_recipe_library.py recipes/recipe-library-v0.5/manifest.yaml
 python tools/validate_prompt_dsl.py recipes/recipe-library-v0.5
 python tools/validate_recipe_index.py recipes/recipe-library-v0.5
+python tools/build_analytical_mode.py analytics/analytical-mode-v0.1
+python tools/validate_analytical_mode.py analytics/analytical-mode-v0.1
 ```
 
 The baseline test suite, manifest validator, and shared-reference validator must pass before raster promotion.
@@ -100,3 +104,7 @@ Milestone 3 formalizes Anchor, Signal, Field, Frame, Cluster, Vector, Divider, N
 ## Recipe Library and Prompt DSL v0.5
 
 Milestone 4 formalizes 23 evidence-backed recipes: all twenty Visual DNA families plus Breakdown, Checklist, and Formula from Pilot 01. A layout-free outline selects a recipe, and deterministic builders emit a Prompt DSL v0.5 package with semantic intent, exact content, public component instances, allowed relations, generation constraints, and provenance kept separate. Three end-to-end proofs cover editorial, structural/process, and bounded analytical use; one Pilot migration proof and a 27-source migration map preserve accepted v0.1 prompt content. The milestone adds no raster and does not begin full Analytical Mode.
+
+## Analytical Mode v0.1
+
+Milestone 5 adds an independent versioned extension under [`analytics/analytical-mode-v0.1/`](analytics/analytical-mode-v0.1/). It defines typed datasets, internal data-encoding marks, explicit domains/order/units/sources/missing states/transformations, family contracts for bars, lines, scatterplots, waterfall, heatmaps, funnels, maps, networks, tables, and dashboards, plus uncertainty and forecast semantics. Ten deterministic fixed-data proof paths and seventeen exact-error negative fixtures validate quantitative fidelity independently of generated packages. Prompt DSL v0.5 remains unchanged; public vocabulary remains exactly fifteen components and 23 recipes. No raster was generated or modified.

@@ -1,0 +1,22 @@
+language: CSDL
+version: "0.1"
+kind: analytical-dataset
+dataset:
+  id: funnel-conversion-v1
+  version: 1.0.0
+  title: Agent adoption funnel
+  status: synthetic_fixed_data
+  unit_of_analysis: ordered adoption stage
+  fields:
+    - {id: stage, label: Stage, type: ordinal, role: dimension, nullable: false, ordering: declared}
+    - {id: count, label: Entities, type: quantitative, role: measure, nullable: false, unit: count, display_format: "0", domain: [0, 1000], aggregation: count}
+  records:
+    - {id: f1, stage: Evaluated, count: 1000}
+    - {id: f2, stage: Trialed, count: 650}
+    - {id: f3, stage: Activated, count: 390}
+    - {id: f4, stage: Retained, count: 195}
+  ordering: {field: stage, values: [Evaluated, Trialed, Activated, Retained]}
+  missing_values: []
+  transformations:
+    - {id: previous_stage_conversion, operation: conversion_rate, inputs: [count], output: conversion_rate, parameters: {denominator: previous_stage, first_stage: 100}, formula: "current.count / previous.count * 100", reversible: false, auditable: true}
+  provenance: {source: CSDL Milestone 5 synthetic fixture, source_type: synthetic, source_date: 2026-07-18, retrieval_period: fixed cohort, method: fixed monotonic stage counts with previous-stage denominators}

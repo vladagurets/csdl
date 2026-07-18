@@ -1,0 +1,215 @@
+language: CSDL
+version: '0.1'
+kind: analytical-package
+id: proof-04-waterfall
+dataset:
+  id: waterfall-reconciliation-v1
+  version: 1.0.0
+  path: datasets/04-waterfall.yaml
+  source: CSDL Milestone 5 synthetic fixture
+analytical_intent:
+  question: How does the starting score reconcile to the final score?
+  claim: Signed increments reconcile exactly from 100 to 130.
+recipe:
+  id: 019
+  slug: chart
+  version: 0.5.0
+encoding:
+  marks:
+  - type: waterfall-step
+    role: signed-step
+  - type: line
+    role: cumulative-connector
+  - type: text
+    role: direct-label
+  bindings:
+    order: step
+    status: kind
+    value: delta
+    label: step
+  order:
+  - Starting score
+  - Test coverage
+  - Review delay
+  - Retained learning
+  - Final score
+  domains:
+    value:
+    - -20
+    - 150
+  scales:
+    value: linear
+    order: ordinal
+  zero_baseline: true
+  cumulative_transformation: cumulative
+  start_value: 100
+  final_total: 130
+  reconciliation: exact
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings:
+  - signed_label
+  - direction_from_zero
+  - step_kind_label
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+- id: order-axis
+  component: Axis
+  role: sequence
+- id: value-axis
+  component: Axis
+  role: quantitative
+- id: steps
+  component: Node
+  role: reconciliation-step
+- id: labels
+  component: Label
+  role: direct-label
+- id: signal
+  component: Signal
+  role: final-total
+relations:
+- subject: order-axis
+  type: orders
+  object: steps
+- subject: value-axis
+  type: orders
+  object: steps
+- subject: labels
+  type: attached_to
+  object: steps
+- subject: signal
+  type: highlights
+  object: steps
+specification:
+  family: waterfall
+  fields:
+  - id: step
+    label: Step
+    type: ordinal
+    role: dimension
+    nullable: false
+    ordering: declared
+  - id: kind
+    label: Step kind
+    type: categorical
+    role: dimension
+    nullable: false
+    categories:
+    - start
+    - increment
+    - total
+  - id: delta
+    label: Signed change
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: points
+    display_format: +0;-0;0
+    domain:
+    - -20
+    - 30
+    aggregation: sum
+  - id: stated_total
+    label: Stated total
+    type: quantitative
+    role: measure
+    nullable: true
+    unit: points
+    display_format: '0'
+    domain:
+    - 0
+    - 200
+  records:
+  - id: w1
+    step: Starting score
+    kind: start
+    delta: 0
+    stated_total: 100
+  - id: w2
+    step: Test coverage
+    kind: increment
+    delta: 25
+    stated_total: null
+  - id: w3
+    step: Review delay
+    kind: increment
+    delta: -10
+    stated_total: null
+  - id: w4
+    step: Retained learning
+    kind: increment
+    delta: 15
+    stated_total: null
+  - id: w5
+    step: Final score
+    kind: total
+    delta: 0
+    stated_total: 130
+  ordering:
+    field: step
+    values:
+    - Starting score
+    - Test coverage
+    - Review delay
+    - Retained learning
+    - Final score
+  missing_values:
+  - record_id: w2
+    field: stated_total
+    status: not_applicable
+  - record_id: w3
+    field: stated_total
+    status: not_applicable
+  - record_id: w4
+    field: stated_total
+    status: not_applicable
+  transformations:
+  - id: cumulative
+    operation: cumulative_sum
+    inputs:
+    - stated_total
+    - delta
+    output: cumulative_value
+    parameters:
+      start_kind: start
+      total_kind: total
+    formula: start.stated_total + cumulative sum(increment.delta)
+    reversible: false
+    auditable: true
+  derived:
+    cumulative:
+    - 100
+    - 125
+    - 115
+    - 130
+    - 130
+  traceability:
+    order:
+      field: step
+      type: ordinal
+      unit: null
+    status:
+      field: kind
+      type: categorical
+      unit: null
+    value:
+      field: delta
+      type: quantitative
+      unit: points
+    label:
+      field: step
+      type: ordinal
+      unit: null
+provenance:
+  dataset_source:
+    source: CSDL Milestone 5 synthetic fixture
+    source_type: synthetic
+    source_date: 2026-07-18
+    retrieval_period: not_applicable
+    method: fixed signed steps for cumulative reconciliation
+  proof_source: proofs/sources/04-waterfall.yaml
+  evidence: synthetic_fixed_data
+  builder: tools/build_analytical_mode.py
+  deterministic: true

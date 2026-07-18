@@ -1,0 +1,209 @@
+language: CSDL
+version: '0.1'
+kind: analytical-package
+id: proof-03-scatterplot
+dataset:
+  id: scatter-operations-v1
+  version: 1.0.0
+  path: datasets/03-scatter.yaml
+  source: CSDL Milestone 5 synthetic fixture
+analytical_intent:
+  question: How do review time and success rate vary by configuration?
+  claim: Each configuration keeps independent x and y values, category, and run-count
+    context.
+recipe:
+  id: 019
+  slug: chart
+  version: 0.5.0
+encoding:
+  marks:
+  - type: point
+    role: observation
+  - type: text
+    role: selected-label
+  bindings:
+    detail: configuration
+    x: review_minutes
+    y: success_rate
+    size: runs
+    color: policy
+    label: configuration
+  order:
+  - A
+  - B
+  - C
+  - D
+  domains:
+    x:
+    - 0
+    - 30
+    y:
+    - 0
+    - 100
+    size:
+    - 0
+    - 100
+  scales:
+    x: linear
+    y: linear
+    size: linear
+    color: categorical
+  zero_relevance:
+    x: relevant
+    y: contextual_percent_domain
+  size_semantics: proportional_area
+  overplotting: no_overlap_in_fixed_data
+  trend_line: none
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings:
+  - policy_label
+  - point_form
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+- id: x-axis
+  component: Axis
+  role: quantitative
+- id: y-axis
+  component: Axis
+  role: quantitative
+- id: points
+  component: Node
+  role: data-point
+- id: labels
+  component: Label
+  role: direct-label
+- id: signal
+  component: Signal
+  role: selected-point
+relations:
+- subject: x-axis
+  type: orders
+  object: points
+- subject: y-axis
+  type: orders
+  object: points
+- subject: labels
+  type: attached_to
+  object: points
+- subject: signal
+  type: highlights
+  object: points
+specification:
+  family: scatterplot
+  fields:
+  - id: configuration
+    label: Configuration
+    type: identifier
+    role: identifier
+    nullable: false
+  - id: review_minutes
+    label: Median review time
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: minutes
+    display_format: 0 min
+    domain:
+    - 0
+    - 30
+  - id: success_rate
+    label: Success rate
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: percent
+    display_format: 0%
+    domain:
+    - 0
+    - 100
+  - id: runs
+    label: Runs
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: count
+    display_format: '0'
+    domain:
+    - 0
+    - 100
+  - id: policy
+    label: Policy
+    type: categorical
+    role: dimension
+    nullable: false
+    categories:
+    - baseline
+    - gated
+  records:
+  - id: s1
+    configuration: A
+    review_minutes: 22
+    success_rate: 68
+    runs: 40
+    policy: baseline
+  - id: s2
+    configuration: B
+    review_minutes: 18
+    success_rate: 75
+    runs: 55
+    policy: gated
+  - id: s3
+    configuration: C
+    review_minutes: 14
+    success_rate: 84
+    runs: 70
+    policy: gated
+  - id: s4
+    configuration: D
+    review_minutes: 10
+    success_rate: 90
+    runs: 60
+    policy: gated
+  ordering:
+    field: configuration
+    values:
+    - A
+    - B
+    - C
+    - D
+  missing_values: []
+  transformations: []
+  derived: {}
+  traceability:
+    detail:
+      field: configuration
+      type: identifier
+      unit: null
+    x:
+      field: review_minutes
+      type: quantitative
+      unit: minutes
+    y:
+      field: success_rate
+      type: quantitative
+      unit: percent
+    size:
+      field: runs
+      type: quantitative
+      unit: count
+    color:
+      field: policy
+      type: categorical
+      unit: null
+    label:
+      field: configuration
+      type: identifier
+      unit: null
+provenance:
+  dataset_source:
+    source: CSDL Milestone 5 synthetic fixture
+    source_type: synthetic
+    source_date: 2026-07-18
+    retrieval_period: fixed four-configuration study
+    method: fixed values for independent-domain scatter validation
+  proof_source: proofs/sources/03-scatterplot.yaml
+  evidence: synthetic_fixed_data
+  builder: tools/build_analytical_mode.py
+  deterministic: true

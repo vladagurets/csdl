@@ -1,0 +1,21 @@
+language: CSDL
+version: "0.1"
+kind: analytical-dataset
+dataset:
+  id: bar-variance-v1
+  version: 1.0.0
+  title: Quarterly operating variance
+  status: synthetic_fixed_data
+  unit_of_analysis: operating category per quarter
+  fields:
+    - {id: category, label: Category, type: categorical, role: dimension, nullable: false, ordering: declared}
+    - {id: variance, label: Variance, type: quantitative, role: measure, nullable: false, unit: percentage_points, display_format: "+0;-0;0", domain: [-10, 15], aggregation: sum}
+  records:
+    - {id: b1, category: Reliability, variance: 12}
+    - {id: b2, category: Review time, variance: -5}
+    - {id: b3, category: Coverage, variance: 8}
+    - {id: b4, category: Escaped defects, variance: -3}
+  ordering: {field: category, values: [Reliability, Review time, Coverage, Escaped defects]}
+  missing_values: []
+  transformations: []
+  provenance: {source: CSDL Milestone 5 synthetic fixture, source_type: synthetic, source_date: 2026-07-18, retrieval_period: not_applicable, method: fixed values for signed bar validation}

@@ -1,0 +1,31 @@
+id: proof-03-scatterplot
+family: scatterplot
+dataset: datasets/03-scatter.yaml
+analytical_intent: {question: "How do review time and success rate vary by configuration?", claim: "Each configuration keeps independent x and y values, category, and run-count context."}
+recipe: {id: "019", slug: chart, version: 0.5.0}
+encoding:
+  marks: [{type: point, role: observation}, {type: text, role: selected-label}]
+  bindings: {detail: configuration, x: review_minutes, y: success_rate, size: runs, color: policy, label: configuration}
+  order: [A, B, C, D]
+  domains: {x: [0, 30], y: [0, 100], size: [0, 100]}
+  scales: {x: linear, y: linear, size: linear, color: categorical}
+  zero_relevance: {x: relevant, y: contextual_percent_domain}
+  size_semantics: proportional_area
+  overplotting: no_overlap_in_fixed_data
+  trend_line: none
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings: [policy_label, point_form]
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+  - {id: x-axis, component: Axis, role: quantitative}
+  - {id: y-axis, component: Axis, role: quantitative}
+  - {id: points, component: Node, role: data-point}
+  - {id: labels, component: Label, role: direct-label}
+  - {id: signal, component: Signal, role: selected-point}
+relations:
+  - {subject: x-axis, type: orders, object: points}
+  - {subject: y-axis, type: orders, object: points}
+  - {subject: labels, type: attached_to, object: points}
+  - {subject: signal, type: highlights, object: points}
