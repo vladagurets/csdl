@@ -110,7 +110,7 @@ Formalize the first component set:
 
 For each component, define purpose, semantic meaning, dimensions, allowed relations, compatible recipes, expression-level limits, do/don’t examples, and Prompt DSL syntax.
 
-Current status: all fifteen component records and Markdown specifications are complete and pass strict component-library validation. Editorial, structural, and analytical composition proofs plus deterministic index/compatibility outputs remain before the milestone exit criterion can be evaluated.
+Current status: all fifteen component records and Markdown specifications pass strict validation. Editorial Big Number, structural Architecture, and analytical Chart proofs validate using declared vocabulary alone, and deterministic index/compatibility outputs cover 15 components × 20 families. Final documentation audit, clean-tree reproduction, green CI, and integration remain before the exit criterion is closed.
 
 Exit criterion: a composition can be described and reviewed using component vocabulary alone.
 

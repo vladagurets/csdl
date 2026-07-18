@@ -1,0 +1,142 @@
+id: "03"
+mode: analytical
+family: chart
+expression: A
+evidence: patterns/visual-dna-sprint-01/canonical/light/16x9/19-chart.png
+content:
+  headline: "УСПІШНІСТЬ ЗРОСТАЄ ЩОТИЖНЯ"
+  points: ["W1 · 72%", "W2 · 78%", "W3 · 84%", "W4 · 90%"]
+  source: "DEMO DATA"
+instances:
+  - id: period-axis
+    component: axis
+    attributes:
+      mode: sequence
+      direction: W1-to-W4
+      order: [W1, W2, W3, W4]
+  - id: percent-axis
+    component: axis
+    attributes:
+      mode: quantitative
+      direction: low-to-high
+      domain: [0, 100]
+      unit: percent
+  - id: w1
+    component: node
+    attributes:
+      role: data-point
+      value: 72
+      unit: percent
+      period: W1
+  - id: w2
+    component: node
+    attributes:
+      role: data-point
+      value: 78
+      unit: percent
+      period: W2
+  - id: w3
+    component: node
+    attributes:
+      role: data-point
+      value: 84
+      unit: percent
+      period: W3
+  - id: w4
+    component: node
+    attributes:
+      role: data-point
+      value: 90
+      unit: percent
+      period: W4
+  - id: w1-label
+    component: label
+    attributes:
+      text: "W1 · 72%"
+      target: w1
+      unit: percent
+      period: W1
+  - id: w2-label
+    component: label
+    attributes:
+      text: "W2 · 78%"
+      target: w2
+      unit: percent
+      period: W2
+  - id: w3-label
+    component: label
+    attributes:
+      text: "W3 · 84%"
+      target: w3
+      unit: percent
+      period: W3
+  - id: w4-label
+    component: label
+    attributes:
+      text: "W4 · 90%"
+      target: w4
+      unit: percent
+      period: W4
+  - id: source-label
+    component: label
+    attributes:
+      text: "DEMO DATA"
+      target: percent-axis
+      role: provenance
+  - id: final-signal
+    component: signal
+    attributes:
+      target: w4
+      role: final-point
+      color: data_blue
+      rendering: intrinsic_component_state
+relations:
+  - subject: period-axis
+    type: orders
+    object: w1
+  - subject: period-axis
+    type: orders
+    object: w2
+  - subject: period-axis
+    type: orders
+    object: w3
+  - subject: period-axis
+    type: orders
+    object: w4
+  - subject: percent-axis
+    type: orders
+    object: w1
+  - subject: percent-axis
+    type: orders
+    object: w2
+  - subject: percent-axis
+    type: orders
+    object: w3
+  - subject: percent-axis
+    type: orders
+    object: w4
+  - subject: w1-label
+    type: attached_to
+    object: w1
+  - subject: w2-label
+    type: attached_to
+    object: w2
+  - subject: w3-label
+    type: attached_to
+    object: w3
+  - subject: w4-label
+    type: attached_to
+    object: w4
+  - subject: source-label
+    type: attached_to
+    object: percent-axis
+  - subject: final-signal
+    type: highlights
+    object: w4
+quantitative_contract:
+  dataset: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+  series: success_rate
+  periods: [W1, W2, W3, W4]
+  domain: [0, 100]
+  values: [72, 78, 84, 90]
+  direct_labels: ["W1 · 72%", "W2 · 78%", "W3 · 84%", "W4 · 90%"]

@@ -87,4 +87,4 @@ The Milestone 2 catalog formalizes Hero, Cover, Quote, Big Number, Comparison, C
 
 ## Component Library
 
-Milestone 3 formalizes Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend from accepted Visual DNA evidence. All fifteen component contracts now pass strict library validation. Markdown specifications remain canonical; composition proofs and deterministic index/compatibility outputs are the remaining milestone gates. No new raster generation is part of the component library.
+Milestone 3 formalizes Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend from accepted Visual DNA evidence. All fifteen component contracts and the editorial/structural/analytical proofs pass strict validation. Markdown specifications remain canonical; deterministic index and 15×20 compatibility outputs are generated from the manifest and checked in. No new raster generation is part of the component library.

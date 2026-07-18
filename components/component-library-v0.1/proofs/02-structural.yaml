@@ -1,0 +1,90 @@
+id: "02"
+mode: structural
+family: architecture
+expression: B
+evidence: patterns/visual-dna-sprint-01/canonical/light/16x9/11-architecture.png
+content:
+  headline: "КОНТЕКСТНА АРХІТЕКТУРА АГЕНТА"
+  actors: [USER, AGENT, TOOLS, MEMORY]
+  permitted_relations:
+    - "USER → AGENT"
+    - "AGENT ↔ TOOLS"
+    - "AGENT ↔ MEMORY"
+instances:
+  - id: system-context
+    component: field
+    attributes:
+      role: context
+      boundary: agent-system
+      openness: open_boundary
+      signal_state: primary-boundary
+  - id: user
+    component: node
+    attributes:
+      role: actor
+      content: USER
+  - id: agent
+    component: node
+    attributes:
+      role: actor
+      content: AGENT
+  - id: tools
+    component: node
+    attributes:
+      role: actor
+      content: TOOLS
+  - id: memory
+    component: node
+    attributes:
+      role: actor
+      content: MEMORY
+  - id: user-agent
+    component: bridge
+    attributes:
+      source: user
+      target: agent
+      role: topology
+      direction: directed
+  - id: agent-tools
+    component: bridge
+    attributes:
+      source: agent
+      target: tools
+      role: topology
+      direction: bidirectional
+      signal_state: primary-relation
+  - id: agent-memory
+    component: bridge
+    attributes:
+      source: agent
+      target: memory
+      role: topology
+      direction: bidirectional
+relations:
+  - subject: system-context
+    type: contains
+    object: agent
+  - subject: system-context
+    type: contains
+    object: tools
+  - subject: system-context
+    type: contains
+    object: memory
+  - subject: user-agent
+    type: connected_to
+    object: user
+  - subject: user-agent
+    type: connected_to
+    object: agent
+  - subject: agent-tools
+    type: connected_to
+    object: agent
+  - subject: agent-tools
+    type: connected_to
+    object: tools
+  - subject: agent-memory
+    type: connected_to
+    object: agent
+  - subject: agent-memory
+    type: connected_to
+    object: memory

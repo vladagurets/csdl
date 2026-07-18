@@ -1,0 +1,572 @@
+library: component-library-v0.1
+version: 0.1.0
+families:
+- hero
+- cover
+- quote
+- big-number
+- comparison
+- collision
+- before-after
+- timeline
+- matrix
+- hierarchy
+- architecture
+- workflow
+- loop
+- pipeline
+- decision-tree
+- framework
+- kpi
+- table
+- chart
+- dashboard
+components:
+- id: '01'
+  slug: anchor
+  families:
+    hero: direct
+    cover: direct
+    quote: direct
+    big-number: direct
+    comparison: direct
+    collision: direct
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: direct
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: direct
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '02'
+  slug: signal
+  families:
+    hero: direct
+    cover: direct
+    quote: direct
+    big-number: direct
+    comparison: direct
+    collision: direct
+    before-after: direct
+    timeline: direct
+    matrix: direct
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: direct
+    loop: direct
+    pipeline: direct
+    decision-tree: direct
+    framework: direct
+    kpi: direct
+    table: direct
+    chart: direct
+    dashboard: direct
+- id: '03'
+  slug: field
+  families:
+    hero: incompatible
+    cover: direct
+    quote: incompatible
+    big-number: incompatible
+    comparison: direct
+    collision: incompatible
+    before-after: direct
+    timeline: incompatible
+    matrix: direct
+    hierarchy: incompatible
+    architecture: direct
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '04'
+  slug: frame
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: direct
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: direct
+    chart: incompatible
+    dashboard: incompatible
+- id: '05'
+  slug: cluster
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: direct
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: direct
+- id: '06'
+  slug: vector
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: direct
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: direct
+    loop: incompatible
+    pipeline: direct
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '07'
+  slug: divider
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: direct
+    collision: incompatible
+    before-after: direct
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: 08
+  slug: node
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: direct
+    matrix: direct
+    hierarchy: direct
+    architecture: direct
+    workflow: direct
+    loop: direct
+    pipeline: direct
+    decision-tree: direct
+    framework: direct
+    kpi: incompatible
+    table: incompatible
+    chart: direct
+    dashboard: incompatible
+- id: 09
+  slug: loop
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: direct
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '10'
+  slug: collision
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: direct
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '11'
+  slug: bridge
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: direct
+    architecture: direct
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: direct
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: incompatible
+    dashboard: incompatible
+- id: '12'
+  slug: axis
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: direct
+    matrix: direct
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: direct
+    table: direct
+    chart: direct
+    dashboard: direct
+- id: '13'
+  slug: pulse
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: direct
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: direct
+    table: incompatible
+    chart: incompatible
+    dashboard: direct
+- id: '14'
+  slug: label
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: direct
+    comparison: incompatible
+    collision: direct
+    before-after: incompatible
+    timeline: direct
+    matrix: direct
+    hierarchy: direct
+    architecture: direct
+    workflow: direct
+    loop: direct
+    pipeline: direct
+    decision-tree: direct
+    framework: direct
+    kpi: direct
+    table: direct
+    chart: direct
+    dashboard: direct
+- id: '15'
+  slug: legend
+  families:
+    hero: incompatible
+    cover: incompatible
+    quote: incompatible
+    big-number: incompatible
+    comparison: incompatible
+    collision: incompatible
+    before-after: incompatible
+    timeline: incompatible
+    matrix: incompatible
+    hierarchy: incompatible
+    architecture: incompatible
+    workflow: incompatible
+    loop: incompatible
+    pipeline: incompatible
+    decision-tree: incompatible
+    framework: incompatible
+    kpi: incompatible
+    table: incompatible
+    chart: conditional
+    dashboard: conditional
+by_family:
+- family: hero
+  components:
+  - component: anchor
+    status: direct
+  - component: signal
+    status: direct
+- family: cover
+  components:
+  - component: anchor
+    status: direct
+  - component: signal
+    status: direct
+  - component: field
+    status: direct
+- family: quote
+  components:
+  - component: anchor
+    status: direct
+  - component: signal
+    status: direct
+- family: big-number
+  components:
+  - component: anchor
+    status: direct
+  - component: signal
+    status: direct
+  - component: pulse
+    status: direct
+  - component: label
+    status: direct
+- family: comparison
+  components:
+  - component: anchor
+    status: direct
+  - component: signal
+    status: direct
+  - component: field
+    status: direct
+  - component: divider
+    status: direct
+- family: collision
+  components:
+  - component: anchor
+    status: direct
+  - component: signal
+    status: direct
+  - component: collision
+    status: direct
+  - component: label
+    status: direct
+- family: before-after
+  components:
+  - component: signal
+    status: direct
+  - component: field
+    status: direct
+  - component: vector
+    status: direct
+  - component: divider
+    status: direct
+- family: timeline
+  components:
+  - component: signal
+    status: direct
+  - component: node
+    status: direct
+  - component: axis
+    status: direct
+  - component: label
+    status: direct
+- family: matrix
+  components:
+  - component: signal
+    status: direct
+  - component: field
+    status: direct
+  - component: node
+    status: direct
+  - component: axis
+    status: direct
+  - component: label
+    status: direct
+- family: hierarchy
+  components:
+  - component: anchor
+    status: direct
+  - component: frame
+    status: direct
+  - component: node
+    status: direct
+  - component: bridge
+    status: direct
+  - component: label
+    status: direct
+- family: architecture
+  components:
+  - component: field
+    status: direct
+  - component: node
+    status: direct
+  - component: bridge
+    status: direct
+  - component: label
+    status: direct
+- family: workflow
+  components:
+  - component: signal
+    status: direct
+  - component: vector
+    status: direct
+  - component: node
+    status: direct
+  - component: label
+    status: direct
+- family: loop
+  components:
+  - component: signal
+    status: direct
+  - component: node
+    status: direct
+  - component: loop
+    status: direct
+  - component: label
+    status: direct
+- family: pipeline
+  components:
+  - component: signal
+    status: direct
+  - component: vector
+    status: direct
+  - component: node
+    status: direct
+  - component: label
+    status: direct
+- family: decision-tree
+  components:
+  - component: signal
+    status: direct
+  - component: node
+    status: direct
+  - component: bridge
+    status: direct
+  - component: label
+    status: direct
+- family: framework
+  components:
+  - component: anchor
+    status: direct
+  - component: signal
+    status: direct
+  - component: cluster
+    status: direct
+  - component: node
+    status: direct
+  - component: label
+    status: direct
+- family: kpi
+  components:
+  - component: signal
+    status: direct
+  - component: axis
+    status: direct
+  - component: pulse
+    status: direct
+  - component: label
+    status: direct
+- family: table
+  components:
+  - component: signal
+    status: direct
+  - component: frame
+    status: direct
+  - component: axis
+    status: direct
+  - component: label
+    status: direct
+- family: chart
+  components:
+  - component: signal
+    status: direct
+  - component: node
+    status: direct
+  - component: axis
+    status: direct
+  - component: label
+    status: direct
+  - component: legend
+    status: conditional
+- family: dashboard
+  components:
+  - component: signal
+    status: direct
+  - component: cluster
+    status: direct
+  - component: axis
+    status: direct
+  - component: pulse
+    status: direct
+  - component: label
+    status: direct
+  - component: legend
+    status: conditional

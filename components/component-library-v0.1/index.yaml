@@ -1,0 +1,260 @@
+library: component-library-v0.1
+version: 0.1.0
+component_count: 15
+components:
+- id: '01'
+  slug: anchor
+  name: Anchor
+  category: semantic
+  evidence_level: strong
+  specification: specs/01-anchor.md
+  compatible_families:
+  - hero
+  - cover
+  - quote
+  - big-number
+  - comparison
+  - collision
+  - hierarchy
+  - framework
+  allowed_levels:
+  - A
+  - B
+  - C
+  prompt_dsl_syntax: Anchor(id=<id>, role=<primary|peer>, content=<copy-ref>)
+- id: '02'
+  slug: signal
+  name: Signal
+  category: semantic
+  evidence_level: strong
+  specification: specs/02-signal.md
+  compatible_families:
+  - hero
+  - cover
+  - quote
+  - big-number
+  - comparison
+  - collision
+  - before-after
+  - timeline
+  - matrix
+  - workflow
+  - loop
+  - pipeline
+  - decision-tree
+  - framework
+  - kpi
+  - table
+  - chart
+  - dashboard
+  allowed_levels:
+  - A
+  - B
+  - C
+  prompt_dsl_syntax: Signal(id=<id>, target=<instance-id>, role=<semantic-role>)
+- id: '03'
+  slug: field
+  name: Field
+  category: spatial
+  evidence_level: strong
+  specification: specs/03-field.md
+  compatible_families:
+  - cover
+  - comparison
+  - before-after
+  - matrix
+  - architecture
+  allowed_levels:
+  - A
+  - B
+  - C
+  prompt_dsl_syntax: Field(id=<id>, role=<context|state|coordinate>)
+- id: '04'
+  slug: frame
+  name: Frame
+  category: structural
+  evidence_level: bounded
+  specification: specs/04-frame.md
+  compatible_families:
+  - hierarchy
+  - table
+  allowed_levels:
+  - A
+  - B
+  prompt_dsl_syntax: Frame(id=<id>, scope=<scope-ref>)
+- id: '05'
+  slug: cluster
+  name: Cluster
+  category: structural
+  evidence_level: strong
+  specification: specs/05-cluster.md
+  compatible_families:
+  - framework
+  - dashboard
+  allowed_levels:
+  - A
+  - B
+  prompt_dsl_syntax: Cluster(id=<id>, members=<instance-ids>, role=<group-role>)
+- id: '06'
+  slug: vector
+  name: Vector
+  category: relational
+  evidence_level: strong
+  specification: specs/06-vector.md
+  compatible_families:
+  - before-after
+  - workflow
+  - pipeline
+  allowed_levels:
+  - A
+  - B
+  - C
+  prompt_dsl_syntax: Vector(id=<id>, source=<instance-id>, target=<instance-id>, role=<action|transformation|carrier>)
+- id: '07'
+  slug: divider
+  name: Divider
+  category: structural
+  evidence_level: strong
+  specification: specs/07-divider.md
+  compatible_families:
+  - comparison
+  - before-after
+  allowed_levels:
+  - A
+  - B
+  - C
+  prompt_dsl_syntax: Divider(id=<id>, subjects=<instance-ids>)
+- id: 08
+  slug: node
+  name: Node
+  category: structural
+  evidence_level: strong
+  specification: specs/08-node.md
+  compatible_families:
+  - timeline
+  - matrix
+  - hierarchy
+  - architecture
+  - workflow
+  - loop
+  - pipeline
+  - decision-tree
+  - framework
+  - chart
+  allowed_levels:
+  - A
+  - B
+  - C
+  prompt_dsl_syntax: Node(id=<id>, role=<stage|actor|option|concept|gate|data-point>)
+- id: 09
+  slug: loop
+  name: Loop
+  category: relational
+  evidence_level: strong
+  specification: specs/09-loop.md
+  compatible_families:
+  - loop
+  allowed_levels:
+  - A
+  - B
+  - C
+  prompt_dsl_syntax: Loop(id=<id>, members=<node-ids>, direction=<clockwise|counterclockwise>,
+    closed=true)
+- id: '10'
+  slug: collision
+  name: Collision
+  category: relational
+  evidence_level: strong
+  specification: specs/10-collision.md
+  compatible_families:
+  - collision
+  allowed_levels:
+  - B
+  - C
+  prompt_dsl_syntax: Collision(id=<id>, inputs=<anchor-ids>, result=<content-ref>)
+- id: '11'
+  slug: bridge
+  name: Bridge
+  category: relational
+  evidence_level: strong
+  specification: specs/11-bridge.md
+  compatible_families:
+  - hierarchy
+  - architecture
+  - decision-tree
+  allowed_levels:
+  - A
+  - B
+  prompt_dsl_syntax: Bridge(id=<id>, source=<instance-id>, target=<instance-id>, role=<topology|ownership|branch>)
+- id: '12'
+  slug: axis
+  name: Axis
+  category: structural
+  evidence_level: strong
+  specification: specs/12-axis.md
+  compatible_families:
+  - timeline
+  - matrix
+  - kpi
+  - table
+  - chart
+  - dashboard
+  allowed_levels:
+  - A
+  - B
+  prompt_dsl_syntax: Axis(id=<id>, mode=<sequence|coordinate|lookup|support|quantitative>,
+    direction=<semantic-direction>)
+- id: '13'
+  slug: pulse
+  name: Pulse
+  category: analytical
+  evidence_level: strong
+  specification: specs/13-pulse.md
+  compatible_families:
+  - big-number
+  - kpi
+  - dashboard
+  allowed_levels:
+  - A
+  - B
+  - C
+  prompt_dsl_syntax: Pulse(id=<id>, value=<value-ref>, label=<label-ref>)
+- id: '14'
+  slug: label
+  name: Label
+  category: annotation
+  evidence_level: strong
+  specification: specs/14-label.md
+  compatible_families:
+  - big-number
+  - collision
+  - timeline
+  - matrix
+  - hierarchy
+  - architecture
+  - workflow
+  - loop
+  - pipeline
+  - decision-tree
+  - framework
+  - kpi
+  - table
+  - chart
+  - dashboard
+  allowed_levels:
+  - A
+  - B
+  - C
+  prompt_dsl_syntax: Label(id=<id>, text=<content-ref>, target=<instance-id>)
+- id: '15'
+  slug: legend
+  name: Legend
+  category: annotation
+  evidence_level: constrained
+  specification: specs/15-legend.md
+  compatible_families:
+  - chart
+  - dashboard
+  allowed_levels:
+  - A
+  prompt_dsl_syntax: Legend(id=<id>, items=<mapping-items>, reason_direct_labels_fail=<reason>)
