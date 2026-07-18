@@ -1,0 +1,24 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-proof-source
+id: proof-02-structural-signal
+scenario: structural-signal
+source_reference:
+  kind: generation-package
+  path: recipes/recipe-library-v0.5/proofs/packages/02-structural.yaml
+profiles: [light, night, monochrome]
+text_elements:
+  - {id: title, role: display, foreground: ink.primary, background: background.base}
+  - {id: stage-labels, role: label, foreground: ink.primary, background: background.base}
+  - {id: evidence-label, role: metadata, foreground: ink.secondary, background: background.base}
+graphical_objects:
+  - {id: route, role: rule, component: Vector, foreground: line.strong, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: active-node, role: signal, component: Node, foreground: signal.primary, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: focus-state, role: focus, component: Node, foreground: state.focus, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: selection-state, role: selection, component: Node, foreground: state.selection, background: background.base, stroke_px: 2, meaningful: true}
+semantic_encodings:
+  - {meaning: signal, color_token: signal.primary, redundant_carriers: [shape, direct_label, stroke_weight], target: verify, area_percent: 3, max_area_percent: 7}
+  - {meaning: direction, color_token: line.strong, redundant_carriers: [arrowhead, direct_label], target: workflow-route}
+  - {meaning: focus, color_token: state.focus, redundant_carriers: [boundary, stroke_weight], target: focused-node}
+  - {meaning: selection, color_token: state.selection, redundant_carriers: [boundary, direct_label], target: selected-node}
+output: {canvas: 1920x1080, orientation: landscape, colorspace: sRGB, format: deterministic-specification}

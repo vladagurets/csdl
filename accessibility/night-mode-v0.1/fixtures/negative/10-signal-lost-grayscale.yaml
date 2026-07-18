@@ -1,0 +1,2 @@
+base_package: proofs/packages/09-monochrome-export.yaml
+mutation: {path: [semantic_encodings, 0, grayscale_contrast], value: 2.0}

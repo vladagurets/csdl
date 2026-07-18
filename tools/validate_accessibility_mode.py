@@ -7,6 +7,9 @@ from typing import Any
 
 import yaml
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 
 EXPECTED_PROFILES = ["light", "night", "monochrome", "projector"]
 EXPECTED_COMPONENTS = [
@@ -93,7 +96,11 @@ def _canonical_digest(value: Any) -> str:
     import json
 
     encoded = json.dumps(
-        value, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+        value,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+        default=str,
     ).encode("utf-8")
     return "sha256:" + hashlib.sha256(encoded).hexdigest()
 
@@ -115,6 +122,35 @@ def _canonical_source_document(
     if document and document.get("kind") != reference.get("kind"):
         errors.append("accessibility source reference kind must match canonical source")
     return document
+
+
+def derive_source_semantics(document: dict[str, Any]) -> dict[str, Any]:
+    kind = document.get("kind")
+    if kind == "analytical-package":
+        specification = document.get("specification", {})
+        return {
+            "kind": kind,
+            "id": document.get("id"),
+            "dataset": document.get("dataset"),
+            "analytical_intent": document.get("analytical_intent"),
+            "recipe": document.get("recipe"),
+            "family": specification.get("family"),
+            "records": specification.get("records"),
+            "ordering": specification.get("ordering"),
+            "missing_values": specification.get("missing_values"),
+            "encoding": document.get("encoding"),
+        }
+    if kind == "generation-package":
+        return {
+            "kind": kind,
+            "id": document.get("id"),
+            "recipe": document.get("recipe"),
+            "semantic_intent": document.get("semantic_intent"),
+            "content": document.get("content"),
+            "component_instances": document.get("component_instances"),
+            "relations": document.get("relations"),
+        }
+    raise ValueError(f"unsupported accessibility semantic source kind: {kind}")
 
 
 def validate_accessibility_source(
@@ -192,7 +228,10 @@ def validate_accessibility_package(
     if package.get("kind") != "accessibility-package":
         errors.append("accessibility package kind must equal accessibility-package")
     forbidden = {str(key).lower() for key in schema.get("forbidden_keys", [])}
-    for key in sorted(_find_forbidden_keys(package, forbidden)):
+    accessibility_authored_fields = {
+        key: value for key, value in package.items() if key != "source_semantics"
+    }
+    for key in sorted(_find_forbidden_keys(accessibility_authored_fields, forbidden)):
         errors.append(f"accessibility package contains forbidden key: {key}")
 
     source_document = _canonical_source_document(package, root, errors)
@@ -200,6 +239,16 @@ def validate_accessibility_package(
         source_document
     ):
         errors.append("accessibility source digest must match canonical source")
+    if source_document:
+        try:
+            expected_source_semantics = derive_source_semantics(source_document)
+        except ValueError as error:
+            errors.append(str(error))
+        else:
+            if package.get("source_semantics") != expected_source_semantics:
+                errors.append(
+                    "accessibility source semantics must match canonical source independently"
+                )
 
     profile_names = package.get("profiles", [])
     if not isinstance(profile_names, list) or not profile_names:
@@ -216,6 +265,13 @@ def validate_accessibility_package(
     for element in text_elements:
         if element.get("role") not in allowed_text_roles:
             errors.append(f"accessibility text role is undeclared: {element.get('role')}")
+        for prohibited in contrast.get("prohibited_pairings", []):
+            if (
+                prohibited.get("use") == "normal_text"
+                and element.get("foreground") == prohibited.get("foreground")
+                and element.get("background") == prohibited.get("background")
+            ):
+                errors.append("prohibited foreground/background combination")
     allowed_graphic_roles = set(schema.get("graphical_roles", []))
     graphical_objects = package.get("graphical_objects", [])
     public_components = {
@@ -228,7 +284,7 @@ def validate_accessibility_package(
         "Vector": {"line.strong", "signal.primary", "signal.data"},
         "Bridge": {"line.strong", "signal.primary", "signal.data", "signal.attention"},
         "Axis": {"line.strong", "signal.primary", "signal.data"},
-        "Node": {"line.strong", "signal.primary", "signal.data", "signal.attention", "signal.positive", "signal.error", "state.focus", "state.selection"},
+        "Node": {"line.strong", "signal.primary", "signal.data", "signal.attention", "signal.positive", "signal.error", "state.focus", "state.selection", "data.missing"},
         "Loop": {"line.strong", "signal.primary", "signal.data"},
         "Field": {"line.strong"},
         "Collision": {"line.strong", "signal.primary"},
@@ -246,7 +302,8 @@ def validate_accessibility_package(
 
     allowed_carriers = set(schema.get("redundant_carriers", []))
     allowed_meanings = set(schema.get("semantic_meanings", []))
-    for encoding in package.get("semantic_encodings", []):
+    semantic_encodings = package.get("semantic_encodings", [])
+    for encoding in semantic_encodings:
         if encoding.get("meaning") not in allowed_meanings:
             errors.append(f"accessibility semantic meaning is undeclared: {encoding.get('meaning')}")
         carriers = encoding.get("redundant_carriers", [])
@@ -256,6 +313,123 @@ def validate_accessibility_package(
         maximum = encoding.get("max_area_percent")
         if area is not None and maximum is not None and area > maximum:
             errors.append("accessibility Signal area exceeds its existing semantic ceiling")
+
+    by_meaning = {
+        encoding.get("meaning"): encoding for encoding in semantic_encodings
+    }
+    scenario = package.get("scenario")
+    if scenario == "editorial-equivalence":
+        if package.get("profiles") != ["light", "night"] or "signal" not in by_meaning:
+            errors.append("editorial proof requires light/night semantic equivalence")
+    elif scenario == "structural-signal":
+        if not {"signal", "direction", "focus", "selection"} <= set(by_meaning):
+            errors.append("structural proof requires accessible Signal, direction, focus, and selection")
+    elif scenario == "exact-table":
+        data = by_meaning.get("data", {})
+        if not all(
+            data.get(key) is True
+            for key in (
+                "exact_lookup",
+                "direct_labels",
+                "units_readable",
+                "source_readable",
+                "missing_distinct_from_zero",
+            )
+        ):
+            errors.append("exact table requires lookup, labels, units, source, and missing semantics")
+    elif scenario == "positive-negative-bar":
+        data = by_meaning.get("data", {})
+        carriers = set(data.get("redundant_carriers", []))
+        if (
+            data.get("zero_baseline") is not True
+            or data.get("signed_values") is not True
+            or not {"position_from_zero", "numeric_label"} <= carriers
+        ):
+            errors.append("positive/negative bars require zero, sign, position, and numeric labels")
+    elif scenario == "forecast-uncertainty":
+        observed = by_meaning.get("observed", {})
+        forecast = by_meaning.get("forecast", {})
+        if (
+            observed.get("line_style") == forecast.get("line_style")
+            or "direct_label" not in observed.get("redundant_carriers", [])
+            or "direct_label" not in forecast.get("redundant_carriers", [])
+        ):
+            errors.append(
+                "observed and forecast values require distinct line styles and direct labels"
+            )
+        uncertainty = by_meaning.get("uncertainty", {})
+        if (
+            uncertainty.get("visible") is not True
+            or uncertainty.get("lower_upper_visible") is not True
+            or not uncertainty.get("interval_type")
+            or not uncertainty.get("level")
+            or "interval_boundary" not in uncertainty.get("redundant_carriers", [])
+            or "direct_label" not in uncertainty.get("redundant_carriers", [])
+        ):
+            errors.append(
+                "uncertainty interval requires visible boundaries, label, type, and level"
+            )
+    elif scenario == "heatmap-fallback":
+        data = by_meaning.get("data", {})
+        if not {"numeric_label", "pattern"} <= set(data.get("scale_fallback", [])):
+            errors.append("heatmap scale requires numeric-label and pattern fallback")
+        if (
+            data.get("missing_distinct_from_zero") is not True
+            or data.get("missing_label") in {None, "", 0, "0"}
+        ):
+            errors.append("missing-value encoding must remain distinct from zero")
+    elif scenario == "normalized-map":
+        data = by_meaning.get("data", {})
+        if not {"pattern", "direct_label"} <= set(
+            data.get("redundant_carriers", [])
+        ):
+            errors.append("map regions require pattern and direct-label fallback")
+        if data.get("normalized_rate") is not True or not data.get("missing_label"):
+            errors.append("normalized map requires rate semantics and explicit missing region")
+    elif scenario == "directed-network":
+        direction = by_meaning.get("direction", {})
+        if not {"arrowhead", "direct_label"} <= set(
+            direction.get("redundant_carriers", [])
+        ):
+            errors.append("network direction requires arrowhead and direct-label fallback")
+        weight = by_meaning.get("weight", {})
+        if not {"stroke_weight", "numeric_label"} <= set(
+            weight.get("redundant_carriers", [])
+        ):
+            errors.append("network weight requires stroke and numeric-label fallback")
+    elif scenario == "monochrome-export":
+        required_meanings = {
+            "signal",
+            "focus",
+            "selection",
+            "error",
+            "positive",
+            "attention",
+            "data",
+            "missing",
+            "uncertainty",
+            "observed",
+            "forecast",
+        }
+        if package.get("profiles") != ["monochrome"] or not required_meanings <= set(
+            by_meaning
+        ):
+            errors.append("monochrome export must cover every required semantic state")
+        signal = by_meaning.get("signal", {})
+        if (
+            signal.get("grayscale_contrast", 0) < 3
+            or not {"shape", "stroke_weight"} <= set(
+                signal.get("redundant_carriers", [])
+            )
+        ):
+            errors.append("Signal must survive grayscale with form and minimum contrast")
+    elif scenario == "projector-fallback":
+        if package.get("profiles") != ["projector"]:
+            errors.append("projector proof must use only the projector profile")
+        if not {"data", "signal"} <= set(by_meaning):
+            errors.append("projector proof requires readable data and one accessible Signal")
+    else:
+        errors.append(f"accessibility scenario is undeclared: {scenario}")
 
     semantic_signature = _canonical_digest(
         {
@@ -615,6 +789,49 @@ def validate_accessibility_library(
                 )
                 if actual and actual != expected:
                     errors.append(messages[key])
+        fixture_root = root / "fixtures/negative"
+        fixture_index = _load(
+            fixture_root / "expected-errors.yaml",
+            errors,
+            "accessibility negative fixture index",
+        )
+        fixtures = fixture_index.get("fixtures", []) if fixture_index else []
+        expected_fixture_files = [entry.get("file") for entry in fixtures]
+        actual_fixture_files = sorted(
+            path.name
+            for path in fixture_root.glob("*.yaml")
+            if path.name != "expected-errors.yaml"
+        )
+        if len(fixtures) < 17 or expected_fixture_files != actual_fixture_files:
+            errors.append(
+                "strict accessibility validation requires the indexed negative fixtures"
+            )
+        for fixture in fixtures:
+            fixture_errors = validate_negative_fixture(
+                fixture_root / str(fixture.get("file", "")), root
+            )
+            if fixture.get("error") not in fixture_errors:
+                errors.append(
+                    "negative accessibility fixture does not fail for expected reason: "
+                    + str(fixture.get("file"))
+                )
+        positive_index = _load(
+            root / "fixtures/positive/index.yaml",
+            errors,
+            "accessibility positive fixture index",
+        )
+        expected_positive = [
+            {
+                "id": Path(str(proof.get("package", ""))).stem,
+                "package": proof.get("package"),
+                "scenario": proof.get("scenario"),
+            }
+            for proof in manifest.get("proofs", [])
+        ]
+        if positive_index.get("fixtures", []) != expected_positive:
+            errors.append(
+                "positive fixture index must reference all ten accessibility proofs"
+            )
     return errors
 
 
