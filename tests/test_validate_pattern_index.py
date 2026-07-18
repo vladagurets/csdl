@@ -1,3 +1,5 @@
+import subprocess
+import sys
 from pathlib import Path
 
 import yaml
@@ -7,6 +9,19 @@ from tools.validate_pattern_index import validate_pattern_index
 
 ROOT = Path(__file__).parents[1]
 CATALOG = ROOT / "patterns/visual-dna-sprint-01"
+
+
+def test_cli_entrypoint_runs_from_repository_root() -> None:
+    result = subprocess.run(
+        [sys.executable, "tools/validate_pattern_index.py", str(CATALOG)],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert result.stdout.strip() == "pattern index valid"
 
 
 def test_incomplete_index_accepts_three_pilot_evidence_entries() -> None:

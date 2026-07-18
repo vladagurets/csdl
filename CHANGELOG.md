@@ -27,6 +27,7 @@
 - Added Table from three candidates, selecting the cell-exact W1–W4 Level A open lookup Frame with only the W4 header in dusty blue, plus full-resolution, primary-authority, and series evidence.
 - Added Chart from an initial three-candidate pass plus one bounded geometry correction, selecting the exact-label 0–100% Level A success-rate series after raster-auditing scale error, total rise, and blue footprint.
 - Added Dashboard from three candidates, selecting the exact W4 Level A open composite with one primary Pulse, three supporting measures, a consistent four-week trend, and no widget chrome.
+- Completed Visual DNA Sprint 1 with 20 standardized landscape previews, full/editorial/structural/analytical contact sheets, strict complete-mode asset/score/review/index validation, and a regression test for the documented index-validator CLI entrypoint.
 
 ## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
 

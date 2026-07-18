@@ -9,6 +9,9 @@ from typing import Any
 import yaml
 from PIL import Image
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 from tools.build_pattern_catalog import resolve_asset
 
 

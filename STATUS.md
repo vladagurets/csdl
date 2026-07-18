@@ -1,8 +1,8 @@
 # Project Status
 
 **Project:** Constructive Signal Design Language
-**Version:** Visual DNA Sprint 1 infrastructure
-**Current milestone:** Milestone 2 — in progress
+**Version:** Visual DNA Sprint 1 catalog
+**Current milestone:** Milestone 2 — complete
 **Last updated:** 2026-07-18
 
 ## Outcome
@@ -19,7 +19,7 @@ The completed release contains:
 - complete candidate, exact-copy, raster, selection, and rubric evidence;
 - passing automated validation.
 
-Milestone 2 has started from a synchronized clean `main`. Its infrastructure packet defines:
+Milestone 2 is complete as a twenty-family Visual DNA catalog. Its infrastructure defines:
 
 - the exact 20-family catalog order and 13 A / 6 B / 1 C canonical distribution;
 - complete per-family semantic, assembly, expression-level, typography, spacing, signal, content, exclusion, Prompt DSL, and acceptance contracts;
@@ -44,13 +44,19 @@ pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png
 pilots/01-agentic-discipline/canonical/light/16x9/06-takeaway.png
 pilots/01-agentic-discipline/canonical/light/16x9/07-share-card.png
 pilots/01-agentic-discipline/contact-sheets/pilot-01-light.png
+patterns/visual-dna-sprint-01/canonical/light/16x9/04-cover.png through 20-dashboard.png
+patterns/visual-dna-sprint-01/previews/landscape/01-hero.png through 20-dashboard.png
+patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-all.png
+patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-editorial.png
+patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-structural.png
+patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-analytical.png
 ```
 
 ## Validation state
 
 ```text
 .venv/bin/python -m pytest -q
-48 passed
+49 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
@@ -63,16 +69,37 @@ assets valid
 
 .venv/bin/python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.csv
 scores valid
+
+.venv/bin/python tools/validate_pattern_catalog.py patterns/visual-dna-sprint-01/manifest.yaml
+pattern catalog valid
+
+.venv/bin/python tools/validate_pattern_data.py patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+pattern analytical data valid
+
+.venv/bin/python tools/validate_pattern_assets.py patterns/visual-dna-sprint-01
+pattern assets valid
+
+.venv/bin/python tools/validate_pattern_scores.py patterns/visual-dna-sprint-01/evaluation/scores.csv
+pattern scores valid
+
+.venv/bin/python tools/validate_pattern_review.py patterns/visual-dna-sprint-01
+pattern review valid
+
+.venv/bin/python tools/build_pattern_catalog.py patterns/visual-dna-sprint-01
+pattern catalog built: 20 previews, 4 contact sheets
+
+.venv/bin/python tools/validate_pattern_index.py patterns/visual-dna-sprint-01
+pattern index valid
 ```
 
 ## Primary signal status
 
-Partially validated: 20/20 families now have accepted canonical evidence — three audited Pilot references, the complete D-028 corrective sequence through Pipeline, and newly generated Decision Tree, Framework, KPI, Table, Chart, and Dashboard. Complete contact sheets and strict milestone validation remain. Pilot 01 remains fully met.
+Met: all 20 families have accepted canonical evidence — three audited Pilot references, the complete D-028 corrective sequence through Pipeline, and newly generated Decision Tree, Framework, KPI, Table, Chart, and Dashboard. The full, editorial, structural, and analytical contact sheets pass visual review, and all strict milestone validators pass. Pilot 01 remains fully met.
 
 ## Secondary signal status
 
-In progress: all twenty families pass their individual primary-authority, Prompt DSL, exact-copy/data, raster, flat-signal, and series-contact-sheet gates. Strict complete-mode asset, score, index, and generated catalog contact-sheet gates still await the final catalog build packet.
+Met: all twenty families pass their individual primary-authority, Prompt DSL, exact-copy/data, raster, flat-signal, and series-contact-sheet gates. Complete-mode asset, score, review, machine-index, preview, and contact-sheet gates pass for the built catalog.
 
 ## Repository state
 
-Infrastructure review is open from `codex/m2-infrastructure`; all twenty family evidence packets are complete through Dashboard, and work proceeds to the final catalog build and strict validation packet.
+Infrastructure review and the stacked family sequence remain open without merges. All twenty family evidence packets are complete through Dashboard; the final catalog build and strict validation packet is ready on `codex/m2-catalog-completion` above `codex/m2-dashboard`.
