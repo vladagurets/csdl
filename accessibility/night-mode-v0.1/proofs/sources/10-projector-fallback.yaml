@@ -1,0 +1,25 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-proof-source
+id: proof-10-projector-fallback
+scenario: projector-fallback
+source_reference:
+  kind: analytical-package
+  path: analytics/analytical-mode-v0.1/proofs/packages/10-dashboard.yaml
+profiles: [projector]
+text_elements:
+  - {id: title, role: display, foreground: ink.primary, background: background.base}
+  - {id: values, role: body, foreground: ink.primary, background: background.base}
+  - {id: labels, role: label, foreground: ink.primary, background: background.base}
+  - {id: metadata, role: metadata, foreground: ink.secondary, background: background.base}
+  - {id: axis, role: axis, foreground: ink.primary, background: background.base}
+  - {id: units, role: unit, foreground: ink.secondary, background: background.base}
+  - {id: source, role: source, foreground: ink.secondary, background: background.base}
+graphical_objects:
+  - {id: axes, role: axis, component: Axis, foreground: line.strong, background: background.base, stroke_px: 3, meaningful: true}
+  - {id: surface-boundary, role: surface_boundary, component: Frame, foreground: line.strong, background: background.base, stroke_px: 3, meaningful: true}
+  - {id: primary-signal, role: signal, component: Signal, foreground: signal.data, background: background.base, stroke_px: 3, meaningful: true}
+semantic_encodings:
+  - {meaning: data, color_token: signal.data, redundant_carriers: [direct_label, shape], units_readable: true, source_readable: true, target: dashboard-values}
+  - {meaning: signal, color_token: signal.data, redundant_carriers: [shape, direct_label, stroke_weight], target: primary-value, area_percent: 5, max_area_percent: 7}
+output: {canvas: 1920x1080, orientation: landscape, colorspace: sRGB, format: deterministic-specification}

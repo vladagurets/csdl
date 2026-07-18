@@ -1,0 +1,414 @@
+language: CSDL
+version: '0.1'
+kind: accessibility-package
+id: proof-04-positive-negative-bar
+scenario: positive-negative-bar
+source_reference:
+  kind: analytical-package
+  path: analytics/analytical-mode-v0.1/proofs/packages/01-bar-positive-negative.yaml
+semantic_source_digest: sha256:794c273b0a052d0fa87bf81cf72f454f90c64f3ed3fdb089be43004ee70eda69
+source_semantics:
+  kind: analytical-package
+  id: proof-01-bar-positive-negative
+  dataset:
+    id: bar-variance-v1
+    version: 1.0.0
+    path: datasets/01-bar-positive-negative.yaml
+    source: CSDL Milestone 5 synthetic fixture
+  analytical_intent:
+    question: Which categories changed positively or negatively?
+    claim: Signed variance crosses the same zero baseline.
+  recipe:
+    id: 019
+    slug: chart
+    version: 0.5.0
+  family: bar
+  records:
+  - id: b1
+    category: Reliability
+    variance: 12
+  - id: b2
+    category: Review time
+    variance: -5
+  - id: b3
+    category: Coverage
+    variance: 8
+  - id: b4
+    category: Escaped defects
+    variance: -3
+  ordering:
+    field: category
+    values:
+    - Reliability
+    - Review time
+    - Coverage
+    - Escaped defects
+  missing_values: []
+  encoding:
+    marks:
+    - type: bar
+      orientation: vertical
+    - type: text
+      role: direct-label
+    bindings:
+      category: category
+      value: variance
+      label: variance
+    order:
+    - Reliability
+    - Review time
+    - Coverage
+    - Escaped defects
+    domains:
+      value:
+      - -10
+      - 15
+    scales:
+      value: linear
+      category: categorical
+    bar_semantics: grouped
+    zero_baseline: true
+    negative_values: signed_from_zero
+    units:
+      value: percentage_points
+    direct_labels: true
+    color_only_meaning: false
+    redundant_encodings:
+    - signed_label
+    - direction_from_zero
+    dual_axis: false
+    decorative_field_area_percent: 0
+profiles: &id002
+- light
+- night
+- monochrome
+profile_results:
+- profile: light
+  semantic_signature: sha256:2538ead692b6d515fa6122813ab6ec77f23eedcbbfaf47782a46b2f1906d2a14
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#F7F5F0'
+    surface.raised: '#FBFAF6'
+    ink.primary: '#1B1B19'
+    ink.secondary: '#535457'
+    ink.inverse: '#FBFAF6'
+    neutral.fill: '#D9D6CF'
+    line.subtle: '#B8B5AE'
+    line.strong: '#85847F'
+    signal.primary: '#C96157'
+    signal.data: '#4C6A8A'
+    signal.attention: '#9B7B3A'
+    signal.positive: '#6E8A7A'
+    signal.error: '#B84F47'
+    state.focus: '#4C6A8A'
+    state.selection: '#C96157'
+    data.missing: '#85847F'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 15.831973
+    minimum: 4.5
+    passes: true
+  - id: values
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 15.831973
+    minimum: 4.5
+    passes: true
+  - id: units
+    role: unit
+    foreground: ink.secondary
+    background: background.base
+    ratio: 6.949226
+    minimum: 4.5
+    passes: true
+  - id: source
+    role: source
+    foreground: ink.secondary
+    background: background.base
+    ratio: 6.949226
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: zero-axis
+    role: axis
+    component: Axis
+    foreground: line.strong
+    background: background.base
+    ratio: 3.439168
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: bars
+    role: node
+    component: Node
+    foreground: line.strong
+    background: background.base
+    ratio: 3.439168
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: selected-bar
+    role: signal
+    component: Signal
+    foreground: signal.primary
+    background: background.base
+    ratio: 3.615464
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: &id001
+  - protanopia
+  - deuteranopia
+  - tritanopia
+  - achromatopsia
+- profile: night
+  semantic_signature: sha256:2538ead692b6d515fa6122813ab6ec77f23eedcbbfaf47782a46b2f1906d2a14
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#171817'
+    surface.raised: '#232422'
+    ink.primary: '#EEEAE1'
+    ink.secondary: '#B8B4AC'
+    ink.inverse: '#171817'
+    neutral.fill: '#343532'
+    line.subtle: '#555650'
+    line.strong: '#73746D'
+    signal.primary: '#D2756D'
+    signal.data: '#879BB6'
+    signal.attention: '#D0B36F'
+    signal.positive: '#89A092'
+    signal.error: '#E07F76'
+    state.focus: '#D0B36F'
+    state.selection: '#D2756D'
+    data.missing: '#73746D'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 14.83038
+    minimum: 4.5
+    passes: true
+  - id: values
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 14.83038
+    minimum: 4.5
+    passes: true
+  - id: units
+    role: unit
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.616066
+    minimum: 4.5
+    passes: true
+  - id: source
+    role: source
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.616066
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: zero-axis
+    role: axis
+    component: Axis
+    foreground: line.strong
+    background: background.base
+    ratio: 3.771182
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: bars
+    role: node
+    component: Node
+    foreground: line.strong
+    background: background.base
+    ratio: 3.771182
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: selected-bar
+    role: signal
+    component: Signal
+    foreground: signal.primary
+    background: background.base
+    ratio: 5.515814
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: *id001
+- profile: monochrome
+  semantic_signature: sha256:2538ead692b6d515fa6122813ab6ec77f23eedcbbfaf47782a46b2f1906d2a14
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#F7F5F0'
+    surface.raised: '#FFFFFF'
+    ink.primary: '#111111'
+    ink.secondary: '#4A4A48'
+    ink.inverse: '#FFFFFF'
+    neutral.fill: '#D3D2CE'
+    line.subtle: '#B1B0AC'
+    line.strong: '#72716D'
+    signal.primary: '#333332'
+    signal.data: '#4A4A48'
+    signal.attention: '#656560'
+    signal.positive: '#50504D'
+    signal.error: '#282827'
+    state.focus: '#333332'
+    state.selection: '#4A4A48'
+    data.missing: '#72716D'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: values
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: units
+    role: unit
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.152265
+    minimum: 4.5
+    passes: true
+  - id: source
+    role: source
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.152265
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: zero-axis
+    role: axis
+    component: Axis
+    foreground: line.strong
+    background: background.base
+    ratio: 4.484049
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: bars
+    role: node
+    component: Node
+    foreground: line.strong
+    background: background.base
+    ratio: 4.484049
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: selected-bar
+    role: signal
+    component: Signal
+    foreground: signal.primary
+    background: background.base
+    ratio: 11.608426
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: *id001
+text_elements:
+- id: title
+  role: display
+  foreground: ink.primary
+  background: background.base
+- id: values
+  role: label
+  foreground: ink.primary
+  background: background.base
+- id: units
+  role: unit
+  foreground: ink.secondary
+  background: background.base
+- id: source
+  role: source
+  foreground: ink.secondary
+  background: background.base
+graphical_objects:
+- id: zero-axis
+  role: axis
+  component: Axis
+  foreground: line.strong
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: bars
+  role: node
+  component: Node
+  foreground: line.strong
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: selected-bar
+  role: signal
+  component: Signal
+  foreground: signal.primary
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+semantic_encodings:
+- meaning: data
+  color_token: signal.primary
+  redundant_carriers:
+  - position_from_zero
+  - numeric_label
+  - direct_label
+  zero_baseline: true
+  signed_values: true
+  units_readable: true
+  source_readable: true
+  target: signed-bars
+output:
+  canvas: 1920x1080
+  orientation: landscape
+  colorspace: sRGB
+  format: deterministic-specification
+  profiles: *id002
+provenance:
+  proof_source: proofs/sources/04-positive-negative-bar.yaml
+  semantic_source: analytics/analytical-mode-v0.1/proofs/packages/01-bar-positive-negative.yaml
+  accessibility_contract: night-mode-v0.1@0.1.0
+  builder: tools/build_accessibility_mode.py
+  evidence: deterministic_specification
+  deterministic: true

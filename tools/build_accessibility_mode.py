@@ -11,12 +11,16 @@ import yaml
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from tools.validate_accessibility_mode import contrast_ratio
+from tools.validate_accessibility_mode import contrast_ratio, derive_source_semantics
 
 
 def _digest(value: Any) -> str:
     encoded = json.dumps(
-        value, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+        value,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+        default=str,
     ).encode("utf-8")
     return "sha256:" + hashlib.sha256(encoded).hexdigest()
 
@@ -141,6 +145,7 @@ def derive_accessibility_package(
         "scenario": source["scenario"],
         "source_reference": source["source_reference"],
         "semantic_source_digest": _digest(source_document),
+        "source_semantics": derive_source_semantics(source_document),
         "profiles": source["profiles"],
         "profile_results": profile_results,
         "text_elements": source["text_elements"],

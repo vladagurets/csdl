@@ -1,0 +1,330 @@
+language: CSDL
+version: '0.1'
+kind: accessibility-package
+id: proof-10-projector-fallback
+scenario: projector-fallback
+source_reference:
+  kind: analytical-package
+  path: analytics/analytical-mode-v0.1/proofs/packages/10-dashboard.yaml
+semantic_source_digest: sha256:cc7e8800f63d64ce617d9cf9201fd1183528348ced7d29328de1ec5d3d63a990
+source_semantics:
+  kind: analytical-package
+  id: proof-10-dashboard
+  dataset:
+    id: dashboard-agent-reliability-v1
+    version: 1.0.0
+    path: datasets/10-dashboard.yaml
+    source: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+  analytical_intent:
+    question: What is the W4 reliability state and how did it develop?
+    claim: Snapshot, trend, and exact lookup views reconcile to one typed dataset.
+  recipe:
+    id: '020'
+    slug: dashboard
+    version: 0.5.0
+  family: dashboard
+  records:
+  - id: d1
+    week: W1
+    runs: 40
+    success_rate: 72
+    review_minutes: 18
+    escaped_defects: 8
+  - id: d2
+    week: W2
+    runs: 45
+    success_rate: 78
+    review_minutes: 16
+    escaped_defects: 6
+  - id: d3
+    week: W3
+    runs: 50
+    success_rate: 84
+    review_minutes: 13
+    escaped_defects: 4
+  - id: d4
+    week: W4
+    runs: 55
+    success_rate: 90
+    review_minutes: 10
+    escaped_defects: 2
+  ordering:
+    field: week
+    values:
+    - W1
+    - W2
+    - W3
+    - W4
+  missing_values: []
+  encoding:
+    marks:
+    - type: text
+      role: kpi-value
+    - type: line
+      role: trend
+    - type: point
+      role: source-value
+    bindings:
+      order: week
+      value: success_rate
+      detail:
+      - runs
+      - review_minutes
+      - escaped_defects
+      label: success_rate
+    order:
+    - W1
+    - W2
+    - W3
+    - W4
+    domains:
+      success_rate:
+      - 0
+      - 100
+      runs:
+      - 0
+      - 100
+      review_minutes:
+      - 0
+      - 30
+      escaped_defects:
+      - 0
+      - 20
+    scales:
+      order: ordinal
+      success_rate: linear
+    views:
+    - id: snapshot
+      family: kpi
+      dataset: dashboard-agent-reliability-v1@1.0.0
+      bindings:
+      - success_rate
+      - runs
+      - review_minutes
+      - escaped_defects
+      period: W4
+    - id: trend
+      family: line
+      dataset: dashboard-agent-reliability-v1@1.0.0
+      bindings:
+      - week
+      - success_rate
+      domain:
+      - 0
+      - 100
+    - id: lookup
+      family: table
+      dataset: dashboard-agent-reliability-v1@1.0.0
+      bindings:
+      - week
+      - runs
+      - success_rate
+      - review_minutes
+      - escaped_defects
+    primary_signal_view: snapshot
+    repeated_measure_reconciliation: exact
+    direct_labels: true
+    color_only_meaning: false
+    redundant_encodings:
+    - value_label
+    - view_title
+    - source_label
+    dual_axis: false
+    decorative_field_area_percent: 0
+profiles: &id001
+- projector
+profile_results:
+- profile: projector
+  semantic_signature: sha256:dee9079f9ddacedef2e95673b13164a2f6cb8887904e4366cfe8657541b1f14f
+  thresholds:
+    minimum_text_contrast: 7.0
+    minimum_non_text_contrast: 4.5
+    critical_stroke_px: 3
+  stroke_widths:
+    critical_px: 3
+    projector_px: 3
+  token_values:
+    background.base: '#101110'
+    surface.raised: '#20211F'
+    ink.primary: '#FFFFFF'
+    ink.secondary: '#E7E3DA'
+    ink.inverse: '#101110'
+    neutral.fill: '#383A36'
+    line.subtle: '#6F716B'
+    line.strong: '#9A9B94'
+    signal.primary: '#F08C82'
+    signal.data: '#AFC8EA'
+    signal.attention: '#F1CF7A'
+    signal.positive: '#B2D0BD'
+    signal.error: '#FF9A90'
+    state.focus: '#F1CF7A'
+    state.selection: '#F08C82'
+    data.missing: '#9A9B94'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 18.924145
+    minimum: 7.0
+    passes: true
+  - id: values
+    role: body
+    foreground: ink.primary
+    background: background.base
+    ratio: 18.924145
+    minimum: 7.0
+    passes: true
+  - id: labels
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 18.924145
+    minimum: 7.0
+    passes: true
+  - id: metadata
+    role: metadata
+    foreground: ink.secondary
+    background: background.base
+    ratio: 14.776883
+    minimum: 7.0
+    passes: true
+  - id: axis
+    role: axis
+    foreground: ink.primary
+    background: background.base
+    ratio: 18.924145
+    minimum: 7.0
+    passes: true
+  - id: units
+    role: unit
+    foreground: ink.secondary
+    background: background.base
+    ratio: 14.776883
+    minimum: 7.0
+    passes: true
+  - id: source
+    role: source
+    foreground: ink.secondary
+    background: background.base
+    ratio: 14.776883
+    minimum: 7.0
+    passes: true
+  graphical_checks:
+  - id: axes
+    role: axis
+    component: Axis
+    foreground: line.strong
+    background: background.base
+    ratio: 6.749762
+    minimum: 4.5
+    stroke_px: 3
+    minimum_stroke_px: 3
+    passes: true
+  - id: surface-boundary
+    role: surface_boundary
+    component: Frame
+    foreground: line.strong
+    background: background.base
+    ratio: 6.749762
+    minimum: 4.5
+    stroke_px: 3
+    minimum_stroke_px: 3
+    passes: true
+  - id: primary-signal
+    role: signal
+    component: Signal
+    foreground: signal.data
+    background: background.base
+    ratio: 11.059456
+    minimum: 4.5
+    stroke_px: 3
+    minimum_stroke_px: 3
+    passes: true
+  color_vision_profiles:
+  - protanopia
+  - deuteranopia
+  - tritanopia
+  - achromatopsia
+text_elements:
+- id: title
+  role: display
+  foreground: ink.primary
+  background: background.base
+- id: values
+  role: body
+  foreground: ink.primary
+  background: background.base
+- id: labels
+  role: label
+  foreground: ink.primary
+  background: background.base
+- id: metadata
+  role: metadata
+  foreground: ink.secondary
+  background: background.base
+- id: axis
+  role: axis
+  foreground: ink.primary
+  background: background.base
+- id: units
+  role: unit
+  foreground: ink.secondary
+  background: background.base
+- id: source
+  role: source
+  foreground: ink.secondary
+  background: background.base
+graphical_objects:
+- id: axes
+  role: axis
+  component: Axis
+  foreground: line.strong
+  background: background.base
+  stroke_px: 3
+  meaningful: true
+- id: surface-boundary
+  role: surface_boundary
+  component: Frame
+  foreground: line.strong
+  background: background.base
+  stroke_px: 3
+  meaningful: true
+- id: primary-signal
+  role: signal
+  component: Signal
+  foreground: signal.data
+  background: background.base
+  stroke_px: 3
+  meaningful: true
+semantic_encodings:
+- meaning: data
+  color_token: signal.data
+  redundant_carriers:
+  - direct_label
+  - shape
+  units_readable: true
+  source_readable: true
+  target: dashboard-values
+- meaning: signal
+  color_token: signal.data
+  redundant_carriers:
+  - shape
+  - direct_label
+  - stroke_weight
+  target: primary-value
+  area_percent: 5
+  max_area_percent: 7
+output:
+  canvas: 1920x1080
+  orientation: landscape
+  colorspace: sRGB
+  format: deterministic-specification
+  profiles: *id001
+provenance:
+  proof_source: proofs/sources/10-projector-fallback.yaml
+  semantic_source: analytics/analytical-mode-v0.1/proofs/packages/10-dashboard.yaml
+  accessibility_contract: night-mode-v0.1@0.1.0
+  builder: tools/build_accessibility_mode.py
+  evidence: deterministic_specification
+  deterministic: true

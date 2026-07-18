@@ -1,0 +1,497 @@
+language: CSDL
+version: '0.1'
+kind: accessibility-package
+id: proof-08-directed-network
+scenario: directed-network
+source_reference:
+  kind: analytical-package
+  path: analytics/analytical-mode-v0.1/proofs/packages/08-network.yaml
+semantic_source_digest: sha256:5e2708964fe5eb71f5c35dc101473c09110533f493c3dc73cd1363508289ecbc
+source_semantics:
+  kind: analytical-package
+  id: proof-08-network
+  dataset:
+    id: network-dependency-v1
+    version: 1.0.0
+    path: datasets/08-network.yaml
+    source: CSDL Milestone 5 synthetic fixture
+  analytical_intent:
+    question: Which declared directed dependencies connect the agent system?
+    claim: Node and edge identity, direction, and weight are explicit while layout
+      distance is non-semantic.
+  recipe:
+    id: '020'
+    slug: dashboard
+    version: 0.5.0
+  family: network
+  records:
+  - id: n1
+    record_kind: node
+    entity_id: agent
+    label: Agent
+    source_id: null
+    target_id: null
+    weight: null
+  - id: n2
+    record_kind: node
+    entity_id: tools
+    label: Tools
+    source_id: null
+    target_id: null
+    weight: null
+  - id: n3
+    record_kind: node
+    entity_id: memory
+    label: Memory
+    source_id: null
+    target_id: null
+    weight: null
+  - id: e1
+    record_kind: edge
+    entity_id: agent-tools
+    label: null
+    source_id: agent
+    target_id: tools
+    weight: 80
+  - id: e2
+    record_kind: edge
+    entity_id: agent-memory
+    label: null
+    source_id: agent
+    target_id: memory
+    weight: 55
+  - id: e3
+    record_kind: edge
+    entity_id: memory-agent
+    label: null
+    source_id: memory
+    target_id: agent
+    weight: 30
+  ordering:
+    nodes:
+    - agent
+    - tools
+    - memory
+    edges:
+    - agent-tools
+    - agent-memory
+    - memory-agent
+  missing_values:
+  - record_id: n1
+    field: source_id
+    status: not_applicable
+  - record_id: n1
+    field: target_id
+    status: not_applicable
+  - record_id: n1
+    field: weight
+    status: not_applicable
+  - record_id: n2
+    field: source_id
+    status: not_applicable
+  - record_id: n2
+    field: target_id
+    status: not_applicable
+  - record_id: n2
+    field: weight
+    status: not_applicable
+  - record_id: n3
+    field: source_id
+    status: not_applicable
+  - record_id: n3
+    field: target_id
+    status: not_applicable
+  - record_id: n3
+    field: weight
+    status: not_applicable
+  - record_id: e1
+    field: label
+    status: not_applicable
+  - record_id: e2
+    field: label
+    status: not_applicable
+  - record_id: e3
+    field: label
+    status: not_applicable
+  encoding:
+    marks:
+    - type: network-node
+      role: entity
+    - type: network-edge
+      role: directed-dependency
+    - type: text
+      role: identity-label
+    bindings:
+      status: record_kind
+      node_id: entity_id
+      label: label
+      edge_source: source_id
+      edge_target: target_id
+      weight: weight
+    order:
+    - agent
+    - tools
+    - memory
+    - agent-tools
+    - agent-memory
+    - memory-agent
+    domains:
+      weight:
+      - 0
+      - 100
+    scales:
+      weight: linear
+    directed: true
+    missing_edge_semantics: absent_edge_means_no_declared_dependency
+    layout_semantic: false
+    distance_encoding: none
+    direct_labels: true
+    color_only_meaning: false
+    redundant_encodings:
+    - node_label
+    - arrow_direction
+    - weight_label
+    dual_axis: false
+    decorative_field_area_percent: 0
+profiles: &id002
+- light
+- night
+- monochrome
+profile_results:
+- profile: light
+  semantic_signature: sha256:b87a5d428582d7e50773fa119d03e37bec3a7147cdd237de7bc587cdaa28c4da
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#F7F5F0'
+    surface.raised: '#FBFAF6'
+    ink.primary: '#1B1B19'
+    ink.secondary: '#535457'
+    ink.inverse: '#FBFAF6'
+    neutral.fill: '#D9D6CF'
+    line.subtle: '#B8B5AE'
+    line.strong: '#85847F'
+    signal.primary: '#C96157'
+    signal.data: '#4C6A8A'
+    signal.attention: '#9B7B3A'
+    signal.positive: '#6E8A7A'
+    signal.error: '#B84F47'
+    state.focus: '#4C6A8A'
+    state.selection: '#C96157'
+    data.missing: '#85847F'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 15.831973
+    minimum: 4.5
+    passes: true
+  - id: node-labels
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 15.831973
+    minimum: 4.5
+    passes: true
+  - id: edge-labels
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 15.831973
+    minimum: 4.5
+    passes: true
+  - id: source
+    role: source
+    foreground: ink.secondary
+    background: background.base
+    ratio: 6.949226
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: edges
+    role: edge
+    component: Bridge
+    foreground: line.strong
+    background: background.base
+    ratio: 3.439168
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: selected-edge
+    role: signal
+    component: Bridge
+    foreground: signal.data
+    background: background.base
+    ratio: 5.159132
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: nodes
+    role: node
+    component: Node
+    foreground: line.strong
+    background: background.base
+    ratio: 3.439168
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: &id001
+  - protanopia
+  - deuteranopia
+  - tritanopia
+  - achromatopsia
+- profile: night
+  semantic_signature: sha256:b87a5d428582d7e50773fa119d03e37bec3a7147cdd237de7bc587cdaa28c4da
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#171817'
+    surface.raised: '#232422'
+    ink.primary: '#EEEAE1'
+    ink.secondary: '#B8B4AC'
+    ink.inverse: '#171817'
+    neutral.fill: '#343532'
+    line.subtle: '#555650'
+    line.strong: '#73746D'
+    signal.primary: '#D2756D'
+    signal.data: '#879BB6'
+    signal.attention: '#D0B36F'
+    signal.positive: '#89A092'
+    signal.error: '#E07F76'
+    state.focus: '#D0B36F'
+    state.selection: '#D2756D'
+    data.missing: '#73746D'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 14.83038
+    minimum: 4.5
+    passes: true
+  - id: node-labels
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 14.83038
+    minimum: 4.5
+    passes: true
+  - id: edge-labels
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 14.83038
+    minimum: 4.5
+    passes: true
+  - id: source
+    role: source
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.616066
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: edges
+    role: edge
+    component: Bridge
+    foreground: line.strong
+    background: background.base
+    ratio: 3.771182
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: selected-edge
+    role: signal
+    component: Bridge
+    foreground: signal.data
+    background: background.base
+    ratio: 6.26915
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: nodes
+    role: node
+    component: Node
+    foreground: line.strong
+    background: background.base
+    ratio: 3.771182
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: *id001
+- profile: monochrome
+  semantic_signature: sha256:b87a5d428582d7e50773fa119d03e37bec3a7147cdd237de7bc587cdaa28c4da
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#F7F5F0'
+    surface.raised: '#FFFFFF'
+    ink.primary: '#111111'
+    ink.secondary: '#4A4A48'
+    ink.inverse: '#FFFFFF'
+    neutral.fill: '#D3D2CE'
+    line.subtle: '#B1B0AC'
+    line.strong: '#72716D'
+    signal.primary: '#333332'
+    signal.data: '#4A4A48'
+    signal.attention: '#656560'
+    signal.positive: '#50504D'
+    signal.error: '#282827'
+    state.focus: '#333332'
+    state.selection: '#4A4A48'
+    data.missing: '#72716D'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: node-labels
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: edge-labels
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: source
+    role: source
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.152265
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: edges
+    role: edge
+    component: Bridge
+    foreground: line.strong
+    background: background.base
+    ratio: 4.484049
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: selected-edge
+    role: signal
+    component: Bridge
+    foreground: signal.data
+    background: background.base
+    ratio: 8.152265
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: nodes
+    role: node
+    component: Node
+    foreground: line.strong
+    background: background.base
+    ratio: 4.484049
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: *id001
+text_elements:
+- id: title
+  role: display
+  foreground: ink.primary
+  background: background.base
+- id: node-labels
+  role: label
+  foreground: ink.primary
+  background: background.base
+- id: edge-labels
+  role: label
+  foreground: ink.primary
+  background: background.base
+- id: source
+  role: source
+  foreground: ink.secondary
+  background: background.base
+graphical_objects:
+- id: edges
+  role: edge
+  component: Bridge
+  foreground: line.strong
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: selected-edge
+  role: signal
+  component: Bridge
+  foreground: signal.data
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: nodes
+  role: node
+  component: Node
+  foreground: line.strong
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+semantic_encodings:
+- meaning: direction
+  color_token: signal.data
+  redundant_carriers:
+  - arrowhead
+  - direct_label
+  arrowhead: terminal
+  direction_label: source-to-target
+  target: network-edges
+- meaning: weight
+  color_token: signal.data
+  redundant_carriers:
+  - stroke_weight
+  - numeric_label
+  stroke_tiers:
+  - 2
+  - 3
+  - 4
+  numeric_weight_visible: true
+  target: network-edges
+output:
+  canvas: 1920x1080
+  orientation: landscape
+  colorspace: sRGB
+  format: deterministic-specification
+  profiles: *id002
+provenance:
+  proof_source: proofs/sources/08-directed-network.yaml
+  semantic_source: analytics/analytical-mode-v0.1/proofs/packages/08-network.yaml
+  accessibility_contract: night-mode-v0.1@0.1.0
+  builder: tools/build_accessibility_mode.py
+  evidence: deterministic_specification
+  deterministic: true

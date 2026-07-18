@@ -1,0 +1,30 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-proof-source
+id: proof-03-exact-table
+scenario: exact-table
+source_reference:
+  kind: analytical-package
+  path: analytics/analytical-mode-v0.1/proofs/packages/09-table.yaml
+profiles: [light, night]
+text_elements:
+  - {id: title, role: display, foreground: ink.primary, background: background.base}
+  - {id: values, role: body, foreground: ink.primary, background: background.base}
+  - {id: axes, role: axis, foreground: ink.primary, background: background.base}
+  - {id: units, role: unit, foreground: ink.secondary, background: background.base}
+  - {id: source, role: source, foreground: ink.secondary, background: background.base}
+graphical_objects:
+  - {id: lookup-frame, role: surface_boundary, component: Frame, foreground: line.strong, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: lookup-axis, role: axis, component: Axis, foreground: line.strong, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: selected-value, role: signal, component: Signal, foreground: signal.data, background: background.base, stroke_px: 2, meaningful: true}
+semantic_encodings:
+  - meaning: data
+    color_token: signal.data
+    redundant_carriers: [direct_label, boundary]
+    exact_lookup: true
+    direct_labels: true
+    units_readable: true
+    source_readable: true
+    missing_distinct_from_zero: true
+    target: exact-table-values
+output: {canvas: 1920x1080, orientation: landscape, colorspace: sRGB, format: deterministic-specification}

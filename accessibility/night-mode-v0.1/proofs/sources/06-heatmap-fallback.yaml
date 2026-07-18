@@ -1,0 +1,29 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-proof-source
+id: proof-06-heatmap-fallback
+scenario: heatmap-fallback
+source_reference:
+  kind: analytical-package
+  path: analytics/analytical-mode-v0.1/proofs/packages/05-heatmap.yaml
+profiles: [light, night, monochrome]
+text_elements:
+  - {id: title, role: display, foreground: ink.primary, background: background.base}
+  - {id: cell-values, role: label, foreground: ink.primary, background: background.base}
+  - {id: axes, role: axis, foreground: ink.primary, background: background.base}
+  - {id: units, role: unit, foreground: ink.secondary, background: background.base}
+  - {id: source, role: source, foreground: ink.secondary, background: background.base}
+graphical_objects:
+  - {id: cell-boundaries, role: cell, component: Frame, foreground: line.strong, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: missing-cell, role: selection, component: Node, foreground: data.missing, background: background.base, stroke_px: 2, meaningful: true}
+semantic_encodings:
+  - meaning: data
+    color_token: signal.data
+    redundant_carriers: [numeric_label, pattern]
+    scale_fallback: [numeric_label, pattern]
+    patterns: [open_frame, horizontal_hatch, vertical_hatch, cross_hatch, solid_fill]
+    missing_label: N/A
+    missing_pattern: open_frame
+    missing_distinct_from_zero: true
+    target: heatmap-cells
+output: {canvas: 1920x1080, orientation: landscape, colorspace: sRGB, format: deterministic-specification}

@@ -1,0 +1,2 @@
+base_package: proofs/packages/04-positive-negative-bar.yaml
+mutation: {path: [graphical_objects, 0, foreground], value: line.subtle}

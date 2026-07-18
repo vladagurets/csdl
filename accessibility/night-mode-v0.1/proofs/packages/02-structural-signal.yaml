@@ -1,0 +1,509 @@
+language: CSDL
+version: '0.1'
+kind: accessibility-package
+id: proof-02-structural-signal
+scenario: structural-signal
+source_reference:
+  kind: generation-package
+  path: recipes/recipe-library-v0.5/proofs/packages/02-structural.yaml
+semantic_source_digest: sha256:aa73ac5fea96766022b9c297baa0fae062bbc731f9df5c36011f7b735bdd1ad1
+source_semantics:
+  kind: generation-package
+  id: proof-structural-workflow
+  recipe:
+    id: '012'
+    slug: workflow
+    version: 0.5.0
+  semantic_intent:
+    problem: Show who or what acts next in a bounded operational sequence.
+    scenario: work procedure
+    main_idea: Verification turns an operational sequence into evidence.
+    mechanism: workflow-mechanism
+  content:
+    source: patterns/visual-dna-sprint-01/manifest.yaml#family-12
+    bindings:
+      headline: РОБОЧИЙ ПОТІК З ДОКАЗАМИ
+      stages:
+      - UNDERSTAND
+      - PLAN
+      - EXECUTE
+      - VERIFY
+  component_instances:
+  - id: node-1
+    component: Node
+    role: node
+    content:
+      binding: stages
+      index: 0
+  - id: node-2
+    component: Node
+    role: node
+    content:
+      binding: stages
+      index: 1
+  - id: node-3
+    component: Node
+    role: node
+    content:
+      binding: stages
+      index: 2
+  - id: node-4
+    component: Node
+    role: node
+    content:
+      binding: stages
+      index: 3
+  - id: vector-1
+    component: Vector
+    role: vector
+    content:
+      binding: headline
+    attributes:
+      source: node-1
+      target: node-2
+  - id: vector-2
+    component: Vector
+    role: vector
+    content:
+      binding: headline
+    attributes:
+      source: node-2
+      target: node-3
+  - id: vector-3
+    component: Vector
+    role: vector
+    content:
+      binding: headline
+    attributes:
+      source: node-3
+      target: node-4
+  - id: label-1
+    component: Label
+    role: label
+    content: &id001
+      binding: stages
+      index: 0
+    attributes:
+      text: *id001
+      target: node-1
+  - id: label-2
+    component: Label
+    role: label
+    content: &id002
+      binding: stages
+      index: 1
+    attributes:
+      text: *id002
+      target: node-2
+  - id: label-3
+    component: Label
+    role: label
+    content: &id003
+      binding: stages
+      index: 2
+    attributes:
+      text: *id003
+      target: node-3
+  - id: label-4
+    component: Label
+    role: label
+    content: &id004
+      binding: stages
+      index: 3
+    attributes:
+      text: *id004
+      target: node-4
+  - id: signal
+    component: Signal
+    role: dominant
+    content:
+      binding: headline
+    attributes:
+      target: node-4
+  relations:
+  - subject: vector-1
+    type: directs
+    object: node-1
+  - subject: vector-2
+    type: directs
+    object: node-2
+  - subject: vector-3
+    type: directs
+    object: node-3
+  - subject: label-1
+    type: attached_to
+    object: node-1
+  - subject: label-2
+    type: attached_to
+    object: node-2
+  - subject: label-3
+    type: attached_to
+    object: node-3
+  - subject: label-4
+    type: attached_to
+    object: node-4
+  - subject: signal
+    type: highlights
+    object: node-4
+profiles: &id006
+- light
+- night
+- monochrome
+profile_results:
+- profile: light
+  semantic_signature: sha256:db215fa4c6b05b3b50f67bba4b108a0a8b683d8374da213f42869c5eded2c63d
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#F7F5F0'
+    surface.raised: '#FBFAF6'
+    ink.primary: '#1B1B19'
+    ink.secondary: '#535457'
+    ink.inverse: '#FBFAF6'
+    neutral.fill: '#D9D6CF'
+    line.subtle: '#B8B5AE'
+    line.strong: '#85847F'
+    signal.primary: '#C96157'
+    signal.data: '#4C6A8A'
+    signal.attention: '#9B7B3A'
+    signal.positive: '#6E8A7A'
+    signal.error: '#B84F47'
+    state.focus: '#4C6A8A'
+    state.selection: '#C96157'
+    data.missing: '#85847F'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 15.831973
+    minimum: 4.5
+    passes: true
+  - id: stage-labels
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 15.831973
+    minimum: 4.5
+    passes: true
+  - id: evidence-label
+    role: metadata
+    foreground: ink.secondary
+    background: background.base
+    ratio: 6.949226
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: route
+    role: rule
+    component: Vector
+    foreground: line.strong
+    background: background.base
+    ratio: 3.439168
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: active-node
+    role: signal
+    component: Node
+    foreground: signal.primary
+    background: background.base
+    ratio: 3.615464
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: focus-state
+    role: focus
+    component: Node
+    foreground: state.focus
+    background: background.base
+    ratio: 5.159132
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: selection-state
+    role: selection
+    component: Node
+    foreground: state.selection
+    background: background.base
+    ratio: 3.615464
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: &id005
+  - protanopia
+  - deuteranopia
+  - tritanopia
+  - achromatopsia
+- profile: night
+  semantic_signature: sha256:db215fa4c6b05b3b50f67bba4b108a0a8b683d8374da213f42869c5eded2c63d
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#171817'
+    surface.raised: '#232422'
+    ink.primary: '#EEEAE1'
+    ink.secondary: '#B8B4AC'
+    ink.inverse: '#171817'
+    neutral.fill: '#343532'
+    line.subtle: '#555650'
+    line.strong: '#73746D'
+    signal.primary: '#D2756D'
+    signal.data: '#879BB6'
+    signal.attention: '#D0B36F'
+    signal.positive: '#89A092'
+    signal.error: '#E07F76'
+    state.focus: '#D0B36F'
+    state.selection: '#D2756D'
+    data.missing: '#73746D'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 14.83038
+    minimum: 4.5
+    passes: true
+  - id: stage-labels
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 14.83038
+    minimum: 4.5
+    passes: true
+  - id: evidence-label
+    role: metadata
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.616066
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: route
+    role: rule
+    component: Vector
+    foreground: line.strong
+    background: background.base
+    ratio: 3.771182
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: active-node
+    role: signal
+    component: Node
+    foreground: signal.primary
+    background: background.base
+    ratio: 5.515814
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: focus-state
+    role: focus
+    component: Node
+    foreground: state.focus
+    background: background.base
+    ratio: 8.783324
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: selection-state
+    role: selection
+    component: Node
+    foreground: state.selection
+    background: background.base
+    ratio: 5.515814
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: *id005
+- profile: monochrome
+  semantic_signature: sha256:db215fa4c6b05b3b50f67bba4b108a0a8b683d8374da213f42869c5eded2c63d
+  thresholds:
+    minimum_text_contrast: 4.5
+    minimum_non_text_contrast: 3.0
+    critical_stroke_px: 2
+  stroke_widths:
+    critical_px: 2
+    projector_px: 3
+  token_values:
+    background.base: '#F7F5F0'
+    surface.raised: '#FFFFFF'
+    ink.primary: '#111111'
+    ink.secondary: '#4A4A48'
+    ink.inverse: '#FFFFFF'
+    neutral.fill: '#D3D2CE'
+    line.subtle: '#B1B0AC'
+    line.strong: '#72716D'
+    signal.primary: '#333332'
+    signal.data: '#4A4A48'
+    signal.attention: '#656560'
+    signal.positive: '#50504D'
+    signal.error: '#282827'
+    state.focus: '#333332'
+    state.selection: '#4A4A48'
+    data.missing: '#72716D'
+  text_checks:
+  - id: title
+    role: display
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: stage-labels
+    role: label
+    foreground: ink.primary
+    background: background.base
+    ratio: 17.331097
+    minimum: 4.5
+    passes: true
+  - id: evidence-label
+    role: metadata
+    foreground: ink.secondary
+    background: background.base
+    ratio: 8.152265
+    minimum: 4.5
+    passes: true
+  graphical_checks:
+  - id: route
+    role: rule
+    component: Vector
+    foreground: line.strong
+    background: background.base
+    ratio: 4.484049
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: active-node
+    role: signal
+    component: Node
+    foreground: signal.primary
+    background: background.base
+    ratio: 11.608426
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: focus-state
+    role: focus
+    component: Node
+    foreground: state.focus
+    background: background.base
+    ratio: 11.608426
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  - id: selection-state
+    role: selection
+    component: Node
+    foreground: state.selection
+    background: background.base
+    ratio: 8.152265
+    minimum: 3.0
+    stroke_px: 2
+    minimum_stroke_px: 2
+    passes: true
+  color_vision_profiles: *id005
+text_elements:
+- id: title
+  role: display
+  foreground: ink.primary
+  background: background.base
+- id: stage-labels
+  role: label
+  foreground: ink.primary
+  background: background.base
+- id: evidence-label
+  role: metadata
+  foreground: ink.secondary
+  background: background.base
+graphical_objects:
+- id: route
+  role: rule
+  component: Vector
+  foreground: line.strong
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: active-node
+  role: signal
+  component: Node
+  foreground: signal.primary
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: focus-state
+  role: focus
+  component: Node
+  foreground: state.focus
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+- id: selection-state
+  role: selection
+  component: Node
+  foreground: state.selection
+  background: background.base
+  stroke_px: 2
+  meaningful: true
+semantic_encodings:
+- meaning: signal
+  color_token: signal.primary
+  redundant_carriers:
+  - shape
+  - direct_label
+  - stroke_weight
+  target: verify
+  area_percent: 3
+  max_area_percent: 7
+- meaning: direction
+  color_token: line.strong
+  redundant_carriers:
+  - arrowhead
+  - direct_label
+  target: workflow-route
+- meaning: focus
+  color_token: state.focus
+  redundant_carriers:
+  - boundary
+  - stroke_weight
+  target: focused-node
+- meaning: selection
+  color_token: state.selection
+  redundant_carriers:
+  - boundary
+  - direct_label
+  target: selected-node
+output:
+  canvas: 1920x1080
+  orientation: landscape
+  colorspace: sRGB
+  format: deterministic-specification
+  profiles: *id006
+provenance:
+  proof_source: proofs/sources/02-structural-signal.yaml
+  semantic_source: recipes/recipe-library-v0.5/proofs/packages/02-structural.yaml
+  accessibility_contract: night-mode-v0.1@0.1.0
+  builder: tools/build_accessibility_mode.py
+  evidence: deterministic_specification
+  deterministic: true

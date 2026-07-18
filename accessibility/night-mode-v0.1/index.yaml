@@ -12,49 +12,73 @@ proofs:
   scenario: editorial-equivalence
   source: proofs/sources/01-editorial-equivalence.yaml
   package: proofs/packages/01-editorial-equivalence.yaml
-  profiles: []
+  profiles:
+  - light
+  - night
 - id: proof-02-structural-signal
   scenario: structural-signal
   source: proofs/sources/02-structural-signal.yaml
   package: proofs/packages/02-structural-signal.yaml
-  profiles: []
+  profiles:
+  - light
+  - night
+  - monochrome
 - id: proof-03-exact-table
   scenario: exact-table
   source: proofs/sources/03-exact-table.yaml
   package: proofs/packages/03-exact-table.yaml
-  profiles: []
+  profiles:
+  - light
+  - night
 - id: proof-04-positive-negative-bar
   scenario: positive-negative-bar
   source: proofs/sources/04-positive-negative-bar.yaml
   package: proofs/packages/04-positive-negative-bar.yaml
-  profiles: []
+  profiles:
+  - light
+  - night
+  - monochrome
 - id: proof-05-forecast-uncertainty
   scenario: forecast-uncertainty
   source: proofs/sources/05-forecast-uncertainty.yaml
   package: proofs/packages/05-forecast-uncertainty.yaml
-  profiles: []
+  profiles:
+  - light
+  - night
+  - monochrome
 - id: proof-06-heatmap-fallback
   scenario: heatmap-fallback
   source: proofs/sources/06-heatmap-fallback.yaml
   package: proofs/packages/06-heatmap-fallback.yaml
-  profiles: []
+  profiles:
+  - light
+  - night
+  - monochrome
 - id: proof-07-normalized-map
   scenario: normalized-map
   source: proofs/sources/07-normalized-map.yaml
   package: proofs/packages/07-normalized-map.yaml
-  profiles: []
+  profiles:
+  - light
+  - night
+  - monochrome
 - id: proof-08-directed-network
   scenario: directed-network
   source: proofs/sources/08-directed-network.yaml
   package: proofs/packages/08-directed-network.yaml
-  profiles: []
+  profiles:
+  - light
+  - night
+  - monochrome
 - id: proof-09-monochrome-export
   scenario: monochrome-export
   source: proofs/sources/09-monochrome-export.yaml
   package: proofs/packages/09-monochrome-export.yaml
-  profiles: []
+  profiles:
+  - monochrome
 - id: proof-10-projector-fallback
   scenario: projector-fallback
   source: proofs/sources/10-projector-fallback.yaml
   package: proofs/packages/10-projector-fallback.yaml
-  profiles: []
+  profiles:
+  - projector

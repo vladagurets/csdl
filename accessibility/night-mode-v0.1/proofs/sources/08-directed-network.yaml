@@ -1,0 +1,22 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-proof-source
+id: proof-08-directed-network
+scenario: directed-network
+source_reference:
+  kind: analytical-package
+  path: analytics/analytical-mode-v0.1/proofs/packages/08-network.yaml
+profiles: [light, night, monochrome]
+text_elements:
+  - {id: title, role: display, foreground: ink.primary, background: background.base}
+  - {id: node-labels, role: label, foreground: ink.primary, background: background.base}
+  - {id: edge-labels, role: label, foreground: ink.primary, background: background.base}
+  - {id: source, role: source, foreground: ink.secondary, background: background.base}
+graphical_objects:
+  - {id: edges, role: edge, component: Bridge, foreground: line.strong, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: selected-edge, role: signal, component: Bridge, foreground: signal.data, background: background.base, stroke_px: 2, meaningful: true}
+  - {id: nodes, role: node, component: Node, foreground: line.strong, background: background.base, stroke_px: 2, meaningful: true}
+semantic_encodings:
+  - {meaning: direction, color_token: signal.data, redundant_carriers: [arrowhead, direct_label], arrowhead: terminal, direction_label: source-to-target, target: network-edges}
+  - {meaning: weight, color_token: signal.data, redundant_carriers: [stroke_weight, numeric_label], stroke_tiers: [2, 3, 4], numeric_weight_visible: true, target: network-edges}
+output: {canvas: 1920x1080, orientation: landscape, colorspace: sRGB, format: deterministic-specification}

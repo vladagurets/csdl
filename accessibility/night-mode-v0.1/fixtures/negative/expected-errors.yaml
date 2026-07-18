@@ -1,0 +1,18 @@
+fixtures:
+  - {file: 01-insufficient-text-contrast.yaml, error: "insufficient text contrast: title"}
+  - {file: 02-insufficient-non-text-contrast.yaml, error: "insufficient non-text contrast: zero-axis"}
+  - {file: 03-color-only-meaning.yaml, error: "color cannot be the sole carrier of meaning"}
+  - {file: 04-forecast-indistinguishable.yaml, error: "observed and forecast values require distinct line styles and direct labels"}
+  - {file: 05-invisible-uncertainty.yaml, error: "uncertainty interval requires visible boundaries, label, type, and level"}
+  - {file: 06-missing-confused-with-zero.yaml, error: "missing-value encoding must remain distinct from zero"}
+  - {file: 07-inaccessible-heatmap-scale.yaml, error: "heatmap scale requires numeric-label and pattern fallback"}
+  - {file: 08-hue-only-map.yaml, error: "map regions require pattern and direct-label fallback"}
+  - {file: 09-color-only-network-direction.yaml, error: "network direction requires arrowhead and direct-label fallback"}
+  - {file: 10-signal-lost-grayscale.yaml, error: "Signal must survive grayscale with form and minimum contrast"}
+  - {file: 11-unreadable-source.yaml, error: "insufficient text contrast: source"}
+  - {file: 12-light-night-role-mutation.yaml, error: "light and night semantic signatures must remain equivalent"}
+  - {file: 13-unsupported-token-component.yaml, error: "token signal.primary is incompatible with component Frame"}
+  - {file: 14-undeclared-layout.yaml, error: "accessibility package contains forbidden key: layout"}
+  - {file: 15-nondeterministic-output.yaml, error: "accessibility package must declare deterministic output"}
+  - {file: 16-prohibited-color-pair.yaml, error: "prohibited foreground/background combination"}
+  - {file: 17-inaccessible-signal-area.yaml, error: "accessibility Signal area exceeds its existing semantic ceiling"}
