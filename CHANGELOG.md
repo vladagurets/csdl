@@ -20,7 +20,7 @@
 - Regenerated Hierarchy under D-028 from three new candidates, selected the exact-copy Level A nested open-Bracket composition that communicates ownership depth without workflow semantics, and persisted primary-authority and series evidence.
 - Regenerated Architecture under D-028 from three new candidates, selected the exact-copy Level B context map with one open dusty-blue system Field and exactly three directional relations, and persisted primary-authority and series evidence.
 - Regenerated Workflow under D-028 from three new candidates, selected the exact-copy Level A open-corner action route with three separate Vectors and one solid VERIFY signal, and persisted primary-authority and series evidence.
-- Added Pipeline from three candidates, selecting the exact-copy Level B transformation flow with one continuous carrier and a single visible VALIDATE gate.
+- Regenerated Pipeline under D-028 from three new candidates, selected the exact-copy Level B stepped carrier-through-gates composition with one solid VALIDATE gate, and persisted primary-authority and series evidence.
 
 ## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
 
