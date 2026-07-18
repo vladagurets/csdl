@@ -1,0 +1,4 @@
+mutation:
+  document: terminology
+  path: [recipes, 22, name]
+  value: Poster

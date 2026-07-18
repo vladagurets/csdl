@@ -65,5 +65,16 @@ jobs:
         run: python tools/build_accessibility_mode.py accessibility/night-mode-v0.1
       - name: Validate Night Mode and Accessibility v0.1
         run: python tools/validate_accessibility_mode.py accessibility/night-mode-v0.1
+      - name: Build Cookbook and Design Book v1.0
+        run: python tools/build_design_book.py cookbook/design-book-v1.0
+      - name: Validate Cookbook and Design Book v1.0
+        run: python tools/validate_design_book.py cookbook/design-book-v1.0
+      - name: Verify deterministic publication rebuild
+        run: |
+          mkdir -p .scratch/design-book-ci
+          cp cookbook/design-book-v1.0/output/build-report.yaml .scratch/design-book-ci/first-build-report.yaml
+          python tools/build_design_book.py cookbook/design-book-v1.0
+          cmp .scratch/design-book-ci/first-build-report.yaml cookbook/design-book-v1.0/output/build-report.yaml
+          python tools/validate_design_book.py cookbook/design-book-v1.0
       - name: Verify deterministic outputs
         run: git diff --exit-code

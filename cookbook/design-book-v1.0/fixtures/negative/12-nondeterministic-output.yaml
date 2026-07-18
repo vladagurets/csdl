@@ -1,0 +1,4 @@
+mutation:
+  document: build_report
+  path: [deterministic]
+  value: false

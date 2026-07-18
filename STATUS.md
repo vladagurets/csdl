@@ -1,8 +1,8 @@
 # Project Status
 
 **Project:** Constructive Signal Design Language
-**Version:** Night Mode and Accessibility v0.1 complete
-**Current milestone:** Milestone 6 — complete
+**Version:** Cookbook and Design Book v1.0 integration candidate
+**Current milestone:** Milestone 7 — integration pending
 **Last updated:** 2026-07-18
 
 ## Outcome
@@ -41,6 +41,10 @@ Milestone 5 is complete. D-031 versions Analytical Mode v0.1 as an independent a
 Milestone 6 is complete under D-032 as an independent additive extension at `accessibility/night-mode-v0.1/`. The evidence audit confirms accepted support for semantic roles, direct labels, restrained Signal behavior, presentation readability, and exact analytical meaning, while night/projector/CVD/monochrome behavior is covered by deterministic synthetic proofs. Prompt DSL v0.5, D-029, D-030, D-031, and accepted raster bytes remain immutable dependencies. No raster was generated.
 
 The Milestone 6 implementation is integrated: canonical Markdown, versioned schemas, four semantic token profiles, contrast/fallback/compatibility contracts, deterministic builders/indexes, ten proof packages, seventeen exact-error negative fixtures, strict/incomplete validation, migration/rollback docs, CI steps, and a sixty-file accepted-raster hash inventory all pass. Integration PR #67 passed every required check and merged through merge commit `29b265c9d0099980c89d4ccd3926b675fdc8c82d`.
+
+Milestone 7 is a validated integration candidate under D-033. Its additive `cookbook/design-book-v1.0/` contract contains 32 canonical one-page Markdown sources in ISO A4 landscape order, Ukrainian editorial explanation with protected English identifiers, a machine-readable manifest/terminology/provenance package, deterministic assembled Markdown/index outputs, a text-extractable A4 PDF, full-size color/grayscale page renders, a `3840×2160` contact sheet, twelve exact-error negative fixtures, focused two-build tests, and CI rebuild/validation/drift gates.
+
+The publication covers CSDL philosophy, Quiet Modular and A/B/C, semantic color profiles, typography/licensing boundaries, visual grammar, all fifteen components, all 23 recipes, Prompt DSL v0.5 with a complete example, Analytical Mode v0.1, Accessibility v0.1, reference hierarchy/provenance, why/do/don’t guidance, authoring, and publishing preflight. Local full-page/contact-sheet/grayscale/Poppler/text-layer review passes. Prompt DSL v0.5, D-029, D-030, D-031, D-032, all analytical/accessibility semantics, and all sixty accepted raster hashes remain unchanged. Milestone 7 is not complete until its green integration PR merges with a merge commit and completion state is aligned afterward.
 
 ## Canonical outputs
 
@@ -94,13 +98,21 @@ accessibility/night-mode-v0.1/index.yaml
 accessibility/night-mode-v0.1/contrast-matrix.yaml
 accessibility/night-mode-v0.1/compatibility.yaml
 accessibility/night-mode-v0.1/evaluation/raster-hashes.yaml
+cookbook/design-book-v1.0/manifest.yaml
+cookbook/design-book-v1.0/terminology.yaml
+cookbook/design-book-v1.0/provenance.yaml
+cookbook/design-book-v1.0/pages/01-cover.md through 32-preflight.md
+cookbook/design-book-v1.0/generated/csdl-cookbook-design-book-v1.0.md
+cookbook/design-book-v1.0/generated/index.yaml
+cookbook/design-book-v1.0/output/pdf/csdl-cookbook-design-book-v1.0.pdf (derived, ignored)
+cookbook/design-book-v1.0/output/contact-sheet.png (derived, ignored)
 ```
 
 ## Validation state
 
 ```text
 .venv/bin/python -m pytest -q
-153 passed
+158 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
@@ -173,6 +185,12 @@ accessibility mode built: 10 proof packages, index.yaml, contrast-matrix.yaml, c
 
 .venv/bin/python tools/validate_accessibility_mode.py accessibility/night-mode-v0.1
 accessibility mode valid
+
+.venv/bin/python tools/build_design_book.py cookbook/design-book-v1.0
+design book built: 32 pages, 70 derived files
+
+.venv/bin/python tools/validate_design_book.py cookbook/design-book-v1.0
+design book valid
 ```
 
 ## Milestone 2 primary signal status
@@ -207,6 +225,12 @@ Met: all twenty families pass their individual primary-authority, Prompt DSL, ex
 
 **Secondary signal:** met. Canonical spec, versioned schemas, token/contrast/fallback/compatibility contracts, strict/incomplete validators, deterministic builders/outputs, seventeen exact-error fixtures, focused mutations, migration/rollback/evaluation evidence, CI drift checks, and sixty accepted-raster hashes pass. Prompt DSL v0.5, fifteen components, 23 recipes, Analytical Mode values, and every accepted raster byte remain unchanged.
 
+## Milestone 7 signal status
+
+**Primary signal:** locally met; integration pending. The 32-page A4 landscape PDF and canonical Markdown cover every required topic, all fifteen components, all 23 recipes, Prompt DSL v0.5, Analytical Mode, Accessibility, provenance, practice, and preflight with complete Ukrainian editorial content and exact English identifiers. Full-size/contact-sheet/grayscale review, Poppler rendering, and 30,848-character Unicode extraction pass without clipping or missing text.
+
+**Secondary signal:** locally met; CI/merge pending. Source/terminology/provenance checks, twelve exact-error negative fixtures, two-build byte determinism, generated Markdown/index drift, PDF/page/contact-sheet/report validation, contract counts/versions, and all sixty accepted raster hashes pass. Completion remains gated on the green main-targeted integration PR and merge commit.
+
 ## Repository state
 
-Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1. Milestone 4 remains integrated as Recipe Library and Prompt DSL v0.5. Milestone 5 remains complete as Analytical Mode v0.1. Milestone 6 is complete as Night Mode and Accessibility v0.1. No raster was generated or mutated for Milestones 3–6. No tag, GitHub Release, public release-policy change, or Milestone 7 work has started.
+Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1. Milestone 4 remains integrated as Recipe Library and Prompt DSL v0.5. Milestone 5 remains complete as Analytical Mode v0.1. Milestone 6 is complete as Night Mode and Accessibility v0.1. Milestone 7 is a validated integration candidate and is not yet complete. No accepted raster was generated, recolored, or mutated for Milestones 3–7. No license, tag, GitHub Release, public-release-policy change, or Milestone 8 work has started.

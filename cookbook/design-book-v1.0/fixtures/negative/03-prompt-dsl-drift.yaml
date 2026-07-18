@@ -1,0 +1,4 @@
+mutation:
+  document: terminology
+  path: [prompt_dsl_package_fields, 10]
+  value: layout

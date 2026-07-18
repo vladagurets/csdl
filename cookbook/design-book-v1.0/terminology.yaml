@@ -1,0 +1,64 @@
+registry:
+  id: csdl-terminology-v1.0
+  editorial_language: uk
+  terminology_language: en
+  canonical_identifiers_are_translated: false
+  component_source: components/component-library-v0.1/manifest.yaml
+  recipe_source: recipes/recipe-library-v0.5/manifest.yaml
+  prompt_dsl_source: recipes/recipe-library-v0.5/prompt-dsl-v0.5.schema.yaml
+components:
+  - {name: Anchor, gloss_uk: головний смисловий центр}
+  - {name: Signal, gloss_uk: єдиний домінантний акцент}
+  - {name: Field, gloss_uk: контекст або середовище}
+  - {name: Frame, gloss_uk: функціональна межа}
+  - {name: Cluster, gloss_uk: група пов’язаних одиниць}
+  - {name: Vector, gloss_uk: напрямок дії або трансформації}
+  - {name: Divider, gloss_uk: нейтральний поділ рівноправних зон}
+  - {name: Node, gloss_uk: окрема стадія або сутність}
+  - {name: Loop, gloss_uk: замкнений повторюваний процес}
+  - {name: Collision, gloss_uk: наслідкове зіткнення або синтез}
+  - {name: Bridge, gloss_uk: топологічний зв’язок}
+  - {name: Axis, gloss_uk: явний порядок або домен}
+  - {name: Pulse, gloss_uk: одна точна ключова величина}
+  - {name: Label, gloss_uk: прямий текстовий підпис}
+  - {name: Legend, gloss_uk: винятковий непрямий ключ}
+recipes:
+  - {id: '001', name: Hero}
+  - {id: '002', name: Cover}
+  - {id: '003', name: Quote}
+  - {id: '004', name: Big Number}
+  - {id: '005', name: Comparison}
+  - {id: '006', name: Collision}
+  - {id: '007', name: Before / After}
+  - {id: '008', name: Timeline}
+  - {id: '009', name: Matrix}
+  - {id: '010', name: Hierarchy}
+  - {id: '011', name: Architecture}
+  - {id: '012', name: Workflow}
+  - {id: '013', name: Loop}
+  - {id: '014', name: Pipeline}
+  - {id: '015', name: Decision Tree}
+  - {id: '016', name: Framework}
+  - {id: '017', name: KPI}
+  - {id: '018', name: Table}
+  - {id: '019', name: Chart}
+  - {id: '020', name: Dashboard}
+  - {id: '021', name: Breakdown}
+  - {id: '022', name: Checklist}
+  - {id: '023', name: Formula}
+prompt_dsl_package_fields:
+  - language
+  - version
+  - kind
+  - id
+  - recipe
+  - semantic_intent
+  - content
+  - component_instances
+  - relations
+  - generation_constraints
+  - provenance
+profiles: [light, night, monochrome, projector]
+analytical_families: [bar, line, scatterplot, waterfall, heatmap, funnel, map, network, table, dashboard]
+protected_versions: [Prompt DSL v0.5, Analytical Mode v0.1, Night Mode and Accessibility v0.1]
+retired_or_forbidden_public_names: [Container]
