@@ -36,6 +36,7 @@
 | D-027 | Pilot 01 restarts from Task 1 under the 16:9-first contract; previous 4:5 rasters and their review evidence are non-canonical. | The canvas change affects composition, validation, review scale, and release scope, so the pilot must be evaluated as a new landscape series. |
 | D-028 | Visual DNA generation uses the three boards in `references/canonical/` as the **primary visual authority**; the Pilot 01 `style-anchor-light.png` is a **secondary execution reference** for 16:9 composition, Ukrainian text fidelity, warm paper, and Quiet spacing. | The user-approved rebaseline restores Modular Technical typography, semantic component grammar, asymmetry, strong Anchor/Plane relationships, and calibrated A/B/C identity that a single quiet slide anchor cannot carry alone. Primary authority governs visual language when the references conflict; the `1920×1080` output contract and the ban on restoring superseded 4:5 Pilot rasters remain locked. |
 | D-029 | Component Library v0.1 uses exactly **Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and Legend** as its public component vocabulary. The earlier `Container` alias is retired: use `Field` for context, `Frame` for functional scope, and `Cluster` for grouping. | The user-approved Milestone 3 set omits Container, and accepted Milestone 2 rasters already express its three active uses without a separate primitive. One exact vocabulary prevents ad hoc layout terminology while preserving existing visual semantics and raster evidence. |
+| D-030 | Recipe Library and Prompt DSL v0.5 contains exactly **23 evidence-backed recipes**: the twenty accepted Visual DNA families plus Breakdown, Checklist, and Formula from accepted Pilot 01 evidence. New recipes require distinct usage evidence; the library does not fill toward fifty by duplication. Prompt DSL v0.5 separates semantic intent, exact content, component instances, relations, generation constraints, and provenance while using only D-029 vocabulary. | Twenty Visual DNA contracts and three additional Pilot mechanisms provide distinct semantic needs. A larger set would invent unsupported recipes or begin deferred Analytical Mode. Stable IDs, mechanical v0.1 migration, deterministic defaults, and layout-term rejection make the evidence reusable without changing source prompts or rasters. |
 
 ## Deferred decisions
 
@@ -45,6 +46,6 @@ These remain intentionally open for later milestones:
 - final night-mode token values;
 - Analytical Mode for dense charts and tables;
 - final icon construction grid;
-- full 50-recipe cookbook;
+- expansion beyond the evidence-backed 23-recipe v0.5 set toward a future cookbook;
 - long-term storage policy for high-resolution exports and rejected candidates;
 - public license and release strategy.

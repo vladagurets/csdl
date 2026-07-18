@@ -2,7 +2,7 @@
 
 A geometric visual language for explaining complex ideas clearly, memorably, and consistently with humans and generative models.
 
-**Status:** Foundation v0.1, Pilot 01 v0.1.0, Milestone 2 — Visual DNA Sprint 1, and Milestone 3 — Component Library v0.1 are complete. Milestone 4 is planned and has not started.
+**Status:** Foundation v0.1, Pilot 01 v0.1.0, Milestone 2 — Visual DNA Sprint 1, Milestone 3 — Component Library v0.1, and Milestone 4 — Recipe Library and Prompt DSL v0.5 are complete. Milestone 5 Analytical Mode remains deferred.
 
 **GitHub:** `vladagurets/csdl` is the selected public working repository. A public license has not yet been selected.
 
@@ -13,9 +13,10 @@ A geometric visual language for explaining complex ideas clearly, memorably, and
 3. Check current progress and the exact next task in [`STATUS.md`](STATUS.md).
 4. Follow the staged work in [`ROADMAP.md`](ROADMAP.md).
 5. Treat [`specs/2026-07-17-csdl-v0.1-design.md`](specs/2026-07-17-csdl-v0.1-design.md) as the design source of truth.
-6. Review the completed Milestone 3 contract in [`components/component-library-v0.1/`](components/component-library-v0.1/) and its implementation plan.
-7. Use [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md) for the completed Visual DNA contract.
-8. Use [`docs/handoff/CODEX_IMAGE_GENERATION.md`](docs/handoff/CODEX_IMAGE_GENERATION.md) for the approved Codex raster workflow.
+6. Review the completed Milestone 4 contract in [`recipes/recipe-library-v0.5/`](recipes/recipe-library-v0.5/), its evidence audit, and implementation plan.
+7. Review the stable public vocabulary in [`components/component-library-v0.1/`](components/component-library-v0.1/).
+8. Use [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md) for the completed Visual DNA contract.
+9. Use [`docs/handoff/CODEX_IMAGE_GENERATION.md`](docs/handoff/CODEX_IMAGE_GENERATION.md) for the approved Codex raster workflow.
 
 ## Current foundation
 
@@ -43,6 +44,7 @@ docs/handoff/                     current Codex raster workflow
 pilots/01-agentic-discipline/     canonical copy, prompts, evaluation, assets
 patterns/visual-dna-sprint-01/    20-family contracts, prompts, evidence, assets
 components/component-library-v0.1/ 15-component contracts, proofs, indexes
+recipes/recipe-library-v0.5/       23 recipe contracts, Prompt DSL, proofs, indexes
 references/canonical/             approved visual anchors
 research/                         source analysis without redistributing source PDFs
 tools/ and tests/                 validation and assembly tooling
@@ -62,6 +64,9 @@ python tools/validate_pattern_data.py patterns/visual-dna-sprint-01/data/agent-r
 python tools/validate_component_library.py components/component-library-v0.1/manifest.yaml
 python tools/validate_component_proofs.py components/component-library-v0.1
 python tools/validate_component_index.py components/component-library-v0.1
+python tools/validate_recipe_library.py recipes/recipe-library-v0.5/manifest.yaml
+python tools/validate_prompt_dsl.py recipes/recipe-library-v0.5
+python tools/validate_recipe_index.py recipes/recipe-library-v0.5
 ```
 
 The baseline test suite, manifest validator, and shared-reference validator must pass before raster promotion.
@@ -90,4 +95,8 @@ The Milestone 2 catalog formalizes Hero, Cover, Quote, Big Number, Comparison, C
 
 ## Component Library
 
-Milestone 3 formalizes Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend from accepted Visual DNA evidence. All fifteen component contracts and the editorial/structural/analytical proofs pass strict validation. Markdown specifications remain canonical; deterministic index and 15×20 compatibility outputs are generated from the manifest and checked in. The milestone required no new raster generation. Milestone 4 recipe work has not started.
+Milestone 3 formalizes Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend from accepted Visual DNA evidence. All fifteen component contracts and the editorial/structural/analytical proofs pass strict validation. Markdown specifications remain canonical; deterministic index and 15×20 compatibility outputs are generated from the manifest and checked in. The milestone required no new raster generation.
+
+## Recipe Library and Prompt DSL v0.5
+
+Milestone 4 formalizes 23 evidence-backed recipes: all twenty Visual DNA families plus Breakdown, Checklist, and Formula from Pilot 01. A layout-free outline selects a recipe, and deterministic builders emit a Prompt DSL v0.5 package with semantic intent, exact content, public component instances, allowed relations, generation constraints, and provenance kept separate. Three end-to-end proofs cover editorial, structural/process, and bounded analytical use; one Pilot migration proof and a 27-source migration map preserve accepted v0.1 prompt content. The milestone adds no raster and does not begin full Analytical Mode.

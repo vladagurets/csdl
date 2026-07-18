@@ -27,3 +27,37 @@ jobs:
         run: python tools/validate_assets.py pilots/01-agentic-discipline
       - name: Validate Pilot 01 scores
         run: python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.csv
+      - name: Validate Visual DNA catalog
+        run: python tools/validate_pattern_catalog.py patterns/visual-dna-sprint-01/manifest.yaml
+      - name: Validate Visual DNA analytical data
+        run: python tools/validate_pattern_data.py patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
+      - name: Validate Visual DNA assets
+        run: python tools/validate_pattern_assets.py patterns/visual-dna-sprint-01
+      - name: Validate Visual DNA scores
+        run: python tools/validate_pattern_scores.py patterns/visual-dna-sprint-01/evaluation/scores.csv
+      - name: Validate Visual DNA review evidence
+        run: python tools/validate_pattern_review.py patterns/visual-dna-sprint-01
+      - name: Rebuild Visual DNA catalog
+        run: python tools/build_pattern_catalog.py patterns/visual-dna-sprint-01
+      - name: Validate Visual DNA index
+        run: python tools/validate_pattern_index.py patterns/visual-dna-sprint-01
+      - name: Validate component library
+        run: python tools/validate_component_library.py components/component-library-v0.1/manifest.yaml
+      - name: Validate component proofs
+        run: python tools/validate_component_proofs.py components/component-library-v0.1
+      - name: Rebuild component library
+        run: python tools/build_component_library.py components/component-library-v0.1
+      - name: Validate component index
+        run: python tools/validate_component_index.py components/component-library-v0.1
+      - name: Validate recipe library
+        run: python tools/validate_recipe_library.py recipes/recipe-library-v0.5/manifest.yaml
+      - name: Rebuild recipe proofs
+        run: python tools/build_recipe_proofs.py recipes/recipe-library-v0.5
+      - name: Validate Prompt DSL v0.5
+        run: python tools/validate_prompt_dsl.py recipes/recipe-library-v0.5
+      - name: Rebuild recipe library
+        run: python tools/build_recipe_library.py recipes/recipe-library-v0.5
+      - name: Validate recipe index
+        run: python tools/validate_recipe_index.py recipes/recipe-library-v0.5
+      - name: Verify deterministic outputs
+        run: git diff --exit-code
