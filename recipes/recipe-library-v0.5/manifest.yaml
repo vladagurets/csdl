@@ -1,0 +1,60 @@
+library:
+  id: recipe-library-v0.5
+  title: "CSDL Recipe Library and Prompt DSL v0.5"
+  version: 0.5.0
+  source_milestone: 4
+  canvas: 1920x1080
+  orientation: landscape
+  markdown_authority: true
+  recipe_count: 23
+  schema: schema.yaml
+  prompt_dsl_schema: prompt-dsl-v0.5.schema.yaml
+  migration: migration-v0.1-to-v0.5.yaml
+  index: index.yaml
+  compatibility: compatibility.yaml
+  selection_index: selection-index.yaml
+  proofs_dir: proofs
+  evaluation: evaluation/review.md
+  component_library: components/component-library-v0.1/manifest.yaml
+  visual_dna_manifest: patterns/visual-dna-sprint-01/manifest.yaml
+
+defaults:
+  expression: A
+  density: low
+  canvas:
+    ratio: 16:9
+    width: 1920
+    height: 1080
+    orientation: landscape
+    safe_margin_horizontal: 96
+    safe_margin_vertical: 72
+  presentation:
+    reading_path: top_left_to_bottom_right
+    one_main_idea: true
+    one_visual_mechanism: true
+    one_dominant_signal: true
+  typography:
+    display: modular_technical
+    body: neutral_sans
+    code: technical_mono
+    all_text_horizontal: true
+    max_typographic_tricks: 1
+  palette:
+    mode: light
+    background: paper.base
+    ink: ink.primary
+    primary_signal: signal.primary
+  output:
+    format: PNG
+    exact_size: 1920x1080
+    content_accuracy: exact
+  hard_exclusions:
+    - extra text
+    - logos or repeated footers
+    - UI chrome or decorative card shells
+    - decorative coordinates or random dot fields
+    - gradients, shadows, glossy surfaces, or 3D
+    - political, Soviet, or revolutionary-poster styling
+    - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+
+recipes: []

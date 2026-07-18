@@ -1,0 +1,9 @@
+migration:
+  id: prompt-dsl-v0.1-to-v0.5
+  source_versions: [0.1]
+  target_version: "0.5"
+  source_files: []
+  recipe_map: {}
+  reference_only:
+    - pilots/01-agentic-discipline/prompts/00-style-anchor.yaml
+  normalization_rules: []
