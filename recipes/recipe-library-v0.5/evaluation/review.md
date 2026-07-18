@@ -155,7 +155,7 @@ Remaining risk: final documentation alignment, complete regression matrix, two-p
 
 - Branch: `codex/m4-release`
 - Active documentation: `AGENTS.md`, `README.md`, `ROADMAP.md`, `STATUS.md`, `DECISIONS.md`, `CHANGELOG.md`, and the foundation specification aligned to Milestone 4 complete / Milestone 5 deferred
-- CI: complete Pilot 01, Visual DNA, Component Library, Recipe Library, Prompt DSL, deterministic builder, and clean-diff matrix
+- CI: complete Pilot 01, Visual DNA, Component Library, Recipe Library, Prompt DSL, deterministic text-builder, and clean-diff matrix
 - Raster generation or mutation: none
 
 ### Completion validation
@@ -183,3 +183,9 @@ passed
 The catalog, component, proof-package, migration-proof, compatibility, and index builders produced no unrecorded output drift. The active-document scan found no stale statement that Milestone 4 is planned or unstarted; historical Milestone 3 review and plan records retain their original point-in-time wording.
 
 Remaining risk: GitHub CI, final integration review, merge-commit completion, and post-merge validation on `main` remain external to this packet.
+
+### CI portability follow-up
+
+The first final-integration CI run passed every test and validator but failed the clean-diff step after rebuilding Milestone 2 raster previews/contact sheets with Linux Pillow. The generated PNG bytes differed from the accepted macOS-built assets even though strict asset, review, score, and index validation had passed. Milestone 4 does not own or modify those accepted rasters, and changing their encoding would violate scope.
+
+CI therefore validates every persisted Milestone 2 asset and index without re-encoding them, then rebuilds the text-only Component Library and Recipe Library outputs before `git diff --exit-code`. The full Milestone 2 builder remains a required local completion command; two macOS passes produced no drift during this release audit. This preserves the strict behavioral gates while making the CI determinism assertion target outputs that are byte-stable across supported runners.

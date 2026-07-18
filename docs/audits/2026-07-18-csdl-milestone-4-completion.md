@@ -77,6 +77,8 @@ passed
 
 A second catalog/component/proof/recipe builder pass left the committed tree clean. Including this audit, the complete Milestone 4 diff changes 100 repository paths and changes no `.png`, `.jpg`, `.jpeg`, or `.webp` asset.
 
+The first final-integration CI run exposed a pre-existing cross-platform boundary: Linux Pillow re-encoded accepted Milestone 2 preview/contact-sheet PNGs to different bytes after every M2 validator had passed. CI now validates those persisted raster assets without rewriting them and applies its clean-diff assertion to the byte-stable Component Library and Recipe Library builders. The required local M2 builder was still run twice without drift on the release platform. No accepted raster or M2 contract was changed to mask the runner-specific encoding difference.
+
 ## Compatibility and rollback
 
 The release is additive relative to Milestone 3: it does not modify the fifteen-component public vocabulary, fourteen relations, accepted manifests, prompt sources, canonical rasters, or analytical dataset. Existing v0.1 source packages remain canonical evidence and can be rebuilt into v0.5 through the recorded migration map.
