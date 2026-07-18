@@ -1,7 +1,7 @@
 scale: [1, 2, 3, 4, 5]
 criteria:
   clarity: "Main idea is understood in 2–3 seconds"
-  mobile_readability: "Readable at phone-preview size without zoom"
+  presentation_readability: "Readable in a 1280x720 landscape preview without zoom"
   memorability: "One strong visual image remains after viewing"
   csdl_identity: "Recognizable as Constructive Signal without logo"
   restraint: "No removable decorative element remains"
@@ -10,4 +10,4 @@ criteria:
 thresholds:
   minimum_each: 4
   minimum_average: 4.4
-  required_five: [clarity, mobile_readability, text_fidelity]
+  required_five: [clarity, presentation_readability, text_fidelity]

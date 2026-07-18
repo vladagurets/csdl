@@ -1,0 +1,24 @@
+language: CSDL
+version: 0.1
+reference: ../references/style-anchor-light.png
+canvas: 1920x1080
+orientation: landscape
+recipe: Checklist
+level: A
+density: low
+copy:
+  headline: "4 ПИТАННЯ ПЕРЕД СТАРТОМ"
+  questions: ["ЯКИЙ ПРОЦЕС?", "ДЕ ПЕРЕВІРКИ?", "ЯКІ МЕЖІ?", "ЩО ЗБЕРЕЖЕТЬСЯ?"]
+  supporting: "Якщо відповіді нечіткі, агент ще не готовий працювати автономно."
+components: {Anchor: 1, Cluster: 1, Node: 4, Signal: 1}
+composition:
+  headline_zone: "left 5 columns"
+  cluster_zone: "right 6 columns, open 2x2"
+  visual_mechanism: "one quiet 2x2 Cluster with the fourth Node selected"
+  negative_space: "58%"
+palette: {background: paper.base, ink: ink.primary, signal: signal.primary}
+constraints:
+  - "questions are typographic modules, not colored cards"
+  - "one coral marker only; no repeated checkmarks"
+  - "no footer, logo, frame, large background shape, or extra text"
+  - "all visible copy exact"

@@ -1,133 +1,43 @@
-# Codex Image Generation Workflow
+# Codex Image Generation Workflow — 16:9 Canonical
 
-This document defines the reusable raster-production route for CSDL card tasks. The active card and exact output contract always come from `STATUS.md`, the relevant implementation-plan task, and `manifest.yaml`.
+Pilot 01 uses built-in `$imagegen` with GPT Image 2. It does not require `OPENAI_API_KEY`.
 
-## Default route: built-in `$imagegen`
+## Output contract
 
-Use built-in Codex image generation for normal Pilot 01 card work.
+- canonical format: PNG, `1920×1080`, RGB or RGBA;
+- composition: created directly for landscape 16:9;
+- no portrait master, crop-derived adaptation, or mobile preview;
+- exact visible copy from `manifest.yaml` only;
+- smooth Ukrainian-capable Inter display/body relationship;
+- no gradients, shadows, 3D, glossy surfaces, decorative coordinates, random dot fields, UI chrome, logos, or footers.
 
-- Invoke the capability explicitly with `$imagegen`.
-- Built-in generation uses `gpt-image-2` and counts toward the user's Codex usage limits.
-- It does not require `OPENAI_API_KEY`.
-- Attach the approved style reference when the active Codex surface supports image inputs.
-- Do not inspect API environment variables or install the OpenAI SDK before attempting the built-in route.
+## Shared reference
 
-Official reference: [Image generation in Codex](https://learn.chatgpt.com/docs/image-generation).
+Use `pilots/01-agentic-discipline/references/style-anchor-light.png` only after its new 16:9 candidate selection and provenance are complete. The old portrait anchor is superseded and must not be restored from Git history.
 
-## Approved shared reference
+## Per-asset procedure
 
-Use this file as the primary visual reference for Pilot 01 card generation:
+1. Read the matching manifest entry and Prompt DSL file.
+2. Run tests and manifest validation; for Cards 01–07 also validate the selected shared anchor.
+3. Invoke built-in `$imagegen` three independent times with the same prompt and reference.
+4. Save candidates under `pilots/01-agentic-discipline/drafts/light/16x9/<asset>/`.
+5. Review all three for exact text, landscape hierarchy, semantic geometry, exclusions, and readability at `1280×720`.
+6. Select the strongest passing candidate; never promote the first candidate by default.
+7. Normalize only when needed to exact `1920×1080` without changing composition or copy, and record the operation.
+8. Copy the selected candidate to `canonical/light/16x9/` (or `references/` for the shared anchor).
+9. Persist filenames, rejection reasons, exact-copy evidence, dimensions/mode, selection rationale, and scores in `evaluation/review.md` and `scores.csv`.
+10. Re-run the relevant validators.
 
-```text
-pilots/01-agentic-discipline/references/style-anchor-light.png
-```
+The accountable Codex reviewer may select candidates when the user has explicitly requested autonomous completion of the whole milestone. Any ambiguous change to the locked visual direction still requires user approval.
 
-Its generation route, exact hashes, candidate selection, metadata, and manual review are recorded in:
-
-```text
-pilots/01-agentic-discipline/references/style-anchor-light.provenance.md
-```
-
-The active reference is the exact user-selected GPT Image 2 composition, mechanically normalized to `1080×1350`. Its typography follows the Ukrainian-capable Inter Display / Inter relationship approved on Card 01. The earlier custom 5×7 pixel raster is superseded and exists only in Git history.
-
-Validate the reference before generation. The dedicated validator checks format, dimensions, color mode, complete PNG data, and the approved SHA-256. Do not replace it silently or use a superseded exploration as a card-specific reference.
-
-## Optional routes
-
-### External ChatGPT Images
-
-A human may generate or edit candidates in ChatGPT Images when Codex's built-in image capability is unavailable. The same YAML prompt, reference image, filenames, dimensions, and review criteria still apply.
-
-### Programmatic API
-
-Use the Image Generation API only for an explicitly scoped reproducible or larger-batch workflow. This route requires `OPENAI_API_KEY`, separately configured API billing/access, network access, and an approved helper implementation with tests. Do not add an API helper incidentally while implementing one card.
-
-## Per-card execution contract
-
-### 1. Resolve the active task
-
-Read:
-
-- `STATUS.md` for the current task;
-- the matching task in `docs/superpowers/plans/2026-07-17-csdl-pilot-01.md`;
-- the matching card entry in `pilots/01-agentic-discipline/manifest.yaml`;
-- `pilots/01-agentic-discipline/prompts/00-style-anchor.yaml`;
-- the approved style-anchor provenance sidecar.
-
-Treat manifest copy as immutable unless the user explicitly approves a copy change.
-
-### 2. Prepare the prompt package
-
-Create the per-card YAML file at the path specified by the implementation plan. It must declare the recipe, expression level, semantic components, visual mechanism, palette roles, negative-space target, exact visible copy, and hard exclusions.
-
-### 3. Run deterministic baseline checks
-
-```bash
-python -m pytest -q
-python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
-python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
-```
-
-Expected baseline before card-asset completion:
-
-```text
-17 passed
-manifest valid
-style anchor valid
-```
-
-If the style-anchor command fails, stop before image generation. Do not substitute another reference without explicit approval and updated provenance.
-
-### 4. Generate three independent candidates
-
-Use the same card prompt and primary reference for all three candidates. Save them under the task-specific ignored draft directory and use the filenames defined by the implementation plan.
-
-Do not silently promote the first candidate. Reject any candidate with incorrect text, unrelated UI chrome, extra labels, non-semantic decoration, an incorrect expression level, or unreadable phone-size copy.
-
-### 5. Stop for human selection
-
-Present all three candidates with enough visual evidence to compare full-resolution composition and phone-width readability. A candidate becomes canonical only after explicit human approval.
-
-### 6. Persist review evidence
-
-Record in `pilots/01-agentic-discipline/evaluation/review.md`:
-
-- all candidate filenames;
-- rejection reason for every rejected candidate;
-- selected candidate filename;
-- exact-copy review result;
-- dimensions and color-mode result;
-- full-resolution and phone-width review results;
-- why the selected image is canonical.
-
-Update the card row in `pilots/01-agentic-discipline/evaluation/scores.csv`. Required thresholds are:
+## Acceptance thresholds
 
 - clarity = 5;
-- mobile readability = 5;
+- presentation readability = 5;
 - text fidelity = 5;
-- every other criterion >= 4;
-- average >= 4.4.
-
-`validate_scores.py` remains a series-level gate and is expected to fail until all seven card rows are complete.
-
-### 7. Promote and validate
-
-Copy only the human-approved candidate to the canonical path specified by the implementation plan. Then update `STATUS.md` and `CHANGELOG.md` and rerun the baseline validations.
-
-After all seven 4:5 cards and three 16:9 adaptations exist, also run:
-
-```bash
-python tools/validate_assets.py pilots/01-agentic-discipline
-python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.csv
-```
+- every other criterion ≥ 4;
+- average ≥ 4.4.
 
 ## Capability blocker
 
-If built-in image generation is unavailable or disabled by workspace settings:
-
-1. finish the complete YAML prompt package;
-2. report `built-in Codex image generation unavailable` and the last passing validation;
-3. state the expected draft filenames, canonical path, and dimensions;
-4. stop at the human generation/review gate.
-
-Do not treat an unset `OPENAI_API_KEY` as a blocker for the built-in route, silently switch generation routes, or create placeholder raster assets.
+If built-in generation is unavailable, finish the YAML prompt package, report `built-in Codex image generation unavailable`, give the expected filenames and dimensions, and stop. Do not substitute placeholders or treat a missing API key as the blocker.

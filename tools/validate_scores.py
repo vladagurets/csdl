@@ -7,14 +7,14 @@ from pathlib import Path
 
 CRITERIA = [
     "clarity",
-    "mobile_readability",
+    "presentation_readability",
     "memorability",
     "csdl_identity",
     "restraint",
     "text_fidelity",
     "semantic_integrity",
 ]
-CRITICAL = ["clarity", "mobile_readability", "text_fidelity"]
+CRITICAL = ["clarity", "presentation_readability", "text_fidelity"]
 
 
 def validate_scores(path: Path, expected_cards: set[str] | None = None) -> list[str]:

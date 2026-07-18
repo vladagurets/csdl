@@ -1,0 +1,22 @@
+language: CSDL
+version: 0.1
+reference: ../references/style-anchor-light.png
+canvas: 1920x1080
+orientation: landscape
+recipe: Formula
+level: C
+density: low
+copy:
+  formula: "ПРОЦЕС × ПЕРЕВІРКА × ПАМ’ЯТЬ"
+  result: "= ЯКІСТЬ, ЩО НАКОПИЧУЄТЬСЯ"
+components: {Anchor: 1, Signal: 1, Collision: 1}
+composition:
+  formula_zone: "left and center 8 columns"
+  signal_plane: "right 3 columns, 15–22% of canvas"
+  visual_mechanism: "one muted coral plane intersecting one compact graphite Anchor; formula bridges them"
+  negative_space: "46%"
+palette: {background: paper.base, ink: ink.primary, signal: signal.primary}
+constraints:
+  - "this is the only Level C slide"
+  - "text is short, large, horizontal, and exact"
+  - "no extra slogan, footer, logo, icons, shards, or propaganda cues"

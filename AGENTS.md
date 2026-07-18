@@ -4,7 +4,7 @@ These instructions apply to the entire repository. The canonical GitHub target i
 
 ## Mission
 
-Develop Constructive Signal Design Language as a versioned, machine-readable visual language for educational infographics about AI, software engineering, and economics. Optimize for clarity, mobile readability, memorability, and reproducibility with GPT Image 2.
+Develop Constructive Signal Design Language as a versioned, machine-readable visual language for educational presentation slides about AI, software engineering, and economics. Optimize for clarity, landscape presentation readability, memorability, and reproducibility with GPT Image 2.
 
 ## Mandatory reading order
 
@@ -29,8 +29,8 @@ Do not change these without explicit user approval and a corresponding update to
 - default expression: Quiet Modular;
 - display direction: Modular Technical, with rare condensed editorial emphasis only;
 - palette character: warm, muted, mineral, restrained;
-- canonical canvas: 1080×1350, ratio 4:5;
-- 16:9 is rebuilt, never cropped;
+- canonical canvas: 1920×1080, ratio 16:9, landscape;
+- portrait masters and mobile-preview deliverables are out of scope;
 - standard series rhythm: A, A, B, A, B, A, C;
 - one main idea, one visual mechanism, one dominant signal per screen;
 - 50–75% negative space depending on expression level;
@@ -39,7 +39,7 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Resume Pilot 01 from Task 7 in the implementation plan. Tasks 1–6 are complete. Task 4 was explicitly reopened: its active reference is now the user-selected GPT Image 2 Ukrainian/Inter anchor with three-candidate review, provenance sidecar, and dedicated validator. Do not restore or reuse the superseded pixel raster; it remains only in Git history.
+Pilot 01 v0.1.0 is complete under the 16:9-first contract. Previous 4:5 Pilot 01 rasters, prompts, scores, and review decisions are superseded and must not be restored or reused as active artifacts; Git history remains the archive.
 
 ## Work protocol
 
@@ -92,7 +92,7 @@ An external ChatGPT Images session is an acceptable human-operated fallback when
 For generated images:
 
 - exact output is PNG;
-- canonical card size is 1080×1350;
+- canonical slide size is 1920×1080;
 - text must be publication-ready and match the manifest exactly;
 - no gradients, shadows, 3D, glossy surfaces, decorative coordinate systems, or random dot fields;
 - the approved card-specific reference is `pilots/01-agentic-discipline/references/style-anchor-light.png`;
@@ -110,14 +110,14 @@ python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
 ```
 
-After all seven canonical 4:5 cards and three 16:9 adaptations exist, also run:
+After all seven canonical 16:9 slides exist, also run:
 
 ```bash
 python tools/validate_assets.py pilots/01-agentic-discipline
 python tools/validate_scores.py pilots/01-agentic-discipline/evaluation/scores.csv
 ```
 
-Expected baseline before card-asset completion: seventeen tests pass, the manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
+Expected baseline before slide-asset completion: the test suite passes, the manifest reports `manifest valid`, and the shared reference reports `style anchor valid`.
 
 `validate_scores.py` is a series-level gate. It is expected to fail while unfinished Cards 03–07 still contain placeholder zero scores; validate the current card manually against the rubric and record only evidence that was actually reviewed.
 
@@ -130,7 +130,7 @@ A card task is complete only when:
 - candidate selection and rejection evidence is persisted in `evaluation/review.md`;
 - dimensions and color mode validate;
 - the card matches canonical copy exactly;
-- clarity, mobile readability, and text fidelity score 5/5;
+- clarity, presentation readability, and text fidelity score 5/5;
 - every other rubric criterion is at least 4/5;
 - the average score is at least 4.4;
 - the accepted score is recorded in `evaluation/scores.csv`;

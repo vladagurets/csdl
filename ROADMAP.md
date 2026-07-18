@@ -13,7 +13,7 @@ Delivered:
 - Modular Technical typography roles;
 - Muted Signal light palette;
 - expression levels A/B/C;
-- 4:5 canonical grid and spacing;
+- 16:9 canonical landscape grid and spacing;
 - visual grammar vocabulary;
 - recipes 001 Hero, 005 Comparison, and 013 Loop;
 - minimal Prompt DSL;
@@ -24,26 +24,27 @@ Exit criterion: approved Foundation Design Specification. **Met.**
 
 ## Milestone 1 — Pilot 01: Agentic Discipline
 
-**State:** in progress
+**State:** complete
 
-Goal: prove that one coherent seven-card social series can be generated, evaluated, revised, adapted to 16:9, and released without visual drift.
+Goal: prove that one coherent seven-slide 16:9 presentation series can be generated, evaluated, revised, and released without visual drift.
 
 Deliverables:
 
-- seven canonical 1080×1350 light-mode cards;
-- three rebuilt 1920×1080 adaptations;
+- seven canonical 1920×1080 light-mode slides;
 - prompt files for every card;
-- mobile previews and contact sheet;
+- landscape readability previews and contact sheet;
 - completed rubric scores and review notes;
 - first canonical Visual DNA release.
 
 Exit criteria:
 
 - all required assets validate;
-- clarity, mobile readability, and text fidelity are 5/5 for every card;
+- clarity, presentation readability, and text fidelity are 5/5 for every slide;
 - all other scores are at least 4/5;
 - every card average is at least 4.4;
 - the series reads as one system without repeated logos or decorative overload.
+
+Exit criterion status: **met for Pilot 01 v0.1.0**.
 
 ## Milestone 2 — Visual DNA Sprint 1
 
@@ -112,7 +113,7 @@ Convert validated patterns into reusable recipes. Each recipe includes:
 - ingredients;
 - assembly order;
 - allowed levels;
-- mobile constraints;
+- landscape presentation constraints;
 - semantic color rules;
 - canonical examples;
 - negative prompts;
@@ -135,7 +136,7 @@ Constraint: constructive styling must never distort quantitative relationships.
 
 **State:** deferred
 
-Validate the dark palette, contrast, projector behavior, phone readability, color-vision robustness, and monochrome fallback.
+Validate the dark palette, contrast, projector behavior, landscape readability, color-vision robustness, and monochrome fallback.
 
 ## Milestone 7 — Cookbook and Design Book v1.0
 

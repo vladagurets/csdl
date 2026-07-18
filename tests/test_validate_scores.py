@@ -3,7 +3,7 @@ from pathlib import Path
 from tools.validate_scores import validate_scores
 
 
-HEADER = "card,clarity,mobile_readability,memorability,csdl_identity,restraint,text_fidelity,semantic_integrity\n"
+HEADER = "card,clarity,presentation_readability,memorability,csdl_identity,restraint,text_fidelity,semantic_integrity\n"
 
 
 def test_accepts_publishable_scores(tmp_path: Path) -> None:

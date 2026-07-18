@@ -7,8 +7,8 @@ from tools.validate_manifest import validate_manifest
 
 VALID_MANIFEST = {
     "pilot": {
-        "canonical_canvas": "1080x1350",
-        "adaptation_canvas": "1920x1080",
+        "canonical_canvas": "1920x1080",
+        "orientation": "landscape",
         "rhythm": ["A", "A", "B", "A", "B", "A", "C"],
         "card_count": 7,
     },
@@ -27,7 +27,6 @@ VALID_MANIFEST = {
         }
         for index, level in enumerate(["A", "A", "B", "A", "B", "A", "C"], start=1)
     ],
-    "adaptations_16x9": ["01", "04", "07"],
 }
 
 
@@ -47,6 +46,16 @@ def test_rejects_wrong_rhythm(tmp_path: Path) -> None:
     data["pilot"]["rhythm"] = ["A"] * 7
     path = write_manifest(tmp_path, data)
     assert "pilot.rhythm must equal A,A,B,A,B,A,C" in validate_manifest(path)
+
+
+def test_rejects_non_landscape_canvas(tmp_path: Path) -> None:
+    data = yaml.safe_load(yaml.safe_dump(VALID_MANIFEST))
+    data["pilot"]["canonical_canvas"] = "1080x1350"
+    data["pilot"]["orientation"] = "portrait"
+    path = write_manifest(tmp_path, data)
+    errors = validate_manifest(path)
+    assert "pilot.canonical_canvas must equal 1920x1080" in errors
+    assert "pilot.orientation must equal landscape" in errors
 
 
 def test_rejects_mismatched_card_level(tmp_path: Path) -> None:

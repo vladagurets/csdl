@@ -1,0 +1,25 @@
+language: CSDL
+version: 0.1
+reference: ../references/style-anchor-light.png
+canvas: 1920x1080
+orientation: landscape
+recipe: Loop
+level: B
+density: medium
+copy:
+  headline: "AUTO-DISCIPLINE LOOP"
+  supporting: "Кожен цикл залишає кращий контекст для наступної задачі."
+  stages: ["UNDERSTAND", "PLAN", "EXECUTE + TEST", "REVIEW", "COMPOUND"]
+components: {Loop: 1, Node: 5, Signal: 1}
+composition:
+  headline_zone: "left 5 columns"
+  loop_zone: "right 6 columns"
+  visual_mechanism: "one five-stage Loop with one active Node and one center statement"
+  negative_space: "50%"
+palette: {background: paper.base, ink: ink.primary, signal: signal.primary, service: signal.data}
+constraints:
+  - "exactly five stages in the stated order"
+  - "one active coral node; connectors remain thin"
+  - "no separate colored tile behind every stage"
+  - "no icons, logo, footer, or extra text"
+  - "all visible copy exact"

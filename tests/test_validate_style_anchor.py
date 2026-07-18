@@ -9,7 +9,7 @@ from tools.validate_style_anchor import validate_style_anchor
 def create_image(
     path: Path,
     *,
-    size: tuple[int, int] = (1080, 1350),
+    size: tuple[int, int] = (1920, 1080),
     mode: str = "RGB",
     image_format: str = "PNG",
 ) -> None:
@@ -67,7 +67,7 @@ def test_rejects_corrupt_png_checksum(tmp_path: Path) -> None:
 def test_rejects_wrong_dimensions(tmp_path: Path) -> None:
     path = tmp_path / "style-anchor-light.png"
     create_image(path, size=(1080, 1080))
-    assert "style-anchor-light.png must be 1080x1350, got 1080x1080" in validate_style_anchor(path)
+    assert "style-anchor-light.png must be 1920x1080, got 1080x1080" in validate_style_anchor(path)
 
 
 def test_rejects_unsupported_color_mode(tmp_path: Path) -> None:

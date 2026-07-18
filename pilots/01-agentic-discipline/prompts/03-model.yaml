@@ -1,0 +1,24 @@
+language: CSDL
+version: 0.1
+reference: ../references/style-anchor-light.png
+canvas: 1920x1080
+orientation: landscape
+recipe: Framework
+level: B
+density: medium
+copy:
+  headline: "4 ШАРИ AGENTIC DISCIPLINE"
+  supporting: "Стандарти задають спосіб роботи. Перевірки ловлять помилки. Межі зменшують хаос. Пам’ять зберігає навчання."
+components: {Anchor: 1, Cluster: 1, Node: 4, Vector: 1}
+composition:
+  headline_zone: "upper-left 6 columns"
+  cluster_zone: "right 6 columns"
+  visual_mechanism: "four aligned Nodes forming one controlled Cluster"
+  negative_space: "52%"
+  reading_path: "headline to four-layer cluster to supporting statement"
+palette: {background: paper.base, ink: ink.primary, signal: signal.primary, service: signal.data}
+constraints:
+  - "exactly four nodes, no extra layer labels"
+  - "one coral active node; blue is service-only"
+  - "no container cards, icons, footer, logo, or extra text"
+  - "all visible copy exact"

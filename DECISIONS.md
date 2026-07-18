@@ -17,8 +17,8 @@
 | D-008 | Reading text uses a neutral high-legibility sans; code and technical sequences use monospace. | Separates editorial, explanatory, and technical voices. |
 | D-009 | Color direction is **Muted Signal**: warm paper, warm graphite, mineral coral, dusty data blue, soft ochre, and mineral green. | Reduces saturation while retaining semantic weight and adult technical character. |
 | D-010 | One normal card uses one dominant signal color. | Color communicates meaning rather than decoration. |
-| D-011 | Canonical master is **4:5, 1080×1350 px**. | Optimized for Telegram/social reading on a phone. |
-| D-012 | **16:9, 1920×1080 px** is a rebuilt adaptation, never a crop. | Preserves hierarchy and reading path across formats. |
+| D-011 | Canonical master is **16:9, 1920×1080 px, landscape**. | The primary output is a presentation slide; vertical mobile masters are no longer required. |
+| D-012 | Pilot 01 has no portrait or mobile adaptation deliverable. | Every slide is composed directly for 16:9 rather than derived from a vertical master. |
 | D-013 | Every screen contains **one main idea + one visual mechanism + one dominant signal**. | This is the primary anti-overload rule. |
 | D-014 | Default cards preserve **50–75% negative space**, depending on level. | Space carries hierarchy and makes a few forms memorable. |
 | D-015 | Geometry is semantic. | Scale, direction, distance, overlap, and containment explain relationships. |
@@ -32,7 +32,8 @@
 | D-023 | Pilot 01 topic is **Agentic Discipline: Superpowers × Compound Engineering**. | It tests comparison, process, framework, checklist, and share-card recipes in one real series. |
 | D-024 | Pilot 01 canonical copy lives in `manifest.yaml`. | Raster text must not become the source of truth. |
 | D-025 | Only approved references and final assets are committed; drafts are ignored. | Keeps the repository useful to Codex without turning Git history into an uncontrolled image dump. |
-| D-026 | Pilot 01 uses the user-selected GPT Image 2 Ukrainian/Inter style anchor; the pixel-font repair is superseded. | Aligns the shared reference with approved Card 01 typography and verified Ukrainian rendering without prematurely locking the final licensed font family. |
+| D-026 | Pilot 01 uses the newly selected 16:9 GPT Image 2 Ukrainian/Inter style anchor; all portrait and pixel-font anchors are superseded. | Aligns the shared reference with the landscape-first contract and verified Ukrainian rendering without prematurely locking the final licensed font family. |
+| D-027 | Pilot 01 restarts from Task 1 under the 16:9-first contract; previous 4:5 rasters and their review evidence are non-canonical. | The canvas change affects composition, validation, review scale, and release scope, so the pilot must be evaluated as a new landscape series. |
 
 ## Deferred decisions
 

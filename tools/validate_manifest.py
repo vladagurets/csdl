@@ -33,10 +33,10 @@ def validate_manifest(path: Path) -> list[str]:
     pilot = data.get("pilot", {})
     cards = data.get("cards", [])
 
-    if pilot.get("canonical_canvas") != "1080x1350":
-        errors.append("pilot.canonical_canvas must equal 1080x1350")
-    if pilot.get("adaptation_canvas") != "1920x1080":
-        errors.append("pilot.adaptation_canvas must equal 1920x1080")
+    if pilot.get("canonical_canvas") != "1920x1080":
+        errors.append("pilot.canonical_canvas must equal 1920x1080")
+    if pilot.get("orientation") != "landscape":
+        errors.append("pilot.orientation must equal landscape")
     if pilot.get("rhythm") != EXPECTED_RHYTHM:
         errors.append("pilot.rhythm must equal A,A,B,A,B,A,C")
     if pilot.get("card_count") != 7:
@@ -64,9 +64,6 @@ def validate_manifest(path: Path) -> list[str]:
         max_elements = card.get("max_supporting_elements")
         if not isinstance(max_elements, int) or max_elements < 1 or max_elements > 4:
             errors.append(f"card {card_id} max_supporting_elements must be between 1 and 4")
-
-    if data.get("adaptations_16x9") != ["01", "04", "07"]:
-        errors.append("adaptations_16x9 must equal 01,04,07")
 
     return errors
 

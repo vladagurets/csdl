@@ -1,203 +1,120 @@
-# Pilot 01 Visual Review
+# Pilot 01 Visual Review — 16:9 Restart
 
 ## Review protocol
 
-For each card:
+For the shared anchor and each slide:
 
-1. View at full resolution.
-2. View its generated mobile preview at 100% browser size.
-3. Compare every visible word against `manifest.yaml` manually; do not accept approximate Ukrainian text.
-4. Name the visual mechanism in one sentence.
-5. Identify any element that can be removed without reducing meaning.
-6. Score all seven rubric criteria.
+1. Review all three candidates together.
+2. Verify every visible character against the Prompt DSL and `manifest.yaml`.
+3. Inspect at full `1920×1080` resolution and at `1280×720` review size.
+4. Reject portrait framing, extra text, weak hierarchy, non-semantic decoration, or an incorrect expression level.
+5. Record filenames, rejection reasons, selected candidate, raster metadata, visual mechanism, strongest decision, removable-element check, remaining risk, and selection rationale.
+6. Score all seven rubric criteria for each accepted slide.
 
-## Shared style anchor — Task 4 reopened typography correction
+## Restart record
 
-**Canonical output:** `references/style-anchor-light.png`
+The earlier 4:5 style anchor, Cards 01–02, phone-width evidence, and accepted scores were superseded by decision D-027. They are not reused as visual or scoring evidence for this 16:9 series and remain available only in Git history.
 
-**Selected source:** `style-anchor-light-inter-v1-selected-source.png`
+## Shared style anchor
 
-**Selection:** explicitly approved by the user on 2026-07-17
+**Selected:** `style-anchor-light-v2.png`
+**Canonical:** `references/style-anchor-light.png`
+**Canonical SHA-256:** `6c8504246745d77efe19749e77d51d2cd1d1db26b004975298215bd395311c2a`
 
-### Candidate review
+- `style-anchor-light-v1.png` — rejected: too large and dense for the Quiet Modular default.
+- `style-anchor-light-v2.png` — selected: best landscape balance, clearest Inter-style hierarchy, one left-to-right Vector, and one semantic coral Signal.
+- `style-anchor-light-v3.png` — rejected: display weight is too forceful and condensed.
 
-- `style-anchor-light-inter-v1-selected-source.png` — **selected**. Exact file supplied back by the user as `Generated image 5.png`; strongest continuity with Card 01's Inter Display Black / Inter Regular hierarchy and the user's preferred balance of display weight, supporting copy, vector, signal, and negative space.
-- `style-anchor-light-inter-v2-raw.png` — rejected. The quieter scale weakened the display presence and did not match the explicitly preferred candidate.
-- `style-anchor-light-inter-v3-raw.png` — rejected. Mixed headline weights made `ТИХА` too dominant and reduced the balanced Quiet Modular hierarchy.
+Exact copy: pass. Source `1672×941` RGB; canonical `1920×1080` RGB after resize-only normalization. Full-resolution and `1280×720` review: pass. Detailed hashes and rationale are recorded in the adjacent provenance sidecar.
 
-Three earlier exploratory candidates generated from the broad density-calibration sheet were rejected before the final candidate set because they did not match the already approved Card 01 typography closely enough.
+## Slides 01–07
 
-### Exact-copy review
+All sources were built-in GPT Image 2 landscape outputs at `1672×941`, RGB. Every reviewed candidate was mechanically resized with `sips` to `1920×1080`; there was no crop, redraw, recolor, text edit, or compositional change. Every selected slide passed full-resolution and `1280×720` review.
 
-Expected and observed:
+### Slide 01 — Hook / Level A
 
-```text
-ТИХА
-МОДУЛЬНІСТЬ
-ОДНА ІДЕЯ.
-ОДИН СИГНАЛ.
-```
+**Selected:** `01-hook-v2.png`
+**Canonical SHA-256:** `39de00d730e534c942fbb96e6fe5cf932e7e14c0a89926877406ba3cade62d8c`
 
-Result: **pass — exact Ukrainian copy, including `І` and `Ь`, with no additional text.**
+- `01-hook-v1.png` — rejected: placing `≠` at the end of the first line creates a detached secondary stop.
+- `01-hook-v2.png` — selected: strongest two-line proposition, exact copy, and clearest left-to-right Anchor → Vector → Signal path.
+- `01-hook-v3.png` — rejected: smaller headline scale weakens the opening hook.
 
-### Raster and mobile review
+Exact-copy review: pass for the headline and supporting sentence, including `≠`, `’`, `і`, and `й`; no extra text. Visual mechanism: one typographic Anchor opposed by one stable coral Signal. Strongest decision: the symbol begins the second line and reads as the hinge. Element removed during selection: detached end-of-line hinge. Remaining risk: none material at `1280×720`. Score: `4.86`.
 
-- selected GPT source: PNG, `1122×1402`, RGB, SHA-256 `58b6bbb2fdff56b9b87fbb602f341952ed9ff636977111efd6808ecbb2a767fc`;
-- canonical output: PNG, `1080×1350`, RGB, SHA-256 `c262389d5fbfbd8b2f90039f671d81625476aebf40dfbfc5f19373c6fd91f675`;
-- normalization: Pillow LANCZOS resize only; no crop, redraw, recolor, regeneration, or composition change;
-- full-resolution review — pass;
-- `216×270` phone-width review — pass;
-- pixel/bitmap/dot-matrix typography — absent;
-- logo, footer, frame, grid, coordinates, icons, UI chrome, or extra labels — absent.
+### Slide 02 — Problem / Level A
 
-The selected composition uses a broad upper-left headline field rather than the original literal five-column span. The user's explicit selection of this exact image is the recorded approval for that override.
+**Selected:** `02-problem-v2.png`
+**Canonical SHA-256:** `1f8cc56f434268ec61622722d3da7d7d38567d7d9079d7d1c2273c1a872f1e5b`
 
-## Card 01 — Hook / Level A
+- `02-problem-v1.png` — rejected: the oversized Loop competes with the headline and makes the coral break feel detached.
+- `02-problem-v2.png` — selected: exact copy, exactly three filled graphite Nodes, and one unmistakable coral break in a quiet incomplete Loop.
+- `02-problem-v3.png` — rejected: outlined Nodes weaken the shared component grammar.
 
-**Canonical output:** `canonical/light/4x5/01-hook.png`  
-**Selected draft name:** `01-hook-v1.png`  
-**Selection:** explicitly approved by the user on 2026-07-17
-**Promotion identity:** byte-for-byte exact selected candidate
+Exact-copy review: pass for headline and all three consequence lines; no extra text. Visual mechanism: a cycle loses continuity at one coral break while three Nodes remain separated. Strongest decision: compact right-side Loop balances the three-line headline. Element removed during selection: oversized diagram. Remaining risk: none material. Score: `4.86`.
 
-### Generation route
+### Slide 03 — Four-layer model / Level B
 
-- Built-in image generation was invoked three times with `prompts/01-hook.yaml` and the approved style anchor.
-- All three generated outputs were unrelated GitHub-interface screenshots. They were rejected and not committed as CSDL drafts.
-- The user explicitly approved a deterministic Pillow fallback.
-- The first Pillow candidate set was rejected after the user identified broken typography caused by independent glyph rendering.
-- The renderer was corrected to draw complete Unicode lines with antialiasing, Inter Display Black for the headline, and Inter Regular for supporting copy.
-- Three corrected candidates were then reviewed.
-- The user selected V1, and the final canonical PNG is the exact V1 byte stream rather than a subsequent approximation or re-render.
+**Selected:** `03-model-v2.png`
+**Canonical SHA-256:** `d64bcc7b9c558e69ea990b3bd25061254ea36a76d595b2b3f5bdfbc74f339576`
 
-### Candidate review
+- `03-model-v1.png` — rejected: four large rectangular blocks read like dashboard cards rather than Nodes.
+- `03-model-v2.png` — selected: four equal square Nodes form one clear controlled sequence; the fourth coral Node is the single active state.
+- `03-model-v3.png` — rejected: the branching connector implies a hierarchy not present in the manifest.
 
-- `01-hook-v1.png` — **selected**. Clearest hierarchy, one uninterrupted top-left-to-lower-right reading path, strongest phone-width legibility, and the quietest Level A expression.
-- `01-hook-v2.png` — rejected. The detached `≠` hinge created a second focal stop and slowed the headline scan.
-- `01-hook-v3.png` — rejected. The vertical fault weakened the compact headline block and reduced mobile immediacy.
-- initial broken-font candidate set — rejected as a group before selection because kerning, Ukrainian diacritics, and the `≠` sign were visibly damaged.
+Exact-copy review: pass for headline and all four supporting sentences, including `Пам’ять`; no layer labels were invented. Visual mechanism: four aligned Nodes form a controlled Cluster and one Vector. Strongest decision: horizontal progression makes the landscape canvas do semantic work. Element removed during selection: dashboard-like blocks and branching hierarchy. Remaining risk: service blue is visible but subordinate. Score: `4.86`.
 
-### Exact-copy review
+### Slide 04 — Complementary comparison / Level A
 
-Expected and observed copy:
+**Selected:** `04-comparison-v3.png`
+**Canonical SHA-256:** `c97326715a6345fe099d08a197dc4422411a6a529082934d8f40c63de3049aff`
 
-```text
-СИЛЬНИЙ АГЕНТ ≠ СТІЙКИЙ РЕЗУЛЬТАТ
-Стабільність з’являється, коли робота має процес, перевірки й пам’ять.
-```
+- `04-comparison-v1.png` — rejected: six coral bullets plus a coral square create seven competing signals.
+- `04-comparison-v2.png` — rejected: repeated coral bullets again violate one-signal restraint.
+- `04-comparison-v3.png` — selected: exact ten text blocks, equal fields, graphite dashes, one divider, and one small coral Signal.
 
-Result: **pass — every visible word matches manifest card `01`; line wrapping preserves the exact words and reading order.**
+Exact-copy review: pass for the headline, titles, six points, and supporting sentence; English case, plus signs, and Ukrainian text all match the manifest. Visual mechanism: two complementary open Fields separated by one Divider. Strongest decision: neutral bullets keep the mechanisms equal instead of adversarial. Element removed during selection: six decorative coral bullets. Remaining risk: this is the densest slide, but all text passes `1280×720`. Score: `4.86`.
 
-### Raster, identity, and mobile review
+### Slide 05 — Synthesis loop / Level B
 
-- format: PNG — pass
-- dimensions: `1080×1350` — pass
-- color mode: RGB — pass
-- file size: `43,522` bytes — pass
-- SHA-256: `0e5dd316842d5e36a18bd54a9b69b85ab1e70af53709f68e3735cf154bef407b` — pass
-- Git blob SHA: `a9676cee42dd31870c683be1a8cb8c7be93855f1` — pass
-- byte-for-byte identity with selected `01-hook-v1.png` — pass
-- one coral object only — pass
-- exact paper-colored area: approximately `90.67%` — pass
-- full-resolution review — pass
-- `216×270` phone-width preview — pass
-- no logo, footer, frame, grid, icons, extra labels, UI chrome, gradient, shadow, or 3D treatment — pass
+**Selected:** `05-synthesis-v1.png`
+**Canonical SHA-256:** `1b7a4045fdbf616f8787dbfaf81161158b06d9efda67d7361102653d810497c8`
 
-### Visual mechanism
+- `05-synthesis-v1.png` — selected: five simple Nodes, one active coral Node, thin connectors, exact stage order, and no UI containers.
+- `05-synthesis-v2.png` — rejected: five rounded pills turn the diagram into interface chrome.
+- `05-synthesis-v3.png` — rejected: stage pills plus separate circular markers duplicate the Node role.
 
-One large typographic Anchor presents the unstable proposition; one small, stable coral Signal in the lower-right third is connected by a single functional graphite Vector.
+Exact-copy review: pass for headline, supporting sentence, and all five English stages in the required order. Visual mechanism: one Loop compounds learning from UNDERSTAND through COMPOUND. Strongest decision: bare circular Nodes preserve semantic geometry. Element removed during selection: colored stage containers. Remaining risk: none material. Score: `5.00`.
 
-No displayed element can be removed without weakening either the proposition, the stabilizing contrast, or the reading path.
+### Slide 06 — Operational takeaway / Level A
 
-### Accepted rubric score
+**Selected:** `06-takeaway-v2.png`
+**Canonical SHA-256:** `422cab41115b8b69334653f05237055357ae526c93c2a631ac7550ef61522a45`
 
-| Criterion | Score | Evidence |
-|---|---:|---|
-| clarity | 5 | Main proposition reads immediately. |
-| mobile_readability | 5 | Headline and two supporting lines remain readable at phone width. |
-| memorability | 4 | Strong Anchor-versus-Signal image without Level C dramatization. |
-| csdl_identity | 4 | Quiet Modular palette, geometry, asymmetry, and semantic signal are recognizable. |
-| restraint | 5 | Every visible element has a role; no removable decoration remains. |
-| text_fidelity | 5 | Exact canonical Ukrainian copy. |
-| semantic_integrity | 5 | Typography, Vector, and coral Signal each have one explicit role. |
+- `06-takeaway-v1.png` — rejected: full cross-divider lines make the open Cluster read as a table.
+- `06-takeaway-v2.png` — selected: exact copy, four equally readable open typographic modules, and one small coral marker on the fourth question.
+- `06-takeaway-v3.png` — rejected: oversized question typography pushes the slide toward poster expression.
 
-Average: **4.71 / 5**.
+Exact-copy review: pass for headline, four questions, and supporting sentence; all question marks and Ukrainian letters match. Visual mechanism: one open 2×2 Cluster with the fourth Node selected. Strongest decision: alignment alone forms the Cluster. Element removed during selection: table grid. Remaining risk: none material. Score: `4.86`.
 
-The detailed fallback, renderer requirements, and exact raster provenance are persisted in `canonical/light/4x5/01-hook.provenance.md`.
+### Slide 07 — Share formula / Level C
 
-## Card 02 — Problem / Level A
+**Selected:** `07-share-card-v2.png`
+**Canonical SHA-256:** `43fc54769dfa4c737da35b9c71b668a0bcd239671b319f3621a0e4e2ea37ad29`
 
-**Canonical output:** `canonical/light/4x5/02-problem.png`
+- `07-share-card-v1.png` — rejected: the graphite block is too small to make the intended Collision legible.
+- `07-share-card-v2.png` — selected: exact formula, strong but restrained Signal plane, and a clear compact graphite Anchor at the intersection.
+- `07-share-card-v3.png` — rejected: the larger graphite block compresses the formula and overstates the Collision.
 
-**Selected draft name:** `02-problem-v1.png`
+Exact-copy review: pass for both formula lines, including both multiplication signs, `=`, comma, and `ПАМ’ЯТЬ`. Visual mechanism: one coral Signal plane intersects one graphite Anchor while the formula bridges them. Strongest decision: the right-side plane creates the only Level C peak in the series. Element removed during selection: overlarge collision mass. Remaining risk: none material. Score: `5.00`.
 
-**Selection:** explicitly approved by the user on 2026-07-17
+## Series-level result
 
-**Promotion identity:** byte-for-byte exact selected normalized candidate
-
-### Generation route
-
-- Built-in GPT Image 2 generation was invoked three independent times with `prompts/02-problem.yaml` and the approved `references/style-anchor-light.png` reference.
-- Each source output was mechanically normalized from `1122×1402` to `1080×1350` with `sips`; there was no crop, redraw, recolor, regeneration, or compositional edit.
-- All three normalized candidates were reviewed together at full resolution and at `216×270` phone width.
-- The user explicitly selected V1 after the side-by-side review.
-
-### Candidate review
-
-- `02-problem-v1.png` — **selected**. The incomplete Loop reads immediately, the separate coral dash has one unambiguous break-point role, the left-weighted composition preserves controlled asymmetry, and the headline, diagram, and consequences form the clearest single reading path at phone width.
-- `02-problem-v2.png` — rejected. The larger centered Loop occupies too much of the field, weakens the intended Quiet asymmetry, and makes the reading path bend back toward the lower-left copy.
-- `02-problem-v3.png` — rejected. The coral signal is rendered as a square Node rather than a distinct break point, creating the appearance of four Nodes and violating the specified component roles.
-
-### Exact-copy review
-
-Expected and observed copy:
-
-```text
-AD-HOC РОБОТА РОЗПАДАЄТЬСЯ МІЖ СЕСІЯМИ
-Рішення губляться.
-Перевірки повторюються.
-Помилки повертаються.
-```
-
-Result: **pass — every visible character matches manifest card `02`; all text is horizontal and no additional labels are present.**
-
-### Raster, identity, and mobile review
-
-- selected built-in source: PNG, `1122×1402`, RGB, SHA-256 `be5fef28b1ebe7ffa5202c03fd4d9b86c6313fda1bedd86a33bc4574c19805da`;
-- canonical output: PNG, `1080×1350`, RGB, `1,095,616` bytes;
-- canonical SHA-256: `3b1693ed05ee6c61753fbd37e1b6f128333f3012da98f0ca91ca2a263c1c0525`;
-- canonical Git blob SHA: `ddc8cf538f6e65c8f7c6dab8b3da14f4b566c3d0`;
-- byte-for-byte identity with selected normalized `02-problem-v1.png` — pass;
-- full-resolution review — pass;
-- `216×270` phone-width review — pass;
-- smooth Ukrainian-capable non-pixel typography — pass;
-- exactly one incomplete Loop, three graphite square Nodes, and one coral break point — pass;
-- logo, footer, frame, grid, coordinates, icons, UI chrome, extra labels, tangled fragments, explosion, shadow, glossy surface, or 3D treatment — absent.
-
-### Visual mechanism
-
-One thin graphite Loop fails at one coral break point while three square Nodes remain separated around the cycle; the three consequences below name what that discontinuity causes between sessions.
-
-No displayed element can be removed without weakening the problem statement, the incomplete-cycle mechanism, or one of its three explicit consequences.
-
-### Accepted rubric score
-
-| Criterion | Score | Evidence |
-|---|---:|---|
-| clarity | 5 | The broken-cycle problem reads in one headline-to-Loop scan. |
-| mobile_readability | 5 | Headline and all three consequences remain readable at phone width. |
-| memorability | 4 | The single broken Loop is distinct without inflating the card to Level C. |
-| csdl_identity | 4 | Quiet Modular typography, asymmetry, semantic geometry, and one coral Signal are recognizable. |
-| restraint | 5 | The card contains only the required copy and one diagram. |
-| text_fidelity | 5 | Exact canonical Ukrainian copy with no extra text. |
-| semantic_integrity | 5 | Loop, Nodes, and coral break point each carry one explicit role. |
-
-Average: **4.71 / 5**.
-
-## Series-level checks
-
-- Sequence follows `A → A → B → A → B → A → C`.
-- No adjacent cards repeat the same dominant composition.
-- The coral signal has one semantic role per card.
-- Cards 01 and 07 are memorable but visibly different.
-- Card 04 presents complementary mechanisms and does not manufacture a false rivalry.
-- No card contains political, Soviet, revolutionary, or retro-propaganda cues.
+- rhythm A → A → B → A → B → A → C: pass;
+- Slides 01–06 remain quieter than Slide 07: pass;
+- no repeated logo, footer, border, or UI chrome: pass;
+- one dominant signal color per slide: pass;
+- Slide 04 is complementary, not adversarial: pass;
+- all manifest copy exact: pass;
+- full-resolution and `1280×720` readability: pass;
+- contact sheet coherence: pass.

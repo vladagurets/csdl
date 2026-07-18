@@ -1,0 +1,28 @@
+language: CSDL
+version: 0.1
+reference: ../references/style-anchor-light.png
+canvas: 1920x1080
+orientation: landscape
+recipe: Comparison
+level: A
+density: medium
+copy:
+  headline: "ДВА МЕХАНІЗМИ ДИСЦИПЛІНИ"
+  supporting: "Superpowers дисциплінує поточну роботу. Compound Engineering робить наступний цикл легшим."
+  left_title: "SUPERPOWERS"
+  left_points: ["Skills за контекстом", "Gated workflow", "TDD + review"]
+  right_title: "COMPOUND ENGINEERING"
+  right_points: ["Plan + work + review", "Capture learnings", "Easier next cycle"]
+components: {Anchor: 1, Field: 2, Divider: 1, Signal: 1}
+composition:
+  headline_zone: "top-left across 8 columns"
+  comparison_zone: "two wide equal open fields"
+  divider: "one thin vertical center line"
+  visual_mechanism: "two complementary Fields with equal weight"
+  negative_space: "52%"
+palette: {background: paper.base, ink: ink.primary, signal: signal.primary}
+constraints:
+  - "complementary comparison, never a VS battle"
+  - "equal visual weight and consistent typography"
+  - "no colored cards, icons, logos, footer, or extra text"
+  - "all visible copy exact"

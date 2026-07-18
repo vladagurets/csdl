@@ -6,10 +6,10 @@ from pathlib import Path
 
 from PIL import Image
 
-EXPECTED_SIZE = (1080, 1350)
+EXPECTED_SIZE = (1920, 1080)
 ALLOWED_MODES = {"RGB", "RGBA"}
 EXPECTED_CANONICAL_SHA256 = (
-    "c262389d5fbfbd8b2f90039f671d81625476aebf40dfbfc5f19373c6fd91f675"
+    "6c8504246745d77efe19749e77d51d2cd1d1db26b004975298215bd395311c2a"
 )
 
 
@@ -30,7 +30,7 @@ def validate_style_anchor(
                 )
             if image.size != EXPECTED_SIZE:
                 errors.append(
-                    f"{path.name} must be 1080x1350, "
+                    f"{path.name} must be 1920x1080, "
                     f"got {image.size[0]}x{image.size[1]}"
                 )
             if image.mode not in ALLOWED_MODES:
