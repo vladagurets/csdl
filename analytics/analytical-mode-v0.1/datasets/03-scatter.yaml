@@ -1,0 +1,24 @@
+language: CSDL
+version: "0.1"
+kind: analytical-dataset
+dataset:
+  id: scatter-operations-v1
+  version: 1.0.0
+  title: Review latency and success rate
+  status: synthetic_fixed_data
+  unit_of_analysis: agent configuration
+  fields:
+    - {id: configuration, label: Configuration, type: identifier, role: identifier, nullable: false}
+    - {id: review_minutes, label: Median review time, type: quantitative, role: measure, nullable: false, unit: minutes, display_format: "0 min", domain: [0, 30]}
+    - {id: success_rate, label: Success rate, type: quantitative, role: measure, nullable: false, unit: percent, display_format: "0%", domain: [0, 100]}
+    - {id: runs, label: Runs, type: quantitative, role: measure, nullable: false, unit: count, display_format: "0", domain: [0, 100]}
+    - {id: policy, label: Policy, type: categorical, role: dimension, nullable: false, categories: [baseline, gated]}
+  records:
+    - {id: s1, configuration: A, review_minutes: 22, success_rate: 68, runs: 40, policy: baseline}
+    - {id: s2, configuration: B, review_minutes: 18, success_rate: 75, runs: 55, policy: gated}
+    - {id: s3, configuration: C, review_minutes: 14, success_rate: 84, runs: 70, policy: gated}
+    - {id: s4, configuration: D, review_minutes: 10, success_rate: 90, runs: 60, policy: gated}
+  ordering: {field: configuration, values: [A, B, C, D]}
+  missing_values: []
+  transformations: []
+  provenance: {source: CSDL Milestone 5 synthetic fixture, source_type: synthetic, source_date: 2026-07-18, retrieval_period: fixed four-configuration study, method: fixed values for independent-domain scatter validation}

@@ -1,0 +1,24 @@
+language: CSDL
+version: "0.1"
+kind: analytical-dataset
+dataset:
+  id: dashboard-agent-reliability-v1
+  version: 1.0.0
+  title: Agent reliability dashboard source
+  status: fixed_demo_data
+  unit_of_analysis: weekly batch of agent runs
+  fields:
+    - {id: week, label: Week, type: ordinal, role: dimension, nullable: false, ordering: declared}
+    - {id: runs, label: Runs, type: quantitative, role: measure, nullable: false, unit: count, display_format: "0", domain: [0, 100], aggregation: sum}
+    - {id: success_rate, label: Success rate, type: quantitative, role: measure, nullable: false, unit: percent, display_format: "0%", domain: [0, 100], aggregation: mean, denominator: runs}
+    - {id: review_minutes, label: Median review time, type: quantitative, role: measure, nullable: false, unit: minutes, display_format: "0 min", domain: [0, 30], aggregation: median}
+    - {id: escaped_defects, label: Escaped defects, type: quantitative, role: measure, nullable: false, unit: count, display_format: "0", domain: [0, 20], aggregation: sum}
+  records:
+    - {id: d1, week: W1, runs: 40, success_rate: 72, review_minutes: 18, escaped_defects: 8}
+    - {id: d2, week: W2, runs: 45, success_rate: 78, review_minutes: 16, escaped_defects: 6}
+    - {id: d3, week: W3, runs: 50, success_rate: 84, review_minutes: 13, escaped_defects: 4}
+    - {id: d4, week: W4, runs: 55, success_rate: 90, review_minutes: 10, escaped_defects: 2}
+  ordering: {field: week, values: [W1, W2, W3, W4]}
+  missing_values: []
+  transformations: []
+  provenance: {source: patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml, source_type: accepted_fixed_demo_data, source_date: 2026-07-18, retrieval_period: W1 to W4, method: typed lossless migration of accepted Milestone 2 fixed values}

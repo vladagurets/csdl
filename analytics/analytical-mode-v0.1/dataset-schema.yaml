@@ -1,0 +1,69 @@
+language: CSDL
+version: "0.1"
+kind: analytical-dataset-schema
+
+required_root_fields: [language, version, kind, dataset]
+allowed_root_fields: [language, version, kind, dataset]
+required_dataset_fields:
+  - id
+  - version
+  - title
+  - status
+  - unit_of_analysis
+  - fields
+  - records
+  - ordering
+  - missing_values
+  - transformations
+  - provenance
+
+field_types: [categorical, ordinal, temporal, quantitative, geographic, identifier]
+field_roles: [dimension, measure, identifier]
+field_required: [id, label, type, role, nullable]
+field_optional:
+  - unit
+  - display_format
+  - domain
+  - categories
+  - ordering
+  - aggregation
+  - denominator
+  - normalization
+  - geographic_role
+  - network_role
+
+missing_statuses: [missing, "null", suppressed, not_applicable, unavailable]
+missing_value_required: [record_id, field, status]
+status_values: [fixed_demo_data, synthetic_fixed_data]
+provenance_required: [source, source_type, source_date, retrieval_period, method]
+
+transformation_required:
+  - id
+  - operation
+  - inputs
+  - output
+  - parameters
+  - formula
+  - reversible
+  - auditable
+transformation_operations:
+  - identity
+  - rate
+  - normalize
+  - cumulative_sum
+  - conversion_rate
+  - aggregate
+  - forecast
+
+rules:
+  record_id_required: true
+  record_ids_unique: true
+  field_ids_unique: true
+  undeclared_fields_forbidden: true
+  primitive_values_must_match_type: true
+  null_requires_missing_declaration: true
+  source_and_period_required: true
+  transformations_explicit: true
+  transformations_deterministic: true
+  transformations_reproducible_from_records: true
+  meaning_change_without_declaration_forbidden: true

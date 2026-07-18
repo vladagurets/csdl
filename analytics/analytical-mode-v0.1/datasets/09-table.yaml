@@ -1,0 +1,24 @@
+language: CSDL
+version: "0.1"
+kind: analytical-dataset
+dataset:
+  id: table-quarterly-v1
+  version: 1.0.0
+  title: Quarterly product metrics
+  status: synthetic_fixed_data
+  unit_of_analysis: product-quarter record
+  fields:
+    - {id: product, label: Product, type: categorical, role: dimension, nullable: false, ordering: declared}
+    - {id: quarter, label: Quarter, type: ordinal, role: dimension, nullable: false, ordering: declared}
+    - {id: revenue, label: Revenue, type: quantitative, role: measure, nullable: false, unit: EUR_thousands, display_format: "€0k", domain: [0, 500], aggregation: sum}
+    - {id: margin, label: Margin, type: quantitative, role: measure, nullable: true, unit: percent, display_format: "0.0%", domain: [0, 100], aggregation: mean}
+  records:
+    - {id: t1, product: Alpha, quarter: Q1, revenue: 120, margin: 32.5}
+    - {id: t2, product: Alpha, quarter: Q2, revenue: 145, margin: 35.0}
+    - {id: t3, product: Beta, quarter: Q1, revenue: 95, margin: 28.0}
+    - {id: t4, product: Beta, quarter: Q2, revenue: 110, margin: null}
+  ordering: {rows: {field: product, values: [Alpha, Beta]}, columns: {field: quarter, values: [Q1, Q2]}, measures: [revenue, margin]}
+  missing_values:
+    - {record_id: t4, field: margin, status: suppressed}
+  transformations: []
+  provenance: {source: CSDL Milestone 5 synthetic fixture, source_type: synthetic, source_date: 2026-07-18, retrieval_period: Q1 to Q2, method: fixed exact-lookup values with one suppressed cell}
