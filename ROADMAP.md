@@ -152,11 +152,13 @@ Exit criterion status: **met for Recipe Library and Prompt DSL v0.5**.
 
 ## Milestone 5 — Analytical Mode
 
-**State:** deferred
+**State:** active
 
 Add precise rules for bars, lines, scatterplots, waterfall, heatmaps, funnels, maps, networks, tables, uncertainty, forecasts, negative values, sources, and direct labeling.
 
 Constraint: constructive styling must never distort quantitative relationships.
+
+Implementation contract: [`docs/plans/2026-07-18-csdl-milestone-5.md`](docs/plans/2026-07-18-csdl-milestone-5.md). D-031 keeps Prompt DSL v0.5 unchanged and versions Analytical Mode as an independent additive extension.
 
 ## Milestone 6 — Night Mode and Accessibility
 

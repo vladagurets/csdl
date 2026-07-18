@@ -2,7 +2,7 @@
 
 **Project:** Constructive Signal Design Language
 **Version:** Recipe Library and Prompt DSL v0.5 complete
-**Current milestone:** Milestone 4 — complete; Milestone 5 deferred
+**Current milestone:** Milestone 5 — Analytical Mode active
 **Last updated:** 2026-07-18
 
 ## Outcome
@@ -35,6 +35,8 @@ The user-approved D-028 rebaseline makes all three boards in `references/canonic
 Milestone 3 is complete. Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend have canonical Markdown and machine-readable contracts. D-029 locks this fifteen-name public vocabulary and retires the earlier Container alias without changing any accepted raster: Hierarchy uses Frame for ownership scope, Architecture uses Field for system scope, and Pipeline needs no wrapper component. Editorial Big Number, structural Architecture, and analytical Chart proofs validate using component vocabulary alone; deterministic index and 15×20 compatibility outputs match the manifest; all completion validators pass.
 
 Milestone 4 is complete. D-030 locks Recipe Library v0.5 to 23 evidence-backed recipes: all twenty accepted Visual DNA families plus Breakdown, Checklist, and Formula from accepted Pilot 01 evidence. Every recipe has a canonical Markdown specification and a machine-readable record. Layout-free outlines deterministically select recipes and build Prompt DSL v0.5 packages that keep semantic intent, exact content, public component instances, relations, generation constraints, and provenance separate. Mechanical migration covers seven Pilot and twenty Visual DNA source prompts without mutating their copy/data or accepted rasters. Editorial Big Number, structural Workflow, bounded analytical Chart, and Pilot Comparison migration proofs rebuild deterministically; six negative fixtures reject layout vocabulary, undeclared components, forbidden relations, unsupported combinations, copy mutation, and analytical distortion. Full Analytical Mode remains deferred to Milestone 5.
+
+Milestone 5 is active under an explicit user objective. The evidence audit confirms that existing KPI, Table, Chart, and Dashboard rasters support bounded visual rules but do not prove the remaining analytical families. D-031 therefore versions Analytical Mode v0.1 as an independent additive extension under `analytics/analytical-mode-v0.1/`, leaves Prompt DSL v0.5 unchanged, retains exactly fifteen public components and 23 recipes, and requires deterministic synthetic fixed-data proofs for all new families without raster generation.
 
 ## Canonical outputs
 
