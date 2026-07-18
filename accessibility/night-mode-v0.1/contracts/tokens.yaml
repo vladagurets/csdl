@@ -1,0 +1,152 @@
+language: CSDL
+version: "0.1"
+kind: accessibility-token-contract
+profiles:
+  light:
+    description: "Warm-paper accessible mapping; accepted rasters remain unchanged."
+    colorspace: sRGB
+    thresholds: {text: 4.5, non_text: 3.0}
+    stroke_widths: {critical_px: 2, projector_px: 3}
+    tokens:
+      background.base: "#F7F5F0"
+      surface.raised: "#FBFAF6"
+      ink.primary: "#1B1B19"
+      ink.secondary: "#535457"
+      ink.inverse: "#FBFAF6"
+      neutral.fill: "#D9D6CF"
+      line.subtle: "#B8B5AE"
+      line.strong: "#85847F"
+      signal.primary: "#C96157"
+      signal.data: "#4C6A8A"
+      signal.attention: "#9B7B3A"
+      signal.positive: "#6E8A7A"
+      signal.error: "#B84F47"
+      state.focus: "#4C6A8A"
+      state.selection: "#C96157"
+      data.missing: "#85847F"
+    allowed_pairings:
+      - {kind: text, foreground: ink.primary, background: background.base}
+      - {kind: text, foreground: ink.secondary, background: background.base}
+      - {kind: text, foreground: ink.primary, background: surface.raised}
+      - {kind: text, foreground: ink.secondary, background: surface.raised}
+      - {kind: non_text, foreground: line.strong, background: background.base}
+      - {kind: non_text, foreground: line.strong, background: surface.raised}
+      - {kind: non_text, foreground: signal.primary, background: background.base}
+      - {kind: non_text, foreground: signal.data, background: background.base}
+      - {kind: non_text, foreground: signal.attention, background: background.base}
+      - {kind: non_text, foreground: signal.positive, background: background.base}
+      - {kind: non_text, foreground: signal.error, background: background.base}
+      - {kind: non_text, foreground: state.focus, background: background.base}
+      - {kind: non_text, foreground: state.selection, background: background.base}
+      - {kind: non_text, foreground: data.missing, background: background.base}
+  night:
+    description: "Warm graphite field with lifted mineral signals; never mechanical inversion."
+    colorspace: sRGB
+    thresholds: {text: 4.5, non_text: 3.0}
+    stroke_widths: {critical_px: 2, projector_px: 3}
+    tokens:
+      background.base: "#171817"
+      surface.raised: "#232422"
+      ink.primary: "#EEEAE1"
+      ink.secondary: "#B8B4AC"
+      ink.inverse: "#171817"
+      neutral.fill: "#343532"
+      line.subtle: "#555650"
+      line.strong: "#73746D"
+      signal.primary: "#D2756D"
+      signal.data: "#879BB6"
+      signal.attention: "#D0B36F"
+      signal.positive: "#89A092"
+      signal.error: "#E07F76"
+      state.focus: "#D0B36F"
+      state.selection: "#D2756D"
+      data.missing: "#73746D"
+    allowed_pairings:
+      - {kind: text, foreground: ink.primary, background: background.base}
+      - {kind: text, foreground: ink.secondary, background: background.base}
+      - {kind: text, foreground: ink.primary, background: surface.raised}
+      - {kind: text, foreground: ink.secondary, background: surface.raised}
+      - {kind: non_text, foreground: line.strong, background: background.base}
+      - {kind: non_text, foreground: line.strong, background: surface.raised}
+      - {kind: non_text, foreground: signal.primary, background: background.base}
+      - {kind: non_text, foreground: signal.data, background: background.base}
+      - {kind: non_text, foreground: signal.attention, background: background.base}
+      - {kind: non_text, foreground: signal.positive, background: background.base}
+      - {kind: non_text, foreground: signal.error, background: background.base}
+      - {kind: non_text, foreground: state.focus, background: background.base}
+      - {kind: non_text, foreground: state.selection, background: background.base}
+      - {kind: non_text, foreground: data.missing, background: background.base}
+  monochrome:
+    description: "One-channel output with deterministic forms, patterns, and direct labels."
+    colorspace: sRGB
+    thresholds: {text: 4.5, non_text: 3.0}
+    stroke_widths: {critical_px: 2, projector_px: 3}
+    tokens:
+      background.base: "#F7F5F0"
+      surface.raised: "#FFFFFF"
+      ink.primary: "#111111"
+      ink.secondary: "#4A4A48"
+      ink.inverse: "#FFFFFF"
+      neutral.fill: "#D3D2CE"
+      line.subtle: "#B1B0AC"
+      line.strong: "#72716D"
+      signal.primary: "#333332"
+      signal.data: "#4A4A48"
+      signal.attention: "#656560"
+      signal.positive: "#50504D"
+      signal.error: "#282827"
+      state.focus: "#333332"
+      state.selection: "#4A4A48"
+      data.missing: "#72716D"
+    allowed_pairings:
+      - {kind: text, foreground: ink.primary, background: background.base}
+      - {kind: text, foreground: ink.secondary, background: background.base}
+      - {kind: text, foreground: ink.primary, background: surface.raised}
+      - {kind: text, foreground: ink.secondary, background: surface.raised}
+      - {kind: non_text, foreground: line.strong, background: background.base}
+      - {kind: non_text, foreground: line.strong, background: surface.raised}
+      - {kind: non_text, foreground: signal.primary, background: background.base}
+      - {kind: non_text, foreground: signal.data, background: background.base}
+      - {kind: non_text, foreground: signal.attention, background: background.base}
+      - {kind: non_text, foreground: signal.positive, background: background.base}
+      - {kind: non_text, foreground: signal.error, background: background.base}
+      - {kind: non_text, foreground: state.focus, background: background.base}
+      - {kind: non_text, foreground: state.selection, background: background.base}
+      - {kind: non_text, foreground: data.missing, background: background.base}
+  projector:
+    description: "High-margin dark output for ambient-light and low-contrast projection."
+    colorspace: sRGB
+    thresholds: {text: 7.0, non_text: 4.5}
+    stroke_widths: {critical_px: 3, projector_px: 3}
+    tokens:
+      background.base: "#101110"
+      surface.raised: "#20211F"
+      ink.primary: "#FFFFFF"
+      ink.secondary: "#E7E3DA"
+      ink.inverse: "#101110"
+      neutral.fill: "#383A36"
+      line.subtle: "#6F716B"
+      line.strong: "#9A9B94"
+      signal.primary: "#F08C82"
+      signal.data: "#AFC8EA"
+      signal.attention: "#F1CF7A"
+      signal.positive: "#B2D0BD"
+      signal.error: "#FF9A90"
+      state.focus: "#F1CF7A"
+      state.selection: "#F08C82"
+      data.missing: "#9A9B94"
+    allowed_pairings:
+      - {kind: text, foreground: ink.primary, background: background.base}
+      - {kind: text, foreground: ink.secondary, background: background.base}
+      - {kind: text, foreground: ink.primary, background: surface.raised}
+      - {kind: text, foreground: ink.secondary, background: surface.raised}
+      - {kind: non_text, foreground: line.strong, background: background.base}
+      - {kind: non_text, foreground: line.strong, background: surface.raised}
+      - {kind: non_text, foreground: signal.primary, background: background.base}
+      - {kind: non_text, foreground: signal.data, background: background.base}
+      - {kind: non_text, foreground: signal.attention, background: background.base}
+      - {kind: non_text, foreground: signal.positive, background: background.base}
+      - {kind: non_text, foreground: signal.error, background: background.base}
+      - {kind: non_text, foreground: state.focus, background: background.base}
+      - {kind: non_text, foreground: state.selection, background: background.base}
+      - {kind: non_text, foreground: data.missing, background: background.base}
