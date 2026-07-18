@@ -1,0 +1,3 @@
+id: map-raw-count-as-rate
+base_package: proofs/packages/07-map.yaml
+mutation: {path: [encoding, measure_semantics], value: raw_count}

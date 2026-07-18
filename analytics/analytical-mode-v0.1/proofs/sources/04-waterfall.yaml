@@ -1,0 +1,32 @@
+id: proof-04-waterfall
+family: waterfall
+dataset: datasets/04-waterfall.yaml
+analytical_intent: {question: "How does the starting score reconcile to the final score?", claim: "Signed increments reconcile exactly from 100 to 130."}
+recipe: {id: "019", slug: chart, version: 0.5.0}
+encoding:
+  marks: [{type: waterfall-step, role: signed-step}, {type: line, role: cumulative-connector}, {type: text, role: direct-label}]
+  bindings: {order: step, status: kind, value: delta, label: step}
+  order: [Starting score, Test coverage, Review delay, Retained learning, Final score]
+  domains: {value: [-20, 150]}
+  scales: {value: linear, order: ordinal}
+  zero_baseline: true
+  cumulative_transformation: cumulative
+  start_value: 100
+  final_total: 130
+  reconciliation: exact
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings: [signed_label, direction_from_zero, step_kind_label]
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+  - {id: order-axis, component: Axis, role: sequence}
+  - {id: value-axis, component: Axis, role: quantitative}
+  - {id: steps, component: Node, role: reconciliation-step}
+  - {id: labels, component: Label, role: direct-label}
+  - {id: signal, component: Signal, role: final-total}
+relations:
+  - {subject: order-axis, type: orders, object: steps}
+  - {subject: value-axis, type: orders, object: steps}
+  - {subject: labels, type: attached_to, object: steps}
+  - {subject: signal, type: highlights, object: steps}

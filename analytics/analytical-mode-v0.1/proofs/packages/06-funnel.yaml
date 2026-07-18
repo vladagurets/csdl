@@ -1,0 +1,164 @@
+language: CSDL
+version: '0.1'
+kind: analytical-package
+id: proof-06-funnel
+dataset:
+  id: funnel-conversion-v1
+  version: 1.0.0
+  path: datasets/06-funnel.yaml
+  source: CSDL Milestone 5 synthetic fixture
+analytical_intent:
+  question: How many entities remain and convert at each stage?
+  claim: Absolute values and previous-stage conversion rates remain explicit.
+recipe:
+  id: 019
+  slug: chart
+  version: 0.5.0
+encoding:
+  marks:
+  - type: funnel-stage
+    role: ordered-stage
+  - type: text
+    role: value-and-rate-label
+  bindings:
+    order: stage
+    value: count
+    label: stage
+  order:
+  - Evaluated
+  - Trialed
+  - Activated
+  - Retained
+  domains:
+    value:
+    - 0
+    - 1000
+    conversion_rate:
+    - 0
+    - 100
+  scales:
+    value: linear
+    order: ordinal
+  denominator_semantics: previous_stage
+  conversion_transformation: previous_stage_conversion
+  non_monotonic_policy: show_without_reordering
+  width_semantics: proportional_length
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings:
+  - absolute_value_label
+  - conversion_rate_label
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+- id: stage-axis
+  component: Axis
+  role: sequence
+- id: value-axis
+  component: Axis
+  role: quantitative
+- id: stages
+  component: Node
+  role: funnel-stage
+- id: labels
+  component: Label
+  role: direct-label
+- id: signal
+  component: Signal
+  role: retained-stage
+relations:
+- subject: stage-axis
+  type: orders
+  object: stages
+- subject: value-axis
+  type: orders
+  object: stages
+- subject: labels
+  type: attached_to
+  object: stages
+- subject: signal
+  type: highlights
+  object: stages
+specification:
+  family: funnel
+  fields:
+  - id: stage
+    label: Stage
+    type: ordinal
+    role: dimension
+    nullable: false
+    ordering: declared
+  - id: count
+    label: Entities
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: count
+    display_format: '0'
+    domain:
+    - 0
+    - 1000
+    aggregation: count
+  records:
+  - id: f1
+    stage: Evaluated
+    count: 1000
+  - id: f2
+    stage: Trialed
+    count: 650
+  - id: f3
+    stage: Activated
+    count: 390
+  - id: f4
+    stage: Retained
+    count: 195
+  ordering:
+    field: stage
+    values:
+    - Evaluated
+    - Trialed
+    - Activated
+    - Retained
+  missing_values: []
+  transformations:
+  - id: previous_stage_conversion
+    operation: conversion_rate
+    inputs:
+    - count
+    output: conversion_rate
+    parameters:
+      denominator: previous_stage
+      first_stage: 100
+    formula: current.count / previous.count * 100
+    reversible: false
+    auditable: true
+  derived:
+    previous_stage_conversion:
+    - 100.0
+    - 65.0
+    - 60.0
+    - 50.0
+  traceability:
+    order:
+      field: stage
+      type: ordinal
+      unit: null
+    value:
+      field: count
+      type: quantitative
+      unit: count
+    label:
+      field: stage
+      type: ordinal
+      unit: null
+provenance:
+  dataset_source:
+    source: CSDL Milestone 5 synthetic fixture
+    source_type: synthetic
+    source_date: 2026-07-18
+    retrieval_period: fixed cohort
+    method: fixed monotonic stage counts with previous-stage denominators
+  proof_source: proofs/sources/06-funnel.yaml
+  evidence: synthetic_fixed_data
+  builder: tools/build_analytical_mode.py
+  deterministic: true

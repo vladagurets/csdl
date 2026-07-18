@@ -1,0 +1,31 @@
+id: proof-07-map
+family: map
+dataset: datasets/07-map.yaml
+analytical_intent: {question: "Which regions have higher incident rates after normalization?", claim: "Comparable rates use per-100000-run normalization and explicit geographic provenance."}
+recipe: {id: "019", slug: chart, version: 0.5.0}
+encoding:
+  marks: [{type: region, role: geographic-unit}, {type: text, role: rate-and-missing-label}]
+  bindings: {geographic_id: region, value: incident_rate, detail: incidents, label: incident_rate}
+  order: [PT-11, PT-17, PT-15]
+  domains: {value: [0, 10]}
+  scales: {value: continuous-color}
+  projection: ETRS89_Portugal_TM06
+  geographic_identifier: ISO_3166_2
+  measure_semantics: normalized_rate
+  normalization: {numerator: incidents, denominator: runs, multiplier: 100000, unit: per_100000_runs}
+  missing_rendering: hatched-region
+  raw_counts_comparable: false
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings: [rate_label, missing_hatch_and_label]
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+  - {id: geographic-field, component: Field, role: geographic-context}
+  - {id: regions, component: Node, role: geographic-region}
+  - {id: labels, component: Label, role: direct-label}
+  - {id: signal, component: Signal, role: highest-rate}
+relations:
+  - {subject: geographic-field, type: contains, object: regions}
+  - {subject: labels, type: attached_to, object: regions}
+  - {subject: signal, type: highlights, object: regions}

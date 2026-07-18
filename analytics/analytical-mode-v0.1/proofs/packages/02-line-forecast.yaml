@@ -1,0 +1,260 @@
+language: CSDL
+version: '0.1'
+kind: analytical-package
+id: proof-02-line-forecast
+dataset:
+  id: line-forecast-v1
+  version: 1.0.0
+  path: datasets/02-line-forecast.yaml
+  source: CSDL Milestone 5 synthetic fixture
+analytical_intent:
+  question: What was observed and what is forecast?
+  claim: Success rate rises, while forecast values remain uncertain and distinct from
+    observations.
+recipe:
+  id: 019
+  slug: chart
+  version: 0.5.0
+encoding:
+  marks:
+  - type: line
+    role: estimate
+  - type: point
+    role: source-value
+  - type: interval-band
+    role: uncertainty
+  - type: text
+    role: direct-label
+  bindings:
+    order: period
+    value: estimate
+    lower: lower
+    upper: upper
+    status: status
+    label: estimate
+  order:
+  - 2026-Q1
+  - 2026-Q2
+  - 2026-Q3
+  - 2026-Q4
+  - 2027-Q1
+  - 2027-Q2
+  domains:
+    value:
+    - 0
+    - 100
+  scales:
+    order: temporal
+    value: linear
+  interpolation: none
+  smoothing: none
+  missing_intervals: gap
+  forecast:
+    status_field: status
+    observed_value: observed
+    forecast_value: forecast
+    boundary: 2027-Q1
+    horizon: 2_quarters
+    rendering: dash-and-label
+  uncertainty:
+    lower: lower
+    estimate: estimate
+    upper: upper
+    type: prediction_interval
+    level: 80
+    rendering: band-and-label
+  zero_relevance: contextual_percent_domain
+  direct_labels: true
+  color_only_meaning: false
+  redundant_encodings:
+  - status_label
+  - dash_pattern
+  - interval_boundary
+  dual_axis: false
+  decorative_field_area_percent: 0
+component_instances:
+- id: period-axis
+  component: Axis
+  role: temporal
+- id: value-axis
+  component: Axis
+  role: quantitative
+- id: points
+  component: Node
+  role: data-point
+- id: labels
+  component: Label
+  role: direct-label
+- id: signal
+  component: Signal
+  role: forecast-boundary
+relations:
+- subject: period-axis
+  type: orders
+  object: points
+- subject: value-axis
+  type: orders
+  object: points
+- subject: labels
+  type: attached_to
+  object: points
+- subject: signal
+  type: highlights
+  object: points
+specification:
+  family: line
+  fields:
+  - id: period
+    label: Quarter
+    type: temporal
+    role: dimension
+    nullable: false
+    ordering: declared
+  - id: estimate
+    label: Success rate
+    type: quantitative
+    role: measure
+    nullable: false
+    unit: percent
+    display_format: 0%
+    domain:
+    - 0
+    - 100
+    aggregation: mean
+  - id: lower
+    label: Lower prediction bound
+    type: quantitative
+    role: measure
+    nullable: true
+    unit: percent
+    display_format: 0%
+    domain:
+    - 0
+    - 100
+  - id: upper
+    label: Upper prediction bound
+    type: quantitative
+    role: measure
+    nullable: true
+    unit: percent
+    display_format: 0%
+    domain:
+    - 0
+    - 100
+  - id: status
+    label: Observation status
+    type: categorical
+    role: dimension
+    nullable: false
+    categories:
+    - observed
+    - forecast
+  records:
+  - id: l1
+    period: 2026-Q1
+    estimate: 70
+    lower: null
+    upper: null
+    status: observed
+  - id: l2
+    period: 2026-Q2
+    estimate: 76
+    lower: null
+    upper: null
+    status: observed
+  - id: l3
+    period: 2026-Q3
+    estimate: 82
+    lower: null
+    upper: null
+    status: observed
+  - id: l4
+    period: 2026-Q4
+    estimate: 86
+    lower: null
+    upper: null
+    status: observed
+  - id: l5
+    period: 2027-Q1
+    estimate: 89
+    lower: 84
+    upper: 93
+    status: forecast
+  - id: l6
+    period: 2027-Q2
+    estimate: 91
+    lower: 85
+    upper: 96
+    status: forecast
+  ordering:
+    field: period
+    values:
+    - 2026-Q1
+    - 2026-Q2
+    - 2026-Q3
+    - 2026-Q4
+    - 2027-Q1
+    - 2027-Q2
+  missing_values:
+  - record_id: l1
+    field: lower
+    status: not_applicable
+  - record_id: l1
+    field: upper
+    status: not_applicable
+  - record_id: l2
+    field: lower
+    status: not_applicable
+  - record_id: l2
+    field: upper
+    status: not_applicable
+  - record_id: l3
+    field: lower
+    status: not_applicable
+  - record_id: l3
+    field: upper
+    status: not_applicable
+  - record_id: l4
+    field: lower
+    status: not_applicable
+  - record_id: l4
+    field: upper
+    status: not_applicable
+  transformations: []
+  derived: {}
+  traceability:
+    order:
+      field: period
+      type: temporal
+      unit: null
+    value:
+      field: estimate
+      type: quantitative
+      unit: percent
+    lower:
+      field: lower
+      type: quantitative
+      unit: percent
+    upper:
+      field: upper
+      type: quantitative
+      unit: percent
+    status:
+      field: status
+      type: categorical
+      unit: null
+    label:
+      field: estimate
+      type: quantitative
+      unit: percent
+provenance:
+  dataset_source:
+    source: CSDL Milestone 5 synthetic fixture
+    source_type: synthetic
+    source_date: 2026-07-18
+    retrieval_period: 2026-Q1 to 2027-Q2
+    method: fixed observed and forecast values with 80 percent prediction interval
+  proof_source: proofs/sources/02-line-forecast.yaml
+  evidence: synthetic_fixed_data
+  builder: tools/build_analytical_mode.py
+  deterministic: true

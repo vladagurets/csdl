@@ -1,0 +1,3 @@
+id: missing-unit
+base_package: proofs/packages/01-bar-positive-negative.yaml
+mutation: {operation: delete, path: [specification, fields, 1, unit]}

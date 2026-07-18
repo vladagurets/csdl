@@ -317,7 +317,156 @@ def validate_analytical_package(
         expected_order = dataset.get("ordering", {}).get("values")
         if encoding.get("order") != expected_order:
             errors.append("bar category order must match canonical dataset")
+        if encoding.get("bar_semantics") == "normalized":
+            normalized = encoding.get("normalized_values", [])
+            total = encoding.get("normalized_total")
+            if not normalized or round(sum(normalized), 10) != total:
+                errors.append("normalized chart values must sum to declared total")
+    elif family == "line":
+        expected_order = dataset.get("ordering", {}).get("values")
+        if encoding.get("order") != expected_order:
+            errors.append("line temporal order must match canonical dataset")
+        forecast = encoding.get("forecast", {})
+        status_field = forecast.get("status_field")
+        records = specification.get("records", [])
+        statuses = [record.get(status_field) for record in records]
+        canonical_statuses = [
+            record.get(status_field) for record in dataset.get("records", [])
+        ]
+        observed_value = forecast.get("observed_value")
+        forecast_value = forecast.get("forecast_value")
+        if statuses != canonical_statuses or forecast_value not in statuses or any(
+            status == observed_value
+            for status in statuses[statuses.index(forecast_value) :]
+        ):
+            errors.append("forecast records must remain semantically distinct from observed records")
+        else:
+            first_forecast = records[statuses.index(forecast_value)].get(
+                dataset.get("ordering", {}).get("field")
+            )
+            if forecast.get("boundary") != first_forecast or not forecast.get("horizon"):
+                errors.append("forecast boundary and horizon must match canonical records")
+        uncertainty = encoding.get("uncertainty", {})
+        if uncertainty.get("type") not in schema.get("uncertainty_types", []) or not uncertainty.get("level"):
+            errors.append("uncertainty interval type and level must be explicit")
+        lower_field = uncertainty.get("lower")
+        estimate_field = uncertainty.get("estimate")
+        upper_field = uncertainty.get("upper")
+        for record in records:
+            lower, estimate, upper = (
+                record.get(lower_field),
+                record.get(estimate_field),
+                record.get(upper_field),
+            )
+            if lower is not None and upper is not None and not (lower <= estimate <= upper):
+                errors.append("uncertainty lower must not exceed estimate or upper")
+                break
+    elif family == "scatterplot":
+        for channel in ("x", "y"):
+            field_id = bindings.get(channel)
+            if fields.get(field_id, {}).get("type") != "quantitative":
+                errors.append(f"scatterplot {channel} binding must be quantitative")
+            if encoding.get("domains", {}).get(channel) != fields.get(field_id, {}).get("domain"):
+                errors.append(f"scatterplot {channel} domain must match canonical field")
+        if bindings.get("size") and encoding.get("size_semantics") != "proportional_area":
+            errors.append("scatterplot size encoding must declare proportional area semantics")
+        if encoding.get("trend_line") not in {None, "none"} and not encoding.get("trend_method"):
+            errors.append("scatterplot trend line requires a declared method")
+    elif family == "waterfall":
+        cumulative_id = encoding.get("cumulative_transformation")
+        cumulative = specification.get("derived", {}).get(cumulative_id, [])
+        if not cumulative or cumulative[-1] != encoding.get("final_total"):
+            errors.append("waterfall cumulative total must reconcile exactly")
+        start = next((record.get("stated_total") for record in dataset.get("records", []) if record.get("kind") == "start"), None)
+        increments = sum(record.get("delta", 0) for record in dataset.get("records", []) if record.get("kind") == "increment")
+        if start is None or start + increments != encoding.get("final_total"):
+            errors.append("waterfall start plus signed increments must equal final total")
+    elif family == "heatmap":
+        ordering = dataset.get("ordering", {})
+        if encoding.get("row_order") != ordering.get("rows", {}).get("values"):
+            errors.append("heatmap row order must match canonical dataset")
+        if encoding.get("column_order") != ordering.get("columns", {}).get("values"):
+            errors.append("heatmap column order must match canonical dataset")
+        if not encoding.get("non_color_fallback"):
+            errors.append("heatmap requires an accessible non-color fallback")
+        if dataset.get("missing_values") and not encoding.get("missing_label"):
+            errors.append("heatmap missing cells require explicit labeled semantics")
+    elif family == "funnel":
+        transformation = next(
+            (item for item in dataset.get("transformations", []) if item.get("id") == encoding.get("conversion_transformation")),
+            {},
+        )
+        expected_denominator = transformation.get("parameters", {}).get("denominator")
+        if encoding.get("denominator_semantics") != expected_denominator:
+            errors.append("funnel denominator semantics must match declared transformation")
+        if encoding.get("width_semantics") != "proportional_length":
+            errors.append("funnel width must be proportional to absolute values")
+    elif family == "map":
+        if not encoding.get("projection") or not encoding.get("geographic_identifier"):
+            errors.append("map projection and geographic identity must be explicit")
+        if encoding.get("measure_semantics") != "normalized_rate" or bindings.get("value") != "incident_rate":
+            errors.append("map raw counts cannot be labeled as comparable normalized rates")
+        normalization = encoding.get("normalization", {})
+        if normalization.get("denominator") != "runs" or normalization.get("unit") != "per_100000_runs":
+            errors.append("map rate denominator and unit must match canonical normalization")
+    elif family == "network":
+        if encoding.get("layout_semantic") is not False or encoding.get("distance_encoding") != "none":
+            errors.append("network layout distance is non-semantic without an encoding contract")
+        records = dataset.get("records", [])
+        node_ids = {record.get("entity_id") for record in records if record.get("record_kind") == "node"}
+        for record in records:
+            if record.get("record_kind") == "edge" and (
+                record.get("source_id") not in node_ids or record.get("target_id") not in node_ids
+            ):
+                errors.append("network edge endpoints must reference declared nodes")
+    elif family == "table":
+        ordering = dataset.get("ordering", {})
+        if encoding.get("row_order") != ordering.get("rows", {}).get("values"):
+            errors.append("table row order must match canonical dataset")
+        if encoding.get("column_order") != ordering.get("columns", {}).get("values"):
+            errors.append("table column order must match canonical dataset")
+        if dataset.get("missing_values") and not encoding.get("missing_labels"):
+            errors.append("table missing values require explicit text semantics")
+    elif family == "dashboard":
+        expected_dataset = f"{dataset.get('id')}@{dataset.get('version')}"
+        views = encoding.get("views", [])
+        if not views or {view.get("dataset") for view in views} != {expected_dataset}:
+            errors.append("dashboard views must share one dataset identity and version")
+        view_ids = {view.get("id") for view in views}
+        if encoding.get("primary_signal_view") not in view_ids:
+            errors.append("dashboard primary Signal must target a declared view")
     return errors
+
+
+def _apply_fixture_mutation(package: dict[str, Any], mutation: dict[str, Any]) -> None:
+    path = mutation.get("path", [])
+    target: Any = package
+    for key in path[:-1]:
+        target = target[key]
+    final = path[-1]
+    if mutation.get("operation", "set") == "delete":
+        del target[final]
+    else:
+        target[final] = mutation.get("value")
+
+
+def validate_negative_fixture(path: Path, root: Path) -> list[str]:
+    errors: list[str] = []
+    fixture = _load(path, errors, path.name)
+    if errors:
+        return errors
+    base = root / str(fixture.get("base_package", ""))
+    package = _load(base, errors, "negative fixture base package")
+    if errors:
+        return errors
+    mutation = fixture.get("mutation")
+    if not isinstance(mutation, dict) or not isinstance(mutation.get("path"), list):
+        return ["negative fixture mutation must declare a path"]
+    try:
+        _apply_fixture_mutation(package, mutation)
+    except (KeyError, IndexError, TypeError) as error:
+        return [f"negative fixture mutation path is invalid: {error}"]
+    return validate_analytical_package(package, root)
 
 
 def validate_analytical_library(root: Path, require_complete: bool = True) -> list[str]:
@@ -359,14 +508,108 @@ def validate_analytical_library(root: Path, require_complete: bool = True) -> li
         elif require_complete:
             errors.append(f"missing analytical dataset: {entry.get('path')}")
     if require_complete:
+        expected_package_names = [
+            Path(str(proof.get("package", ""))).name
+            for proof in manifest.get("proofs", [])
+        ]
+        actual_package_names = sorted(
+            path.name for path in (root / "proofs/packages").glob("*.yaml")
+        )
+        if actual_package_names != expected_package_names:
+            errors.append("strict analytical validation requires exactly ten canonical proof packages")
         for proof in manifest.get("proofs", []):
-            if not (root / str(proof.get("source", ""))).is_file():
+            source_path = root / str(proof.get("source", ""))
+            package_path = root / str(proof.get("package", ""))
+            if not source_path.is_file():
                 errors.append(f"missing analytical proof source: {proof.get('source')}")
-            if not (root / str(proof.get("package", ""))).is_file():
+            if not package_path.is_file():
                 errors.append(f"missing analytical proof package: {proof.get('package')}")
+            if source_path.is_file() and package_path.is_file():
+                source = _load(source_path, errors, source_path.name)
+                package = _load(package_path, errors, package_path.name)
+                if source and package:
+                    errors.extend(validate_analytical_package(package, root))
+                    dataset_document = _load(
+                        root / str(source.get("dataset", "")),
+                        errors,
+                        "proof canonical dataset",
+                    )
+                    if dataset_document:
+                        from tools.build_analytical_mode import derive_analytical_package
+
+                        source["source_path"] = proof.get("source")
+                        expected_package = derive_analytical_package(
+                            source, dataset_document, root
+                        )
+                        if package != expected_package:
+                            errors.append(
+                                "analytical proof package does not match deterministic rebuild: "
+                                + package_path.name
+                            )
         for key in ("index", "dataset_index", "compatibility"):
             if not (root / str(library.get(key, ""))).is_file():
                 errors.append(f"missing analytical derived output: {library.get(key)}")
+        if all((root / str(library.get(key, ""))).is_file() for key in ("index", "dataset_index", "compatibility")):
+            from tools.build_analytical_mode import (
+                derive_compatibility,
+                derive_dataset_index,
+                derive_index,
+            )
+
+            expected_outputs = {
+                "index": derive_index(manifest, family_contracts),
+                "dataset_index": derive_dataset_index(root, manifest),
+                "compatibility": derive_compatibility(manifest, compatibility),
+            }
+            output_labels = {
+                "index": "analytical index does not match deterministic derivation",
+                "dataset_index": "analytical dataset index does not match deterministic derivation",
+                "compatibility": "analytical compatibility does not match deterministic derivation",
+            }
+            for key, expected in expected_outputs.items():
+                actual = _load(
+                    root / str(library[key]), errors, f"analytical {key}"
+                )
+                if actual and actual != expected:
+                    errors.append(output_labels[key])
+        fixture_root = root / "fixtures/negative"
+        expected_errors = _load(
+            fixture_root / "expected-errors.yaml", errors, "negative fixture index"
+        )
+        fixtures = expected_errors.get("fixtures", []) if expected_errors else []
+        expected_files = [entry.get("file") for entry in fixtures]
+        actual_files = sorted(
+            path.name
+            for path in fixture_root.glob("*.yaml")
+            if path.name != "expected-errors.yaml"
+        )
+        if len(fixtures) < 15 or expected_files != actual_files:
+            errors.append("strict analytical validation requires the indexed negative fixtures")
+        for fixture in fixtures:
+            fixture_errors = validate_negative_fixture(
+                fixture_root / str(fixture.get("file", "")), root
+            )
+            if fixture.get("error") not in fixture_errors:
+                errors.append(
+                    f"negative fixture does not fail for expected reason: {fixture.get('file')}"
+                )
+        positive_index = _load(
+            root / "fixtures/positive/index.yaml", errors, "positive fixture index"
+        )
+        expected_positive = [
+            {
+                "id": Path(str(proof.get("package", ""))).stem,
+                "package": proof.get("package"),
+                "family": proof.get("family"),
+            }
+            for proof in manifest.get("proofs", [])
+        ]
+        actual_positive = positive_index.get("fixtures", []) if positive_index else []
+        if actual_positive != expected_positive:
+            errors.append("positive fixture index must reference all ten canonical proofs")
+        for key in ("canonical_specification", "evaluation", "migration", "rollback"):
+            if not (root / str(library.get(key, ""))).is_file():
+                errors.append(f"missing analytical canonical document: {library.get(key)}")
     return errors
 
 

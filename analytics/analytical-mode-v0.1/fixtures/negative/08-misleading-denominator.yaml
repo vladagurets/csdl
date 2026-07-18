@@ -1,0 +1,3 @@
+id: misleading-percentage-denominator
+base_package: proofs/packages/06-funnel.yaml
+mutation: {path: [encoding, denominator_semantics], value: initial_stage}

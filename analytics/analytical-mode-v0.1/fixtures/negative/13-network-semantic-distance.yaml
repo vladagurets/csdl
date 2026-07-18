@@ -1,0 +1,3 @@
+id: network-semantic-layout-distance
+base_package: proofs/packages/08-network.yaml
+mutation: {path: [encoding, layout_semantic], value: true}
