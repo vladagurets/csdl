@@ -1,8 +1,8 @@
 # Project Status
 
 **Project:** Constructive Signal Design Language
-**Version:** Cookbook and Design Book v1.0 integration candidate
-**Current milestone:** Milestone 7 — integration pending
+**Version:** Cookbook and Design Book v1.0
+**Current milestone:** Milestone 7 — complete
 **Last updated:** 2026-07-18
 
 ## Outcome
@@ -42,9 +42,9 @@ Milestone 6 is complete under D-032 as an independent additive extension at `acc
 
 The Milestone 6 implementation is integrated: canonical Markdown, versioned schemas, four semantic token profiles, contrast/fallback/compatibility contracts, deterministic builders/indexes, ten proof packages, seventeen exact-error negative fixtures, strict/incomplete validation, migration/rollback docs, CI steps, and a sixty-file accepted-raster hash inventory all pass. Integration PR #67 passed every required check and merged through merge commit `29b265c9d0099980c89d4ccd3926b675fdc8c82d`.
 
-Milestone 7 is a validated integration candidate under D-033. Its additive `cookbook/design-book-v1.0/` contract contains 32 canonical one-page Markdown sources in ISO A4 landscape order, Ukrainian editorial explanation with protected English identifiers, a machine-readable manifest/terminology/provenance package, deterministic assembled Markdown/index outputs, a text-extractable A4 PDF, full-size color/grayscale page renders, a `3840×2160` contact sheet, twelve exact-error negative fixtures, focused two-build tests, and CI rebuild/validation/drift gates.
+Milestone 7 is complete under D-033. Its additive `cookbook/design-book-v1.0/` contract contains 32 canonical one-page Markdown sources in ISO A4 landscape order, Ukrainian editorial explanation with protected English identifiers, a machine-readable manifest/terminology/provenance package, deterministic assembled Markdown/index outputs, a text-extractable A4 PDF, full-size color/grayscale page renders, a `3840×2160` contact sheet, twelve exact-error negative fixtures, focused two-build tests, and CI rebuild/validation/drift gates.
 
-The publication covers CSDL philosophy, Quiet Modular and A/B/C, semantic color profiles, typography/licensing boundaries, visual grammar, all fifteen components, all 23 recipes, Prompt DSL v0.5 with a complete example, Analytical Mode v0.1, Accessibility v0.1, reference hierarchy/provenance, why/do/don’t guidance, authoring, and publishing preflight. Local full-page/contact-sheet/grayscale/Poppler/text-layer review passes. Prompt DSL v0.5, D-029, D-030, D-031, D-032, all analytical/accessibility semantics, and all sixty accepted raster hashes remain unchanged. Milestone 7 is not complete until its green integration PR merges with a merge commit and completion state is aligned afterward.
+The publication covers CSDL philosophy, Quiet Modular and A/B/C, semantic color profiles, typography/licensing boundaries, visual grammar, all fifteen components, all 23 recipes, Prompt DSL v0.5 with a complete example, Analytical Mode v0.1, Accessibility v0.1, reference hierarchy/provenance, why/do/don’t guidance, authoring, and publishing preflight. Full-page/contact-sheet/grayscale/Poppler/text-layer review passes. Prompt DSL v0.5, D-029, D-030, D-031, D-032, all analytical/accessibility semantics, and all sixty accepted raster hashes remain unchanged. Integration PR #69 passed the full CI matrix and merged through merge commit `4c20829f4923c164b48985d06a49247ff372ed4f`.
 
 ## Canonical outputs
 
@@ -227,10 +227,10 @@ Met: all twenty families pass their individual primary-authority, Prompt DSL, ex
 
 ## Milestone 7 signal status
 
-**Primary signal:** locally met; integration pending. The 32-page A4 landscape PDF and canonical Markdown cover every required topic, all fifteen components, all 23 recipes, Prompt DSL v0.5, Analytical Mode, Accessibility, provenance, practice, and preflight with complete Ukrainian editorial content and exact English identifiers. Full-size/contact-sheet/grayscale review, Poppler rendering, and 30,848-character Unicode extraction pass without clipping or missing text.
+**Primary signal:** met. The 32-page A4 landscape PDF and canonical Markdown cover every required topic, all fifteen components, all 23 recipes, Prompt DSL v0.5, Analytical Mode, Accessibility, provenance, practice, and preflight with complete Ukrainian editorial content and exact English identifiers. Full-size/contact-sheet/grayscale review, Poppler rendering, and 30,848-character Unicode extraction pass without clipping or missing text.
 
-**Secondary signal:** locally met; CI/merge pending. Source/terminology/provenance checks, twelve exact-error negative fixtures, two-build byte determinism, generated Markdown/index drift, PDF/page/contact-sheet/report validation, contract counts/versions, and all sixty accepted raster hashes pass. Completion remains gated on the green main-targeted integration PR and merge commit.
+**Secondary signal:** met. Source/terminology/provenance checks, twelve exact-error negative fixtures, two-build byte determinism, generated Markdown/index drift, PDF/page/contact-sheet/report validation, contract counts/versions, and all sixty accepted raster hashes pass locally and in the green main-targeted integration PR #69. Merge commit `4c20829f4923c164b48985d06a49247ff372ed4f` records integration.
 
 ## Repository state
 
-Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1. Milestone 4 remains integrated as Recipe Library and Prompt DSL v0.5. Milestone 5 remains complete as Analytical Mode v0.1. Milestone 6 is complete as Night Mode and Accessibility v0.1. Milestone 7 is a validated integration candidate and is not yet complete. No accepted raster was generated, recolored, or mutated for Milestones 3–7. No license, tag, GitHub Release, public-release-policy change, or Milestone 8 work has started.
+Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1. Milestone 4 remains integrated as Recipe Library and Prompt DSL v0.5. Milestone 5 remains complete as Analytical Mode v0.1. Milestone 6 is complete as Night Mode and Accessibility v0.1. Milestone 7 is complete as Cookbook and Design Book v1.0. No accepted raster was generated, recolored, or mutated for Milestones 3–7. No license, tag, GitHub Release, public-release-policy change, or Milestone 8 work has started.

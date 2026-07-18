@@ -3,7 +3,7 @@ publication:
   title: CSDL Cookbook and Design Book v1.0
   version: 1.0.0
   milestone: 7
-  status: integration-candidate
+  status: complete
   public_release: false
   markdown_authority: true
   page_count: 32
