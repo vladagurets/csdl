@@ -14,6 +14,7 @@
 - Generated three Collision candidates, selected the exact-copy intrinsic-overlap Level B composition, and persisted its canonical raster, preview, evidence, score, and index metadata.
 - Completed Wave A with three Before / After candidates, selected the exact-copy trace-based Level A composition, tightened the Prompt DSL after rejecting dense node-network interpretations, and persisted canonical evidence.
 - Started Wave B with three Timeline candidates and selected the exact-order, single-signal Level A composition with neutral labels and one active VERIFY node.
+- Added Matrix from three candidates, selecting the exact-copy Level B composition with correctly labeled open Axes, four relative Nodes, and one coral high-impact/low-effort selection.
 
 ## 0.1.0 — Pilot 01 Visual DNA 16:9 release — 2026-07-17
 
