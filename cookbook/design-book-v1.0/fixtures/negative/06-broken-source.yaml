@@ -1,0 +1,4 @@
+mutation:
+  document: provenance
+  path: [pages, '01', 0, path]
+  value: missing/canonical-source.md

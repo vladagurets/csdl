@@ -1,0 +1,4 @@
+mutation:
+  document: page:03
+  path: [metadata, editorial_language]
+  value: en
