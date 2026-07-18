@@ -1,0 +1,52 @@
+library:
+  id: component-library-v0.1
+  title: "CSDL Component Library v0.1"
+  version: 0.1.0
+  source_milestone: 3
+  canvas: 1920x1080
+  orientation: landscape
+  markdown_authority: true
+  component_count: 15
+  schema: schema.yaml
+  index: index.yaml
+  compatibility: compatibility.yaml
+  proofs_dir: proofs
+  evaluation: evaluation/review.md
+  visual_authority: patterns/visual-dna-sprint-01/visual-authority.yaml
+
+vocabulary:
+  components:
+    - Anchor
+    - Signal
+    - Field
+    - Frame
+    - Cluster
+    - Vector
+    - Divider
+    - Node
+    - Loop
+    - Collision
+    - Bridge
+    - Axis
+    - Pulse
+    - Label
+    - Legend
+  relations:
+    - inside
+    - contains
+    - attached_to
+    - connected_to
+    - directs
+    - separates
+    - orders
+    - overlaps
+    - produces
+    - groups
+    - maps_to
+    - highlights
+    - bounds
+    - repeats
+
+# This is the honest infrastructure state. Component packets append only
+# complete records; incomplete validation never accepts partial records.
+components: []

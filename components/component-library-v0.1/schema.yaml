@@ -1,0 +1,200 @@
+language: CSDL
+library_version: 0.1
+
+required_library_fields:
+  - id
+  - title
+  - version
+  - source_milestone
+  - canvas
+  - orientation
+  - markdown_authority
+  - component_count
+  - schema
+  - index
+  - compatibility
+  - proofs_dir
+  - evaluation
+  - visual_authority
+
+component_order:
+  - {id: "01", slug: anchor, name: Anchor}
+  - {id: "02", slug: signal, name: Signal}
+  - {id: "03", slug: field, name: Field}
+  - {id: "04", slug: frame, name: Frame}
+  - {id: "05", slug: cluster, name: Cluster}
+  - {id: "06", slug: vector, name: Vector}
+  - {id: "07", slug: divider, name: Divider}
+  - {id: "08", slug: node, name: Node}
+  - {id: "09", slug: loop, name: Loop}
+  - {id: "10", slug: collision, name: Collision}
+  - {id: "11", slug: bridge, name: Bridge}
+  - {id: "12", slug: axis, name: Axis}
+  - {id: "13", slug: pulse, name: Pulse}
+  - {id: "14", slug: label, name: Label}
+  - {id: "15", slug: legend, name: Legend}
+
+family_order:
+  - hero
+  - cover
+  - quote
+  - big-number
+  - comparison
+  - collision
+  - before-after
+  - timeline
+  - matrix
+  - hierarchy
+  - architecture
+  - workflow
+  - loop
+  - pipeline
+  - decision-tree
+  - framework
+  - kpi
+  - table
+  - chart
+  - dashboard
+
+required_component_fields:
+  - id
+  - slug
+  - name
+  - category
+  - purpose
+  - semantic_meaning
+  - spatial_contract
+  - dimensions
+  - relations
+  - compatible_families
+  - expression_limits
+  - typography
+  - semantic_color
+  - examples
+  - prompt_dsl
+  - validation_invariants
+  - evidence
+  - specification
+  - evidence_level
+
+allowed_component_fields:
+  - id
+  - slug
+  - name
+  - category
+  - purpose
+  - semantic_meaning
+  - spatial_contract
+  - dimensions
+  - relations
+  - compatible_families
+  - expression_limits
+  - typography
+  - semantic_color
+  - examples
+  - prompt_dsl
+  - validation_invariants
+  - evidence
+  - specification
+  - evidence_level
+
+enums:
+  category: [semantic, spatial, structural, relational, analytical, annotation]
+  evidence_level: [strong, bounded, constrained]
+  expression_status: [allowed, conditional, forbidden]
+  dimension_unit: [px, percent, count, ratio]
+  relation_direction: [inbound, outbound, either]
+  relation_cardinality: [one, zero_or_one, one_or_many, zero_or_many]
+  proof_mode: [editorial, structural, analytical]
+  level: [A, B, C]
+
+relation_types:
+  - inside
+  - contains
+  - attached_to
+  - connected_to
+  - directs
+  - separates
+  - orders
+  - overlaps
+  - produces
+  - groups
+  - maps_to
+  - highlights
+  - bounds
+  - repeats
+
+required_relation_fields: [type, target, direction, cardinality]
+required_expression_levels: [A, B, C]
+required_expression_fields: [status, max_count]
+required_typography_fields: [role, constraints]
+required_semantic_color_fields: [default, signal_target_allowed]
+required_example_groups: [do, dont]
+required_example_fields: [description, evidence]
+required_prompt_dsl_fields: [syntax, required_fields, optional_fields]
+required_evidence_fields: [path, locator, supports]
+
+required_spec_sections:
+  - "## Purpose"
+  - "## Semantic meaning"
+  - "## Visual and spatial contract"
+  - "## Dimensions and ranges"
+  - "## Allowed relations"
+  - "## Forbidden relations"
+  - "## Compatible Visual DNA families"
+  - "## Expression levels"
+  - "## Typography and semantic color"
+  - "## Do examples"
+  - "## Don't examples"
+  - "## Prompt DSL syntax"
+  - "## Validation invariants"
+  - "## Milestone 2 evidence"
+
+required_proof_fields:
+  - id
+  - mode
+  - family
+  - expression
+  - evidence
+  - content
+  - instances
+  - relations
+allowed_proof_fields:
+  - id
+  - mode
+  - family
+  - expression
+  - evidence
+  - content
+  - instances
+  - relations
+  - quantitative_contract
+required_instance_fields: [id, component, attributes]
+allowed_instance_fields: [id, component, attributes]
+required_proof_relation_fields: [subject, type, object]
+allowed_proof_relation_fields: [subject, type, object]
+proof_order: [editorial, structural, analytical]
+forbidden_proof_keys:
+  - layout
+  - geometry
+  - shape
+  - plane
+  - line
+  - box
+  - card
+  - panel
+  - grid
+  - row
+  - column
+  - left
+  - right
+  - top
+  - bottom
+  - position
+  - coordinates
+
+path_rules:
+  specification: "specs/{id}-{slug}.md"
+  proof: "proofs/{id}-{mode}.yaml"
+
+forbidden_placeholders: [TBD, TODO, TBC, FIXME]
