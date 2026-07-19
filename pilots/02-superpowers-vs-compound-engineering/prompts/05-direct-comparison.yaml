@@ -1,0 +1,85 @@
+language: CSDL
+version: 0.5
+use_case: infographic-diagram
+asset_type: central 16:9 comparison slide
+semantic_intent:
+  recipe: Comparison
+  expression: B
+  density: medium
+  claim: "Superpowers optimizes methodological rigor for the current task; Compound Engineering optimizes team workflow and retained leverage for later tasks."
+  visual_mechanism: "Two equal open Fields align five criteria across one thin Divider; one small coral Signal marks the value-unit difference."
+content:
+  headline: "ПРЯМЕ ПОРІВНЯННЯ"
+  left:
+    title: "SUPERPOWERS"
+    values:
+      - "ЯКІСТЬ ЦІЄЇ ЗАДАЧІ"
+      - "JESSE VINCENT + PRIME RADIANT"
+      - "TDD + SYSTEMATIC DEBUGGING"
+      - "14 SKILLS"
+      - "CEREMONY НА ДРІБНИЦЯХ"
+  right:
+    title: "COMPOUND ENGINEERING"
+    values:
+      - "ПРИСКОРЕННЯ НАСТУПНИХ"
+      - "KIERAN KLAASSEN + TREVIN CHOW / EVERY"
+      - "80/20 PLAN + REVIEW + KNOWLEDGE CAPTURE"
+      - "31 SKILLS · 0 STANDALONE AGENTS"
+      - "ШИРШИЙ SURFACE AREA + БІЛЬШЕ ТОКЕНІВ НА REVIEW"
+  criteria:
+    - "ЦІННІСТЬ"
+    - "ПОХОДЖЕННЯ"
+    - "АКЦЕНТ"
+    - "МАСШТАБ · 19.07.2026"
+    - "РИЗИК"
+  supporting_copy: "СТРОГІСТЬ МЕТОДОЛОГІЇ ↔ ОПІНІЙОВАНИЙ WORKFLOW КОМАНДИ"
+  exact_copy:
+    - "ПРЯМЕ ПОРІВНЯННЯ"
+    - "SUPERPOWERS"
+    - "COMPOUND ENGINEERING"
+    - "ЦІННІСТЬ"
+    - "ЯКІСТЬ ЦІЄЇ ЗАДАЧІ"
+    - "ПРИСКОРЕННЯ НАСТУПНИХ"
+    - "ПОХОДЖЕННЯ"
+    - "JESSE VINCENT + PRIME RADIANT"
+    - "KIERAN KLAASSEN + TREVIN CHOW / EVERY"
+    - "АКЦЕНТ"
+    - "TDD + SYSTEMATIC DEBUGGING"
+    - "80/20 PLAN + REVIEW + KNOWLEDGE CAPTURE"
+    - "МАСШТАБ · 19.07.2026"
+    - "14 SKILLS"
+    - "31 SKILLS · 0 STANDALONE AGENTS"
+    - "РИЗИК"
+    - "CEREMONY НА ДРІБНИЦЯХ"
+    - "ШИРШИЙ SURFACE AREA + БІЛЬШЕ ТОКЕНІВ НА REVIEW"
+    - "СТРОГІСТЬ МЕТОДОЛОГІЇ ↔ ОПІНІЙОВАНИЙ WORKFLOW КОМАНДИ"
+component_instances:
+  - "Anchor(id=superpowers, role=peer, content=left)"
+  - "Anchor(id=compound, role=peer, content=right)"
+  - "Field(id=superpowers-field, role=state)"
+  - "Field(id=compound-field, role=state)"
+  - "Divider(id=peer-divider, subjects=[superpowers-field,compound-field])"
+  - "Signal(id=value-signal, target=compound, role=future-leverage, color=coral)"
+relations:
+  - "Field contains Anchor"
+  - "Divider separates Field"
+  - "Signal highlights Anchor"
+generation_constraints:
+  composition: "One exact five-row comparison with a left criterion gutter, a middle SUPERPOWERS value column, and a right COMPOUND ENGINEERING value column. Keep all text horizontal, align every row, use open Fields, one thin vertical Divider between value columns, and generous outer margins."
+  reading_path: left_to_right
+  negative_space: "45–55 percent"
+  typography: "Headline and peer titles in Modular Technical; criteria small neutral uppercase; values in highly legible neutral sans; exact mixed Ukrainian/English copy."
+  palette: "Warm paper, graphite, neutral Divider, one tiny coral marker beside the value-unit row only."
+  hard_exclusions:
+    - extra text, translation, interpretation, summaries, qualitative ratings such as high or low, duplicate rows
+    - adversarial VS framing, repeated colored bullets, unequal field weight
+    - UI table chrome, closed cards, decorative grid, icons, logo, footer
+    - gradients, shadows, glossy surfaces, 3D
+    - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+provenance:
+  recipe_record: recipes/recipe-library-v0.5/records/005-comparison.yaml
+  source_map: pilots/02-superpowers-vs-compound-engineering/sources.md
+output:
+  format: PNG
+  exact_size: 1920x1080
+  text_accuracy: publish-ready

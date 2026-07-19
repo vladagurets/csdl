@@ -1,0 +1,19 @@
+Use case: text-localization
+Asset type: English 1920×1080 educational presentation slide
+Primary request: Translate the edit target into exact English while preserving its calibrated A/B/C mechanism and seven-step rhythm.
+Input images: Image 1 is the edit target; change only its text. Images 2–4 are primary visual-language authorities. Image 5 is secondary direct-landscape execution evidence.
+Style/medium: Constructive Signal, Quiet Modular, Level A — Quiet; flat semantic geometry; Modular Technical display; neutral high-legibility sans.
+Composition/framing: preserve Image 1's single horizontal Axis, homologous A/B/C constructions, compact seven-step rhythm, asymmetry, negative space, and palette.
+Text (verbatim, no other visible text):
+"CONSTRUCTIVE SIGNAL"
+"QUIET MODULAR"
+"Warm restraint. Functional geometry. Semantic emphasis. 50–75% negative space."
+"Quiet Modular is the default expression."
+"Level A — Quiet"
+"Level B — Constructive"
+"Level C — Signal"
+"Intensity grows. The language stays the same."
+"A · A · B · A · B · A · C"
+Constraints: change only text; preserve all geometry, palette, typography roles, margins, and exact 16:9 landscape composition; A/B/C remain one language at increasing intensity; no extra labels.
+Avoid: gradients, shadows, glossy surfaces, 3D, decorative coordinates, random dot fields, UI chrome, card shells, logos, footers, political or revolutionary-poster styling, retro-computer lettering, generic corporate infographic styling.
+

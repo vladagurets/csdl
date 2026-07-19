@@ -30,11 +30,19 @@ def test_builds_landscape_contact_sheet(tmp_path: Path) -> None:
         assert image.mode == "RGB"
 
 
-def test_contact_sheet_requires_seven_slides(tmp_path: Path) -> None:
-    inputs = [_image(tmp_path / f"{index}.png") for index in range(6)]
+def test_builds_eight_slide_landscape_contact_sheet(tmp_path: Path) -> None:
+    inputs = [_image(tmp_path / f"{index}.png") for index in range(8)]
+    output = tmp_path / "sheet.png"
+    build_contact_sheet(inputs, output)
+    with Image.open(output) as image:
+        assert image.size == (3840, 2160)
+        assert image.mode == "RGB"
+
+
+def test_contact_sheet_requires_at_least_one_slide(tmp_path: Path) -> None:
     try:
-        build_contact_sheet(inputs, tmp_path / "sheet.png")
+        build_contact_sheet([], tmp_path / "sheet.png")
     except ValueError as error:
-        assert str(error) == "contact sheet requires exactly seven slides"
+        assert str(error) == "contact sheet requires at least one slide"
     else:
         raise AssertionError("expected ValueError")

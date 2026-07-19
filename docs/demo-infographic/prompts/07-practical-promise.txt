@@ -1,0 +1,13 @@
+Use case: text-localization
+Asset type: English 1920×1080 educational presentation slide
+Primary request: Translate the edit target's remaining Ukrainian copy into exact English while preserving the single Level C culmination and six-stage workflow.
+Input images: Image 1 is the edit target; change only text. Images 2–4 are primary visual-language authorities. Image 5 is secondary direct-landscape execution evidence.
+Style/medium: Constructive Signal, Level C — Signal culmination inside the Quiet Modular family; flat semantic geometry; Modular Technical display; neutral high-legibility sans.
+Composition/framing: preserve Image 1's ascending six-stage Workflow, open paper field, compact dark Nodes, and one large coral Signal plane at upper right; keep the closing statement as the final dominant read.
+Text (verbatim, no other visible text):
+"THE PRACTICAL PROMISE"
+"define one idea → select a visual mechanism → bind exact content → construct with components → validate → publish"
+"Clearer for people. More reproducible with generative models."
+"CSDL turns visual style into a verifiable design language."
+Constraints: change only text; preserve stage order, geometry, palette, typography roles, margins, and exact 16:9 landscape composition; this remains the only strong Signal-plane slide in the sequence.
+Avoid: extra stages, extra text, gradients, shadows, glossy surfaces, 3D, decorative coordinates, random dot fields, UI chrome, card shells, logos, footers, political or revolutionary-poster styling, retro-computer lettering, generic corporate infographic styling.

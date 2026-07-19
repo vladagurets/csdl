@@ -1,0 +1,28 @@
+version: 1
+scale: 1-5
+criteria:
+  clarity:
+    critical: true
+    minimum: 5
+  presentation_readability:
+    critical: true
+    minimum: 5
+  memorability:
+    critical: false
+    minimum: 4
+  csdl_identity:
+    critical: false
+    minimum: 4
+  restraint:
+    critical: false
+    minimum: 4
+  text_fidelity:
+    critical: true
+    minimum: 5
+  semantic_integrity:
+    critical: false
+    minimum: 4
+minimum_average: 4.4
+review_sizes:
+  canonical: 1920x1080
+  preview: 1280x720

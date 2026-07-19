@@ -1,0 +1,66 @@
+language: CSDL
+version: 0.5
+use_case: infographic-diagram
+asset_type: 16:9 presentation slide
+semantic_intent:
+  recipe: Pipeline
+  expression: B
+  density: medium
+  claim: "Superpowers applies mandatory gates inside one task: plan before execution, test-first implementation, root-cause debugging, and verification."
+  visual_mechanism: "One continuous technical carrier passes through six square gates; the TDD transition on the carrier is the single data-blue Signal."
+content:
+  headline: "SUPERPOWERS: ПРОЦЕС УСЕРЕДИНІ ЗАДАЧІ"
+  stages:
+    - "BRAINSTORM"
+    - "WRITE PLAN"
+    - "EXECUTE PLAN"
+    - "TDD GATE"
+    - "ROOT CAUSE"
+    - "VERIFY"
+  supporting_copy: "ТЕСТ СПОЧАТКУ ПАДАЄ. ДЕБАГ ІДЕ ВІД ПРИЧИНИ. ПІСЛЯ 3 НЕВДАЛИХ ФІКСІВ — АРХІТЕКТУРНА ПАУЗА."
+  exact_copy:
+    - "SUPERPOWERS: ПРОЦЕС УСЕРЕДИНІ ЗАДАЧІ"
+    - "BRAINSTORM"
+    - "WRITE PLAN"
+    - "EXECUTE PLAN"
+    - "TDD GATE"
+    - "ROOT CAUSE"
+    - "VERIFY"
+    - "ТЕСТ СПОЧАТКУ ПАДАЄ. ДЕБАГ ІДЕ ВІД ПРИЧИНИ. ПІСЛЯ 3 НЕВДАЛИХ ФІКСІВ — АРХІТЕКТУРНА ПАУЗА."
+component_instances:
+  - "Node(id=brainstorm, role=gate, content=stages[0])"
+  - "Node(id=plan, role=gate, content=stages[1])"
+  - "Node(id=execute, role=gate, content=stages[2])"
+  - "Node(id=tdd, role=gate, content=stages[3])"
+  - "Node(id=root-cause, role=gate, content=stages[4])"
+  - "Node(id=verify, role=gate, content=stages[5])"
+  - "Vector(id=task-carrier, source=brainstorm, target=verify, role=carrier, continuity=continuous)"
+  - "Label(id=brainstorm-label, text=stages[0], target=brainstorm)"
+  - "Label(id=plan-label, text=stages[1], target=plan)"
+  - "Label(id=execute-label, text=stages[2], target=execute)"
+  - "Label(id=tdd-label, text=stages[3], target=tdd)"
+  - "Label(id=root-label, text=stages[4], target=root-cause)"
+  - "Label(id=verify-label, text=stages[5], target=verify)"
+  - "Signal(id=tdd-signal, target=task-carrier, role=validation-transition, color=data_blue)"
+relations:
+  - "Vector directs Node"
+  - "Label attached_to Node"
+  - "Signal highlights Vector"
+generation_constraints:
+  composition: "Headline and short evidence sentence form one left Anchor; a single continuous left-to-right carrier with six gates uses the broad landscape field."
+  reading_path: left_to_right
+  negative_space: "50–60 percent"
+  typography: "Modular Technical headline; concise English gate Labels; smooth Ukrainian neutral sans supporting copy; no tiny type."
+  palette: "Warm paper and graphite with exactly one dusty data-blue carrier segment at TDD."
+  hard_exclusions:
+    - extra text, branching, feedback arrows, pipe illustration, database icons, code UI
+    - rounded pills, dashboard cards, repeated colored gates, hidden validation
+    - gradients, shadows, glossy surfaces, 3D, logos, footers
+    - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+provenance:
+  recipe_record: recipes/recipe-library-v0.5/records/014-pipeline.yaml
+  source_map: pilots/02-superpowers-vs-compound-engineering/sources.md
+output:
+  format: PNG
+  exact_size: 1920x1080
+  text_accuracy: publish-ready

@@ -1,0 +1,246 @@
+pilot:
+  id: pilot-02
+  slug: superpowers-vs-compound-engineering
+  title_uk: "Дисципліна > Вайб: Superpowers × Compound Engineering"
+  topic: "How Superpowers and Compound Engineering make AI-assisted software development disciplined within and across tasks"
+  language: uk
+  terminology_language: en
+  mode: light
+  canonical_canvas: "1920x1080"
+  orientation: landscape
+  rhythm: [A, A, B, A, B, A, C, A]
+  card_count: 8
+
+cards:
+  - id: "01"
+    slug: discipline-over-vibe
+    recipe: Decision Tree
+    level: A
+    headline: "ДИСЦИПЛІНА > ВАЙБ"
+    supporting_copy: "АГЕНТИ ВЖЕ ПИШУТЬ КОД ШВИДШЕ ЗА ВАС. ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
+    question: "ЯК ПРАЦЮЄ АГЕНТ?"
+    branches:
+      - ["VIBE CODING", "ХАОТИЧНИЙ МАРШРУТ"]
+      - ["DISCIPLINED AI DEV", "ЧЕКПОІНТИ"]
+    closing_copy: "ДВА ПЛАГІНИ. ДВІ ФІЛОСОФІЇ ДИСЦИПЛІНИ."
+    visual_mechanism: "One question Node splits through two labeled Bridges into one unstable route and one checkpointed route"
+    components: [Node, Bridge, Label, Signal]
+    signal: ochre
+    max_supporting_elements: 3
+    asset: canonical/light/16x9/01-discipline-over-vibe.png
+    prompt: prompts/01-discipline-over-vibe.yaml
+    exact_copy:
+      - "ДИСЦИПЛІНА > ВАЙБ"
+      - "АГЕНТИ ВЖЕ ПИШУТЬ КОД ШВИДШЕ ЗА ВАС. ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
+      - "ЯК ПРАЦЮЄ АГЕНТ?"
+      - "VIBE CODING"
+      - "ХАОТИЧНИЙ МАРШРУТ"
+      - "DISCIPLINED AI DEV"
+      - "ЧЕКПОІНТИ"
+      - "ДВА ПЛАГІНИ. ДВІ ФІЛОСОФІЇ ДИСЦИПЛІНИ."
+
+  - id: "02"
+    slug: bare-agent-failures
+    recipe: Breakdown
+    level: A
+    headline: "ГОЛИЙ АГЕНТ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
+    supporting_copy: "СКІЛИ РОБЛЯТЬ ДИСЦИПЛІНУ ДЕФОЛТОМ."
+    supporting_lines:
+      - "ОДРАЗУ В КОД → REWORK"
+      - "БЕЗ ТЕСТІВ → РЕГРЕСІЇ"
+      - "БЕЗ ПЕРЕВІРКИ → БОРГ"
+    visual_mechanism: "One expected Loop fails at one coral transition and exposes three detached consequence Nodes"
+    components: [Loop, Node, Label, Signal]
+    signal: coral
+    max_supporting_elements: 3
+    asset: canonical/light/16x9/02-bare-agent-failures.png
+    prompt: prompts/02-bare-agent-failures.yaml
+    exact_copy:
+      - "ГОЛИЙ АГЕНТ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
+      - "ОДРАЗУ В КОД → REWORK"
+      - "БЕЗ ТЕСТІВ → РЕГРЕСІЇ"
+      - "БЕЗ ПЕРЕВІРКИ → БОРГ"
+      - "СКІЛИ РОБЛЯТЬ ДИСЦИПЛІНУ ДЕФОЛТОМ."
+
+  - id: "03"
+    slug: superpowers-task-process
+    recipe: Pipeline
+    level: B
+    headline: "SUPERPOWERS: ПРОЦЕС УСЕРЕДИНІ ЗАДАЧІ"
+    supporting_copy: "ТЕСТ СПОЧАТКУ ПАДАЄ. ДЕБАГ ІДЕ ВІД ПРИЧИНИ. ПІСЛЯ 3 НЕВДАЛИХ ФІКСІВ — АРХІТЕКТУРНА ПАУЗА."
+    stages:
+      - "BRAINSTORM"
+      - "WRITE PLAN"
+      - "EXECUTE PLAN"
+      - "TDD GATE"
+      - "ROOT CAUSE"
+      - "VERIFY"
+    visual_mechanism: "One continuous Vector passes through six square gate Nodes; the TDD transition on the carrier is the single data-blue Signal"
+    components: [Node, Vector, Label, Signal]
+    signal: data_blue
+    max_supporting_elements: 3
+    asset: canonical/light/16x9/03-superpowers-task-process.png
+    prompt: prompts/03-superpowers-task-process.yaml
+    exact_copy:
+      - "SUPERPOWERS: ПРОЦЕС УСЕРЕДИНІ ЗАДАЧІ"
+      - "BRAINSTORM"
+      - "WRITE PLAN"
+      - "EXECUTE PLAN"
+      - "TDD GATE"
+      - "ROOT CAUSE"
+      - "VERIFY"
+      - "ТЕСТ СПОЧАТКУ ПАДАЄ. ДЕБАГ ІДЕ ВІД ПРИЧИНИ. ПІСЛЯ 3 НЕВДАЛИХ ФІКСІВ — АРХІТЕКТУРНА ПАУЗА."
+
+  - id: "04"
+    slug: compound-between-tasks
+    recipe: Loop
+    level: A
+    headline: "COMPOUND ENGINEERING: ПРОЦЕС МІЖ ЗАДАЧАМИ"
+    supporting_copy: "COMPOUND ЗБЕРІГАЄ LEARNINGS У docs/solutions/. НАСТУПНА ЗАДАЧА СТАРТУЄ З КРАЩОГО КОНТЕКСТУ."
+    stages:
+      - "PLAN"
+      - "WORK"
+      - "REVIEW"
+      - "COMPOUND"
+    visual_mechanism: "One quiet four-stage Loop closes through the active COMPOUND Node and lifts the next-cycle baseline"
+    components: [Loop, Node, Label, Signal]
+    signal: coral
+    max_supporting_elements: 2
+    asset: canonical/light/16x9/04-compound-between-tasks.png
+    prompt: prompts/04-compound-between-tasks.yaml
+    exact_copy:
+      - "COMPOUND ENGINEERING: ПРОЦЕС МІЖ ЗАДАЧАМИ"
+      - "PLAN"
+      - "WORK"
+      - "REVIEW"
+      - "COMPOUND"
+      - "COMPOUND ЗБЕРІГАЄ LEARNINGS У docs/solutions/. НАСТУПНА ЗАДАЧА СТАРТУЄ З КРАЩОГО КОНТЕКСТУ."
+
+  - id: "05"
+    slug: direct-comparison
+    recipe: Comparison
+    level: B
+    headline: "ПРЯМЕ ПОРІВНЯННЯ"
+    supporting_copy: "СТРОГІСТЬ МЕТОДОЛОГІЇ ↔ ОПІНІЙОВАНИЙ WORKFLOW КОМАНДИ"
+    left:
+      title: "SUPERPOWERS"
+      rows:
+        - ["ЦІННІСТЬ", "ЯКІСТЬ ЦІЄЇ ЗАДАЧІ"]
+        - ["ПОХОДЖЕННЯ", "JESSE VINCENT + PRIME RADIANT"]
+        - ["АКЦЕНТ", "TDD + SYSTEMATIC DEBUGGING"]
+        - ["МАСШТАБ · 19.07.2026", "14 SKILLS"]
+        - ["РИЗИК", "CEREMONY НА ДРІБНИЦЯХ"]
+    right:
+      title: "COMPOUND ENGINEERING"
+      rows:
+        - ["ЦІННІСТЬ", "ПРИСКОРЕННЯ НАСТУПНИХ"]
+        - ["ПОХОДЖЕННЯ", "KIERAN KLAASSEN + TREVIN CHOW / EVERY"]
+        - ["АКЦЕНТ", "80/20 PLAN + REVIEW + KNOWLEDGE CAPTURE"]
+        - ["МАСШТАБ · 19.07.2026", "31 SKILLS · 0 STANDALONE AGENTS"]
+        - ["РИЗИК", "ШИРШИЙ SURFACE AREA + БІЛЬШЕ ТОКЕНІВ НА REVIEW"]
+    visual_mechanism: "Two equal open Fields align five criteria across one thin Divider; one coral Signal marks the value-unit difference"
+    components: [Anchor, Field, Divider, Signal]
+    signal: coral
+    max_supporting_elements: 3
+    asset: canonical/light/16x9/05-direct-comparison.png
+    prompt: prompts/05-direct-comparison.yaml
+    exact_copy:
+      - "ПРЯМЕ ПОРІВНЯННЯ"
+      - "SUPERPOWERS"
+      - "COMPOUND ENGINEERING"
+      - "ЦІННІСТЬ"
+      - "ЯКІСТЬ ЦІЄЇ ЗАДАЧІ"
+      - "ПРИСКОРЕННЯ НАСТУПНИХ"
+      - "ПОХОДЖЕННЯ"
+      - "JESSE VINCENT + PRIME RADIANT"
+      - "KIERAN KLAASSEN + TREVIN CHOW / EVERY"
+      - "АКЦЕНТ"
+      - "TDD + SYSTEMATIC DEBUGGING"
+      - "80/20 PLAN + REVIEW + KNOWLEDGE CAPTURE"
+      - "МАСШТАБ · 19.07.2026"
+      - "14 SKILLS"
+      - "31 SKILLS · 0 STANDALONE AGENTS"
+      - "РИЗИК"
+      - "CEREMONY НА ДРІБНИЦЯХ"
+      - "ШИРШИЙ SURFACE AREA + БІЛЬШЕ ТОКЕНІВ НА REVIEW"
+      - "СТРОГІСТЬ МЕТОДОЛОГІЇ ↔ ОПІНІЙОВАНИЙ WORKFLOW КОМАНДИ"
+
+  - id: "06"
+    slug: orthogonal-combination
+    recipe: Matrix
+    level: A
+    headline: "ЦЕ НЕ «АБО/АБО»"
+    supporting_copy: "TDD УСЕРЕДИНІ COMPOUND-ЦИКЛУ."
+    axes:
+      - "СТРОГІСТЬ ВИКОНАННЯ →"
+      - "НАКОПИЧЕННЯ КОНТЕКСТУ ↑"
+    nodes:
+      - ["SUPERPOWERS", "НОВИЙ СОЛО-ПРОЄКТ → SUPERPOWERS"]
+      - ["COMPOUND ENGINEERING", "ДОВГОЖИВУЧИЙ ПРОДУКТ → COMPOUND"]
+      - ["РАЗОМ", "TDD УСЕРЕДИНІ COMPOUND-ЦИКЛУ."]
+    visual_mechanism: "Two independent open Axes position the two methods and one coral synthesis Node without numeric ticks or fake scores"
+    components: [Axis, Field, Node, Label, Signal]
+    signal: coral
+    max_supporting_elements: 3
+    asset: canonical/light/16x9/06-orthogonal-combination.png
+    prompt: prompts/06-orthogonal-combination.yaml
+    exact_copy:
+      - "ЦЕ НЕ «АБО/АБО»"
+      - "СТРОГІСТЬ ВИКОНАННЯ →"
+      - "НАКОПИЧЕННЯ КОНТЕКСТУ ↑"
+      - "SUPERPOWERS"
+      - "COMPOUND ENGINEERING"
+      - "РАЗОМ"
+      - "НОВИЙ СОЛО-ПРОЄКТ → SUPERPOWERS"
+      - "ДОВГОЖИВУЧИЙ ПРОДУКТ → COMPOUND"
+      - "TDD УСЕРЕДИНІ COMPOUND-ЦИКЛУ."
+
+  - id: "07"
+    slug: discipline-principle
+    recipe: Hero
+    level: C
+    headline: "ДИСЦИПЛІНА НЕ В ТУЛЗІ."
+    supporting_copy: "ТУЛЗА ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
+    principles: "ДУМАТИ ДО КОДУ. ТЕСТУВАТИ. ШУКАТИ ПРИЧИНУ. ДОКУМЕНТУВАТИ."
+    visual_mechanism: "One large typographic Anchor crosses the sequence's only broad coral Signal plane"
+    components: [Anchor, Signal]
+    signal: coral
+    max_supporting_elements: 1
+    asset: canonical/light/16x9/07-discipline-principle.png
+    prompt: prompts/07-discipline-principle.yaml
+    exact_copy:
+      - "ДИСЦИПЛІНА НЕ В ТУЛЗІ."
+      - "ТУЛЗА ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
+      - "ДУМАТИ ДО КОДУ. ТЕСТУВАТИ. ШУКАТИ ПРИЧИНУ. ДОКУМЕНТУВАТИ."
+
+  - id: "08"
+    slug: try-today
+    recipe: Comparison
+    level: A
+    headline: "СПРОБУЙТЕ СЬОГОДНІ"
+    supporting_copy: "ОДНА ФІЧА. ДВА ПРОХОДИ. ПОРІВНЯЙТЕ ПРОЦЕС."
+    context: "CLAUDE CODE"
+    left:
+      title: "SUPERPOWERS"
+      commands:
+        - "/plugin install superpowers@claude-plugins-official"
+    right:
+      title: "COMPOUND ENGINEERING"
+      commands:
+        - "/plugin marketplace add EveryInc/compound-engineering-plugin"
+        - "/plugin install compound-engineering"
+    visual_mechanism: "Two equal open installation Fields share one quiet baseline and one coral start Signal; commands remain plain monospace text without terminal chrome"
+    components: [Anchor, Field, Divider, Signal]
+    signal: coral
+    max_supporting_elements: 3
+    asset: canonical/light/16x9/08-try-today.png
+    prompt: prompts/08-try-today.yaml
+    exact_copy:
+      - "СПРОБУЙТЕ СЬОГОДНІ"
+      - "CLAUDE CODE"
+      - "SUPERPOWERS"
+      - "/plugin install superpowers@claude-plugins-official"
+      - "COMPOUND ENGINEERING"
+      - "/plugin marketplace add EveryInc/compound-engineering-plugin"
+      - "/plugin install compound-engineering"
+      - "ОДНА ФІЧА. ДВА ПРОХОДИ. ПОРІВНЯЙТЕ ПРОЦЕС."

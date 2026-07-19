@@ -1,0 +1,55 @@
+language: CSDL
+version: 0.5
+use_case: infographic-diagram
+asset_type: 16:9 presentation slide
+semantic_intent:
+  recipe: Breakdown
+  expression: A
+  density: low
+  claim: "Without an explicit process, three predictable omissions produce rework, regressions, and debt."
+  visual_mechanism: "One expected Loop fails once and exposes exactly three detached consequence Nodes."
+content:
+  headline: "ГОЛИЙ АГЕНТ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
+  supporting_lines:
+    - "ОДРАЗУ В КОД → REWORK"
+    - "БЕЗ ТЕСТІВ → РЕГРЕСІЇ"
+    - "БЕЗ ПЕРЕВІРКИ → БОРГ"
+  supporting_copy: "СКІЛИ РОБЛЯТЬ ДИСЦИПЛІНУ ДЕФОЛТОМ."
+  exact_copy:
+    - "ГОЛИЙ АГЕНТ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
+    - "ОДРАЗУ В КОД → REWORK"
+    - "БЕЗ ТЕСТІВ → РЕГРЕСІЇ"
+    - "БЕЗ ПЕРЕВІРКИ → БОРГ"
+    - "СКІЛИ РОБЛЯТЬ ДИСЦИПЛІНУ ДЕФОЛТОМ."
+component_instances:
+  - "Loop(id=expected-process, members=[code,test,verify], direction=clockwise, closed=true)"
+  - "Node(id=code, role=stage, content=supporting_lines[0])"
+  - "Node(id=test, role=stage, content=supporting_lines[1])"
+  - "Node(id=verify, role=stage, content=supporting_lines[2])"
+  - "Label(id=code-label, text=supporting_lines[0], target=code)"
+  - "Label(id=test-label, text=supporting_lines[1], target=test)"
+  - "Label(id=verify-label, text=supporting_lines[2], target=verify)"
+  - "Signal(id=break-signal, target=verify, role=failed-transition, color=coral)"
+relations:
+  - "Loop repeats Node"
+  - "Loop orders Node"
+  - "Label attached_to Node"
+  - "Signal highlights Node"
+generation_constraints:
+  composition: "Headline and three consequence lines occupy the left field; one compact broken recurrence occupies the right field. Nodes are simple squares, not icons."
+  reading_path: left_to_right
+  negative_space: "60–70 percent"
+  typography: "Smooth Modular Technical Ukrainian headline with neutral sans consequence lines; all horizontal."
+  palette: "Warm paper, graphite, one small muted-coral failed transition."
+  hard_exclusions:
+    - extra text, fragments, explosion, icon illustrations, repeated colored bullets
+    - decorative grid, random dots, UI cards, logo, footer
+    - gradients, shadows, glossy surfaces, 3D
+    - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+provenance:
+  recipe_record: recipes/recipe-library-v0.5/records/021-breakdown.yaml
+  source_map: pilots/02-superpowers-vs-compound-engineering/sources.md
+output:
+  format: PNG
+  exact_size: 1920x1080
+  text_accuracy: publish-ready

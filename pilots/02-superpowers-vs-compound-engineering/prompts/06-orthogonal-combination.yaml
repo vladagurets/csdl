@@ -1,0 +1,72 @@
+language: CSDL
+version: 0.5
+use_case: infographic-diagram
+asset_type: 16:9 presentation slide
+semantic_intent:
+  recipe: Matrix
+  expression: A
+  density: low
+  claim: "The approaches are orthogonal: Superpowers raises execution rigor, Compound Engineering raises retained context, and they can be combined."
+  visual_mechanism: "Two independent open Axes position three directly labeled Nodes; the synthesis Node is the single coral Signal."
+content:
+  headline: "ЦЕ НЕ «АБО/АБО»"
+  axes:
+    - "СТРОГІСТЬ ВИКОНАННЯ →"
+    - "НАКОПИЧЕННЯ КОНТЕКСТУ ↑"
+  nodes:
+    - "SUPERPOWERS"
+    - "COMPOUND ENGINEERING"
+    - "РАЗОМ"
+  recommendations:
+    - "НОВИЙ СОЛО-ПРОЄКТ → SUPERPOWERS"
+    - "ДОВГОЖИВУЧИЙ ПРОДУКТ → COMPOUND"
+  supporting_copy: "TDD УСЕРЕДИНІ COMPOUND-ЦИКЛУ."
+  exact_copy:
+    - "ЦЕ НЕ «АБО/АБО»"
+    - "СТРОГІСТЬ ВИКОНАННЯ →"
+    - "НАКОПИЧЕННЯ КОНТЕКСТУ ↑"
+    - "SUPERPOWERS"
+    - "COMPOUND ENGINEERING"
+    - "РАЗОМ"
+    - "НОВИЙ СОЛО-ПРОЄКТ → SUPERPOWERS"
+    - "ДОВГОЖИВУЧИЙ ПРОДУКТ → COMPOUND"
+    - "TDD УСЕРЕДИНІ COMPOUND-ЦИКЛУ."
+component_instances:
+  - "Axis(id=execution-axis, mode=coordinate, direction=left-to-right)"
+  - "Axis(id=context-axis, mode=coordinate, direction=bottom-to-top)"
+  - "Field(id=method-space, role=coordinate)"
+  - "Node(id=superpowers, role=option, content=nodes[0])"
+  - "Node(id=compound, role=option, content=nodes[1])"
+  - "Node(id=together, role=option, content=nodes[2])"
+  - "Label(id=execution-label, text=axes[0], target=execution-axis)"
+  - "Label(id=context-label, text=axes[1], target=context-axis)"
+  - "Label(id=superpowers-label, text=nodes[0], target=superpowers)"
+  - "Label(id=compound-label, text=nodes[1], target=compound)"
+  - "Label(id=together-label, text=nodes[2], target=together)"
+  - "Label(id=solo-label, text=recommendations[0], target=superpowers)"
+  - "Label(id=product-label, text=recommendations[1], target=compound)"
+  - "Label(id=combination-label, text=supporting_copy, target=together)"
+  - "Signal(id=together-signal, target=together, role=synthesis, color=coral)"
+relations:
+  - "Field contains Node"
+  - "Axis orders Node"
+  - "Label attached_to Node"
+  - "Signal highlights Node"
+generation_constraints:
+  composition: "Open coordinate Field occupies the right two-thirds; headline and two recommendation lines occupy the left. Use exactly three square Nodes with direct Labels and no quadrant cards."
+  reading_path: outside_to_inside
+  negative_space: "60 percent"
+  typography: "Smooth Ukrainian-capable Modular Technical headline; restrained neutral Axis and Node Labels; all body copy horizontal."
+  palette: "Warm paper, graphite axes, one muted-coral synthesis Node."
+  hard_exclusions:
+    - extra text, numeric ticks, fake scores, decorative grid, quadrant cards, overlapping labels
+    - repeated colors, arrows between nodes, UI chrome, logo, footer
+    - gradients, shadows, glossy surfaces, 3D
+    - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+provenance:
+  recipe_record: recipes/recipe-library-v0.5/records/009-matrix.yaml
+  source_map: pilots/02-superpowers-vs-compound-engineering/sources.md
+output:
+  format: PNG
+  exact_size: 1920x1080
+  text_accuracy: publish-ready

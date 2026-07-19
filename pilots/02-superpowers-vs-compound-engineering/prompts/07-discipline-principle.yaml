@@ -1,0 +1,41 @@
+language: CSDL
+version: 0.5
+use_case: infographic-diagram
+asset_type: 16:9 culmination slide
+semantic_intent:
+  recipe: Hero
+  expression: C
+  density: low
+  claim: "Tools do not contain discipline; they make disciplined engineering behavior the default."
+  visual_mechanism: "One dominant typographic Anchor intersects the sequence's only broad coral Signal plane."
+content:
+  headline: "ДИСЦИПЛІНА НЕ В ТУЛЗІ."
+  supporting_copy: "ТУЛЗА ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
+  principles: "ДУМАТИ ДО КОДУ. ТЕСТУВАТИ. ШУКАТИ ПРИЧИНУ. ДОКУМЕНТУВАТИ."
+  exact_copy:
+    - "ДИСЦИПЛІНА НЕ В ТУЛЗІ."
+    - "ТУЛЗА ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
+    - "ДУМАТИ ДО КОДУ. ТЕСТУВАТИ. ШУКАТИ ПРИЧИНУ. ДОКУМЕНТУВАТИ."
+component_instances:
+  - "Anchor(id=principle, role=primary, content=headline)"
+  - "Signal(id=default-signal, target=principle, role=default-process, color=coral, area_percent=20)"
+relations:
+  - "Signal highlights Anchor"
+generation_constraints:
+  composition: "The only Level C peak in the series: oversized two-line typographic proposition offset against one broad but restrained coral plane; the smaller principle list stays neutral and readable."
+  reading_path: left_to_right
+  negative_space: "50–55 percent"
+  typography: "Very large smooth Ukrainian-capable Modular Technical display; neutral supporting line; at most one weight/scale trick; no rotated body copy."
+  palette: "Warm paper, graphite, one broad muted-coral Signal plane occupying no more than 25 percent."
+  hard_exclusions:
+    - extra text, quotation marks, invented attribution, icons, secondary diagrams
+    - repeated signal colors, logo, footer, UI chrome, decorative coordinates
+    - gradients, shadows, glossy surfaces, 3D
+    - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+provenance:
+  recipe_record: recipes/recipe-library-v0.5/records/001-hero.yaml
+  source_map: pilots/02-superpowers-vs-compound-engineering/sources.md
+output:
+  format: PNG
+  exact_size: 1920x1080
+  text_accuracy: publish-ready

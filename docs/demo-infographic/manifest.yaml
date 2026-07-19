@@ -1,0 +1,118 @@
+demo:
+  id: csdl-demo-infographic-en
+  title: "Constructive Signal Design Language — Demo Infographic"
+  status: demo
+  public_release: false
+  language: en
+  canonical_canvas: 1920x1080
+  orientation: landscape
+  rhythm: [A, A, B, A, B, A, C]
+  slide_count: 7
+  contact_sheet: contact-sheet.png
+  reference_hierarchy:
+    primary:
+      - references/canonical/foundation-patterns-v0.1.png
+      - references/canonical/pilot-01-quiet-visual-plan-v0.1.png
+      - references/canonical/quiet-modular-a-b-c-calibration.png
+    secondary:
+      - pilots/01-agentic-discipline/references/style-anchor-light.png
+
+slides:
+  - id: "01"
+    slug: visual-language
+    recipe: Hero
+    level: A
+    file: slides/01-visual-language.png
+    headline: "CSDL"
+    subheadline: "A VISUAL LANGUAGE FOR COMPLEX IDEAS"
+    copy:
+      - "Technical presentations often become generic, noisy, and hard to reproduce."
+      - "CSDL is a versioned, machine-readable visual language for AI, software engineering, economics, and education."
+      - "One idea. One visual mechanism. One dominant Signal."
+    mechanism: "One open Field of fragments compressed by one Vector into one coral Signal"
+
+  - id: "02"
+    slug: constructive-signal-quiet-modular
+    recipe: Framework
+    level: A
+    file: slides/02-constructive-signal-quiet-modular.png
+    headline: "CONSTRUCTIVE SIGNAL"
+    subheadline: "QUIET MODULAR"
+    copy:
+      - "Warm restraint. Functional geometry. Semantic emphasis. 50–75% negative space."
+      - "Quiet Modular is the default expression."
+      - "Level A — Quiet"
+      - "Level B — Constructive"
+      - "Level C — Signal"
+      - "Intensity grows. The language stays the same."
+      - "A · A · B · A · B · A · C"
+    mechanism: "One Axis showing homologous A, B, and C Anchor/Signal constructions at increasing intensity"
+
+  - id: "03"
+    slug: visual-grammar
+    recipe: Framework
+    level: B
+    file: slides/03-visual-grammar.png
+    headline: "VISUAL GRAMMAR"
+    copy:
+      - "Meaning is built from a closed vocabulary."
+      - "Anchor · Signal · Field · Frame · Cluster"
+      - "Vector · Node · Axis · Pulse · Label"
+      - "Idea → Anchor → supporting structure → dominant Signal"
+      - "Geometry always has a semantic role."
+      - "Exactly 15 public components."
+    mechanism: "Idea enters one Anchor, passes through one component Cluster, and exits as one dominant Signal"
+
+  - id: "04"
+    slug: recipes-intent-to-structure
+    recipe: Framework
+    level: A
+    file: slides/04-recipes-intent-to-structure.png
+    headline: "RECIPES TURN INTENT INTO STRUCTURE"
+    copy:
+      - "Start with the explanatory problem — not a preferred layout."
+      - "proposition · comparison · sequence · topology · recurrence · quantitative trend"
+      - "23 evidence-backed Recipes"
+      - "A Recipe selects the mechanism. Components construct it."
+    mechanism: "Six explanatory needs form one open Cluster around one coral Signal for the 23 Recipes"
+
+  - id: "05"
+    slug: reproducible-system
+    recipe: Workflow
+    level: B
+    file: slides/05-reproducible-system.png
+    headline: "FROM COMPONENTS TO A REPRODUCIBLE SYSTEM"
+    copy:
+      - "semantic intent → one of 23 Recipes → Prompt DSL v0.5 → deterministic generation package → validated output"
+      - "Analytical Mode v0.1"
+      - "Night Mode and Accessibility v0.1"
+      - "independent additive contracts"
+      - "exact content · source provenance · quantitative fidelity · semantic color · reproducibility"
+    mechanism: "One main Axis with two independent additive contract rails entering only the validated output"
+
+  - id: "06"
+    slug: human-agent-one-language
+    recipe: Architecture
+    level: A
+    file: slides/06-human-agent-one-language.png
+    headline: "HUMAN + AGENT, ONE LANGUAGE"
+    copy:
+      - "HUMAN"
+      - "claim · evidence · product choice"
+      - "AGENT"
+      - "select · construct · validate"
+      - "Neither side may invent copy, data, components, or Recipes."
+      - "Markdown remains the source of truth."
+    mechanism: "Two open Fields joined by one Bridge through a shared-contract Signal"
+
+  - id: "07"
+    slug: practical-promise
+    recipe: Formula
+    level: C
+    file: slides/07-practical-promise.png
+    headline: "THE PRACTICAL PROMISE"
+    copy:
+      - "define one idea → select a visual mechanism → bind exact content → construct with components → validate → publish"
+      - "Clearer for people. More reproducible with generative models."
+      - "CSDL turns visual style into a verifiable design language."
+    mechanism: "One ascending Workflow terminating in the sequence's only large coral Signal plane"

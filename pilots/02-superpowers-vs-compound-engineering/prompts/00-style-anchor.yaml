@@ -1,0 +1,43 @@
+language: CSDL
+version: 0.5
+use_case: infographic-diagram
+intent: reuse-approved-reference-package
+generation: false
+mode:
+  name: Quiet Modular
+  palette: Muted Signal Light
+  canvas: 1920x1080
+  orientation: landscape
+reference_hierarchy:
+  - path: references/canonical/foundation-patterns-v0.1.png
+    role: primary_visual_dna
+  - path: references/canonical/pilot-01-quiet-visual-plan-v0.1.png
+    role: primary_series_composition
+  - path: references/canonical/quiet-modular-a-b-c-calibration.png
+    role: primary_expression_calibration
+  - path: pilots/01-agentic-discipline/references/style-anchor-light.png
+    role: secondary_landscape_and_ukrainian_execution
+authority_rule: "The first three references win on typography, component grammar, asymmetry, and expression identity."
+typography:
+  display: smooth Ukrainian-capable Modular Technical Inter-style display
+  body: smooth Ukrainian-capable neutral sans-serif
+  code: clean technical monospace
+  exclusions: pixel, bitmap, dot-matrix, segmented, retro-computer
+palette:
+  background: "warm paper #F7F5F0"
+  ink: "warm graphite #1B1B19"
+  secondary_ink: "soft graphite #535457"
+  signal_primary: "muted mineral coral #C96157"
+  signal_data: "dusty data blue #4C6A8A"
+  signal_attention: "soft ochre #C4A25D"
+global_constraints:
+  - compose directly for 16:9 landscape
+  - one main idea, one visual mechanism, one dominant Signal
+  - 50–75 percent negative space according to expression level
+  - every geometric element has a semantic role
+  - render exact visible copy only
+  - no gradients, shadows, glossy surfaces, 3D, logos, footers, UI chrome, decorative coordinates, random dots, political imagery, or historical poster imitation
+output:
+  format: PNG
+  normalized_size: 1920x1080
+  color_mode: RGB

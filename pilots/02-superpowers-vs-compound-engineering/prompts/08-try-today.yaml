@@ -1,0 +1,61 @@
+language: CSDL
+version: 0.5
+use_case: productivity-visual
+asset_type: 16:9 installation and call-to-action slide
+semantic_intent:
+  recipe: Comparison
+  expression: A
+  density: medium
+  claim: "The audience can install both Claude Code plugins and compare their process on the same feature."
+  visual_mechanism: "Two equal open installation Fields share one thin Divider and one small coral start Signal; commands remain plain monospace text."
+content:
+  headline: "СПРОБУЙТЕ СЬОГОДНІ"
+  context: "CLAUDE CODE"
+  left:
+    title: "SUPERPOWERS"
+    commands:
+      - "/plugin install superpowers@claude-plugins-official"
+  right:
+    title: "COMPOUND ENGINEERING"
+    commands:
+      - "/plugin marketplace add EveryInc/compound-engineering-plugin"
+      - "/plugin install compound-engineering"
+  supporting_copy: "ОДНА ФІЧА. ДВА ПРОХОДИ. ПОРІВНЯЙТЕ ПРОЦЕС."
+  exact_copy:
+    - "СПРОБУЙТЕ СЬОГОДНІ"
+    - "CLAUDE CODE"
+    - "SUPERPOWERS"
+    - "/plugin install superpowers@claude-plugins-official"
+    - "COMPOUND ENGINEERING"
+    - "/plugin marketplace add EveryInc/compound-engineering-plugin"
+    - "/plugin install compound-engineering"
+    - "ОДНА ФІЧА. ДВА ПРОХОДИ. ПОРІВНЯЙТЕ ПРОЦЕС."
+component_instances:
+  - "Anchor(id=superpowers-install, role=peer, content=left)"
+  - "Anchor(id=compound-install, role=peer, content=right)"
+  - "Field(id=superpowers-field, role=state)"
+  - "Field(id=compound-field, role=state)"
+  - "Divider(id=install-divider, subjects=[superpowers-field,compound-field])"
+  - "Signal(id=start-signal, target=superpowers-install, role=start, color=coral)"
+relations:
+  - "Field contains Anchor"
+  - "Divider separates Field"
+  - "Signal highlights Anchor"
+generation_constraints:
+  composition: "Wide two-column open comparison. Place commands as large technical monospace text with generous line spacing and no terminal window. Keep the CTA as one strong baseline below both Fields."
+  reading_path: left_to_right
+  negative_space: "55–65 percent"
+  typography: "Modular Technical headline and plugin titles; highly legible technical mono commands; exact case, slash, hyphen, at-sign, and repository spelling."
+  palette: "Warm paper, graphite, neutral Divider, one tiny coral start marker."
+  hard_exclusions:
+    - extra text, prompt symbols, terminal chrome, code editor UI, copy mutation or line omission
+    - closed cards, icons, colored bullets, logo, footer, decorative grid
+    - gradients, shadows, glossy surfaces, 3D
+    - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+provenance:
+  recipe_record: recipes/recipe-library-v0.5/records/005-comparison.yaml
+  source_map: pilots/02-superpowers-vs-compound-engineering/sources.md
+output:
+  format: PNG
+  exact_size: 1920x1080
+  text_accuracy: publish-ready
