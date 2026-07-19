@@ -7,7 +7,7 @@ semantic_intent:
   expression: B
   density: medium
   claim: "Superpowers applies mandatory gates inside one task: plan before execution, test-first implementation, root-cause debugging, and verification."
-  visual_mechanism: "One continuous technical carrier passes through six square gates; the TDD transition on the carrier is the single data-blue Signal."
+  visual_mechanism: "One open unclosed arc carrier passes through six square gates; the TDD transition on the carrier is the single data-blue Signal."
 content:
   headline: "SUPERPOWERS: ПРОЦЕС УСЕРЕДИНІ ЗАДАЧІ"
   stages:
@@ -17,7 +17,7 @@ content:
     - "TDD GATE"
     - "ROOT CAUSE"
     - "VERIFY"
-  supporting_copy: "ТЕСТ СПОЧАТКУ ПАДАЄ. ДЕБАГ ІДЕ ВІД ПРИЧИНИ. ПІСЛЯ 3 НЕВДАЛИХ ФІКСІВ — АРХІТЕКТУРНА ПАУЗА."
+  supporting_copy: "SUPERPOWERS НЕ ДАЄ ПЕРЕСКОЧИТИ ПРОЦЕС: СПОЧАТКУ ОБГОВОРЕННЯ Й ПЛАН, ПОТІМ TDD, ПОШУК ПРИЧИНИ ТА ФІНАЛЬНА ПЕРЕВІРКА."
   exact_copy:
     - "SUPERPOWERS: ПРОЦЕС УСЕРЕДИНІ ЗАДАЧІ"
     - "BRAINSTORM"
@@ -26,7 +26,7 @@ content:
     - "TDD GATE"
     - "ROOT CAUSE"
     - "VERIFY"
-    - "ТЕСТ СПОЧАТКУ ПАДАЄ. ДЕБАГ ІДЕ ВІД ПРИЧИНИ. ПІСЛЯ 3 НЕВДАЛИХ ФІКСІВ — АРХІТЕКТУРНА ПАУЗА."
+    - "SUPERPOWERS НЕ ДАЄ ПЕРЕСКОЧИТИ ПРОЦЕС: СПОЧАТКУ ОБГОВОРЕННЯ Й ПЛАН, ПОТІМ TDD, ПОШУК ПРИЧИНИ ТА ФІНАЛЬНА ПЕРЕВІРКА."
 component_instances:
   - "Node(id=brainstorm, role=gate, content=stages[0])"
   - "Node(id=plan, role=gate, content=stages[1])"
@@ -47,13 +47,13 @@ relations:
   - "Label attached_to Node"
   - "Signal highlights Vector"
 generation_constraints:
-  composition: "Headline and short evidence sentence form one left Anchor; a single continuous left-to-right carrier with six gates uses the broad landscape field."
+  composition: "One broad open arc carries six gates across the upper landscape field; the headline anchors the lower-left and the approved audience explanation balances it in the lower-right."
   reading_path: left_to_right
   negative_space: "50–60 percent"
   typography: "Modular Technical headline; concise English gate Labels; smooth Ukrainian neutral sans supporting copy; no tiny type."
   palette: "Warm paper and graphite with exactly one dusty data-blue carrier segment at TDD."
   hard_exclusions:
-    - extra text, branching, feedback arrows, pipe illustration, database icons, code UI
+    - extra text, branching, feedback arrows, closing the open arc, pipe illustration, database icons, code UI
     - rounded pills, dashboard cards, repeated colored gates, hidden validation
     - gradients, shadows, glossy surfaces, 3D, logos, footers
     - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering

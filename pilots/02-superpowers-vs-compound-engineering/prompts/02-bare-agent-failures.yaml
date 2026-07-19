@@ -3,51 +3,50 @@ version: 0.5
 use_case: infographic-diagram
 asset_type: 16:9 presentation slide
 semantic_intent:
-  recipe: Breakdown
+  recipe: Workflow
   expression: A
   density: low
-  claim: "Without an explicit process, three predictable omissions produce rework, regressions, and debt."
-  visual_mechanism: "One expected Loop fails once and exposes exactly three detached consequence Nodes."
+  claim: "Without discipline, three predictable omissions cascade into unnecessary rewrites, regressions, and undetected errors."
+  visual_mechanism: "Three falling graphite Nodes form one directed failure cascade; one coral Signal marks the initiating failed transition."
 content:
-  headline: "ГОЛИЙ АГЕНТ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
-  supporting_lines:
-    - "ОДРАЗУ В КОД → REWORK"
-    - "БЕЗ ТЕСТІВ → РЕГРЕСІЇ"
-    - "БЕЗ ПЕРЕВІРКИ → БОРГ"
+  headline: "АГЕНТ БЕЗ ДИСЦИПЛІНИ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
+  stages:
+    - "ПИШЕ КОД, НЕ ЗРОЗУМІВШИ ЗАДАЧУ → ПЕРЕРОБКИ"
+    - "НЕ ПЕРЕВІРЯЄ ЗМІНИ ТЕСТАМИ → РЕГРЕСІЇ"
+    - "НЕ ЗВІРЯЄ ГОТОВИЙ РЕЗУЛЬТАТ ІЗ ЗАДАЧЕЮ → НЕВИЯВЛЕНІ ПОМИЛКИ"
   supporting_copy: "СКІЛИ РОБЛЯТЬ ДИСЦИПЛІНУ ДЕФОЛТОМ."
   exact_copy:
-    - "ГОЛИЙ АГЕНТ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
-    - "ОДРАЗУ В КОД → REWORK"
-    - "БЕЗ ТЕСТІВ → РЕГРЕСІЇ"
-    - "БЕЗ ПЕРЕВІРКИ → БОРГ"
+    - "АГЕНТ БЕЗ ДИСЦИПЛІНИ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
+    - "ПИШЕ КОД, НЕ ЗРОЗУМІВШИ ЗАДАЧУ → ПЕРЕРОБКИ"
+    - "НЕ ПЕРЕВІРЯЄ ЗМІНИ ТЕСТАМИ → РЕГРЕСІЇ"
+    - "НЕ ЗВІРЯЄ ГОТОВИЙ РЕЗУЛЬТАТ ІЗ ЗАДАЧЕЮ → НЕВИЯВЛЕНІ ПОМИЛКИ"
     - "СКІЛИ РОБЛЯТЬ ДИСЦИПЛІНУ ДЕФОЛТОМ."
 component_instances:
-  - "Loop(id=expected-process, members=[code,test,verify], direction=clockwise, closed=true)"
-  - "Node(id=code, role=stage, content=supporting_lines[0])"
-  - "Node(id=test, role=stage, content=supporting_lines[1])"
-  - "Node(id=verify, role=stage, content=supporting_lines[2])"
-  - "Label(id=code-label, text=supporting_lines[0], target=code)"
-  - "Label(id=test-label, text=supporting_lines[1], target=test)"
-  - "Label(id=verify-label, text=supporting_lines[2], target=verify)"
-  - "Signal(id=break-signal, target=verify, role=failed-transition, color=coral)"
+  - "Node(id=code-failure, role=stage, content=stages[0])"
+  - "Node(id=test-failure, role=stage, content=stages[1])"
+  - "Node(id=verify-failure, role=stage, content=stages[2])"
+  - "Vector(id=failure-cascade, source=code-failure, target=verify-failure, role=transformation, direction=down-left)"
+  - "Label(id=code-label, text=stages[0], target=code-failure)"
+  - "Label(id=test-label, text=stages[1], target=test-failure)"
+  - "Label(id=verify-label, text=stages[2], target=verify-failure)"
+  - "Signal(id=cascade-trigger, target=failure-cascade, role=failed-transition, color=coral)"
 relations:
-  - "Loop repeats Node"
-  - "Loop orders Node"
+  - "Vector directs Node"
   - "Label attached_to Node"
-  - "Signal highlights Node"
+  - "Signal highlights Vector"
 generation_constraints:
-  composition: "Headline and three consequence lines occupy the left field; one compact broken recurrence occupies the right field. Nodes are simple squares, not icons."
+  composition: "Dynamic diagonal failure cascade. Keep the approved headline as a four-line top-left Anchor. Three large flat graphite slab Nodes descend from upper right toward lower left, each displaced farther than the previous one. Attach each exact stage line directly to its slab in order without bullets or frames. Use two lines where needed so every cause and consequence remains large and readable at presentation distance. One small coral wedge at the first destabilizing contact is the sole Signal. Keep the supporting sentence quiet near the bottom edge."
   reading_path: left_to_right
   negative_space: "60–70 percent"
   typography: "Smooth Modular Technical Ukrainian headline with neutral sans consequence lines; all horizontal."
   palette: "Warm paper, graphite, one small muted-coral failed transition."
   hard_exclusions:
-    - extra text, fragments, explosion, icon illustrations, repeated colored bullets
+    - extra text, broken loop, circular arrows, fragments, explosion, icon illustrations, repeated colored bullets
     - decorative grid, random dots, UI cards, logo, footer
     - gradients, shadows, glossy surfaces, 3D
     - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
 provenance:
-  recipe_record: recipes/recipe-library-v0.5/records/021-breakdown.yaml
+  recipe_record: recipes/recipe-library-v0.5/records/012-workflow.yaml
   source_map: pilots/02-superpowers-vs-compound-engineering/sources.md
 output:
   format: PNG

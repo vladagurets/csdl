@@ -33,25 +33,25 @@ cards:
 
   - id: "02"
     slug: bare-agent-failures
-    recipe: Breakdown
+    recipe: Workflow
     level: A
-    headline: "ГОЛИЙ АГЕНТ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
+    headline: "АГЕНТ БЕЗ ДИСЦИПЛІНИ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
     supporting_copy: "СКІЛИ РОБЛЯТЬ ДИСЦИПЛІНУ ДЕФОЛТОМ."
     supporting_lines:
-      - "ОДРАЗУ В КОД → REWORK"
-      - "БЕЗ ТЕСТІВ → РЕГРЕСІЇ"
-      - "БЕЗ ПЕРЕВІРКИ → БОРГ"
-    visual_mechanism: "One expected Loop fails at one coral transition and exposes three detached consequence Nodes"
-    components: [Loop, Node, Label, Signal]
+      - "ПИШЕ КОД, НЕ ЗРОЗУМІВШИ ЗАДАЧУ → ПЕРЕРОБКИ"
+      - "НЕ ПЕРЕВІРЯЄ ЗМІНИ ТЕСТАМИ → РЕГРЕСІЇ"
+      - "НЕ ЗВІРЯЄ ГОТОВИЙ РЕЗУЛЬТАТ ІЗ ЗАДАЧЕЮ → НЕВИЯВЛЕНІ ПОМИЛКИ"
+    visual_mechanism: "Three falling graphite Nodes form one directed failure cascade; one coral Signal marks the initiating failed transition"
+    components: [Node, Vector, Label, Signal]
     signal: coral
     max_supporting_elements: 3
     asset: canonical/light/16x9/02-bare-agent-failures.png
     prompt: prompts/02-bare-agent-failures.yaml
     exact_copy:
-      - "ГОЛИЙ АГЕНТ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
-      - "ОДРАЗУ В КОД → REWORK"
-      - "БЕЗ ТЕСТІВ → РЕГРЕСІЇ"
-      - "БЕЗ ПЕРЕВІРКИ → БОРГ"
+      - "АГЕНТ БЕЗ ДИСЦИПЛІНИ ЛАМАЄ ПРОЦЕС ПЕРЕДБАЧУВАНО"
+      - "ПИШЕ КОД, НЕ ЗРОЗУМІВШИ ЗАДАЧУ → ПЕРЕРОБКИ"
+      - "НЕ ПЕРЕВІРЯЄ ЗМІНИ ТЕСТАМИ → РЕГРЕСІЇ"
+      - "НЕ ЗВІРЯЄ ГОТОВИЙ РЕЗУЛЬТАТ ІЗ ЗАДАЧЕЮ → НЕВИЯВЛЕНІ ПОМИЛКИ"
       - "СКІЛИ РОБЛЯТЬ ДИСЦИПЛІНУ ДЕФОЛТОМ."
 
   - id: "03"
@@ -59,7 +59,7 @@ cards:
     recipe: Pipeline
     level: B
     headline: "SUPERPOWERS: ПРОЦЕС УСЕРЕДИНІ ЗАДАЧІ"
-    supporting_copy: "ТЕСТ СПОЧАТКУ ПАДАЄ. ДЕБАГ ІДЕ ВІД ПРИЧИНИ. ПІСЛЯ 3 НЕВДАЛИХ ФІКСІВ — АРХІТЕКТУРНА ПАУЗА."
+    supporting_copy: "SUPERPOWERS НЕ ДАЄ ПЕРЕСКОЧИТИ ПРОЦЕС: СПОЧАТКУ ОБГОВОРЕННЯ Й ПЛАН, ПОТІМ TDD, ПОШУК ПРИЧИНИ ТА ФІНАЛЬНА ПЕРЕВІРКА."
     stages:
       - "BRAINSTORM"
       - "WRITE PLAN"
@@ -67,7 +67,7 @@ cards:
       - "TDD GATE"
       - "ROOT CAUSE"
       - "VERIFY"
-    visual_mechanism: "One continuous Vector passes through six square gate Nodes; the TDD transition on the carrier is the single data-blue Signal"
+    visual_mechanism: "One open unclosed arc Vector carries six square gate Nodes through the within-task process; the TDD transition is the single data-blue Signal"
     components: [Node, Vector, Label, Signal]
     signal: data_blue
     max_supporting_elements: 3
@@ -81,20 +81,20 @@ cards:
       - "TDD GATE"
       - "ROOT CAUSE"
       - "VERIFY"
-      - "ТЕСТ СПОЧАТКУ ПАДАЄ. ДЕБАГ ІДЕ ВІД ПРИЧИНИ. ПІСЛЯ 3 НЕВДАЛИХ ФІКСІВ — АРХІТЕКТУРНА ПАУЗА."
+      - "SUPERPOWERS НЕ ДАЄ ПЕРЕСКОЧИТИ ПРОЦЕС: СПОЧАТКУ ОБГОВОРЕННЯ Й ПЛАН, ПОТІМ TDD, ПОШУК ПРИЧИНИ ТА ФІНАЛЬНА ПЕРЕВІРКА."
 
   - id: "04"
     slug: compound-between-tasks
     recipe: Loop
     level: A
     headline: "COMPOUND ENGINEERING: ПРОЦЕС МІЖ ЗАДАЧАМИ"
-    supporting_copy: "COMPOUND ЗБЕРІГАЄ LEARNINGS У docs/solutions/. НАСТУПНА ЗАДАЧА СТАРТУЄ З КРАЩОГО КОНТЕКСТУ."
+    supporting_copy: "COMPOUND ЗАПИСУЄ РОЗВ’ЯЗАНУ ПРОБЛЕМУ Й ПЕРЕВІРЕНЕ РІШЕННЯ У docs/solutions/. ПЕРЕД НАСТУПНОЮ ЗАДАЧЕЮ АГЕНТ ЧИТАЄ ЦЮ НОТАТКУ — І НЕ ШУКАЄ ТЕ САМЕ З НУЛЯ."
     stages:
       - "PLAN"
       - "WORK"
       - "REVIEW"
       - "COMPOUND"
-    visual_mechanism: "One quiet four-stage Loop closes through the active COMPOUND Node and lifts the next-cycle baseline"
+    visual_mechanism: "One ascending four-stage Loop moves from PLAN through WORK and REVIEW to the active COMPOUND Node, then returns to a visibly higher next-cycle baseline"
     components: [Loop, Node, Label, Signal]
     signal: coral
     max_supporting_elements: 2
@@ -106,7 +106,7 @@ cards:
       - "WORK"
       - "REVIEW"
       - "COMPOUND"
-      - "COMPOUND ЗБЕРІГАЄ LEARNINGS У docs/solutions/. НАСТУПНА ЗАДАЧА СТАРТУЄ З КРАЩОГО КОНТЕКСТУ."
+      - "COMPOUND ЗАПИСУЄ РОЗВ’ЯЗАНУ ПРОБЛЕМУ Й ПЕРЕВІРЕНЕ РІШЕННЯ У docs/solutions/. ПЕРЕД НАСТУПНОЮ ЗАДАЧЕЮ АГЕНТ ЧИТАЄ ЦЮ НОТАТКУ — І НЕ ШУКАЄ ТЕ САМЕ З НУЛЯ."
 
   - id: "05"
     slug: direct-comparison
@@ -160,7 +160,7 @@ cards:
       - ["SUPERPOWERS", "НОВИЙ СОЛО-ПРОЄКТ → SUPERPOWERS"]
       - ["COMPOUND ENGINEERING", "ДОВГОЖИВУЧИЙ ПРОДУКТ → COMPOUND"]
       - ["РАЗОМ", "TDD УСЕРЕДИНІ COMPOUND-ЦИКЛУ."]
-    visual_mechanism: "Two independent open Axes position the two methods and one coral synthesis Node without numeric ticks or fake scores"
+    visual_mechanism: "Two low-contrast orthogonal Axis carriers intersect at one coral synthesis Node while the two source methods remain positioned on their independent dimensions"
     components: [Axis, Field, Node, Label, Signal]
     signal: coral
     max_supporting_elements: 3
@@ -184,7 +184,7 @@ cards:
     headline: "ДИСЦИПЛІНА НЕ В ІНСТРУМЕНТІ."
     supporting_copy: "ІНСТРУМЕНТ ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
     principles: "ДУМАТИ ДО КОДУ. ТЕСТУВАТИ. ШУКАТИ ПРИЧИНУ. ДОКУМЕНТУВАТИ."
-    visual_mechanism: "One large typographic Anchor crosses the sequence's only broad coral Signal plane"
+    visual_mechanism: "One large typographic Anchor resolves through a central upright coral Signal portal that contains the default-process proposition"
     components: [Anchor, Signal]
     signal: coral
     max_supporting_elements: 1
@@ -214,7 +214,7 @@ cards:
         - "/plugin install superpowers@claude-plugins-official"
         - "/plugin marketplace add EveryInc/compound-engineering-plugin"
         - "/plugin install compound-engineering"
-    visual_mechanism: "Two equal platform installation Fields share one quiet baseline and one coral start Signal; Codex and Claude Code commands remain plain monospace text without terminal chrome"
+    visual_mechanism: "Two staggered pale platform Fields interlock around one coral ready-state Signal; a stepped negative-space Divider keeps the paths distinct while one thin route resolves into the restart CTA"
     components: [Anchor, Field, Divider, Signal]
     signal: coral
     max_supporting_elements: 3

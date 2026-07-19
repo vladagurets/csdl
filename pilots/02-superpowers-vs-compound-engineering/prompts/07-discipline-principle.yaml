@@ -7,7 +7,7 @@ semantic_intent:
   expression: C
   density: low
   claim: "Tools do not contain discipline; they make disciplined engineering behavior the default."
-  visual_mechanism: "One dominant typographic Anchor intersects the sequence's only broad coral Signal plane."
+  visual_mechanism: "One dominant typographic Anchor resolves through a central upright coral Signal portal containing the default-process proposition."
 content:
   headline: "ДИСЦИПЛІНА НЕ В ІНСТРУМЕНТІ."
   supporting_copy: "ІНСТРУМЕНТ ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
@@ -22,7 +22,7 @@ component_instances:
 relations:
   - "Signal highlights Anchor"
 generation_constraints:
-  composition: "The only Level C peak in the series: oversized two-line typographic proposition offset against one broad but restrained coral plane; the smaller principle list stays neutral and readable."
+  composition: "A separated Level C peak: the large graphite discipline proposition enters from the upper-left, the supporting proposition sits in warm-paper reverse type inside one central upright coral Signal portal, and the smaller principle line forms a calm horizontal baseline across the lower third."
   reading_path: left_to_right
   negative_space: "50–55 percent"
   typography: "Very large smooth Ukrainian-capable Modular Technical display; neutral supporting line; at most one weight/scale trick; no rotated body copy."

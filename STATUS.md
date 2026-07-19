@@ -2,10 +2,12 @@
 
 **Project:** Constructive Signal Design Language
 **Version:** Cookbook and Design Book v1.0
-**Current milestone:** Milestone 7 — complete
+**Current milestone:** Milestone 8 — licensing in progress
 **Last updated:** 2026-07-19
 
 ## Outcome
+
+D-034 selects a noncommercial source-available licensing model while retaining copyright with Vladyslav Ohirenko. Software, schemas, tools, machine-readable packages, and agent implementations use PolyForm Noncommercial 1.0.0; original documentation and visual materials use CC BY-NC-SA 4.0; commercial use requires a separate written license; CSDL names and branding remain outside both licenses; external copyrightable contributions require prior written assignment. This begins the licensing slice of Milestone 8 without creating a tag, GitHub Release, stable public-release version, or new raster evidence.
 
 The root `README.md` now presents CSDL as a product and design language before repository operations. It introduces the problem, benefits, visual grammar, system architecture, Prompt DSL example, applied evidence, creation workflow, and status in English without changing any versioned contract or accepted raster.
 
@@ -13,7 +15,7 @@ The README Visual examples section now uses a dedicated English `1920x1080` RGB 
 
 The repository-local `csdl-create` integration is Codex-only. Its canonical skill source and `.codex/skills/csdl-create` discovery symlink use built-in Codex image generation.
 
-Pilot 02 is complete under `pilots/02-superpowers-vs-compound-engineering/`. The additive eight-slide Ukrainian series compares Superpowers and Compound Engineering as orthogonal disciplines for within-task execution and between-task knowledge capture; it opens with the user-selected dynamic Hero/C `Compression Gate` transformation from an irregular trace to a straight one through a single coral process gate, its central comparison uses the user-approved three-row scope of value, emphasis, and risk, its culmination uses the standard Ukrainian term `інструмент`, and its closing slide gives current installation paths for both Codex and Claude Code. It includes 24 reviewed GPT Image 2 candidates, eight exact-copy `1920×1080` RGB canonicals, eight `1280×720` previews, one centered `3840×2160` contact sheet, current primary-source fact mapping, Prompt DSL v0.5 packages, hashes, selection evidence, and passing rubric scores. The work does not alter Pilot 01, accepted raster evidence outside Pilot 02, Prompt DSL v0.5, the fifteen-component vocabulary, the 23-recipe library, or the completed Milestone 7 publication contract.
+Pilot 02 is complete under `pilots/02-superpowers-vs-compound-engineering/`. The additive eight-slide Ukrainian series compares Superpowers and Compound Engineering as orthogonal disciplines for within-task execution and between-task knowledge capture; it opens with the user-selected dynamic Hero/C `Compression Gate` transformation, continues with the user-selected Slide 02 `Domino Cascade` and explicit audience-facing labels that distinguish coding before understanding the task, missing automated tests, and missing final result-to-requirement verification, explains the within-task method through the user-selected Slide 03 open process arc and approved audience-facing `SUPERPOWERS НЕ ДАЄ ПЕРЕСКОЧИТИ ПРОЦЕС...` copy, uses the user-selected Slide 04 ascending flywheel to land each completed COMPOUND cycle on a higher starting baseline and explicitly explains that Compound records the solved problem and verified solution in `docs/solutions/` for the next agent to reuse, keeps the user-approved three-row central comparison, presents the orthogonal-combination slide with user-selected low-contrast Axis carriers and one coral synthesis intersection, culminates with the standard Ukrainian term `інструмент` inside the user-selected central coral Signal portal, and closes with the user-selected `Interlocking Open Planes` mechanism for current Codex and Claude Code installation paths. It includes 58 reviewed GPT Image 2 candidates across the original set and the Slide 02–04 and Slide 06–08 divergence passes, eight exact-copy `1920×1080` RGB canonicals, eight `1280×720` previews, one centered `3840×2160` contact sheet, current primary-source fact mapping, Prompt DSL v0.5 packages, hashes, selection evidence, and passing rubric scores. The work does not alter Pilot 01, accepted raster evidence outside Pilot 02, Prompt DSL v0.5, the fifteen-component vocabulary, the 23-recipe library, or the completed Milestone 7 publication contract.
 
 An additive seven-slide English demo infographic is available under `docs/demo-infographic/`. It translates the original five-slide explanatory sequence, adds a Recipes bridge and a human/agent parity slide, and includes exact-copy prompts, 21-candidate selection evidence, seven `1920×1080` RGB PNG files, and one `3840×2160` contact sheet. It is documentation-only, does not begin Milestone 8, and does not modify any accepted raster evidence or versioned CSDL contract.
 
@@ -124,7 +126,7 @@ cookbook/design-book-v1.0/output/contact-sheet.png (derived, ignored)
 
 ```text
 .venv/bin/python -m pytest -q
-158 passed
+167 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid
@@ -243,6 +245,12 @@ Met: all twenty families pass their individual primary-authority, Prompt DSL, ex
 
 **Secondary signal:** met. Source/terminology/provenance checks, twelve exact-error negative fixtures, two-build byte determinism, generated Markdown/index drift, PDF/page/contact-sheet/report validation, contract counts/versions, and all sixty accepted raster hashes pass locally and in the green main-targeted integration PR #69. Merge commit `4c20829f4923c164b48985d06a49247ff372ed4f` records integration.
 
+## Milestone 8 licensing signal status
+
+**Primary signal:** met for the licensing slice. The root `LICENSE` assigns every repository-owned material class to either PolyForm Noncommercial 1.0.0 or CC BY-NC-SA 4.0, identifies Vladyslav Ohirenko as copyright owner, requires separate written commercial licensing, reserves CSDL branding, excludes third-party rights, and states that the project is source-available rather than OSI open source.
+
+**Secondary signal:** met. Both standard license texts are preserved against their canonical upstream versions and pinned by focused tests; `NOTICE`, `TRADEMARKS.md`, and `CONTRIBUTING.md` preserve attribution, trademark, and single-owner boundaries; editable package metadata includes `LICENSE` and `NOTICE`; all 167 tests and every strict validator/rebuild through Milestone 7 pass. Tagged public release/versioning, final font licensing, and long-term asset distribution remain unresolved.
+
 ## Repository state
 
-Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1. Milestone 4 remains integrated as Recipe Library and Prompt DSL v0.5. Milestone 5 remains complete as Analytical Mode v0.1. Milestone 6 is complete as Night Mode and Accessibility v0.1. Milestone 7 is complete as Cookbook and Design Book v1.0. No accepted raster was generated, recolored, or mutated for Milestones 3–7. No license, tag, GitHub Release, public-release-policy change, or Milestone 8 work has started.
+Milestone 2 remains integrated as one validated catalog release. Milestone 3 remains integrated as Component Library v0.1. Milestone 4 remains integrated as Recipe Library and Prompt DSL v0.5. Milestone 5 remains complete as Analytical Mode v0.1. Milestone 6 is complete as Night Mode and Accessibility v0.1. Milestone 7 is complete as Cookbook and Design Book v1.0. Milestone 8 has started with the D-034 licensing decision and repository notices. No accepted raster was generated, recolored, or mutated for Milestones 3–8. No tag, GitHub Release, stable public-release version, or font lock has been created.

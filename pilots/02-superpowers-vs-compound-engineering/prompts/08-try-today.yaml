@@ -7,7 +7,7 @@ semantic_intent:
   expression: A
   density: medium
   claim: "The audience can install Superpowers and Compound Engineering in either Codex or Claude Code."
-  visual_mechanism: "Two equal platform installation Fields share one thin Divider and one small coral start Signal; commands remain plain monospace text."
+  visual_mechanism: "Two staggered pale platform Fields interlock around one coral ready-state Signal; a stepped negative-space Divider keeps both installation paths distinct and one thin route resolves into the restart CTA."
 content:
   headline: "СПРОБУЙТЕ В CODEX І CLAUDE CODE"
   context: "CODEX + CLAUDE CODE"
@@ -40,18 +40,18 @@ component_instances:
   - "Anchor(id=claude-install, role=peer, content=right)"
   - "Field(id=codex-field, role=state)"
   - "Field(id=claude-field, role=state)"
-  - "Divider(id=install-divider, subjects=[codex-field,claude-field])"
-  - "Signal(id=start-signal, target=codex-install, role=start, color=coral)"
+  - "Divider(id=interlocking-divider, subjects=[codex-field,claude-field])"
+  - "Signal(id=ready-signal, target=codex-install, role=ready, color=coral)"
 relations:
   - "Field contains Anchor"
   - "Divider separates Field"
   - "Signal highlights Anchor"
 generation_constraints:
-  composition: "Wide two-column open comparison with Codex on the left and Claude Code on the right. Place commands as legible technical monospace text with generous line spacing and no terminal window. Keep the restart CTA as one strong baseline below both Fields."
+  composition: "Asymmetrical open comparison with a pale Codex Field entering from the upper-left and a pale Claude Code Field entering from the lower-right. Offset their inner ends around one coral joint and separate them with one stepped negative-space Divider. Place commands as legible technical monospace text with generous line spacing and no terminal window. Keep the headline in the upper-left and resolve the coral joint through one thin neutral route into the restart CTA in the upper-right."
   reading_path: left_to_right
   negative_space: "55–65 percent"
   typography: "Modular Technical headline and platform titles; highly legible technical mono commands; exact case, slash, hyphen, at-sign, and repository spelling."
-  palette: "Warm paper, graphite, neutral Divider, one tiny coral start marker."
+  palette: "Warm paper, graphite, two restrained pale mineral context Fields, one negative-space Divider, and one coral ready-state Signal."
   hard_exclusions:
     - extra text, prompt symbols, terminal chrome, code editor UI, copy mutation or line omission
     - closed cards, icons, colored bullets, logo, footer, decorative grid

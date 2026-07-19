@@ -210,6 +210,6 @@ Exit criterion: all Milestone 1–7 gates pass, accepted raster hashes remain un
 
 ## Milestone 8 — Public release and licensing decision
 
-**State:** working repository is public; release policy remains undecided
+**State:** noncommercial source-available licensing selected; tagged release policy remains undecided
 
-The selected working repository is `vladagurets/csdl`. Before calling CSDL a public release, choose a license, attribution policy, font licensing policy, asset-distribution strategy, and stable versioning model after Pilot 01 and Visual DNA Sprint 1 are validated.
+The selected working repository is `vladagurets/csdl`. D-034 assigns PolyForm Noncommercial 1.0.0 to software and machine-readable materials, CC BY-NC-SA 4.0 to original documentation and visual materials, separate written terms to commercial use, and a distinct trademark boundary. Before calling CSDL a tagged public release, resolve the exact font licensing policy, long-term asset-distribution strategy, stable versioning model, release notes, tag, and GitHub Release.

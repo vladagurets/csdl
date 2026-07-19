@@ -6,8 +6,8 @@ semantic_intent:
   recipe: Loop
   expression: A
   density: low
-  claim: "Compound Engineering closes the task cycle by persisting learnings that improve the next task's starting context."
-  visual_mechanism: "One four-stage closed Loop selects COMPOUND once and subtly lifts the returning baseline."
+  claim: "Compound Engineering documents the solved problem and verified solution so the next agent reads the note before the next task instead of rediscovering the same answer."
+  visual_mechanism: "One ascending four-stage Loop moves from PLAN through WORK and REVIEW to COMPOUND, then returns to a visibly higher next-cycle baseline."
 content:
   headline: "COMPOUND ENGINEERING: ПРОЦЕС МІЖ ЗАДАЧАМИ"
   stages:
@@ -15,16 +15,16 @@ content:
     - "WORK"
     - "REVIEW"
     - "COMPOUND"
-  supporting_copy: "COMPOUND ЗБЕРІГАЄ LEARNINGS У docs/solutions/. НАСТУПНА ЗАДАЧА СТАРТУЄ З КРАЩОГО КОНТЕКСТУ."
+  supporting_copy: "COMPOUND ЗАПИСУЄ РОЗВ’ЯЗАНУ ПРОБЛЕМУ Й ПЕРЕВІРЕНЕ РІШЕННЯ У docs/solutions/. ПЕРЕД НАСТУПНОЮ ЗАДАЧЕЮ АГЕНТ ЧИТАЄ ЦЮ НОТАТКУ — І НЕ ШУКАЄ ТЕ САМЕ З НУЛЯ."
   exact_copy:
     - "COMPOUND ENGINEERING: ПРОЦЕС МІЖ ЗАДАЧАМИ"
     - "PLAN"
     - "WORK"
     - "REVIEW"
     - "COMPOUND"
-    - "COMPOUND ЗБЕРІГАЄ LEARNINGS У docs/solutions/. НАСТУПНА ЗАДАЧА СТАРТУЄ З КРАЩОГО КОНТЕКСТУ."
+    - "COMPOUND ЗАПИСУЄ РОЗВ’ЯЗАНУ ПРОБЛЕМУ Й ПЕРЕВІРЕНЕ РІШЕННЯ У docs/solutions/. ПЕРЕД НАСТУПНОЮ ЗАДАЧЕЮ АГЕНТ ЧИТАЄ ЦЮ НОТАТКУ — І НЕ ШУКАЄ ТЕ САМЕ З НУЛЯ."
 component_instances:
-  - "Loop(id=compound-loop, members=[plan,work,review,compound], direction=clockwise, closed=true, active_node=compound)"
+  - "Loop(id=compound-loop, members=[plan,work,review,compound], direction=ascending_clockwise, closed=true, active_node=compound, return=next-cycle-baseline)"
   - "Node(id=plan, role=stage, content=stages[0])"
   - "Node(id=work, role=stage, content=stages[1])"
   - "Node(id=review, role=stage, content=stages[2])"
@@ -40,13 +40,13 @@ relations:
   - "Label attached_to Node"
   - "Signal highlights Node"
 generation_constraints:
-  composition: "Quiet left text field and compact right Loop. Close the Loop exactly once. Keep center empty; express the improved next baseline only through the slightly elevated return geometry."
-  reading_path: cyclic_clockwise
+  composition: "Quiet left text field and one ascending flywheel on the right. Start PLAN on a lower baseline, rise through WORK and REVIEW to one coral COMPOUND Node, then use one dashed return Vector to land on a visibly higher next-cycle baseline."
+  reading_path: ascending_clockwise_to_next_cycle
   negative_space: "60–70 percent"
   typography: "Smooth Ukrainian-capable Modular Technical headline; technical mono for docs/solutions/; all text horizontal."
   palette: "Warm paper, graphite, one muted-coral COMPOUND Node."
   hard_exclusions:
-    - extra text, open loop, duplicated markers, UI pills, orbit lines
+    - extra text, ordinary centered ring, duplicated markers, UI pills, decorative orbit lines
     - separate spiral, second diagram, colored stage cards, logo, footer
     - gradients, shadows, glossy surfaces, 3D
     - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering

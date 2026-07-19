@@ -7,7 +7,7 @@ semantic_intent:
   expression: A
   density: low
   claim: "The approaches are orthogonal: Superpowers raises execution rigor, Compound Engineering raises retained context, and they can be combined."
-  visual_mechanism: "Two independent open Axes position three directly labeled Nodes; the synthesis Node is the single coral Signal."
+  visual_mechanism: "Two low-contrast orthogonal Axis carriers intersect at the coral synthesis Node; the two source Nodes remain positioned on their independent dimensions."
 content:
   headline: "ЦЕ НЕ «АБО/АБО»"
   axes:
@@ -53,11 +53,11 @@ relations:
   - "Label attached_to Node"
   - "Signal highlights Node"
 generation_constraints:
-  composition: "Open coordinate Field occupies the right two-thirds; headline and two recommendation lines occupy the left. Use exactly three square Nodes with direct Labels and no quadrant cards."
+  composition: "A broad pale execution Axis crosses a broad pale retained-context Axis near the right center. Place the coral synthesis Node at their intersection, the graphite Superpowers Node on the execution Axis, and the ochre Compound Engineering Node on the retained-context Axis. Keep the large headline in the lower-left and attach each recommendation directly to its source Node. Use exactly three square Nodes with direct Labels and no quadrant cards."
   reading_path: outside_to_inside
   negative_space: "60 percent"
   typography: "Smooth Ukrainian-capable Modular Technical headline; restrained neutral Axis and Node Labels; all body copy horizontal."
-  palette: "Warm paper, graphite axes, one muted-coral synthesis Node."
+  palette: "Warm paper, low-contrast neutral Axis carriers, graphite and ochre source Nodes, and one muted-coral synthesis Node as the sole dominant Signal."
   hard_exclusions:
     - extra text, numeric ticks, fake scores, decorative grid, quadrant cards, overlapping labels
     - repeated colors, arrows between nodes, UI chrome, logo, footer
