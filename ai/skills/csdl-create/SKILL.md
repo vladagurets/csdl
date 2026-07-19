@@ -1,11 +1,11 @@
 ---
 name: csdl-create
-description: Create a complete Constructive Signal Design Language infographic slide set of any user-approved length from slide context. Use when a user asks to build, generate, translate, extend, or regenerate a CSDL infoslide series or a pilot under `pilots/{ID-topic-name}`. Analyze the material, resolve slide count, rhythm, copy, and evidence through a consolidated clarification round, generate three candidates per slide with the canonical CSDL reference hierarchy, select and validate the final 16:9 set, and persist prompts, rasters, previews, contact sheet, sources, scores, and review evidence.
+description: Create a complete Constructive Signal Design Language infographic slide set in Codex from slide context. Use when a user asks to build, generate, translate, extend, or regenerate a CSDL infoslide series or a pilot under `pilots/{ID-topic-name}`. Analyze the material, resolve slide count, rhythm, copy, and evidence through a consolidated clarification round, generate three candidates per slide with Codex image generation and the canonical CSDL reference hierarchy, select and validate the final 16:9 set, and persist prompts, rasters, previews, contact sheet, sources, scores, and review evidence.
 ---
 
 # CSDL Create
 
-Turn slide-by-slide context into a complete, reviewable CSDL pilot at `pilots/{ID-topic-name}`. Keep product interpretation and exact copy under user control; perform the mechanical generation, evaluation, promotion, and validation autonomously after approval.
+Turn slide-by-slide context into a complete, reviewable CSDL pilot at `pilots/{ID-topic-name}`. Run the workflow through Codex and its built-in image generation. Keep product interpretation and exact copy under user control; perform the mechanical generation, evaluation, promotion, and validation autonomously after approval.
 
 ## Load the contracts
 

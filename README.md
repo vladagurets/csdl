@@ -116,7 +116,7 @@ Level C remains rare. This prevents every slide from competing for attention.
 
 The Visual DNA catalog demonstrates editorial, structural, process, and analytical families:
 
-[![Twenty CSDL Visual DNA families](patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-all.png)](patterns/visual-dna-sprint-01/README.md)
+[![English CSDL Visual Examples slide](docs/readme/visual-examples.png)](patterns/visual-dna-sprint-01/README.md)
 
 The current evidence includes:
 
@@ -141,7 +141,7 @@ The current evidence includes:
 
 ## Create a CSDL presentation
 
-Use the repository-local `csdl-create` skill with Codex or Claude:
+Use the repository-local `csdl-create` skill with Codex:
 
 ```text
 $csdl-create Create a CSDL series explaining [topic] for [audience].
