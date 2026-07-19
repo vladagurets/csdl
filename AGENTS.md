@@ -39,7 +39,9 @@ Do not change these without explicit user approval and a corresponding update to
 
 ## Current objective
 
-Milestone 7 — Cookbook and Design Book v1.0 is complete under `cookbook/design-book-v1.0/` and D-033 through green integration PR #69 and merge commit `4c20829f4923c164b48985d06a49247ff372ed4f`. Preserve its additive publication contract, Prompt DSL v0.5, exactly fifteen public components, exactly 23 recipes, Analytical Mode v0.1 invariants, Night Mode and Accessibility v0.1, and all sixty accepted raster hashes. Do not generate, recolor, or replace CSDL raster evidence without separate explicit approval. Milestone 8, public release, licensing, tags, and GitHub Releases must not begin without a new explicit objective.
+Milestone 7 — Cookbook and Design Book v1.0 is complete under `cookbook/design-book-v1.0/` and D-033 through green integration PR #69 and merge commit `4c20829f4923c164b48985d06a49247ff372ed4f`. Preserve its additive publication contract, Prompt DSL v0.5, exactly fifteen public components, exactly 23 recipes, Analytical Mode v0.1 invariants, Night Mode and Accessibility v0.1, and all sixty accepted raster hashes. Do not generate, recolor, or replace CSDL raster evidence without separate explicit approval.
+
+Milestone 8 has started only for the D-034 licensing slice. CSDL is source-available for noncommercial use: PolyForm Noncommercial 1.0.0 covers software and machine-readable materials, CC BY-NC-SA 4.0 covers original documentation and visuals, commercial use requires a separate written license, and CSDL branding is reserved. Preserve the exact scope in `LICENSE`, the single-owner contribution gate, and the statement that this is not OSI open source. Public-release versioning, tags, GitHub Releases, final font licensing, and long-term asset distribution remain out of scope without a new explicit objective.
 
 ## Work protocol
 

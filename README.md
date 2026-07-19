@@ -6,7 +6,7 @@ It turns presentation design into a shared, machine-readable system of component
 
 [![Seven-slide English overview of CSDL](docs/demo-infographic/contact-sheet.png)](docs/demo-infographic/README.md)
 
-> **Project status:** Foundation through Cookbook and Design Book v1.0 is complete. Public release and licensing remain intentionally pending.
+> **Project status:** Foundation through Cookbook and Design Book v1.0 is complete. CSDL is source-available for noncommercial use under D-034; a tagged public release remains pending.
 
 ## Why CSDL exists
 
@@ -139,6 +139,14 @@ The current evidence includes:
 | Accessibility | Light, night, monochrome, and projector semantic profiles | v0.1 |
 | Design Book | Canonical publication covering the complete system | v1.0 |
 
+## Analytical Mode v0.1
+
+Analytical Mode v0.1 is complete as an additive typed-data and encoding contract. It preserves exact values, domains, order, units, sources, missing-data behavior, transformations, uncertainty, and forecasts without changing Prompt DSL v0.5 or the public component vocabulary.
+
+## Night Mode and Accessibility v0.1
+
+Night Mode and Accessibility v0.1 are complete as an independent additive extension. Light, night, monochrome, and projector profiles preserve semantic meaning through validated contrast, redundant encodings, and deterministic fallbacks without modifying accepted raster evidence.
+
 ## Create a CSDL presentation
 
 Use the repository-local `csdl-create` skill with Codex:
@@ -181,10 +189,17 @@ Run the strict validator for any system layer you change. The full command list 
 
 ## Contributing
 
-Read [`AGENTS.md`](AGENTS.md), [`DECISIONS.md`](DECISIONS.md), and [`STATUS.md`](STATUS.md) before making changes. Preserve canonical copy, accepted raster evidence, public vocabulary, and version boundaries.
+Read [`CONTRIBUTING.md`](CONTRIBUTING.md), [`AGENTS.md`](AGENTS.md), [`DECISIONS.md`](DECISIONS.md), and [`STATUS.md`](STATUS.md) before proposing changes. Preserve canonical copy, accepted raster evidence, public vocabulary, and version boundaries.
 
-Do not begin public release work, change locked decisions, or replace accepted rasters without explicit approval.
+To preserve single-owner copyright, external copyrightable contributions are not accepted without a prior written copyright assignment. Do not begin tagged release work, change locked decisions, or replace accepted rasters without explicit approval.
 
 ## License
 
-A public license has not been selected. Do not assume reuse or redistribution rights yet.
+CSDL is **source-available for noncommercial use**. It is not OSI open source.
+
+- Software, schemas, machine-readable packages, tools, and agent implementations use the [PolyForm Noncommercial License 1.0.0](LICENSES/PolyForm-Noncommercial-1.0.0.md).
+- Original documentation and visual materials use [CC BY-NC-SA 4.0](LICENSES/CC-BY-NC-SA-4.0.txt).
+- Commercial use requires a separate written license from Vladyslav Ohirenko.
+- CSDL names and branding are governed by the [trademark policy](TRADEMARKS.md).
+
+The authoritative scope, attribution, exclusions, and commercial-use boundary are defined in [`LICENSE`](LICENSE).

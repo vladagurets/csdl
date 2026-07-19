@@ -2,6 +2,8 @@
 
 This directory is the additive Milestone 7 publication contract. One Markdown file owns each book page. Canonical CSDL technical details are expanded from the completed Milestone 1–6 manifests and contracts, so the book does not fork the public vocabulary or quantitative/accessibility rules.
 
+Under D-034, original human-readable and visual materials in this directory are licensed under CC BY-NC-SA 4.0 according to the root `LICENSE`. Statements inside the frozen v1.0 pages and evaluation record that licensing or Milestone 8 was untouched document the Milestone 7 build boundary at the time of acceptance; they do not override the current repository license.
+
 ## Authority
 
 - `pages/` owns Ukrainian editorial explanation and page-level reading order.

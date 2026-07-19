@@ -1,0 +1,63 @@
+# CSDL Licensing
+
+Copyright 2026 Vladyslav Ohirenko
+
+Required Notice: Copyright 2026 Vladyslav Ohirenko
+
+Constructive Signal Design Language (CSDL) is source-available for
+noncommercial use. It is not distributed under an Open Source
+Initiative-approved open-source license.
+
+## Software and machine-readable materials
+
+The following materials are licensed under the PolyForm Noncommercial
+License 1.0.0 in `LICENSES/PolyForm-Noncommercial-1.0.0.md`:
+
+- source code, tests, build and validation tools;
+- repository automation and configuration;
+- machine-readable schemas, manifests, datasets, fixtures, indexes, and
+  Prompt DSL packages;
+- agent and skill implementation files, including `AGENTS.md`, `.codex/`,
+  and `ai/`.
+
+For mixed files, this license applies to functional code, configuration, and
+machine-readable portions unless the file carries a more specific notice.
+
+## Documentation and visual materials
+
+Original human-readable documentation and original visual materials are
+licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International license in `LICENSES/CC-BY-NC-SA-4.0.txt`.
+
+This scope includes Markdown publications, specifications, explanatory prose,
+PNG/JPEG/SVG artwork, and CSDL-owned PDF publications, except for the agent and
+skill implementation files assigned to the software scope above.
+
+Attribution should identify:
+
+> Constructive Signal Design Language (CSDL) by Vladyslav Ohirenko
+
+Include a link to the source repository, identify modifications, and retain the
+applicable license notice when sharing licensed material.
+
+## Commercial use
+
+Neither public license grants commercial use. Commercial use requires a
+separate written license from Vladyslav Ohirenko. Request commercial terms
+through <https://github.com/vladagurets>.
+
+## Trademarks and third-party rights
+
+The licenses do not grant rights to the CSDL or Constructive Signal Design
+Language names, marks, or branding. See `TRADEMARKS.md`.
+
+Third-party names, trademarks, quoted material, external references,
+dependencies, and any file carrying its own license remain subject to their
+respective terms. No font binaries are distributed by this repository.
+
+These licenses grant only rights that the licensor has authority to grant.
+They do not create exclusive rights in abstract ideas, systems, methods,
+functional language behavior, or other material outside copyright protection.
+
+If a file contains a specific license notice that conflicts with this file,
+the file-specific notice controls for that file.
