@@ -44,4 +44,4 @@ This file separates primary-source facts, user-approved editorial premises, and 
 
 - `14 SKILLS` for Superpowers was counted from the v6.1.1 skill inventory available on 2026-07-19.
 - `31 SKILLS · 0 STANDALONE AGENTS` is stated by the Compound Engineering v3.19.0 README available on 2026-07-19.
-- These values are explicitly dated on Slide 05 and must be re-verified before future regeneration or republication.
+- These point-in-time values remain in the research record but were removed from Slide 05 at the user's request; re-verify them before any future use.

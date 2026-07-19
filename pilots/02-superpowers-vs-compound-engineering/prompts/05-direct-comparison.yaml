@@ -7,30 +7,24 @@ semantic_intent:
   expression: B
   density: medium
   claim: "Superpowers optimizes methodological rigor for the current task; Compound Engineering optimizes team workflow and retained leverage for later tasks."
-  visual_mechanism: "Two equal open Fields align five criteria across one thin Divider; one small coral Signal marks the value-unit difference."
+  visual_mechanism: "Two equal open Fields align three criteria across one thin Divider; one small coral Signal marks the value-unit difference."
 content:
   headline: "ПРЯМЕ ПОРІВНЯННЯ"
   left:
     title: "SUPERPOWERS"
     values:
       - "ЯКІСТЬ ЦІЄЇ ЗАДАЧІ"
-      - "JESSE VINCENT + PRIME RADIANT"
       - "TDD + SYSTEMATIC DEBUGGING"
-      - "14 SKILLS"
       - "CEREMONY НА ДРІБНИЦЯХ"
   right:
     title: "COMPOUND ENGINEERING"
     values:
       - "ПРИСКОРЕННЯ НАСТУПНИХ"
-      - "KIERAN KLAASSEN + TREVIN CHOW / EVERY"
       - "80/20 PLAN + REVIEW + KNOWLEDGE CAPTURE"
-      - "31 SKILLS · 0 STANDALONE AGENTS"
       - "ШИРШИЙ SURFACE AREA + БІЛЬШЕ ТОКЕНІВ НА REVIEW"
   criteria:
     - "ЦІННІСТЬ"
-    - "ПОХОДЖЕННЯ"
     - "АКЦЕНТ"
-    - "МАСШТАБ · 19.07.2026"
     - "РИЗИК"
   supporting_copy: "СТРОГІСТЬ МЕТОДОЛОГІЇ ↔ ОПІНІЙОВАНИЙ WORKFLOW КОМАНДИ"
   exact_copy:
@@ -40,15 +34,9 @@ content:
     - "ЦІННІСТЬ"
     - "ЯКІСТЬ ЦІЄЇ ЗАДАЧІ"
     - "ПРИСКОРЕННЯ НАСТУПНИХ"
-    - "ПОХОДЖЕННЯ"
-    - "JESSE VINCENT + PRIME RADIANT"
-    - "KIERAN KLAASSEN + TREVIN CHOW / EVERY"
     - "АКЦЕНТ"
     - "TDD + SYSTEMATIC DEBUGGING"
     - "80/20 PLAN + REVIEW + KNOWLEDGE CAPTURE"
-    - "МАСШТАБ · 19.07.2026"
-    - "14 SKILLS"
-    - "31 SKILLS · 0 STANDALONE AGENTS"
     - "РИЗИК"
     - "CEREMONY НА ДРІБНИЦЯХ"
     - "ШИРШИЙ SURFACE AREA + БІЛЬШЕ ТОКЕНІВ НА REVIEW"
@@ -65,7 +53,7 @@ relations:
   - "Divider separates Field"
   - "Signal highlights Anchor"
 generation_constraints:
-  composition: "One exact five-row comparison with a left criterion gutter, a middle SUPERPOWERS value column, and a right COMPOUND ENGINEERING value column. Keep all text horizontal, align every row, use open Fields, one thin vertical Divider between value columns, and generous outer margins."
+  composition: "One exact three-row comparison with a left criterion gutter, a middle SUPERPOWERS value column, and a right COMPOUND ENGINEERING value column. Keep all text horizontal, align every row, use open Fields, one thin vertical Divider between value columns, and generous outer margins."
   reading_path: left_to_right
   negative_space: "45–55 percent"
   typography: "Headline and peer titles in Modular Technical; criteria small neutral uppercase; values in highly legible neutral sans; exact mixed Ukrainian/English copy."

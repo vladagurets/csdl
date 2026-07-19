@@ -126,19 +126,15 @@ cards:
       title: "SUPERPOWERS"
       rows:
         - ["ЦІННІСТЬ", "ЯКІСТЬ ЦІЄЇ ЗАДАЧІ"]
-        - ["ПОХОДЖЕННЯ", "JESSE VINCENT + PRIME RADIANT"]
         - ["АКЦЕНТ", "TDD + SYSTEMATIC DEBUGGING"]
-        - ["МАСШТАБ · 19.07.2026", "14 SKILLS"]
         - ["РИЗИК", "CEREMONY НА ДРІБНИЦЯХ"]
     right:
       title: "COMPOUND ENGINEERING"
       rows:
         - ["ЦІННІСТЬ", "ПРИСКОРЕННЯ НАСТУПНИХ"]
-        - ["ПОХОДЖЕННЯ", "KIERAN KLAASSEN + TREVIN CHOW / EVERY"]
         - ["АКЦЕНТ", "80/20 PLAN + REVIEW + KNOWLEDGE CAPTURE"]
-        - ["МАСШТАБ · 19.07.2026", "31 SKILLS · 0 STANDALONE AGENTS"]
         - ["РИЗИК", "ШИРШИЙ SURFACE AREA + БІЛЬШЕ ТОКЕНІВ НА REVIEW"]
-    visual_mechanism: "Two equal open Fields align five criteria across one thin Divider; one coral Signal marks the value-unit difference"
+    visual_mechanism: "Two equal open Fields align three criteria across one thin Divider; one coral Signal marks the value-unit difference"
     components: [Anchor, Field, Divider, Signal]
     signal: coral
     max_supporting_elements: 3
@@ -151,15 +147,9 @@ cards:
       - "ЦІННІСТЬ"
       - "ЯКІСТЬ ЦІЄЇ ЗАДАЧІ"
       - "ПРИСКОРЕННЯ НАСТУПНИХ"
-      - "ПОХОДЖЕННЯ"
-      - "JESSE VINCENT + PRIME RADIANT"
-      - "KIERAN KLAASSEN + TREVIN CHOW / EVERY"
       - "АКЦЕНТ"
       - "TDD + SYSTEMATIC DEBUGGING"
       - "80/20 PLAN + REVIEW + KNOWLEDGE CAPTURE"
-      - "МАСШТАБ · 19.07.2026"
-      - "14 SKILLS"
-      - "31 SKILLS · 0 STANDALONE AGENTS"
       - "РИЗИК"
       - "CEREMONY НА ДРІБНИЦЯХ"
       - "ШИРШИЙ SURFACE AREA + БІЛЬШЕ ТОКЕНІВ НА REVIEW"

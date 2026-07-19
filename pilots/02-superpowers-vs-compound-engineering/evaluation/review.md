@@ -63,16 +63,16 @@ All three normalized candidates for every slide were inspected together at `1920
 ## Slide 05 — Direct comparison
 
 - Candidates: `05-direct-comparison-v1.png`, `05-direct-comparison-v2.png`, `05-direct-comparison-v3.png`.
-- Rejected v1: the oversized headline and heavier row rules reduce space for the comparison body.
-- Rejected v2: the full-width coral baseline overstates the Signal and makes the table feel more editorial than analytical.
+- Rejected v1: the enlarged bottom synthesis line competes with the three comparison rows.
+- Rejected v2: the wider vertical gaps make the table feel looser and reduce the connection between criteria and peer values.
 - **Selected:** `05-direct-comparison-v3.png`
-- Selection rationale: the most balanced three-column comparison, exact five-row alignment, quiet dividers, and strongest readability for the central factual slide.
-- Exact-copy review: pass. All 19 manifest strings appear once; no translations, ratings, duplicates, or extra text.
+- Selection rationale: the most balanced three-column comparison, exact three-row alignment, quiet dividers, and strongest readability after removing the origin and scale rows.
+- Exact-copy review: pass. All 13 manifest strings appear once; `ПОХОДЖЕННЯ`, `МАСШТАБ · 19.07.2026`, and their four peer values are absent; no translations, duplicates, or extra text.
 - Dimensions/color mode: pass, `1920×1080` RGB PNG. Preview: `1280×720` RGB PNG.
 - Clipping/contrast/reading order: pass. Visual mechanism and expression B: pass.
 - Removable-element check: pass; criterion gutter, peer columns, row separators, and bottom synthesis line all support comparison.
-- Selected source SHA-256: `b816ef83921ea97feba75353ae34bf9928c69b5b7c5ba864fdc0ff9e6ac406a1`
-- Canonical SHA-256: `b816ef83921ea97feba75353ae34bf9928c69b5b7c5ba864fdc0ff9e6ac406a1`
+- Selected source SHA-256: `e43eb7a90adad64abd96d1dedb5b403df49343a0f08907771debd10bbe754bb4`
+- Canonical SHA-256: `e43eb7a90adad64abd96d1dedb5b403df49343a0f08907771debd10bbe754bb4`
 
 ## Slide 06 — Orthogonal combination
 
@@ -124,4 +124,4 @@ All three normalized candidates for every slide were inspected together at `1920
 - Exact-copy review: pass for all eight canonicals.
 - Presentation review: pass at both `1920×1080` and `1280×720`; no clipping or inaccessible low-contrast text observed.
 - Contact-sheet review: pass — centered four-by-two grid at `3840×2160` preserves sequence order.
-- Remaining visual risk: slides 5 and 8 contain the smallest body text in the set; both remain readable at the required `1280×720` review size but should not be repurposed as mobile portrait assets.
+- Remaining visual risk: slide 8 contains the smallest body text in the set; it remains readable at the required `1280×720` review size but should not be repurposed as a mobile portrait asset.
