@@ -1,0 +1,17 @@
+Use case: text-localization
+Asset type: English 1920×1080 educational presentation slide
+Primary request: Translate the edit target into exact English while preserving its component grammar and Idea-to-Signal relationship.
+Input images: Image 1 is the edit target; change only its text. Images 2–4 are primary visual-language authorities. Image 5 is secondary direct-landscape execution evidence.
+Style/medium: Constructive Signal, Quiet Modular, Level B — Constructive; flat semantic geometry; Modular Technical display; neutral high-legibility sans.
+Composition/framing: preserve Image 1's left copy zone, Idea entering one dark Anchor, central supporting component Cluster, active Vector, and single coral Signal at lower right.
+Text (verbatim, no other visible text except direct repetitions of the listed component names on their corresponding forms):
+"VISUAL GRAMMAR"
+"Meaning is built from a closed vocabulary."
+"Anchor · Signal · Field · Frame · Cluster"
+"Vector · Node · Axis · Pulse · Label"
+"Idea → Anchor → supporting structure → dominant Signal"
+"Geometry always has a semantic role."
+"Exactly 15 public components."
+Constraints: change only text; preserve semantic geometry, palette, typography roles, margins, negative space, and exact 16:9 landscape composition; never invent a component; direct labels attach to exactly one target.
+Avoid: Container, gradients, shadows, glossy surfaces, 3D, decorative coordinates, random dot fields, UI chrome, card shells, logos, footers, political or revolutionary-poster styling, retro-computer lettering, generic corporate infographic styling.
+

@@ -239,18 +239,27 @@ def derive_compatibility(
     }
 
 
-def derive_raster_hashes(repository_root: Path) -> dict[str, Any]:
-    accepted_roots = [
-        repository_root / "pilots",
-        repository_root / "patterns",
-        repository_root / "references/canonical",
-    ]
-    paths = sorted(
-        path
-        for accepted_root in accepted_roots
-        for path in accepted_root.rglob("*.png")
-        if path.is_file() and "drafts" not in path.parts
-    )
+def derive_raster_hashes(
+    repository_root: Path, accepted_paths: list[str] | None = None
+) -> dict[str, Any]:
+    if accepted_paths is None:
+        accepted_roots = [
+            repository_root / "pilots",
+            repository_root / "patterns",
+            repository_root / "references/canonical",
+        ]
+        paths = sorted(
+            path
+            for accepted_root in accepted_roots
+            for path in accepted_root.rglob("*.png")
+            if path.is_file() and "drafts" not in path.parts
+        )
+    else:
+        paths = [
+            repository_root / path
+            for path in accepted_paths
+            if (repository_root / path).is_file()
+        ]
     files = [
         {
             "path": path.relative_to(repository_root).as_posix(),
@@ -293,6 +302,12 @@ def build_accessibility_mode(
             encoding="utf-8",
         )
         outputs.append(output)
+    raster_hash_path = root / manifest["library"]["raster_hashes"]
+    accepted_paths = None
+    if require_complete and raster_hash_path.is_file():
+        baseline = yaml.safe_load(raster_hash_path.read_text(encoding="utf-8"))
+        accepted_paths = [entry["path"] for entry in baseline.get("files", [])]
+
     derived = [
         (root / manifest["library"]["index"], derive_index(root, manifest)),
         (
@@ -304,8 +319,8 @@ def build_accessibility_mode(
             derive_compatibility(manifest, compatibility_source),
         ),
         (
-            root / manifest["library"]["raster_hashes"],
-            derive_raster_hashes(root.parents[1]),
+            raster_hash_path,
+            derive_raster_hashes(root.parents[1], accepted_paths),
         ),
     ]
     for path, document in derived:

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create CSDL Infographic Set"
+  short_description: "Build validated CSDL infographic slide sets"
+  default_prompt: "Use $csdl-create to turn my slide-by-slide context into a complete validated CSDL infographic pilot."

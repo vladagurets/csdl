@@ -3,9 +3,15 @@
 **Project:** Constructive Signal Design Language
 **Version:** Cookbook and Design Book v1.0
 **Current milestone:** Milestone 7 — complete
-**Last updated:** 2026-07-18
+**Last updated:** 2026-07-19
 
 ## Outcome
+
+Pilot 02 is complete under `pilots/02-superpowers-vs-compound-engineering/`. The additive eight-slide Ukrainian series compares Superpowers and Compound Engineering as orthogonal disciplines for within-task execution and between-task knowledge capture. It includes 24 reviewed GPT Image 2 candidates, eight exact-copy `1920×1080` RGB canonicals, eight `1280×720` previews, one centered `3840×2160` contact sheet, current primary-source fact mapping, Prompt DSL v0.5 packages, hashes, selection evidence, and passing rubric scores. The work does not alter Pilot 01, any previously accepted raster, Prompt DSL v0.5, the fifteen-component vocabulary, the 23-recipe library, or the completed Milestone 7 publication contract.
+
+An additive seven-slide English demo infographic is available under `docs/demo-infographic/`. It translates the original five-slide explanatory sequence, adds a Recipes bridge and a human/agent parity slide, and includes exact-copy prompts, 21-candidate selection evidence, seven `1920×1080` RGB PNG files, and one `3840×2160` contact sheet. It is documentation-only, does not begin Milestone 8, and does not modify any accepted raster evidence or versioned CSDL contract.
+
+Repository-local skill `csdl-create` is available from the canonical source at `ai/skills/csdl-create/` and through `.codex/skills/csdl-create` and `.claude/skills/csdl-create` symlinks. It converts user-provided slide context into an approved variable-length brief and A/B/C rhythm, three-candidate-per-slide CSDL generation workflow, complete `pilots/{ID-topic-name}` evidence package, and strict reusable pilot validation without changing the locked seven-slide standard or the broader design language.
 
 Pilot 01 was restarted and completed under the user-approved 16:9-first contract. The canonical canvas is `1920×1080`, landscape. Portrait masters, 4:5 assets, and mobile previews are not deliverables. Previous Pilot 01 rasters and review evidence are superseded and remain only in Git history.
 

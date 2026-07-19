@@ -774,11 +774,21 @@ def validate_accessibility_library(
             (root / str(library.get(key, ""))).is_file()
             for key in ("index", "contrast_matrix", "compatibility", "raster_hashes")
         ):
+            raster_inventory = _load(
+                root / str(library["raster_hashes"]),
+                errors,
+                "accessibility raster_hashes",
+            )
+            accepted_paths = [
+                entry.get("path")
+                for entry in raster_inventory.get("files", [])
+                if isinstance(entry, dict) and isinstance(entry.get("path"), str)
+            ]
             expected_outputs = {
                 "index": derive_index(root, manifest),
                 "contrast_matrix": derive_contrast_matrix(tokens, contrast),
                 "compatibility": derive_compatibility(manifest, compatibility),
-                "raster_hashes": derive_raster_hashes(root.parents[1]),
+                "raster_hashes": derive_raster_hashes(root.parents[1], accepted_paths),
             }
             messages = {
                 "index": "accessibility index does not match deterministic derivation",

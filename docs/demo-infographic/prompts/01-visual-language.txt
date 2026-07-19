@@ -1,0 +1,15 @@
+Use case: text-localization
+Asset type: English 1920×1080 educational presentation slide
+Primary request: Translate the edit target into exact English while preserving its CSDL composition and semantic compression mechanism.
+Input images: Image 1 is the edit target; change only its text. Image 2 is primary typography and component-grammar authority. Image 3 is primary Quiet Modular rhythm and asymmetry authority. Image 4 is primary A/B/C density and signal-scale authority. Image 5 is secondary direct-landscape and warm-paper execution evidence.
+Style/medium: Constructive Signal, Quiet Modular, Level A — Quiet; flat semantic geometry; Modular Technical display; neutral high-legibility sans.
+Composition/framing: preserve Image 1's large left Anchor, open fragment Field, converging Vector, single right coral Signal, spacing, hierarchy, and left-to-right reading path; reflow English only as needed inside the same text zones.
+Text (verbatim, no other visible text):
+"CSDL"
+"A VISUAL LANGUAGE FOR COMPLEX IDEAS"
+"Technical presentations often become generic, noisy, and hard to reproduce."
+"CSDL is a versioned, machine-readable visual language for AI, software engineering, economics, and education."
+"One idea. One visual mechanism. One dominant Signal."
+Constraints: change only text; preserve geometry, palette, typography roles, margins, negative space, and exact 16:9 landscape composition; all text horizontal; publication-readable; no extra labels.
+Avoid: gradients, shadows, glossy surfaces, 3D, decorative coordinates, random dot fields, fake charts, UI chrome, card shells, logos, footers, political or revolutionary-poster styling, imitation-1920s styling, retro-computer lettering, generic corporate infographic styling.
+

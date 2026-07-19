@@ -1,0 +1,17 @@
+Use case: infographic-diagram
+Asset type: English 1920×1080 educational presentation slide
+Primary request: Explain human and agent parity in CSDL: different responsibilities, one shared machine-readable language, and no authority to invent content or public vocabulary.
+Input images: Image 1 is primary typography and component-grammar authority. Image 2 is primary Quiet Modular rhythm and asymmetry authority. Image 3 is primary A/B/C density and signal-scale authority. Image 4 is secondary direct-landscape and warm-paper execution evidence.
+Style/medium: Constructive Signal, Quiet Modular, Level A — Quiet; flat semantic geometry; Modular Technical display; neutral high-legibility sans.
+Composition/framing: two open Fields labeled HUMAN and AGENT are separated by generous space and joined by one thin Bridge through a small central coral Signal representing the shared contract; responsibilities remain direct labels inside their owning Fields; no card shells; about 60% negative space.
+Text (verbatim, no other visible text):
+"HUMAN + AGENT, ONE LANGUAGE"
+"HUMAN"
+"claim · evidence · product choice"
+"AGENT"
+"select · construct · validate"
+"Neither side may invent copy, data, components, or Recipes."
+"Markdown remains the source of truth."
+Constraints: one main idea, one Bridge mechanism, one dominant coral Signal; responsibilities remain distinct; do not imply agent authority over claim, evidence, data, or public vocabulary; all text horizontal and readable.
+Avoid: human figure, robot character, handshake cliché, UI cards, dashboard, gradients, shadows, 3D, decorative coordinates, random dot fields, logos, footers, political or revolutionary-poster styling, retro-computer lettering, generic corporate infographic styling.
+

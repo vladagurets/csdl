@@ -1,0 +1,14 @@
+Use case: infographic-diagram
+Asset type: English 1920×1080 educational presentation slide
+Primary request: Explain how CSDL Recipes map an explanatory problem to a reusable visual mechanism without becoming fixed templates.
+Input images: Image 1 is primary typography and component-grammar authority. Image 2 is primary Quiet Modular rhythm and asymmetry authority. Image 3 is primary A/B/C density and signal-scale authority. Image 4 is secondary direct-landscape and warm-paper execution evidence.
+Style/medium: Constructive Signal, Quiet Modular, Level A — Quiet; flat semantic geometry; Modular Technical display; neutral high-legibility sans.
+Composition/framing: six small explanatory-need Nodes form one open, asymmetric Cluster without card shells; one coral Signal reading 23 Recipes owns the selected mechanism; one short result statement remains isolated; about 60–65% negative space.
+Text (verbatim, no other visible text):
+"RECIPES TURN INTENT INTO STRUCTURE"
+"Start with the explanatory problem — not a preferred layout."
+"proposition · comparison · sequence · topology · recurrence · quantitative trend"
+"23 evidence-backed Recipes"
+"A Recipe selects the mechanism. Components construct it."
+Constraints: one main idea, one Cluster mechanism, one dominant Signal; preserve exact 23 count; do not invent Recipes, fields, or capabilities; all text horizontal and readable; geometry shows grouping and selection, not decoration.
+Avoid: fixed-template gallery, cards, dashboard, UI chrome, gradients, shadows, 3D, decorative coordinates, random dot fields, logos, footers, political or revolutionary-poster styling, retro-computer lettering, generic corporate infographic styling.

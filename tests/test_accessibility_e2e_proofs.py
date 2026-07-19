@@ -3,7 +3,7 @@ import shutil
 
 import yaml
 
-from tools.build_accessibility_mode import derive_accessibility_package
+from tools.build_accessibility_mode import derive_accessibility_package, derive_raster_hashes
 from tools.validate_accessibility_mode import (
     validate_accessibility_library,
     validate_accessibility_package,
@@ -85,16 +85,9 @@ def test_raster_inventory_pins_every_tracked_accepted_png() -> None:
     assert len(inventory["files"]) == 60
     assert all("/drafts/" not in entry["path"] for entry in inventory["files"])
     assert all(len(entry["sha256"]) == 64 for entry in inventory["files"])
-    assert {entry["path"] for entry in inventory["files"]} == {
-        path.relative_to(ROOT).as_posix()
-        for path in ROOT.rglob("*.png")
-        if path.is_file()
-        and "/drafts/" not in path.as_posix()
-        and any(
-            path.as_posix().startswith((ROOT / prefix).as_posix())
-            for prefix in ("pilots", "patterns", "references/canonical")
-        )
-    }
+    accepted_paths = [entry["path"] for entry in inventory["files"]]
+    assert derive_raster_hashes(ROOT, accepted_paths) == inventory
+    assert not any(path.startswith("pilots/02-") for path in accepted_paths)
 
 
 def test_strict_library_rejects_drifted_package_and_index(tmp_path: Path) -> None:

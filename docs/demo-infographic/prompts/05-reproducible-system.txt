@@ -1,0 +1,16 @@
+Use case: text-localization
+Asset type: English 1920×1080 educational presentation slide
+Primary request: Preserve the edit target's exact English architecture while producing a coherent Level B variant for the seven-slide demo family.
+Input images: Image 1 is the edit target and content authority; preserve its exact text. Images 2–4 are primary visual-language authorities. Image 5 is secondary direct-landscape execution evidence.
+Style/medium: Constructive Signal, Quiet Modular, Level B — Constructive; flat semantic geometry; Modular Technical display; technical mono for Prompt DSL v0.5.
+Composition/framing: preserve one main left-to-right Axis with five stages; represent deterministic generation package as a flat 2D Frame with no interior text; two thin independent additive rails enter only the validated output; no literal package object.
+Text (verbatim, no other visible text):
+"FROM COMPONENTS TO A REPRODUCIBLE SYSTEM"
+"semantic intent → one of 23 Recipes → Prompt DSL v0.5 → deterministic generation package → validated output"
+"Analytical Mode v0.1"
+"Night Mode and Accessibility v0.1"
+"independent additive contracts"
+"exact content · source provenance · quantitative fidelity · semantic color · reproducibility"
+Constraints: preserve exact identifiers, versions, count 23, topology, palette, and landscape hierarchy; additive contracts remain independent and do not modify Prompt DSL v0.5; no invented schema text.
+Avoid: package cube, 3D object, invented schema fields, UI chrome, card shells, gradients, shadows, decorative coordinates, random dot fields, logos, footers, political or revolutionary-poster styling, retro-computer lettering, generic corporate infographic styling.
+
