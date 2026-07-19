@@ -14,14 +14,14 @@ pilot:
 cards:
   - id: "01"
     slug: discipline-over-vibe
-    recipe: Cover
+    recipe: Hero
     level: C
     headline: "ДИСЦИПЛІНА > ВАЙБ"
     supporting_copy:
       - "SUPERPOWERS × COMPOUND ENGINEERING"
       - "ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
-    visual_mechanism: "One oversized coral chevron Signal carries the headline's greater-than relation through one open Field"
-    components: [Anchor, Field, Signal]
+    visual_mechanism: "One transformation Signal changes a graphite trace from irregular to straight as it crosses one coral process gate beneath the headline Anchor"
+    components: [Anchor, Signal]
     signal: coral
     max_supporting_elements: 2
     asset: canonical/light/16x9/01-discipline-over-vibe.png

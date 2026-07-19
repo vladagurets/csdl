@@ -3,11 +3,11 @@ version: 0.5
 use_case: infographic-diagram
 asset_type: 16:9 presentation slide
 semantic_intent:
-  recipe: Cover
+  recipe: Hero
   expression: C
   density: low
   claim: "Discipline matters more than vibe because process is the bottleneck in AI-assisted development."
-  visual_mechanism: "One oversized coral chevron Signal carries the headline's greater-than relation through one open Field and creates the opening motion."
+  visual_mechanism: "One transformation Signal changes a graphite trace from irregular to straight as it crosses one coral process gate beneath the headline Anchor."
 content:
   headline: "ДИСЦИПЛІНА > ВАЙБ"
   supporting_copy:
@@ -18,26 +18,24 @@ content:
     - "SUPERPOWERS × COMPOUND ENGINEERING"
     - "ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
 component_instances:
-  - "Anchor(id=cover-thesis, role=thesis, content=headline)"
-  - "Field(id=cover-field, role=context)"
-  - "Signal(id=greater-than-signal, target=cover-field, role=attention, color=coral)"
+  - "Anchor(id=hero-thesis, role=primary, content=headline)"
+  - "Signal(id=discipline-gate, target=hero-thesis, role=transformation, color=coral)"
 relations:
-  - "Field contains Anchor"
-  - "Signal highlights Field"
+  - "Signal highlights Anchor"
 generation_constraints:
-  composition: "Dynamic asymmetric landscape cover. Make the headline the dominant Anchor. Turn the single greater-than symbol inside that headline into one oversized solid coral chevron Signal that drives from left to right across the open Field; it may separate or offset ДИСЦИПЛІНА and ВАЙБ but must not duplicate the symbol or any word. Keep both short supporting lines small and isolated."
+  composition: "Dynamic asymmetric landscape opening. Keep the complete headline as the dominant top-left Anchor. Below it, render one continuous graphite trace that enters from the left as a controlled irregular path, crosses one narrow vertical coral process gate, and exits to the right as a perfectly straight horizontal path. Treat the trace and gate together as one transformation Signal: process converts improvisation into disciplined execution. Keep both short supporting lines small and isolated below the mechanism."
   reading_path: top_left_to_bottom_right
-  negative_space: "50–60 percent"
+  negative_space: "55–65 percent"
   typography: "Rare condensed editorial emphasis for the short headline, still smooth and Ukrainian-capable; neutral sans or restrained mono for the two supporting lines; all text horizontal; maximum one typographic trick."
   palette: "Warm paper, warm graphite, one muted mineral-coral Signal plane; no other accent color."
   hard_exclusions:
     - extra text or copy mutation
-    - branch diagram, routes, checkpoints, decision nodes, boxes, icons, decorative geometry
-    - duplicated greater-than symbol, duplicated headline word, clipped or obscured text
+    - branch diagram, checkpoints, decision nodes, boxes, icons, decorative geometry
+    - arrows, extra gates, duplicated greater-than symbol, duplicated headline word, clipped or obscured text
     - gradients, shadows, glossy surfaces, 3D, UI chrome, logos, footers
     - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
 provenance:
-  recipe_record: recipes/recipe-library-v0.5/records/002-cover.yaml
+  recipe_record: recipes/recipe-library-v0.5/records/001-hero.yaml
   source_map: pilots/02-superpowers-vs-compound-engineering/sources.md
 output:
   format: PNG

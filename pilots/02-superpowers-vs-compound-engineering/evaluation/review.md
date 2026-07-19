@@ -7,16 +7,16 @@ All three normalized candidates for every slide were inspected together at `1920
 ## Slide 01 — Discipline over vibe
 
 - Candidates: `01-discipline-over-vibe-v1.png`, `01-discipline-over-vibe-v2.png`, `01-discipline-over-vibe-v3.png`.
-- Rejected v1: the branch is denser and the paired outcomes read more like closed cards than open terminal states.
-- Rejected v2: the branch remains boxier and gives the two outcomes more visual weight than the decision itself.
-- **Selected:** `01-discipline-over-vibe-v3.png`
-- Selection rationale: the quietest Decision Tree, clearest question-to-branch reading order, and strongest contrast between the chaotic route and checkpoint route.
-- Exact-copy review: pass. Every manifest string appears once; no extra visible text.
+- Rejected v2: the full-height chevron clips at both canvas edges and turns the greater-than symbol into a dominant poster object without explaining how process creates discipline.
+- Rejected v3: the architectural single-line balance is clean but noticeably more static and does not visualize the change from improvisation to controlled execution.
+- **Selected:** `01-discipline-over-vibe-v1.png`
+- Selection rationale: the user-selected `Compression Gate` concept gives the opening the clearest causal image: one irregular graphite trace crosses a single coral process gate and exits straight, making disciplined execution visible rather than merely asserted.
+- Exact-copy review: pass. `ДИСЦИПЛІНА > ВАЙБ`, `SUPERPOWERS × COMPOUND ENGINEERING`, and `ВУЗЬКЕ МІСЦЕ — ПРОЦЕС.` each appear once; no superseded branch copy or extra visible text remains.
 - Dimensions/color mode: pass, `1920×1080` RGB PNG. Preview: `1280×720` RGB PNG.
-- Clipping/contrast/reading order: pass. Visual mechanism and expression A: pass.
-- Removable-element check: pass; question node, two branches, and two terminal fields all carry meaning.
-- Selected source SHA-256: `a6d39e0ebc6b21ef3723372dd238b5ceb4ad7c109beaeb2bc8225c15b8882b29`
-- Canonical SHA-256: `a6d39e0ebc6b21ef3723372dd238b5ceb4ad7c109beaeb2bc8225c15b8882b29`
+- Clipping/contrast/reading order: pass. Hero mechanism and expression C: pass.
+- Removable-element check: pass; the irregular trace is the uncontrolled input, the coral gate is the process intervention, and the straight trace is the disciplined output. Together they render one transformation Signal.
+- Selected source SHA-256: `049466b8b6cfe13fbbc492fb453e2a125c3852fa70b10b63d30ffa21a43ef19c`
+- Canonical SHA-256: `049466b8b6cfe13fbbc492fb453e2a125c3852fa70b10b63d30ffa21a43ef19c`
 
 ## Slide 02 — Bare-agent failures
 
@@ -118,7 +118,7 @@ All three normalized candidates for every slide were inspected together at `1920
 
 ## Series-level review
 
-- Rhythm review: pass — `A, A, B, A, B, A, C, A`; slide 7 is the sole Level C peak.
+- Rhythm review: pass — `C, A, B, A, B, A, C, A`; the opening Hero and Slide 07 principle are two separated Level C peaks.
 - Sequence review: pass — problem → within-task process → between-task learning → comparison → synthesis → principle → action.
 - Family review: pass — warm paper, graphite typography, open fields, thin carriers/dividers, and restrained mineral Signals remain consistent.
 - Exact-copy review: pass for all eight canonicals.
