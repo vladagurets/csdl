@@ -1,128 +1,190 @@
-# Constructive Signal Design Language (CSDL)
+# Constructive Signal Design Language
 
-A geometric visual language for explaining complex ideas clearly, memorably, and consistently with humans and generative models.
+**CSDL is a versioned visual language for explaining complex ideas with people and generative models.**
 
-**Status:** Foundation v0.1 through Night Mode and Accessibility v0.1 are complete. Cookbook and Design Book v1.0 is also complete.
+It turns presentation design into a shared, machine-readable system of components, recipes, constraints, and validation.
 
-**GitHub:** `vladagurets/csdl` is the selected public working repository. A public license has not yet been selected.
+[![Seven-slide English overview of CSDL](docs/demo-infographic/contact-sheet.png)](docs/demo-infographic/README.md)
 
-## Start here
+> **Project status:** Foundation through Cookbook and Design Book v1.0 is complete. Public release and licensing remain intentionally pending.
 
-1. Read [`AGENTS.md`](AGENTS.md) before assigning work to Codex.
-2. Review the locked choices in [`DECISIONS.md`](DECISIONS.md).
-3. Check current progress and the exact next task in [`STATUS.md`](STATUS.md).
-4. Follow the staged work in [`ROADMAP.md`](ROADMAP.md).
-5. Treat [`specs/2026-07-17-csdl-v0.1-design.md`](specs/2026-07-17-csdl-v0.1-design.md) as the design source of truth.
-6. Review the completed Milestone 7 publication in [`cookbook/design-book-v1.0/`](cookbook/design-book-v1.0/) and D-033.
-7. Review the completed Night Mode and Accessibility v0.1 contract in [`accessibility/night-mode-v0.1/`](accessibility/night-mode-v0.1/) and its evidence audit/implementation plan.
-8. Review the completed Analytical Mode v0.1 contract in [`analytics/analytical-mode-v0.1/`](analytics/analytical-mode-v0.1/) and its evidence audit/implementation plan.
-9. Review the completed Milestone 4 contract in [`recipes/recipe-library-v0.5/`](recipes/recipe-library-v0.5/).
-10. Review the stable public vocabulary in [`components/component-library-v0.1/`](components/component-library-v0.1/).
-11. Use [`docs/plans/2026-07-18-csdl-milestone-2.md`](docs/plans/2026-07-18-csdl-milestone-2.md) for the completed Visual DNA contract.
-12. Use [`docs/handoff/CODEX_IMAGE_GENERATION.md`](docs/handoff/CODEX_IMAGE_GENERATION.md) for the approved Codex raster workflow.
+## Why CSDL exists
 
-## Current foundation
+Technical presentations often become generic, noisy, and difficult to reproduce.
 
-- Direction: **Constructive Signal**
-- Default mode: **Quiet Modular**
-- Display voice: **Modular Technical**, with rare condensed editorial emphasis
-- Palette: **Muted Signal** with accessible light, night, monochrome, and projector semantic mappings in the additive v0.1 extension
-- Canonical canvas: **16:9, 1920 × 1080 px, landscape**
-- Portrait masters and mobile-preview deliverables: **not required**
-- Density rhythm: **A → A → B → A → B → A → C**
-- Core rule: **one idea + one visual mechanism + one signal per screen**
-- Canonical documentation: Markdown; images calibrate the written system
-- Shared Pilot 01 reference: [`style-anchor-light.png`](pilots/01-agentic-discipline/references/style-anchor-light.png), with adjacent provenance and review evidence
+Templates solve consistency by fixing layouts. Style prompts provide freedom but encourage drift. CSDL takes a different approach: it defines the meaning of visual elements and the rules connecting them.
 
-## Repository map
+The result is a presentation system that stays recognizable without becoming repetitive.
+
+## What CSDL gives you
+
+- **Faster comprehension.** One screen carries one idea, one mechanism, and one dominant Signal.
+- **Coherent series.** Quiet, constructive, and signal moments create controlled presentation rhythm.
+- **Reusable structure.** Components and Recipes solve explanatory problems without prescribing fixed layouts.
+- **Human-agent alignment.** Authors and generative models use the same vocabulary and source contracts.
+- **Verifiable output.** Exact copy, quantitative fidelity, provenance, and accessibility remain testable.
+- **Creative range with constraints.** Semantic geometry creates variety while preserving a recognizable identity.
+
+## How it works
 
 ```text
-AGENTS.md                         Codex operating instructions
-DECISIONS.md                      locked and provisional design decisions
-STATUS.md                         completed, active, blocked, and next work
-ROADMAP.md                        milestones after Pilot 01
-specs/                            approved design specifications
-docs/superpowers/plans/           task-by-task implementation plans
-docs/handoff/                     current Codex raster workflow
-pilots/01-agentic-discipline/     canonical copy, prompts, evaluation, assets
-patterns/visual-dna-sprint-01/    20-family contracts, prompts, evidence, assets
-components/component-library-v0.1/ 15-component contracts, proofs, indexes
-recipes/recipe-library-v0.5/       23 recipe contracts, Prompt DSL, proofs, indexes
-analytics/analytical-mode-v0.1/    typed data/encoding contracts, proofs, fixtures, indexes
-accessibility/night-mode-v0.1/      output profiles, contrast/fallback contracts, proofs, fixtures
-cookbook/design-book-v1.0/           32-page bilingual publication source, provenance, build contract
-references/canonical/             approved visual anchors
-research/                         source analysis without redistributing source PDFs
-tools/ and tests/                 validation and assembly tooling
+explanatory intent
+      ↓
+one of 23 Recipes
+      ↓
+15 semantic components
+      ↓
+Prompt DSL v0.5 package
+      ↓
+reference-first generation
+      ↓
+review and deterministic validation
 ```
 
-## Local setup
+Start with the communication problem, not a preferred layout. Select a Recipe for that problem. Construct its mechanism with named components. Bind exact content and constraints in Prompt DSL. Generate against approved references, then validate the result.
+
+For example, this simplified excerpt describes one dominant quantity without pixel coordinates:
+
+```yaml
+language: CSDL
+version: "0.5"
+kind: generation-package
+
+recipe:
+  id: "004"
+  slug: big-number
+
+semantic_intent:
+  problem: Make one exact quantity the dominant explanatory object.
+  scenario: count
+
+content:
+  bindings:
+    value: "3"
+    label: EXPRESSION LEVELS
+    supporting_copy: QUIET · CONSTRUCTIVE · SIGNAL
+
+component_instances:
+  - id: pulse
+    component: Pulse
+    role: primary
+  - id: signal
+    component: Signal
+    role: dominant
+
+relations:
+  - subject: signal
+    type: highlights
+    object: pulse
+
+generation_constraints:
+  expression: A
+  canvas:
+    ratio: "16:9"
+    width: 1920
+    height: 1080
+  presentation:
+    one_main_idea: true
+    one_visual_mechanism: true
+    one_dominant_signal: true
+```
+
+See the [complete validated package](recipes/recipe-library-v0.5/proofs/packages/01-editorial.yaml) for all constraints and provenance.
+
+## The visual language
+
+CSDL uses **Constructive Signal** as its direction and **Quiet Modular** as its default expression.
+
+Its visual grammar follows six principles:
+
+1. **Meaning before decoration.** Every element communicates structure, state, direction, relation, or emphasis.
+2. **Space is content.** Default compositions preserve 50–75% negative space.
+3. **Geometry explains.** Scale, distance, containment, overlap, and direction carry meaning.
+4. **One idea, one signal.** Color emphasizes meaning instead of decorating the canvas.
+5. **Intensity creates rhythm.** Level A is quiet, Level B constructive, and Level C emphatic.
+6. **Markdown stays canonical.** Raster examples calibrate the written and machine-readable system.
+
+A standard seven-slide series follows this rhythm:
+
+```text
+A → A → B → A → B → A → C
+```
+
+Level C remains rare. This prevents every slide from competing for attention.
+
+## Visual examples
+
+The Visual DNA catalog demonstrates editorial, structural, process, and analytical families:
+
+[![Twenty CSDL Visual DNA families](patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-all.png)](patterns/visual-dna-sprint-01/README.md)
+
+The current evidence includes:
+
+- [English CSDL overview](docs/demo-infographic/README.md) — seven slides explaining the system itself.
+- [Visual DNA Sprint 1](patterns/visual-dna-sprint-01/README.md) — twenty accepted pattern families.
+- [Pilot 01: Agentic Discipline](pilots/01-agentic-discipline/README.md) — the first complete seven-slide series.
+- [Pilot 02: Superpowers vs Compound Engineering](pilots/02-superpowers-vs-compound-engineering/README.md) — an eight-slide applied comparison.
+- [Cookbook and Design Book v1.0](cookbook/design-book-v1.0/README.md) — a 32-page system guide.
+
+## System layers
+
+| Layer | What it provides | Current contract |
+|---|---|---|
+| Foundation | Direction, canvas, rhythm, typography, color, and quality rules | v0.1 |
+| Visual DNA | Accepted examples across editorial, structural, process, and analytical needs | 20 families |
+| Components | Closed semantic vocabulary for constructing compositions | 15 components |
+| Recipes | Evidence-backed solutions for recurring explanatory problems | 23 Recipes |
+| Prompt DSL | Declarative packages for content, structure, constraints, and provenance | v0.5 |
+| Analytical Mode | Typed data, encodings, transformations, uncertainty, and fidelity rules | v0.1 |
+| Accessibility | Light, night, monochrome, and projector semantic profiles | v0.1 |
+| Design Book | Canonical publication covering the complete system | v1.0 |
+
+## Create a CSDL presentation
+
+Use the repository-local `csdl-create` skill with Codex or Claude:
+
+```text
+$csdl-create Create a CSDL series explaining [topic] for [audience].
+```
+
+The workflow converts your material into an approved brief, exact copy, Recipes, Prompt DSL packages, three candidates per slide, selected canonical assets, previews, a contact sheet, scores, and review evidence.
+
+The user approves the narrative, slide count, copy, and expression rhythm before raster generation.
+
+Read the [skill contract](ai/skills/csdl-create/SKILL.md) for the complete workflow.
+
+## Explore the repository
+
+Start with these paths:
+
+- [`specs/2026-07-17-csdl-v0.1-design.md`](specs/2026-07-17-csdl-v0.1-design.md) — Foundation design specification.
+- [`components/component-library-v0.1/`](components/component-library-v0.1/) — component contracts and compatibility.
+- [`recipes/recipe-library-v0.5/`](recipes/recipe-library-v0.5/) — Recipes and Prompt DSL v0.5.
+- [`analytics/analytical-mode-v0.1/`](analytics/analytical-mode-v0.1/) — quantitative semantics and proofs.
+- [`accessibility/night-mode-v0.1/`](accessibility/night-mode-v0.1/) — accessible output profiles.
+- [`cookbook/design-book-v1.0/`](cookbook/design-book-v1.0/) — canonical Design Book sources.
+- [`STATUS.md`](STATUS.md) — verified project state and outputs.
+- [`DECISIONS.md`](DECISIONS.md) — locked design and architecture decisions.
+
+## Validate locally
+
+CSDL keeps its specifications, examples, generated indexes, and evidence under automated checks.
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[dev]'
 python -m pytest -q
-python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
-python tools/validate_style_anchor.py pilots/01-agentic-discipline/references/style-anchor-light.png
-python tools/validate_pattern_catalog.py patterns/visual-dna-sprint-01/manifest.yaml
-python tools/validate_pattern_data.py patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml
-python tools/validate_component_library.py components/component-library-v0.1/manifest.yaml
-python tools/validate_component_proofs.py components/component-library-v0.1
-python tools/validate_component_index.py components/component-library-v0.1
-python tools/validate_recipe_library.py recipes/recipe-library-v0.5/manifest.yaml
-python tools/validate_prompt_dsl.py recipes/recipe-library-v0.5
-python tools/validate_recipe_index.py recipes/recipe-library-v0.5
-python tools/build_analytical_mode.py analytics/analytical-mode-v0.1
-python tools/validate_analytical_mode.py analytics/analytical-mode-v0.1
-python tools/build_accessibility_mode.py accessibility/night-mode-v0.1
-python tools/validate_accessibility_mode.py accessibility/night-mode-v0.1
-python tools/build_design_book.py cookbook/design-book-v1.0
-python tools/validate_design_book.py cookbook/design-book-v1.0
 ```
 
-The baseline test suite, manifest validator, and shared-reference validator must pass before raster promotion.
+Run the strict validator for any system layer you change. The full command list lives in [`AGENTS.md`](AGENTS.md).
 
-## Image workflow
+## Contributing
 
-The repository separates **design governance** from **raster generation**:
+Read [`AGENTS.md`](AGENTS.md), [`DECISIONS.md`](DECISIONS.md), and [`STATUS.md`](STATUS.md) before making changes. Preserve canonical copy, accepted raster evidence, public vocabulary, and version boundaries.
 
-- Codex owns specifications, Prompt DSL, validation, versioning, issue/PR workflow, and release packaging.
-- For normal card work, Codex explicitly invokes built-in `$imagegen`, which uses `gpt-image-2` and counts toward Codex usage limits. This route does not require `OPENAI_API_KEY`.
-- An external ChatGPT Images session may be used as a human-operated fallback with the same prompt and review contract.
-- An API-backed script is optional for larger or programmatic batches and requires separately billed API access; it is not implicit scope for a card task.
-- Only approved references and canonical exports belong in Git. Intermediate candidates live under `pilots/**/drafts/` and are ignored.
-- Pilot 01 uses a newly selected 16:9 Ukrainian/Inter style anchor; all superseded portrait and pixel-font references remain only in Git history.
-- AI-rendered copy must match `manifest.yaml` exactly before publication.
+Do not begin public release work, change locked decisions, or replace accepted rasters without explicit approval.
 
-## Pilot 01
+## License
 
-Pilot 01 explains how disciplined workflows and retained learning make agentic development more reliable over time. Its source of truth is [`pilots/01-agentic-discipline/manifest.yaml`](pilots/01-agentic-discipline/manifest.yaml).
-
-Pilot 01 is released as the first CSDL Visual DNA set. See [`RELEASE.md`](pilots/01-agentic-discipline/RELEASE.md).
-
-## Visual DNA Sprint 1
-
-The Milestone 2 catalog formalizes Hero, Cover, Quote, Big Number, Comparison, Collision, Before / After, Timeline, Matrix, Hierarchy, Architecture, Workflow, Loop, Pipeline, Decision Tree, Framework, KPI, Table, Chart, and Dashboard. Its source of truth is [`patterns/visual-dna-sprint-01/manifest.yaml`](patterns/visual-dna-sprint-01/manifest.yaml), with the mandatory reference hierarchy in [`visual-authority.yaml`](patterns/visual-dna-sprint-01/visual-authority.yaml). KPI/Table/Chart/Dashboard use fixed demo data and remain bounded prototypes rather than a premature full Analytical Mode.
-
-## Component Library
-
-Milestone 3 formalizes Anchor, Signal, Field, Frame, Cluster, Vector, Divider, Node, Loop, Collision, Bridge, Axis, Pulse, Label, and constrained Legend from accepted Visual DNA evidence. All fifteen component contracts and the editorial/structural/analytical proofs pass strict validation. Markdown specifications remain canonical; deterministic index and 15×20 compatibility outputs are generated from the manifest and checked in. The milestone required no new raster generation.
-
-## Recipe Library and Prompt DSL v0.5
-
-Milestone 4 formalizes 23 evidence-backed recipes: all twenty Visual DNA families plus Breakdown, Checklist, and Formula from Pilot 01. A layout-free outline selects a recipe, and deterministic builders emit a Prompt DSL v0.5 package with semantic intent, exact content, public component instances, allowed relations, generation constraints, and provenance kept separate. Three end-to-end proofs cover editorial, structural/process, and bounded analytical use; one Pilot migration proof and a 27-source migration map preserve accepted v0.1 prompt content. The milestone adds no raster and does not begin full Analytical Mode.
-
-## Analytical Mode v0.1
-
-Milestone 5 adds an independent versioned extension under [`analytics/analytical-mode-v0.1/`](analytics/analytical-mode-v0.1/). It defines typed datasets, internal data-encoding marks, explicit domains/order/units/sources/missing states/transformations, family contracts for bars, lines, scatterplots, waterfall, heatmaps, funnels, maps, networks, tables, and dashboards, plus uncertainty and forecast semantics. Ten deterministic fixed-data proof paths and seventeen exact-error negative fixtures validate quantitative fidelity independently of generated packages. Prompt DSL v0.5 remains unchanged; public vocabulary remains exactly fifteen components and 23 recipes. No raster was generated or modified.
-
-## Night Mode and Accessibility v0.1
-
-Milestone 6 adds an independent versioned extension under [`accessibility/night-mode-v0.1/`](accessibility/night-mode-v0.1/). It maps semantic roles—not pixels—to accessible light, night, monochrome, and projector profiles. The contract covers every informative type role, meaningful graphical contrast, critical rule weights, focus/selection/status states, color-vision robustness, direct Labels and constrained Legend, grayscale/projector fallback, analytical Axes/Nodes/intervals/cells/regions/edges, compatibility, migration, rollback, and deterministic provenance.
-
-Ten end-to-end proofs and seventeen exact-error negative fixtures validate semantic equivalence and fallback behavior while reloading canonical Recipe and Analytical packages independently. The derived raster inventory pins all sixty tracked accepted PNGs by SHA-256. No raster was generated, recolored, or accepted for Milestone 6; visual calibration remains explicitly deferred pending separate approval.
-
-## Cookbook and Design Book v1.0
-
-Milestone 7 is complete under D-033 through green integration PR #69 and merge commit `4c20829f4923c164b48985d06a49247ff372ed4f`. The additive [`cookbook/design-book-v1.0/`](cookbook/design-book-v1.0/) contract contains 32 canonical one-page Markdown sources, a protected English terminology registry, page-level provenance, deterministic assembled Markdown/index outputs, twelve negative publication fixtures, and Pillow/PyYAML-only tooling that builds an A4 landscape PDF with a Unicode text layer, color/grayscale review pages, and a contact sheet. The guide covers the complete Milestone 1–6 language without changing Prompt DSL v0.5, the fifteen public components, the 23 recipes, Analytical Mode, Accessibility v0.1, or any of the sixty accepted raster hashes. It is not a public release and does not resolve licensing or final font-family decisions.
+A public license has not been selected. Do not assume reuse or redistribution rights yet.

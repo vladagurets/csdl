@@ -7,6 +7,8 @@
 
 ## Outcome
 
+The root `README.md` now presents CSDL as a product and design language before repository operations. It introduces the problem, benefits, visual grammar, system architecture, Prompt DSL example, applied evidence, creation workflow, and status in English without changing any versioned contract or accepted raster.
+
 Pilot 02 is complete under `pilots/02-superpowers-vs-compound-engineering/`. The additive eight-slide Ukrainian series compares Superpowers and Compound Engineering as orthogonal disciplines for within-task execution and between-task knowledge capture. It includes 24 reviewed GPT Image 2 candidates, eight exact-copy `1920×1080` RGB canonicals, eight `1280×720` previews, one centered `3840×2160` contact sheet, current primary-source fact mapping, Prompt DSL v0.5 packages, hashes, selection evidence, and passing rubric scores. The work does not alter Pilot 01, any previously accepted raster, Prompt DSL v0.5, the fifteen-component vocabulary, the 23-recipe library, or the completed Milestone 7 publication contract.
 
 An additive seven-slide English demo infographic is available under `docs/demo-infographic/`. It translates the original five-slide explanatory sequence, adds a Recipes bridge and a human/agent parity slide, and includes exact-copy prompts, 21-candidate selection evidence, seven `1920×1080` RGB PNG files, and one `3840×2160` contact sheet. It is documentation-only, does not begin Milestone 8, and does not modify any accepted raster evidence or versioned CSDL contract.
