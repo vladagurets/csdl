@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Reframed the root README as an English product introduction to CSDL, with its problem, benefits, visual grammar, system layers, Prompt DSL example, applied visual evidence, creation workflow, validation entrypoint, and current release/licensing boundary.
 - Added Pilot 02, an eight-slide Ukrainian `Superpowers vs Compound Engineering` CSDL series with a user-approved `A, A, B, A, B, A, C, A` rhythm, primary-source fact corrections, Prompt DSL v0.5 packages, 24 reviewed GPT Image 2 candidates, eight exact-copy `1920×1080` RGB canonicals, landscape previews, a centered `3840×2160` contact sheet, persisted selection/hashing evidence, and passing rubric gates; no accepted prior raster or versioned CSDL contract was changed.
 - Generalized the landscape contact-sheet builder from a fixed seven-slide layout to a centered grid adapted to any positive slide count, with focused seven-slide, eight-slide, and empty-input tests.
 - Corrected the Milestone 6 raster-baseline gate to revalidate its explicitly pinned sixty accepted paths while allowing additive later pilots; all sixty stored hashes and bytes remain unchanged.
