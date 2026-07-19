@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Rebuilt Pilot 02 Slide 01 from a quiet Decision Tree/A explanation into the user-selected dynamic Hero/C `Compression Gate` hook, where one irregular trace crosses a coral process gate and exits straight; refreshed the canonical, preview, contact sheet, Prompt DSL, and review/hash evidence while preserving exact copy and the `C, A, B, A, B, A, C, A` rhythm.
 - Added a dedicated English `1920x1080` README Visual examples slide, selected from three GPT Image 2 candidates with persisted prompt, exact-copy review, hashes, and normalization evidence; accepted Visual DNA rasters remain unchanged.
 - Removed the Claude discovery surface for `csdl-create` and made its skill metadata, root README, and project status explicitly Codex-only; built-in Codex image generation remains the single supported route.
 - Reworked Pilot 02 Slide 08 into parallel Codex and Claude Code installation paths for Superpowers and Compound Engineering, regenerated and reviewed three exact-copy candidates, and refreshed its canonical, source snapshot, hashes, and review evidence.
