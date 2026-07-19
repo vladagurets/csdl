@@ -9,12 +9,12 @@ semantic_intent:
   claim: "Tools do not contain discipline; they make disciplined engineering behavior the default."
   visual_mechanism: "One dominant typographic Anchor intersects the sequence's only broad coral Signal plane."
 content:
-  headline: "ДИСЦИПЛІНА НЕ В ТУЛЗІ."
-  supporting_copy: "ТУЛЗА ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
+  headline: "ДИСЦИПЛІНА НЕ В ІНСТРУМЕНТІ."
+  supporting_copy: "ІНСТРУМЕНТ ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
   principles: "ДУМАТИ ДО КОДУ. ТЕСТУВАТИ. ШУКАТИ ПРИЧИНУ. ДОКУМЕНТУВАТИ."
   exact_copy:
-    - "ДИСЦИПЛІНА НЕ В ТУЛЗІ."
-    - "ТУЛЗА ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
+    - "ДИСЦИПЛІНА НЕ В ІНСТРУМЕНТІ."
+    - "ІНСТРУМЕНТ ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
     - "ДУМАТИ ДО КОДУ. ТЕСТУВАТИ. ШУКАТИ ПРИЧИНУ. ДОКУМЕНТУВАТИ."
 component_instances:
   - "Anchor(id=principle, role=primary, content=headline)"

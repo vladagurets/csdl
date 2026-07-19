@@ -189,8 +189,8 @@ cards:
     slug: discipline-principle
     recipe: Hero
     level: C
-    headline: "ДИСЦИПЛІНА НЕ В ТУЛЗІ."
-    supporting_copy: "ТУЛЗА ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
+    headline: "ДИСЦИПЛІНА НЕ В ІНСТРУМЕНТІ."
+    supporting_copy: "ІНСТРУМЕНТ ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
     principles: "ДУМАТИ ДО КОДУ. ТЕСТУВАТИ. ШУКАТИ ПРИЧИНУ. ДОКУМЕНТУВАТИ."
     visual_mechanism: "One large typographic Anchor crosses the sequence's only broad coral Signal plane"
     components: [Anchor, Signal]
@@ -199,38 +199,43 @@ cards:
     asset: canonical/light/16x9/07-discipline-principle.png
     prompt: prompts/07-discipline-principle.yaml
     exact_copy:
-      - "ДИСЦИПЛІНА НЕ В ТУЛЗІ."
-      - "ТУЛЗА ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
+      - "ДИСЦИПЛІНА НЕ В ІНСТРУМЕНТІ."
+      - "ІНСТРУМЕНТ ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ."
       - "ДУМАТИ ДО КОДУ. ТЕСТУВАТИ. ШУКАТИ ПРИЧИНУ. ДОКУМЕНТУВАТИ."
 
   - id: "08"
     slug: try-today
     recipe: Comparison
     level: A
-    headline: "СПРОБУЙТЕ СЬОГОДНІ"
-    supporting_copy: "ОДНА ФІЧА. ДВА ПРОХОДИ. ПОРІВНЯЙТЕ ПРОЦЕС."
-    context: "CLAUDE CODE"
+    headline: "СПРОБУЙТЕ В CODEX І CLAUDE CODE"
+    supporting_copy: "ПЕРЕЗАПУСТІТЬ АГЕНТА ПІСЛЯ ВСТАНОВЛЕННЯ."
+    context: "CODEX + CLAUDE CODE"
     left:
-      title: "SUPERPOWERS"
+      title: "CODEX"
+      commands:
+        - "SUPERPOWERS → /plugins → INSTALL"
+        - "codex plugin marketplace add EveryInc/compound-engineering-plugin"
+        - "codex plugin add compound-engineering@compound-engineering-plugin"
+    right:
+      title: "CLAUDE CODE"
       commands:
         - "/plugin install superpowers@claude-plugins-official"
-    right:
-      title: "COMPOUND ENGINEERING"
-      commands:
         - "/plugin marketplace add EveryInc/compound-engineering-plugin"
         - "/plugin install compound-engineering"
-    visual_mechanism: "Two equal open installation Fields share one quiet baseline and one coral start Signal; commands remain plain monospace text without terminal chrome"
+    visual_mechanism: "Two equal platform installation Fields share one quiet baseline and one coral start Signal; Codex and Claude Code commands remain plain monospace text without terminal chrome"
     components: [Anchor, Field, Divider, Signal]
     signal: coral
     max_supporting_elements: 3
     asset: canonical/light/16x9/08-try-today.png
     prompt: prompts/08-try-today.yaml
     exact_copy:
-      - "СПРОБУЙТЕ СЬОГОДНІ"
+      - "СПРОБУЙТЕ В CODEX І CLAUDE CODE"
+      - "CODEX"
+      - "SUPERPOWERS → /plugins → INSTALL"
+      - "codex plugin marketplace add EveryInc/compound-engineering-plugin"
+      - "codex plugin add compound-engineering@compound-engineering-plugin"
       - "CLAUDE CODE"
-      - "SUPERPOWERS"
       - "/plugin install superpowers@claude-plugins-official"
-      - "COMPOUND ENGINEERING"
       - "/plugin marketplace add EveryInc/compound-engineering-plugin"
       - "/plugin install compound-engineering"
-      - "ОДНА ФІЧА. ДВА ПРОХОДИ. ПОРІВНЯЙТЕ ПРОЦЕС."
+      - "ПЕРЕЗАПУСТІТЬ АГЕНТА ПІСЛЯ ВСТАНОВЛЕННЯ."

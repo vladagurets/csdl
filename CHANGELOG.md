@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Reworked Pilot 02 Slide 08 into parallel Codex and Claude Code installation paths for Superpowers and Compound Engineering, regenerated and reviewed three exact-copy candidates, and refreshed its canonical, source snapshot, hashes, and review evidence.
+- Replaced both colloquial `тулза` occurrences on Pilot 02 Slide 07 with grammatically correct forms of `інструмент`, regenerated and reviewed three exact-copy Level C candidates, and rebuilt the canonical, preview, contact sheet, hashes, and review evidence.
 - Simplified Pilot 02 Slide 05 at user request by removing the origin and scale rows, regenerating and reviewing three exact-copy candidates, promoting the cleanest three-row comparison, and rebuilding its preview, contact sheet, hashes, and review evidence.
 - Reframed the root README as an English product introduction to CSDL, with its problem, benefits, visual grammar, system layers, Prompt DSL example, applied visual evidence, creation workflow, validation entrypoint, and current release/licensing boundary.
 - Added Pilot 02, an eight-slide Ukrainian `Superpowers vs Compound Engineering` CSDL series with a user-approved `A, A, B, A, B, A, C, A` rhythm, primary-source fact corrections, Prompt DSL v0.5 packages, 24 reviewed GPT Image 2 candidates, eight exact-copy `1920×1080` RGB canonicals, landscape previews, a centered `3840×2160` contact sheet, persisted selection/hashing evidence, and passing rubric gates; no accepted prior raster or versioned CSDL contract was changed.

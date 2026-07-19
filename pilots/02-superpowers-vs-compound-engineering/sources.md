@@ -30,6 +30,14 @@ This file separates primary-source facts, user-approved editorial premises, and 
    <https://every.to/guides/compound-engineering-gets-an-upgrade>  
    Supports the evolution from the four-step core to the expanded workflow and identifies Compound as the return arrow that makes later work easier.
 
+## Installation snapshot used on Slide 08
+
+- **Codex / Superpowers:** open `/plugins`, search for `superpowers`, and choose Install Plugin, as documented by the locally installed Superpowers v6.1.1 README.
+- **Codex / Compound Engineering:** `codex plugin marketplace add EveryInc/compound-engineering-plugin`, then `codex plugin add compound-engineering@compound-engineering-plugin`, as documented by the locally installed Compound Engineering v3.19.0 README.
+- **Claude Code / Superpowers:** `/plugin install superpowers@claude-plugins-official`.
+- **Claude Code / Compound Engineering:** `/plugin marketplace add EveryInc/compound-engineering-plugin`, then `/plugin install compound-engineering`.
+- Restart Codex after installing Compound Engineering; the slide states the restart step once as a safe shared completion cue.
+
 ## User-approved editorial premises
 
 - Agents can already generate code faster than the intended audience; process is the practical bottleneck.

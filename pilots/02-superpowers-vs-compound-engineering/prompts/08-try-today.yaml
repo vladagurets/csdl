@@ -6,46 +6,51 @@ semantic_intent:
   recipe: Comparison
   expression: A
   density: medium
-  claim: "The audience can install both Claude Code plugins and compare their process on the same feature."
-  visual_mechanism: "Two equal open installation Fields share one thin Divider and one small coral start Signal; commands remain plain monospace text."
+  claim: "The audience can install Superpowers and Compound Engineering in either Codex or Claude Code."
+  visual_mechanism: "Two equal platform installation Fields share one thin Divider and one small coral start Signal; commands remain plain monospace text."
 content:
-  headline: "СПРОБУЙТЕ СЬОГОДНІ"
-  context: "CLAUDE CODE"
+  headline: "СПРОБУЙТЕ В CODEX І CLAUDE CODE"
+  context: "CODEX + CLAUDE CODE"
   left:
-    title: "SUPERPOWERS"
+    title: "CODEX"
+    commands:
+      - "SUPERPOWERS → /plugins → INSTALL"
+      - "codex plugin marketplace add EveryInc/compound-engineering-plugin"
+      - "codex plugin add compound-engineering@compound-engineering-plugin"
+  right:
+    title: "CLAUDE CODE"
     commands:
       - "/plugin install superpowers@claude-plugins-official"
-  right:
-    title: "COMPOUND ENGINEERING"
-    commands:
       - "/plugin marketplace add EveryInc/compound-engineering-plugin"
       - "/plugin install compound-engineering"
-  supporting_copy: "ОДНА ФІЧА. ДВА ПРОХОДИ. ПОРІВНЯЙТЕ ПРОЦЕС."
+  supporting_copy: "ПЕРЕЗАПУСТІТЬ АГЕНТА ПІСЛЯ ВСТАНОВЛЕННЯ."
   exact_copy:
-    - "СПРОБУЙТЕ СЬОГОДНІ"
+    - "СПРОБУЙТЕ В CODEX І CLAUDE CODE"
+    - "CODEX"
+    - "SUPERPOWERS → /plugins → INSTALL"
+    - "codex plugin marketplace add EveryInc/compound-engineering-plugin"
+    - "codex plugin add compound-engineering@compound-engineering-plugin"
     - "CLAUDE CODE"
-    - "SUPERPOWERS"
     - "/plugin install superpowers@claude-plugins-official"
-    - "COMPOUND ENGINEERING"
     - "/plugin marketplace add EveryInc/compound-engineering-plugin"
     - "/plugin install compound-engineering"
-    - "ОДНА ФІЧА. ДВА ПРОХОДИ. ПОРІВНЯЙТЕ ПРОЦЕС."
+    - "ПЕРЕЗАПУСТІТЬ АГЕНТА ПІСЛЯ ВСТАНОВЛЕННЯ."
 component_instances:
-  - "Anchor(id=superpowers-install, role=peer, content=left)"
-  - "Anchor(id=compound-install, role=peer, content=right)"
-  - "Field(id=superpowers-field, role=state)"
-  - "Field(id=compound-field, role=state)"
-  - "Divider(id=install-divider, subjects=[superpowers-field,compound-field])"
-  - "Signal(id=start-signal, target=superpowers-install, role=start, color=coral)"
+  - "Anchor(id=codex-install, role=peer, content=left)"
+  - "Anchor(id=claude-install, role=peer, content=right)"
+  - "Field(id=codex-field, role=state)"
+  - "Field(id=claude-field, role=state)"
+  - "Divider(id=install-divider, subjects=[codex-field,claude-field])"
+  - "Signal(id=start-signal, target=codex-install, role=start, color=coral)"
 relations:
   - "Field contains Anchor"
   - "Divider separates Field"
   - "Signal highlights Anchor"
 generation_constraints:
-  composition: "Wide two-column open comparison. Place commands as large technical monospace text with generous line spacing and no terminal window. Keep the CTA as one strong baseline below both Fields."
+  composition: "Wide two-column open comparison with Codex on the left and Claude Code on the right. Place commands as legible technical monospace text with generous line spacing and no terminal window. Keep the restart CTA as one strong baseline below both Fields."
   reading_path: left_to_right
   negative_space: "55–65 percent"
-  typography: "Modular Technical headline and plugin titles; highly legible technical mono commands; exact case, slash, hyphen, at-sign, and repository spelling."
+  typography: "Modular Technical headline and platform titles; highly legible technical mono commands; exact case, slash, hyphen, at-sign, and repository spelling."
   palette: "Warm paper, graphite, neutral Divider, one tiny coral start marker."
   hard_exclusions:
     - extra text, prompt symbols, terminal chrome, code editor UI, copy mutation or line omission

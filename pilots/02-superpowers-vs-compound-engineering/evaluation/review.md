@@ -91,30 +91,30 @@ All three normalized candidates for every slide were inspected together at `1920
 ## Slide 07 — Discipline principle
 
 - Candidates: `07-discipline-principle-v1.png`, `07-discipline-principle-v2.png`, `07-discipline-principle-v3.png`.
-- Rejected v1: the coral rectangle isolates only the final phrase and creates a harder right edge.
-- Rejected v2: the angled Signal plane is more expressive but less restrained and approaches poster-like composition.
+- Rejected v1: the first line and coral plane occupy more width, making the proposition feel heavier after the longer terminology replacement.
+- Rejected v2: the second line and Signal plane sit lower and wider, reducing the useful negative space around the Level C statement.
 - **Selected:** `07-discipline-principle-v3.png`
-- Selection rationale: the strongest Level C culmination, with one broad Signal plane, exact typographic proposition, and ample negative space.
-- Exact-copy review: pass. All three manifest strings appear once; no quote marks or attribution.
+- Selection rationale: the strongest Level C culmination after the terminology correction, with one restrained Signal plane, exact typographic proposition, and the best balance of scale and negative space.
+- Exact-copy review: pass. `ДИСЦИПЛІНА НЕ В ІНСТРУМЕНТІ.` and `ІНСТРУМЕНТ ЛИШЕ РОБИТЬ ЇЇ ДЕФОЛТОМ.` each appear once; the third line is unchanged; no occurrence of `ТУЛЗА`, quote marks, attribution, or extra text remains.
 - Dimensions/color mode: pass, `1920×1080` RGB PNG. Preview: `1280×720` RGB PNG.
 - Clipping/contrast/reading order: pass. Visual mechanism and expression C: pass.
 - Removable-element check: pass; the coral plane has the single semantic role of making disciplined behavior the default.
-- Selected source SHA-256: `1618b54c87bd1e8da36372fb2592b8892602e308619468b9517293c29f26760f`
-- Canonical SHA-256: `1618b54c87bd1e8da36372fb2592b8892602e308619468b9517293c29f26760f`
+- Selected source SHA-256: `67d6a6471a35ef7e178503b7c323f8fef7b9fb34103bf2fab41b79ed7c66d3b7`
+- Canonical SHA-256: `67d6a6471a35ef7e178503b7c323f8fef7b9fb34103bf2fab41b79ed7c66d3b7`
 
 ## Slide 08 — Try today
 
 - Candidates: `08-try-today-v1.png`, `08-try-today-v2.png`, `08-try-today-v3.png`.
-- Rejected v1: the headline and plugin titles are heavier than needed for an expression A CTA.
-- Rejected v2: the headline is too quiet relative to the large plugin titles and the bottom CTA.
+- Rejected v1: the oversized headline compresses the two platform instruction fields and weakens expression-A calmness.
+- Rejected v2: the platform headings are too dominant relative to the commands, making the installation sequence slower to scan.
 - **Selected:** `08-try-today-v3.png`
-- Selection rationale: the clearest hierarchy from CTA to two installation fields, exact command typography, and one quiet start Signal.
-- Exact-copy review: pass. Every slash, hyphen, at-sign, case choice, and repository name matches the manifest; no terminal chrome or extra text.
+- Selection rationale: the clearest balance between Codex and Claude Code, the widest readable command measures, exact technical typography, and one quiet start Signal.
+- Exact-copy review: pass. Both platform headings, all six installation instructions, the headline, and the restart CTA match the manifest; every slash, hyphen, at-sign, arrow, case choice, and repository name is exact; no terminal chrome or extra text.
 - Dimensions/color mode: pass, `1920×1080` RGB PNG. Preview: `1280×720` RGB PNG.
 - Clipping/contrast/reading order: pass. Visual mechanism and expression A: pass.
-- Removable-element check: pass; the divider separates installation paths and the baseline joins them into one comparison exercise.
-- Selected source SHA-256: `1fa380f8012082c78fb000ca8c25b75e6df6cbd094c56c99ac326a604a46a6de`
-- Canonical SHA-256: `1fa380f8012082c78fb000ca8c25b75e6df6cbd094c56c99ac326a604a46a6de`
+- Removable-element check: pass; the divider separates the platform paths and the baseline joins them into one setup action.
+- Selected source SHA-256: `9f4067f453893c00185468ac158764b1c0c13a293bd84c63ef1599a401b0b78d`
+- Canonical SHA-256: `9f4067f453893c00185468ac158764b1c0c13a293bd84c63ef1599a401b0b78d`
 
 ## Series-level review
 
