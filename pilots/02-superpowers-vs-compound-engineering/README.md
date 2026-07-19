@@ -4,7 +4,7 @@ Eight-slide Ukrainian CSDL presentation series comparing two process-oriented ap
 
 ## Approved sequence
 
-`A → A → B → A → B → A → C → A`
+`C → A → B → A → B → A → C → A`
 
 ## Output contract
 

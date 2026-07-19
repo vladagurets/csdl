@@ -8,36 +8,28 @@ pilot:
   mode: light
   canonical_canvas: "1920x1080"
   orientation: landscape
-  rhythm: [A, A, B, A, B, A, C, A]
+  rhythm: [C, A, B, A, B, A, C, A]
   card_count: 8
 
 cards:
   - id: "01"
     slug: discipline-over-vibe
-    recipe: Decision Tree
-    level: A
+    recipe: Cover
+    level: C
     headline: "ДИСЦИПЛІНА > ВАЙБ"
-    supporting_copy: "АГЕНТИ ВЖЕ ПИШУТЬ КОД ШВИДШЕ ЗА ВАС. ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
-    question: "ЯК ПРАЦЮЄ АГЕНТ?"
-    branches:
-      - ["VIBE CODING", "ХАОТИЧНИЙ МАРШРУТ"]
-      - ["DISCIPLINED AI DEV", "ЧЕКПОІНТИ"]
-    closing_copy: "ДВА ПЛАГІНИ. ДВІ ФІЛОСОФІЇ ДИСЦИПЛІНИ."
-    visual_mechanism: "One question Node splits through two labeled Bridges into one unstable route and one checkpointed route"
-    components: [Node, Bridge, Label, Signal]
-    signal: ochre
-    max_supporting_elements: 3
+    supporting_copy:
+      - "SUPERPOWERS × COMPOUND ENGINEERING"
+      - "ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
+    visual_mechanism: "One oversized coral chevron Signal carries the headline's greater-than relation through one open Field"
+    components: [Anchor, Field, Signal]
+    signal: coral
+    max_supporting_elements: 2
     asset: canonical/light/16x9/01-discipline-over-vibe.png
     prompt: prompts/01-discipline-over-vibe.yaml
     exact_copy:
       - "ДИСЦИПЛІНА > ВАЙБ"
-      - "АГЕНТИ ВЖЕ ПИШУТЬ КОД ШВИДШЕ ЗА ВАС. ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
-      - "ЯК ПРАЦЮЄ АГЕНТ?"
-      - "VIBE CODING"
-      - "ХАОТИЧНИЙ МАРШРУТ"
-      - "DISCIPLINED AI DEV"
-      - "ЧЕКПОІНТИ"
-      - "ДВА ПЛАГІНИ. ДВІ ФІЛОСОФІЇ ДИСЦИПЛІНИ."
+      - "SUPERPOWERS × COMPOUND ENGINEERING"
+      - "ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
 
   - id: "02"
     slug: bare-agent-failures

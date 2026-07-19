@@ -3,57 +3,41 @@ version: 0.5
 use_case: infographic-diagram
 asset_type: 16:9 presentation slide
 semantic_intent:
-  recipe: Decision Tree
-  expression: A
+  recipe: Cover
+  expression: C
   density: low
-  claim: "AI coding speed is no longer the constraint; the process route determines whether work stays chaotic or becomes disciplined."
-  visual_mechanism: "One question Node splits through two non-crossing labeled Bridges into two result Nodes. The disciplined result is the single ochre Signal."
+  claim: "Discipline matters more than vibe because process is the bottleneck in AI-assisted development."
+  visual_mechanism: "One oversized coral chevron Signal carries the headline's greater-than relation through one open Field and creates the opening motion."
 content:
   headline: "ДИСЦИПЛІНА > ВАЙБ"
-  supporting_copy: "АГЕНТИ ВЖЕ ПИШУТЬ КОД ШВИДШЕ ЗА ВАС. ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
-  question: "ЯК ПРАЦЮЄ АГЕНТ?"
-  branches:
-    - label: "VIBE CODING"
-      result: "ХАОТИЧНИЙ МАРШРУТ"
-    - label: "DISCIPLINED AI DEV"
-      result: "ЧЕКПОІНТИ"
-  closing_copy: "ДВА ПЛАГІНИ. ДВІ ФІЛОСОФІЇ ДИСЦИПЛІНИ."
+  supporting_copy:
+    - "SUPERPOWERS × COMPOUND ENGINEERING"
+    - "ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
   exact_copy:
     - "ДИСЦИПЛІНА > ВАЙБ"
-    - "АГЕНТИ ВЖЕ ПИШУТЬ КОД ШВИДШЕ ЗА ВАС. ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
-    - "ЯК ПРАЦЮЄ АГЕНТ?"
-    - "VIBE CODING"
-    - "ХАОТИЧНИЙ МАРШРУТ"
-    - "DISCIPLINED AI DEV"
-    - "ЧЕКПОІНТИ"
-    - "ДВА ПЛАГІНИ. ДВІ ФІЛОСОФІЇ ДИСЦИПЛІНИ."
+    - "SUPERPOWERS × COMPOUND ENGINEERING"
+    - "ВУЗЬКЕ МІСЦЕ — ПРОЦЕС."
 component_instances:
-  - "Node(id=question, role=option, content=question)"
-  - "Node(id=vibe, role=option, content=branches[0].result)"
-  - "Node(id=discipline, role=option, content=branches[1].result)"
-  - "Bridge(id=vibe-route, source=question, target=vibe, role=branch, label=branches[0].label)"
-  - "Bridge(id=discipline-route, source=question, target=discipline, role=branch, label=branches[1].label)"
-  - "Label(id=vibe-label, text=branches[0].label, target=vibe-route)"
-  - "Label(id=discipline-label, text=branches[1].label, target=discipline-route)"
-  - "Label(id=question-label, text=question, target=question)"
-  - "Signal(id=discipline-signal, target=discipline, role=attention, color=ochre)"
+  - "Anchor(id=cover-thesis, role=thesis, content=headline)"
+  - "Field(id=cover-field, role=context)"
+  - "Signal(id=greater-than-signal, target=cover-field, role=attention, color=coral)"
 relations:
-  - "Bridge connected_to Node"
-  - "Label attached_to Bridge"
-  - "Signal highlights Node"
+  - "Field contains Anchor"
+  - "Signal highlights Field"
 generation_constraints:
-  composition: "Asymmetric landscape cover; large headline Anchor at upper-left; restrained split-to-result tree across the lower field; no decision diamond."
-  reading_path: top_to_bottom
-  negative_space: "60–70 percent"
-  typography: "Heavy smooth Ukrainian-capable Modular Technical headline; neutral sans supporting copy; all text horizontal."
-  palette: "Warm paper, graphite, one soft-ochre Signal on the disciplined result."
+  composition: "Dynamic asymmetric landscape cover. Make the headline the dominant Anchor. Turn the single greater-than symbol inside that headline into one oversized solid coral chevron Signal that drives from left to right across the open Field; it may separate or offset ДИСЦИПЛІНА and ВАЙБ but must not duplicate the symbol or any word. Keep both short supporting lines small and isolated."
+  reading_path: top_left_to_bottom_right
+  negative_space: "50–60 percent"
+  typography: "Rare condensed editorial emphasis for the short headline, still smooth and Ukrainian-capable; neutral sans or restrained mono for the two supporting lines; all text horizontal; maximum one typographic trick."
+  palette: "Warm paper, warm graphite, one muted mineral-coral Signal plane; no other accent color."
   hard_exclusions:
     - extra text or copy mutation
-    - third outcome, unlabeled branch, return arrow, icons, decorative geometry
+    - branch diagram, routes, checkpoints, decision nodes, boxes, icons, decorative geometry
+    - duplicated greater-than symbol, duplicated headline word, clipped or obscured text
     - gradients, shadows, glossy surfaces, 3D, UI chrome, logos, footers
     - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
 provenance:
-  recipe_record: recipes/recipe-library-v0.5/records/015-decision-tree.yaml
+  recipe_record: recipes/recipe-library-v0.5/records/002-cover.yaml
   source_map: pilots/02-superpowers-vs-compound-engineering/sources.md
 output:
   format: PNG

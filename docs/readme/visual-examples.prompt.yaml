@@ -1,0 +1,78 @@
+asset:
+  id: readme-visual-examples
+  role: documentation-only README section slide
+  language: en
+  mode: light
+  expression: B
+  canonical_canvas: 1920x1080
+  orientation: landscape
+
+exact_copy:
+  - "VISUAL EXAMPLES"
+  - "The Visual DNA catalog demonstrates editorial, structural, process, and analytical families."
+
+visual_mechanism: >-
+  One open 2x2 Cluster of four unlabeled semantic micro-mechanisms: an
+  editorial Anchor and Signal, a structural Field and Nodes, a process
+  Vector through Nodes, and an analytical Axis with simple marks.
+
+components:
+  - Anchor
+  - Signal
+  - Field
+  - Frame
+  - Cluster
+  - Vector
+  - Node
+  - Axis
+
+composition:
+  grid: 12 columns
+  safe_margin_horizontal: 96
+  reading_path: left_to_right
+  negative_space_percent: 55-65
+  text_zone: left
+  mechanism_zone: right
+
+palette:
+  background: "warm paper #F7F5F0"
+  ink: "warm graphite #1B1B19"
+  primary_signal: "muted mineral coral #C96157"
+  service_color: "restrained dusty data blue #4C6A8A"
+
+typography:
+  display: smooth Modular Technical
+  body: neutral highly legible sans-serif
+  all_text_horizontal: true
+  text_accuracy: exact
+
+reference_hierarchy:
+  primary:
+    - references/canonical/foundation-patterns-v0.1.png
+    - references/canonical/pilot-01-quiet-visual-plan-v0.1.png
+    - references/canonical/quiet-modular-a-b-c-calibration.png
+  secondary:
+    - pilots/01-agentic-discipline/references/style-anchor-light.png
+
+hard_exclusions:
+  - extra text
+  - category labels
+  - logos or footers
+  - UI chrome or card shells
+  - decorative coordinates or random dot fields
+  - gradients, shadows, glossy surfaces, or 3D
+  - political, Soviet, revolutionary-poster, or imitation-1920s styling
+  - pixel, bitmap, dot-matrix, segmented, or retro-computer lettering
+  - non-semantic decorative geometry
+
+generation:
+  route: built-in Codex image generation
+  model: GPT Image 2
+  candidates: 3
+  selected: visual-examples-v1.png
+
+output:
+  path: docs/readme/visual-examples.png
+  format: PNG
+  exact_size: 1920x1080
+  color_mode: RGB
