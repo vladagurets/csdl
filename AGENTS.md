@@ -9,6 +9,7 @@ Develop Constructive Signal Design Language as a versioned, machine-readable vis
 ## Mandatory reading order
 
 Before changing anything, read:
+TODO
 
 1. `STATUS.md`
 2. `DECISIONS.md`
