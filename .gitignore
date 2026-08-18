@@ -3,6 +3,8 @@ __pycache__/
 *.pyc
 .venv/
 .DS_Store
+pilots/*
+!pilots/01-agentic-discipline/
 pilots/**/drafts/**/*.png
 patterns/**/drafts/**/*.png
 .env

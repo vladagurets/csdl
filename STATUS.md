@@ -3,9 +3,11 @@
 **Project:** Constructive Signal Design Language
 **Version:** Cookbook and Design Book v1.0
 **Current milestone:** Milestone 8 — licensing in progress
-**Last updated:** 2026-07-19
+**Last updated:** 2026-08-18
 
 ## Outcome
+
+Pilot 01 is the only retained example pilot. Other pilot directories are excluded from the repository and ignored by default.
 
 D-034 selects a noncommercial source-available licensing model while retaining copyright with Vladyslav Ohirenko. Software, schemas, tools, machine-readable packages, and agent implementations use PolyForm Noncommercial 1.0.0; original documentation and visual materials use CC BY-NC-SA 4.0; commercial use requires a separate written license; CSDL names and branding remain outside both licenses; external copyrightable contributions require prior written assignment. This begins the licensing slice of Milestone 8 without creating a tag, GitHub Release, stable public-release version, or new raster evidence.
 
@@ -14,8 +16,6 @@ The root `README.md` now presents CSDL as a product and design language before r
 The README Visual examples section now uses a dedicated English `1920x1080` RGB documentation slide selected from three GPT Image 2 candidates. Its prompt, exact-copy review, selection rationale, normalization, and hashes are recorded under `docs/readme/`; accepted Visual DNA raster evidence remains unchanged.
 
 The repository-local `csdl-create` integration is Codex-only. Its canonical skill source and `.codex/skills/csdl-create` discovery symlink use built-in Codex image generation.
-
-Pilot 02 is complete under `pilots/02-superpowers-vs-compound-engineering/`. The additive eight-slide Ukrainian series compares Superpowers and Compound Engineering as orthogonal disciplines for within-task execution and between-task knowledge capture; it opens with the user-selected dynamic Hero/C `Compression Gate` transformation, continues with the user-selected Slide 02 `Domino Cascade` and explicit audience-facing labels that distinguish coding before understanding the task, missing automated tests, and missing final result-to-requirement verification, explains the within-task method through the user-selected Slide 03 open process arc and approved audience-facing `SUPERPOWERS НЕ ДАЄ ПЕРЕСКОЧИТИ ПРОЦЕС...` copy, uses the user-selected Slide 04 ascending flywheel to land each completed COMPOUND cycle on a higher starting baseline and explicitly explains that Compound records the solved problem and verified solution in `docs/solutions/` for the next agent to reuse, keeps the user-approved three-row central comparison, presents the orthogonal-combination slide with user-selected low-contrast Axis carriers and one coral synthesis intersection, culminates with the standard Ukrainian term `інструмент` inside the user-selected central coral Signal portal, and closes with the user-selected `Interlocking Open Planes` mechanism for current Codex and Claude Code installation paths. It includes 58 reviewed GPT Image 2 candidates across the original set and the Slide 02–04 and Slide 06–08 divergence passes, eight exact-copy `1920×1080` RGB canonicals, eight `1280×720` previews, one centered `3840×2160` contact sheet, current primary-source fact mapping, Prompt DSL v0.5 packages, hashes, selection evidence, and passing rubric scores. The work does not alter Pilot 01, accepted raster evidence outside Pilot 02, Prompt DSL v0.5, the fifteen-component vocabulary, the 23-recipe library, or the completed Milestone 7 publication contract.
 
 An additive seven-slide English demo infographic is available under `docs/demo-infographic/`. It translates the original five-slide explanatory sequence, adds a Recipes bridge and a human/agent parity slide, and includes exact-copy prompts, 21-candidate selection evidence, seven `1920×1080` RGB PNG files, and one `3840×2160` contact sheet. It is documentation-only, does not begin Milestone 8, and does not modify any accepted raster evidence or versioned CSDL contract.
 

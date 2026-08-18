@@ -123,7 +123,6 @@ The current evidence includes:
 - [English CSDL overview](docs/demo-infographic/README.md) — seven slides explaining the system itself.
 - [Visual DNA Sprint 1](patterns/visual-dna-sprint-01/README.md) — twenty accepted pattern families.
 - [Pilot 01: Agentic Discipline](pilots/01-agentic-discipline/README.md) — the first complete seven-slide series.
-- [Pilot 02: Superpowers vs Compound Engineering](pilots/02-superpowers-vs-compound-engineering/README.md) — an eight-slide applied comparison.
 - [Cookbook and Design Book v1.0](cookbook/design-book-v1.0/README.md) — a 32-page system guide.
 
 ## System layers
