@@ -70,12 +70,44 @@ def build_pilot(tmp_path: Path, rhythm: list[str]) -> Path:
 
         draft_dir = root / f"drafts/light/16x9/{stem}"
         draft_dir.mkdir(parents=True)
-        for version in range(1, 4):
-            shutil.copy2(canonical_template, draft_dir / f"{stem}-v{version}.png")
+        for version, color in enumerate(
+            ["#f4f0e9", "#ebe6dc", "#ddd7cb"], start=1
+        ):
+            Image.new("RGB", (1920, 1080), color).save(
+                draft_dir / f"{stem}-v{version}.png"
+            )
 
         prompt_path = root / f"prompts/{stem}.yaml"
         prompt_path.write_text(
-            yaml.safe_dump({"copy": exact_copy}, sort_keys=False), encoding="utf-8"
+            yaml.safe_dump(
+                {
+                    "copy": exact_copy,
+                    "generation_constraints": {
+                        "candidate_directions": [
+                            {
+                                "id": "v1",
+                                "concept": "A single anchored threshold",
+                                "composition": "Asymmetric field with a left-edge entry",
+                                "visual_mechanism": "One Anchor crossing one Divider",
+                            },
+                            {
+                                "id": "v2",
+                                "concept": "A controlled orbit around the claim",
+                                "composition": "Open radial field with an off-center focus",
+                                "visual_mechanism": "Three Nodes organized by one Axis",
+                            },
+                            {
+                                "id": "v3",
+                                "concept": "A progressive compression into evidence",
+                                "composition": "Stepped diagonal sequence with a terminal focus",
+                                "visual_mechanism": "One Vector compressing a Cluster",
+                            },
+                        ]
+                    },
+                },
+                sort_keys=False,
+            ),
+            encoding="utf-8",
         )
         cards.append(
             {
@@ -101,6 +133,7 @@ def build_pilot(tmp_path: Path, rhythm: list[str]) -> Path:
                 f"**Selected:** `{stem}-v2.png`",
                 f"Canonical SHA-256: `{digest}`",
                 "Exact-copy review: pass.",
+                "Candidate-divergence review: pass.",
                 "",
             ]
         )
@@ -150,7 +183,7 @@ def test_accepts_user_approved_slide_counts(tmp_path: Path, rhythm: list[str]) -
     validator = load_validator()
     root = build_pilot(tmp_path, rhythm)
 
-    assert validator.validate(root, require_drafts=True) == []
+    assert validator.validate(root, require_drafts=True, require_divergence=True) == []
 
 
 def test_rejects_a_fourth_normalized_candidate(tmp_path: Path) -> None:
@@ -176,3 +209,95 @@ def test_rejects_rhythm_length_different_from_card_count(tmp_path: Path) -> None
     errors = validator.validate(root, require_drafts=True)
 
     assert "pilot.rhythm must contain exactly 3 entries" in errors
+
+
+def test_rejects_missing_candidate_directions_when_required(tmp_path: Path) -> None:
+    validator = load_validator()
+    root = build_pilot(tmp_path, ["A", "B", "C"])
+    prompt_path = root / "prompts/01-slide-01.yaml"
+    prompt = yaml.safe_load(prompt_path.read_text(encoding="utf-8"))
+    del prompt["generation_constraints"]["candidate_directions"]
+    prompt_path.write_text(
+        yaml.safe_dump(prompt, sort_keys=False), encoding="utf-8"
+    )
+
+    errors = validator.validate(root, require_drafts=True, require_divergence=True)
+
+    assert any(
+        "candidate_directions must contain exactly v1,v2,v3" in error
+        for error in errors
+    )
+
+
+def test_rejects_duplicate_candidate_direction_dimension(tmp_path: Path) -> None:
+    validator = load_validator()
+    root = build_pilot(tmp_path, ["A", "B", "C"])
+    prompt_path = root / "prompts/01-slide-01.yaml"
+    prompt = yaml.safe_load(prompt_path.read_text(encoding="utf-8"))
+    directions = prompt["generation_constraints"]["candidate_directions"]
+    directions[2]["composition"] = directions[0]["composition"]
+    prompt_path.write_text(
+        yaml.safe_dump(prompt, sort_keys=False), encoding="utf-8"
+    )
+
+    errors = validator.validate(root, require_drafts=True, require_divergence=True)
+
+    assert any(
+        "candidate direction composition values must be unique" in error
+        for error in errors
+    )
+
+
+def test_rejects_identical_candidate_bytes_when_divergence_required(tmp_path: Path) -> None:
+    validator = load_validator()
+    root = build_pilot(tmp_path, ["A", "B", "C"])
+    draft_dir = root / "drafts/light/16x9/01-slide-01"
+    shutil.copy2(
+        draft_dir / "01-slide-01-v1.png",
+        draft_dir / "01-slide-01-v2.png",
+    )
+
+    errors = validator.validate(root, require_drafts=True, require_divergence=True)
+
+    assert any(
+        "candidates must have three unique SHA-256 values" in error
+        for error in errors
+    )
+
+
+def test_rejects_missing_candidate_divergence_review(tmp_path: Path) -> None:
+    validator = load_validator()
+    root = build_pilot(tmp_path, ["A", "B", "C"])
+    review_path = root / "evaluation/review.md"
+    review = review_path.read_text(encoding="utf-8")
+    review_path.write_text(
+        review.replace("Candidate-divergence review: pass.\n", "", 1),
+        encoding="utf-8",
+    )
+
+    errors = validator.validate(root, require_drafts=True, require_divergence=True)
+
+    assert any(
+        "must record candidate-divergence review for every card" in error
+        for error in errors
+    )
+
+
+def test_legacy_validation_does_not_require_divergence_evidence(tmp_path: Path) -> None:
+    validator = load_validator()
+    root = build_pilot(tmp_path, ["A", "B", "C"])
+    for prompt_path in sorted((root / "prompts").glob("[0-9][0-9]-*.yaml")):
+        prompt = yaml.safe_load(prompt_path.read_text(encoding="utf-8"))
+        prompt.pop("generation_constraints", None)
+        prompt_path.write_text(
+            yaml.safe_dump(prompt, sort_keys=False), encoding="utf-8"
+        )
+    review_path = root / "evaluation/review.md"
+    review_path.write_text(
+        review_path.read_text(encoding="utf-8").replace(
+            "Candidate-divergence review: pass.\n", ""
+        ),
+        encoding="utf-8",
+    )
+
+    assert validator.validate(root, require_drafts=True) == []

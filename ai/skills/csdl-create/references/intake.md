@@ -15,7 +15,7 @@ For each proposed slide, identify:
 | Evidence | Source, data, example, quotation, or explicitly user-supplied premise |
 | Exact copy | Every string allowed to appear in the raster |
 | Recipe | Repository Recipe selected from explanatory intent |
-| Mechanism | One semantic visual mechanism |
+| Visualization objective | The relationship or transformation all candidates must explain, without fixing one shared mechanism or layout skeleton |
 | Level | A, B, or C according to the series rhythm |
 | Risk | Unverified claim, dense copy, unclear term, or conflicting instruction |
 

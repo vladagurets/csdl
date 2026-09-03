@@ -33,6 +33,7 @@ Do not change these without explicit user approval and a corresponding update to
 - portrait masters and mobile-preview deliverables are out of scope;
 - standard series rhythm: A, A, B, A, B, A, C;
 - one main idea, one visual mechanism, one dominant signal per screen;
+- every three-candidate review uses three materially different conceptual and compositional directions for the same approved content contract;
 - 50–75% negative space depending on expression level;
 - no political, Soviet, revolutionary-poster, or imitation-1920s styling;
 - Markdown is the canonical specification.
@@ -48,15 +49,17 @@ Milestone 8 has started only for the D-034 licensing slice. CSDL is source-avail
 1. Use one branch and one pull request per independently reviewable task.
 2. Preferred branch names: `codex/pilot-01-card-01`, `codex/pilot-01-card-02`, and so on.
 3. Preserve canonical copy from `manifest.yaml` exactly. A copy change requires user approval before editing the manifest.
-4. Generate three candidates for each card, then select one through the evaluation rubric. Do not silently promote the first candidate.
-5. Keep drafts under `pilots/01-agentic-discipline/drafts/`; they are intentionally ignored by Git.
-6. Commit approved card files only under `pilots/01-agentic-discipline/canonical/`.
-7. Update `STATUS.md` and `CHANGELOG.md` whenever a task is completed or a decision changes.
-8. Record all candidate filenames, rejection reasons, the selected filename, exact-copy review, dimensions/color-mode review, and selection rationale in `pilots/01-agentic-discipline/evaluation/review.md`. Draft-local `approved.txt` is only a convenience marker and is not persistent project evidence.
-9. Record the accepted card score in `pilots/01-agentic-discipline/evaluation/scores.csv`.
-10. Do not add decorative geometry that has no semantic role.
-11. Do not add generated labels, interface chrome, logos, footers, or text that is absent from the prompt and manifest.
-12. For Milestone 2 generated families, keep candidates under `patterns/visual-dna-sprint-01/drafts/`, promote only selected assets under `canonical/`, and persist evidence in the catalog evaluation files.
+4. Before generation, define separate `v1`, `v2`, and `v3` direction briefs. All three preserve the approved topic, exact copy/data, evidence, expression level, canvas, reference hierarchy, and hard exclusions, but each pair must differ in conceptual framing, dominant visual mechanism, and composition topology.
+5. Generate one candidate from each direction-specific prompt. Repeating one prompt three times is not a valid three-candidate pass. Mirroring, repositioning, color or shape swaps, minor scale/spacing changes, and decorative substitutions do not count as different directions.
+6. Review the three candidates together before selection. If any pair reads as near-variants of the same representation, reject and regenerate the collapsed direction before applying the evaluation rubric. Do not silently promote the first candidate.
+7. Keep drafts under `pilots/01-agentic-discipline/drafts/`; they are intentionally ignored by Git.
+8. Commit approved card files only under `pilots/01-agentic-discipline/canonical/`.
+9. Update `STATUS.md` and `CHANGELOG.md` whenever a task is completed or a decision changes.
+10. Record the three direction briefs, all candidate filenames, observed concept/mechanism/composition differences, divergence result, rejection reasons, the selected filename, exact-copy review, dimensions/color-mode review, and selection rationale in `pilots/01-agentic-discipline/evaluation/review.md`. Draft-local `approved.txt` is only a convenience marker and is not persistent project evidence.
+11. Record the accepted card score in `pilots/01-agentic-discipline/evaluation/scores.csv`.
+12. Do not add decorative geometry that has no semantic role.
+13. Do not add generated labels, interface chrome, logos, footers, or text that is absent from the prompt and manifest.
+14. For Milestone 2 generated families, keep candidates under `patterns/visual-dna-sprint-01/drafts/`, promote only selected assets under `canonical/`, and persist evidence in the catalog evaluation files.
 
 ## Image-generation routes
 
@@ -182,7 +185,9 @@ Pilot 01 and Milestones 2–7 are complete, so all strict validators through Mil
 
 A card task is complete only when:
 
-- three candidates were generated and reviewed;
+- three direction-specific prompts define different conceptual frames, dominant visual mechanisms, and composition topologies while preserving the same approved content contract;
+- three candidates were generated from those directions and reviewed together;
+- the candidate-divergence review confirms that no pair is a cosmetic or near-identical variation of one representation;
 - one candidate is selected and copied to the canonical path;
 - candidate selection and rejection evidence is persisted in `evaluation/review.md`;
 - dimensions and color mode validate;

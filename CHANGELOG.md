@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added D-036 and a candidate-divergence contract for every new or regenerated CSDL three-candidate visual pass: `v1`, `v2`, and `v3` now require separate direction briefs and materially different conceptual framing, dominant visual mechanisms, and composition topologies while preserving one approved content/evidence contract. Updated the repository rules, Foundation specification, generation handoff, `csdl-create` skill contract, reusable validator, and focused tests; repeated prompts and cosmetic near-variants no longer qualify, and accepted raster bytes plus Prompt DSL v0.5 remain unchanged.
 - Retained Pilot 01 as the sole example pilot, removed all other pilot artifacts, and ignored future `pilots/*` directories except `pilots/01-agentic-discipline/`.
 
 - Selected the D-034 noncommercial source-available model: PolyForm Noncommercial 1.0.0 for software and machine-readable materials, CC BY-NC-SA 4.0 for original documentation and visuals, separate written commercial licensing, reserved CSDL branding, and a prior copyright-assignment gate for external contributions.

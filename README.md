@@ -154,7 +154,7 @@ Use the repository-local `csdl-create` skill with Codex:
 $csdl-create Create a CSDL series explaining [topic] for [audience].
 ```
 
-The workflow converts your material into an approved brief, exact copy, Recipes, Prompt DSL packages, three candidates per slide, selected canonical assets, previews, a contact sheet, scores, and review evidence.
+The workflow converts your material into an approved brief, exact copy, Recipes, Prompt DSL packages, three direction-specific candidates per slide that differ in concept, visual mechanism, and composition, selected canonical assets, previews, a contact sheet, scores, and review evidence.
 
 The user approves the narrative, slide count, copy, and expression rhythm before raster generation.
 

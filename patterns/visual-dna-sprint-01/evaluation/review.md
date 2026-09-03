@@ -2,7 +2,7 @@
 
 ## Review protocol
 
-Generated families require three independent candidates, full-resolution and `1280×720` inspection, exact-copy or exact-data verification, one selected candidate, two explicit rejection reasons, raster metadata, hashes, rubric scores, a removable-element check, `Primary-authority comparison: pass`, and `Series contact-sheet review: pass`. Pilot references require an evidence audit against the persisted Pilot 01 prompt, review, scores, and canonical raster.
+Generated families require three independent candidates, full-resolution and `1280×720` inspection, exact-copy or exact-data verification, one selected candidate, two explicit rejection reasons, raster metadata, hashes, rubric scores, a removable-element check, `Primary-authority comparison: pass`, and `Series contact-sheet review: pass`. For every new or regenerated pass under D-036, the three candidates must also come from separate direction briefs and differ materially in concept, dominant visual mechanism, and composition topology; selection requires a persisted `Candidate-divergence review: pass`. Pilot references require an evidence audit against the persisted Pilot 01 prompt, review, scores, and canonical raster.
 
 ## Reference authority rebaseline — 2026-07-18
 

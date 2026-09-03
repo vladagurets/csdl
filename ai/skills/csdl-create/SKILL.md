@@ -1,6 +1,6 @@
 ---
 name: csdl-create
-description: Create a complete Constructive Signal Design Language infographic slide set in Codex from slide context. Use when a user asks to build, generate, translate, extend, or regenerate a CSDL infoslide series or a pilot under `pilots/{ID-topic-name}`. Analyze the material, resolve slide count, rhythm, copy, and evidence through a consolidated clarification round, generate three candidates per slide with Codex image generation and the canonical CSDL reference hierarchy, select and validate the final 16:9 set, and persist prompts, rasters, previews, contact sheet, sources, scores, and review evidence.
+description: Create a complete Constructive Signal Design Language infographic slide set in Codex from slide context. Use when a user asks to build, generate, translate, extend, or regenerate a CSDL infoslide series or a pilot under `pilots/{ID-topic-name}`. Analyze the material, resolve slide count, rhythm, copy, and evidence through a consolidated clarification round, generate three direction-specific candidates per slide that differ materially in concept, visual mechanism, and composition, select and validate the final 16:9 set, and persist prompts, rasters, previews, contact sheet, sources, scores, and review evidence.
 ---
 
 # CSDL Create
@@ -53,7 +53,7 @@ Create `pilots/{ID-topic-name}` only after brief approval. Use a zero-padded two
 
 Persist:
 
-- `manifest.yaml` as the source of truth for sequence, exact visible copy, Recipe, expression level, visual mechanism, components, signal role, and asset filename;
+- `manifest.yaml` as the source of truth for sequence, exact visible copy, Recipe, expression level, semantic visualization objective, components, signal role, and asset filename. Before selection, `visual_mechanism` describes the shared explanatory objective rather than a fixed layout; after selection, align it to the selected direction's actual dominant mechanism without changing approved copy or evidence;
 - `sources.md` mapping every factual claim, dataset, quote, and user-supplied statement to its provenance;
 - one Prompt DSL YAML per slide plus `prompts/00-style-anchor.yaml` describing the shared reference package;
 - the output tree and evidence files defined in `references/pilot-contract.md`.
@@ -72,21 +72,25 @@ Use the repository's built-in image-generation route and follow the `imagegen` s
 
 For every slide:
 
-1. Write a Prompt DSL package that repeats the exact-copy contract and hard exclusions.
-2. Generate exactly three candidates.
-3. Store source and normalized candidates under `drafts/light/16x9/{card-id}-{slug}/`.
-4. Normalize without cropping, redrawing, recoloring, or editing text to `1920×1080` RGB PNG.
-5. Stop and report `built-in Codex image generation unavailable` if the built-in route is unavailable. Do not substitute placeholders or claim completion.
+1. Write a Prompt DSL package that repeats the shared exact-copy/data/evidence contract, expression level, reference hierarchy, and hard exclusions.
+2. Add `generation_constraints.candidate_directions` with exactly three records in order: `v1`, `v2`, and `v3`. Each record must contain a non-empty `concept`, `composition`, and `visual_mechanism`.
+3. Make every pair materially different in all three recorded dimensions. Preserve one approved topic and content contract, but explore a different semantic frame, dominant mechanism, composition topology, reading path, and Anchor/Signal relationship. Keep the approved Recipe unless the brief explicitly made Recipe choice part of the exploration.
+4. Generate exactly one candidate from each direction-specific prompt. Do not invoke the same prompt three times. Mirroring, repositioning, palette or shape swaps, minor scale/spacing/alignment changes, and decorative substitutions do not count as different directions.
+5. Store source and normalized candidates under `drafts/light/16x9/{card-id}-{slug}/`.
+6. Normalize without cropping, redrawing, recoloring, or editing text to `1920×1080` RGB PNG.
+7. Stop and report `built-in Codex image generation unavailable` if the built-in route is unavailable. Do not substitute placeholders or claim completion.
 
 Never silently promote the first candidate. A complete draft set contains exactly `3 × card_count` normalized candidates.
 
 ### 6. Evaluate and promote
 
-Review all three candidates together at full resolution and at `1280×720`. Reject candidates with copy mutations, extra text, clipping, weak hierarchy, non-semantic decoration, incorrect expression level, inaccessible contrast, or family drift.
+Review all three candidates together at full resolution and at `1280×720`. Before rubric scoring, compare each pair against the direction briefs. If any pair reads as cosmetic or near-identical variants of one representation, reject and regenerate the collapsed direction. Do not select a winner from a non-divergent set. Then reject individual candidates with copy mutations, extra text, clipping, weak hierarchy, non-semantic decoration, incorrect expression level, inaccessible contrast, or family drift.
 
 Persist in `evaluation/review.md`:
 
 - all candidate filenames;
+- the three direction briefs and the concept/mechanism/composition differences actually visible in the rasters;
+- `Candidate-divergence review: pass` only after the side-by-side gate succeeds;
 - rejection reasons;
 - selected filename and selection rationale;
 - exact-copy, dimensions, color-mode, clipping, contrast, and reading-order checks;
@@ -102,7 +106,7 @@ Copy only selected assets to `canonical/light/16x9/`. Build one `1280×720` prev
 Run:
 
 ```bash
-.venv/bin/python ai/skills/csdl-create/scripts/validate_pilot.py pilots/{ID-topic-name} --require-drafts
+.venv/bin/python ai/skills/csdl-create/scripts/validate_pilot.py pilots/{ID-topic-name} --require-drafts --require-divergence
 .venv/bin/python -m pytest -q
 .venv/bin/python tools/validate_accessibility_mode.py accessibility/night-mode-v0.1
 .venv/bin/python tools/validate_design_book.py cookbook/design-book-v1.0

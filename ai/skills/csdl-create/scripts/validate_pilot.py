@@ -38,6 +38,8 @@ REQUIRED_CARD_FIELDS = {
     "prompt",
     "exact_copy",
 }
+CANDIDATE_DIRECTION_IDS = ["v1", "v2", "v3"]
+CANDIDATE_DIRECTION_FIELDS = ["concept", "composition", "visual_mechanism"]
 
 
 def load_yaml(path: Path, errors: list[str]) -> Any:
@@ -140,8 +142,54 @@ def check_scores(path: Path, expected_ids: list[str], errors: list[str]) -> None
             errors.append(f"card {card} average must be at least 4.4")
 
 
-def validate(root: Path, require_drafts: bool) -> list[str]:
+def check_candidate_directions(
+    prompt: Any,
+    card_id: str,
+    errors: list[str],
+) -> None:
+    constraints = (
+        prompt.get("generation_constraints", {})
+        if isinstance(prompt, dict)
+        else {}
+    )
+    directions = (
+        constraints.get("candidate_directions", {})
+        if isinstance(constraints, dict)
+        else {}
+    )
+    if not isinstance(directions, list) or [
+        direction.get("id") if isinstance(direction, dict) else None
+        for direction in directions
+    ] != CANDIDATE_DIRECTION_IDS:
+        errors.append(
+            f"card {card_id} candidate_directions must contain exactly v1,v2,v3"
+        )
+        return
+
+    for field in CANDIDATE_DIRECTION_FIELDS:
+        values: list[str] = []
+        for direction in directions:
+            value = direction.get(field)
+            if not isinstance(value, str) or not value.strip():
+                errors.append(
+                    f"card {card_id} candidate direction {direction['id']} "
+                    f"{field} must be a non-empty string"
+                )
+                continue
+            values.append(value.strip().casefold())
+        if len(values) == 3 and len(set(values)) != 3:
+            errors.append(
+                f"card {card_id} candidate direction {field} values must be unique"
+            )
+
+
+def validate(
+    root: Path,
+    require_drafts: bool,
+    require_divergence: bool = False,
+) -> list[str]:
     errors: list[str] = []
+    require_drafts = require_drafts or require_divergence
     repository = repo_root()
     recipes = declared_names(
         repository / "recipes/recipe-library-v0.5/manifest.yaml",
@@ -234,6 +282,8 @@ def validate(root: Path, require_drafts: bool) -> list[str]:
                 errors.append(
                     f"card {expected_id} exact copy absent from prompt: {line!r}"
                 )
+        if require_divergence:
+            check_candidate_directions(prompt, expected_id, errors)
 
         check_image(root / expected_asset, (1920, 1080), errors)
         check_image(root / "previews/landscape" / f"{expected_stem}.png", (1280, 720), errors)
@@ -262,6 +312,21 @@ def validate(root: Path, require_drafts: bool) -> list[str]:
                     (1920, 1080),
                     errors,
                 )
+            if require_divergence:
+                candidate_paths = [
+                    draft_dir / f"{expected_stem}-v{version}.png"
+                    for version in range(1, 4)
+                ]
+                if all(path.exists() for path in candidate_paths):
+                    digests = {
+                        hashlib.sha256(path.read_bytes()).hexdigest()
+                        for path in candidate_paths
+                    }
+                    if len(digests) != 3:
+                        errors.append(
+                            f"card {expected_id} candidates must have three unique "
+                            "SHA-256 values"
+                        )
 
     load_yaml(root / "prompts/00-style-anchor.yaml", errors)
     for required in ["README.md", "sources.md"]:
@@ -288,6 +353,14 @@ def validate(root: Path, require_drafts: bool) -> list[str]:
             errors.append("evaluation/review.md must record exact-copy review for every card")
         if review.count("Canonical SHA-256:") < card_count:
             errors.append("evaluation/review.md must record canonical hashes for every card")
+        if (
+            require_divergence
+            and review.count("Candidate-divergence review:") < card_count
+        ):
+            errors.append(
+                "evaluation/review.md must record candidate-divergence review "
+                "for every card"
+            )
         for card in cards:
             asset = root / card.get("asset", "")
             if asset.exists():
@@ -309,8 +382,20 @@ def main() -> int:
         action="store_true",
         help="require all three normalized candidates for every slide",
     )
+    parser.add_argument(
+        "--require-divergence",
+        action="store_true",
+        help=(
+            "require v1-v3 direction briefs, unique candidate bytes, and "
+            "candidate-divergence review evidence"
+        ),
+    )
     args = parser.parse_args()
-    errors = validate(args.pilot_root.resolve(), args.require_drafts)
+    errors = validate(
+        args.pilot_root.resolve(),
+        args.require_drafts,
+        args.require_divergence,
+    )
     if errors:
         for error in errors:
             print(f"ERROR: {error}")

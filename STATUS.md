@@ -3,11 +3,13 @@
 **Project:** Constructive Signal Design Language
 **Version:** Cookbook and Design Book v1.0
 **Current milestone:** Milestone 8 — licensing in progress
-**Last updated:** 2026-08-18
+**Last updated:** 2026-09-03
 
 ## Outcome
 
 Pilot 01 is the only retained example pilot. Other pilot directories are excluded from the repository and ignored by default.
+
+D-036 replaces random-seed variation with a candidate-divergence contract for every new or regenerated three-candidate visual pass. Each slide now requires three direction-specific briefs with distinct conceptual framing, dominant visual mechanism, and composition topology while preserving the same approved topic, exact copy/data, evidence, expression level, references, and exclusions. The reusable `csdl-create` validator exposes a strict `--require-divergence` gate for direction records, unique candidate bytes, and persisted side-by-side divergence review. Existing accepted rasters and the closed Prompt DSL v0.5 schema remain unchanged.
 
 D-034 selects a noncommercial source-available licensing model while retaining copyright with Vladyslav Ohirenko. Software, schemas, tools, machine-readable packages, and agent implementations use PolyForm Noncommercial 1.0.0; original documentation and visual materials use CC BY-NC-SA 4.0; commercial use requires a separate written license; CSDL names and branding remain outside both licenses; external copyrightable contributions require prior written assignment. This begins the licensing slice of Milestone 8 without creating a tag, GitHub Release, stable public-release version, or new raster evidence.
 
@@ -19,7 +21,7 @@ The repository-local `csdl-create` integration is Codex-only. Its canonical skil
 
 An additive seven-slide English demo infographic is available under `docs/demo-infographic/`. It translates the original five-slide explanatory sequence, adds a Recipes bridge and a human/agent parity slide, and includes exact-copy prompts, 21-candidate selection evidence, seven `1920×1080` RGB PNG files, and one `3840×2160` contact sheet. It is documentation-only, does not begin Milestone 8, and does not modify any accepted raster evidence or versioned CSDL contract.
 
-Repository-local skill `csdl-create` is available from the canonical source at `ai/skills/csdl-create/` and through the `.codex/skills/csdl-create` symlink. It converts user-provided slide context into an approved variable-length brief and A/B/C rhythm, three-candidate-per-slide CSDL generation workflow, complete `pilots/{ID-topic-name}` evidence package, and strict reusable pilot validation without changing the locked seven-slide standard or the broader design language.
+Repository-local skill `csdl-create` is available from the canonical source at `ai/skills/csdl-create/` and through the `.codex/skills/csdl-create` symlink. It converts user-provided slide context into an approved variable-length brief and A/B/C rhythm, three materially different direction-specific candidates per slide, a complete `pilots/{ID-topic-name}` evidence package, and strict reusable pilot validation without changing the locked seven-slide standard or the broader design language.
 
 Pilot 01 was restarted and completed under the user-approved 16:9-first contract. The canonical canvas is `1920×1080`, landscape. Portrait masters, 4:5 assets, and mobile previews are not deliverables. Previous Pilot 01 rasters and review evidence are superseded and remain only in Git history.
 
