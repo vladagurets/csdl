@@ -1,0 +1,13 @@
+extension: arsenal-expansion-v0.1
+status: selected_unpromoted
+decision_date: '2026-09-03'
+source_set: recalibration
+selections:
+  - {id: '024', variant: v1, exact_copy_review: pass}
+  - {id: '025', variant: v1, exact_copy_review: pass}
+  - {id: '026', variant: v1, exact_copy_review: pass}
+  - {id: '027', variant: v1, exact_copy_review: pass}
+  - {id: '028', variant: v1, exact_copy_review: pass}
+  - {id: '029', variant: v1, exact_copy_review: pass}
+  - {id: '030', variant: v1, exact_copy_review: pass}
+  - {id: '031', variant: v1, exact_copy_review: pass}

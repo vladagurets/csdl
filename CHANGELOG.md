@@ -2,7 +2,17 @@
 
 ## Unreleased
 
+- Applied the user-approved exact-copy revision to Pilot 09 slide 01: title is now `Security & Agentic Development`; the `TRUST BOUNDARIES · BLAST RADIUS · EVIDENCE` supporting line is removed. Preserved the selected v3 aperture composition, rebuilt its preview and the canonical contact sheet, and refreshed manifest, Prompt DSL, selection, hash, and review evidence.
+- Applied two further user-approved exact-copy revisions to Pilot 09: slide 02 now reads `КРАСИВИЙ КОД ≠ БЕЗПЕЧНИЙ КОД`, and slide 09 retains only `МЕНШІ ПРАВА = МЕНШИЙ BLAST RADIUS` above its unlabeled key comparison. Rebuilt both previews and the canonical contact sheet, with corresponding prompt, selection, hash, and review evidence.
+- Replaced descriptive canonical PNG filenames with unpadded one-based names
+  beginning at `1.png` in every active pilot, Visual DNA, and canonical
+  reference directory. Updated manifests, evidence paths, builders, validators,
+  documentation, and tests without changing any raster byte or SHA-256 value;
+  previews, drafts, contact sheets, and historical snapshots retain their
+  existing names.
+- Regenerated the local ignored Pilot 09 Security Agent Development package under D-036 with three conceptually and compositionally distinct directions per slide. After the user's mixed `v1`/`v2`/`v3` selection on 2026-09-04, applied seven composition-preserving exact-copy corrections, promoted all 24 choices, rebuilt previews and the canonical contact sheet, preserved the earlier package in a pass-local backup, and recorded prompt, divergence, hash, raster, exact-copy, and rubric evidence.
 - Added D-036 and a candidate-divergence contract for every new or regenerated CSDL three-candidate visual pass: `v1`, `v2`, and `v3` now require separate direction briefs and materially different conceptual framing, dominant visual mechanisms, and composition topologies while preserving one approved content/evidence contract. Updated the repository rules, Foundation specification, generation handoff, `csdl-create` skill contract, reusable validator, and focused tests; repeated prompts and cosmetic near-variants no longer qualify, and accepted raster bytes plus Prompt DSL v0.5 remain unchanged.
+- Added D-035 and the additive `extensions/arsenal-expansion-v0.1/` candidate package: eight proposed recipes, three reusable components, five relations, three expression modes, two rendering profiles, six typed analytical families with deterministic proofs, and twenty-four `1920x1080` recipe candidates with prompts, hashes, comparison boards, and persisted rejection evidence. After a stronger direction-specific recalibration, the user selected `v1` for recipes `024-031`; eight package-local selected files are byte-identical to their sources and pass exact-copy, rubric, and deterministic selection validation. The package remains `selected_unpromoted`; the canonical fifteen components, 23 recipes, ten analytical families, and sixty accepted raster hashes remain unchanged.
 - Retained Pilot 01 as the sole example pilot, removed all other pilot artifacts, and ignored future `pilots/*` directories except `pilots/01-agentic-discipline/`.
 
 - Selected the D-034 noncommercial source-available model: PolyForm Noncommercial 1.0.0 for software and machine-readable materials, CC BY-NC-SA 4.0 for original documentation and visuals, separate written commercial licensing, reserved CSDL branding, and a prior copyright-assignment gate for external contributions.

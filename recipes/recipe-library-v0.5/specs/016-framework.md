@@ -109,7 +109,7 @@ Organize a small set of mutually necessary concepts into one mental model.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 16 Framework).
 - `patterns/visual-dna-sprint-01/specs/16-framework.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/16-framework.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/13.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

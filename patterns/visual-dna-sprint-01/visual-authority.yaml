@@ -4,11 +4,11 @@ decision: D-028
 purpose: "Mandatory reference hierarchy for Visual DNA Sprint 1 generation and review"
 
 primary_visual_authority:
-  - path: references/canonical/foundation-patterns-v0.1.png
+  - path: references/canonical/1.png
     role: "Modular Technical typography, semantic component vocabulary, geometric contrast, and Anchor/Signal construction"
-  - path: references/canonical/pilot-01-quiet-visual-plan-v0.1.png
+  - path: references/canonical/2.png
     role: "Quiet Modular series rhythm, active-space asymmetry, Anchor/Plane/Cluster relationships, and presentation hierarchy"
-  - path: references/canonical/quiet-modular-a-b-c-calibration.png
+  - path: references/canonical/3.png
     role: "Level A/B/C density, signal scale, palette rhythm, and family continuity"
 
 secondary_execution_reference:
@@ -23,9 +23,9 @@ precedence:
 
 generation_contract:
   attachment_order:
-    - references/canonical/foundation-patterns-v0.1.png
-    - references/canonical/pilot-01-quiet-visual-plan-v0.1.png
-    - references/canonical/quiet-modular-a-b-c-calibration.png
+    - references/canonical/1.png
+    - references/canonical/2.png
+    - references/canonical/3.png
     - pilots/01-agentic-discipline/references/style-anchor-light.png
   candidate_count: 3
   independent_calls: true

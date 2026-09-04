@@ -1,0 +1,19 @@
+language: CSDL
+version: 0.2-candidate
+kind: analytical-candidate-dataset
+dataset:
+  id: sankey-review-flow-v1
+  version: 1.0.0
+  title: Review flow reconciliation
+  status: synthetic_fixed_data
+  unit_of_analysis: transition flow
+  fields:
+    - {id: source, label: Source, type: identifier, role: dimension}
+    - {id: target, label: Target, type: identifier, role: dimension}
+    - {id: value, label: Items, type: quantitative, role: measure, unit: items}
+  records:
+    - {id: s1, source: Submitted, target: Validated, value: 100}
+    - {id: s2, source: Validated, target: Approved, value: 80}
+    - {id: s3, source: Validated, target: Rejected, value: 20}
+    - {id: s4, source: Approved, target: Shipped, value: 80}
+  provenance: {source: CSDL Arsenal Expansion synthetic fixture, source_type: synthetic, source_date: '2026-08-21', method: fixed conserved internal flow with explicit rejection loss}

@@ -108,7 +108,7 @@ Show levels of ownership or decomposition without implying sequence.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 10 Hierarchy).
 - `patterns/visual-dna-sprint-01/specs/10-hierarchy.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/10-hierarchy.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/8.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

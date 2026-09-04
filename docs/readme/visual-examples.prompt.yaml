@@ -48,9 +48,9 @@ typography:
 
 reference_hierarchy:
   primary:
-    - references/canonical/foundation-patterns-v0.1.png
-    - references/canonical/pilot-01-quiet-visual-plan-v0.1.png
-    - references/canonical/quiet-modular-a-b-c-calibration.png
+    - references/canonical/1.png
+    - references/canonical/2.png
+    - references/canonical/3.png
   secondary:
     - pilots/01-agentic-discipline/references/style-anchor-light.png
 

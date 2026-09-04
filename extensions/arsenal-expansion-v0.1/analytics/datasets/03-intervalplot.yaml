@@ -1,0 +1,19 @@
+language: CSDL
+version: 0.2-candidate
+kind: analytical-candidate-dataset
+dataset:
+  id: intervalplot-success-rate-v1
+  version: 1.0.0
+  title: Estimated success rate with uncertainty
+  status: synthetic_fixed_data
+  unit_of_analysis: evaluation cohort estimate
+  fields:
+    - {id: label, label: Cohort, type: categorical, role: dimension}
+    - {id: lower, label: Lower, type: quantitative, role: measure, unit: percent}
+    - {id: estimate, label: Estimate, type: quantitative, role: measure, unit: percent}
+    - {id: upper, label: Upper, type: quantitative, role: measure, unit: percent}
+  records:
+    - {id: i1, label: Baseline, lower: 68, estimate: 74, upper: 80}
+    - {id: i2, label: Guarded, lower: 79, estimate: 84, upper: 89}
+    - {id: i3, label: Memory, lower: 83, estimate: 88, upper: 93}
+  provenance: {source: CSDL Arsenal Expansion synthetic fixture, source_type: synthetic, source_date: '2026-08-21', method: fixed illustrative 80 percent prediction intervals}

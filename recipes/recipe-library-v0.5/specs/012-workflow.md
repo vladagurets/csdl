@@ -109,7 +109,7 @@ Show who or what acts next in a bounded operational sequence.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 12 Workflow).
 - `patterns/visual-dna-sprint-01/specs/12-workflow.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/12-workflow.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/10.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

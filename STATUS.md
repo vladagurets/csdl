@@ -3,13 +3,24 @@
 **Project:** Constructive Signal Design Language
 **Version:** Cookbook and Design Book v1.0
 **Current milestone:** Milestone 8 — licensing in progress
-**Last updated:** 2026-09-03
+**Last updated:** 2026-09-04
 
 ## Outcome
 
 Pilot 01 is the only retained example pilot. Other pilot directories are excluded from the repository and ignored by default.
 
+D-035 adds `extensions/arsenal-expansion-v0.1/` as an evidence-gated candidate package for a logical CSDL arsenal expansion: eight recipes, three reusable components, five semantic relations, three orthogonal expression modes, two rendering profiles, and six analytical families. The package includes typed deterministic analytical proofs and twenty-four `1920x1080` recipe candidates, three materially different variants per recipe, with comparison boards, hashes, prompt records, and rejection evidence. On 2026-09-03 the user selected recalibrated `v1` for recipes `024-031`; eight package-local selected files are byte-identical to their sources and pass exact-copy, rubric, and deterministic selection validation. The package is `selected_unpromoted`: the canonical fifteen-component, 23-recipe, ten-family contracts and all sixty accepted raster hashes remain unchanged pending a separate public-promotion objective.
+
 D-036 replaces random-seed variation with a candidate-divergence contract for every new or regenerated three-candidate visual pass. Each slide now requires three direction-specific briefs with distinct conceptual framing, dominant visual mechanism, and composition topology while preserving the same approved topic, exact copy/data, evidence, expression level, references, and exclusions. The reusable `csdl-create` validator exposes a strict `--require-divergence` gate for direction records, unique candidate bytes, and persisted side-by-side divergence review. Existing accepted rasters and the closed Prompt DSL v0.5 schema remain unchanged.
+
+Pilot 09 - Security Agent Development is complete as a local ignored pilot package. On 2026-09-04 the user selected a mixed `v1`/`v2`/`v3` set from regeneration pass 02. Seven choices received composition-preserving exact-copy corrections, then all 24 were promoted into canonical `1920x1080` RGB assets with 24 `1280x720` previews, one `3840x2160` contact sheet, hashes, exact-copy review, and rubric scores. The same day, the user requested composition-preserving exact-copy revisions: slide 01 now reads `Security & Agentic Development` without its supporting line, slide 02 reads `КРАСИВИЙ КОД ≠ БЕЗПЕЧНИЙ КОД`, and slide 09 retains only `МЕНШІ ПРАВА = МЕНШИЙ BLAST RADIUS` above its unlabeled key comparison. The regenerated prompts carry explicit D-036 direction briefs and the strict candidate-divergence gate applies to the full set.
+
+D-037 replaces descriptive canonical PNG filenames with unpadded one-based
+positions. Every active canonical directory now begins at `1.png`; pilot order
+comes from manifest cards, Visual DNA order comes from generated-family order,
+and reference-board order comes from `primary_visual_authority`. Prompts,
+drafts, previews, contact sheets, and historical snapshots retain their prior
+names. All accepted raster bytes and SHA-256 values are unchanged.
 
 D-034 selects a noncommercial source-available licensing model while retaining copyright with Vladyslav Ohirenko. Software, schemas, tools, machine-readable packages, and agent implementations use PolyForm Noncommercial 1.0.0; original documentation and visual materials use CC BY-NC-SA 4.0; commercial use requires a separate written license; CSDL names and branding remain outside both licenses; external copyrightable contributions require prior written assignment. This begins the licensing slice of Milestone 8 without creating a tag, GitHub Release, stable public-release version, or new raster evidence.
 
@@ -66,15 +77,15 @@ The publication covers CSDL philosophy, Quiet Modular and A/B/C, semantic color 
 
 ```text
 pilots/01-agentic-discipline/references/style-anchor-light.png
-pilots/01-agentic-discipline/canonical/light/16x9/01-hook.png
-pilots/01-agentic-discipline/canonical/light/16x9/02-problem.png
-pilots/01-agentic-discipline/canonical/light/16x9/03-model.png
-pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png
-pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png
-pilots/01-agentic-discipline/canonical/light/16x9/06-takeaway.png
-pilots/01-agentic-discipline/canonical/light/16x9/07-share-card.png
+pilots/01-agentic-discipline/canonical/light/16x9/1.png
+pilots/01-agentic-discipline/canonical/light/16x9/2.png
+pilots/01-agentic-discipline/canonical/light/16x9/3.png
+pilots/01-agentic-discipline/canonical/light/16x9/4.png
+pilots/01-agentic-discipline/canonical/light/16x9/5.png
+pilots/01-agentic-discipline/canonical/light/16x9/6.png
+pilots/01-agentic-discipline/canonical/light/16x9/7.png
 pilots/01-agentic-discipline/contact-sheets/pilot-01-light.png
-patterns/visual-dna-sprint-01/canonical/light/16x9/04-cover.png through 20-dashboard.png
+patterns/visual-dna-sprint-01/canonical/light/16x9/1.png through 17.png
 patterns/visual-dna-sprint-01/previews/landscape/01-hero.png through 20-dashboard.png
 patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-all.png
 patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-editorial.png
@@ -128,7 +139,7 @@ cookbook/design-book-v1.0/output/contact-sheet.png (derived, ignored)
 
 ```text
 .venv/bin/python -m pytest -q
-167 passed
+185 passed
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid

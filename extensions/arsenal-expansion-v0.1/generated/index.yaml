@@ -1,0 +1,59 @@
+extension: arsenal-expansion-v0.1
+version: 0.1.0
+status: candidate
+recipe_candidate_count: 8
+component_candidate_count: 3
+relation_candidate_count: 5
+analytical_family_candidate_count: 6
+recipes:
+- id: '024'
+  name: Causal Chain
+  record: recipes/024-causal-chain.yaml
+- id: '025'
+  name: State Machine
+  record: recipes/025-state-machine.yaml
+- id: '026'
+  name: Dependency Map
+  record: recipes/026-dependency-map.yaml
+- id: '027'
+  name: Claim / Evidence
+  record: recipes/027-claim-evidence.yaml
+- id: 028
+  name: Spectrum
+  record: recipes/028-spectrum.yaml
+- id: 029
+  name: Anatomy
+  record: recipes/029-anatomy.yaml
+- id: '030'
+  name: Layer Stack
+  record: recipes/030-layer-stack.yaml
+- id: '031'
+  name: Roadmap
+  record: recipes/031-roadmap.yaml
+components:
+- name: Threshold
+  record: components/threshold.yaml
+- name: Trace
+  record: components/trace.yaml
+- name: Band
+  record: components/band.yaml
+relations:
+- causes
+- transitions_to
+- depends_on
+- supports
+- crosses
+analytical_families:
+- histogram
+- boxplot
+- intervalplot
+- bullet
+- gantt
+- sankey
+targets:
+  component_library: component-library-v0.2
+  component_count: 18
+  recipe_library: recipe-library-v0.6
+  recipe_count: 31
+  analytical_mode: analytical-mode-v0.2
+  analytical_family_count: 16

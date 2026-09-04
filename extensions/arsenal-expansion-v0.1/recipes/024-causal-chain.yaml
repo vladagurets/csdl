@@ -1,0 +1,29 @@
+id: '024'
+slug: causal-chain
+name: Causal Chain
+version: 0.6-candidate
+status: candidate
+problem: Explain that one cause acts through a mechanism to produce one consequence.
+distinguishes_from: Workflow shows operational order without asserting causation.
+allowed_scenarios: [root-cause explanation, mechanism explanation, intervention consequence]
+ingredients:
+  required:
+    - {component: Node, min: 3, max: 5, default: 3}
+    - {component: Vector, min: 2, max: 4, default: 2}
+    - {component: Signal, min: 1, max: 1, default: 1}
+  optional:
+    - {component: Label, min: 0, max: 5, default: 3}
+relations:
+  allowed:
+    - {subject: Node, type: causes, object: Node}
+    - {subject: Vector, type: directs, object: Node}
+    - {subject: Signal, type: highlights, object: Node}
+  forbidden:
+    - {subject: Node, type: orders, object: Node}
+assembly_order: [declare cause, declare mechanism, declare consequence, mark the decisive causal link]
+expression_levels: {A: allowed, B: allowed, C: forbidden}
+expression_modes: [structural]
+content_contract: {required: [headline, cause, mechanism, consequence], exact: true, max_words: 36}
+prompt: prompts/024-causal-chain.yaml
+specification: recipes/024-causal-chain.md
+record: recipes/024-causal-chain.yaml

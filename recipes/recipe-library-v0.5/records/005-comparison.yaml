@@ -130,7 +130,7 @@ validation_invariants:
 - No undeclared layout or geometry terminology is present.
 - One main idea, one visual mechanism, and one dominant Signal remain observable.
 canonical_examples:
-- path: pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png
+- path: pilots/01-agentic-discipline/canonical/light/16x9/4.png
   role: accepted visual calibration
 evidence:
 - path: patterns/visual-dna-sprint-01/manifest.yaml
@@ -139,7 +139,7 @@ evidence:
 - path: patterns/visual-dna-sprint-01/specs/05-comparison.md
   locator: complete family contract
   supports: Canonical Markdown semantic and Prompt DSL evidence.
-- path: pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png
+- path: pilots/01-agentic-discipline/canonical/light/16x9/4.png
   locator: canonical raster
   supports: Accepted presentation-scale example.
 compatibility:

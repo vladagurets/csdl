@@ -58,7 +58,7 @@ pages:
   - {id: '02', source: pages/02-how-to-use.md, section: opening, kind: guide, topics: [provenance]}
   - {id: '03', source: pages/03-philosophy.md, section: foundations, kind: editorial, topics: [philosophy, constructive-signal]}
   - {id: '04', source: pages/04-quiet-modular.md, section: foundations, kind: editorial, topics: [quiet-modular]}
-  - {id: '05', source: pages/05-expression-levels.md, section: foundations, kind: comparison, topics: [expression-levels], evidence_image: references/canonical/quiet-modular-a-b-c-calibration.png}
+  - {id: '05', source: pages/05-expression-levels.md, section: foundations, kind: comparison, topics: [expression-levels], evidence_image: references/canonical/3.png}
   - {id: '06', source: pages/06-canvas-rhythm.md, section: foundations, kind: rules, topics: [expression-levels]}
   - {id: '07', source: pages/07-semantic-color.md, section: foundations, kind: tokens, topics: [semantic-color, accessibility]}
   - {id: '08', source: pages/08-typography.md, section: foundations, kind: typography, topics: [typography]}
@@ -82,7 +82,7 @@ pages:
   - {id: '26', source: pages/26-analytical-families.md, section: analytical, kind: catalog, topics: [analytical-mode-v0.1], evidence_image: patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-analytical.png}
   - {id: '27', source: pages/27-accessibility-profiles.md, section: accessibility, kind: profiles, topics: [accessibility, semantic-color]}
   - {id: '28', source: pages/28-accessibility-meaning.md, section: accessibility, kind: rules, topics: [accessibility, why-do-dont]}
-  - {id: '29', source: pages/29-reference-provenance.md, section: evidence, kind: provenance, topics: [reference-hierarchy, provenance], evidence_image: references/canonical/foundation-patterns-v0.1.png}
+  - {id: '29', source: pages/29-reference-provenance.md, section: evidence, kind: provenance, topics: [reference-hierarchy, provenance], evidence_image: references/canonical/1.png}
   - {id: '30', source: pages/30-authoring-workflow.md, section: practice, kind: workflow, topics: [why-do-dont, prompt-dsl-v0.5]}
   - {id: '31', source: pages/31-why-do-dont.md, section: practice, kind: comparison, topics: [why-do-dont]}
   - {id: '32', source: pages/32-preflight.md, section: practice, kind: checklist, topics: [publishing-preflight]}

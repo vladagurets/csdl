@@ -104,7 +104,7 @@ Show a repeating process whose output changes the next cycle.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 13 Loop).
 - `patterns/visual-dna-sprint-01/specs/13-loop.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png` — Accepted presentation-scale example. (canonical raster).
+- `pilots/01-agentic-discipline/canonical/light/16x9/5.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

@@ -105,7 +105,7 @@ Give one exact statement enough space and hierarchy to be read as an idea, not d
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 03 Quote).
 - `patterns/visual-dna-sprint-01/specs/03-quote.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/03-quote.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/2.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

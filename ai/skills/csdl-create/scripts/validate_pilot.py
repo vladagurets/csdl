@@ -238,8 +238,9 @@ def validate(
     if [str(card.get("id", "")) for card in cards] != expected_ids:
         errors.append("card ids must equal " + ",".join(expected_ids))
 
-    for card, expected_id, expected_level in zip(
-        cards, expected_ids, rhythm, strict=True
+    expected_canonical_names = {f"{index}.png" for index in range(1, card_count + 1)}
+    for position, (card, expected_id, expected_level) in enumerate(
+        zip(cards, expected_ids, rhythm, strict=True), start=1
     ):
         missing = REQUIRED_CARD_FIELDS - set(card)
         if missing:
@@ -267,7 +268,7 @@ def validate(
             errors.append(f"card {expected_id} exact_copy must be a non-empty string list")
 
         expected_stem = f"{expected_id}-{slug}"
-        expected_asset = f"canonical/light/16x9/{expected_stem}.png"
+        expected_asset = f"canonical/light/16x9/{position}.png"
         expected_prompt = f"prompts/{expected_stem}.yaml"
         if card["asset"] != expected_asset:
             errors.append(f"card {expected_id} asset must equal {expected_asset}")
@@ -327,6 +328,18 @@ def validate(
                             f"card {expected_id} candidates must have three unique "
                             "SHA-256 values"
                         )
+
+    canonical_dir = root / "canonical/light/16x9"
+    actual_canonical_names = (
+        {path.name for path in canonical_dir.glob("*.png")}
+        if canonical_dir.exists()
+        else set()
+    )
+    unexpected_canonical_names = sorted(
+        actual_canonical_names - expected_canonical_names
+    )
+    for filename in unexpected_canonical_names:
+        errors.append(f"unexpected canonical asset: {filename}")
 
     load_yaml(root / "prompts/00-style-anchor.yaml", errors)
     for required in ["README.md", "sources.md"]:

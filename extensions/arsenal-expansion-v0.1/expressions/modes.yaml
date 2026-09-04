@@ -1,0 +1,26 @@
+language: CSDL
+version: 0.1-candidate
+expression_levels: [A, B, C]
+level_role: amplitude_of_density_motion_and_signal
+modes:
+  editorial:
+    owner: text_and_proposition
+    default_level: A
+    compatible_levels: [A, B, C]
+    constraints: [one_anchor, restrained_relations, short_copy_at_C]
+  structural:
+    owner: topology_and_relations
+    default_level: B
+    compatible_levels: [A, B]
+    constraints: [one_mechanism, explicit_relations, maximum_four_primary_nodes]
+  analytical:
+    owner: typed_data_and_encoding
+    default_level: A
+    compatible_levels: [A, B]
+    constraints: [data_fidelity_first, direct_labels, one_primary_signal]
+rendering_profiles_preserved: [light, night, monochrome, projector]
+candidate_rendering_profiles: [high_contrast, print]
+invariants:
+  - Expression mode never changes semantic content.
+  - Rendering profile never changes component ownership or analytical values.
+  - Level C remains rare and cannot be used for dense analytical explanation.

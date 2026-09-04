@@ -104,7 +104,7 @@ Evaluate readiness through a bounded set of required questions with one selected
 
 - `pilots/01-agentic-discipline/prompts/06-takeaway.yaml` — Canonical content and legacy mechanism. (accepted legacy Prompt DSL package).
 - `pilots/01-agentic-discipline/evaluation/review.md` — Three-candidate selection, exact-copy, readability, and score evidence. (Slide 06 — Operational takeaway / Level A).
-- `pilots/01-agentic-discipline/canonical/light/16x9/06-takeaway.png` — Accepted presentation-scale example. (canonical raster).
+- `pilots/01-agentic-discipline/canonical/light/16x9/6.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

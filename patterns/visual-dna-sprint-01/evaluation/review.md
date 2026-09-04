@@ -14,7 +14,7 @@ Evidence is appended family by family in canonical manifest order. This file int
 
 ### 01 Hero — Pilot reference accepted
 
-- **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/01-hook.png`
+- **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/1.png`
 - **Source prompt:** `pilots/01-agentic-discipline/prompts/01-hook.yaml`
 - **Pilot selection:** `01-hook-v2.png` from three independent candidates
 - **SHA-256:** `39de00d730e534c942fbb96e6fe5cf932e7e14c0a89926877406ba3cade62d8c`
@@ -28,7 +28,7 @@ Audit result: exact headline and supporting sentence confirmed visually against 
 
 ### 02 Cover — regenerated example accepted
 
-- **Canonical:** `canonical/light/16x9/02-cover.png`
+- **Canonical:** `canonical/light/16x9/1.png`
 - **Prompt:** `prompts/02-cover.yaml`
 - **Selected:** `02-cover-r2-v6.png` from six independent built-in GPT Image 2 rebaseline candidates
 - **Source SHA-256:** `aabf270396e4404494ba719da9d65198b487d8d4825e530639d16088144237a3`
@@ -47,7 +47,7 @@ The former `02-cover-v1.png`, `02-cover-v2.png`, and `02-cover-v3.png` record re
 
 ### 03 Quote — regenerated example accepted
 
-- **Canonical:** `canonical/light/16x9/03-quote.png`
+- **Canonical:** `canonical/light/16x9/2.png`
 - **Prompt:** `prompts/03-quote.yaml`
 - **Selected:** `03-quote-r2-v2.png` from three independent built-in GPT Image 2 rebaseline candidates
 - **Source SHA-256:** `728708a67fecf012d5686227ec85f71fb041c3f6154d7a6a3ce03ab32e7e0e77`
@@ -63,7 +63,7 @@ The former `03-quote-v1.png`, `03-quote-v2.png`, and `03-quote-v3.png` record re
 
 ### 04 Big Number — regenerated example accepted
 
-- **Canonical:** `canonical/light/16x9/04-big-number.png`
+- **Canonical:** `canonical/light/16x9/3.png`
 - **Prompt:** `prompts/04-big-number.yaml`
 - **Selected:** `04-big-number-r2-v1.png` from three independent built-in GPT Image 2 rebaseline candidates
 - **Source SHA-256:** `269f2c6c899ed99eccb881120f98ea5f1a842c1712a8f4071fa5467b8c7d6a21`
@@ -79,7 +79,7 @@ The former `04-big-number-v1.png`, `04-big-number-v2.png`, and `04-big-number-v3
 
 ### 05 Comparison — Pilot reference accepted
 
-- **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png`
+- **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/4.png`
 - **Source prompt:** `pilots/01-agentic-discipline/prompts/04-comparison.yaml`
 - **Pilot selection:** `04-comparison-v3.png` from three independent candidates
 - **SHA-256:** `c97326715a6345fe099d08a197dc4422411a6a529082934d8f40c63de3049aff`
@@ -93,7 +93,7 @@ Audit result: headline, two titles, six criteria, and supporting sentence match 
 
 ### 06 Collision — regenerated example accepted
 
-- **Canonical:** `canonical/light/16x9/06-collision.png`
+- **Canonical:** `canonical/light/16x9/4.png`
 - **Prompt:** `prompts/06-collision.yaml`
 - **Selected:** `06-collision-r2-v3.png` from three independent built-in GPT Image 2 rebaseline candidates
 - **Source SHA-256:** `95dcdd9be81ff197608eafdfc043f42ebfbfa49741b54f80404f17aecc04d139`
@@ -109,7 +109,7 @@ The former `06-collision-v1.png`, `06-collision-v2.png`, and `06-collision-v3.pn
 
 ### 07 Before / After — regenerated example accepted
 
-- **Canonical:** `canonical/light/16x9/07-before-after.png`
+- **Canonical:** `canonical/light/16x9/5.png`
 - **Prompt:** `prompts/07-before-after.yaml`
 - **Selected:** `07-before-after-r2-v1.png` from three independent built-in GPT Image 2 rebaseline candidates
 - **Source SHA-256:** `864183dca50951766accb386448c65a52907bba1c225012e354f6dcf58988f4b`
@@ -125,7 +125,7 @@ The former `07-before-after-v1.png`, `07-before-after-v2.png`, and `07-before-af
 
 ### 08 Timeline — regenerated example accepted
 
-- **Canonical:** `canonical/light/16x9/08-timeline.png`
+- **Canonical:** `canonical/light/16x9/6.png`
 - **Prompt:** `prompts/08-timeline.yaml`
 - **Selected:** `08-timeline-r2-v1.png` from three independent built-in GPT Image 2 rebaseline candidates
 - **Source SHA-256:** `6a5eeb147cb8a61a3f0a1d6be48e6bde1b3b12048c6fca4d7f5b0e3e3001b284`
@@ -141,7 +141,7 @@ The former `08-timeline-v1.png`, `08-timeline-v2.png`, and `08-timeline-v3.png` 
 
 ### 09 Matrix — regenerated example accepted
 
-- **Canonical:** `canonical/light/16x9/09-matrix.png`
+- **Canonical:** `canonical/light/16x9/7.png`
 - **Prompt:** `prompts/09-matrix.yaml`
 - **Selected:** `09-matrix-r2-v1.png` from three independent built-in GPT Image 2 rebaseline candidates
 - **Source SHA-256:** `02d8e3167947d033ba21493b50f0062a9ec7bfccdd33605fbdc748a518f60831`
@@ -157,7 +157,7 @@ The former `09-matrix-v1.png`, `09-matrix-v2.png`, and `09-matrix-v3.png` record
 
 ### 10 Hierarchy — regenerated example accepted
 
-- **Canonical:** `canonical/light/16x9/10-hierarchy.png`
+- **Canonical:** `canonical/light/16x9/8.png`
 - **Prompt:** `prompts/10-hierarchy.yaml`
 - **Selected:** `10-hierarchy-r2-v1.png` from three independent built-in GPT Image 2 rebaseline candidates
 - **Source SHA-256:** `29ce4fafc61a6c2e87f89a1285838a623b4801966992b7f4a533701d34e002e7`
@@ -173,7 +173,7 @@ The former `10-hierarchy-v1.png`, `10-hierarchy-v2.png`, and `10-hierarchy-v3.pn
 
 ### 11 Architecture — regenerated example accepted
 
-- **Canonical:** `canonical/light/16x9/11-architecture.png`
+- **Canonical:** `canonical/light/16x9/9.png`
 - **Prompt:** `prompts/11-architecture.yaml`
 - **Selected:** `11-architecture-r2-v1.png` from three independent built-in GPT Image 2 rebaseline candidates
 - **Source SHA-256:** `a767f1552524cb7ecb7e8ad76854d04a45e6122c62df50d69c53f6843fecffe8`
@@ -189,7 +189,7 @@ The former `11-architecture-v1.png`, `11-architecture-v2.png`, and `11-architect
 
 ### 12 Workflow — regenerated example accepted
 
-- **Canonical:** `canonical/light/16x9/12-workflow.png`
+- **Canonical:** `canonical/light/16x9/10.png`
 - **Prompt:** `prompts/12-workflow.yaml`
 - **Selected:** `12-workflow-r2-v1.png` from three independent built-in GPT Image 2 rebaseline candidates
 - **Source SHA-256:** `5354366f830816f5863b559fc4105c61a67b4d5ccd885d0eae30d7a5a0e40042`
@@ -205,7 +205,7 @@ The former `12-workflow-v1.png`, `12-workflow-v2.png`, and `12-workflow-v3.png` 
 
 ### 13 Loop — Pilot reference accepted
 
-- **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png`
+- **Canonical:** `pilots/01-agentic-discipline/canonical/light/16x9/5.png`
 - **Source prompt:** `pilots/01-agentic-discipline/prompts/05-synthesis.yaml`
 - **Pilot selection:** `05-synthesis-v1.png` from three independent candidates
 - **SHA-256:** `1b7a4045fdbf616f8787dbfaf81161158b06d9efda67d7361102653d810497c8`
@@ -219,7 +219,7 @@ Audit result: headline, supporting sentence, and all five English stages match t
 
 ### 14 Pipeline — regenerated example accepted
 
-- **Canonical:** `canonical/light/16x9/14-pipeline.png`
+- **Canonical:** `canonical/light/16x9/11.png`
 - **Prompt:** `prompts/14-pipeline.yaml`
 - **Selected:** `14-pipeline-r2-v3.png` from three independent built-in GPT Image 2 rebaseline candidates
 - **Source SHA-256:** `300ec0e95fddc94d38f29daf32ab08d78fad91a50fb7d969bd23c0478d6611ba`
@@ -235,7 +235,7 @@ The former `14-pipeline-v1.png`, `14-pipeline-v2.png`, and `14-pipeline-v3.png` 
 
 ### 15 Decision Tree — generated example accepted
 
-- **Canonical:** `canonical/light/16x9/15-decision-tree.png`
+- **Canonical:** `canonical/light/16x9/12.png`
 - **Prompt:** `prompts/15-decision-tree.yaml`
 - **Selected:** `15-decision-tree-v1.png` from three independent built-in GPT Image 2 candidates
 - **Source SHA-256:** `ecc302b45c2576e4e698fa5d654e0906a2ab5faaf1dce67b1ec024e5826cf52a`
@@ -251,7 +251,7 @@ Exact-copy review: pass for `КОЛИ ПОТРІБЕН HUMAN REVIEW`, `РИЗИ�
 
 ### 16 Framework — generated example accepted
 
-- **Canonical:** `canonical/light/16x9/16-framework.png`
+- **Canonical:** `canonical/light/16x9/13.png`
 - **Prompt:** `prompts/16-framework.yaml`
 - **Selected:** `16-framework-r1-v3.png` from three independent built-in GPT Image 2 candidates
 - **Source SHA-256:** `c32e682c325ed634dc05f62f040d27ad9c450dd74c9d0ffec1ff35aeccd32c8a`
@@ -267,7 +267,7 @@ Exact-copy review: pass for `4 ОПОРИ НАДІЙНОЇ РОБОТИ`, `CONTE
 
 ### 17 KPI — generated example accepted
 
-- **Canonical:** `canonical/light/16x9/17-kpi.png`
+- **Canonical:** `canonical/light/16x9/14.png`
 - **Prompt:** `prompts/17-kpi.yaml`
 - **Selected:** `17-kpi-r1-v5.png` after three independent candidates and two bounded signal-area corrections
 - **Source SHA-256:** `a7ac1f7dee53ba5b5847925025311798ed5036ebc44c4d9773769216f2fa904c`
@@ -285,7 +285,7 @@ Exact-copy and fixed-data review: pass for `НАДІЙНІСТЬ АГЕНТА ·
 
 ### 18 Table — generated example accepted
 
-- **Canonical:** `canonical/light/16x9/18-table.png`
+- **Canonical:** `canonical/light/16x9/15.png`
 - **Prompt:** `prompts/18-table.yaml`
 - **Selected:** `18-table-r1-v2.png` from three independent built-in GPT Image 2 candidates
 - **Source SHA-256:** `de35d7288ed37798e75e0d235c010d7260b1c949be36601d38ce59345b47f22e`
@@ -301,7 +301,7 @@ Exact-copy and fixed-data review: pass cell by cell for headline `4 ТИЖНІ �
 
 ### 19 Chart — generated example accepted
 
-- **Canonical:** `canonical/light/16x9/19-chart.png`
+- **Canonical:** `canonical/light/16x9/16.png`
 - **Prompt:** `prompts/19-chart.yaml`
 - **Selected:** `19-chart-r1-v4.png` after three independent candidates and one bounded geometry correction
 - **Source SHA-256:** `b0febfb7c76b6c4cab0ceb9668776fa22d7a7175aeb53ba3ddb7f85f0bc40adf`
@@ -318,7 +318,7 @@ Exact-copy and fixed-data review: pass for `УСПІШНІСТЬ ЗРОСТАЄ 
 
 ### 20 Dashboard — generated example accepted
 
-- **Canonical:** `canonical/light/16x9/20-dashboard.png`
+- **Canonical:** `canonical/light/16x9/17.png`
 - **Prompt:** `prompts/20-dashboard.yaml`
 - **Selected:** `20-dashboard-r1-v2.png` from three independent built-in GPT Image 2 candidates
 - **Source SHA-256:** `da3c2ca0313ff9be67d1710869dd3daffc3939e54d6befc0b161e8c1c2809143`

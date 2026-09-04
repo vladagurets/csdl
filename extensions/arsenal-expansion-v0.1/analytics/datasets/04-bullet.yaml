@@ -1,0 +1,19 @@
+language: CSDL
+version: 0.2-candidate
+kind: analytical-candidate-dataset
+dataset:
+  id: bullet-quality-target-v1
+  version: 1.0.0
+  title: Quality metric against target
+  status: synthetic_fixed_data
+  unit_of_analysis: operational metric
+  fields:
+    - {id: label, label: Metric, type: categorical, role: dimension}
+    - {id: actual, label: Actual, type: quantitative, role: measure, unit: percent}
+    - {id: target, label: Target, type: quantitative, role: measure, unit: percent}
+    - {id: range_min, label: Acceptable minimum, type: quantitative, role: measure, unit: percent}
+    - {id: range_max, label: Maximum, type: quantitative, role: measure, unit: percent}
+  records:
+    - {id: u1, label: Test pass rate, actual: 92, target: 95, range_min: 90, range_max: 100}
+    - {id: u2, label: Review coverage, actual: 86, target: 90, range_min: 80, range_max: 100}
+  provenance: {source: CSDL Arsenal Expansion synthetic fixture, source_type: synthetic, source_date: '2026-08-21', method: fixed target and ordered qualitative ranges}

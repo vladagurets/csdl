@@ -1,0 +1,77 @@
+language: CSDL
+version: 0.2-candidate
+kind: analytical-candidate-proof
+id: proof-histogram
+family: histogram
+dataset:
+  id: histogram-review-duration-v1
+  version: 1.0.0
+  path: analytics/datasets/01-histogram.yaml
+  status: synthetic_fixed_data
+  source: CSDL Arsenal Expansion synthetic fixture
+intent: Reveal the frequency distribution of one quantitative measure across declared
+  bins.
+internal_marks:
+- bar
+- text
+candidate_components:
+- Axis
+- Band
+- Label
+- Signal
+encoding_invariants:
+- bins_are_contiguous_or_declared
+- bin_width_is_explicit
+- count_total_reconciles
+fields:
+- id: bin_start
+  label: Bin start
+  type: quantitative
+  role: dimension
+  unit: minutes
+- id: bin_end
+  label: Bin end
+  type: quantitative
+  role: dimension
+  unit: minutes
+- id: count
+  label: Reviews
+  type: quantitative
+  role: measure
+  unit: reviews
+records:
+- id: h1
+  bin_start: 0
+  bin_end: 10
+  count: 4
+- id: h2
+  bin_start: 10
+  bin_end: 20
+  count: 9
+- id: h3
+  bin_start: 20
+  bin_end: 30
+  count: 6
+- id: h4
+  bin_start: 30
+  bin_end: 40
+  count: 3
+derived:
+  total_count: 22
+  bins:
+  - - 0
+    - 10
+    - 4
+  - - 10
+    - 20
+    - 9
+  - - 20
+    - 30
+    - 6
+  - - 30
+    - 40
+    - 3
+provenance:
+  evidence: synthetic_fixed_data
+  builder: tools/build_arsenal_expansion.py
+  deterministic: true

@@ -69,12 +69,19 @@ def build_contact_sheet(inputs: Iterable[Path], output: Path) -> None:
     canvas.save(output)
 
 
+def numeric_png_paths(directory: Path) -> list[Path]:
+    paths = list(directory.glob("*.png"))
+    if all(path.stem.isdecimal() for path in paths):
+        return sorted(paths, key=lambda path: int(path.stem))
+    return sorted(paths)
+
+
 def main() -> int:
     if len(sys.argv) != 3:
         print("usage: python tools/build_contact_sheet.py INPUT_DIR OUTPUT_FILE")
         return 2
     input_dir = Path(sys.argv[1])
-    build_contact_sheet(sorted(input_dir.glob("*.png")), Path(sys.argv[2]))
+    build_contact_sheet(numeric_png_paths(input_dir), Path(sys.argv[2]))
     print("contact sheet built")
     return 0
 

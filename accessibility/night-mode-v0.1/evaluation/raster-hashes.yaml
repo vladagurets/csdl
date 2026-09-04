@@ -3,39 +3,39 @@ version: 0.1.0
 purpose: Pin every tracked accepted raster byte before and after Milestone 6.
 file_count: 60
 files:
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/02-cover.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/1.png
   sha256: 09d64c9020a30d798378d4add4dccbff71e66fcabbb7695ec4dd75118c40c9d0
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/03-quote.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/2.png
   sha256: 098781cb801c428c33ab2bac9bf03ad4823a71365151b675dc24b95f165ccbe3
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/04-big-number.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/3.png
   sha256: 450bf0c7327347ddf28a22d96cfdddacd8e6d1c5165e13a992db5ebff13fb628
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/06-collision.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/4.png
   sha256: 86fcb233414b3d403d87766d8541d1c848558a9d86308ec8010a1eb359ec43c1
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/07-before-after.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/5.png
   sha256: 16c1071f107cc2f80dbe203783e7d98f27b7ec5d1920d85d0f84071d3e80aac2
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/08-timeline.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/6.png
   sha256: 4b03797c3aef07ae53d2aaaa0ef51527bc96ff32733ef837e11dc917ceafcb7a
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/09-matrix.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/7.png
   sha256: 80670a2eac5080cf1bfe3b7046b04d9e31bfa0d44df15ad0e5c5ff248e557704
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/10-hierarchy.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/8.png
   sha256: cf32ac58ac02e8d2aec79da7c1aba2ed6be3401ad4850ed93d122334adc5e199
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/11-architecture.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/9.png
   sha256: 733117738a0273dd340ed94255a21ed515df42a1168b6ff6161541e8e139fc48
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/12-workflow.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/10.png
   sha256: 63a25118f0221a868b254db9d97a887e9682bdad96d4dd5130dc01eb1a03c7cd
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/14-pipeline.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/11.png
   sha256: d0bf0f1d61e9b1f7007aa4e352fc411f49a7a0f7d4ecd259cf34d7fc2b3fdea2
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/15-decision-tree.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/12.png
   sha256: d66ea7a0837cd0dc38ffeaf6ff168758d6be20bfc5ee385f19fbff6a57cfa1bd
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/16-framework.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/13.png
   sha256: d64e39604076b81a68bf183cbed4d8e7a667d496c6095812bc2602403a4612fd
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/17-kpi.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/14.png
   sha256: 921db7c444732a132c88fbb00a40ce315f5913ee1bf11573580bccbe3a701cc2
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/18-table.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/15.png
   sha256: 54dee7722d3bad72d166c280c16497b9fa3dd9920673d21f6e1335c83af24dd7
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/19-chart.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/16.png
   sha256: 960de9940e24adf915c8c69a4037cfba2b7325d8be14e8dddee7fc13bd8ce8cb
-- path: patterns/visual-dna-sprint-01/canonical/light/16x9/20-dashboard.png
+- path: patterns/visual-dna-sprint-01/canonical/light/16x9/17.png
   sha256: 9c9cb5060861b0d49530c19d47ed182877c84f721452d5f5628866433f10dfad
 - path: patterns/visual-dna-sprint-01/contact-sheets/visual-dna-01-all.png
   sha256: 0db837f44b51f43dfefd86afa8ee6be5a2fc13ab0e58273f3f0ac92ee272ee52
@@ -85,19 +85,19 @@ files:
   sha256: f03e5a46594975451123225d10d49eee34ebd6b140eb6a803d002013c72c82f6
 - path: patterns/visual-dna-sprint-01/previews/landscape/20-dashboard.png
   sha256: 9e041255cd0b9d3d4900a9df428c42d3b6f6ef6cedc5e7417e14c3fe4456f5a2
-- path: pilots/01-agentic-discipline/canonical/light/16x9/01-hook.png
+- path: pilots/01-agentic-discipline/canonical/light/16x9/1.png
   sha256: 39de00d730e534c942fbb96e6fe5cf932e7e14c0a89926877406ba3cade62d8c
-- path: pilots/01-agentic-discipline/canonical/light/16x9/02-problem.png
+- path: pilots/01-agentic-discipline/canonical/light/16x9/2.png
   sha256: 1f8cc56f434268ec61622722d3da7d7d38567d7d9079d7d1c2273c1a872f1e5b
-- path: pilots/01-agentic-discipline/canonical/light/16x9/03-model.png
+- path: pilots/01-agentic-discipline/canonical/light/16x9/3.png
   sha256: d64bcc7b9c558e69ea990b3bd25061254ea36a76d595b2b3f5bdfbc74f339576
-- path: pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png
+- path: pilots/01-agentic-discipline/canonical/light/16x9/4.png
   sha256: c97326715a6345fe099d08a197dc4422411a6a529082934d8f40c63de3049aff
-- path: pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png
+- path: pilots/01-agentic-discipline/canonical/light/16x9/5.png
   sha256: 1b7a4045fdbf616f8787dbfaf81161158b06d9efda67d7361102653d810497c8
-- path: pilots/01-agentic-discipline/canonical/light/16x9/06-takeaway.png
+- path: pilots/01-agentic-discipline/canonical/light/16x9/6.png
   sha256: 422cab41115b8b69334653f05237055357ae526c93c2a631ac7550ef61522a45
-- path: pilots/01-agentic-discipline/canonical/light/16x9/07-share-card.png
+- path: pilots/01-agentic-discipline/canonical/light/16x9/7.png
   sha256: 43fc54769dfa4c737da35b9c71b668a0bcd239671b319f3621a0e4e2ea37ad29
 - path: pilots/01-agentic-discipline/contact-sheets/pilot-01-light.png
   sha256: 8f2eff2bcd3a962ed943d6b297c1b5d1f23c15f0f89cda9634c024dd0eac969d
@@ -117,9 +117,9 @@ files:
   sha256: 8d6be3630c6978239bec59106dbdc9c6dfc88eddd94d80d9fed7b2ebaa3d09df
 - path: pilots/01-agentic-discipline/references/style-anchor-light.png
   sha256: 6c8504246745d77efe19749e77d51d2cd1d1db26b004975298215bd395311c2a
-- path: references/canonical/foundation-patterns-v0.1.png
+- path: references/canonical/1.png
   sha256: 841b5947b52a47dce590c4ada05aea2b533f27324b20b351ff7420cc56188028
-- path: references/canonical/pilot-01-quiet-visual-plan-v0.1.png
+- path: references/canonical/2.png
   sha256: 059d41316f4e0d5e3a12eb50f862928d4991bc167e2fc3681a1d558ae5df79b9
-- path: references/canonical/quiet-modular-a-b-c-calibration.png
+- path: references/canonical/3.png
   sha256: 2d51703275e1a0044fda9f7ab078207fe765ee8027acd673ba8a15f13c0635bd

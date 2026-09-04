@@ -1,0 +1,16 @@
+name: Trace
+slug: trace
+status: candidate
+category: relational
+semantic_meaning: An observed, executed, or evidenced route through declared components.
+distinct_from:
+  Vector: communicates intended direction, action, or transformation
+  Bridge: establishes a topological connection without claiming traversal
+  Loop: owns recurrence rather than one observed route
+relations: [connected_to, orders, supports, depends_on]
+expression_limits: {A: allowed, B: allowed, C: forbidden}
+validation_invariants:
+  - Every Trace names its evidence or observation status.
+  - A Trace cannot imply that an available route was actually taken.
+  - A Trace has a declared start and end.
+specification: components/trace.md

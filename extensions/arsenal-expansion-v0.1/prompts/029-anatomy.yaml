@@ -1,0 +1,49 @@
+language: CSDL
+version: 0.6-candidate
+kind: generation-prompt
+id: '029'
+recipe: Anatomy
+expression: {level: B, mode: editorial}
+semantic_intent: functional-parts-of-one-agent-task
+visible_copy:
+  headline: АНАТОМІЯ НАДІЙНОЇ AGENT TASK
+  parts: [BRIEF, CONSTRAINTS, TOOLS, CHECKS, EVIDENCE]
+  signal: CHECKS
+component_instances: [Anchor, Cluster, Node, Label, Signal]
+relations: [groups, attached_to, supports, highlights]
+generation_constraints:
+  canvas: 1920x1080
+  orientation: landscape
+  negative_space_percent: 45-60
+  reading_path: whole_to_parts
+  candidate_variation: direction_specific_concept_mechanism_and_topology
+  exact_copy: true
+  no_extra_text: true
+  hard_exclusions: [exploded product render, system boundary map, UI cards, gradients, shadows, 3D, icons, logos, footers]
+  candidate_directions:
+    v1:
+      concept: interlocking core
+      intended_effect: Make reliability feel like one coherent assembly whose parts physically depend on CHECKS.
+      dominant_visual_mechanism: Five large flat regions interlock around a coral CHECKS joint that visibly holds the complete task together.
+      composition_topology: Off-center dense assembly with an irregular outer silhouette and a large open headline field.
+      avoid: [five cards, exploded parts, symmetric grid]
+    v2:
+      concept: functional cross-section
+      intended_effect: Reveal the internal anatomy of one task without turning it into system architecture.
+      dominant_visual_mechanism: One large AGENT TASK silhouette is cut open by a vertical CHECKS spine; BRIEF, CONSTRAINTS, TOOLS, and EVIDENCE occupy distinct functional chambers.
+      composition_topology: Dominant full-height section on one side with the headline counterbalancing it, using one internal spine rather than repeated boxes.
+      avoid: [architecture map, dashboard, modular cards]
+    v3:
+      concept: reliability tension
+      intended_effect: Show CHECKS as the point that keeps four functional forces aligned.
+      dominant_visual_mechanism: BRIEF, CONSTRAINTS, TOOLS, and EVIDENCE pull from four unequal directions into one coral CHECKS tension node, forming one stable task outline.
+      composition_topology: Dynamic diagonal tension field with a single central joint and labels integrated into large planes.
+      avoid: [radial icon diagram, equal quadrants, decorative connectors]
+prompt: >-
+  Create a visually forceful CSDL Constructive Editorial Level B 16:9 slide
+  explaining five functional parts of one AGENT TASK. Preserve the subject as
+  one whole; do not turn the parts into separate systems, chronological stages,
+  or cards. Use large interlocking, sectional, or tension geometry with one
+  muted coral Signal on CHECKS. Keep warm paper, graphite, Modular Technical
+  display, strong scale contrast, direct horizontal labels, and controlled
+  asymmetrical space. Render only visible_copy verbatim.

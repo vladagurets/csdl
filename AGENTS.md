@@ -54,6 +54,8 @@ Milestone 8 has started only for the D-034 licensing slice. CSDL is source-avail
 6. Review the three candidates together before selection. If any pair reads as near-variants of the same representation, reject and regenerate the collapsed direction before applying the evaluation rubric. Do not silently promote the first candidate.
 7. Keep drafts under `pilots/01-agentic-discipline/drafts/`; they are intentionally ignored by Git.
 8. Commit approved card files only under `pilots/01-agentic-discipline/canonical/`.
+   Canonical PNG filenames use the unpadded one-based card position only:
+   `1.png`, `2.png`, and so on. Keep slugs in prompts, drafts, and previews.
 9. Update `STATUS.md` and `CHANGELOG.md` whenever a task is completed or a decision changes.
 10. Record the three direction briefs, all candidate filenames, observed concept/mechanism/composition differences, divergence result, rejection reasons, the selected filename, exact-copy review, dimensions/color-mode review, and selection rationale in `pilots/01-agentic-discipline/evaluation/review.md`. Draft-local `approved.txt` is only a convenience marker and is not persistent project evidence.
 11. Record the accepted card score in `pilots/01-agentic-discipline/evaluation/scores.csv`.

@@ -115,7 +115,7 @@ Summarize a small operational state while preserving one clear primary signal.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 20 Dashboard).
 - `patterns/visual-dna-sprint-01/specs/20-dashboard.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/20-dashboard.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/17.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

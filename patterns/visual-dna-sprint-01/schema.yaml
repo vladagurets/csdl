@@ -61,14 +61,14 @@ enums:
 path_rules:
   specification: "specs/{id}-{slug}.md"
   prompt: "prompts/{id}-{slug}.yaml"
-  generated_asset: "canonical/light/16x9/{id}-{slug}.png"
+  generated_asset: "canonical/light/16x9/{sequence}.png"
 reference_authority_rules:
   catalog_path: visual-authority.yaml
   prompt_path: patterns/visual-dna-sprint-01/visual-authority.yaml
   primary:
-    - references/canonical/foundation-patterns-v0.1.png
-    - references/canonical/pilot-01-quiet-visual-plan-v0.1.png
-    - references/canonical/quiet-modular-a-b-c-calibration.png
+    - references/canonical/1.png
+    - references/canonical/2.png
+    - references/canonical/3.png
   secondary:
     - pilots/01-agentic-discipline/references/style-anchor-light.png
   required_review_gates:

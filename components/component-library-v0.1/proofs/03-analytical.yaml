@@ -2,7 +2,7 @@ id: "03"
 mode: analytical
 family: chart
 expression: A
-evidence: patterns/visual-dna-sprint-01/canonical/light/16x9/19-chart.png
+evidence: patterns/visual-dna-sprint-01/canonical/light/16x9/16.png
 content:
   headline: "УСПІШНІСТЬ ЗРОСТАЄ ЩОТИЖНЯ"
   points: ["W1 · 72%", "W2 · 78%", "W3 · 84%", "W4 · 90%"]

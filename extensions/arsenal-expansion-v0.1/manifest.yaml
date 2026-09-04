@@ -1,0 +1,76 @@
+extension:
+  id: arsenal-expansion-v0.1
+  version: 0.1.0
+  status: candidate
+  language: CSDL
+  kind: evidence-gated-extension
+
+baseline:
+  component_library: components/component-library-v0.1/manifest.yaml
+  component_count: 15
+  recipe_library: recipes/recipe-library-v0.5/manifest.yaml
+  recipe_count: 23
+  analytical_mode: analytics/analytical-mode-v0.1/manifest.yaml
+  analytical_family_count: 10
+
+targets:
+  component_library: component-library-v0.2
+  component_count: 18
+  recipe_library: recipe-library-v0.6
+  recipe_count: 31
+  analytical_mode: analytical-mode-v0.2
+  analytical_family_count: 16
+
+protected_raster_inventory: accessibility/night-mode-v0.1/evaluation/raster-hashes.yaml
+
+components:
+  - {name: Threshold, record: components/threshold.yaml}
+  - {name: Trace, record: components/trace.yaml}
+  - {name: Band, record: components/band.yaml}
+
+relations:
+  - causes
+  - transitions_to
+  - depends_on
+  - supports
+  - crosses
+
+recipes:
+  - {id: '024', name: Causal Chain, record: recipes/024-causal-chain.yaml}
+  - {id: '025', name: State Machine, record: recipes/025-state-machine.yaml}
+  - {id: '026', name: Dependency Map, record: recipes/026-dependency-map.yaml}
+  - {id: '027', name: Claim / Evidence, record: recipes/027-claim-evidence.yaml}
+  - {id: '028', name: Spectrum, record: recipes/028-spectrum.yaml}
+  - {id: '029', name: Anatomy, record: recipes/029-anatomy.yaml}
+  - {id: '030', name: Layer Stack, record: recipes/030-layer-stack.yaml}
+  - {id: '031', name: Roadmap, record: recipes/031-roadmap.yaml}
+
+analytical_families:
+  - histogram
+  - boxplot
+  - intervalplot
+  - bullet
+  - gantt
+  - sankey
+
+analytical_datasets:
+  - {id: 01-histogram, family: histogram, path: analytics/datasets/01-histogram.yaml}
+  - {id: 02-boxplot, family: boxplot, path: analytics/datasets/02-boxplot.yaml}
+  - {id: 03-intervalplot, family: intervalplot, path: analytics/datasets/03-intervalplot.yaml}
+  - {id: 04-bullet, family: bullet, path: analytics/datasets/04-bullet.yaml}
+  - {id: 05-gantt, family: gantt, path: analytics/datasets/05-gantt.yaml}
+  - {id: 06-sankey, family: sankey, path: analytics/datasets/06-sankey.yaml}
+
+generated:
+  index: generated/index.yaml
+  compatibility: generated/compatibility.yaml
+
+evidence_gate:
+  recipe_candidate_count: 3
+  active_candidate_set: recalibration
+  visual_selection: user
+  accepted_raster_dimensions: 1920x1080
+  accepted_raster_mode: RGB
+  public_promotion_before_selection: false
+  public_component_minimum_distinct_uses: 2
+  existing_raster_mutation: forbidden

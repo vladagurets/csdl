@@ -110,7 +110,7 @@ Support exact lookup and comparison across a small fixed dataset.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 18 Table).
 - `patterns/visual-dna-sprint-01/specs/18-table.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/18-table.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/15.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

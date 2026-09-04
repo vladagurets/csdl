@@ -1,0 +1,16 @@
+name: Threshold
+slug: threshold
+status: candidate
+category: semantic
+semantic_meaning: A declared condition or boundary whose crossing changes state or interpretation.
+distinct_from:
+  Divider: separates peer scopes without a condition
+  Axis: owns a domain or order but not a state-changing criterion
+  Node: may represent a gate but does not itself define the crossing condition
+relations: [attached_to, bounds, crosses, highlights]
+expression_limits: {A: allowed, B: allowed, C: conditional}
+validation_invariants:
+  - A Threshold declares the condition and the states on both sides.
+  - A Threshold is never a decorative rule.
+  - Color is not the only carrier of the crossing state.
+specification: components/threshold.md

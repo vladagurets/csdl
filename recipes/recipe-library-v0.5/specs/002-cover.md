@@ -105,7 +105,7 @@ Name a series or section and establish its single visual premise.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 02 Cover).
 - `patterns/visual-dna-sprint-01/specs/02-cover.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/02-cover.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/1.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

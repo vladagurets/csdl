@@ -65,7 +65,7 @@ families:
     evidence:
       mode: pilot_reference
       candidate_generation_required: false
-      canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/01-hook.png
+      canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/1.png
       source_prompt: pilots/01-agentic-discipline/prompts/01-hook.yaml
       source_review: pilots/01-agentic-discipline/evaluation/review.md
       source_scores: pilots/01-agentic-discipline/evaluation/scores.csv
@@ -92,7 +92,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/02-cover.yaml
     specification: specs/02-cover.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/02-cover.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/1.png}
     acceptance: *acceptance
 
   - id: "03"
@@ -115,7 +115,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/03-quote.yaml
     specification: specs/03-quote.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/03-quote.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/2.png}
     acceptance: *acceptance
 
   - id: "04"
@@ -139,7 +139,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/04-big-number.yaml
     specification: specs/04-big-number.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/04-big-number.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/3.png}
     acceptance: *acceptance
 
   - id: "05"
@@ -167,7 +167,7 @@ families:
     evidence:
       mode: pilot_reference
       candidate_generation_required: false
-      canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png
+      canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/4.png
       source_prompt: pilots/01-agentic-discipline/prompts/04-comparison.yaml
       source_review: pilots/01-agentic-discipline/evaluation/review.md
       source_scores: pilots/01-agentic-discipline/evaluation/scores.csv
@@ -195,7 +195,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/06-collision.yaml
     specification: specs/06-collision.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/06-collision.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/4.png}
     acceptance: *acceptance
 
   - id: "07"
@@ -219,7 +219,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/07-before-after.yaml
     specification: specs/07-before-after.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/07-before-after.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/5.png}
     acceptance: *acceptance
 
   - id: "08"
@@ -242,7 +242,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/08-timeline.yaml
     specification: specs/08-timeline.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/08-timeline.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/6.png}
     acceptance: *acceptance
 
   - id: "09"
@@ -266,7 +266,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/09-matrix.yaml
     specification: specs/09-matrix.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/09-matrix.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/7.png}
     acceptance: *acceptance
 
   - id: "10"
@@ -289,7 +289,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/10-hierarchy.yaml
     specification: specs/10-hierarchy.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/10-hierarchy.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/8.png}
     acceptance: *acceptance
 
   - id: "11"
@@ -313,7 +313,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/11-architecture.yaml
     specification: specs/11-architecture.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/11-architecture.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/9.png}
     acceptance: *acceptance
 
   - id: "12"
@@ -336,7 +336,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/12-workflow.yaml
     specification: specs/12-workflow.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/12-workflow.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/10.png}
     acceptance: *acceptance
 
   - id: "13"
@@ -363,7 +363,7 @@ families:
     evidence:
       mode: pilot_reference
       candidate_generation_required: false
-      canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/05-synthesis.png
+      canonical_example: pilots/01-agentic-discipline/canonical/light/16x9/5.png
       source_prompt: pilots/01-agentic-discipline/prompts/05-synthesis.yaml
       source_review: pilots/01-agentic-discipline/evaluation/review.md
       source_scores: pilots/01-agentic-discipline/evaluation/scores.csv
@@ -390,7 +390,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/14-pipeline.yaml
     specification: specs/14-pipeline.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/14-pipeline.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/11.png}
     acceptance: *acceptance
 
   - id: "15"
@@ -414,7 +414,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/15-decision-tree.yaml
     specification: specs/15-decision-tree.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/15-decision-tree.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/12.png}
     acceptance: *acceptance
 
   - id: "16"
@@ -437,7 +437,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/16-framework.yaml
     specification: specs/16-framework.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/16-framework.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/13.png}
     acceptance: *acceptance
 
   - id: "17"
@@ -463,7 +463,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/17-kpi.yaml
     specification: specs/17-kpi.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/17-kpi.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/14.png}
     acceptance: *acceptance
 
   - id: "18"
@@ -489,7 +489,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/18-table.yaml
     specification: specs/18-table.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/18-table.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/15.png}
     acceptance: *acceptance
 
   - id: "19"
@@ -515,7 +515,7 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/19-chart.yaml
     specification: specs/19-chart.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/19-chart.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/16.png}
     acceptance: *acceptance
 
   - id: "20"
@@ -541,5 +541,5 @@ families:
     hard_exclusions: *hard_exclusions
     prompt: prompts/20-dashboard.yaml
     specification: specs/20-dashboard.md
-    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/20-dashboard.png}
+    evidence: {mode: generated, candidate_generation_required: true, canonical_example: canonical/light/16x9/17.png}
     acceptance: *acceptance

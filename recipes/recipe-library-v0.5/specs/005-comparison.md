@@ -104,7 +104,7 @@ Compare two systems without implying conflict unless conflict is the content.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 05 Comparison).
 - `patterns/visual-dna-sprint-01/specs/05-comparison.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `pilots/01-agentic-discipline/canonical/light/16x9/04-comparison.png` — Accepted presentation-scale example. (canonical raster).
+- `pilots/01-agentic-discipline/canonical/light/16x9/4.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

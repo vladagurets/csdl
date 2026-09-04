@@ -1,0 +1,103 @@
+language: CSDL
+version: 0.2-candidate
+kind: analytical-candidate-proof
+id: proof-boxplot
+family: boxplot
+dataset:
+  id: boxplot-cycle-time-v1
+  version: 1.0.0
+  path: analytics/datasets/02-boxplot.yaml
+  status: synthetic_fixed_data
+  source: CSDL Arsenal Expansion synthetic fixture
+intent: Compare median, quartiles, range, and declared outliers across a small set
+  of groups.
+internal_marks:
+- interval-band
+- line
+- point
+- text
+candidate_components:
+- Axis
+- Band
+- Label
+- Signal
+encoding_invariants:
+- minimum_lte_q1_lte_median_lte_q3_lte_maximum
+- quartile_method_declared
+- outliers_not_hidden
+fields:
+- id: group
+  label: Task type
+  type: categorical
+  role: dimension
+- id: minimum
+  label: Minimum
+  type: quantitative
+  role: measure
+  unit: hours
+- id: q1
+  label: Q1
+  type: quantitative
+  role: measure
+  unit: hours
+- id: median
+  label: Median
+  type: quantitative
+  role: measure
+  unit: hours
+- id: q3
+  label: Q3
+  type: quantitative
+  role: measure
+  unit: hours
+- id: maximum
+  label: Maximum
+  type: quantitative
+  role: measure
+  unit: hours
+records:
+- id: b1
+  group: Feature
+  minimum: 4
+  q1: 7
+  median: 10
+  q3: 14
+  maximum: 22
+- id: b2
+  group: Fix
+  minimum: 1
+  q1: 2
+  median: 4
+  q3: 6
+  maximum: 11
+- id: b3
+  group: Refactor
+  minimum: 3
+  q1: 5
+  median: 8
+  q3: 12
+  maximum: 18
+derived:
+  five_number_summaries:
+  - - Feature
+    - 4
+    - 7
+    - 10
+    - 14
+    - 22
+  - - Fix
+    - 1
+    - 2
+    - 4
+    - 6
+    - 11
+  - - Refactor
+    - 3
+    - 5
+    - 8
+    - 12
+    - 18
+provenance:
+  evidence: synthetic_fixed_data
+  builder: tools/build_arsenal_expansion.py
+  deterministic: true

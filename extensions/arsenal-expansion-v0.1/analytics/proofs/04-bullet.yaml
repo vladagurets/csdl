@@ -1,0 +1,83 @@
+language: CSDL
+version: 0.2-candidate
+kind: analytical-candidate-proof
+id: proof-bullet
+family: bullet
+dataset:
+  id: bullet-quality-target-v1
+  version: 1.0.0
+  path: analytics/datasets/04-bullet.yaml
+  status: synthetic_fixed_data
+  source: CSDL Arsenal Expansion synthetic fixture
+intent: Compare actual performance with one target and declared qualitative ranges.
+internal_marks:
+- bar
+- interval-band
+- line
+- text
+candidate_components:
+- Axis
+- Band
+- Threshold
+- Pulse
+- Label
+- Signal
+encoding_invariants:
+- common_zero_or_declared_domain
+- target_is_explicit
+- ranges_are_ordered
+- no_gauge_arc
+fields:
+- id: label
+  label: Metric
+  type: categorical
+  role: dimension
+- id: actual
+  label: Actual
+  type: quantitative
+  role: measure
+  unit: percent
+- id: target
+  label: Target
+  type: quantitative
+  role: measure
+  unit: percent
+- id: range_min
+  label: Acceptable minimum
+  type: quantitative
+  role: measure
+  unit: percent
+- id: range_max
+  label: Maximum
+  type: quantitative
+  role: measure
+  unit: percent
+records:
+- id: u1
+  label: Test pass rate
+  actual: 92
+  target: 95
+  range_min: 90
+  range_max: 100
+- id: u2
+  label: Review coverage
+  actual: 86
+  target: 90
+  range_min: 80
+  range_max: 100
+derived:
+  comparisons:
+  - - Test pass rate
+    - 92
+    - 95
+    - 90
+    - 100
+  - - Review coverage
+    - 86
+    - 90
+    - 80
+    - 100
+provenance:
+  evidence: synthetic_fixed_data
+  builder: tools/build_arsenal_expansion.py
+  deterministic: true

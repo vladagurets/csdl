@@ -109,7 +109,7 @@ Explain stable system boundaries and permitted interactions.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 11 Architecture).
 - `patterns/visual-dna-sprint-01/specs/11-architecture.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/11-architecture.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/9.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

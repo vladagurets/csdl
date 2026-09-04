@@ -1,0 +1,16 @@
+name: Band
+slug: band
+status: candidate
+category: analytical
+semantic_meaning: A bounded interval on a declared Axis representing range, tolerance, uncertainty, or time window.
+distinct_from:
+  Field: owns context or environment rather than an interval on a domain
+  Frame: owns functional scope rather than lower and upper bounds
+  Signal: highlights one target rather than carrying the interval itself
+relations: [inside, bounds, attached_to, crosses]
+expression_limits: {A: allowed, B: allowed, C: forbidden}
+validation_invariants:
+  - Every Band declares lower and upper bounds on one Axis.
+  - The interval type is explicit.
+  - Fill area cannot imply a value not present in the bounds.
+specification: components/band.md

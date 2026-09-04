@@ -1,0 +1,52 @@
+language: CSDL
+version: 0.6-candidate
+kind: generation-prompt
+id: '031'
+recipe: Roadmap
+expression: {level: B, mode: structural}
+semantic_intent: parallel-workstreams-with-milestones-and-dependencies
+visible_copy:
+  headline: ШЛЯХ ДО НАДІЙНОГО АГЕНТА
+  periods: [NOW, NEXT, LATER]
+  workstreams: [CONTRACT, EVALS, MEMORY]
+  milestones: [BASELINE, GUARDS, AUTONOMY]
+  signal: GUARDS
+component_instances: [Axis, Cluster, Node, Threshold, Band, Trace, Bridge, Signal]
+relations: [orders, groups, depends_on, crosses, bounds, highlights]
+generation_constraints:
+  canvas: 1920x1080
+  orientation: landscape
+  negative_space_percent: 45-55
+  reading_path: periods_across_parallel_workstreams
+  candidate_variation: direction_specific_concept_mechanism_and_topology
+  exact_copy: true
+  no_extra_text: true
+  hard_exclusions: [project management UI, kanban, gantt chrome, decorative cards, gradients, shadows, 3D, icons, logos, footers]
+  candidate_directions:
+    v1:
+      concept: braided workstreams
+      intended_effect: Show three parallel capabilities evolving together and becoming coordinated at GUARDS.
+      dominant_visual_mechanism: CONTRACT, EVALS, and MEMORY are three large Traces that braid across NOW, NEXT, and LATER, tighten at the coral GUARDS crossing, then open toward AUTONOMY.
+      composition_topology: Full-width braided route with one off-center convergence and direct labels integrated into the paths.
+      avoid: [gantt lanes, table, small milestone boxes]
+    v2:
+      concept: expanding reliability corridor
+      intended_effect: Make progress read as increasing operational freedom supported by all three workstreams.
+      dominant_visual_mechanism: A narrow BASELINE corridor widens through GUARDS into a broad AUTONOMY Field, while three workstream Bands reinforce its edges.
+      composition_topology: Strong left-to-right expansion with NOW, NEXT, and LATER marking structural transitions rather than columns.
+      avoid: [project plan grid, equal columns, timeline dots]
+    v3:
+      concept: guarded ascent
+      intended_effect: Show reliability as a collective climb where GUARDS is the bridge between baseline work and autonomy.
+      dominant_visual_mechanism: Three staggered workstream terraces rise from BASELINE toward AUTONOMY; one coral GUARDS Bridge spans the decisive gap.
+      composition_topology: Large diagonal ascent across the canvas with layered terraces and one dramatic bridge opening.
+      avoid: [road illustration, staircase of cards, kanban]
+prompt: >-
+  Create a visually forceful CSDL Constructive Structural Level B 16:9 roadmap
+  with NOW, NEXT, and LATER on one explicit time direction and three peer
+  workstreams: CONTRACT, EVALS, MEMORY. Place BASELINE, GUARDS, and AUTONOMY as
+  milestone conditions, show one critical dependency, and make GUARDS the one
+  muted coral Signal. Use large braided, expanding, or ascending geometry so the
+  roadmap feels like a dynamic system rather than project-management UI. Keep
+  warm paper, graphite, direct horizontal labels, Modular Technical typography,
+  and render only visible_copy verbatim.

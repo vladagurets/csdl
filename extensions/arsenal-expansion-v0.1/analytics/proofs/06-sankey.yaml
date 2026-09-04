@@ -1,0 +1,75 @@
+language: CSDL
+version: 0.2-candidate
+kind: analytical-candidate-proof
+id: proof-sankey
+family: sankey
+dataset:
+  id: sankey-review-flow-v1
+  version: 1.0.0
+  path: analytics/datasets/06-sankey.yaml
+  status: synthetic_fixed_data
+  source: CSDL Arsenal Expansion synthetic fixture
+intent: Show conserved flow between declared stages while exposing loss or imbalance.
+internal_marks:
+- network-node
+- network-edge
+- text
+candidate_components:
+- Node
+- Bridge
+- Trace
+- Label
+- Signal
+encoding_invariants:
+- edge_width_proportional_to_value
+- internal_flow_reconciles
+- losses_are_explicit
+- no_decorative_curvature
+fields:
+- id: source
+  label: Source
+  type: identifier
+  role: dimension
+- id: target
+  label: Target
+  type: identifier
+  role: dimension
+- id: value
+  label: Items
+  type: quantitative
+  role: measure
+  unit: items
+records:
+- id: s1
+  source: Submitted
+  target: Validated
+  value: 100
+- id: s2
+  source: Validated
+  target: Approved
+  value: 80
+- id: s3
+  source: Validated
+  target: Rejected
+  value: 20
+- id: s4
+  source: Approved
+  target: Shipped
+  value: 80
+derived:
+  inbound:
+    Validated: 100.0
+    Approved: 80.0
+    Rejected: 20.0
+    Shipped: 80.0
+  outbound:
+    Submitted: 100.0
+    Validated: 100.0
+    Approved: 80.0
+  internal_balance:
+    Approved: 0.0
+    Validated: 0.0
+provenance:
+  evidence: synthetic_fixed_data
+  builder: tools/build_arsenal_expansion.py
+  deterministic: true

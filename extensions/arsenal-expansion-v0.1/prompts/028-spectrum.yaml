@@ -1,0 +1,51 @@
+language: CSDL
+version: 0.6-candidate
+kind: generation-prompt
+id: '028'
+recipe: Spectrum
+expression: {level: B, mode: structural}
+semantic_intent: one-dimensional-semantic-continuum
+visible_copy:
+  headline: ВІД АВТОМАТИЗАЦІЇ ДО АВТОНОМІЇ
+  endpoints: [ФІКСОВАНІ ПРАВИЛА, САМОСТІЙНІ РІШЕННЯ]
+  positions: [SCRIPT, ASSISTANT, AGENT]
+  threshold: ПОТРІБНІ ПЕРЕВІРКИ
+component_instances: [Axis, Node, Band, Threshold, Signal, Label]
+relations: [orders, bounds, crosses, highlights, attached_to]
+generation_constraints:
+  canvas: 1920x1080
+  orientation: landscape
+  negative_space_percent: 45-60
+  reading_path: continuum
+  candidate_variation: direction_specific_concept_mechanism_and_topology
+  exact_copy: true
+  no_extra_text: true
+  hard_exclusions: [second axis, slider UI, gauge UI, gradients, shadows, 3D, icons, logos, footers]
+  candidate_directions:
+    v1:
+      concept: autonomy terrain
+      intended_effect: Make the continuum feel like a real change in operating freedom rather than a slider.
+      dominant_visual_mechanism: One sweeping rising terrain profile carries SCRIPT, ASSISTANT, and AGENT; a tall coral Threshold fractures the slope where checks become necessary.
+      composition_topology: Large diagonal field rising across the full canvas with labels locked to distinct elevations and one threshold cut.
+      avoid: [thin horizontal line, slider, equal markers]
+    v2:
+      concept: tension arc
+      intended_effect: Show the transition from constrained rules to independent decisions through one continuous but accelerating curve.
+      dominant_visual_mechanism: A monumental arc bends from a compressed fixed-rules origin toward an open autonomous field; the threshold sits at the inflection.
+      composition_topology: Large off-center curve creating two unequal negative spaces, with positions attached directly to the arc.
+      avoid: [linear ruler, gauge, small dots]
+    v3:
+      concept: freedom expansion
+      intended_effect: Make autonomy read as expanding decision space rather than increased score.
+      dominant_visual_mechanism: A narrow regimented corridor opens into a broad decision Field, with SCRIPT, ASSISTANT, and AGENT positioned at structural transitions and one coral verification gate.
+      composition_topology: Strong left-to-right spatial expansion from compressed bands to a dominant open plane.
+      avoid: [numeric scale, stepped cards, conventional spectrum bar]
+prompt: >-
+  Create a visually forceful CSDL Constructive Structural Level B 16:9 slide
+  with exactly one semantic continuum from fixed rules to independent decisions.
+  Position SCRIPT, ASSISTANT, and AGENT without inventing numeric precision.
+  Express increasing autonomy through a large continuous change in field,
+  trajectory, or spatial freedom, with one Threshold labeled ПОТРІБНІ ПЕРЕВІРКИ
+  and one muted coral Signal. Avoid slider, gauge, ruler, and thin-line spectrum
+  conventions. Keep warm paper, graphite, direct horizontal labels, and render
+  only visible_copy verbatim.

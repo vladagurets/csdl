@@ -34,7 +34,7 @@ patterns/visual-dna-sprint-01/
 │   └── agent-reliability-demo.yaml
 ├── drafts/light/16x9/<family>/
 ├── canonical/light/16x9/
-│   └── 02-cover.png … 20-dashboard.png
+│   └── 1.png … 17.png
 ├── previews/landscape/
 ├── contact-sheets/
 │   ├── visual-dna-01-editorial.png

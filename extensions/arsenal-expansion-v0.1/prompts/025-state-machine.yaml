@@ -1,0 +1,50 @@
+language: CSDL
+version: 0.6-candidate
+kind: generation-prompt
+id: '025'
+recipe: State Machine
+expression: {level: B, mode: structural}
+semantic_intent: guarded-state-transitions-with-return
+visible_copy:
+  headline: СТАНИ ЗАДАЧІ
+  states: [DRAFT, REVIEW, READY, REWORK]
+  conditions: [ПЕРЕВІРКИ ПРОЙШЛИ, ЗНАЙДЕНО ВІДХИЛЕННЯ]
+component_instances: [Node, Vector, Threshold, Trace, Signal]
+relations: [transitions_to, directs, crosses, orders, highlights]
+generation_constraints:
+  canvas: 1920x1080
+  orientation: landscape
+  negative_space_percent: 50-60
+  reading_path: guarded_route
+  candidate_variation: direction_specific_concept_mechanism_and_topology
+  exact_copy: true
+  no_extra_text: true
+  hard_exclusions: [flowchart chrome, rounded UI cards, gradients, shadows, 3D, icons, logos, footers]
+  candidate_directions:
+    v1:
+      concept: guarded orbit
+      intended_effect: Make the machine feel like one active system with a real return cycle rather than four boxes in a flowchart.
+      dominant_visual_mechanism: One continuous angular Trace orbits the state labels and cuts through two explicit Threshold gates before terminating at READY.
+      composition_topology: Large off-center loop occupying most of the canvas, with DRAFT, REVIEW, REWORK, and READY locked to different parts of the route.
+      avoid: [equal node row, small cards, generic loop diagram]
+    v2:
+      concept: review pressure chamber
+      intended_effect: Show REVIEW as the decisive chamber that either releases work to READY or ejects it into REWORK.
+      dominant_visual_mechanism: A monumental REVIEW chamber splits one incoming route into a clean upward release and a forceful downward rework return.
+      composition_topology: Strong vertical center with DRAFT entering from one side, READY high and open, and REWORK compressed below.
+      avoid: [diamond decision node, balanced four-quadrant layout, thin arrows]
+    v3:
+      concept: folded execution route
+      intended_effect: Make transition logic memorable through one continuous route with guarded folds.
+      dominant_visual_mechanism: A thick folded ribbon forms an asymmetric N-shaped path; each fold is a Threshold and the REWORK fold visibly feeds REVIEW again.
+      composition_topology: Full-width zigzag route with large state labels embedded in the negative spaces created by the folds.
+      avoid: [circular loop, equal boxes, centered topology]
+prompt: >-
+  Create a visually forceful CSDL Constructive Structural Level B 16:9 slide
+  showing four persistent states with explicit guarded transitions. Make the
+  return from REVIEW to REWORK and back unavoidable, while one successful route
+  terminates at READY. Use large semantic geometry, strong scale contrast, one
+  observed Trace, explicit Threshold conditions, graphite, one muted coral
+  Signal, warm paper, and horizontal exact typography. Do not default to small
+  state boxes connected by thin arrows. Render only the visible_copy strings
+  verbatim.

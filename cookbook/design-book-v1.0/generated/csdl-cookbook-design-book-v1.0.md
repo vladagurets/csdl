@@ -701,9 +701,9 @@ Informative source, unit, axis і metadata мають ті самі text thresho
 Markdown contracts керують meaning; images калібрують visual language. Для Visual DNA діє layered authority:
 
 ## Primary visual authority
-1. `references/canonical/foundation-patterns-v0.1.png` — Modular Technical typography, semantic component vocabulary, geometric contrast, and Anchor/Signal construction.
-2. `references/canonical/pilot-01-quiet-visual-plan-v0.1.png` — Quiet Modular series rhythm, active-space asymmetry, Anchor/Plane/Cluster relationships, and presentation hierarchy.
-3. `references/canonical/quiet-modular-a-b-c-calibration.png` — Level A/B/C density, signal scale, palette rhythm, and family continuity.
+1. `references/canonical/1.png` — Modular Technical typography, semantic component vocabulary, geometric contrast, and Anchor/Signal construction.
+2. `references/canonical/2.png` — Quiet Modular series rhythm, active-space asymmetry, Anchor/Plane/Cluster relationships, and presentation hierarchy.
+3. `references/canonical/3.png` — Level A/B/C density, signal scale, palette rhythm, and family continuity.
 
 ## Secondary execution reference
 - `pilots/01-agentic-discipline/references/style-anchor-light.png` — Direct 16:9 framing, Ukrainian text fidelity, warm paper field, and restrained Quiet spacing.

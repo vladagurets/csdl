@@ -1,0 +1,30 @@
+recipe: '024'
+name: Causal Chain
+pass: direction-specific-recalibration
+status: unpromoted
+source:
+  dimensions: 1672x941
+  mode: RGB
+normalized:
+  dimensions: 1920x1080
+  mode: RGB
+candidates:
+  - variant: v1
+    concept: causal impact
+    source: drafts/light/16x9/024-causal-chain-redesign/source-v1.png
+    source_sha256: 4ddd67c6d06eaebdfeba8c71f28fa5b1777ab25bcd825ab1ca4344b7c2307b5e
+    normalized: drafts/light/16x9/024-causal-chain-redesign/v1.png
+    normalized_sha256: e153b779ef8aba83101fea0798ed8e95b5377f9d62ee82b09468b0a4d7239613
+  - variant: v2
+    concept: evidence reveal
+    source: drafts/light/16x9/024-causal-chain-redesign/source-v2.png
+    source_sha256: e249beb3cb31593bdf16f127903343ae6670beedf6de21ffd01afb0762a3595e
+    normalized: drafts/light/16x9/024-causal-chain-redesign/v2.png
+    normalized_sha256: 2440cfe8dcd8a7d8e43bc9365220648cf0facc52b37cc57d0b333cd35f9a15d3
+  - variant: v3
+    concept: protected release
+    source: drafts/light/16x9/024-causal-chain-redesign/source-v3.png
+    source_sha256: 96011e733da7c04461ad9820ea05dc83cacd9f79b1d971d9a5d1e9d11d42c78a
+    normalized: drafts/light/16x9/024-causal-chain-redesign/v3.png
+    normalized_sha256: 017ff461ed040213cbf51a0817b0287cb8ac25de9ea44831b5c0f30a54f3ada7
+normalization: Mechanical resize only; no crop, redraw, recolor, text edit, or compositional change.

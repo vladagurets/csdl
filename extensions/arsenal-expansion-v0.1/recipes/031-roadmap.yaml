@@ -1,0 +1,35 @@
+id: '031'
+slug: roadmap
+name: Roadmap
+version: 0.6-candidate
+status: candidate
+problem: Coordinate multiple workstreams, milestones, windows, and dependencies on one declared time domain.
+distinguishes_from: Timeline owns one chronological sequence; Roadmap owns parallel workstreams and dependencies.
+allowed_scenarios: [delivery plan, capability evolution, migration plan]
+ingredients:
+  required:
+    - {component: Axis, min: 1, max: 1, default: 1}
+    - {component: Cluster, min: 2, max: 4, default: 3}
+    - {component: Node, min: 3, max: 8, default: 6}
+    - {component: Threshold, min: 1, max: 4, default: 3}
+    - {component: Signal, min: 1, max: 1, default: 1}
+  optional:
+    - {component: Band, min: 0, max: 4, default: 3}
+    - {component: Trace, min: 0, max: 1, default: 1}
+    - {component: Bridge, min: 0, max: 4, default: 2}
+relations:
+  allowed:
+    - {subject: Axis, type: orders, object: Node}
+    - {subject: Cluster, type: groups, object: Node}
+    - {subject: Node, type: depends_on, object: Node}
+    - {subject: Trace, type: crosses, object: Threshold}
+    - {subject: Band, type: bounds, object: Axis}
+  forbidden:
+    - {subject: Cluster, type: contains, object: Cluster}
+assembly_order: [declare time domain, group workstreams, place milestones and windows, mark critical dependency]
+expression_levels: {A: conditional, B: allowed, C: forbidden}
+expression_modes: [structural, analytical]
+content_contract: {required: [headline, periods, workstreams, milestones], exact: true, max_words: 52}
+prompt: prompts/031-roadmap.yaml
+specification: recipes/031-roadmap.md
+record: recipes/031-roadmap.yaml

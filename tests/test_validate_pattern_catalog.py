@@ -15,9 +15,9 @@ def copy_catalog_contract(tmp_path: Path) -> Path:
     target.parent.mkdir(parents=True)
     shutil.copytree(CATALOG, target)
     references = [
-        "references/canonical/foundation-patterns-v0.1.png",
-        "references/canonical/pilot-01-quiet-visual-plan-v0.1.png",
-        "references/canonical/quiet-modular-a-b-c-calibration.png",
+        "references/canonical/1.png",
+        "references/canonical/2.png",
+        "references/canonical/3.png",
         "pilots/01-agentic-discipline/references/style-anchor-light.png",
     ]
     for relative in references:
@@ -46,6 +46,21 @@ def test_rejects_canonical_level_outside_allowed_levels(tmp_path: Path) -> None:
     data["families"][1]["canonical_level"] = "B"
     manifest.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
     assert "family 02 canonical_level must be included in allowed_levels" in validate_pattern_catalog(manifest)
+
+
+def test_rejects_generated_asset_outside_incremental_sequence(tmp_path: Path) -> None:
+    manifest = copy_catalog_contract(tmp_path)
+    data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
+    data["families"][1]["evidence"]["canonical_example"] = (
+        "canonical/light/16x9/99.png"
+    )
+    manifest.write_text(
+        yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8"
+    )
+    assert (
+        "family 02 generated canonical path must equal canonical/light/16x9/1.png"
+        in validate_pattern_catalog(manifest)
+    )
 
 
 def test_rejects_missing_required_spec_section(tmp_path: Path) -> None:

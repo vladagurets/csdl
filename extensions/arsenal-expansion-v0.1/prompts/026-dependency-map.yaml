@@ -1,0 +1,50 @@
+language: CSDL
+version: 0.6-candidate
+kind: generation-prompt
+id: '026'
+recipe: Dependency Map
+expression: {level: B, mode: structural}
+semantic_intent: prerequisites-and-one-critical-blocker
+visible_copy:
+  headline: ЩО БЛОКУЄ SHIP
+  nodes: [SPEC, API, UI, TESTS, SHIP]
+  blocker: API НЕСТАБІЛЬНИЙ
+component_instances: [Node, Bridge, Trace, Signal, Label]
+relations: [depends_on, connected_to, orders, highlights, attached_to]
+generation_constraints:
+  canvas: 1920x1080
+  orientation: landscape
+  negative_space_percent: 50-65
+  reading_path: dependencies_to_target
+  candidate_variation: direction_specific_concept_mechanism_and_topology
+  exact_copy: true
+  no_extra_text: true
+  hard_exclusions: [network cloud, radial decoration, UI cards, gradients, shadows, 3D, icons, logos, footers]
+  candidate_directions:
+    v1:
+      concept: load-bearing bridge
+      intended_effect: Make dependency risk feel structural and physical without using literal illustration.
+      dominant_visual_mechanism: SPEC and API form the critical support under a wide UI and TESTS bridge leading to SHIP; instability at API visibly breaks the load path.
+      composition_topology: Long suspended span across the canvas with an off-center coral fracture at the single critical support.
+      avoid: [node cloud, generic network, equal boxes]
+    v2:
+      concept: dependency gravity
+      intended_effect: Show that SHIP is held up by UI and TESTS, which both depend on one unstable API load point.
+      dominant_visual_mechanism: A large SHIP mass hangs from two converging Bridges whose weight resolves through API into SPEC.
+      composition_topology: Top-heavy hanging composition with one compressed dependency spine descending into the lower field.
+      avoid: [chronological pipeline, horizontal tree, small labels]
+    v3:
+      concept: critical chokepoint
+      intended_effect: Make API instability read as the one bottleneck constraining every downstream dependency.
+      dominant_visual_mechanism: Wide SPEC, UI, and TESTS dependency streams converge through one narrow coral API throat before expanding toward SHIP.
+      composition_topology: Dramatic left-to-right compression and release, with the bottleneck occupying the center and large fields on both sides.
+      avoid: [radial topology, repeated cards, thin connector web]
+prompt: >-
+  Create a visually forceful CSDL Constructive Structural Level B 16:9 slide
+  showing prerequisite semantics rather than chronology. SHIP depends on TESTS
+  and UI; TESTS and UI depend on API; API depends on SPEC. Make API НЕСТАБІЛЬНИЙ
+  the single structural blocker through large semantic geometry and one dominant
+  coral Signal. Use strong load paths, compression, suspension, or support
+  relationships instead of a generic node network. Distance and angle carry no
+  data. Keep warm paper, graphite, precise Bridges, horizontal Modular Technical
+  typography, and only the visible_copy strings verbatim.

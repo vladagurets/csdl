@@ -1,0 +1,32 @@
+id: '027'
+slug: claim-evidence
+name: Claim / Evidence
+version: 0.6-candidate
+status: candidate
+problem: Connect one claim to bounded evidence and an explicit confidence or verdict.
+distinguishes_from: Checklist evaluates readiness questions; Claim / Evidence evaluates support for a proposition.
+allowed_scenarios: [technical conclusion, research claim, done-versus-evidence review]
+ingredients:
+  required:
+    - {component: Anchor, min: 1, max: 1, default: 1}
+    - {component: Cluster, min: 1, max: 1, default: 1}
+    - {component: Node, min: 2, max: 5, default: 3}
+    - {component: Trace, min: 1, max: 1, default: 1}
+    - {component: Signal, min: 1, max: 1, default: 1}
+  optional:
+    - {component: Threshold, min: 0, max: 1, default: 0}
+relations:
+  allowed:
+    - {subject: Node, type: supports, object: Anchor}
+    - {subject: Cluster, type: groups, object: Node}
+    - {subject: Trace, type: connected_to, object: Anchor}
+    - {subject: Signal, type: highlights, object: Anchor}
+  forbidden:
+    - {subject: Node, type: causes, object: Anchor}
+assembly_order: [state claim, bind evidence, declare limitation or confidence, issue verdict once]
+expression_levels: {A: allowed, B: allowed, C: conditional}
+expression_modes: [editorial, structural]
+content_contract: {required: [headline, claim, evidence, verdict], exact: true, max_words: 48}
+prompt: prompts/027-claim-evidence.yaml
+specification: recipes/027-claim-evidence.md
+record: recipes/027-claim-evidence.yaml

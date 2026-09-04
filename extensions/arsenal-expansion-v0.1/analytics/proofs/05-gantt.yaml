@@ -1,0 +1,90 @@
+language: CSDL
+version: 0.2-candidate
+kind: analytical-candidate-proof
+id: proof-gantt
+family: gantt
+dataset:
+  id: gantt-capability-plan-v1
+  version: 1.0.0
+  path: analytics/datasets/05-gantt.yaml
+  status: synthetic_fixed_data
+  source: CSDL Arsenal Expansion synthetic fixture
+intent: Compare task intervals, overlap, milestones, and explicit dependencies on
+  one time domain.
+internal_marks:
+- interval-band
+- point
+- line
+- text
+candidate_components:
+- Axis
+- Band
+- Threshold
+- Trace
+- Label
+- Signal
+encoding_invariants:
+- start_lte_end
+- shared_time_domain
+- dependencies_reference_declared_tasks
+- overlap_is_not_progress
+fields:
+- id: task
+  label: Task
+  type: categorical
+  role: dimension
+- id: start
+  label: Start
+  type: temporal
+  role: dimension
+- id: end
+  label: End
+  type: temporal
+  role: dimension
+- id: depends_on
+  label: Dependency
+  type: identifier
+  role: identifier
+records:
+- id: g1
+  task: Contract
+  start: '2026-09-01'
+  end: '2026-09-12'
+  depends_on: null
+- id: g2
+  task: Evals
+  start: '2026-09-08'
+  end: '2026-09-24'
+  depends_on: Contract
+- id: g3
+  task: Memory
+  start: '2026-09-15'
+  end: '2026-10-02'
+  depends_on: Contract
+- id: g4
+  task: Autonomy
+  start: '2026-09-29'
+  end: '2026-10-10'
+  depends_on: Evals
+derived:
+  intervals:
+  - - Contract
+    - '2026-09-01'
+    - '2026-09-12'
+    - null
+  - - Evals
+    - '2026-09-08'
+    - '2026-09-24'
+    - Contract
+  - - Memory
+    - '2026-09-15'
+    - '2026-10-02'
+    - Contract
+  - - Autonomy
+    - '2026-09-29'
+    - '2026-10-10'
+    - Evals
+provenance:
+  evidence: synthetic_fixed_data
+  builder: tools/build_arsenal_expansion.py
+  deterministic: true

@@ -111,7 +111,7 @@ Make one exact quantity the dominant explanatory object.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 04 Big Number).
 - `patterns/visual-dna-sprint-01/specs/04-big-number.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/04-big-number.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/3.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

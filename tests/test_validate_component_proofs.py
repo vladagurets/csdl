@@ -21,9 +21,9 @@ def copy_library_with_proof_evidence(tmp_path: Path) -> Path:
     target = copy_library_contract(tmp_path)
     repository_root = target.parents[1]
     for relative in [
-        "patterns/visual-dna-sprint-01/canonical/light/16x9/04-big-number.png",
-        "patterns/visual-dna-sprint-01/canonical/light/16x9/11-architecture.png",
-        "patterns/visual-dna-sprint-01/canonical/light/16x9/19-chart.png",
+        "patterns/visual-dna-sprint-01/canonical/light/16x9/3.png",
+        "patterns/visual-dna-sprint-01/canonical/light/16x9/9.png",
+        "patterns/visual-dna-sprint-01/canonical/light/16x9/16.png",
         "patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml",
     ]:
         destination = repository_root / relative

@@ -1,0 +1,51 @@
+language: CSDL
+version: 0.6-candidate
+kind: generation-prompt
+id: '024'
+recipe: Causal Chain
+expression: {level: B, mode: structural}
+semantic_intent: cause-through-mechanism-to-consequence
+visible_copy:
+  headline: ЧОМУ ПЕРЕВІРКА ЗУПИНЯЄ РЕГРЕСІЮ
+  cause: ЗМІНА КОДУ
+  mechanism: ТЕСТ ВИЯВЛЯЄ ВІДХИЛЕННЯ
+  consequence: ДЕФЕКТ НЕ ПОТРАПЛЯЄ В РЕЛІЗ
+component_instances: [Node, Vector, Signal, Label]
+relations: [causes, directs, highlights, attached_to]
+generation_constraints:
+  canvas: 1920x1080
+  orientation: landscape
+  negative_space_percent: 45-60
+  reading_path: cause_through_mechanism_to_protected_release
+  candidate_variation: direction_specific_concept_mechanism_and_topology
+  exact_copy: true
+  no_extra_text: true
+  hard_exclusions: [UI chrome, decorative cards, gradients, shadows, 3D, random dots, logos, footers]
+  candidate_directions:
+    v1:
+      concept: causal impact
+      intended_effect: Make the test feel like the decisive physical event that stops a defect, not a label between two boxes.
+      dominant_visual_mechanism: A large diagonal code-to-release Vector collides with a tall coral test barrier; the defect route visibly terminates at the collision.
+      composition_topology: Asymmetrical diagonal sweep across the full canvas with an oversized off-center collision point and a protected release zone.
+      avoid: [three equal stages, small floating boxes, thin timeline arrow]
+    v2:
+      concept: evidence reveal
+      intended_effect: Show that the test exposes a deviation hidden inside a code change before release.
+      dominant_visual_mechanism: A monumental central inspection aperture reveals a dark deviation inside the incoming code mass; only a clean narrow route continues beyond it.
+      composition_topology: Two unequal spatial Fields divided by one vertical aperture, with the mechanism occupying the visual center and copy anchored at opposing edges.
+      avoid: [flowchart, repeated nodes, symmetric triptych]
+    v3:
+      concept: protected release
+      intended_effect: Make the consequence read as a clean area actively protected by verification.
+      dominant_visual_mechanism: One strong test boundary wraps the release Field while a dark defect mass presses against the outside and is stopped by one coral Signal hinge.
+      composition_topology: Large protected Field occupying most of the right side, compressed cause zone on the left, and a boundary-led reading path instead of a chain.
+      avoid: [pipeline, centered diagram, equal columns]
+prompt: >-
+  Create a CSDL Constructive Structural 16:9 educational slide. Show one causal
+  statement in which verification is the decisive mechanism that prevents a
+  regression from reaching release. Use large semantic geometry, strong scale
+  contrast, an active asymmetrical composition, and one muted coral Signal at
+  the decisive causal event. Do not default to three equal boxes, a thin
+  timeline, or a generic flowchart. Keep warm paper, graphite typography,
+  Modular Technical display, horizontal labels, and controlled negative space.
+  Render only the visible_copy strings verbatim.

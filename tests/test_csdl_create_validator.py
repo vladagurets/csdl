@@ -64,7 +64,7 @@ def build_pilot(tmp_path: Path, rhythm: list[str]) -> Path:
         slug = f"slide-{card_id}"
         stem = f"{card_id}-{slug}"
         exact_copy = [f"HEADLINE {card_id}", f"Supporting copy {card_id}."]
-        asset = root / f"canonical/light/16x9/{stem}.png"
+        asset = root / f"canonical/light/16x9/{index}.png"
         shutil.copy2(canonical_template, asset)
         shutil.copy2(preview_template, root / f"previews/landscape/{stem}.png")
 
@@ -121,7 +121,7 @@ def build_pilot(tmp_path: Path, rhythm: list[str]) -> Path:
                 "components": ["Anchor", "Signal"],
                 "signal": "coral",
                 "max_supporting_elements": 2,
-                "asset": f"canonical/light/16x9/{stem}.png",
+                "asset": f"canonical/light/16x9/{index}.png",
                 "prompt": f"prompts/{stem}.yaml",
                 "exact_copy": exact_copy,
             }
@@ -209,6 +209,21 @@ def test_rejects_rhythm_length_different_from_card_count(tmp_path: Path) -> None
     errors = validator.validate(root, require_drafts=True)
 
     assert "pilot.rhythm must contain exactly 3 entries" in errors
+
+
+def test_rejects_descriptive_canonical_asset_name(tmp_path: Path) -> None:
+    validator = load_validator()
+    root = build_pilot(tmp_path, ["A", "B", "C"])
+    manifest_path = root / "manifest.yaml"
+    manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
+    manifest["cards"][0]["asset"] = "canonical/light/16x9/01-slide-01.png"
+    manifest_path.write_text(
+        yaml.safe_dump(manifest, sort_keys=False), encoding="utf-8"
+    )
+
+    errors = validator.validate(root, require_drafts=True)
+
+    assert "card 01 asset must equal canonical/light/16x9/1.png" in errors
 
 
 def test_rejects_missing_candidate_directions_when_required(tmp_path: Path) -> None:

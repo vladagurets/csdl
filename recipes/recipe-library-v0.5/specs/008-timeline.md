@@ -108,7 +108,7 @@ Show ordered change over time with one unambiguous reading direction.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 08 Timeline).
 - `patterns/visual-dna-sprint-01/specs/08-timeline.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/08-timeline.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/6.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

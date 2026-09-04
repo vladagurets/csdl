@@ -148,6 +148,7 @@ def validate_pattern_catalog(path: Path) -> list[str]:
     forbidden = schema.get("forbidden_placeholders", [])
     evidence_rules = schema.get("evidence_rules", {})
 
+    generated_sequence = 0
     for family in families:
         family_id = str(family.get("id", "??"))
         slug = str(family.get("slug", ""))
@@ -235,8 +236,16 @@ def validate_pattern_catalog(path: Path) -> list[str]:
             if evidence.get("candidate_generation_required") is not expected_generation:
                 errors.append(f"family {family_id} candidate_generation_required must be {str(expected_generation).lower()}")
             canonical = str(evidence.get("canonical_example", ""))
-            if mode == "generated" and canonical != f"canonical/light/16x9/{family_id}-{slug}.png":
-                errors.append(f"family {family_id} generated canonical path must follow schema")
+            if mode == "generated":
+                generated_sequence += 1
+                expected_canonical = (
+                    f"canonical/light/16x9/{generated_sequence}.png"
+                )
+                if canonical != expected_canonical:
+                    errors.append(
+                        f"family {family_id} generated canonical path must equal "
+                        f"{expected_canonical}"
+                    )
             if mode == "pilot_reference" and not re.fullmatch(r"[0-9a-f]{64}", str(evidence.get("sha256", ""))):
                 errors.append(f"family {family_id} pilot SHA-256 must contain 64 lowercase hex characters")
 

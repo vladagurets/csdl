@@ -128,7 +128,7 @@ validation_invariants:
 - No undeclared layout or geometry terminology is present.
 - One main idea, one visual mechanism, and one dominant Signal remain observable.
 canonical_examples:
-- path: pilots/01-agentic-discipline/canonical/light/16x9/07-share-card.png
+- path: pilots/01-agentic-discipline/canonical/light/16x9/7.png
   role: accepted Pilot 01 evidence
 evidence:
 - path: pilots/01-agentic-discipline/prompts/07-share-card.yaml
@@ -137,7 +137,7 @@ evidence:
 - path: pilots/01-agentic-discipline/evaluation/review.md
   locator: Slide 07 — Share formula / Level C
   supports: Three-candidate selection, exact-copy, readability, and score evidence.
-- path: pilots/01-agentic-discipline/canonical/light/16x9/07-share-card.png
+- path: pilots/01-agentic-discipline/canonical/light/16x9/7.png
   locator: canonical raster
   supports: Accepted presentation-scale example.
 compatibility:

@@ -1,0 +1,51 @@
+language: CSDL
+version: 0.6-candidate
+kind: generation-prompt
+id: '027'
+recipe: Claim / Evidence
+expression: {level: B, mode: editorial}
+semantic_intent: claim-supported-by-bounded-evidence
+visible_copy:
+  headline: DONE ПОТРЕБУЄ ДОКАЗУ
+  claim: ЗАДАЧА ГОТОВА
+  evidence: [ТЕСТИ ПРОЙШЛИ, DIFF ПЕРЕГЛЯНУТО, ЛОГИ ЧИСТІ]
+  verdict: ПІДТВЕРДЖЕНО
+component_instances: [Anchor, Cluster, Node, Trace, Signal]
+relations: [supports, groups, connected_to, highlights]
+generation_constraints:
+  canvas: 1920x1080
+  orientation: landscape
+  negative_space_percent: 45-60
+  reading_path: evidence_to_claim_to_verdict
+  candidate_variation: direction_specific_concept_mechanism_and_topology
+  exact_copy: true
+  no_extra_text: true
+  hard_exclusions: [checkmark grid, badges, UI cards, gradients, shadows, 3D, icons, logos, footers]
+  candidate_directions:
+    v1:
+      concept: proof vault
+      intended_effect: Make evidence visibly load-bearing rather than a decorative list beneath a claim.
+      dominant_visual_mechanism: The claim is a large graphite slab held by three distinct evidence supports, with the coral verdict acting as the locking keystone.
+      composition_topology: Heavy upper claim plane, three uneven supports rising from the lower field, and one off-center verdict lock.
+      avoid: [three bullets, checklist, centered card]
+    v2:
+      concept: evidence beam
+      intended_effect: Show that DONE stays credible only while all three evidence points support one argument.
+      dominant_visual_mechanism: One long claim beam spans the canvas and is tensioned by three evidence anchors; the verdict appears at the decisive load point.
+      composition_topology: Strong diagonal or cantilevered beam with asymmetrical evidence anchors and a large open counterweight field.
+      avoid: [columns, badge, equal evidence boxes]
+    v3:
+      concept: argument aperture
+      intended_effect: Turn three bounded evidence signals into one focused claim and verdict.
+      dominant_visual_mechanism: Three evidence Traces converge through one narrow aperture into a large claim Anchor, then terminate in one coral verdict plane.
+      composition_topology: Broad evidence fan on one side, compressed proof aperture at center, oversized claim and verdict field on the other.
+      avoid: [causal arrows, flowchart, symmetrical funnel]
+prompt: >-
+  Create a visually forceful CSDL Constructive Editorial Level B 16:9 slide.
+  One large claim Anchor is supported by exactly three bounded evidence items
+  and locked by one muted coral verdict Signal. Evidence supports the claim; it
+  does not cause it. Use large load-bearing, tension, or focusing geometry so the
+  argument has a memorable silhouette. Avoid a bullet list, badge, card, or
+  checklist composition. Keep warm paper, graphite, strong Modular Technical
+  hierarchy, horizontal exact text, and controlled asymmetrical space. Render
+  only the visible_copy strings verbatim.

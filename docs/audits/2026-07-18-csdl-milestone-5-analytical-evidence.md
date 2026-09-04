@@ -22,7 +22,7 @@ That evidence does not establish family-specific contracts for bars, scatterplot
 
 - Fixed dataset: `patterns/visual-dna-sprint-01/data/agent-reliability-demo.yaml`.
 - Families/contracts: `manifest.yaml`, specs and prompts `17-kpi` through `20-dashboard`.
-- Accepted rasters: `canonical/light/16x9/17-kpi.png` through `20-dashboard.png`.
+- Accepted rasters: `canonical/light/16x9/14.png` through `17.png`.
 - Review evidence: `evaluation/review.md`, including cell-by-cell table checks, a measured chart geometry audit, source/unit checks, candidate rejections, and the analytical contact sheet.
 
 Confirmed evidence:

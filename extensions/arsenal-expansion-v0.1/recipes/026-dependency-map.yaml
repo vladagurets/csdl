@@ -1,0 +1,30 @@
+id: '026'
+slug: dependency-map
+name: Dependency Map
+version: 0.6-candidate
+status: candidate
+problem: Expose prerequisites, blockers, and a critical dependency without implying time or ownership.
+distinguishes_from: Architecture owns system boundaries; Dependency Map owns prerequisite semantics.
+allowed_scenarios: [delivery blockers, module prerequisites, capability dependencies]
+ingredients:
+  required:
+    - {component: Node, min: 3, max: 7, default: 5}
+    - {component: Bridge, min: 2, max: 8, default: 4}
+    - {component: Signal, min: 1, max: 1, default: 1}
+  optional:
+    - {component: Trace, min: 0, max: 1, default: 1}
+    - {component: Cluster, min: 0, max: 2, default: 0}
+relations:
+  allowed:
+    - {subject: Node, type: depends_on, object: Node}
+    - {subject: Bridge, type: connected_to, object: Node}
+    - {subject: Trace, type: orders, object: Node}
+  forbidden:
+    - {subject: Node, type: contains, object: Node}
+assembly_order: [declare target, declare prerequisites, connect dependencies, mark blocker or critical route]
+expression_levels: {A: allowed, B: allowed, C: forbidden}
+expression_modes: [structural]
+content_contract: {required: [headline, target, dependencies], exact: true, max_words: 38}
+prompt: prompts/026-dependency-map.yaml
+specification: recipes/026-dependency-map.md
+record: recipes/026-dependency-map.yaml

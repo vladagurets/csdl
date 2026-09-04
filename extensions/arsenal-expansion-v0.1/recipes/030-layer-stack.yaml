@@ -1,0 +1,30 @@
+id: '030'
+slug: layer-stack
+name: Layer Stack
+version: 0.6-candidate
+status: candidate
+problem: Show ordered layers of abstraction or responsibility without implying authority.
+distinguishes_from: Hierarchy owns parent-child decomposition; Layer Stack owns ordered abstraction levels.
+allowed_scenarios: [software stack, protocol stack, responsibility layers]
+ingredients:
+  required:
+    - {component: Axis, min: 1, max: 1, default: 1}
+    - {component: Cluster, min: 3, max: 6, default: 4}
+    - {component: Divider, min: 2, max: 5, default: 3}
+    - {component: Label, min: 3, max: 6, default: 4}
+  optional:
+    - {component: Signal, min: 0, max: 1, default: 1}
+relations:
+  allowed:
+    - {subject: Axis, type: orders, object: Cluster}
+    - {subject: Divider, type: separates, object: Cluster}
+    - {subject: Label, type: attached_to, object: Cluster}
+  forbidden:
+    - {subject: Cluster, type: contains, object: Cluster}
+assembly_order: [declare abstraction direction, order layers, label responsibilities, emphasize one interface]
+expression_levels: {A: allowed, B: allowed, C: forbidden}
+expression_modes: [structural]
+content_contract: {required: [headline, layers], exact: true, max_words: 36}
+prompt: prompts/030-layer-stack.yaml
+specification: recipes/030-layer-stack.md
+record: recipes/030-layer-stack.yaml

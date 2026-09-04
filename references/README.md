@@ -4,6 +4,10 @@
 
 `canonical/` contains approved visual anchors that may guide future generation. They still contain AI-rendered specimen text and are not publication assets unless explicitly promoted under a pilot release.
 
+Canonical PNG filenames are unpadded one-based positions only (`1.png`,
+`2.png`, and so on). The ordered authority records own their semantic roles;
+filenames do not duplicate descriptive labels.
+
 ## Superseded references
 
 Rejected explorations are not kept in the active tree. Their decision history is summarized in `DECISIONS.md`, the Foundation specification, and relevant provenance sidecars; original files remain recoverable from Git history.

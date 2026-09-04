@@ -115,7 +115,7 @@ Make a state change legible without reducing it to cosmetic restyling.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 07 Before / After).
 - `patterns/visual-dna-sprint-01/specs/07-before-after.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/07-before-after.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/5.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

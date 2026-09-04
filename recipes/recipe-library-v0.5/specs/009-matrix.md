@@ -111,7 +111,7 @@ Position a small set of options across two independent dimensions.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 09 Matrix).
 - `patterns/visual-dna-sprint-01/specs/09-matrix.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/09-matrix.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/7.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

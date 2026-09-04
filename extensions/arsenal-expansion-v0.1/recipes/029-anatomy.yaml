@@ -1,0 +1,31 @@
+id: '029'
+slug: anatomy
+name: Anatomy
+version: 0.6-candidate
+status: candidate
+problem: Explain the functional parts of one object or concept without implying ownership or system boundaries.
+distinguishes_from: Architecture owns interacting systems; Anatomy owns the functional parts of one subject.
+allowed_scenarios: [agent task anatomy, prompt anatomy, protocol anatomy]
+ingredients:
+  required:
+    - {component: Anchor, min: 1, max: 1, default: 1}
+    - {component: Cluster, min: 1, max: 1, default: 1}
+    - {component: Node, min: 3, max: 6, default: 5}
+    - {component: Label, min: 3, max: 6, default: 5}
+  optional:
+    - {component: Bridge, min: 0, max: 5, default: 0}
+    - {component: Signal, min: 0, max: 1, default: 1}
+relations:
+  allowed:
+    - {subject: Cluster, type: groups, object: Node}
+    - {subject: Label, type: attached_to, object: Node}
+    - {subject: Node, type: supports, object: Anchor}
+  forbidden:
+    - {subject: Frame, type: contains, object: Node}
+assembly_order: [name subject, declare functional parts, label each part directly, emphasize one decisive part]
+expression_levels: {A: allowed, B: allowed, C: forbidden}
+expression_modes: [editorial, structural]
+content_contract: {required: [headline, parts], exact: true, max_words: 42}
+prompt: prompts/029-anatomy.yaml
+specification: recipes/029-anatomy.md
+record: recipes/029-anatomy.yaml

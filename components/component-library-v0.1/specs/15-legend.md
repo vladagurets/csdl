@@ -80,4 +80,4 @@ Required fields: `id`, `items`, `reason_direct_labels_fail`. Optional fields: `p
 - `specs/2026-07-17-csdl-v0.1-design.md`, Analytical Mode: direct Labels are preferred over a Legend;
 - `patterns/visual-dna-sprint-01/specs/19-chart.md`: accepted single-series evidence requires direct point Labels;
 - `patterns/visual-dna-sprint-01/evaluation/review.md`, Chart: no Legend or extra series is present;
-- `references/canonical/foundation-patterns-v0.1.png`: construction calibration for a text-and-form key only, not family-use evidence.
+- `references/canonical/1.png`: construction calibration for a text-and-form key only, not family-use evidence.

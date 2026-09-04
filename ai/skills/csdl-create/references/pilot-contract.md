@@ -25,7 +25,7 @@ pilots/{ID-topic-name}/
 ├── drafts/light/16x9/
 │   └── {card-id}-{slug}/{card-id}-{slug}-v1.png ... -v3.png × card_count
 ├── canonical/light/16x9/
-│   └── {card-id}-{slug}.png × card_count
+│   └── 1.png ... {card_count}.png
 ├── previews/landscape/
 │   └── {card-id}-{slug}.png × card_count
 ├── contact-sheets/
@@ -42,9 +42,9 @@ Draft PNG files remain ignored by Git. Persist their filenames, rejection eviden
 
 Attach all four images to every built-in generation call, in this order:
 
-1. `references/canonical/foundation-patterns-v0.1.png`
-2. `references/canonical/pilot-01-quiet-visual-plan-v0.1.png`
-3. `references/canonical/quiet-modular-a-b-c-calibration.png`
+1. `references/canonical/1.png`
+2. `references/canonical/2.png`
+3. `references/canonical/3.png`
 4. `pilots/01-agentic-discipline/references/style-anchor-light.png`
 
 Treat the first three as primary Visual DNA authority and the Pilot 01 landscape anchor as secondary execution evidence. Record their repository paths and SHA-256 values in `references/reference-package.md`.
@@ -56,7 +56,7 @@ Do not generate a replacement style anchor unless the user separately approves t
 Keep the existing Pilot 01 shape and add these fields to every card:
 
 ```yaml
-asset: canonical/light/16x9/01-example.png
+asset: canonical/light/16x9/1.png
 prompt: prompts/01-example.yaml
 exact_copy:
   - "Every visible line"
@@ -71,6 +71,10 @@ The pilot header must declare:
 - `card_count` equal to the approved positive slide count;
 - `rhythm` containing exactly `card_count` values from `A`, `B`, and `C`;
 - contiguous zero-padded card IDs from `01` through the final card.
+
+Canonical asset filenames are separate from card IDs and slugs. Use the
+card's unpadded one-based manifest position, beginning with `1.png` in every
+pilot. Do not add zero padding or descriptive text to canonical filenames.
 
 For a standard seven-slide series, propose `rhythm: [A, A, B, A, B, A, C]`. For any other count, persist the content-led rhythm approved during intake. The standard seven-slide rhythm remains a design default, not a validator-enforced length.
 

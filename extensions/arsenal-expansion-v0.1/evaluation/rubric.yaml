@@ -1,0 +1,17 @@
+language: CSDL
+version: 0.1.0
+kind: visual-selection-rubric
+criteria:
+  - clarity
+  - presentation_readability
+  - memorability
+  - csdl_identity
+  - restraint
+  - text_fidelity
+  - semantic_integrity
+thresholds:
+  clarity: 5
+  presentation_readability: 5
+  text_fidelity: 5
+  other_criteria_minimum: 4
+  average_minimum: 4.4

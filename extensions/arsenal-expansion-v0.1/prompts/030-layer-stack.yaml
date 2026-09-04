@@ -1,0 +1,50 @@
+language: CSDL
+version: 0.6-candidate
+kind: generation-prompt
+id: '030'
+recipe: Layer Stack
+expression: {level: B, mode: structural}
+semantic_intent: ordered-abstraction-layers-without-authority
+visible_copy:
+  headline: ШАРИ AGENTIC SYSTEM
+  direction: ВІД ПОЛІТИКИ ДО ВИКОНАННЯ
+  layers: [POLICY, ORCHESTRATION, TOOLS, DATA]
+  signal: ORCHESTRATION
+component_instances: [Axis, Cluster, Divider, Label, Signal]
+relations: [orders, separates, attached_to, highlights]
+generation_constraints:
+  canvas: 1920x1080
+  orientation: landscape
+  negative_space_percent: 50-60
+  reading_path: abstraction_direction
+  candidate_variation: direction_specific_concept_mechanism_and_topology
+  exact_copy: true
+  no_extra_text: true
+  hard_exclusions: [layer cake illustration, nested hierarchy, repeated cards, gradients, shadows, 3D, icons, logos, footers]
+  candidate_directions:
+    v1:
+      concept: tectonic strata
+      intended_effect: Make the abstraction layers feel like large operational forces with ORCHESTRATION as the active seam.
+      dominant_visual_mechanism: Four massive horizontal strata shift against one another; the coral ORCHESTRATION seam transfers movement between POLICY and execution layers.
+      composition_topology: Full-width layered field with uneven offsets, one strong vertical direction cue, and headline integrated into the open upper edge.
+      avoid: [small layer cake, equal cards, centered stack]
+    v2:
+      concept: responsibility spine
+      intended_effect: Show four peer scopes ordered around one common execution direction without implying parent-child containment.
+      dominant_visual_mechanism: One tall abstraction Axis acts as a spine crossed by four large transverse planes; ORCHESTRATION is the coral joint that connects policy to tools and data.
+      composition_topology: Vertical off-center spine with alternating left-right planes and large direct labels.
+      avoid: [nested boxes, horizontal stack, decorative timeline]
+    v3:
+      concept: execution cascade
+      intended_effect: Make movement from policy to execution feel directional and staged without becoming a pipeline.
+      dominant_visual_mechanism: Four open planes descend diagonally across the canvas as peer scopes; ORCHESTRATION forms the only solid coral transfer plane.
+      composition_topology: Large diagonal staircase with controlled overlap, open boundaries, and a strong lower execution destination.
+      avoid: [pipeline arrows, layer cake, identical rectangles]
+prompt: >-
+  Create a visually forceful CSDL Constructive Structural Level B 16:9 slide
+  showing four ordered layers of responsibility. They are peer scopes ordered by
+  abstraction, not parent and child boxes. Use large plane, spine, seam, or
+  cascade geometry and make ORCHESTRATION the one muted coral transfer Signal.
+  Avoid a small centered stack, repeated cards, nested hierarchy, or pipeline.
+  Keep warm paper, graphite, controlled asymmetry, direct horizontal labels,
+  Modular Technical typography, and render only visible_copy verbatim.

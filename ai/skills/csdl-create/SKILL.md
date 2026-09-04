@@ -99,7 +99,12 @@ Persist in `evaluation/review.md`:
 
 Record rubric scores in `evaluation/scores.csv`. Require clarity, presentation readability, and text fidelity at `5/5`; every other criterion at least `4/5`; average at least `4.4`.
 
-Copy only selected assets to `canonical/light/16x9/`. Build one `1280×720` preview per slide and one `3840×2160` contact sheet with a grid adapted to the approved slide count. Review the sequence as a family, not only as independent slides.
+Copy selected assets to `canonical/light/16x9/` using only their unpadded
+one-based positions: `1.png` through `{card_count}.png`. Keep descriptive
+`{card-id}-{slug}.png` names for previews and descriptive stems for prompts and
+drafts. Build one `1280×720` preview per slide and one `3840×2160` contact sheet
+with a grid adapted to the approved slide count. Review the sequence as a
+family, not only as independent slides.
 
 ### 7. Validate
 

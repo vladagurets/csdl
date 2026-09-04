@@ -107,7 +107,7 @@ Make a small branching rule and its consequences explicit.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 15 Decision Tree).
 - `patterns/visual-dna-sprint-01/specs/15-decision-tree.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `patterns/visual-dna-sprint-01/canonical/light/16x9/15-decision-tree.png` — Accepted presentation-scale example. (canonical raster).
+- `patterns/visual-dna-sprint-01/canonical/light/16x9/12.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

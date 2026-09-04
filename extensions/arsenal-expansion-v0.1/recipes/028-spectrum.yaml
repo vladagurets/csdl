@@ -1,0 +1,31 @@
+id: '028'
+slug: spectrum
+name: Spectrum
+version: 0.6-candidate
+status: candidate
+problem: Position a small set of concepts on one declared semantic continuum.
+distinguishes_from: Matrix uses two independent dimensions; Spectrum owns exactly one continuum.
+allowed_scenarios: [maturity continuum, automation continuum, risk continuum]
+ingredients:
+  required:
+    - {component: Axis, min: 1, max: 1, default: 1}
+    - {component: Node, min: 2, max: 6, default: 3}
+    - {component: Band, min: 1, max: 3, default: 2}
+    - {component: Signal, min: 1, max: 1, default: 1}
+  optional:
+    - {component: Threshold, min: 0, max: 2, default: 1}
+    - {component: Label, min: 0, max: 6, default: 3}
+relations:
+  allowed:
+    - {subject: Axis, type: orders, object: Node}
+    - {subject: Band, type: bounds, object: Axis}
+    - {subject: Node, type: crosses, object: Threshold}
+  forbidden:
+    - {subject: Axis, type: separates, object: Axis}
+assembly_order: [declare continuum endpoints, declare bands, position concepts, mark one meaningful position]
+expression_levels: {A: allowed, B: allowed, C: forbidden}
+expression_modes: [structural, analytical]
+content_contract: {required: [headline, endpoints, positions], exact: true, max_words: 34}
+prompt: prompts/028-spectrum.yaml
+specification: recipes/028-spectrum.md
+record: recipes/028-spectrum.yaml

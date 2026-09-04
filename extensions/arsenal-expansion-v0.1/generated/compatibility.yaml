@@ -1,0 +1,223 @@
+extension: arsenal-expansion-v0.1
+baseline:
+  component_library: components/component-library-v0.1/manifest.yaml
+  component_count: 15
+  recipe_library: recipes/recipe-library-v0.5/manifest.yaml
+  recipe_count: 23
+  analytical_mode: analytics/analytical-mode-v0.1/manifest.yaml
+  analytical_family_count: 10
+targets:
+  component_library: component-library-v0.2
+  component_count: 18
+  recipe_library: recipe-library-v0.6
+  recipe_count: 31
+  analytical_mode: analytical-mode-v0.2
+  analytical_family_count: 16
+recipes:
+- id: '024'
+  name: Causal Chain
+  distinguishes_from: Workflow shows operational order without asserting causation.
+  components:
+  - Node
+  - Vector
+  - Signal
+  - Label
+  relations:
+  - causes
+  - directs
+  - highlights
+  - orders
+  expression_modes:
+  - structural
+- id: '025'
+  name: State Machine
+  distinguishes_from: Decision Tree branches once; State Machine permits guarded transitions
+    and return paths.
+  components:
+  - Node
+  - Vector
+  - Threshold
+  - Signal
+  - Trace
+  - Loop
+  relations:
+  - causes
+  - crosses
+  - directs
+  - orders
+  - transitions_to
+  expression_modes:
+  - structural
+- id: '026'
+  name: Dependency Map
+  distinguishes_from: Architecture owns system boundaries; Dependency Map owns prerequisite
+    semantics.
+  components:
+  - Node
+  - Bridge
+  - Signal
+  - Trace
+  - Cluster
+  relations:
+  - connected_to
+  - contains
+  - depends_on
+  - orders
+  expression_modes:
+  - structural
+- id: '027'
+  name: Claim / Evidence
+  distinguishes_from: Checklist evaluates readiness questions; Claim / Evidence evaluates
+    support for a proposition.
+  components:
+  - Anchor
+  - Cluster
+  - Node
+  - Trace
+  - Signal
+  - Threshold
+  relations:
+  - causes
+  - connected_to
+  - groups
+  - highlights
+  - supports
+  expression_modes:
+  - editorial
+  - structural
+- id: 028
+  name: Spectrum
+  distinguishes_from: Matrix uses two independent dimensions; Spectrum owns exactly
+    one continuum.
+  components:
+  - Axis
+  - Node
+  - Band
+  - Signal
+  - Threshold
+  - Label
+  relations:
+  - bounds
+  - crosses
+  - orders
+  - separates
+  expression_modes:
+  - structural
+  - analytical
+- id: 029
+  name: Anatomy
+  distinguishes_from: Architecture owns interacting systems; Anatomy owns the functional
+    parts of one subject.
+  components:
+  - Anchor
+  - Cluster
+  - Node
+  - Label
+  - Bridge
+  - Signal
+  relations:
+  - attached_to
+  - contains
+  - groups
+  - supports
+  expression_modes:
+  - editorial
+  - structural
+- id: '030'
+  name: Layer Stack
+  distinguishes_from: Hierarchy owns parent-child decomposition; Layer Stack owns
+    ordered abstraction levels.
+  components:
+  - Axis
+  - Cluster
+  - Divider
+  - Label
+  - Signal
+  relations:
+  - attached_to
+  - contains
+  - orders
+  - separates
+  expression_modes:
+  - structural
+- id: '031'
+  name: Roadmap
+  distinguishes_from: Timeline owns one chronological sequence; Roadmap owns parallel
+    workstreams and dependencies.
+  components:
+  - Axis
+  - Cluster
+  - Node
+  - Threshold
+  - Signal
+  - Band
+  - Trace
+  - Bridge
+  relations:
+  - bounds
+  - contains
+  - crosses
+  - depends_on
+  - groups
+  - orders
+  expression_modes:
+  - structural
+  - analytical
+analytical_families:
+- family: histogram
+  compatible_recipes:
+  - 019
+  candidate_components:
+  - Axis
+  - Band
+  - Label
+  - Signal
+- family: boxplot
+  compatible_recipes:
+  - 019
+  candidate_components:
+  - Axis
+  - Band
+  - Label
+  - Signal
+- family: intervalplot
+  compatible_recipes:
+  - 019
+  candidate_components:
+  - Axis
+  - Band
+  - Threshold
+  - Label
+  - Signal
+- family: bullet
+  compatible_recipes:
+  - '017'
+  - 019
+  candidate_components:
+  - Axis
+  - Band
+  - Threshold
+  - Pulse
+  - Label
+  - Signal
+- family: gantt
+  compatible_recipes:
+  - 019
+  - '031'
+  candidate_components:
+  - Axis
+  - Band
+  - Threshold
+  - Trace
+  - Label
+  - Signal
+- family: sankey
+  compatible_recipes:
+  - 019
+  - '020'
+  candidate_components:
+  - Node
+  - Bridge
+  - Trace
+  - Label
+  - Signal

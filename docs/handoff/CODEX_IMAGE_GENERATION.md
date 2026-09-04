@@ -26,7 +26,8 @@ Use `pilots/01-agentic-discipline/references/style-anchor-light.png` only after 
 7. If any pair reads as near-variants of one representation, reject and regenerate the collapsed direction before selection.
 8. Select the strongest passing candidate; never promote the first candidate by default.
 9. Normalize only when needed to exact `1920×1080` without changing composition or copy, and record the operation.
-10. Copy the selected candidate to `canonical/light/16x9/` (or `references/` for the shared anchor).
+10. Copy the selected candidate to its unpadded one-based canonical position,
+    `canonical/light/16x9/{position}.png` (or `references/` for the shared anchor).
 11. Persist direction briefs, filenames, observed concept/mechanism/composition differences, `Candidate-divergence review`, rejection reasons, exact-copy evidence, dimensions/mode, selection rationale, and scores in `evaluation/review.md` and `scores.csv`.
 12. Re-run the relevant validators. New or regenerated pilot packages use `--require-divergence` together with `--require-drafts`.
 

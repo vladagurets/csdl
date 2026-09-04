@@ -99,7 +99,7 @@ Make one proposition immediately understandable and memorable.
 
 - `patterns/visual-dna-sprint-01/manifest.yaml` — Problem, scenarios, components, assembly, levels, content, and exclusions. (family 01 Hero).
 - `patterns/visual-dna-sprint-01/specs/01-hero.md` — Canonical Markdown semantic and Prompt DSL evidence. (complete family contract).
-- `pilots/01-agentic-discipline/canonical/light/16x9/01-hook.png` — Accepted presentation-scale example. (canonical raster).
+- `pilots/01-agentic-discipline/canonical/light/16x9/1.png` — Accepted presentation-scale example. (canonical raster).
 
 ## Compatibility and rollback
 

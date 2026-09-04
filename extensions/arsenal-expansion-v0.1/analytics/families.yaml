@@ -1,0 +1,44 @@
+language: CSDL
+version: 0.2-candidate
+kind: analytical-family-extension
+small_multiples:
+  status: cross_family_modifier
+  compatible_families: [bar, line, scatterplot, map, heatmap, histogram, boxplot, intervalplot]
+  invariants: [shared_encoding, shared_domain_or_declared_exception, direct_facet_labels]
+families:
+  histogram:
+    intent: Reveal the frequency distribution of one quantitative measure across declared bins.
+    compatible_recipes: ['019']
+    internal_marks: [bar, text]
+    candidate_components: [Axis, Band, Label, Signal]
+    encoding_invariants: [bins_are_contiguous_or_declared, bin_width_is_explicit, count_total_reconciles]
+  boxplot:
+    intent: Compare median, quartiles, range, and declared outliers across a small set of groups.
+    compatible_recipes: ['019']
+    internal_marks: [interval-band, line, point, text]
+    candidate_components: [Axis, Band, Label, Signal]
+    encoding_invariants: [minimum_lte_q1_lte_median_lte_q3_lte_maximum, quartile_method_declared, outliers_not_hidden]
+  intervalplot:
+    intent: Compare estimates and bounded intervals without hiding uncertainty or tolerance.
+    compatible_recipes: ['019']
+    internal_marks: [interval-band, point, text]
+    candidate_components: [Axis, Band, Threshold, Label, Signal]
+    encoding_invariants: [lower_lte_estimate_lte_upper, interval_type_declared, point_does_not_hide_interval]
+  bullet:
+    intent: Compare actual performance with one target and declared qualitative ranges.
+    compatible_recipes: ['017', '019']
+    internal_marks: [bar, interval-band, line, text]
+    candidate_components: [Axis, Band, Threshold, Pulse, Label, Signal]
+    encoding_invariants: [common_zero_or_declared_domain, target_is_explicit, ranges_are_ordered, no_gauge_arc]
+  gantt:
+    intent: Compare task intervals, overlap, milestones, and explicit dependencies on one time domain.
+    compatible_recipes: ['019', '031']
+    internal_marks: [interval-band, point, line, text]
+    candidate_components: [Axis, Band, Threshold, Trace, Label, Signal]
+    encoding_invariants: [start_lte_end, shared_time_domain, dependencies_reference_declared_tasks, overlap_is_not_progress]
+  sankey:
+    intent: Show conserved flow between declared stages while exposing loss or imbalance.
+    compatible_recipes: ['019', '020']
+    internal_marks: [network-node, network-edge, text]
+    candidate_components: [Node, Bridge, Trace, Label, Signal]
+    encoding_invariants: [edge_width_proportional_to_value, internal_flow_reconciles, losses_are_explicit, no_decorative_curvature]

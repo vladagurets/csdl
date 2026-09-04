@@ -1,0 +1,20 @@
+language: CSDL
+version: 0.2-candidate
+kind: analytical-candidate-dataset
+dataset:
+  id: gantt-capability-plan-v1
+  version: 1.0.0
+  title: Capability delivery intervals
+  status: synthetic_fixed_data
+  unit_of_analysis: delivery task interval
+  fields:
+    - {id: task, label: Task, type: categorical, role: dimension}
+    - {id: start, label: Start, type: temporal, role: dimension}
+    - {id: end, label: End, type: temporal, role: dimension}
+    - {id: depends_on, label: Dependency, type: identifier, role: identifier}
+  records:
+    - {id: g1, task: Contract, start: '2026-09-01', end: '2026-09-12', depends_on: null}
+    - {id: g2, task: Evals, start: '2026-09-08', end: '2026-09-24', depends_on: Contract}
+    - {id: g3, task: Memory, start: '2026-09-15', end: '2026-10-02', depends_on: Contract}
+    - {id: g4, task: Autonomy, start: '2026-09-29', end: '2026-10-10', depends_on: Evals}
+  provenance: {source: CSDL Arsenal Expansion synthetic fixture, source_type: synthetic, source_date: '2026-08-21', method: fixed ISO date intervals and named dependencies}

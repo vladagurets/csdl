@@ -952,7 +952,7 @@ components:
       constraints: [semantic_palette_only, color_never_only_carrier, legend_never_becomes_signal]
     examples:
       do:
-        - {description: "Conditionally map two to four analytical categories with repeated text-and-form keys after documenting why direct labels collide.", evidence: references/canonical/foundation-patterns-v0.1.png}
+        - {description: "Conditionally map two to four analytical categories with repeated text-and-form keys after documenting why direct labels collide.", evidence: references/canonical/1.png}
       dont:
         - {description: "Do not add a Legend to the accepted single-series Chart; its four points are directly labeled and no indirect key is needed.", evidence: patterns/visual-dna-sprint-01/evaluation/review.md}
     prompt_dsl:
@@ -969,6 +969,6 @@ components:
       - {path: specs/2026-07-17-csdl-v0.1-design.md, locator: "7 Analytical Mode", supports: "Direct labels are preferred over legends; an indirect key is therefore exceptional."}
       - {path: patterns/visual-dna-sprint-01/specs/19-chart.md, locator: "Assembly order and Hard exclusions", supports: "Accepted single-series analytical evidence uses direct point labels and no legend."}
       - {path: patterns/visual-dna-sprint-01/evaluation/review.md, locator: "19 Chart — generated example accepted", supports: "Canonical Chart explicitly contains no legend or extra series."}
-      - {path: references/canonical/foundation-patterns-v0.1.png, locator: "palette key strip", supports: "Primary-authority construction calibration for text-and-form key appearance only; not family-use evidence."}
+      - {path: references/canonical/1.png, locator: "palette key strip", supports: "Primary-authority construction calibration for text-and-form key appearance only; not family-use evidence."}
     specification: specs/15-legend.md
     evidence_level: constrained

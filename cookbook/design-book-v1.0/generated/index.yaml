@@ -209,7 +209,7 @@ pages:
   kind: provenance
   title_uk: Reference hierarchy і provenance
   source_sha256: 33fd42249f02bb5c1965475dcf656ed87b6129cfa5813f5bfa9953fc60772358
-  expanded_sha256: 743d49530c28e7b30ec09ca64b4793287d9b850436fb219f9b1a5953e06c19b4
+  expanded_sha256: 10006c11ba40ac00bcbf7bb37615caf16eed9132b05012a2b605bf17bcbaf0ff
 - id: '30'
   source: pages/30-authoring-workflow.md
   section: practice

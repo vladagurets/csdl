@@ -1,0 +1,80 @@
+language: CSDL
+version: 0.2-candidate
+kind: analytical-candidate-proof
+id: proof-intervalplot
+family: intervalplot
+dataset:
+  id: intervalplot-success-rate-v1
+  version: 1.0.0
+  path: analytics/datasets/03-intervalplot.yaml
+  status: synthetic_fixed_data
+  source: CSDL Arsenal Expansion synthetic fixture
+intent: Compare estimates and bounded intervals without hiding uncertainty or tolerance.
+internal_marks:
+- interval-band
+- point
+- text
+candidate_components:
+- Axis
+- Band
+- Threshold
+- Label
+- Signal
+encoding_invariants:
+- lower_lte_estimate_lte_upper
+- interval_type_declared
+- point_does_not_hide_interval
+fields:
+- id: label
+  label: Cohort
+  type: categorical
+  role: dimension
+- id: lower
+  label: Lower
+  type: quantitative
+  role: measure
+  unit: percent
+- id: estimate
+  label: Estimate
+  type: quantitative
+  role: measure
+  unit: percent
+- id: upper
+  label: Upper
+  type: quantitative
+  role: measure
+  unit: percent
+records:
+- id: i1
+  label: Baseline
+  lower: 68
+  estimate: 74
+  upper: 80
+- id: i2
+  label: Guarded
+  lower: 79
+  estimate: 84
+  upper: 89
+- id: i3
+  label: Memory
+  lower: 83
+  estimate: 88
+  upper: 93
+derived:
+  intervals:
+  - - Baseline
+    - 68
+    - 74
+    - 80
+  - - Guarded
+    - 79
+    - 84
+    - 89
+  - - Memory
+    - 83
+    - 88
+    - 93
+provenance:
+  evidence: synthetic_fixed_data
+  builder: tools/build_arsenal_expansion.py
+  deterministic: true

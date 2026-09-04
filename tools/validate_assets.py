@@ -1,20 +1,16 @@
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
 from PIL import Image
 
 
-CARD_SLUGS = [
-    "01-hook",
-    "02-problem",
-    "03-model",
-    "04-comparison",
-    "05-synthesis",
-    "06-takeaway",
-    "07-share-card",
-]
+CARD_FILENAMES = [f"{index}.png" for index in range(1, 8)]
+INCREMENTAL_FILENAME = re.compile(r"^[1-9][0-9]*\.png$")
+
+
 def _check_image(path: Path, expected_size: tuple[int, int], errors: list[str]) -> None:
     if not path.exists():
         errors.append(f"missing asset: {path.as_posix()}")
@@ -31,14 +27,26 @@ def _check_image(path: Path, expected_size: tuple[int, int], errors: list[str]) 
 
 def validate_assets(root: Path, require_complete: bool = True) -> list[str]:
     errors: list[str] = []
-    card_slugs = CARD_SLUGS if require_complete else []
+    card_dir = root / "canonical/light/16x9"
+    actual_paths = sorted(card_dir.glob("*.png")) if card_dir.exists() else []
 
-    if not require_complete:
-        card_dir = root / "canonical/light/16x9"
-        card_slugs = [path.stem for path in card_dir.glob("*.png")] if card_dir.exists() else []
+    for path in actual_paths:
+        if not INCREMENTAL_FILENAME.fullmatch(path.name):
+            errors.append(f"unexpected canonical filename: {path.name}")
 
-    for slug in card_slugs:
-        _check_image(root / "canonical/light/16x9" / f"{slug}.png", (1920, 1080), errors)
+    filenames = (
+        CARD_FILENAMES
+        if require_complete
+        else [path.name for path in actual_paths]
+    )
+    if require_complete:
+        actual_names = {path.name for path in actual_paths}
+        expected_names = set(CARD_FILENAMES)
+        for extra in sorted(actual_names - expected_names):
+            errors.append(f"unexpected canonical asset: {extra}")
+
+    for filename in filenames:
+        _check_image(card_dir / filename, (1920, 1080), errors)
     return errors
 
 

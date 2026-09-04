@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -12,6 +13,14 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from tools.validate_accessibility_mode import contrast_ratio, derive_source_semantics
+
+
+def _natural_path_key(path: Path) -> tuple[tuple[int, int | str], ...]:
+    return tuple(
+        (0, int(part)) if part.isdecimal() else (1, part.casefold())
+        for part in re.split(r"([0-9]+)", path.as_posix())
+        if part
+    )
 
 
 def _digest(value: Any) -> str:
@@ -249,10 +258,13 @@ def derive_raster_hashes(
             repository_root / "references/canonical",
         ]
         paths = sorted(
-            path
-            for accepted_root in accepted_roots
-            for path in accepted_root.rglob("*.png")
-            if path.is_file() and "drafts" not in path.parts
+            [
+                path
+                for accepted_root in accepted_roots
+                for path in accepted_root.rglob("*.png")
+                if path.is_file() and "drafts" not in path.parts
+            ],
+            key=_natural_path_key,
         )
     else:
         paths = [
