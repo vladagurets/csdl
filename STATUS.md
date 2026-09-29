@@ -3,9 +3,17 @@
 **Project:** Constructive Signal Design Language
 **Version:** Cookbook and Design Book v1.0
 **Current milestone:** Milestone 8 — licensing in progress
-**Last updated:** 2026-09-04
+**Last updated:** 2026-09-28
 
 ## Outcome
+
+Pilot 12 English localization is ready at `pilots/12-jev-decisions/revisions/03-english/`: six translated PNGs with preserved compositions, previews, overview, ZIP and provenance. Exact English copy and metadata/archive checks passed; all Ukrainian source hashes remain unchanged.
+
+Pilot 12 approved abstract revision is ready in `pilots/12-jev-decisions/revisions/02-abstract/`: six revised slides, source prompts, hashes, previews, overview, and ZIP. Customer/payment examples were replaced, slide 3 footer removed, and slides 5-6 simplified. Previous selected images remain byte-identical. Visual copy and raster/archive checks passed; subtle generated texture remains.
+
+Pilot 12 Jev is available as a local ignored candidate package at `pilots/12-jev-decisions/`: six approved Ukrainian slide contracts, eighteen built-in generated 1920x1080 RGB candidates, prompts, sources, review notes, and one `selection/overview.png`. The user selected v2/v1/v3/v1/v2/v3 on 2026-09-28; six byte-identical numbered copies, a ZIP, selection hashes, and a selected overview are available. Strict visual cleanup remains pending; no canonical promotion or acceptance scores.
+
+Pilot 10 has Ukrainian lecturer notes at `pilots/10-traditional-agentic-observability/lecture-notes.uk.md`, aligned with its current twenty-slide manifest and contact sheet. Each slide has a ready-to-speak explanation, a topic-specific example, presenter cues, and a transition or closing. At the user’s request, the recurring document-to-report scenario was removed from every section. Spoken text and transitions total 4,241 words, approximately 32–39 minutes at 110–130 words per minute; each slide fits the requested 1–3 minute range by word-count estimate, without a timed rehearsal. This is a local ignored teaching artifact; slide copy and raster assets are unchanged.
 
 Pilot 01 is the only retained example pilot. Other pilot directories are excluded from the repository and ignored by default.
 

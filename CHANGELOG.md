@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+- Added the requested six-slide English localization of Pilot 12 abstract revision, preserving the selected compositions and Ukrainian files. Packaged numbered PNGs, overview, previews, ZIP and source/output hashes.
+
+- Generated the user-approved Pilot 12 abstract revision of six selected slides, including Browser/Search/Image Generator choices, the simplified Jev/LLM/Jev workflow, and the new closing message. Preserved the prior set; added six PNGs, previews, overview, ZIP, prompts, and verification receipts.
+
+- Recorded the explicit Pilot 12 selection v2/v1/v3/v1/v2/v3; packaged six unchanged numbered PNGs, an overview, ZIP and SHA-256 receipts. Copy and raster metadata were checked; strict visual acceptance remains pending for documented issues.
+
+- Added the local ignored Pilot 12 Jev candidate handoff: six Ukrainian slides, three generated directions each, source/prompt provenance, raster checks, review notes, and one overview PNG. Selection and final publication cleanup remain pending; accepted canonical evidence is unchanged.
+
+- Removed the rejected recurring document-to-report scenario from all Pilot 10 lecturer notes, including transitions and presenter cues; replaced it with varied examples and recalculated speech timing.
+
+- Added Ukrainian lecturer notes for all twenty current Pilot 10 slides, with plain-language explanations, topic-specific everyday and digital-product examples, presenter cues, organic transitions, and estimated 1–3 minute speeches. Verified current manifest titles, section completeness, and spoken word counts; no slide copy or raster assets changed.
+
 - Applied the user-approved exact-copy revision to Pilot 09 slide 01: title is now `Security & Agentic Development`; the `TRUST BOUNDARIES · BLAST RADIUS · EVIDENCE` supporting line is removed. Preserved the selected v3 aperture composition, rebuilt its preview and the canonical contact sheet, and refreshed manifest, Prompt DSL, selection, hash, and review evidence.
 - Applied two further user-approved exact-copy revisions to Pilot 09: slide 02 now reads `КРАСИВИЙ КОД ≠ БЕЗПЕЧНИЙ КОД`, and slide 09 retains only `МЕНШІ ПРАВА = МЕНШИЙ BLAST RADIUS` above its unlabeled key comparison. Rebuilt both previews and the canonical contact sheet, with corresponding prompt, selection, hash, and review evidence.
 - Replaced descriptive canonical PNG filenames with unpadded one-based names
