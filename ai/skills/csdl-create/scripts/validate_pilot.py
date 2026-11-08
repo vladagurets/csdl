@@ -4,7 +4,6 @@ import argparse
 import csv
 import hashlib
 import re
-import sys
 from pathlib import Path
 from typing import Any
 

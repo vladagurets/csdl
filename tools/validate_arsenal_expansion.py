@@ -4,8 +4,6 @@ import sys
 from pathlib import Path
 from typing import Any
 
-import yaml
-
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -14,6 +12,7 @@ from tools.build_arsenal_expansion import (
     derive_compatibility,
     derive_index,
 )
+from tools.validation_common import load_yaml_mapping as _load
 
 
 EXPECTED_RECIPES = [
@@ -52,18 +51,6 @@ FORBIDDEN_LAYOUT_KEYS = {
     "container",
     "sidebar",
 }
-
-
-def _load(path: Path, errors: list[str], label: str) -> dict[str, Any]:
-    try:
-        value = yaml.safe_load(path.read_text(encoding="utf-8"))
-    except (OSError, yaml.YAMLError) as error:
-        errors.append(f"{label} must be readable YAML: {error}")
-        return {}
-    if not isinstance(value, dict):
-        errors.append(f"{label} must contain a YAML mapping")
-        return {}
-    return value
 
 
 def _find_forbidden_keys(value: Any) -> set[str]:

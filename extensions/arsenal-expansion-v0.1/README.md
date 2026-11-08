@@ -27,4 +27,10 @@ Recipe Library v0.6, and Analytical Mode v0.2.
 ```bash
 .venv/bin/python tools/build_arsenal_expansion.py extensions/arsenal-expansion-v0.1
 .venv/bin/python tools/validate_arsenal_expansion.py extensions/arsenal-expansion-v0.1
+.venv/bin/python tools/build_arsenal_review.py extensions/arsenal-expansion-v0.1 --validate-selection
 ```
+
+The selection check uses tracked selected PNGs, recorded candidate hashes,
+choice metadata, and scores. It runs without ignored drafts. To additionally
+verify every local draft against its recorded hash, use the same review tool
+with `--validate`; this authoring check requires all twenty-four draft PNGs.

@@ -2,9 +2,6 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from typing import Any
-
-import yaml
 
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -12,18 +9,7 @@ if __package__ in {None, ""}:
 from tools.build_component_library import derive_compatibility, derive_index
 from tools.validate_component_library import validate_component_library
 from tools.validate_component_proofs import validate_component_proofs
-
-
-def _load_yaml(path: Path, errors: list[str], label: str) -> dict[str, Any]:
-    try:
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
-    except (OSError, yaml.YAMLError) as error:
-        errors.append(f"{label} must be readable YAML: {error}")
-        return {}
-    if not isinstance(data, dict):
-        errors.append(f"{label} must contain a YAML mapping")
-        return {}
-    return data
+from tools.validation_common import load_yaml_mapping as _load_yaml
 
 
 def validate_component_index(root: Path, require_complete: bool = True) -> list[str]:

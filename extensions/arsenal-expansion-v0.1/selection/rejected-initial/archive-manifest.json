@@ -1,0 +1,52 @@
+{
+  "base_commit": "c8056d153dbb3856844b80cdb4138a7f7d8816b2",
+  "reason": "Rejected initial Arsenal review boards; retained outside Git tracking.",
+  "file_count": 9,
+  "files": [
+    {
+      "path": "extensions/arsenal-expansion-v0.1/selection/rejected-initial/024-causal-chain.png",
+      "bytes": 555519,
+      "sha256": "07c3bc9e55e2a5745fbeea4ada6ecac205d50fe2e100397c84e96a1978128b01"
+    },
+    {
+      "path": "extensions/arsenal-expansion-v0.1/selection/rejected-initial/025-state-machine.png",
+      "bytes": 544233,
+      "sha256": "bf4cdf6016d771c3a59e9f7765959460f9610de91f055b47c0eddc1f64582405"
+    },
+    {
+      "path": "extensions/arsenal-expansion-v0.1/selection/rejected-initial/026-dependency-map.png",
+      "bytes": 560539,
+      "sha256": "41fb25d0422bbe125c7edfb009ed095a69d7c7772a024aa4f13c5e0a35fba92f"
+    },
+    {
+      "path": "extensions/arsenal-expansion-v0.1/selection/rejected-initial/027-claim-evidence.png",
+      "bytes": 556694,
+      "sha256": "fb108a00a26bcd6763c75af6d1f05d918c125a579e3649421e51aed8365220db"
+    },
+    {
+      "path": "extensions/arsenal-expansion-v0.1/selection/rejected-initial/028-spectrum.png",
+      "bytes": 572762,
+      "sha256": "f14b4d7ab0e648c50274e1a835216c280c2aa6044c5d635fcc6e54906d2441b1"
+    },
+    {
+      "path": "extensions/arsenal-expansion-v0.1/selection/rejected-initial/029-anatomy.png",
+      "bytes": 555126,
+      "sha256": "a11997b40e4ab6e9a90e75011043e2019913a0fa9069657f804c202f64f6e594"
+    },
+    {
+      "path": "extensions/arsenal-expansion-v0.1/selection/rejected-initial/030-layer-stack.png",
+      "bytes": 538122,
+      "sha256": "a075615656ca92818b54dd6ed6b87f1cf9b1760d4fecf43a532c3501b293c38a"
+    },
+    {
+      "path": "extensions/arsenal-expansion-v0.1/selection/rejected-initial/031-roadmap.png",
+      "bytes": 571089,
+      "sha256": "fe909dbce78afbc47bbe1e42f1893d4361ad9e440d0281c2920e84eb1764931b"
+    },
+    {
+      "path": "extensions/arsenal-expansion-v0.1/selection/rejected-initial/overview.png",
+      "bytes": 4426613,
+      "sha256": "785403b26e64c93df1a18f1d52d1fbee07790774b8afc095c62eb16083358946"
+    }
+  ]
+}

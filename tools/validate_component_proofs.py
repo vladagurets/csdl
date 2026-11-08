@@ -7,17 +7,12 @@ from typing import Any
 
 import yaml
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-def _load_yaml(path: Path, errors: list[str], label: str) -> dict[str, Any]:
-    try:
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
-    except (OSError, yaml.YAMLError) as error:
-        errors.append(f"{label} must be readable YAML: {error}")
-        return {}
-    if not isinstance(data, dict):
-        errors.append(f"{label} must contain a YAML mapping")
-        return {}
-    return data
+from tools.validation_common import find_forbidden_keys as _find_forbidden_keys
+from tools.validation_common import load_yaml_mapping as _load_yaml
+from tools.validation_common import relation_is_allowed as _relation_is_allowed
 
 
 def _missing_fields(value: Any, required: list[str]) -> list[str]:
@@ -26,48 +21,11 @@ def _missing_fields(value: Any, required: list[str]) -> list[str]:
     return sorted(set(required) - set(value))
 
 
-def _find_forbidden_keys(value: Any, forbidden: set[str]) -> set[str]:
-    found: set[str] = set()
-    if isinstance(value, dict):
-        for key, child in value.items():
-            if str(key).lower() in forbidden:
-                found.add(str(key).lower())
-            found.update(_find_forbidden_keys(child, forbidden))
-    elif isinstance(value, list):
-        for child in value:
-            found.update(_find_forbidden_keys(child, forbidden))
-    return found
-
-
 def _reference_path(root: Path, repository_root: Path, value: str) -> Path:
     local = root / value
     if local.exists():
         return local
     return repository_root / value
-
-
-def _relation_is_allowed(
-    subject: dict[str, Any],
-    target: dict[str, Any],
-    relation_type: str,
-) -> bool:
-    subject_name = subject.get("name")
-    target_name = target.get("name")
-    for entry in subject.get("relations", {}).get("allowed", []):
-        if (
-            entry.get("type") == relation_type
-            and entry.get("direction") in {"outbound", "either"}
-            and entry.get("target") in {target_name, "any"}
-        ):
-            return True
-    for entry in target.get("relations", {}).get("allowed", []):
-        if (
-            entry.get("type") == relation_type
-            and entry.get("direction") in {"inbound", "either"}
-            and entry.get("target") in {subject_name, "any"}
-        ):
-            return True
-    return False
 
 
 def _validate_analytical_contract(

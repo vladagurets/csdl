@@ -7,21 +7,11 @@ from typing import Any
 
 import yaml
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-def _load_yaml(path: Path, errors: list[str], label: str) -> dict[str, Any]:
-    try:
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
-    except (OSError, yaml.YAMLError) as error:
-        errors.append(f"{label} must be readable YAML: {error}")
-        return {}
-    if not isinstance(data, dict):
-        errors.append(f"{label} must contain a YAML mapping")
-        return {}
-    return data
-
-
-def _contains_token(text: str, token: str) -> bool:
-    return re.search(rf"\b{re.escape(token)}\b", text, flags=re.IGNORECASE) is not None
+from tools.validation_common import contains_token as _contains_token
+from tools.validation_common import load_yaml_mapping as _load_yaml
 
 
 def _missing_fields(value: Any, required: list[str]) -> list[str]:

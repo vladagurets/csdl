@@ -8,6 +8,11 @@ pilots/*
 pilots/**/drafts/**/*.png
 patterns/**/drafts/**/*.png
 extensions/**/drafts/**/*.png
+**/drafts/**/*.jpg
+**/drafts/**/*.jpeg
+**/drafts/**/*.webp
+**/drafts/**/approved.txt
+extensions/arsenal-expansion-v0.1/selection/rejected-initial/*.png
 .env
 .env.*
 !.env.example

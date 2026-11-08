@@ -3,9 +3,20 @@
 **Project:** Constructive Signal Design Language
 **Version:** Cookbook and Design Book v1.0
 **Current milestone:** Milestone 8 — licensing in progress
-**Last updated:** 2026-09-28
+**Last updated:** 2026-11-08
 
 ## Outcome
+
+Repository cleanup is complete on the working branch. Clean-checkout tests no
+longer require ignored Arsenal drafts: 190 tests pass, all 27 CI validation/build
+steps and two additional Arsenal contract/proof commands pass, and deterministic
+builds produce no tracked-file drift. Removed unused imports/constant, shared
+repeated validator helpers, and removed nine duplicate review PNG paths. Nine
+rejected initial board PNGs are now ignored local archive files with verified
+backup and committed recovery hashes; selected Arsenal files and all sixty
+accepted raster hashes remain unchanged. Local disposable caches and one stale
+worktree registration were removed; stash and Git history are preserved. See
+`docs/audits/2026-11-08-repository-cleanup.md` for scope and verification.
 
 Pilot 12 English localization is ready at `pilots/12-jev-decisions/revisions/03-english/`: six translated PNGs with preserved compositions, previews, overview, ZIP and provenance. Exact English copy and metadata/archive checks passed; all Ukrainian source hashes remain unchanged.
 
@@ -147,7 +158,7 @@ cookbook/design-book-v1.0/output/contact-sheet.png (derived, ignored)
 
 ```text
 .venv/bin/python -m pytest -q
-185 passed
+190 passed (clean candidate snapshot without ignored drafts)
 
 .venv/bin/python tools/validate_manifest.py pilots/01-agentic-discipline/manifest.yaml
 manifest valid

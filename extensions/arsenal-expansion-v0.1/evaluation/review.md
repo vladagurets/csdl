@@ -27,6 +27,20 @@ contains twenty-four candidates with materially stronger visual mechanisms and
 composition topologies. No candidate is promoted before explicit per-recipe
 selection.
 
+### Archive maintenance — 2026-11-08
+
+The nine initial comparison/overview PNGs under `selection/rejected-initial/`
+are now ignored local archive files rather than tracked publication assets.
+Their bytes remain unchanged locally and in a verified external local backup;
+`selection/rejected-initial/archive-manifest.json` pins their hashes, sizes,
+and recoverable pre-cleanup commit. Candidate hash records and rejection notes
+remain tracked. This changes storage only, not the rejected review state.
+
+Duplicate copies of the eight recalibrated boards at the selection root and
+the duplicate `selection/recalibration/overview.png` were removed. The eight
+board paths below and the active `selection/overview.png` remain unchanged,
+as do all selected candidate bytes, hashes, scores, and public-promotion state.
+
 ### 024 Causal Chain
 
 - Pass status: rejected as part of the complete first visual pass.

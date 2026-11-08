@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+- Completed the audited repository cleanup: made Arsenal selection checks work
+  from tracked PNGs and recorded source hashes without ignored drafts, retained
+  a separate full local-candidate check, and added regression coverage plus a
+  CI selection gate. Removed unused imports/constant and extracted repeated
+  validator helpers without changing error contracts. Removed nine duplicate
+  review PNG paths and untracked nine rejected initial board PNGs after verified
+  local archiving, retaining hashes, recovery instructions, selection records,
+  and all accepted raster bytes. Clean snapshot: 190 tests and 29 validation/build
+  commands pass with no tracked build drift. Removed only disposable local caches
+  and stale worktree metadata; stash and Git history are unchanged.
+
 - Added the requested six-slide English localization of Pilot 12 abstract revision, preserving the selected compositions and Ukrainian files. Packaged numbered PNGs, overview, previews, ZIP and source/output hashes.
 
 - Generated the user-approved Pilot 12 abstract revision of six selected slides, including Browser/Search/Image Generator choices, the simplified Jev/LLM/Jev workflow, and the new closing message. Preserved the prior set; added six PNGs, previews, overview, ZIP, prompts, and verification receipts.

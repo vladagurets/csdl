@@ -1,14 +1,12 @@
 from __future__ import annotations
 
 import io
-import math
 import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-import yaml
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 if __package__ in {None, ""}:

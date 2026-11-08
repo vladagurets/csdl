@@ -1,23 +1,17 @@
 from __future__ import annotations
 
-import re
 import sys
 from pathlib import Path
 from typing import Any
 
 import yaml
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-def _load_yaml(path: Path, errors: list[str], label: str) -> dict[str, Any]:
-    try:
-        value = yaml.safe_load(path.read_text(encoding="utf-8"))
-    except (OSError, yaml.YAMLError) as error:
-        errors.append(f"{label} must be readable YAML: {error}")
-        return {}
-    if not isinstance(value, dict):
-        errors.append(f"{label} must contain a YAML mapping")
-        return {}
-    return value
+from tools.validation_common import contains_token as _contains_token
+from tools.validation_common import load_yaml_mapping as _load_yaml
+from tools.validation_common import relation_is_allowed as _relation_is_allowed
 
 
 def _missing(value: Any, required: list[str]) -> list[str]:
@@ -30,38 +24,12 @@ def _text(value: Any) -> bool:
     return isinstance(value, str) and bool(value.strip())
 
 
-def _contains_token(text: str, token: str) -> bool:
-    return re.search(rf"\b{re.escape(token)}\b", text, flags=re.IGNORECASE) is not None
-
-
 def _component_contract(repository_root: Path) -> dict[str, Any]:
     return yaml.safe_load(
         (repository_root / "components/component-library-v0.1/manifest.yaml").read_text(
             encoding="utf-8"
         )
     )
-
-
-def _relation_is_allowed(
-    subject: dict[str, Any], target: dict[str, Any], relation_type: str
-) -> bool:
-    subject_name = subject.get("name")
-    target_name = target.get("name")
-    for entry in subject.get("relations", {}).get("allowed", []):
-        if (
-            entry.get("type") == relation_type
-            and entry.get("direction") in {"outbound", "either"}
-            and entry.get("target") in {target_name, "any"}
-        ):
-            return True
-    for entry in target.get("relations", {}).get("allowed", []):
-        if (
-            entry.get("type") == relation_type
-            and entry.get("direction") in {"inbound", "either"}
-            and entry.get("target") in {subject_name, "any"}
-        ):
-            return True
-    return False
 
 
 def _validate_ingredients(

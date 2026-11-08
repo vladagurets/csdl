@@ -6,6 +6,11 @@ from typing import Any
 
 import yaml
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from tools.validation_common import find_forbidden_keys as _find_forbidden_keys
+
 
 def _records(root: Path) -> list[dict[str, Any]]:
     manifest = yaml.safe_load((root / "manifest.yaml").read_text(encoding="utf-8"))
@@ -13,19 +18,6 @@ def _records(root: Path) -> list[dict[str, Any]]:
         yaml.safe_load((root / entry["record"]).read_text(encoding="utf-8"))
         for entry in manifest["recipes"]
     ]
-
-
-def _find_forbidden_keys(value: Any, forbidden: set[str]) -> set[str]:
-    found: set[str] = set()
-    if isinstance(value, dict):
-        for key, child in value.items():
-            if str(key).lower() in forbidden:
-                found.add(str(key).lower())
-            found.update(_find_forbidden_keys(child, forbidden))
-    elif isinstance(value, list):
-        for child in value:
-            found.update(_find_forbidden_keys(child, forbidden))
-    return found
 
 
 def validate_outline(outline: dict[str, Any], root: Path) -> list[str]:

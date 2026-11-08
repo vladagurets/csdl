@@ -10,6 +10,9 @@ import yaml
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from tools.validation_common import find_forbidden_keys as _find_forbidden_keys
+from tools.validation_common import load_yaml_mapping as _load
+
 
 EXPECTED_PROFILES = ["light", "night", "monochrome", "projector"]
 EXPECTED_COMPONENTS = [
@@ -64,31 +67,6 @@ def contrast_ratio(first: str, second: str) -> float:
         (relative_luminance(first), relative_luminance(second)), reverse=True
     )
     return (lighter + 0.05) / (darker + 0.05)
-
-
-def _load(path: Path, errors: list[str], label: str) -> dict[str, Any]:
-    try:
-        value = yaml.safe_load(path.read_text(encoding="utf-8"))
-    except (OSError, yaml.YAMLError) as error:
-        errors.append(f"{label} must be readable YAML: {error}")
-        return {}
-    if not isinstance(value, dict):
-        errors.append(f"{label} must contain a YAML mapping")
-        return {}
-    return value
-
-
-def _find_forbidden_keys(value: Any, forbidden: set[str]) -> set[str]:
-    found: set[str] = set()
-    if isinstance(value, dict):
-        for key, child in value.items():
-            if str(key).lower() in forbidden:
-                found.add(str(key).lower())
-            found.update(_find_forbidden_keys(child, forbidden))
-    elif isinstance(value, list):
-        for child in value:
-            found.update(_find_forbidden_keys(child, forbidden))
-    return found
 
 
 def _canonical_digest(value: Any) -> str:

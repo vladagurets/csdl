@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import shutil
 from pathlib import Path
 
@@ -7,7 +8,12 @@ import yaml
 from PIL import Image
 
 from tools.build_arsenal_expansion import build_arsenal_expansion
-from tools.build_arsenal_review import validate_arsenal_candidates
+from tools.build_arsenal_review import (
+    build_arsenal_review,
+    build_hash_inventory,
+    validate_arsenal_candidates,
+    validate_arsenal_selection,
+)
 from tools.validate_arsenal_expansion import validate_arsenal_expansion
 
 
@@ -49,7 +55,7 @@ def _load(path: Path) -> dict:
 
 def _copy_expansion(tmp_path: Path) -> Path:
     target = tmp_path / "extensions/arsenal-expansion-v0.1"
-    shutil.copytree(EXPANSION, target)
+    shutil.copytree(EXPANSION, target, ignore=shutil.ignore_patterns("drafts"))
     for source, destination in (
         (
             ROOT / "components/component-library-v0.1/manifest.yaml",
@@ -160,33 +166,101 @@ def test_all_six_analytical_proofs_rebuild_deterministically(tmp_path: Path) -> 
     assert validate_arsenal_expansion(target) == []
 
 
-def test_all_recipe_raster_candidates_are_unique_pngs() -> None:
-    assert validate_arsenal_candidates(EXPANSION) == []
+def test_all_recipe_raster_candidates_have_unique_persisted_hashes() -> None:
     inventory = _load(EXPANSION / "selection/candidate-hashes.yaml")
     assert inventory["status"] == "selected_unpromoted"
     assert inventory["file_count"] == 24
     assert inventory["unique_sha256_count"] == 24
+    assert len(inventory["files"]) == 24
+    assert len({entry["sha256"] for entry in inventory["files"]}) == 24
 
 
-def test_selected_recipe_candidates_are_complete_and_identical_to_sources() -> None:
-    assert validate_arsenal_candidates(EXPANSION, require_selection=True) == []
+def test_selected_recipe_candidates_match_persisted_source_hashes() -> None:
+    assert validate_arsenal_selection(EXPANSION) == []
     inventory = _load(EXPANSION / "selection/candidate-hashes.yaml")
     assert inventory["status"] == "selected_unpromoted"
     assert len(inventory["selected"]) == 8
     assert {entry["variant"] for entry in inventory["selected"]} == {"v1"}
     for entry in inventory["selected"]:
-        source = EXPANSION / entry["source"]
         selected = EXPANSION / entry["selected_path"]
-        assert source.read_bytes() == selected.read_bytes()
+        assert hashlib.sha256(selected.read_bytes()).hexdigest() == entry["source_sha256"]
+
+
+def _candidate_fixture(tmp_path: Path) -> Path:
+    target = _copy_expansion(tmp_path)
+    manifest = _load(target / "manifest.yaml")
+    for index, recipe in enumerate(manifest["recipes"]):
+        record = _load(target / recipe["record"])
+        directory = target / f"drafts/light/16x9/{record['id']}-{record['slug']}-redesign"
+        directory.mkdir(parents=True)
+        for variant in range(1, 4):
+            image = Image.new("RGB", (1920, 1080), (index, variant, 0))
+            source = directory / f"v{variant}.png"
+            image.save(source)
+            if variant == 1:
+                selected = target / f"selection/selected/{record['id']}-{record['slug']}.png"
+                shutil.copy2(source, selected)
+    build_hash_inventory(target, manifest, target / "selection/candidate-hashes.yaml")
+    return target
 
 
 def test_candidate_validator_rejects_non_png_container(tmp_path: Path) -> None:
-    target = _copy_expansion(tmp_path)
+    target = _candidate_fixture(tmp_path)
     candidate = target / "drafts/light/16x9/024-causal-chain-redesign/v1.png"
     with Image.open(candidate) as source:
         source.convert("RGB").save(candidate, format="JPEG")
 
     assert "arsenal candidate must be PNG: v1.png" in validate_arsenal_candidates(target)
+
+
+def test_full_candidate_validation_checks_local_drafts(tmp_path: Path) -> None:
+    target = _candidate_fixture(tmp_path)
+    assert validate_arsenal_candidates(target, require_selection=True) == []
+    candidate = target / "drafts/light/16x9/024-causal-chain-redesign/v1.png"
+    Image.new("RGB", (1920, 1080), "white").save(candidate)
+    errors = validate_arsenal_candidates(target, require_selection=True)
+    assert any("does not match recorded hash" in error for error in errors)
+
+
+def test_selection_validation_works_without_drafts_and_rejects_changed_raster(tmp_path: Path) -> None:
+    target = _copy_expansion(tmp_path)
+    assert not (target / "drafts").exists()
+    assert validate_arsenal_selection(target) == []
+    selected = target / "selection/selected/024-causal-chain.png"
+    Image.new("RGB", (1920, 1080), "white").save(selected)
+    assert "selected arsenal candidate must equal source: 024" in validate_arsenal_selection(target)
+
+
+def test_selection_validation_rejects_changed_inventory_binding(tmp_path: Path) -> None:
+    target = _copy_expansion(tmp_path)
+    path = target / "selection/candidate-hashes.yaml"
+    inventory = _load(path)
+    inventory["selected"][0]["source"] = inventory["files"][1]["path"]
+    path.write_text(yaml.safe_dump(inventory), encoding="utf-8")
+    assert "arsenal selected inventory does not match choice: 024" in validate_arsenal_selection(target)
+
+
+def test_selection_validation_rejects_unreadable_selected_raster(tmp_path: Path) -> None:
+    target = _copy_expansion(tmp_path)
+    selected = target / "selection/selected/024-causal-chain.png"
+    selected.write_bytes(b"invalid PNG")
+    errors = validate_arsenal_selection(target)
+    assert any("must be readable PNG" in error for error in errors)
+
+
+def test_review_builder_writes_only_one_board_set(tmp_path: Path) -> None:
+    target = _candidate_fixture(tmp_path)
+    selection = target / "selection"
+    for path in selection.glob("*.png"):
+        path.unlink()
+    for path in (selection / "recalibration").glob("*.png"):
+        path.unlink()
+    outputs = build_arsenal_review(target)
+    assert len(list((selection / "recalibration").glob("[0-9]*.png"))) == 8
+    assert list(selection.glob("*.png")) == [selection / "overview.png"]
+    assert not (selection / "recalibration/overview.png").exists()
+    assert all(path.is_file() for path in outputs)
+    assert validate_arsenal_candidates(target, require_selection=True) == []
 
 
 def test_validator_rejects_semantic_alias_and_dataset_mutation(tmp_path: Path) -> None:

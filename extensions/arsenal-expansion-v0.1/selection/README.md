@@ -18,3 +18,14 @@ recalibrated direction for every recipe:
 package-local and unpromoted. Public promotion into new version packages, plus
 the final vocabulary decision for `Threshold`, `Trace`, and `Band`, requires a
 separate approved objective.
+
+## Review and archive paths
+
+The eight active comparison boards live only in `recalibration/`; the active
+overview is `overview.png`. The review builder writes this single set rather
+than recreating duplicate root boards or a second overview.
+
+Rejected initial board PNGs are ignored local archive files, with a verified
+external local backup. Their committed hashes, prior commit, and retrieval
+instructions live in `rejected-initial/`. Selection metadata, review notes,
+scores, and all eight selected PNGs remain tracked.
